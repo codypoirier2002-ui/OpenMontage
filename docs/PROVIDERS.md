@@ -1144,6 +1144,10 @@ cd remotion-composer && npm install && cd ..
 
 Requires **Node.js 18+** and `npx`. The `remotion-composer/` project is included in the repo.
 
+On first render Remotion downloads its own headless Chrome from `remotion.media`. On offline or
+proxy-restricted machines that already have a Chromium, set `REMOTION_BROWSER_EXECUTABLE` to its
+path (e.g. Playwright's `headless_shell`) and `video_compose` passes it as `--browser-executable`.
+
 #### What Remotion Renders
 
 | Component | What it produces |

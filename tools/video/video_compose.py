@@ -34,6 +34,7 @@ import contextlib
 import json
 import hashlib
 import logging
+import os
 import secrets
 import shutil
 import subprocess
@@ -53,6 +54,17 @@ from tools.base_tool import (
     ToolStability,
     ToolTier,
 )
+
+
+def _remotion_browser_args() -> list[str]:
+    """`--browser-executable` from $REMOTION_BROWSER_EXECUTABLE, if set.
+
+    Without it Remotion downloads its own headless shell from remotion.media,
+    which fails on offline or proxy-restricted machines that already have a
+    Chromium (e.g. Playwright's headless_shell).
+    """
+    path = os.environ.get("REMOTION_BROWSER_EXECUTABLE")
+    return [f"--browser-executable={path}"] if path else []
 
 
 class VideoCompose(BaseTool):
@@ -1021,6 +1033,7 @@ class VideoCompose(BaseTool):
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
         cmd = ["npx", "remotion", "render", str(effective_entry), str(comp_id), str(output_path)]
+        cmd.extend(_remotion_browser_args())
 
         props_path = bespoke.get("props_path")
         if props_path:
@@ -2061,6 +2074,7 @@ class VideoCompose(BaseTool):
             ]
             if public_dir is not None:
                 cmd.append(f"--public-dir={public_dir}")
+            cmd.extend(_remotion_browser_args())
 
             # Apply media profile dimensions
             if profile_name:
