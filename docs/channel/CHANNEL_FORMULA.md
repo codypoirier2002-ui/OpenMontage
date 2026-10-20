@@ -28,10 +28,10 @@ pipeline). Where the two differ on the channel's own conventions, the user's rul
 | 5 | What If the Moon Vanished? | "Missing-Piece Almanac": gold engraving on indigo, Moon cut out as a hole that media plays through | $1.72 / $4 |
 | 6 | How Deep Can a Human Dig? | "Core Shed": core trays read row by row, stencil type, survey tape, hi-vis orange; depth shown sideways | $1.71 / $4 |
 | 7 | Why Can't You Tickle Yourself? | "Misregistration": two-ink riso zine, blue = prediction, pink = touch, overprint when in register | $1.68 / $4 |
+| 8 | 3 Animals Older Than the Dinosaurs | Video 4's cabinet style plus a "Deep-Time Tape" that reels out each animal's age; finished-line ending | $2.39 / $4 |
 
 Each project's `art-direction.md`, `scenes.md`, `BUILD.md` and `artifacts/` define its look (they live under the
-gitignored `projects/` folder, so they exist only in the container that built them). Video 8, "3 Animals Older Than the
-Dinosaurs" (`projects/animals-older-than-dinosaurs/`), reuses video 4's cabinet style with the finished-line ending.
+gitignored `projects/` folder, so they exist only in the container that built them).
 
 ## Format
 
