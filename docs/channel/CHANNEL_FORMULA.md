@@ -126,7 +126,10 @@ Mirror the most recent delivered project's layout. `projects/why-cant-you-tickle
 10. **Fonts:** confirm each `@remotion/google-fonts` font imports from the package's ES-module build; BigShouldersStencilDisplay and SairaStencilOne don't. Check the glyphs too: most fonts lack →, so draw arrows as SVG.
 11. **Grain seed:** `T.driftFrame(T.loopFrame(frame))`, in that order.
 12. **`stills.cjs` must delete its webpack bundle.** Leftover bundles once filled /tmp with 16 GB.
-13. Facts get the most careful wording: "nearly forty percent" (the true figure is 38%), "less tickly" (not "barely"), "longer, not deeper" (Kola vs oil wells), and "lab vs home".
+13. **Don't trust a builder's own caption sweep.** On video 8 the foundation reported every word within 0.85 frames, but independent QA found 13 words 4–22 frames early ("by" 0.73 s early). A tie-breaking re-measure then found 10 more that both had missed. QA A must always measure onsets independently. When the two disagree, a fix agent re-measures every disputed word and then re-sweeps all of them.
+14. **Eased moves that end hidden.** If a move finishes inside a mask or case, as with the tape reel-in on video 8, its sound belongs on the last **visible** step, not on the move's end frame.
+15. **Hand-lettered fonts like Caveat overhang their advance box.** A text reveal that clips at the box edge cuts the last glyph; on video 8 the "?" was cut in half. Let a fully revealed text overhang its box by about 16 px.
+16. Facts get the most careful wording: "nearly forty percent" (the true figure is 38%), "less tickly" (not "barely"), "longer, not deeper" (Kola vs oil wells), and "lab vs home".
 
 ## Utility scripts (`docs/channel/scripts/`)
 
