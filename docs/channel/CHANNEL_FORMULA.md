@@ -130,10 +130,10 @@ Mirror the most recent delivered project's layout. `projects/why-cant-you-tickle
 13. **Don't trust a builder's own caption sweep.** On video 8 the foundation reported every word within 0.85 frames, but independent QA found 13 words 4–22 frames early ("by" 0.73 s early). A tie-breaking re-measure then found 10 more that both had missed. QA A must always measure onsets independently. When the two disagree, a fix agent re-measures every disputed word and then re-sweeps all of them.
 14. **Eased moves that end hidden.** If a move finishes inside a mask or case, as with the tape reel-in on video 8, its sound belongs on the last **visible** step, not on the move's end frame.
 15. **Hand-lettered fonts like Caveat overhang their advance box.** A text reveal that clips at the box edge cuts the last glyph; on video 8 the "?" was cut in half. Let a fully revealed text overhang its box by about 16 px.
+16. Facts get the most careful wording: "nearly forty percent" (the true figure is 38%), "less tickly" (not "barely"), "longer, not deeper" (Kola vs oil wells), and "lab vs home".
 17. **Count script words as spoken.** Numbers like "nineteen sixty-four" and "two hundred sixty-four" added ~5 words on video 9 and pushed the read ~4 s past plan. Plan the length from the spoken form; if the read still runs long, trim the middle of sentence pauses (short crossfades, keep beat pauses ~0.55 s) before alignment, and treat the trimmed WAVs as the only clean WAVs for alignment, OVERRIDES, premix and QA A.
 18. **Check the last word on phone speakers.** The music's build into the final chord can bury the closing word in 300–4000 Hz even when the duck is right (video 9: +7 dB). Aim for ≥ +12 dB over the bed on every syllable of the last word: duck the bed a further ~5 dB under it and lift the word ~3 dB in that band.
 19. **Retiming the paper or feed moves every mark.** On video 9 a feed change for one scene shifted all the marks across the film and created new overlaps. After any global timing change, re-sweep the whole film for collisions.
-16. Facts get the most careful wording: "nearly forty percent" (the true figure is 38%), "less tickly" (not "barely"), "longer, not deeper" (Kola vs oil wells), and "lab vs home".
 
 ## Utility scripts (`docs/channel/scripts/`)
 
