@@ -31,6 +31,7 @@ pipeline). Where the two differ on the channel's own conventions, the user's rul
 | 8 | 3 Animals Older Than the Dinosaurs | Video 4's cabinet style plus a "Deep-Time Tape" that reels out each animal's age; finished-line ending | $2.39 / $4 |
 | 9 | What If You Never Slept? | "Night Shift Chart": one sleep-lab chart strip feeding up the screen, cream paper, green grid, six ink pens, grease-pencil notes, HOURS AWAKE counter, AI clips only in a taped window | $2.37 / $4 |
 | 10 | How Loud Can a Sound Get? | "Pressure Column": ~6,000 warm dots of air on night blue, amber squeeze / blue stretch bands, lift-indicator dB rail; vacuum gaps go pure black at 194 and snap into a shock wall; drawn mercury U-tube gauge | $2.38 / $4 |
+| 11 | How Cold Can It Get? | "Frost Pane": one night window that frosts over (8% → 95%) as the meter; code-grown herringbone ferns; numbers scraped in by fingertip (Sora + DM Mono, slashed zeros); places seen through melted patches; a scraped FLOOR line nothing ever touches; breath-fog circle finale | $1.74 / $4 |
 
 Each project's `art-direction.md`, `scenes.md`, `BUILD.md` and `artifacts/` define its look (they live under the
 gitignored `projects/` folder, so they exist only in the container that built them).
@@ -137,6 +138,12 @@ Mirror the most recent delivered project's layout. `projects/why-cant-you-tickle
 19. **Retiming the paper or feed moves every mark.** On video 9 a feed change for one scene shifted all the marks across the film and created new overlaps. After any global timing change, re-sweep the whole film for collisions.
 20. **Absolute honesty tags need the same fact-check as narration.** On video 10, "AI impression · no photographs exist" was false (a photo of Krakatoa's May 1883 phase exists); it became "no photographs of the climax exist". Check every "no/never/only" on screen against the research brief before the scene-plan gate.
 21. **Dense particle fields cost bitrate.** Video 10's 6,000 moving dots averaged ~11 Mbps (peaks 25) under the same crf 18 + VBV chain, putting the master at ~72 MB, right at TikTok's Android-app upload limit. For heavy-texture looks, also export an upload copy with maxrate ~12M / bufsize ~15M (~63 MB) and keep the master as is.
+
+22. **Shared reveal helpers can land visuals early.** On video 11, an ease-out card seat was sub-pixel from seat−3, and a scrape reveal's round cap uncovered glyphs 2–3 frames ahead, so cards and digits read as landed before their SFX. Use an ease-in (gravity) drop that still moves several px on seat−1, put the reveal edge exactly at the progress point, and check seat−2 / seat−1 / seat stills.
+23. **A texture that acts as a meter must only ever get denser.** Video 11's brightness cap at high frost coverage made the frost look thinner late in the film, so the meter seemed to recede. Measure a texture-only band (luma mean / std) at several frames and require it to hold or rise. Model code textures on a real reference (the frost first read as twigs, then steel wool, until rebuilt as herringbone ferns).
+24. **Blend modes under a fading parent flash.** A `mix-blend-mode: multiply` fill inside an element with opacity below 1 is isolated and showed as a flat colour for a frame (video 11, frame 772). Keep the blend element unfaded and fade its colour toward white (a white multiply does nothing), or tie it to the plate's own mask.
+25. **Envelopes that end at the last frame break the still ending.** Two frost-clearing masks with `to = total_frames` faded out over the final 8 frames, so the frost crept back as the film ended. Let end-running elements end after the film (T + 8), and assert in `build_props.py` that every channel is constant through the settle.
+26. **Generated music may ignore the requested key** (video 11 asked for E major, got A). Find the final cadence from the audio, not the prompt.
 
 ## Utility scripts (`docs/channel/scripts/`)
 
