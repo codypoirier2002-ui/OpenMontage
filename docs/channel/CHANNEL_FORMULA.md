@@ -30,6 +30,7 @@ pipeline). Where the two differ on the channel's own conventions, the user's rul
 | 7 | Why Can't You Tickle Yourself? | "Misregistration": two-ink riso zine, blue = prediction, pink = touch, overprint when in register | $1.68 / $4 |
 | 8 | 3 Animals Older Than the Dinosaurs | Video 4's cabinet style plus a "Deep-Time Tape" that reels out each animal's age; finished-line ending | $2.39 / $4 |
 | 9 | What If You Never Slept? | "Night Shift Chart": one sleep-lab chart strip feeding up the screen, cream paper, green grid, six ink pens, grease-pencil notes, HOURS AWAKE counter, AI clips only in a taped window | $2.37 / $4 |
+| 10 | How Loud Can a Sound Get? | "Pressure Column": ~6,000 warm dots of air on night blue, amber squeeze / blue stretch bands, lift-indicator dB rail; vacuum gaps go pure black at 194 and snap into a shock wall; drawn mercury U-tube gauge | $2.38 / $4 |
 
 Each project's `art-direction.md`, `scenes.md`, `BUILD.md` and `artifacts/` define its look (they live under the
 gitignored `projects/` folder, so they exist only in the container that built them).
@@ -134,6 +135,8 @@ Mirror the most recent delivered project's layout. `projects/why-cant-you-tickle
 17. **Count script words as spoken.** Numbers like "nineteen sixty-four" and "two hundred sixty-four" added ~5 words on video 9 and pushed the read ~4 s past plan. Plan the length from the spoken form; if the read still runs long, trim the middle of sentence pauses (short crossfades, keep beat pauses ~0.55 s) before alignment, and treat the trimmed WAVs as the only clean WAVs for alignment, OVERRIDES, premix and QA A.
 18. **Check the last word on phone speakers.** The music's build into the final chord can bury the closing word in 300–4000 Hz even when the duck is right (video 9: +7 dB). Aim for ≥ +12 dB over the bed on every syllable of the last word: duck the bed a further ~5 dB under it and lift the word ~3 dB in that band.
 19. **Retiming the paper or feed moves every mark.** On video 9 a feed change for one scene shifted all the marks across the film and created new overlaps. After any global timing change, re-sweep the whole film for collisions.
+20. **Absolute honesty tags need the same fact-check as narration.** On video 10, "AI impression · no photographs exist" was false (a photo of Krakatoa's May 1883 phase exists); it became "no photographs of the climax exist". Check every "no/never/only" on screen against the research brief before the scene-plan gate.
+21. **Dense particle fields cost bitrate.** Video 10's 6,000 moving dots averaged ~11 Mbps (peaks 25) under the same crf 18 + VBV chain, putting the master at ~72 MB, right at TikTok's Android-app upload limit. For heavy-texture looks, also export an upload copy with maxrate ~12M / bufsize ~15M (~63 MB) and keep the master as is.
 
 ## Utility scripts (`docs/channel/scripts/`)
 
