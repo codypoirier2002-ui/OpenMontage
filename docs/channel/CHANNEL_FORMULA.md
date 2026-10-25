@@ -33,6 +33,7 @@ pipeline). Where the two differ on the channel's own conventions, the user's rul
 | 10 | How Loud Can a Sound Get? | "Pressure Column": ~6,000 warm dots of air on night blue, amber squeeze / blue stretch bands, lift-indicator dB rail; vacuum gaps go pure black at 194 and snap into a shock wall; drawn mercury U-tube gauge | $2.38 / $4 |
 | 11 | How Cold Can It Get? | "Frost Pane": one night window that frosts over (8% → 95%) as the meter; code-grown herringbone ferns; numbers scraped in by fingertip (Sora + DM Mono, slashed zeros); places seen through melted patches; a scraped FLOOR line nothing ever touches; breath-fog circle finale | $1.74 / $4 |
 | 12 | What If Earth Stopped Spinning? | "Stopped Forecast": a deadpan 1990s TV weather wall with no presenter; one orthographic globe from real Natural Earth coastlines (world-atlas + d3-geo) that brakes to 0 on the Atlantic view and only turns again at the end; orange = sudden stop, teal = slow stop, broadcast blue = the real world; "LIVE CAM" insets for AI places; drawn schematic of the Esri/Fraczek ocean model (Archivo Black + Barlow Condensed) | $1.70 / $4 |
+| 13 | How Hot Can It Get? | "Black-Body" (partner to video 11): the frame's light is the meter — computed black-body colour (Planck × CIE 1931 → sRGB, unit-tested) of each rung; nothing glows below the Draper point (~525 °C), so Death Valley and Venus sit in a labelled false-colour window; one sweep red → orange → yellow-white → blue-white that "barely changes past ~40,000 K", then a zeros counter (12 → 32) carries a log-scale ladder from video 11's cold floor to the Planck temperature, where the rail frays (Saira Condensed + IBM Plex Mono) | $1.73 / $4 |
 
 Each project's `art-direction.md`, `scenes.md`, `BUILD.md` and `artifacts/` define its look (they live under the
 gitignored `projects/` folder, so they exist only in the container that built them).
@@ -68,8 +69,8 @@ gitignored `projects/` folder, so they exist only in the container that built th
 
 ## Build process (Remotion "atelier")
 
-Mirror the most recent delivered project's layout. `projects/what-if-earth-stopped-spinning/` is the newest (its
-`BUILD.md` is the fullest builder contract); if `projects/` is gone, rebuild from this description.
+Mirror the most recent delivered project's layout. `projects/how-hot-can-it-get/` is the newest (its
+`BUILD.md` is the fullest builder contract; video 12's is the cleaner template for map/graphics looks); if `projects/` is gone, rebuild from this description.
 
 1. **Research brief.** Write `artifacts/research_brief.json` with roughly 15–20 data points, each with its tag. List the myths and say which claims were dropped and why.
 2. **Proposal.** Write `artifacts/proposal_packet.json` with four concept options, the hook, a five-beat outline, the look, the asset plan and costs, and `pending_user_choices`.
@@ -151,6 +152,12 @@ Mirror the most recent delivered project's layout. `projects/what-if-earth-stopp
 30. **A falling last word can be too soft for phones.** Video 12's closing "time" sat ~10 dB under "very long" even though it cleared the bed in 300–4000 Hz. Lesson 18's band margin isn't enough: also check the last word's broadband level against the rest of its sentence, and lift it with a constant gain (~+5 dB, not a limiter) so the cadence shape stays.
 31. **Honesty tags start with their graphic, and exits finish before the next claim.** QA found a drawn tag fading in 5–12 frames after its graphic, and the drained-ocean map still clearing under the "REAL" banner and MEASURED tab. A tag shares its graphic's first frame; any element tied to one claim is fully gone before the next claim's tab state. Keep honesty fine print ≥ 24 px.
 32. **Don't credit a source the brief doesn't hold.** A placard said "NASA: tides ~2.3 ms/century" when only secondary reports of NASA's figure were in the research brief. Credit only sources listed in `research_brief.json`, and word ranges by what each number is (e.g. "observed ~1.7 ms · tidal ~2.3 ms").
+33. **A label must never sit under a number it doesn't describe.** On video 13 the "Sun's core" label faded in under a rolling number still reading 44,900–3,110,000 °C, so a paused frame said the Sun's core was 64,600 °C (both QA A and B flagged it as major). Labels for a rolling value appear only on the seat frame, together with the final number.
+34. **A meter that is honest can start too empty.** Video 13's opening was black for ~6 s because nothing glows below ~525 °C, and it read as a broken frame. Keep the honesty but give the eye something cold and unlit from frame 0: the floor and its label, the spine, an unlit outline of what will light later.
+35. **Physical colour needs physical brightness too.** The first visible glow was drawn as saturated bright red; real first glow is dim and dull. Scale luminance with temperature near a threshold, not only hue.
+36. **False-colour views must map the right quantity.** A brightness-based LUT turned the sky hot orange; a thermal view shows clear sky cold. Mask or model the quantity the label claims.
+37. **Words like "stops changing" are absolutes too** (lesson 20): black-body colour only converges, so the mark became "colour barely changes past ~40,000 K", with a source added to the brief before it went on screen.
+38. **Cross-fading two AI plates cross-fades their tags into garbled text.** Swap the tag with a hard cut at the plate crossfade's midpoint, so exactly one tag shows on every frame a plate is visible.
 
 ## Utility scripts (`docs/channel/scripts/`)
 
