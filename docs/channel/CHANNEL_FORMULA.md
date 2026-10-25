@@ -32,6 +32,7 @@ pipeline). Where the two differ on the channel's own conventions, the user's rul
 | 9 | What If You Never Slept? | "Night Shift Chart": one sleep-lab chart strip feeding up the screen, cream paper, green grid, six ink pens, grease-pencil notes, HOURS AWAKE counter, AI clips only in a taped window | $2.37 / $4 |
 | 10 | How Loud Can a Sound Get? | "Pressure Column": ~6,000 warm dots of air on night blue, amber squeeze / blue stretch bands, lift-indicator dB rail; vacuum gaps go pure black at 194 and snap into a shock wall; drawn mercury U-tube gauge | $2.38 / $4 |
 | 11 | How Cold Can It Get? | "Frost Pane": one night window that frosts over (8% → 95%) as the meter; code-grown herringbone ferns; numbers scraped in by fingertip (Sora + DM Mono, slashed zeros); places seen through melted patches; a scraped FLOOR line nothing ever touches; breath-fog circle finale | $1.74 / $4 |
+| 12 | What If Earth Stopped Spinning? | "Stopped Forecast": a deadpan 1990s TV weather wall with no presenter; one orthographic globe from real Natural Earth coastlines (world-atlas + d3-geo) that brakes to 0 on the Atlantic view and only turns again at the end; orange = sudden stop, teal = slow stop, broadcast blue = the real world; "LIVE CAM" insets for AI places; drawn schematic of the Esri/Fraczek ocean model (Archivo Black + Barlow Condensed) | $1.70 / $4 |
 
 Each project's `art-direction.md`, `scenes.md`, `BUILD.md` and `artifacts/` define its look (they live under the
 gitignored `projects/` folder, so they exist only in the container that built them).
@@ -67,8 +68,8 @@ gitignored `projects/` folder, so they exist only in the container that built th
 
 ## Build process (Remotion "atelier")
 
-Mirror the most recent delivered project's layout. `projects/why-cant-you-tickle-yourself/` is the newest; if
-`projects/` is gone, rebuild from this description.
+Mirror the most recent delivered project's layout. `projects/what-if-earth-stopped-spinning/` is the newest (its
+`BUILD.md` is the fullest builder contract); if `projects/` is gone, rebuild from this description.
 
 1. **Research brief.** Write `artifacts/research_brief.json` with roughly 15–20 data points, each with its tag. List the myths and say which claims were dropped and why.
 2. **Proposal.** Write `artifacts/proposal_packet.json` with four concept options, the hook, a five-beat outline, the look, the asset plan and costs, and `pending_user_choices`.
@@ -144,6 +145,12 @@ Mirror the most recent delivered project's layout. `projects/why-cant-you-tickle
 24. **Blend modes under a fading parent flash.** A `mix-blend-mode: multiply` fill inside an element with opacity below 1 is isolated and showed as a flat colour for a frame (video 11, frame 772). Keep the blend element unfaded and fade its colour toward white (a white multiply does nothing), or tie it to the plate's own mask.
 25. **Envelopes that end at the last frame break the still ending.** Two frost-clearing masks with `to = total_frames` faded out over the final 8 frames, so the frost crept back as the film ended. Let end-running elements end after the film (T + 8), and assert in `build_props.py` that every channel is constant through the settle.
 26. **Generated music may ignore the requested key** (video 11 asked for E major, got A). Find the final cadence from the audio, not the prompt.
+27. **Kling "camera locked off" can still pan.** Video 12's K1 panned right ~2.7 px/frame, so the planned ping-pong would have shown the pan reversing; K2 was locked but nearly static. Measure camera motion and subject motion in every clip before planning ping-pong or holds. Convert 24 → 30 fps with frame blending, not frame duplication, or panning clips judder on every 5th frame.
+28. **Brisk deadpan reads run fast.** Bella read video 12's 104 words in ~42 s (~2.5 w/s, not 2.15), so the film came in at 45.3 s, the bottom of the window. For a quick, newsy delivery, plan at ~2.4 w/s or write ~110 words.
+29. **eleven_v4 can bake a pause into the text.** "Stop it suddenly," came out with 0.32 s of dead air after "Stop it" on both takes, so a retake doesn't help. Cut the silence at the edit (it is clean) or reword before generation.
+30. **A falling last word can be too soft for phones.** Video 12's closing "time" sat ~10 dB under "very long" even though it cleared the bed in 300–4000 Hz. Lesson 18's band margin isn't enough: also check the last word's broadband level against the rest of its sentence, and lift it with a constant gain (~+5 dB, not a limiter) so the cadence shape stays.
+31. **Honesty tags start with their graphic, and exits finish before the next claim.** QA found a drawn tag fading in 5–12 frames after its graphic, and the drained-ocean map still clearing under the "REAL" banner and MEASURED tab. A tag shares its graphic's first frame; any element tied to one claim is fully gone before the next claim's tab state. Keep honesty fine print ≥ 24 px.
+32. **Don't credit a source the brief doesn't hold.** A placard said "NASA: tides ~2.3 ms/century" when only secondary reports of NASA's figure were in the research brief. Credit only sources listed in `research_brief.json`, and word ranges by what each number is (e.g. "observed ~1.7 ms · tidal ~2.3 ms").
 
 ## Utility scripts (`docs/channel/scripts/`)
 
