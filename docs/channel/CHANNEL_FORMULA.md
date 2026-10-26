@@ -35,6 +35,7 @@ pipeline). Where the two differ on the channel's own conventions, the user's rul
 | 12 | What If Earth Stopped Spinning? | "Stopped Forecast": a deadpan 1990s TV weather wall with no presenter; one orthographic globe from real Natural Earth coastlines (world-atlas + d3-geo) that brakes to 0 on the Atlantic view and only turns again at the end; orange = sudden stop, teal = slow stop, broadcast blue = the real world; "LIVE CAM" insets for AI places; drawn schematic of the Esri/Fraczek ocean model (Archivo Black + Barlow Condensed) | $1.70 / $4 |
 | 13 | How Hot Can It Get? | "Black-Body" (partner to video 11): the frame's light is the meter — computed black-body colour (Planck × CIE 1931 → sRGB, unit-tested) of each rung; nothing glows below the Draper point (~525 °C), so Death Valley and Venus sit in a labelled false-colour window; one sweep red → orange → yellow-white → blue-white that "barely changes past ~40,000 K", then a zeros counter (12 → 32) carries a log-scale ladder from video 11's cold floor to the Planck temperature, where the rail frays (Saira Condensed + IBM Plex Mono) | $1.73 / $4 |
 | 14 | How a Mosquito Drinks Your Blood | "Operating Theatre": a deadpan surgical procedure on surgical-green drape; a steel tray of the six stylets, labelled; a six-step checklist (01 INCISE … 06 EXIT) ticking beside an "illustrative" ELAPSED clock; a drawn skin cross-section where the drinking tube bends and gropes; a drawn silhouette weight gauge (100% → ~250%) with "water out" drips; blood red only for blood, saliva cyan only for saliva; AI plates as tight crops with code motion (IBM Plex Sans Condensed + Roboto Mono) | $0.44 / $4 |
+| 15 | How Does a Cat Always Land on Its Feet? | Video 14's "Operating Theatre" engine reused as a slate **test lab** (first LEAN build: kit + 2 builders + qa_auto + 1 QA agent): a drawn two-half cat (FRONT amber / BACK cyan) whose halves turn against each other on two dials with a "total spin: 0" readout that is literally true of the drawing; "PROCEDURE: LANDING" checklist + illustrative clock; Marey 1894 engraving strip; a survival ledger with a hatched "never reached a vet: not counted" column | $0.39 / $4 |
 
 Each project's `art-direction.md`, `scenes.md`, `BUILD.md` and `artifacts/` define its look (they live under the
 gitignored `projects/` folder, so they exist only in the container that built them).
@@ -72,7 +73,7 @@ gitignored `projects/` folder, so they exist only in the container that built th
 
 Start every video with `bash docs/channel/scripts/new_project.sh <id> <CompName>`: it copies the kit
 (`docs/channel/kit/`, see `KIT.md`) so the boilerplate and the channel overlay are never rewritten. Mirror the most
-recent delivered project's layout for the per-video files. `projects/how-a-mosquito-drinks/` is the newest (its
+recent delivered project's layout for the per-video files. `projects/how-a-cat-lands/` is the newest (lean build; video 14 `projects/how-a-mosquito-drinks/` was its source) (its
 `BUILD.md` is the fullest builder contract; video 12's is the cleaner template for map/graphics looks); if `projects/` is gone, rebuild from this description and the kit.
 
 1. **Research brief.** Write `artifacts/research_brief.json` with roughly 15–20 data points, each with its tag. List the myths and say which claims were dropped and why.
@@ -176,6 +177,11 @@ recent delivered project's layout for the per-video files. `projects/how-a-mosqu
 42. **A meter for one claim leaves before the next claim's tab** (lesson 31 again). The weight gauge's "~250%" was still on screen under the PROBABLY tab for peeing. Fade every gauge mark and label out before the next tab state, and check placard fine print the same way.
 43. **Fade the final chord; never let the film end cut it.** The settle chord was cut in ~10 ms at about −22 dBFS on the last frame. Give the end a smooth decay over the last ~0.6 s to ≤ −35 dB, with no click in the last 20 ms.
 44. **Start the closing duck at the closing sentence.** Lifting just the last word wasn't enough while the bed swelled into the final cadence; duck deeper (−13 dB) from the first word of the closing sentence, then lift the last word (lesson 30).
+45. **A reused look plus the kit makes a lean build work.** Video 15 copied video 14's per-video files, added only its new devices, and used 2 builders, `qa_auto.py` and 1 QA agent: one major (fixed) instead of five, at a fraction of the agent work. Prefer it unless the topic needs a new look.
+46. **A value label appears when its bar seats, not while it fills** (lesson 33 again). The "~90% survived" label faded in with the bar, so a paused frame read "~90%" over a half bar. Show the label on the seat frame.
+47. **"Gone before the next tab" means before the tab's glide starts**, about 6 frames before the page (lesson 42). Fades that ended on the page frame were still visible during the glide.
+48. **Bella can read much faster than 2.3 words/s** (video 15: 107 words in 38.6 s). Plan the gaps, not the words: widen the section gaps (~1.2 s, ~1.45 s before the close) to reach ≥ 45 s instead of padding the script.
+49. **Report the closing margin from the stems.** `build_soundtrack.py` must write `ending.<word>_min_margin_db` (or `closing_min_margin_db`); `qa_auto.py` reads it, because a mixed master has no clean gaps to estimate the bed from.
 
 ## Utility scripts (`docs/channel/scripts/`)
 

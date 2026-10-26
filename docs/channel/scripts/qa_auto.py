@@ -141,7 +141,7 @@ def last_word(tl):
     return stem, tl[k], tl[stem + "_end_seconds"], lw
 
 
-def ending_checks(props, tl, audio):
+def ending_checks(props, tl, audio, sr=None):
     fps = tl["fps"]
     stem, rel_f, rel_s, lw = last_word(tl)
     chord_f = props["settle"]["chordFrame"]
@@ -168,11 +168,21 @@ def ending_checks(props, tl, audio):
         check("last word broadband (soft)", "L30", gap_db <= 3, f"{gap_db:+.1f} dB under", "<= 3 dB under", "WARN",
               note="3-5 dB under can be a natural falling cadence; listen on a phone speaker")
     b = band(mono)
-    gaps = [(a["end"] + 0.01, c["start"] - 0.01) for a, c in zip(sent, sent[1:]) if c["start"] - a["end"] > 0.06]
-    gaps.append((max(rel_s + 0.02, (chord_f / fps) - 0.12), chord_f / fps - 0.01))
-    bed = np.median([win_rms_db(b, g0, g1) for g0, g1 in gaps if g1 - g0 > 0.03]) if gaps else None
+    # bed estimate from the closing sentence's own word gaps only: the release-to-chord window is not used,
+    # because the duck is already lifting there (it gave false WARNs on every finished-line ending)
+    gaps = [(a["end"] + 0.01, c["start"] - 0.01) for a, c in zip(sent, sent[1:]) if c["start"] - a["end"] > 0.05]
+    gaps = [g for g in gaps if g[1] - g[0] > 0.03]
+    bed = np.median([win_rms_db(b, g0, g1) for g0, g1 in gaps]) if len(gaps) >= 2 else None
     word_band = win_rms_db(b, w["start"], w["end"])
-    if bed is not None:
+    # preferred: the stem measurement build_soundtrack.py writes (ending.<word>_min_margin_db or closing_min_margin_db)
+    end = (sr or {}).get("ending", {})
+    stem = next((end[k] for k in end if k.endswith("_min_margin_db") and isinstance(end[k], (int, float))), None)
+    if stem is not None:
+        check("last word over bed", "L18", stem >= 12, f"+{stem:.1f} dB (stems, soundtrack_report)", ">= +12 dB in 300-4000 Hz")
+    elif bed is None:
+        check("last word over bed", "L18", False, "not measurable (< 2 word gaps)", ">= +12 dB in 300-4000 Hz", "WARN",
+              note="measure it on the stems (clean narration vs the ducked bed)")
+    else:
         check("last word over bed", "L18", word_band - bed >= 12, f"+{word_band - bed:.1f} dB (gap estimate)", ">= +12 dB in 300-4000 Hz",
               "WARN", note="estimated from the sentence's word gaps; WARN means measure it on the stems")
 
@@ -263,7 +273,7 @@ def main():
     caption_checks(props, tl, script)
     forbidden_check(props, plan)
     audio = decode_audio(master)
-    ending_checks(props, tl, audio)
+    ending_checks(props, tl, audio, sr)
     floor_check(audio, tl)
     sfx_checks(props, sr, tl)
     if not a.no_pixels:

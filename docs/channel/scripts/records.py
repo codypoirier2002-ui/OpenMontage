@@ -25,7 +25,7 @@ import jsonschema
 from lib.checkpoint import write_checkpoint
 
 R = Path(__file__).resolve().parents[3]
-TYPE = {"narration": "narration", "tts": "narration", "image": "image", "still": "image", "video": "video", "clip": "video",
+TYPE = {"narration": "narration", "tts": "narration", "image": "image", "still": "image", "archival_image": "image", "archival": "image", "video": "video", "clip": "video",
         "music": "music", "sfx": "sfx"}
 
 
