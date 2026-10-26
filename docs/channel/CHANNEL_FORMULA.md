@@ -70,8 +70,10 @@ gitignored `projects/` folder, so they exist only in the container that built th
 
 ## Build process (Remotion "atelier")
 
-Mirror the most recent delivered project's layout. `projects/how-a-mosquito-drinks/` is the newest (its
-`BUILD.md` is the fullest builder contract; video 12's is the cleaner template for map/graphics looks); if `projects/` is gone, rebuild from this description.
+Start every video with `bash docs/channel/scripts/new_project.sh <id> <CompName>`: it copies the kit
+(`docs/channel/kit/`, see `KIT.md`) so the boilerplate and the channel overlay are never rewritten. Mirror the most
+recent delivered project's layout for the per-video files. `projects/how-a-mosquito-drinks/` is the newest (its
+`BUILD.md` is the fullest builder contract; video 12's is the cleaner template for map/graphics looks); if `projects/` is gone, rebuild from this description and the kit.
 
 1. **Research brief.** Write `artifacts/research_brief.json` with roughly 15–20 data points, each with its tag. List the myths and say which claims were dropped and why.
 2. **Proposal.** Write `artifacts/proposal_packet.json` with four concept options, the hook, a five-beat outline, the look, the asset plan and costs, and `pending_user_choices`.
@@ -85,9 +87,9 @@ Mirror the most recent delivered project's layout. `projects/how-a-mosquito-drin
 7. **Foundation agent.** It writes:
    - `align_narration.py` (with OVERRIDES), `timeline.json` and `build_props.py` (METER and captions);
    - `build_soundtrack.py`, the frame-aligned premix in `public/audio/soundtrack.wav`;
-   - `prepare_media.py`, `theme.ts`, `time.ts` (`useT()`, `driftFrame`, `loopFrame`), the `shared/` helpers and the overlay;
+   - `prepare_media.py`, `theme.ts`, `time.ts` (`useT()`, `driftFrame`, `loopFrame`) and `types.ts` to the kit's contract, and the `shared/` engines (the overlay, `stills.cjs` and `check_hooks.py` come from the kit);
    - the composition with stub scenes, and `BUILD.md`, which includes a unit split for four builders and §7 hand-offs;
-   - `stills.cjs` (it deletes its webpack bundle in a `finally`), `check_hooks.py`, and contact sheet 2.
+   - contact sheet 2.
 8. **Four scene builders in parallel**, one unit each, building only inside their own `scenes/uN/`. Relay their hand-off requests between units with SendMessage. Each builder:
    - runs tsc and `check_hooks.py scenes shared overlay`;
    - renders a 0.25-scale segment of its range;
@@ -107,12 +109,21 @@ Mirror the most recent delivered project's layout. `projects/how-a-mosquito-drin
     - Audio comes from the **premix**, not Remotion's AAC, which has a 42.7 ms lag. It gets one constant gain to −14 LUFS, then the limiter, then AAC 192k at 48 kHz.
     - Its checks: strict decode, ebur128, the AAC packet histogram, and silences.
     - Make contact sheet 3 from the master.
-11. **Three independent QA agents.**
+11. **Automatic QA first:** `python3 docs/channel/scripts/qa_auto.py projects/<id>` (~45 s, no tokens). Fix every FAIL and
+    re-master before any QA agent runs; give the agents `artifacts/qa_auto.json` so they skip what it measured and look
+    only at its WARN frames. It checks: spec, colour, strict decode, −14 LUFS / true peak, captions verbatim (L17) and
+    onsets ±3 f (L2/L13), page size, tab on page starts (L3), forbidden strings (L16/L20), settle length (L25), chord
+    after the last word (L26), end fade with no click (L43), last-word level (L30, L18 estimate), audio floor (L6/L29),
+    every SFX on its key frame (L4/L41), black and one-frame-flash frames, and new detail in the bottom UI zone or the
+    right rail (WARN: look at the listed frames).
+12. **Independent QA agents.**
     - **A: transcript, captions, mix, facts and ending.** Caption onsets must be measured from the clean WAVs with a 5 ms envelope and spectrograms, not from Whisper, and must be within ±3 frames.
     - **B: picture, colour, text** (contact sheets, seams, TikTok zones, honesty tags).
     - **C: playback, spec and A/V sync.** It uses matched filters of each cue rebuilt exactly as `build_soundtrack.py` makes it, aiming for ±1 frame of the visible landing.
     - Fix every blocker and major issue, re-render, then have an independent agent re-check before sending.
-12. **Records.** Write `asset_manifest.json`, `edit_decisions.json`, the assets/edit/compose checkpoints, `render_report.json` and `final_review.json`, all schema-valid.
+13. **Records.** Write `artifacts/records_notes.json` (the short hand-written part; format in the script's docstring),
+    then `PYTHONPATH=. python3 docs/channel/scripts/records.py projects/<id>`: it writes and schema-validates
+    `asset_manifest.json`, `edit_decisions.json`, `render_report.json`, `final_review.json` and the assets/edit/compose checkpoints.
 
 ## Lessons (each cost a QA round once — bake them into every plan)
 
@@ -168,5 +179,8 @@ Mirror the most recent delivered project's layout. `projects/how-a-mosquito-drin
 
 ## Utility scripts (`docs/channel/scripts/`)
 
+- `new_project.sh <id> <CompName>`: scaffolds a project from `docs/channel/kit/`.
 - `finish_master.sh`: the mastering chain described above. Run it as `P=... RAW=... OUT=... bash finish_master.sh`.
+- `qa_auto.py projects/<id> [--master …] [--no-pixels]`: the mechanical QA pass (step 11); writes `artifacts/qa_auto.json`, exits 1 on FAIL.
+- `records.py projects/<id>`: the pipeline records and checkpoints (step 13).
 - `make_ending_version.py`: turns an old loop-ending video into a finished-line "ending" version without re-rendering. It replays the opening line, continues the music from its matching point in `bed_raw.mp3`, then fades the music out and fades the picture to black.
