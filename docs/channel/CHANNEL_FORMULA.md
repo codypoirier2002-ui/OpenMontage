@@ -34,6 +34,7 @@ pipeline). Where the two differ on the channel's own conventions, the user's rul
 | 11 | How Cold Can It Get? | "Frost Pane": one night window that frosts over (8% → 95%) as the meter; code-grown herringbone ferns; numbers scraped in by fingertip (Sora + DM Mono, slashed zeros); places seen through melted patches; a scraped FLOOR line nothing ever touches; breath-fog circle finale | $1.74 / $4 |
 | 12 | What If Earth Stopped Spinning? | "Stopped Forecast": a deadpan 1990s TV weather wall with no presenter; one orthographic globe from real Natural Earth coastlines (world-atlas + d3-geo) that brakes to 0 on the Atlantic view and only turns again at the end; orange = sudden stop, teal = slow stop, broadcast blue = the real world; "LIVE CAM" insets for AI places; drawn schematic of the Esri/Fraczek ocean model (Archivo Black + Barlow Condensed) | $1.70 / $4 |
 | 13 | How Hot Can It Get? | "Black-Body" (partner to video 11): the frame's light is the meter — computed black-body colour (Planck × CIE 1931 → sRGB, unit-tested) of each rung; nothing glows below the Draper point (~525 °C), so Death Valley and Venus sit in a labelled false-colour window; one sweep red → orange → yellow-white → blue-white that "barely changes past ~40,000 K", then a zeros counter (12 → 32) carries a log-scale ladder from video 11's cold floor to the Planck temperature, where the rail frays (Saira Condensed + IBM Plex Mono) | $1.73 / $4 |
+| 14 | How a Mosquito Drinks Your Blood | "Operating Theatre": a deadpan surgical procedure on surgical-green drape; a steel tray of the six stylets, labelled; a six-step checklist (01 INCISE … 06 EXIT) ticking beside an "illustrative" ELAPSED clock; a drawn skin cross-section where the drinking tube bends and gropes; a drawn silhouette weight gauge (100% → ~250%) with "water out" drips; blood red only for blood, saliva cyan only for saliva; AI plates as tight crops with code motion (IBM Plex Sans Condensed + Roboto Mono) | $0.44 / $4 |
 
 Each project's `art-direction.md`, `scenes.md`, `BUILD.md` and `artifacts/` define its look (they live under the
 gitignored `projects/` folder, so they exist only in the container that built them).
@@ -69,7 +70,7 @@ gitignored `projects/` folder, so they exist only in the container that built th
 
 ## Build process (Remotion "atelier")
 
-Mirror the most recent delivered project's layout. `projects/how-hot-can-it-get/` is the newest (its
+Mirror the most recent delivered project's layout. `projects/how-a-mosquito-drinks/` is the newest (its
 `BUILD.md` is the fullest builder contract; video 12's is the cleaner template for map/graphics looks); if `projects/` is gone, rebuild from this description.
 
 1. **Research brief.** Write `artifacts/research_brief.json` with roughly 15–20 data points, each with its tag. List the myths and say which claims were dropped and why.
@@ -158,6 +159,12 @@ Mirror the most recent delivered project's layout. `projects/how-hot-can-it-get/
 36. **False-colour views must map the right quantity.** A brightness-based LUT turned the sky hot orange; a thermal view shows clear sky cold. Mask or model the quantity the label claims.
 37. **Words like "stops changing" are absolutes too** (lesson 20): black-body colour only converges, so the mark became "colour barely changes past ~40,000 K", with a source added to the brief before it went on screen.
 38. **Cross-fading two AI plates cross-fades their tags into garbled text.** Swap the tag with a hard cut at the plate crossfade's midpoint, so exactly one tag shows on every frame a plate is visible.
+39. **Count an AI insect's legs before you animate it.** Both video 14 mosquito stills had 7 legs (a 3-way junction, extra knees), so the Kling clips were skipped. Count limbs and joints at 4x before spending on a clip; when a still fails, crop tightly to the parts that are right, assert in a script that every bad junction sits outside the crop, and retouch any stray limb left inside.
+40. **In a drawn silhouette, any thin line from the body reads as a limb.** A long proboscis drawn down toward the feet made the six-leg gauge silhouette read as seven legs. Keep mouthparts short, curved and clearly off the head, ending well above the feet, and check the count at phone scale.
+41. **A drip sound plays on the frame the drop detaches.** The drip SFX fired while the drops still hung from the body. Release each drop (attached bead → free teardrop) on its sound's frame, including drops in photo plates.
+42. **A meter for one claim leaves before the next claim's tab** (lesson 31 again). The weight gauge's "~250%" was still on screen under the PROBABLY tab for peeing. Fade every gauge mark and label out before the next tab state, and check placard fine print the same way.
+43. **Fade the final chord; never let the film end cut it.** The settle chord was cut in ~10 ms at about −22 dBFS on the last frame. Give the end a smooth decay over the last ~0.6 s to ≤ −35 dB, with no click in the last 20 ms.
+44. **Start the closing duck at the closing sentence.** Lifting just the last word wasn't enough while the bed swelled into the final cadence; duck deeper (−13 dB) from the first word of the closing sentence, then lift the last word (lesson 30).
 
 ## Utility scripts (`docs/channel/scripts/`)
 
