@@ -1,6 +1,6 @@
 {
  "project": "how-fast-can-anything-go",
- "status": "BLOCKED - session 3 (2026-10-27): the ElevenLabs connector is connected and enabled in chat, but this session exposes only its agents_create_draft / agents_run_tests tools; none of the creative_* flow tools (speech, image, music, SFX, estimate) are available, so N-s2..s5, S1..S3, M1 and X1..X6 could not be generated. Container prepared: remotion-composer/projects symlink created, npm ci done. Waiting for the user to reconnect the ElevenLabs connector (https://claude.ai/customize/connectors) or approve another provider.",
+ "status": "PARTIAL - narration s1-s5 and SFX X1-X6 generated and QA-passed (ElevenLabs restricted connector, flow 18VH83ipjnViF9nyxvKe). Stills S1-S3 and music M1 NOT generated: the full ElevenLabs connector denies every tool call (connector tool permissions); the restricted connector has no image/music nodes.",
  "flow": {
   "name": "How Fast Can Anything Go?",
   "flow_id": "QQrEkYtv7r3zlWHCLNrq",
@@ -14,6 +14,13 @@
    "actual_usd": 0.024,
    "credits": 131.987,
    "note": "Only N-s1 generated. N-s2..s5 and S1..S3 were refused with quota_exceeded (plan quota 122934; 248 cr left at submit, ~116 after s1). Refused jobs are not charged."
+  },
+  {
+   "what": "4 TTS + 6 SFX, one take each",
+   "estimate_usd": 0.1125,
+   "actual_usd": 0.1014,
+   "credits": 557.6,
+   "date": "2026-10-27"
   }
  ],
  "still_gate": {},
@@ -39,73 +46,163 @@
   },
   {
    "id": "N-s2",
-   "status": "NOT GENERATED (quota_exceeded, not charged)",
-   "node_id": "zMVozhJjRNmXPhesSh9J",
-   "flow_id": "QQrEkYtv7r3zlWHCLNrq"
+   "type": "narration",
+   "section": "s2",
+   "file": "assets/audio/narration/s2.mp3",
+   "wav_48k_mono": "assets/audio/narration/s2.wav",
+   "take_file": "assets/audio/narration/takes/s2_take1.mp3",
+   "node_id": "kiXsC9meZHoSgJf5oub2",
+   "generation_id": "p2V20KaxH0s7PQDTSLab",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0262,
+   "credits": 143.99,
+   "duration_s": 8.96,
+   "qa": "PASS: prompted decode exact (WER 0.0); peak -3.6 dBFS; pauses at the full stop after \"twelve hundred.\" and the commas after \"still,\" / \"thousand,\"; no lesson-29 dead air"
   },
   {
    "id": "N-s3",
-   "status": "NOT GENERATED (quota_exceeded, not charged)",
-   "node_id": "SmzGcQsUQNYB2kqpw8JO",
-   "flow_id": "QQrEkYtv7r3zlWHCLNrq"
+   "type": "narration",
+   "section": "s3",
+   "file": "assets/audio/narration/s3.mp3",
+   "wav_48k_mono": "assets/audio/narration/s3.wav",
+   "take_file": "assets/audio/narration/takes/s3_take1.mp3",
+   "node_id": "Di2EDMTTqRTupXJTJ4Lp",
+   "generation_id": "XMultt7ixzV6bLmPFHTn",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.024,
+   "credits": 131.99,
+   "duration_s": 8.24,
+   "qa": "PASS: prompted decode exact (WER 0.0); peak -3.7 dBFS; pauses at the commas around \"the Parker Solar Probe,\" and after \"thousand,\"; clean"
   },
   {
    "id": "N-s4",
-   "status": "NOT GENERATED (quota_exceeded, not charged)",
-   "node_id": "d2w7wyGpFE0ciNmpIwOm",
-   "flow_id": "QQrEkYtv7r3zlWHCLNrq"
+   "type": "narration",
+   "section": "s4",
+   "file": "assets/audio/narration/s4.mp3",
+   "wav_48k_mono": "assets/audio/narration/s4.wav",
+   "take_file": "assets/audio/narration/takes/s4_take1.mp3",
+   "node_id": "c4uj1mYm5k30MkZDmlLT",
+   "generation_id": "HEQiI29j2m0wzl95YeAu",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0245,
+   "credits": 134.99,
+   "duration_s": 9.68,
+   "qa": "PASS: prompted decode exact (WER 0.0); peak -2.1 dBFS; 0.28 s breath after \"Light\" (awed delivery, floor -71 dB, not digital silence), then stops at \"billion.\" / \"catch it:\" / \"costs,\"; acceptable"
   },
   {
    "id": "N-s5",
-   "status": "NOT GENERATED (quota_exceeded, not charged)",
-   "node_id": "J5Mzkz7krRVNaYFcexCD",
-   "flow_id": "QQrEkYtv7r3zlWHCLNrq"
-  },
-  {
-   "id": "S1",
-   "status": "NOT GENERATED (quota_exceeded, not charged)",
-   "node_id": "AzSpSeROIDeQCoZoaYEa",
-   "flow_id": "QQrEkYtv7r3zlWHCLNrq"
-  },
-  {
-   "id": "S2",
-   "status": "NOT GENERATED (quota_exceeded, not charged)",
-   "node_id": "iMmyRJi3xwmPm4NmtK6s",
-   "flow_id": "QQrEkYtv7r3zlWHCLNrq"
-  },
-  {
-   "id": "S3",
-   "status": "NOT GENERATED (quota_exceeded, not charged)",
-   "node_id": "JM5MRkUafpMeZmTbvFlD",
-   "flow_id": "QQrEkYtv7r3zlWHCLNrq"
-  },
-  {
-   "id": "M1",
-   "status": "NOT STARTED (no node yet; blocked by quota)"
+   "type": "narration",
+   "section": "s5",
+   "file": "assets/audio/narration/s5.mp3",
+   "wav_48k_mono": "assets/audio/narration/s5.wav",
+   "take_file": "assets/audio/narration/takes/s5_take1.mp3",
+   "node_id": "Q21JmoZfNYTg43AFh1Rv",
+   "generation_id": "9ISVopMLKMJhkWTV750E",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0218,
+   "credits": 119.99,
+   "duration_s": 7.76,
+   "qa": "PASS: prompted decode exact (WER 0.0); peak -2.7 dBFS; 0.58 s after \"speed.\" and 0.52 s after \"Close.\" - the two scripted beats; clean"
   },
   {
    "id": "X1",
-   "status": "NOT STARTED (no node yet; blocked by quota)"
+   "type": "sfx",
+   "file": "assets/sfx/X1_whoosh.mp3",
+   "node_id": "521TF84B28bGzZrFEIgR",
+   "generation_id": "BEvU2n33v766EiWNNfik",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "model": "eleven_text_to_sound_v2",
+   "cost_usd": 0.0009,
+   "credits": 5.0,
+   "duration_s": 1.48
   },
   {
    "id": "X2",
-   "status": "NOT STARTED (no node yet; blocked by quota)"
+   "type": "sfx",
+   "file": "assets/sfx/X2_boom.mp3",
+   "node_id": "4cC71GUw7jqp5bWFg7ts",
+   "generation_id": "qPZx2SovgNi0zwObE3a3",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "model": "eleven_text_to_sound_v2",
+   "cost_usd": 0.0012,
+   "credits": 6.67,
+   "duration_s": 2.0
   },
   {
    "id": "X3",
-   "status": "NOT STARTED (no node yet; blocked by quota)"
+   "type": "sfx",
+   "file": "assets/sfx/X3_tick.mp3",
+   "node_id": "njMMbAfArYABpHis4ZI4",
+   "generation_id": "XfPAEmcthdrw59sNh85J",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "model": "eleven_text_to_sound_v2",
+   "cost_usd": 0.0003,
+   "credits": 1.67,
+   "duration_s": 0.48
   },
   {
    "id": "X4",
-   "status": "NOT STARTED (no node yet; blocked by quota)"
+   "type": "sfx",
+   "file": "assets/sfx/X4_hum.mp3",
+   "node_id": "iLFSrIzusnJojJS1kZpk",
+   "generation_id": "GgjAcdfp5IgRsB2qzwVX",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "model": "eleven_text_to_sound_v2",
+   "cost_usd": 0.0012,
+   "credits": 6.67,
+   "duration_s": 2.0
   },
   {
    "id": "X5",
-   "status": "NOT STARTED (no node yet; blocked by quota)"
+   "type": "sfx",
+   "file": "assets/sfx/X5_shimmer.mp3",
+   "node_id": "u5mZ7RcisbByQdn2YQGA",
+   "generation_id": "YMRgYUr4J609tOKgWpgk",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "model": "eleven_text_to_sound_v2",
+   "cost_usd": 0.0006,
+   "credits": 3.33,
+   "duration_s": 1.0
   },
   {
    "id": "X6",
-   "status": "NOT STARTED (no node yet; blocked by quota)"
+   "type": "sfx",
+   "file": "assets/sfx/X6_tink.mp3",
+   "node_id": "l5vtEBZeW0nOZp3kZ8d0",
+   "generation_id": "l9MddFnW5Rvi4hd2Gevm",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "model": "eleven_text_to_sound_v2",
+   "cost_usd": 0.0006,
+   "credits": 3.33,
+   "duration_s": 1.0
+  },
+  {
+   "id": "S1",
+   "name": "plate_cheetah",
+   "status": "NOT GENERATED (full ElevenLabs connector denied)"
+  },
+  {
+   "id": "S2",
+   "name": "plate_falcon_dive",
+   "status": "NOT GENERATED (full ElevenLabs connector denied)"
+  },
+  {
+   "id": "S3",
+   "name": "plate_parker_probe",
+   "status": "NOT GENERATED (full ElevenLabs connector denied)"
+  },
+  {
+   "id": "M1",
+   "type": "music",
+   "status": "NOT GENERATED (full ElevenLabs connector denied)"
   }
  ],
  "narration_summary": {
@@ -116,7 +213,8 @@
   "note": "Only s1 exists; total read length unknown until s2-s5 are generated."
  },
  "quality_concerns": [
-  "Workspace out of ElevenLabs credits: need about 1490 more cr (s2-s5 ~531, stills 3x275=825, music ~870, SFX ~100 = ~2330 cr, ~$0.42) before the run can finish."
+  "s4 has a 0.28 s breath after \"Light\" (awed tag); keep or trim at the edit, not a retake.",
+  "Stills and music pending; foundation can run with placeholder windows and a voice+SFX premix until they land."
  ],
  "contact_sheet": null,
  "total_usd": 0.024,
@@ -136,5 +234,17 @@
    "spent_usd": 0.0,
    "note": "no paid call made; ElevenLabs creative tools absent"
   }
- ]
+ ],
+ "flow_v2": {
+  "name": "How Fast Can Anything Go? (v16, audio)",
+  "flow_id": "18VH83ipjnViF9nyxvKe",
+  "connector": "ElevenLabs (restricted: speech + SFX)"
+ },
+ "spend": {
+  "session1_usd": 0.024,
+  "session3_usd": 0.1014,
+  "total_usd": 0.1254,
+  "cap_usd": 4.0,
+  "raw_narration_total_s": 42.56
+ }
 }

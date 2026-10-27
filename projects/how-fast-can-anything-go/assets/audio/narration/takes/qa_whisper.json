@@ -19,5 +19,122 @@
    ]
   ],
   "verdict": "PASS"
+ },
+ "s2": {
+  "take": "takes/s2_take1.mp3",
+  "transcript_plain": "Sound outruns them all at over 1200, but sitting still, you're doing over 100,000, riding Earth around the sun.",
+  "transcript_prompted": "Sound outruns them all at over twelve hundred. But sitting still, you're doing over a hundred thousand, riding Earth around the Sun.",
+  "wer_plain": 0.227,
+  "wer_prompted": 0.0,
+  "duration_s": 8.96,
+  "peak_dbfs": -3.6,
+  "internal_silences_ge_0.2s_[start,dur,floor_db]": [
+   [
+    3.08,
+    0.52,
+    -90.3
+   ],
+   [
+    4.69,
+    0.28,
+    -84.5
+   ],
+   [
+    6.98,
+    0.25,
+    -79.2
+   ]
+  ],
+  "silence_note": "pauses at the full stop after \"twelve hundred.\" and the commas after \"still,\" / \"thousand,\"; no lesson-29 dead air",
+  "verdict": "PASS"
+ },
+ "s3": {
+  "take": "takes/s3_take1.mp3",
+  "transcript_plain": "the fastest thing we've ever built. The Parker Solar Probe reached nearly 700,000, falling toward the sun.",
+  "transcript_prompted": "The fastest thing we've ever built, the Parker Solar Probe, reached nearly seven hundred thousand, falling toward the Sun.",
+  "wer_plain": 0.158,
+  "wer_prompted": 0.0,
+  "duration_s": 8.24,
+  "peak_dbfs": -3.7,
+  "internal_silences_ge_0.2s_[start,dur,floor_db]": [
+   [
+    2.06,
+    0.24,
+    -90.1
+   ],
+   [
+    3.62,
+    0.31,
+    -78.3
+   ],
+   [
+    6.36,
+    0.35,
+    -87.6
+   ]
+  ],
+  "silence_note": "pauses at the commas around \"the Parker Solar Probe,\" and after \"thousand,\"; clean",
+  "verdict": "PASS"
+ },
+ "s4": {
+  "take": "takes/s4_take1.mp3",
+  "transcript_plain": "Light does over a billion, and nothing with mass can catch it. The closer you get, the more energy each step costs without end.",
+  "transcript_prompted": "Light does over a billion. And nothing with mass can catch it. The closer you get, the more energy each step costs, without end.",
+  "wer_plain": 0.0,
+  "wer_prompted": 0.0,
+  "duration_s": 9.68,
+  "peak_dbfs": -2.1,
+  "internal_silences_ge_0.2s_[start,dur,floor_db]": [
+   [
+    1.34,
+    0.28,
+    -70.9
+   ],
+   [
+    2.27,
+    0.49,
+    -87.5
+   ],
+   [
+    4.7,
+    0.51,
+    -88.9
+   ],
+   [
+    6.11,
+    0.26,
+    -82.1
+   ],
+   [
+    8.53,
+    0.22,
+    -84.8
+   ]
+  ],
+  "silence_note": "0.28 s breath after \"Light\" (awed delivery, floor -71 dB, not digital silence), then stops at \"billion.\" / \"catch it:\" / \"costs,\"; acceptable",
+  "verdict": "PASS"
+ },
+ "s5": {
+  "take": "takes/s5_take1.mp3",
+  "transcript_plain": "The Large Hadron Collider pushes protons to within a hair of light speed. Close, but never all the way.",
+  "transcript_prompted": "The Large Hadron Collider pushes protons to within a hair of light speed. Close. But never all the way.",
+  "wer_plain": 0.0,
+  "wer_prompted": 0.0,
+  "duration_s": 7.76,
+  "peak_dbfs": -2.7,
+  "internal_silences_ge_0.2s_[start,dur,floor_db]": [
+   [
+    4.62,
+    0.58,
+    -87.9
+   ],
+   [
+    5.81,
+    0.52,
+    -89.2
+   ]
+  ],
+  "silence_note": "0.58 s after \"speed.\" and 0.52 s after \"Close.\" - the two scripted beats; clean",
+  "verdict": "PASS"
  }
 }
