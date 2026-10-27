@@ -1,0 +1,23 @@
+{
+ "s1": {
+  "take": "takes/s1_take1.mp3",
+  "transcript_plain": "You walk at about 5 kilometers an hour. A cheetah sprints at about 100. A diving falcon hits nearly 400.",
+  "transcript_prompted": "You walk at about five kilometres an hour. A cheetah sprints at about a hundred. A diving falcon hits nearly four hundred.",
+  "wer_prompted": 0.0,
+  "duration_s": 7.92,
+  "peak_dbfs": -3.6,
+  "internal_silences_ge_0.2s_[start,dur,floor_db]": [
+   [
+    2.51,
+    0.42,
+    -86.0
+   ],
+   [
+    4.85,
+    0.42,
+    -84.3
+   ]
+  ],
+  "verdict": "PASS"
+ }
+}

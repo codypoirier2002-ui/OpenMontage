@@ -1,0 +1,31 @@
+{
+  "//": "Typecheck only. Run THROUGH the remotion-composer symlink so node_modules resolve: cd remotion-composer && npx tsc -p projects/how-fast-can-anything-go/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2020"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true,
+    "preserveSymlinks": true
+  },
+  "include": [
+    "*.ts",
+    "*.tsx",
+    "scenes/**/*.ts",
+    "scenes/**/*.tsx",
+    "shared/**/*.ts",
+    "shared/**/*.tsx",
+    "overlay/**/*.tsx"
+  ]
+}

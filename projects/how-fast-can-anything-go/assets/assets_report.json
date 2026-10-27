@@ -1,0 +1,133 @@
+{
+ "project": "how-fast-can-anything-go",
+ "status": "BLOCKED - ElevenLabs quota exhausted on first run; on resume (after the reported top-up) the ElevenLabs MCP tools were unavailable in this agent session (server disconnected; creative_get_flow rejected as 'No such tool available' / permission deny rule)",
+ "flow": {
+  "name": "How Fast Can Anything Go?",
+  "flow_id": "QQrEkYtv7r3zlWHCLNrq",
+  "url": "https://elevenlabs.io/app/flows/QQrEkYtv7r3zlWHCLNrq"
+ },
+ "policy": "One flow; generations_count=1; estimate_only before the paid run (1488.19 cr / $0.2706 for 5 TTS + 3 stills); image nodes set 9:16 2K high at creation; prompts verbatim.",
+ "runs": [
+  {
+   "what": "5 TTS + 3 stills",
+   "estimate_usd": 0.2706,
+   "actual_usd": 0.024,
+   "credits": 131.987,
+   "note": "Only N-s1 generated. N-s2..s5 and S1..S3 were refused with quota_exceeded (plan quota 122934; 248 cr left at submit, ~116 after s1). Refused jobs are not charged."
+  }
+ ],
+ "still_gate": {},
+ "fallbacks_triggered": [],
+ "retakes": [],
+ "assets": [
+  {
+   "id": "N-s1",
+   "type": "narration",
+   "section": "s1",
+   "file": "assets/audio/narration/s1.mp3",
+   "wav_48k_mono": "assets/audio/narration/s1.wav",
+   "take_file": "assets/audio/narration/takes/s1_take1.mp3",
+   "node_id": "vbMslrs9YxebJxegTmwX",
+   "generation_id": "qO0vxKtcAcke9tnwrFmg",
+   "flow_id": "QQrEkYtv7r3zlWHCLNrq",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.024,
+   "credits": 131.987,
+   "duration_s": 7.92,
+   "qa": "PASS: prompted decode exact; numbers read 'five', 'a hundred', 'four hundred'; silences 0.42 s at 2.51 and 4.85 s, both at full stops (digital silence), no lesson-29 pause; peak -3.6 dBFS."
+  },
+  {
+   "id": "N-s2",
+   "status": "NOT GENERATED (quota_exceeded, not charged)",
+   "node_id": "zMVozhJjRNmXPhesSh9J",
+   "flow_id": "QQrEkYtv7r3zlWHCLNrq"
+  },
+  {
+   "id": "N-s3",
+   "status": "NOT GENERATED (quota_exceeded, not charged)",
+   "node_id": "SmzGcQsUQNYB2kqpw8JO",
+   "flow_id": "QQrEkYtv7r3zlWHCLNrq"
+  },
+  {
+   "id": "N-s4",
+   "status": "NOT GENERATED (quota_exceeded, not charged)",
+   "node_id": "d2w7wyGpFE0ciNmpIwOm",
+   "flow_id": "QQrEkYtv7r3zlWHCLNrq"
+  },
+  {
+   "id": "N-s5",
+   "status": "NOT GENERATED (quota_exceeded, not charged)",
+   "node_id": "J5Mzkz7krRVNaYFcexCD",
+   "flow_id": "QQrEkYtv7r3zlWHCLNrq"
+  },
+  {
+   "id": "S1",
+   "status": "NOT GENERATED (quota_exceeded, not charged)",
+   "node_id": "AzSpSeROIDeQCoZoaYEa",
+   "flow_id": "QQrEkYtv7r3zlWHCLNrq"
+  },
+  {
+   "id": "S2",
+   "status": "NOT GENERATED (quota_exceeded, not charged)",
+   "node_id": "iMmyRJi3xwmPm4NmtK6s",
+   "flow_id": "QQrEkYtv7r3zlWHCLNrq"
+  },
+  {
+   "id": "S3",
+   "status": "NOT GENERATED (quota_exceeded, not charged)",
+   "node_id": "JM5MRkUafpMeZmTbvFlD",
+   "flow_id": "QQrEkYtv7r3zlWHCLNrq"
+  },
+  {
+   "id": "M1",
+   "status": "NOT STARTED (no node yet; blocked by quota)"
+  },
+  {
+   "id": "X1",
+   "status": "NOT STARTED (no node yet; blocked by quota)"
+  },
+  {
+   "id": "X2",
+   "status": "NOT STARTED (no node yet; blocked by quota)"
+  },
+  {
+   "id": "X3",
+   "status": "NOT STARTED (no node yet; blocked by quota)"
+  },
+  {
+   "id": "X4",
+   "status": "NOT STARTED (no node yet; blocked by quota)"
+  },
+  {
+   "id": "X5",
+   "status": "NOT STARTED (no node yet; blocked by quota)"
+  },
+  {
+   "id": "X6",
+   "status": "NOT STARTED (no node yet; blocked by quota)"
+  }
+ ],
+ "narration_summary": {
+  "durations_s": {
+   "s1": 7.92
+  },
+  "total_raw_s": null,
+  "note": "Only s1 exists; total read length unknown until s2-s5 are generated."
+ },
+ "quality_concerns": [
+  "Workspace out of ElevenLabs credits: need about 1490 more cr (s2-s5 ~531, stills 3x275=825, music ~870, SFX ~100 = ~2330 cr, ~$0.42) before the run can finish."
+ ],
+ "contact_sheet": null,
+ "total_usd": 0.024,
+ "hard_limit_usd": 1.0,
+ "expected_usd": 0.45,
+ "user_cap_usd": 4.0,
+ "cost_basis": "price from creative_get_flow_run_status: 131.987 cr = $0.0240",
+ "resume_attempt": {
+  "when": "2026-10-27",
+  "action": "creative_get_flow on QQrEkYtv7r3zlWHCLNrq",
+  "result": "tool unavailable in this session; nothing generated, nothing charged",
+  "account_or_flow_change": "none recorded (could not reach the server to tell whether the flow is still reachable or whether a new account is connected)"
+ }
+}

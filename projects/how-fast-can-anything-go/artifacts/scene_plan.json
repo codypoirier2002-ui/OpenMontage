@@ -1,0 +1,983 @@
+{
+ "version": "1.0",
+ "style_playbook": "custom",
+ "scenes": [
+  {
+   "id": "sc01",
+   "type": "animation",
+   "start_seconds": 0.0,
+   "end_seconds": 3.607,
+   "script_section_id": "s1",
+   "description": "Render: atelier component Walk. FRAME 0: night-ink sky (#070A12 -> #0D1424 vertical gradient, faint star dust), a vertical steel log-scale rail at x ~250 from y 1080 (1 km/h) to y 380 (10^9 km/h), decade ticks with small mono numbers (1, 10, 100, 1,000 ... 1,000,000,000), label 'km/h \u00b7 log scale'. At the very top a short red line labelled 'c' (dim until s4). A white-cyan marker (#BFF6FF core, soft glow) sits at 5 km/h with a rung label 'WALK \u00b7 ~5' and a tiny walker icon. ZEROS counter top right: '0'. MOTION: marker breathes; streaks length = log10(speed).",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "movement": " marker breathes; streaks length = log10(speed).",
+   "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "overlay_notes": "CAPTION 'You walk at about five kilometres an hour.'. TAB MEASURED. OVERLAYS: rail label 'km/h \u00b7 log scale'; rung 'WALK \u00b7 ~5'; counter 'ZEROS 0'. SFX: X1 soft whoosh as the rail draws.",
+   "shot_language": {
+    "shot_size": "medium",
+    "camera_movement": "static",
+    "lens_mm": 50,
+    "lighting_key": "high_key",
+    "depth_of_field": "deep",
+    "color_temperature": "neutral"
+   },
+   "shot_intent": "the speed ladder appears; a marker at walking pace",
+   "narrative_role": "establish_context",
+   "information_role": "the speed ladder appears; a marker at walking pace",
+   "hero_moment": false,
+   "texture_keywords": [
+    "log-scale speed ladder",
+    "glowing marker",
+    "zeros counter",
+    "the c wall"
+   ],
+   "required_assets": [
+    {
+     "type": "code",
+     "description": "Remotion atelier (video 13 ladder/counter engine via the kit): rail, marker, rungs, counter",
+     "source": "generate"
+    }
+   ]
+  },
+  {
+   "id": "sc02",
+   "type": "broll",
+   "start_seconds": 3.607,
+   "end_seconds": 6.764,
+   "script_section_id": "s1",
+   "description": "Render: atelier component Cheetah. The marker eases up to 100 (rung 'CHEETAH \u00b7 ~100' seats with its number on arrival); the counter ticks to 2. A window (x 470-920, y 420-900) opens on S1: a cheetah at full sprint (AI impression).",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera; inset media framed from measured pixels (lesson 9).",
+   "movement": "see description",
+   "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "overlay_notes": "CAPTION 'A cheetah sprints at about a hundred.'. TAB MEASURED. OVERLAYS: rung 'CHEETAH \u00b7 ~100'; window tag 'AI impression'. SFX: X1 whoosh on the climb; X3 digit tick on the counter.",
+   "shot_language": {
+    "shot_size": "wide",
+    "camera_movement": "static",
+    "lens_mm": 50,
+    "lighting_key": "high_key",
+    "depth_of_field": "deep",
+    "color_temperature": "warm"
+   },
+   "shot_intent": "the marker climbs to ~100; a cheetah in the window",
+   "narrative_role": "evidence",
+   "information_role": "the marker climbs to ~100; a cheetah in the window",
+   "hero_moment": false,
+   "texture_keywords": [
+    "log-scale speed ladder",
+    "glowing marker",
+    "zeros counter",
+    "the c wall"
+   ],
+   "required_assets": [
+    {
+     "type": "image_still",
+     "description": "S1 cheetah at full sprint",
+     "source": "generate"
+    }
+   ]
+  },
+  {
+   "id": "sc03",
+   "type": "broll",
+   "start_seconds": 6.764,
+   "end_seconds": 9.92,
+   "script_section_id": "s1",
+   "description": "Render: atelier component Falcon. Window swaps (hard tag swap at the crossfade midpoint, lesson 38) to S2: a peregrine falcon in a steep dive (AI impression). The marker climbs to ~390 (rung 'FALCON (dive) \u00b7 ~390' with a hatched PROBABLY chip 'commonly cited').",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera; inset media framed from measured pixels (lesson 9).",
+   "movement": "see description",
+   "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "overlay_notes": "CAPTION 'A diving falcon hits nearly four hundred.'. TAB PROBABLY. OVERLAYS: rung 'FALCON (dive) \u00b7 ~390'; chip 'commonly cited'; window tag 'AI impression'. SFX: X1 whoosh.",
+   "shot_language": {
+    "shot_size": "wide",
+    "camera_movement": "static",
+    "lens_mm": 50,
+    "lighting_key": "high_key",
+    "depth_of_field": "deep",
+    "color_temperature": "warm"
+   },
+   "shot_intent": "the marker climbs to ~390; a diving falcon",
+   "narrative_role": "evidence",
+   "information_role": "the marker climbs to ~390; a diving falcon",
+   "hero_moment": false,
+   "texture_keywords": [
+    "log-scale speed ladder",
+    "glowing marker",
+    "zeros counter",
+    "the c wall"
+   ],
+   "required_assets": [
+    {
+     "type": "image_still",
+     "description": "S2 peregrine falcon diving",
+     "source": "generate"
+    }
+   ]
+  },
+  {
+   "id": "sc04",
+   "type": "animation",
+   "start_seconds": 9.92,
+   "end_seconds": 13.545,
+   "script_section_id": "s2",
+   "description": "Render: atelier component Sound. Window closes. The marker crosses 1,235 (rung 'SOUND \u00b7 1,235') with a soft circular pressure ring expanding once from the marker; counter 3.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "movement": "see description",
+   "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "overlay_notes": "CAPTION 'Sound outruns them all at over twelve hundred.'. TAB MEASURED. OVERLAYS: rung 'SOUND \u00b7 1,235'. SFX: X2 soft sonic thump on the rung seat.",
+   "shot_language": {
+    "shot_size": "medium",
+    "camera_movement": "static",
+    "lens_mm": 50,
+    "lighting_key": "high_key",
+    "depth_of_field": "deep",
+    "color_temperature": "neutral"
+   },
+   "shot_intent": "the sound rung: a soft shock ring",
+   "narrative_role": "evidence",
+   "information_role": "the sound rung: a soft shock ring",
+   "hero_moment": false,
+   "texture_keywords": [
+    "log-scale speed ladder",
+    "glowing marker",
+    "zeros counter",
+    "the c wall"
+   ],
+   "required_assets": [
+    {
+     "type": "code",
+     "description": "shock ring",
+     "source": "generate"
+    }
+   ]
+  },
+  {
+   "id": "sc05",
+   "type": "animation",
+   "start_seconds": 13.545,
+   "end_seconds": 19.89,
+   "script_section_id": "s2",
+   "description": "Render: atelier component YouAreFast. HERO. A small 'YOU' tag (a seated figure icon) appears at the WALK rung and then jumps up the rail to 107,000 on 'hundred thousand' (rung 'EARTH (orbit) \u00b7 ~107,000'); beside the rail a small drawn orbit diagram (Sun dot, Earth dot on a dashed circle, arrow) labelled 'drawn \u00b7 not to scale'. Counter 5.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "movement": "see description",
+   "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "overlay_notes": "CAPTION 'But sitting still, you're doing over a hundred thousand, riding Earth around the Sun.'. TAB MEASURED. OVERLAYS: tag 'YOU'; rung 'EARTH (orbit) \u00b7 ~107,000'; inset tag 'drawn \u00b7 not to scale'. SFX: X1 big whoosh on the jump; X3 ticks on the counter.",
+   "shot_language": {
+    "shot_size": "medium",
+    "camera_movement": "static",
+    "lens_mm": 50,
+    "lighting_key": "high_key",
+    "depth_of_field": "deep",
+    "color_temperature": "neutral"
+   },
+   "shot_intent": "HERO: 'YOU' jumps up the ladder to Earth's orbit",
+   "narrative_role": "deliver_payload",
+   "information_role": "HERO: 'YOU' jumps up the ladder to Earth's orbit",
+   "hero_moment": true,
+   "texture_keywords": [
+    "log-scale speed ladder",
+    "glowing marker",
+    "zeros counter",
+    "the c wall"
+   ],
+   "required_assets": [
+    {
+     "type": "code",
+     "description": "YOU tag, orbit inset",
+     "source": "generate"
+    }
+   ]
+  },
+  {
+   "id": "sc06",
+   "type": "broll",
+   "start_seconds": 19.89,
+   "end_seconds": 24.448,
+   "script_section_id": "s3",
+   "description": "Render: atelier component Parker. Window opens on S3: a heat-shielded spacecraft close to the Sun (AI impression of the Parker Solar Probe). Label 'Parker Solar Probe \u00b7 NASA'.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera; inset media framed from measured pixels (lesson 9).",
+   "movement": "see description",
+   "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "overlay_notes": "CAPTION 'The fastest thing we've ever built, the Parker Solar Probe,'. TAB MEASURED. OVERLAYS: label 'Parker Solar Probe \u00b7 NASA'; window tag 'AI impression'. SFX: X4 low hum swells under the window (soft).",
+   "shot_language": {
+    "shot_size": "wide",
+    "camera_movement": "static",
+    "lens_mm": 50,
+    "lighting_key": "high_key",
+    "depth_of_field": "deep",
+    "color_temperature": "warm"
+   },
+   "shot_intent": "the Parker Solar Probe near the Sun",
+   "narrative_role": "introduce_subject",
+   "information_role": "the Parker Solar Probe near the Sun",
+   "hero_moment": false,
+   "texture_keywords": [
+    "log-scale speed ladder",
+    "glowing marker",
+    "zeros counter",
+    "the c wall"
+   ],
+   "required_assets": [
+    {
+     "type": "image_still",
+     "description": "S3 Parker Solar Probe near the Sun",
+     "source": "generate"
+    }
+   ]
+  },
+  {
+   "id": "sc07",
+   "type": "animation",
+   "start_seconds": 24.448,
+   "end_seconds": 28.55,
+   "script_section_id": "s3",
+   "description": "Render: atelier component Falling. The marker climbs to 692,000 (rung 'PARKER (fastest built) \u00b7 ~692,000'); counter 5. A small arrow on the window plate points toward the Sun: 'falling toward the Sun'.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "movement": "see description",
+   "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "overlay_notes": "CAPTION 'reached nearly seven hundred thousand, falling toward the Sun.'. TAB MEASURED. OVERLAYS: rung 'PARKER (fastest built) \u00b7 ~692,000'; label 'falling toward the Sun'. SFX: X1 whoosh.",
+   "shot_language": {
+    "shot_size": "medium",
+    "camera_movement": "static",
+    "lens_mm": 50,
+    "lighting_key": "high_key",
+    "depth_of_field": "deep",
+    "color_temperature": "neutral"
+   },
+   "shot_intent": "the marker climbs to ~692,000",
+   "narrative_role": "evidence",
+   "information_role": "the marker climbs to ~692,000",
+   "hero_moment": false,
+   "texture_keywords": [
+    "log-scale speed ladder",
+    "glowing marker",
+    "zeros counter",
+    "the c wall"
+   ],
+   "required_assets": [
+    {
+     "type": "code",
+     "description": "rung, arrow",
+     "source": "generate"
+    }
+   ]
+  },
+  {
+   "id": "sc08",
+   "type": "animation",
+   "start_seconds": 28.55,
+   "end_seconds": 30.817,
+   "script_section_id": "s4",
+   "description": "Render: atelier component Light. Window closes. A thin beam races up the rail to the top (1,079,252,849) in a few frames; rung 'LIGHT \u00b7 1,079,252,849'; counter 9; the 'c' line at the top lights red.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "movement": "see description",
+   "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "overlay_notes": "CAPTION 'Light does over a billion.'. TAB MEASURED. OVERLAYS: rung 'LIGHT \u00b7 1,079,252,849'; line 'c'. SFX: X5 high shimmer on the beam.",
+   "shot_language": {
+    "shot_size": "medium",
+    "camera_movement": "static",
+    "lens_mm": 50,
+    "lighting_key": "high_key",
+    "depth_of_field": "deep",
+    "color_temperature": "neutral"
+   },
+   "shot_intent": "light at the top of the ladder",
+   "narrative_role": "build_tension",
+   "information_role": "light at the top of the ladder",
+   "hero_moment": false,
+   "texture_keywords": [
+    "log-scale speed ladder",
+    "glowing marker",
+    "zeros counter",
+    "the c wall"
+   ],
+   "required_assets": [
+    {
+     "type": "code",
+     "description": "light beam",
+     "source": "generate"
+    }
+   ]
+  },
+  {
+   "id": "sc09",
+   "type": "animation",
+   "start_seconds": 30.817,
+   "end_seconds": 33.99,
+   "script_section_id": "s4",
+   "description": "Render: atelier component Wall. The marker leaves PARKER and climbs toward 'c' but slows smoothly; label 'anything with mass' on the marker.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "movement": "see description",
+   "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "overlay_notes": "CAPTION 'And nothing with mass can catch it:'. TAB MEASURED. OVERLAYS: label 'anything with mass'. SFX: none.",
+   "shot_language": {
+    "shot_size": "medium",
+    "camera_movement": "static",
+    "lens_mm": 50,
+    "lighting_key": "high_key",
+    "depth_of_field": "deep",
+    "color_temperature": "neutral"
+   },
+   "shot_intent": "the wall: the marker can't reach c",
+   "narrative_role": "build_tension",
+   "information_role": "the wall: the marker can't reach c",
+   "hero_moment": false,
+   "texture_keywords": [
+    "log-scale speed ladder",
+    "glowing marker",
+    "zeros counter",
+    "the c wall"
+   ],
+   "required_assets": [
+    {
+     "type": "code",
+     "description": "asymptotic climb",
+     "source": "generate"
+    }
+   ]
+  },
+  {
+   "id": "sc10",
+   "type": "diagram",
+   "start_seconds": 33.99,
+   "end_seconds": 39.43,
+   "script_section_id": "s4",
+   "description": "Render: atelier component Energy. Beside the rail an 'ENERGY NEEDED' bar grows faster and faster as the marker inches up (a 1/sqrt(1-v^2/c^2) curve drawn small with axis labels 'speed' / 'energy', 'drawn \u00b7 not to scale'); the bar runs off the top of the frame on 'without end'.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "movement": "see description",
+   "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "overlay_notes": "CAPTION 'the closer you get, the more energy each step costs, without end.'. TAB MEASURED. OVERLAYS: label 'ENERGY NEEDED'; axis labels 'speed' / 'energy'; inset tag 'drawn \u00b7 not to scale'. SFX: X3 accelerating ticks as the bar grows.",
+   "shot_language": {
+    "shot_size": "medium",
+    "camera_movement": "static",
+    "lens_mm": 50,
+    "lighting_key": "high_key",
+    "depth_of_field": "deep",
+    "color_temperature": "neutral"
+   },
+   "shot_intent": "an energy bar that grows without limit",
+   "narrative_role": "evidence",
+   "information_role": "an energy bar that grows without limit",
+   "hero_moment": false,
+   "texture_keywords": [
+    "log-scale speed ladder",
+    "glowing marker",
+    "zeros counter",
+    "the c wall"
+   ],
+   "required_assets": [
+    {
+     "type": "code",
+     "description": "energy bar + curve",
+     "source": "generate"
+    }
+   ]
+  },
+  {
+   "id": "sc11",
+   "type": "text_card",
+   "start_seconds": 39.43,
+   "end_seconds": 45.082,
+   "script_section_id": "s5",
+   "description": "Render: atelier component LHC. HERO 2. A mono readout card: 'LHC protons' then '99.9999991 %' types digit by digit (each 9 on a tick); the marker creeps to just under 'c' with a tiny bracket 'the gap'. Placard credits CERN.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "movement": "see description",
+   "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "overlay_notes": "CAPTION 'The Large Hadron Collider pushes protons to within a hair of light speed.'. TAB MEASURED. OVERLAYS: label 'LHC protons'; readout '99.9999991 %'; bracket 'the gap'. SFX: X3 tick per digit.",
+   "shot_language": {
+    "shot_size": "medium",
+    "camera_movement": "static",
+    "lens_mm": 50,
+    "lighting_key": "high_key",
+    "depth_of_field": "deep",
+    "color_temperature": "neutral"
+   },
+   "shot_intent": "HERO 2: the nines fill; the gap stays",
+   "narrative_role": "deliver_payload",
+   "information_role": "HERO 2: the nines fill; the gap stays",
+   "hero_moment": true,
+   "texture_keywords": [
+    "log-scale speed ladder",
+    "glowing marker",
+    "zeros counter",
+    "the c wall"
+   ],
+   "required_assets": [
+    {
+     "type": "code",
+     "description": "readout card",
+     "source": "generate"
+    }
+   ]
+  },
+  {
+   "id": "sc12",
+   "type": "animation",
+   "start_seconds": 45.082,
+   "end_seconds": 49.2,
+   "script_section_id": "s5",
+   "description": "Render: atelier component NeverAllTheWay. Everything settles: the full ladder visible, the marker steady just under 'c', the gap bracket stays. After 'way' a ~1.5 s still hold on the resolved chord; caption slab 'What's the fastest thing you've ridden?'; tab idle.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "movement": "see description",
+   "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+   "overlay_notes": "CAPTION 'Close. But never all the way.'. TAB MEASURED. OVERLAYS: settle caption 'What's the fastest thing you've ridden?'. SFX: X6 soft glass tink BEFORE the closing sentence if it fits, else none; resolved chord ~0.15 s after 'way'.",
+   "shot_language": {
+    "shot_size": "medium",
+    "camera_movement": "static",
+    "lens_mm": 50,
+    "lighting_key": "high_key",
+    "depth_of_field": "deep",
+    "color_temperature": "neutral"
+   },
+   "shot_intent": "the marker holds just under the wall; settle",
+   "narrative_role": "resolution",
+   "information_role": "the marker holds just under the wall; settle",
+   "hero_moment": false,
+   "texture_keywords": [
+    "log-scale speed ladder",
+    "glowing marker",
+    "zeros counter",
+    "the c wall"
+   ],
+   "required_assets": [
+    {
+     "type": "code",
+     "description": "settle",
+     "source": "generate"
+    }
+   ]
+  }
+ ],
+ "metadata": {
+  "project_id": "how-fast-can-anything-go",
+  "title": "How Fast Can Anything Go?",
+  "stage": "scene_plan",
+  "pipeline": "animated-explainer",
+  "director_skill_used": "skills/pipelines/explainer/scene-director.md",
+  "render_runtime": "remotion",
+  "composition_mode": "atelier",
+  "renderer_family": "explainer-teacher",
+  "series_style": "REUSED ENGINE: Black-Body ladder (video 13), re-dressed as 'Speed Ladder'",
+  "fps": 30,
+  "resolution": "1080x1920",
+  "aspect_ratio": "9:16",
+  "total_duration_seconds": 49.2,
+  "total_frames": 1476,
+  "platform": "tiktok",
+  "timing_basis": "PLANNED estimate from script.json (2.3 w/s, scene splits by word share). Re-time at the foundation stage from the aligned narration: every boundary after sc01 = its anchor word's measured onset - 2 frames. Bella reads fast: widen section gaps for >= 45 s (lesson 48).",
+  "build_mode": "LEAN: bash docs/channel/scripts/new_project.sh how-fast-can-anything-go SpeedLadder; reuse video 13's shared/Ladder.tsx, Window.tsx, Grain, Icons, the zeros counter and theme structure (no black-body colour); video 15's pipeline scripts (process_narration, align_narration, sweep_onsets, build_soundtrack incl. ending.closing_min_margin_db, build_props, prepare_media, sync_scene_plan, contact_sheet2). New: rail marker with log streaks, YOU tag + orbit inset, light beam + c wall, energy bar/curve, LHC nines readout. 2 scene builders. qa_auto.py, then 1 QA agent.",
+  "taste_profile": {
+   "design_read": "Youth science short: a calm climb up one speed ladder, from walking to light, ending at a wall that never moves.",
+   "visual_variance": 4,
+   "motion_intensity": 4,
+   "information_density": 4,
+   "palette_discipline": "Night ink sky, steel rail, ONE white-cyan accent for the marker; no temperature colours; red only for 'c' (the wall).",
+   "layout_variation": "Log rail + marker, zeros counter, window plates, the LHC nines readout.",
+   "reference_strategy": "Numbers from the brief only; AI stills as short tagged inserts.",
+   "anti_patterns": [
+    "'faster than light' as possible",
+    "exact snail speed",
+    "'the falcon is the fastest animal' as fact without the dive caveat",
+    "warp-drive imagery"
+   ],
+   "quality_gates": [
+    "Every rung's number matches the brief",
+    "Log scale labelled as such",
+    "The marker never touches 'c'",
+    "Falcon tagged PROBABLY"
+   ]
+  },
+  "palette": {
+   "Night Ink (sky)": "#070A12 -> #0D1424",
+   "Steel (rail, ticks)": "#AEB8C2",
+   "Marker (ONLY the moving marker and light beam)": "#BFF6FF",
+   "Wall red (ONLY the c line)": "#E5484D",
+   "Chip / card": "#141B2B",
+   "Bone (text)": "#F4EFE6"
+  },
+  "typography": {
+   "display": "video 13's display face (headers, rung names)",
+   "data": "video 13's mono face (numbers, counter, readout; slashed zeros)",
+   "captions": "Bricolage Grotesque 800 (channel standard)",
+   "tab": "Spline Sans Mono 600 (channel standard)",
+   "glyphs": "check ',', '\u00b7', '~', '%', '(', ')', digits; arrows SVG"
+  },
+  "safe_areas": {
+   "top_ui_y": [
+    0,
+    192
+   ],
+   "stage_y": [
+    320,
+    1100
+   ],
+   "rail": {
+    "x": [
+     180,
+     320
+    ],
+    "y": [
+     380,
+     1080
+    ]
+   },
+   "window": {
+    "x": [
+     470,
+     920
+    ],
+    "y": [
+     420,
+     900
+    ]
+   },
+   "counter": {
+    "x": [
+     640,
+     920
+    ],
+    "y": [
+     220,
+     340
+    ]
+   },
+   "placard_rail": {
+    "x": [
+     140,
+     912
+    ],
+    "y": [
+     1124,
+     1204
+    ]
+   },
+   "honesty_tab": {
+    "x": [
+     140,
+     628
+    ],
+    "y": [
+     1236,
+     1290
+    ]
+   },
+   "caption_slab": {
+    "x": [
+     140,
+     940
+    ],
+    "y": [
+     1296,
+     1488
+    ]
+   },
+   "bottom_ui_y": [
+    1574,
+    1920
+   ],
+   "right_rail": "x >= 929: sky only, no text"
+  },
+  "signature_device": "One log-scale speed rail in km/h (1 to 10^9) with a single glowing marker that climbs rung by rung while a ZEROS counter ticks 0 -> 9; the top is a red 'c' line the marker approaches but never touches; streak length = log10(speed).",
+  "hero_beats": [
+   "sc05 'YOU' jumps from WALK to Earth's orbit (~107,000)",
+   "sc11 the LHC nines fill while the gap under 'c' stays"
+  ],
+  "honesty_grammar": "MEASURED solid tab; PROBABLY outline + hatch (the falcon dive). AI: 'AI impression' on S1-S3. Drawings: 'drawn \u00b7 not to scale' (orbit inset, energy curve). The rail is labelled 'km/h \u00b7 log scale'. Numbers on rungs are the brief's values; '~' where the brief gives a range.",
+  "captions": {
+   "role": "Word-highlight captions from script.json words verbatim",
+   "slab": "channel standard: #0A0B10 62%, blur 10, r 24, x 140-940, y 1296-1488",
+   "type": "Bricolage Grotesque 800 58 px, <= 2 lines / 6 words per page",
+   "word_states": "upcoming Bone 45%, active 100% lifted 3 px, spoken 82%; no colour tones (plain only)",
+   "pages": [
+    {
+     "section": "s1",
+     "page": "You walk at about five kilometres"
+    },
+    {
+     "section": "s1",
+     "page": "an hour. A cheetah sprints at"
+    },
+    {
+     "section": "s1",
+     "page": "about a hundred."
+    },
+    {
+     "section": "s1",
+     "page": "A diving falcon hits nearly four"
+    },
+    {
+     "section": "s1",
+     "page": "hundred."
+    },
+    {
+     "section": "s2",
+     "page": "Sound outruns them all at over"
+    },
+    {
+     "section": "s2",
+     "page": "twelve hundred. But sitting still,"
+    },
+    {
+     "section": "s2",
+     "page": "you're doing over a hundred thousand,"
+    },
+    {
+     "section": "s2",
+     "page": "riding Earth around the Sun."
+    },
+    {
+     "section": "s3",
+     "page": "The fastest thing we've ever built,"
+    },
+    {
+     "section": "s3",
+     "page": "the Parker Solar Probe,"
+    },
+    {
+     "section": "s3",
+     "page": "reached nearly seven hundred thousand,"
+    },
+    {
+     "section": "s3",
+     "page": "falling toward the Sun."
+    },
+    {
+     "section": "s4",
+     "page": "Light does over a billion."
+    },
+    {
+     "section": "s4",
+     "page": "And nothing with mass can catch"
+    },
+    {
+     "section": "s4",
+     "page": "it: the closer you get,"
+    },
+    {
+     "section": "s4",
+     "page": "the more energy each step costs,"
+    },
+    {
+     "section": "s4",
+     "page": "without end."
+    },
+    {
+     "section": "s5",
+     "page": "The Large Hadron Collider pushes protons"
+    },
+    {
+     "section": "s5",
+     "page": "to within a hair of light"
+    },
+    {
+     "section": "s5",
+     "page": "speed. Close. But never all the"
+    },
+    {
+     "section": "s5",
+     "page": "way."
+    }
+   ]
+  },
+  "placards": [
+   {
+    "scenes": "sc01-sc03",
+    "text": "cheetah: collar study, Wilson et al., Nature 2013",
+    "fine_print": "falcon dive ~390 km/h is commonly cited, weakly sourced"
+   },
+   {
+    "scenes": "sc04-sc05",
+    "text": "sound: 343 m/s in 20 \u00b0C air \u00b7 Earth: 29.78 km/s (NASA)",
+    "fine_print": "km/h on a log scale: each tick is 10x"
+   },
+   {
+    "scenes": "sc06-sc07",
+    "text": "Parker Solar Probe, NASA: ~692,000 km/h (Dec 2024)",
+    "fine_print": "speed from falling toward the Sun"
+   },
+   {
+    "scenes": "sc08-sc10",
+    "text": "c = 299,792,458 m/s exactly (NIST)",
+    "fine_print": "energy needed grows without limit as speed nears c"
+   },
+   {
+    "scenes": "sc11-sc12",
+    "text": "CERN LHC: protons at 6.8 TeV (2022)",
+    "fine_print": "0.999999991 of light speed"
+   }
+  ],
+  "stills": [
+   {
+    "still_id": "S1",
+    "name": "plate_cheetah",
+    "clip": null,
+    "aspect": "9:16",
+    "resolution": "2K",
+    "output_path": "projects/how-fast-can-anything-go/assets/images/plate_cheetah.png",
+    "used_in": [
+     "sc02"
+    ],
+    "prompt": "Intended use: a vertical 9:16 window in a clean dark science graphic; keep the middle 60% of the frame the most interesting.\n\nWildlife photograph of a cheetah at full sprint across dry savanna grass, side view, body stretched, legs extended, dust kicked up, late golden light, sharp focus on the cheetah with a slightly blurred background suggesting speed. Natural, realistic. No people, no vehicles, no text, no watermark.",
+    "qa": "9:16 2K; 4 legs, 1 tail, 2 ears; realistic; no text.",
+    "honesty": "'AI impression' tag while visible.",
+    "risk": "extra legs; merged limbs",
+    "fallback": "crop (lesson 39) or drawn icon only"
+   },
+   {
+    "still_id": "S2",
+    "name": "plate_falcon_dive",
+    "clip": null,
+    "aspect": "9:16",
+    "resolution": "2K",
+    "output_path": "projects/how-fast-can-anything-go/assets/images/plate_falcon_dive.png",
+    "used_in": [
+     "sc03"
+    ],
+    "prompt": "Intended use: a vertical 9:16 window in a clean dark science graphic; keep the middle 60% of the frame the most interesting.\n\nWildlife photograph of a peregrine falcon in a steep high-speed dive (stoop), wings tucked tight against its body, head forward, against a clear blue sky, sharp focus, realistic plumage (slate-grey back, barred pale chest, dark moustache stripe). No other birds, no text, no watermark.",
+    "qa": "9:16 2K; 1 head, 2 wings tucked, 1 tail; realistic peregrine markings; no text.",
+    "honesty": "'AI impression' tag while visible.",
+    "risk": "extra wings; wrong species look",
+    "fallback": "crop or drawn icon only"
+   },
+   {
+    "still_id": "S3",
+    "name": "plate_parker_probe",
+    "clip": null,
+    "aspect": "9:16",
+    "resolution": "2K",
+    "output_path": "projects/how-fast-can-anything-go/assets/images/plate_parker_probe.png",
+    "used_in": [
+     "sc06",
+     "sc07"
+    ],
+    "prompt": "Intended use: a vertical 9:16 window in a clean dark science graphic; keep the middle 60% of the frame the most interesting.\n\nSpace illustration of a small spacecraft with a large flat white circular heat shield facing the Sun, its instruments in the shield's shadow, two small solar panels angled back, flying close to the enormous glowing Sun whose surface and corona fill the top of the frame, black space below. Realistic, NASA-style artist impression. No text, no logos, no watermark.",
+    "qa": "9:16 2K; one spacecraft with a heat shield facing the Sun; no text/logos.",
+    "honesty": "'AI impression' tag while visible.",
+    "risk": "looks like a different spacecraft; text/logos",
+    "fallback": "drawn probe icon + label"
+   }
+  ],
+  "ai_clips": [],
+  "archival": [],
+  "audio": {
+   "narration": {
+    "voice": "Bella hpp4J3VqNfWAUOO0d1Us, eleven_v4, provider_text from script.json",
+    "policy": "1 take per section; retake only on failed Whisper QA; max 2",
+    "estimated_usd": 0.14
+   },
+   "music": {
+    "tool": "eleven_music, instrumental, ~58 s, 1 generation",
+    "prompt": "Instrumental bed for a curious, uplifting science short about speed, from walking pace to the speed of light, 58 seconds, about 100 BPM, D major. A light, steady texture from the very first beat: soft synth pulse, plucked strings and a gentle shimmering pad. Keep the same instruments, density and loudness from 0 to about 52 seconds: no intro build, no drop, no breakdown, no hits, no risers, no fade, no silence, no drums. Then in the last 6 seconds play one clear resolved final cadence (IV - V - I) and end on a single sustained major chord that rings out naturally for about 3 seconds.",
+    "alignment": "find the final tonic attack from the audio (lesson 26); align ~0.15 s after 'way'; flatten level steps; duck -13 dB from 'But' (lesson 44); 0.6 s end fade (lesson 43); write ending.closing_min_margin_db (lesson 49)",
+    "duck_db": 12
+   },
+   "sfx": [
+    {
+     "id": "X1",
+     "prompt": "soft airy upward whoosh, short, clean",
+     "use": "sc01-sc07, sc05 bigger",
+     "estimated_usd": 0.003
+    },
+    {
+     "id": "X2",
+     "prompt": "soft muffled sonic boom thump, distant, gentle",
+     "use": "sc04",
+     "estimated_usd": 0.003
+    },
+    {
+     "id": "X3",
+     "prompt": "small clean digital counter tick",
+     "use": "counter, sc10, sc11",
+     "estimated_usd": 0.003
+    },
+    {
+     "id": "X4",
+     "prompt": "low warm electrical hum swelling then fading, 2 s",
+     "use": "sc06",
+     "estimated_usd": 0.003
+    },
+    {
+     "id": "X5",
+     "prompt": "bright high crystalline shimmer sweep upward, 1 s",
+     "use": "sc08",
+     "estimated_usd": 0.003
+    },
+    {
+     "id": "X6",
+     "prompt": "single soft glass tink, delicate",
+     "use": "sc12",
+     "estimated_usd": 0.003
+    }
+   ]
+  },
+  "budget_table": {
+   "line_items": [
+    {
+     "item": "Stills S1-S3",
+     "count": 3,
+     "unit_usd": 0.05,
+     "subtotal_usd": 0.15
+    },
+    {
+     "item": "Clips",
+     "count": 0,
+     "unit_usd": 0.617,
+     "subtotal_usd": 0.0
+    },
+    {
+     "item": "Narration 5 sections",
+     "count": 5,
+     "subtotal_usd": 0.14
+    },
+    {
+     "item": "Music",
+     "count": 1,
+     "subtotal_usd": 0.16
+    },
+    {
+     "item": "SFX X1-X6",
+     "count": 6,
+     "unit_usd": 0.003,
+     "subtotal_usd": 0.018
+    }
+   ],
+   "planned_total_usd": 0.468,
+   "qa_reserve_usd": 0.085,
+   "expected_usd": 0.45,
+   "worst_case_usd": 0.65,
+   "approved_cap_usd": 4.0,
+   "generating_agent_hard_limit_usd": 1.0
+  },
+  "generation_order": [
+   "narration s1-s5 (locks timing) + Whisper QA",
+   "S1-S3 - check aspect/size; count legs/wings (lesson 39); probe has no text/logos",
+   "music",
+   "SFX X1-X6"
+  ],
+  "ending": {
+   "rule": "finished line",
+   "closing_line": "Close. But never all the way.",
+   "settle_seconds": 1.5,
+   "loop_cut": "optional only"
+  },
+  "narration_by_scene": {
+   "sc01": "You walk at about five kilometres an hour.",
+   "sc02": "A cheetah sprints at about a hundred.",
+   "sc03": "A diving falcon hits nearly four hundred.",
+   "sc04": "Sound outruns them all at over twelve hundred.",
+   "sc05": "But sitting still, you're doing over a hundred thousand, riding Earth around the Sun.",
+   "sc06": "The fastest thing we've ever built, the Parker Solar Probe,",
+   "sc07": "reached nearly seven hundred thousand, falling toward the Sun.",
+   "sc08": "Light does over a billion.",
+   "sc09": "And nothing with mass can catch it:",
+   "sc10": "the closer you get, the more energy each step costs, without end.",
+   "sc11": "The Large Hadron Collider pushes protons to within a hair of light speed.",
+   "sc12": "Close. But never all the way."
+  },
+  "verified_on_screen_strings": [
+   "km/h \u00b7 log scale",
+   "1",
+   "10",
+   "100",
+   "1,000",
+   "10,000",
+   "100,000",
+   "1,000,000",
+   "10,000,000",
+   "100,000,000",
+   "1,000,000,000",
+   "c",
+   "WALK \u00b7 ~5",
+   "CHEETAH \u00b7 ~100",
+   "FALCON (dive) \u00b7 ~390",
+   "commonly cited",
+   "SOUND \u00b7 1,235",
+   "YOU",
+   "EARTH (orbit) \u00b7 ~107,000",
+   "Parker Solar Probe \u00b7 NASA",
+   "PARKER (fastest built) \u00b7 ~692,000",
+   "falling toward the Sun",
+   "LIGHT \u00b7 1,079,252,849",
+   "anything with mass",
+   "ENERGY NEEDED",
+   "speed",
+   "energy",
+   "LHC protons",
+   "99.9999991 %",
+   "the gap",
+   "ZEROS",
+   "AI impression",
+   "drawn \u00b7 not to scale",
+   "What's the fastest thing you've ridden?"
+  ],
+  "forbidden_on_screen": [
+   "faster than light",
+   "warp",
+   "fastest animal",
+   "snail",
+   "the falcon is the fastest",
+   "light speed is possible"
+  ],
+  "lessons_applied": {
+   "L01": "no hooks after early returns (kit)",
+   "L02": "caption onsets swept on clean WAVs",
+   "L03": "tab keyed to caption page starts",
+   "L04": "SFX on contact-1 / visible seat",
+   "L06": "slab across short gaps (kit)",
+   "L17": "numbers as spoken",
+   "L20": "'nothing with mass' is the physics; falcon PROBABLY",
+   "L25": "settle constant",
+   "L26": "final cadence from the audio",
+   "L30": "'way' level",
+   "L31/L42": "graphics leave before the tab glide",
+   "L33/L46": "rung labels seat with their numbers; no number before the marker arrives",
+   "L38": "AI-tag swaps by hard cut",
+   "L39": "count legs/wings on AI animals",
+   "L43": "0.6 s end fade",
+   "L44": "duck from 'But'",
+   "L45": "lean reuse",
+   "L48": "widen gaps for a fast read",
+   "L49": "closing margin from stems"
+  },
+  "risks": [
+   {
+    "risk": "Log scale misread as linear",
+    "fallback": "'log scale' label + 'each tick is 10x' fine print"
+   },
+   {
+    "risk": "Marker appears to touch c",
+    "fallback": "build_props asserts the marker stays >= 6 px under the c line on every frame"
+   },
+   {
+    "risk": "Probe still has text/logos or looks wrong",
+    "fallback": "crop or drawn probe icon"
+   },
+   {
+    "risk": "Same look as video 13",
+    "fallback": "no black-body colour; single white-cyan accent; speed streaks; red c wall"
+   }
+  ],
+  "changes_from_proposal": [
+   "Energy bar + small relativistic curve added to sc10 so 'more energy each step, without end' is shown",
+   "Falcon rung carries a hatched 'commonly cited' chip"
+  ],
+  "approval_gate": [
+   "Art direction: Speed Ladder (video 13 engine), 12 scenes, heroes sc05 + sc11 (art-direction.md, scenes.md)",
+   "Assets: S1-S3, 0 clips, 5 TTS, 1 music bed, 6 SFX; expected ~$0.45 vs $4 cap",
+   "Honesty: AI tags; drawings 'not to scale'; log scale labelled; falcon PROBABLY"
+  ],
+  "planned_total_duration_seconds": 49.2,
+  "planned_total_frames": 1476
+ }
+}

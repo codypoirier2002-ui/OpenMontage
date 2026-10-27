@@ -1,0 +1,264 @@
+{
+ "version": "1.0",
+ "topic": "How Fast Can Anything Go? - a speed ladder from walking pace to light: cheetah, diving falcon, sound, Earth around the Sun, the Parker Solar Probe, light; and why nothing with mass can reach it (~45 s vertical; channel video 16, the 'How X Can It Get' series)",
+ "research_date": "2026-10-26",
+ "research_summary": "Ladder (km/h): walking ~5; cheetah ~100 (collar study: fastest 59 mph ~95 km/h in the wild; 64 mph ~103 km/h on a track); peregrine falcon dive ~390 (commonly cited; weak sourcing -> PROBABLY); sound ~1,235 (343 m/s in 20 C air); Earth's orbit ~107,000 (29.78 km/s, NASA); Parker Solar Probe ~692,000 (430,000 mph, ~192 km/s, Dec 2024 perihelion; fastest human-made object); light 1,079,252,849 km/h (299,792,458 m/s exactly, by definition). LHC protons reach 0.999999991 c (6.8 TeV, 2022). Nothing with mass can reach c: the energy needed grows without limit as v -> c (special relativity). Dropped: exact snail speeds (sources vary).",
+ "landscape": {
+  "existing_content": [
+   {
+    "title": "Various 'fastest things in the universe' compilations",
+    "url": "https://www.youtube.com/results?search_query=fastest+things+in+the+universe",
+    "source": "youtube",
+    "angle": "ranked list",
+    "what_it_covers": "big numbers",
+    "what_it_misses": "a single scale you can feel; why c is a wall"
+   },
+   {
+    "title": "Space.com: Parker Solar Probe smashes speed record",
+    "url": "https://www.space.com/nasa-parker-solar-probe-fastest-man-made-object-breaks-record",
+    "source": "science news",
+    "angle": "one record",
+    "what_it_covers": "the probe's speed",
+    "what_it_misses": "the ladder around it"
+   },
+   {
+    "title": "How It Works: how fast is the LHC?",
+    "url": "https://www.howitworksdaily.com/how-fast-is-the-large-hadron-collider/",
+    "source": "magazine",
+    "angle": "particle speeds",
+    "what_it_covers": "0.999999991 c",
+    "what_it_misses": "everyday scale"
+   }
+  ],
+  "saturated_angles": [
+   "Long 'top 10 fastest' lists"
+  ],
+  "underserved_gaps": [
+   "One ladder in ~45 s that puts you on it (you're doing 100,000 km/h right now)",
+   "Why the last step is impossible, said simply"
+  ]
+ },
+ "data_points": [
+  {
+   "claim": "Typical walking speed ~5 km/h. MEASURED (typical) [WALK]",
+   "source_url": "https://www.britannica.com/science/sound-physics/The-speed-of-sound",
+   "source_name": "general reference",
+   "credibility": "secondary_source",
+   "surprise_factor": "expected",
+   "usable_as": "hook"
+  },
+  {
+   "claim": "Cheetah: ~100 km/h; collar study (Wilson et al. 2013) fastest wild cheetah 59 mph (~95 km/h); older track figure 64 mph (~103 km/h). MEASURED ('about a hundred') [CHEETAH]",
+   "source_url": "https://gizmodo.com/we-finally-have-an-accurate-measurmentof-a-cheetahs-512903920",
+   "source_name": "Gizmodo (Wilson et al., Nature 2013)",
+   "credibility": "secondary_source",
+   "surprise_factor": "expected",
+   "usable_as": "script_anchor"
+  },
+  {
+   "claim": "Peregrine falcon in a dive: commonly cited ~386-390 km/h. PROBABLY (weak sourcing) [FALCON]",
+   "source_url": "https://birdfunfacts.substack.com/p/which-bird-can-fly-faster-than-an",
+   "source_name": "birdfunfacts; popular sources",
+   "credibility": "secondary_source",
+   "surprise_factor": "surprising",
+   "usable_as": "script_anchor"
+  },
+  {
+   "claim": "Speed of sound in air at 20 C: 343 m/s = ~1,235 km/h. MEASURED [SOUND]",
+   "source_url": "https://www.britannica.com/science/sound-physics/The-speed-of-sound",
+   "source_name": "Britannica",
+   "credibility": "secondary_source",
+   "surprise_factor": "expected",
+   "usable_as": "script_anchor"
+  },
+  {
+   "claim": "Earth orbits the Sun at ~29.78 km/s = ~107,000 km/h. MEASURED [ORBIT]",
+   "source_url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+   "source_name": "NASA Earth fact sheet",
+   "credibility": "primary_source",
+   "surprise_factor": "surprising",
+   "usable_as": "stat_card"
+  },
+  {
+   "claim": "Parker Solar Probe: ~430,000 mph (~692,000 km/h, ~192 km/s) at its Dec 2024 perihelion; fastest human-made object; speed from falling toward the Sun after Venus assists. MEASURED [PROBE]",
+   "source_url": "https://www.space.com/nasa-parker-solar-probe-fastest-man-made-object-breaks-record",
+   "source_name": "Space.com; SlashGear; Live Science",
+   "credibility": "secondary_source",
+   "surprise_factor": "surprising",
+   "usable_as": "stat_card"
+  },
+  {
+   "claim": "Speed of light in vacuum: 299,792,458 m/s exactly (defined) = 1,079,252,849 km/h. MEASURED [LIGHT]",
+   "source_url": "https://physics.nist.gov/cgi-bin/cuu/Value?c",
+   "source_name": "NIST CODATA",
+   "credibility": "primary_source",
+   "surprise_factor": "expected",
+   "usable_as": "stat_card"
+  },
+  {
+   "claim": "Parker's record is ~0.064% of light speed. MEASURED (arithmetic) [RATIO]",
+   "source_url": "https://physics.nist.gov/cgi-bin/cuu/Value?c",
+   "source_name": "derived",
+   "credibility": "primary_source",
+   "surprise_factor": "surprising",
+   "usable_as": "script_anchor"
+  },
+  {
+   "claim": "Nothing with mass can reach light speed: the energy needed grows without limit as speed approaches c (special relativity). MEASURED [WALL]",
+   "source_url": "https://www.howitworksdaily.com/how-fast-is-the-large-hadron-collider/",
+   "source_name": "How It Works; standard physics",
+   "credibility": "secondary_source",
+   "surprise_factor": "surprising",
+   "usable_as": "closing_punch"
+  },
+  {
+   "claim": "LHC protons reach ~0.999999991 c at 6.8 TeV (2022). MEASURED [LHC]",
+   "source_url": "https://www.space.com/cern-large-hadron-collider-record-energy-proton-beam",
+   "source_name": "Space.com (CERN); How It Works",
+   "credibility": "secondary_source",
+   "surprise_factor": "surprising",
+   "usable_as": "closing_punch"
+  },
+  {
+   "claim": "Exact garden-snail speed - sources vary widely. MAYBE - dropped [SNAIL]",
+   "source_url": "https://en.wikipedia.org/wiki/Snail",
+   "source_name": "various",
+   "credibility": "anecdotal",
+   "surprise_factor": "expected",
+   "usable_as": "stat_card"
+  }
+ ],
+ "audience_insights": {
+  "common_questions": [
+   "What's the fastest thing?",
+   "Can anything go faster than light?",
+   "How fast are we moving right now?"
+  ],
+  "misconceptions": [
+   {
+    "myth": "With a big enough rocket you could reach light speed.",
+    "reality": "The energy needed grows without limit."
+   },
+   {
+    "myth": "Standing still means not moving.",
+    "reality": "Earth carries you at ~107,000 km/h around the Sun."
+   }
+  ],
+  "knowledge_level": "general/teen"
+ },
+ "expert_voices": [
+  {
+   "name": "NASA Parker Solar Probe team",
+   "position": "fastest human-made object"
+  },
+  {
+   "name": "CERN",
+   "position": "LHC proton speeds"
+  }
+ ],
+ "angles_discovered": [
+  {
+   "name": "Climb the speed ladder",
+   "hook": "You walk at about five kilometres an hour. Let's keep going.",
+   "type": "data_driven",
+   "why_now": "Completes the 'How X can it get' series.",
+   "grounded_in": [
+    "WALK",
+    "CHEETAH",
+    "FALCON",
+    "SOUND",
+    "ORBIT",
+    "PROBE",
+    "LIGHT"
+   ]
+  },
+  {
+   "name": "The last step is a wall",
+   "hook": "The fastest thing we've built is 0.06% of light speed.",
+   "type": "contrarian",
+   "why_now": "Parker record 2024.",
+   "grounded_in": [
+    "RATIO",
+    "WALL",
+    "LHC"
+   ]
+  },
+  {
+   "name": "You're already fast",
+   "hook": "Sitting still, you're doing 100,000 km/h.",
+   "type": "evergreen",
+   "why_now": "Puts the viewer on the ladder.",
+   "grounded_in": [
+    "ORBIT"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "url": "https://physics.nist.gov/cgi-bin/cuu/Value?c",
+   "title": "NIST: speed of light",
+   "used_for": "LIGHT, RATIO",
+   "reliability": "primary"
+  },
+  {
+   "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+   "title": "NASA Earth fact sheet",
+   "used_for": "ORBIT",
+   "reliability": "primary"
+  },
+  {
+   "url": "https://www.space.com/nasa-parker-solar-probe-fastest-man-made-object-breaks-record",
+   "title": "Space.com: Parker Solar Probe record",
+   "used_for": "PROBE",
+   "reliability": "secondary"
+  },
+  {
+   "url": "https://www.slashgear.com/2212156/man-made-object-fastest-speed-record-parker-solar-probe/",
+   "title": "SlashGear: Parker 430,000 mph",
+   "used_for": "PROBE",
+   "reliability": "secondary"
+  },
+  {
+   "url": "https://gizmodo.com/we-finally-have-an-accurate-measurmentof-a-cheetahs-512903920",
+   "title": "Gizmodo: cheetah collar study",
+   "used_for": "CHEETAH",
+   "reliability": "secondary"
+  },
+  {
+   "url": "https://birdfunfacts.substack.com/p/which-bird-can-fly-faster-than-an",
+   "title": "birdfunfacts: peregrine dive",
+   "used_for": "FALCON",
+   "reliability": "secondary"
+  },
+  {
+   "url": "https://www.britannica.com/science/sound-physics/The-speed-of-sound",
+   "title": "Britannica: speed of sound",
+   "used_for": "SOUND, WALK",
+   "reliability": "secondary"
+  },
+  {
+   "url": "https://www.space.com/cern-large-hadron-collider-record-energy-proton-beam",
+   "title": "Space.com: LHC 6.8 TeV",
+   "used_for": "LHC",
+   "reliability": "secondary"
+  },
+  {
+   "url": "https://www.howitworksdaily.com/how-fast-is-the-large-hadron-collider/",
+   "title": "How It Works: how fast is the LHC",
+   "used_for": "LHC, WALL",
+   "reliability": "secondary"
+  }
+ ],
+ "metadata": {
+  "searches": 3,
+  "webfetch": "not needed",
+  "dropped_claims": [
+   "snail speed (sources vary)",
+   "peregrine figure kept but PROBABLY"
+  ],
+  "myths": [
+   "big rocket reaches c",
+   "standing still"
+  ]
+ }
+}
