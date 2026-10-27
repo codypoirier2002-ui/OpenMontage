@@ -19,7 +19,7 @@ python3 - <<'PY' && pass "python: numpy scipy PIL faster_whisper" || fail "pytho
 import numpy, scipy, PIL, faster_whisper
 PY
 ls -d ~/.cache/huggingface/hub/models--Systran--faster-whisper-small.en >/dev/null 2>&1 && pass "faster-whisper small.en cached (run align with HF_HUB_OFFLINE=1)" || fail "faster-whisper small.en not cached: alignment will try the network"
-FONTS="$ROOT/docs/channel/kit/template/public/fonts"; [ -d "$FONTS" ] && [ -n "$(ls "$FONTS" 2>/dev/null)" ] && pass "kit fonts present" || echo "WARN  kit fonts folder empty or missing ($FONTS): fetch_fonts.py needs the network"
+have fc-list && fc-list 2>/dev/null | grep -qiE "IBM Plex|Saira" && pass "channel fonts installed system-wide" || echo "WARN  channel fonts not system-wide: the project's fetch_fonts.py must reach Google Fonts once (writes public/fonts)"
 free_mb=$(df -Pm "$ROOT" | awk 'NR==2{print $4}'); [ "${free_mb:-0}" -gt 1500 ] && pass "disk ${free_mb} MB free" || fail "disk ${free_mb} MB free (< 1500): a full render + master needs ~1.5 GB; delete old renders/review first"
 if [ -n "${1:-}" ]; then
   P="$ROOT/$1"
