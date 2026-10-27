@@ -77,6 +77,11 @@ Start every video with `bash docs/channel/scripts/new_project.sh <id> <CompName>
 recent delivered project's layout for the per-video files. `projects/how-fast-can-anything-go/` is the newest (lean build on video 13's engine; `projects/how-a-cat-lands/` before it) (its
 `BUILD.md` is the fullest builder contract; video 12's is the cleaner template for map/graphics looks); if `projects/` is gone, rebuild from this description and the kit.
 
+0. **Preflight.** `bash docs/channel/scripts/preflight.sh [projects/<id>]` first: local tooling in 5 s, then its
+   connector checklist (one read-only call per paid connector, by hand). A denied call ends the planning step with a
+   one-line report; it is never quota. Write providers, fallback order and unit prices into the proposal so no later
+   denial needs a new approval round. Report to the user only at milestones (gates, contact sheets, delivery), not per
+   question: every status answer re-reads this file.
 1. **Research brief.** Write `artifacts/research_brief.json` with roughly 15–20 data points, each with its tag. List the myths and say which claims were dropped and why.
 2. **Proposal.** Write `artifacts/proposal_packet.json` with four concept options, the hook, a five-beat outline, the look, the asset plan and costs, and `pending_user_choices`.
 3. **Decision log.** Record the concept, budget, style and ending decisions in `decision_log.json`.
@@ -197,6 +202,10 @@ recent delivered project's layout for the per-video files. `projects/how-fast-ca
 
 - `new_project.sh <id> <CompName>`: scaffolds a project from `docs/channel/kit/`.
 - `finish_master.sh`: the mastering chain described above. Run it as `P=... RAW=... OUT=... bash finish_master.sh`.
+- `preflight.sh [projects/<id>]`: step 0; tooling checks plus the connector checklist. No tokens.
 - `qa_auto.py projects/<id> [--master …] [--no-pixels]`: the mechanical QA pass (step 11); writes `artifacts/qa_auto.json`, exits 1 on FAIL.
+  Lessons that are now checks (do not spend a QA agent on them): 4, 5, 6, 18, 25 (still hold), 26, 29, 30, 33/54 (fine print incl. tsx fontSize),
+  41, 42/52 (claim graphics gone before the glide), 43, 57 (SFX under the first word), black frames, flashes, safe zones.
+  Brief the QA agent with the ten frames and five seams to look at and `qa_auto.json`; a full "QA the film" pass costs ~250k tokens.
 - `records.py projects/<id>`: the pipeline records and checkpoints (step 13).
 - `make_ending_version.py`: turns an old loop-ending video into a finished-line "ending" version without re-rendering. It replays the opening line, continues the music from its matching point in `bed_raw.mp3`, then fades the music out and fades the picture to black.

@@ -8,7 +8,9 @@ soundtrack_report.json) and measures the master. Each check names the CHANNEL_FO
 Writes artifacts/qa_auto.json and exits 1 if any check FAILs (WARN does not fail).
 
 What it cannot judge (leave to the QA agents): anatomy, whether a visual contradicts a fact, readability,
-a label sitting under the wrong number (L33), a claim's graphic outliving its tab (L31/L42), drawn detail.
+a label sitting under the wrong number (L33), the colour at the spine of a drawn line (L58), drawn detail.
+Video 16 added: SFX under the first word (L57), claim graphics gone before the tab glide (L42/L52), fine print >= 24 px
+including axis numbers and labels in the tsx (L54), the still hold after the release (L25).
 Only ffmpeg/ffprobe, numpy and scipy are used.
 """
 import argparse, glob, json, re, subprocess, sys
@@ -216,11 +218,93 @@ def sfx_checks(props, sr, tl):
     check("props key frames == soundtrack", "L4", not diff, f"{len(diff)} mismatched", "props.audio == soundtrack_report.frames", note=str(diff[:8]))
 
 
+def first_word_sfx_check(sr, tl):
+    """L57: an SFX cue landing on the first word of the film must not sit over it in the phone band (voice-over-SFX, not
+    only SFX-over-bed). Uses the cue windows build_soundtrack.py measured (final_phone_band_dbfs.sfx / .voice)."""
+    rows = sr.get("sfx", [])
+    words = tl.get("words", [])
+    if not rows or not words or "start" not in words[0]:
+        return
+    w0 = words[0]
+    hot = []
+    for r in rows:
+        land = r.get("placed_at_s", 0.0) + r.get("landing_offset_in_sample_s", 0.0)
+        fb = r.get("final_phone_band_dbfs") or {}
+        if w0["start"] - 0.1 <= land <= w0["end"] + 0.3 and isinstance(fb.get("sfx"), (int, float)) and isinstance(fb.get("voice"), (int, float)):
+            if fb["sfx"] - fb["voice"] > 3.0:
+                hot.append(f'{r.get("name", r.get("id"))} +{fb["sfx"] - fb["voice"]:.1f} dB over \'{w0["text"]}\'')
+    check("sfx under the first word", "L57", not hot, hot[0] if hot else f"no cue over '{w0['text']}' by > 3 dB",
+          "no SFX > +3 dB over the first word in 300-4000 Hz", "WARN", note="lead the cue before the word and duck the lead-in" if hot else "")
+
+
+def claim_graphic_exit_check(props, tl):
+    """L42/L47/L52: a claim's graphics (placards, the plate window) leave >= 6 f before the honesty tab's next glide, never
+    straddle it. Reads props.placards[enter, exit], props.window.open[] and props.meter[glideStart, frame]."""
+    glides = [(m["glideStart"], m["frame"], m.get("claim", "")) for m in props.get("meter", []) if m.get("glideStart") is not None and m["frame"] > 0]
+    if not glides:
+        return
+    late = []
+    for i, pl in enumerate(props.get("placards", [])):
+        for g0, g1, claim in glides:
+            if pl["enter"] < g0 - 6 < pl["exit"] <= g1 + 60:
+                late.append(f"placard {i + 1} exits f{pl['exit']} vs glide f{g0} ({claim})")
+    op = (props.get("window") or {}).get("open")
+    if isinstance(op, list) and op:
+        a = np.array(op, dtype=float) > 0.05
+        edges = np.where(a[:-1] & ~a[1:])[0]  # last open frame before each close
+        for f in edges.tolist():
+            for g0, g1, claim in glides:
+                if g0 - 6 < f <= g1 + 60:
+                    late.append(f"window still open at f{f} vs glide f{g0} ({claim})")
+    check("claim graphics gone before the glide", "L42/L52", not late, f"{len(late)} late" if late else "all >= 6 f before", ">= 6 f before the tab glide", "WARN",
+          note="; ".join(late[:6]))
+
+
+def fine_print_check(props, project):
+    """L33/L54: no on-screen text under 24 px, INCLUDING axis numbers and counter labels. Scans numeric *size/*Px leaves in
+    props and fontSize literals in the build's tsx (shared/, overlay/, scenes/)."""
+    small = []
+
+    def walk(o, path):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if isinstance(v, (int, float)) and not isinstance(v, bool) and re.search(r"(size|px)$", k, re.I) and 0 < v < 24:
+                    small.append(f"props.{path}{k}={v}")
+                else:
+                    walk(v, f"{path}{k}.")
+        elif isinstance(o, list) and o and isinstance(o[0], dict):
+            for i, v in enumerate(o[:50]):
+                walk(v, f"{path}{i}.")
+
+    walk(props, "")
+    files = glob.glob(str(project / "*.ts")) + glob.glob(str(project / "shared/*.tsx")) + glob.glob(str(project / "overlay/*.tsx")) + glob.glob(str(project / "scenes/*.tsx"))
+    for f in sorted(x for x in files if not Path(x).name.startswith("_")):  # _stub.tsx etc. are not rendered
+        for n, line in enumerate(open(f, encoding="utf-8"), 1):
+            for m in re.finditer(r"fontSize:\s*(\d+(?:\.\d+)?)\b|\b(\w*Px):\s*(\d+)\b", line):
+                v = float(m.group(1) or m.group(3))
+                if 0 < v < 24:
+                    small.append(f"{Path(f).relative_to(project)}:{n} {m.group(0).strip()}")
+    check("fine print >= 24 px", "L33/L54", not small, f"{len(small)} under 24 px", "every text size >= 24 px (props *size/*Px and tsx fontSize)", "WARN",
+          note="; ".join(small[:8]))
+
+
+def still_hold_check(v, tl, props):
+    """L25: the picture is constant from the release (+ the tab's own 8 f settle and a 3 f CTA swap = 12 f) to the end."""
+    stem, rel_f, _, _ = last_word(tl)
+    f0 = min(len(v) - 2, rel_f + 12)
+    d = np.abs(np.diff(v[f0:], axis=0)).mean((1, 2))
+    worst = float(d.max()) if len(d) else 0.0
+    first_const = next((f0 + i for i in range(len(d)) if float(d[i:].max()) < 0.05), len(v))
+    check("still hold after the release", "L25", worst < 0.3, f"max frame diff {worst:.2f} from f{f0}; bit-constant from f{first_const}",
+          f"no change from '{stem}' release f{rel_f} + 12 f to the end", "WARN", note="a CTA fade or a tab still gliding eats the settle")
+
+
 def pixel_checks(master, tl):
     w, h = 270, 480
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(master), "-vf", f"scale={w}:{h}:flags=area,format=gray", "-f", "rawvideo", "-"],
                          capture_output=True, check=True).stdout
     v = np.frombuffer(raw, np.uint8).reshape(-1, h, w).astype(np.float32)
+    pixel_checks.frames = v
     mean = v.mean((1, 2))
     black = np.where(mean < 6)[0]
     check("no black frames", "picture", len(black) == 0, f"{len(black)} frames", "mean luma >= 6", note=str(black[:10].tolist()))
@@ -276,8 +360,12 @@ def main():
     ending_checks(props, tl, audio, sr)
     floor_check(audio, tl)
     sfx_checks(props, sr, tl)
+    first_word_sfx_check(sr, tl)
+    claim_graphic_exit_check(props, tl)
+    fine_print_check(props, P)
     if not a.no_pixels:
         pixel_checks(master, tl)
+        still_hold_check(pixel_checks.frames, tl, props)
 
     fails = [r for r in RESULTS if r["status"] == "FAIL"]
     warns = [r for r in RESULTS if r["status"] == "WARN"]

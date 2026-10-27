@@ -2,7 +2,7 @@
  "master": "projects/how-fast-can-anything-go/renders/how-fast-can-anything-go.mp4",
  "verdict": "PASS",
  "fails": 0,
- "warns": 0,
+ "warns": 1,
  "checks": [
   {
    "check": "resolution",
@@ -212,6 +212,30 @@
    "note": "[]"
   },
   {
+   "check": "sfx under the first word",
+   "lesson": "L57",
+   "status": "PASS",
+   "value": "no cue over 'You' by > 3 dB",
+   "expect": "no SFX > +3 dB over the first word in 300-4000 Hz",
+   "note": ""
+  },
+  {
+   "check": "claim graphics gone before the glide",
+   "lesson": "L42/L52",
+   "status": "WARN",
+   "value": "4 late",
+   "expect": ">= 6 f before the tab glide",
+   "note": "placard 1 exits f278 vs glide f282 (SOUND); placard 2 exits f582 vs glide f586 (PROBE); placard 3 exits f865 vs glide f869 (LIGHT); placard 4 exits f1195 vs glide f1199 (LHC)"
+  },
+  {
+   "check": "fine print >= 24 px",
+   "lesson": "L33/L54",
+   "status": "PASS",
+   "value": "0 under 24 px",
+   "expect": "every text size >= 24 px (props *size/*Px and tsx fontSize)",
+   "note": ""
+  },
+  {
    "check": "no black frames",
    "lesson": "picture",
    "status": "PASS",
@@ -242,6 +266,14 @@
    "value": "0 frames with new detail",
    "expect": "no text there",
    "note": ""
+  },
+  {
+   "check": "still hold after the release",
+   "lesson": "L25",
+   "status": "PASS",
+   "value": "max frame diff 0.00 from f1444; bit-constant from f1444",
+   "expect": "no change from 'way' release f1432 + 12 f to the end",
+   "note": "a CTA fade or a tab still gliding eats the settle"
   }
  ]
 }
