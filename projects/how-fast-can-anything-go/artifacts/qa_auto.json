@@ -1,8 +1,8 @@
 {
- "master": "projects/how-fast-can-anything-go/renders/dry_master.mp4",
- "verdict": "FAIL",
- "fails": 1,
- "warns": 2,
+ "master": "projects/how-fast-can-anything-go/renders/how-fast-can-anything-go.mp4",
+ "verdict": "PASS",
+ "fails": 0,
+ "warns": 0,
  "checks": [
   {
    "check": "resolution",
@@ -64,7 +64,7 @@
    "check": "file size",
    "lesson": "format",
    "status": "PASS",
-   "value": 6.0,
+   "value": 6.9,
    "expect": "< 60 MB",
    "note": ""
   },
@@ -72,7 +72,7 @@
    "check": "integrated loudness",
    "lesson": "master",
    "status": "PASS",
-   "value": -14.1,
+   "value": -14.2,
    "expect": "-14 +-0.5 LUFS",
    "note": ""
   },
@@ -80,7 +80,7 @@
    "check": "true peak",
    "lesson": "master",
    "status": "PASS",
-   "value": -1.9,
+   "value": -1.8,
    "expect": "<= -1.0 dBTP",
    "note": ""
   },
@@ -144,7 +144,7 @@
    "check": "end fade (no cut chord)",
    "lesson": "L43",
    "status": "PASS",
-   "value": "last 50 ms -180.0 dB, last 20 ms -180.0 dB",
+   "value": "last 50 ms -68.1 dB, last 20 ms -75.8 dB",
    "expect": "last 50 ms <= -30, last 20 ms <= -33 dBFS",
    "note": ""
   },
@@ -153,12 +153,12 @@
    "lesson": "L43",
    "status": "PASS",
    "value": [
-    -180.0,
-    -180.0,
-    -180.0,
-    -180.0,
-    -180.0,
-    -180.0
+    -33.6,
+    -37.4,
+    -42.3,
+    -44.3,
+    -52.0,
+    -68.1
    ],
    "expect": "no 50 ms step up > 3 dB in the last 0.3 s",
    "note": ""
@@ -167,7 +167,7 @@
    "check": "last word broadband",
    "lesson": "L30",
    "status": "PASS",
-   "value": "'way.' -17.4 vs sentence median -16.2 dB",
+   "value": "'way.' -17.3 vs sentence median -16.0 dB",
    "expect": "loudest 100 ms <= 5 dB under its sentence's median (FAIL)",
    "note": ""
   },
@@ -182,16 +182,16 @@
   {
    "check": "last word over bed",
    "lesson": "L18",
-   "status": "WARN",
-   "value": "not measurable (< 2 word gaps)",
+   "status": "PASS",
+   "value": "+14.8 dB (stems, soundtrack_report)",
    "expect": ">= +12 dB in 300-4000 Hz",
-   "note": "measure it on the stems (clean narration vs the ducked bed)"
+   "note": ""
   },
   {
    "check": "audio floor",
    "lesson": "L6/L29",
-   "status": "FAIL",
-   "value": "-120.0 dBFS at 8.36 s",
+   "status": "PASS",
+   "value": "-37.4 dBFS at 46.32 s",
    "expect": ">= -42 dBFS (100 ms windows)",
    "note": ""
   },
@@ -238,10 +238,10 @@
   {
    "check": "right rail x>=929",
    "lesson": "safe zones",
-   "status": "WARN",
-   "value": "167 frames with new detail",
+   "status": "PASS",
+   "value": "0 frames with new detail",
    "expect": "no text there",
-   "note": "frames 1029-1195 - look: text there is a fail"
+   "note": ""
   }
  ]
 }
