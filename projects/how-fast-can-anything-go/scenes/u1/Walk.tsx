@@ -1,15 +1,21 @@
-// sc01 · Walk · U1. root: the dim rail + the marker at WALK from f0, the rail DRAWS on 'You' (railDraw, X1), the WALK chip SEATS on 'walk'. U1 demo: a walker icon beside the WALK rung.
-// FOUNDATION STUB: replace the <StubLabel> and the demo with the real scene; keep `mount`, the export names and the
-// device mounts noted in BUILD.md §7. Hooks at the top, before any early return (lesson 1).
+// sc01 · Walk · U1. root: the dim rail + the marker at WALK from f0, the rail DRAWS bright on 'You' (railDraw, X1), the
+// WALK chip + tick SEAT on 'walk' (walkSeat). U1: a walker icon that seats beside the WALK chip WITH the chip (T.seat on
+// walkSeat, same gravity drop), legs on the loop clock; a bone glint riding the draw head while the rail draws (never
+// reaching 'c'). The walker is tied to the WALK claim: gone 8 f before the CHEETAH page (lesson 42).
+// Hooks at the top, before any early return (lesson 1).
 import React from "react";
 import { useCurrentFrame } from "remotion";
 import type { Mount, SceneProps } from "../../types";
-import { StubLabel } from "../_stub";
 import { WalkerIcon } from "../../shared/Icons";
-import { useT } from "../../time";
+import { measure } from "../../shared/Type";
+import { prog, useT } from "../../time";
 import { L } from "../../theme";
+import { RailGlint } from "./_fx";
 
 export const mount: Mount = { pre: 0, post: 0, z: 1 };
+
+const LABEL_PX = 28;
+const CHIP_PAD = 12;
 
 export const Walk: React.FC<SceneProps> = ({ from, to }) => {
   const frame = useCurrentFrame();
@@ -17,11 +23,19 @@ export const Walk: React.FC<SceneProps> = ({ from, to }) => {
   const w = T.rung("walk");
   const s = T.seat(frame, w.seat, T.motion.SEAT_F, 18);
   if (frame < from || frame >= to) return null;
+  // the WALK chip's width (shared/Ladder.tsx's chip rule) so the walker stands just right of it
+  const [name, num] = w.lines[0].split(" · ");
+  const chipW = measure(name, "display", LABEL_PX) + measure(" · ", "display", LABEL_PX) + measure(num, "monoMed", LABEL_PX) + 2 * CHIP_PAD;
+  const nextPage = T.at("s1", "a"); // the CHEETAH page (tab pulse) starts ON 'A' (cheetah)
+  const gone = 1 - prog(frame, nextPage - 16, nextPage - 8);
+  const alpha = s.opacity * gone;
+  const phase = (T.loopFrame(frame) % 24) / 24;
   return (
     <>
-      {s.visible ? (
+      <RailGlint />
+      {s.visible && alpha > 0 ? (
         <svg width={L.W} height={L.H} style={{ position: "absolute", inset: 0 }}>
-          <WalkerIcon x={L.rail.labelX + 152} y={T.railY(w.L) + s.y} size={28} phase={(frame % 24) / 24} opacity={s.opacity} />
+          <WalkerIcon x={L.rail.labelX + chipW + 22} y={T.railY(w.L) + s.y} size={30} phase={phase} opacity={alpha} />
         </svg>
       ) : null}
     </>
@@ -31,9 +45,5 @@ export const Walk: React.FC<SceneProps> = ({ from, to }) => {
 export const Overlay: React.FC<SceneProps> = ({ from, to }) => {
   const frame = useCurrentFrame();
   if (frame < from || frame >= to) return null;
-  return (
-    <>
-      <StubLabel id="sc01" from={from} to={to} />
-    </>
-  );
+  return null;
 };
