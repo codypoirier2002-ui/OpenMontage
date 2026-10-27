@@ -83,9 +83,11 @@ const Rungs: React.FC<{ T: Timing; frame: number }> = ({ T, frame }) => {
     const s = T.seat(frame, g.seat, T.motion.SEAT_F, 18);
     if (!s.visible) continue;
     const y = T.railY(g.L) + s.y;
+    const onC = g.id === "light"; // the LIGHT rung seats ON the red c line: its tick is red too, never steel over the red (QA B-01b)
+    const col = onC ? C.wall : C.steel;
     ticks.push(
       <div key={g.id} style={{ position: "absolute", left: R.rungX0, top: y - 2.5, width: R.rungX1 - R.rungX0, height: 5, borderRadius: 3, opacity: s.opacity,
-        backgroundColor: C.steel, boxShadow: s.seated ? `0 0 10px ${rgba(C.steel, 0.5)}` : "none" }} />,
+        backgroundColor: col, boxShadow: s.seated ? `0 0 10px ${rgba(col, 0.5)}` : "none" }} />,
     );
     placed.push({ rung: g, want: T.railY(g.L), y: 0, h: chipHeight(g), w: chipWidth(g), drop: s.y, alpha: s.opacity });
   }

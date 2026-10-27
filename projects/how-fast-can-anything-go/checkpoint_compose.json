@@ -4,7 +4,7 @@
   "pipeline_type": "unknown",
   "stage": "compose",
   "status": "completed",
-  "timestamp": "2026-10-27T13:46:04.906094+00:00",
+  "timestamp": "2026-10-27T14:17:21.730308+00:00",
   "checkpoint_policy": "guided",
   "human_approval_required": false,
   "human_approved": false,
@@ -21,7 +21,7 @@
           "fps": 30.0,
           "platform_target": "tiktok_9x16",
           "duration_seconds": 49.267,
-          "file_size_bytes": 7021981
+          "file_size_bytes": 7021370
         },
         {
           "path": "renders/raw.mp4",
@@ -32,7 +32,7 @@
           "fps": 30.0,
           "platform_target": "intermediate",
           "duration_seconds": 49.323,
-          "file_size_bytes": 6865066
+          "file_size_bytes": 6865206
         }
       ],
       "render_grammar": "explainer-teacher",

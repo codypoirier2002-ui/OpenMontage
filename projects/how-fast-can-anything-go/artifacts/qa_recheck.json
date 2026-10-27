@@ -1,0 +1,57 @@
+[
+ {
+  "item": "A-01 s3 'we've' caption onset",
+  "status": "FIXED",
+  "evidence": "clean s3.wav 5 ms bands: 'thing' decays to -63..-81 dB (re max) 0.805-0.830 s; voicing resumes 0.840 (-50), 0.850 (-40 dB), 0.855 (-25), vowel 0.865 (-10). Measured onset 0.850 s section = film 20.565 s = f616.9; props f617 (20.567 film, 0.852 section): offset 0.0 f. Still: renders/review/recheck/spec_s3_weve_1.png"
+ },
+ {
+  "item": "A-05 re-sweep of the five borderline words (burst convention)",
+  "status": "FIXED",
+  "evidence": "s1 'about'#1 f32: 'at' t closure 0.550-0.565 (-22..-29 dB, weak), release 0.570, schwa 0.575-0.605 (-7 dB), b closure 0.61-0.655, 'out' 0.665; caption 0.567 vs release 0.570 = -0.1 f (the first pass's +2.8 f took the 'out' vowel; the schwa IS 'about'). s1 'about'#2 f134: closure 3.935-3.950, release 3.955, schwa 3.960; caption 3.967 = +0.3 f. s5 'Collider' f1235: 'Hadron' n murmur 0.935-0.990, closure 1.000-1.010, k burst 1.015-1.020 (MID -15), voicing 1.090; caption 1.017 = 0.0 f. s2 'at' f334: 'all' dark l dip 1.565-1.590 (MID -22), vowel 1.595-1.600 (MID up); caption 1.573 = -0.6 f (override 1.590 floors to f334). s4 'end.' f1141: 'costs,' s to 8.22, pause, voiceless 'wi(th)' 8.32-8.45, 200 ms silence 8.46-8.65 (baked pause), 'ou' 8.66-8.735 (MID weak = back vowel), t closure 8.74-8.795 (-45 dB, 55 ms), release 8.800, front vowel 8.805-8.86 (MID ~ LF), n 8.865-8.975, d burst 9.005: 'end' onset 8.800-8.805 -> caption 8.903 is +3.0 f LATE (100 ms), unchanged from the first pass (override still 8.893, barOff 1141); a quieter 'end'-shaped tail 9.06-9.40 (-19 dB) follows. 4 of 5 within 1 f; 'end.' sits on the +-3 f limit. Stills: spec_s1_about_1/2, spec_s5_Collider_1, spec_s2_at_1, spec_s4_end_1.png"
+ },
+ {
+  "item": "A-02 falcon window + placard 1 gone before the SOUND tab glide (page 288, glide 282)",
+  "status": "FIXED",
+  "evidence": "master frames 258-302, window box 580-920x440-893 vs f302: px differing >12: 153k @268, 152k @272 (open .5), 130k @274 (.146), 655 @275 (.038), 2 @276-289 -> plate gone at 276 (props open 0 from 276). Placard row 140-912x1124-1204 bright px (>110): 6437 to 273, 2324 @275, 5 @276, 0 from 277; diff vs f290 = 0 from 278. Both gone >= 4 f before the glide (282) and 10-12 f before the page (288). Strip: window_close1_274_288.png"
+ },
+ {
+  "item": "A-03 probe window + placard 3 gone before the LIGHT tab glide (page 875, glide 869)",
+  "status": "FIXED",
+  "evidence": "frames 848-880 vs f880: window diff 147k @855, 110k @860 (.309), 94k @861 (.146), 916 @862 (.038), 0 from 863. Placard bright px 7664 to 859, 2374 @862, 3 @863, 0 from 864; diff 0 from 865. Gone 6 f before the glide (869), 10-12 f before the page. Strip: window_close2_861_875.png"
+ },
+ {
+  "item": "B-01a the drawn gap under c = 24 px, halo clear of the line",
+  "status": "FIXED",
+  "evidence": "column profile x247-253 on f1300/1400/1477 (identical to +-3 levels): red line core rows 378-381 (at x230/x270), steel LIGHT tick rows 378-382 at the spine, plain rail rows 383-392 (~90/105/115), marker halo rows 393-397, marker core (white-cyan) rows 398-409 -> core centre 403.5, line centre ~380: 23.5 px; core top 398 is 16 rows under the tick, halo top 393 is 10 rows under it (first pass: core 389-398, halo touching the red glow). At 360x640 (phone_1477.png, phone_zoom_c_1477.png) the marker reads as a dot hanging under the bar with a dark gap, not on it. Stills: zoom_c_1300/1477.png"
+ },
+ {
+  "item": "B-01b the 10^9 steel tick no longer covers the red c line",
+  "status": "NOT FIXED",
+  "evidence": "on f1300/1400/1477 the red (R>120, R>G+40, R>B+40) rows at the c line: x215 378-387 (the red 'c' cap), x230 378-381, x240/245/250/255/260 NONE, x270 378-381; red bbox y374-389 x215-277. Rows 378-382 at x236-264 are steel (182/181/190): the LIGHT tick (x232-268) is still drawn over the red line, red survives as the two stubs x215-235 and x265-277 exactly as in the first pass. Only the red glow (rows 374-377, R76 G46 B65) shows above the tick at the spine. Visible in zoom_c_1477.png: the thing the marker hangs under is a grey bar with red ends."
+ },
+ {
+  "item": "A-04 picture constant from the release (1432)",
+  "status": "FIXED",
+  "evidence": "pixel diffs (max channel >8): 1431->1432 10497 (tab 5434, slab 3783, stage 1224: the 'way.' highlight + glide), 1432->1433 35.4k / 1433->1434 34.6k / 1434->1435 38.5k (slab 36.8k: the CTA swap, bbox y1243-1447), 1435->1436 4019 (tab only), 1436->1438 34, 1438->1440 1940 (tab glide end 1438 + CTA fade tail), 1440->1445 68 px max 61 (26 in the slab: CTA text 215->239 finishing its fade; 42 isolated stage px), 1445->1450 0, 1450->1460 0, 1460->1477 0 (max 3-5), 1440->1477 68 px. Placard row: 6 px at 1431->1432, 0 after (placard 5 exit 1418 + 12 f fade ends 1430). Tab: glide 1426-1438 (state IDLE from mid-glide 1432), tab region 0 diffs from 1440. As re-specified (CTA 1432-1435, tab settled by 1440, 1440->1477 effectively identical) it holds; strictly the frame is bit-identical only from 1445 (true still hold 1445-1477 = 33 f = 1.10 s of the 1.53 s settle; first pass 1446/1448). Stills: ending_tab_slab_1418_1477.png"
+ },
+ {
+  "item": "B-04 decade numbers 24 px, ZEROS label 24 px, no new collisions",
+  "status": "FIXED",
+  "evidence": "f1000: decade digits '10' rows 995-1011 and '100' 917-933: cap height 17 px (IBM Plex Mono cap 0.70 em -> 16.8 px at 24 px; 12.6 px at 18); comma rows add 3 (20 px). ZEROS label (x753-859) rows 272-288: 17 px cap -> 24 px (was 22 -> 15.4); digit 9 rows 256-306 (72 px). Chips start at x280, numbers end at x224: no overlap. Pre-existing B-06(c) collision persists and is ~2 px larger with the bigger digits: at f441-504 the dashed YOU ghost at WALK (top edge rows 1007-1008, x123-221) cuts the bottom rows 1007-1010 of '10' (rows 995-1010); f478 still you_decade_478.png. Not new; not in the fix list."
+ },
+ {
+  "item": "A-06 opening whoosh (X1 rail_draw f16, +2.8 dB peak) vs the voice on 'You'",
+  "status": "NOT FIXED",
+  "evidence": "premix public/audio/soundtrack.wav, 300-4000 Hz, voice separated by LS projection of clean s1.wav (lag 0 ms, voice gain +4.3 dB): 'You' window 0.533-0.80 s: premix -11.0 dBFS, scaled voice -18.4, residual (whoosh+bed) -11.2 -> whoosh over voice +7.2 dB (master: -11.5 total). Pre-voice whoosh 0.40-0.53 s -22.0 (bed before the cue -18.2 broadband / -19.5 in band); whoosh 30 ms peak -8.1 dBFS in band at ~0.66-0.72 s, right on 'You'. Identical to the first pass (report: sfx -18.3 vs voice -25.2 = +6.9 dB; sfx[0].peak_dbfs still 2.8, sample peak 7.7): the level was not changed. Lesson-5 (sfx over bed, 300-4000 Hz, stems in soundtrack_report): rail_draw +4.9 dB (30 ms hit +4.2), climb_cheetah +3.6 (+4.8), climb_falcon +3.7 (+10.3); premix: rail_draw cue window -12.8 vs -19.5 before (+6.7), cheetah -16.3 vs -22.8 (+6.5), falcon -16.1 vs -17.3 (voice in both windows). All three audible over the bed; whether 'You walk' may be masked is a listening call the caller must make."
+ },
+ {
+  "item": "Ending: chord after release, settle, fade, no click, loudness",
+  "status": "FIXED",
+  "evidence": "master: release 47.74 s (timeline way_end, f1432); 5 ms RMS rises -29.7 -> -21.5 dB at 47.855 s, -18.9 at 47.875, -14.8 at 47.920 (max +20 ms step 11.6 dB at 47.925): tonic attack 0.115-0.18 s after the release (report 47.892 = 0.152). Settle 49.280-47.74 = 1.54 s (1478-1432 = 46 f = 1.533 s). Last 0.6 s 50 ms RMS: -23.1 -23.5 -24.8 -24.0 -28.4 -30.8 -33.6 -37.4 -42.3 -44.2 -52.0 -68.1 dBFS (no step up; max +step -1.9 dB); last 20 ms -75.9 dBFS, max sample step 6.1e-5, last sample 0: no click. Floor: min 100 ms window -49.9 dBFS at 49.15 s (inside the fade; -37.4 at 46.32 before it). ebur128: I -14.2 LUFS, TP -1.8 dBTP, LRA 5.8. Master audio == premix (lag 0 samples)."
+ },
+ {
+  "item": "Regression sweep",
+  "status": "FIXED",
+  "evidence": "(a) tab on all 26 page starts (tab_at_page_starts.png): f171/f210 PROBABLY (hatched capsule; 171 is mid-glide by design, state switches at mid-glide), 288 glides back to MEASURED, all other pages MEASURED, 1432 IDLE: matches claim_tags. (b) safe zones: 270x480 luma vs frame 0, bottom y>=1574 max diff 10 (f122), right x>=929 max 6: no text. (c) mean luma min 16.1 (f0), no frame <6; no one-frame flash; no frame-to-frame mean diff >8. (d) seam PSNR (b-1 vs b): 99 29.6, 169 34.9, 286 35.9, 393 44.3, 590 28.6, 707 42.6, 873 42.5, 952 53.2, 1025 55.0, 1203 42.4, 1358 47.3 dB: all >= 28; 99 and 590 are the window opens (not page starts) at 28.6-29.6, >= 28. (e) AI tag (crop 580-920x833-893, lum>150 px): present on every frame with window open >= 0.75 (median 679 px); tag fades in 1 f after the window's first frame (f99 0 px, f100 321, f104 full; f590 0, f591 1, f592 473) and leaves on the last 3 frames of the close (273-275, 859-862, open <= 0.31) - same lag as in the previous master (renders/dry_master.mp4: f99 0, f100 17, f101 483), so pre-existing, not a regression. (f) crossfade 169-181: one clean 'AI impression' chip on every frame (tag_crossfade_166_184.png), plate alphas S1 1->0 / S2 0->1 over 170-181, tag px step 1361->1066 at 170 (hard swap), no garbled text at 175."
+ }
+]

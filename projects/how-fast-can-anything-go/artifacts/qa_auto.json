@@ -80,7 +80,7 @@
    "check": "true peak",
    "lesson": "master",
    "status": "PASS",
-   "value": -1.8,
+   "value": -1.9,
    "expect": "<= -1.0 dBTP",
    "note": ""
   },
@@ -144,7 +144,7 @@
    "check": "end fade (no cut chord)",
    "lesson": "L43",
    "status": "PASS",
-   "value": "last 50 ms -68.1 dB, last 20 ms -75.8 dB",
+   "value": "last 50 ms -67.9 dB, last 20 ms -75.8 dB",
    "expect": "last 50 ms <= -30, last 20 ms <= -33 dBFS",
    "note": ""
   },
@@ -153,12 +153,12 @@
    "lesson": "L43",
    "status": "PASS",
    "value": [
-    -33.6,
-    -37.4,
-    -42.3,
-    -44.2,
-    -52.0,
-    -68.1
+    -33.5,
+    -37.3,
+    -42.2,
+    -44.1,
+    -51.9,
+    -67.9
    ],
    "expect": "no 50 ms step up > 3 dB in the last 0.3 s",
    "note": ""
@@ -167,7 +167,7 @@
    "check": "last word broadband",
    "lesson": "L30",
    "status": "PASS",
-   "value": "'way.' -17.3 vs sentence median -16.0 dB",
+   "value": "'way.' -17.2 vs sentence median -15.9 dB",
    "expect": "loudest 100 ms <= 5 dB under its sentence's median (FAIL)",
    "note": ""
   },
@@ -191,7 +191,7 @@
    "check": "audio floor",
    "lesson": "L6/L29",
    "status": "PASS",
-   "value": "-37.4 dBFS at 46.32 s",
+   "value": "-37.3 dBFS at 46.32 s",
    "expect": ">= -42 dBFS (100 ms windows)",
    "note": ""
   },

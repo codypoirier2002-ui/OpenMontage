@@ -543,11 +543,14 @@ def main() -> None:
         if v:
             last = i
         held[i] = i - last <= 25
+    # The lead-in: the bed is ducked from frame 0 until the first word (not raised and then dipped), so the opening whoosh
+    # (X1 rail_draw, 6 f before 'You') sits over a ducked bed (lesson 5) without its peak on the first word (QA A-06).
+    held[: int(np.argmax(voiced))] = True
 
     def duck_curve(depth: float) -> np.ndarray:
         target = np.where(held, depth, 0.0)
         g = np.zeros_like(target)
-        cur = 0.0
+        cur = float(target[0])   # open already at the lead-in's level (no dip in the first 120 ms)
         a_att, a_rel = 1 - np.exp(-1 / 12), 1 - np.exp(-1 / 40)
         for i, tg in enumerate(target):
             cur += (tg - cur) * (a_att if tg < cur else a_rel)
@@ -603,7 +606,7 @@ def main() -> None:
     assert onset_of(tink) < 0.005 * SR, "X6's attack is its first samples (start-aligned)"
 
     PLACE = [
-        ("X1", "rail_draw", whoosh, 2.8, K["railDraw"], "the rail starts drawing bright (sc01, 'You')", "peak", w_on),
+        ("X1", "rail_draw", whoosh, -0.2, K["railDraw"] - 6, "the rail starts drawing bright (sc01): the whoosh peaks 6 f BEFORE the move and before 'You', so its 30 ms peak is not on the first word (QA A-06, lesson 57)", "peak", w_on),
         ("X1", "climb_cheetah", whoosh, -6.0, K["climbCheetah"], "the marker's first moving frame toward CHEETAH (sc02)", "peak", w_on),
         ("X3", "tick_cheetah_1", tick, -13.5, K["cheetahTicks"][0], "counter 0 -> 1", "peak", tick_peak),
         ("X3", "tick_cheetah_2", tick, -13.5, K["cheetahTicks"][1], "counter 1 -> 2 ON the CHEETAH seat", "peak", tick_peak),

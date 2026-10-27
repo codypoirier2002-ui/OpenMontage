@@ -10,7 +10,7 @@
    "fps": 30.0,
    "platform_target": "tiktok_9x16",
    "duration_seconds": 49.267,
-   "file_size_bytes": 7021981
+   "file_size_bytes": 7021370
   },
   {
    "path": "renders/raw.mp4",
@@ -21,7 +21,7 @@
    "fps": 30.0,
    "platform_target": "intermediate",
    "duration_seconds": 49.323,
-   "file_size_bytes": 6865066
+   "file_size_bytes": 6865206
   }
  ],
  "render_grammar": "explainer-teacher",

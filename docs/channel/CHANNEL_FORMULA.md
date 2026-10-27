@@ -190,7 +190,8 @@ recent delivered project's layout for the per-video files. `projects/how-fast-ca
 54. **Fine print ≥ 24 px includes axis numbers and counter labels.** The decade numbers (18 px) and the ZEROS label (22 px) slipped past every check until QA measured glyph heights.
 55. **Assert the typed string.** A readout built from glyph groups typed "99.99999991 %" (seven nines) while the verified string had six; a builder caught it. build_props should compare the joined groups to the verified string (lesson 16).
 56. **A silent gap before a w-glide pushes the first-pass onset late** ("we've" +4 f after a 54 ms gap); QA's independent sweep (lesson 13) is what caught it.
-57. **Lesson 5 vs the first word.** Raising a soft opening whoosh to clear the +4 dB bed margin puts it over "You" in the phone band. Measure voice-over-SFX on the first word too, and prefer a brighter cue (harmonics) or a later cue over a louder one.
+57. **Lesson 5 vs the first word: duck the lead-in.** Raising a soft opening whoosh to clear the +4 dB bed margin put it +7 dB over "You" in the phone band (harmonics made it worse). What worked: treat the lead-in before the first word as voiced (the bed opens already ducked, no dip at 0 s), peak the whoosh 6 f BEFORE the move, and drop it 3 dB: hit +5.1 dB over the bed, whoosh+bed +2.4 dB over "You" in 300-4000 Hz. Measure voice-over-SFX on the first word, not only SFX-over-bed.
+58. **A rung tick that seats ON a drawn line takes the line's colour.** The LIGHT rung's steel tick covered the red c line at the spine (x 236-264) on every frame from its seat; skipping the decade tick was not enough because the rung tick is a second element. Check the colour at the spine, not only the line's ends.
 
 ## Utility scripts (`docs/channel/scripts/`)
 
