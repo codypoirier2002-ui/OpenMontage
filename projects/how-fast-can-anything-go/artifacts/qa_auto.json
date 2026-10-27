@@ -64,7 +64,7 @@
    "check": "file size",
    "lesson": "format",
    "status": "PASS",
-   "value": 6.9,
+   "value": 7.0,
    "expect": "< 60 MB",
    "note": ""
   },
@@ -156,7 +156,7 @@
     -33.6,
     -37.4,
     -42.3,
-    -44.3,
+    -44.2,
     -52.0,
     -68.1
    ],
@@ -175,7 +175,7 @@
    "check": "last word broadband (soft)",
    "lesson": "L30",
    "status": "PASS",
-   "value": "+1.2 dB under",
+   "value": "+1.3 dB under",
    "expect": "<= 3 dB under",
    "note": "3-5 dB under can be a natural falling cadence; listen on a phone speaker"
   },
