@@ -47,7 +47,7 @@ if (process.argv.includes("--scenes")) {
         resolve: { ...c.resolve, modules: [...(c.resolve?.modules ?? ["node_modules"]), path.join(COMPOSER, "node_modules")] },
       }),
     });
-    const browserExecutable = process.env.REMOTION_BROWSER_EXECUTABLE || "/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell";
+    const browserExecutable = process.env.REMOTION_BROWSER_EXECUTABLE || "/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell";
     const composition = await selectComposition({ serveUrl, id: "SpeedLadder", inputProps: props, browserExecutable });
     for (const f of frames) {
       const t0 = Date.now();

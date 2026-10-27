@@ -1,0 +1,1610 @@
+{
+ "exact_match_ratio": {
+  "s1": 1.0,
+  "s2": 1.0,
+  "s3": 1.0,
+  "s4": 1.0,
+  "s5": 1.0
+ },
+ "whisper_heard": {
+  "s1": "You walk at about five kilometres an hour. A cheetah sprints at about a hundred. A diving falcon hits nearly four hundred.",
+  "s2": "Sound outruns them all at over twelve hundred. But sitting still, you're doing over a hundred thousand, riding Earth around the Sun.",
+  "s3": "The fastest thing we've ever built, the Parker Solar Probe, reached nearly seven hundred thousand, falling toward the Sun.",
+  "s4": "Light does over a billion. And nothing with mass can catch it. The closer you get, the more energy each step costs, without end.",
+  "s5": "The Large Hadron Collider pushes protons to within a hair of light speed. Close. But never all the way."
+ },
+ "whisper_raw_section_rel": {
+  "s1": [
+   [
+    "You",
+    0.0,
+    0.22
+   ],
+   [
+    "walk",
+    0.22,
+    0.42
+   ],
+   [
+    "at",
+    0.42,
+    0.6
+   ],
+   [
+    "about",
+    0.6,
+    0.84
+   ],
+   [
+    "five",
+    0.84,
+    1.32
+   ],
+   [
+    "kilometres",
+    1.32,
+    1.74
+   ],
+   [
+    "an",
+    1.74,
+    2.04
+   ],
+   [
+    "hour.",
+    2.04,
+    2.34
+   ],
+   [
+    "A",
+    2.9,
+    3.0
+   ],
+   [
+    "cheetah",
+    3.0,
+    3.42
+   ],
+   [
+    "sprints",
+    3.42,
+    3.88
+   ],
+   [
+    "at",
+    3.88,
+    3.96
+   ],
+   [
+    "about",
+    3.96,
+    4.16
+   ],
+   [
+    "a",
+    4.16,
+    4.28
+   ],
+   [
+    "hundred.",
+    4.28,
+    4.66
+   ],
+   [
+    "A",
+    5.16,
+    5.32
+   ],
+   [
+    "diving",
+    5.32,
+    5.68
+   ],
+   [
+    "falcon",
+    5.68,
+    6.12
+   ],
+   [
+    "hits",
+    6.12,
+    6.36
+   ],
+   [
+    "nearly",
+    6.36,
+    6.74
+   ],
+   [
+    "four",
+    6.74,
+    7.18
+   ],
+   [
+    "hundred.",
+    7.18,
+    7.62
+   ]
+  ],
+  "s2": [
+   [
+    "Sound",
+    0.0,
+    0.44
+   ],
+   [
+    "outruns",
+    0.44,
+    0.94
+   ],
+   [
+    "them",
+    0.94,
+    1.14
+   ],
+   [
+    "all",
+    1.14,
+    1.52
+   ],
+   [
+    "at",
+    1.52,
+    1.7
+   ],
+   [
+    "over",
+    1.7,
+    1.96
+   ],
+   [
+    "twelve",
+    1.96,
+    2.34
+   ],
+   [
+    "hundred.",
+    2.34,
+    2.96
+   ],
+   [
+    "But",
+    3.56,
+    3.72
+   ],
+   [
+    "sitting",
+    3.72,
+    4.04
+   ],
+   [
+    "still,",
+    4.04,
+    4.52
+   ],
+   [
+    "you're",
+    5.02,
+    5.12
+   ],
+   [
+    "doing",
+    5.12,
+    5.32
+   ],
+   [
+    "over",
+    5.32,
+    5.6
+   ],
+   [
+    "a",
+    5.6,
+    5.76
+   ],
+   [
+    "hundred",
+    5.76,
+    6.14
+   ],
+   [
+    "thousand,",
+    6.14,
+    6.8
+   ],
+   [
+    "riding",
+    7.16,
+    7.56
+   ],
+   [
+    "Earth",
+    7.56,
+    7.86
+   ],
+   [
+    "around",
+    7.86,
+    8.2
+   ],
+   [
+    "the",
+    8.2,
+    8.38
+   ],
+   [
+    "Sun.",
+    8.38,
+    8.64
+   ]
+  ],
+  "s3": [
+   [
+    "The",
+    0.0,
+    0.14
+   ],
+   [
+    "fastest",
+    0.14,
+    0.66
+   ],
+   [
+    "thing",
+    0.66,
+    0.98
+   ],
+   [
+    "we've",
+    0.98,
+    1.26
+   ],
+   [
+    "ever",
+    1.26,
+    1.56
+   ],
+   [
+    "built,",
+    1.56,
+    1.96
+   ],
+   [
+    "the",
+    2.22,
+    2.4
+   ],
+   [
+    "Parker",
+    2.4,
+    2.72
+   ],
+   [
+    "Solar",
+    2.72,
+    3.08
+   ],
+   [
+    "Probe,",
+    3.08,
+    3.56
+   ],
+   [
+    "reached",
+    3.94,
+    4.16
+   ],
+   [
+    "nearly",
+    4.16,
+    4.58
+   ],
+   [
+    "seven",
+    4.58,
+    4.94
+   ],
+   [
+    "hundred",
+    4.94,
+    5.52
+   ],
+   [
+    "thousand,",
+    5.52,
+    6.16
+   ],
+   [
+    "falling",
+    6.68,
+    7.08
+   ],
+   [
+    "toward",
+    7.08,
+    7.36
+   ],
+   [
+    "the",
+    7.36,
+    7.62
+   ],
+   [
+    "Sun.",
+    7.62,
+    7.82
+   ]
+  ],
+  "s4": [
+   [
+    "Light",
+    0.0,
+    0.42
+   ],
+   [
+    "does",
+    0.42,
+    0.7
+   ],
+   [
+    "over",
+    0.7,
+    1.1
+   ],
+   [
+    "a",
+    1.1,
+    1.34
+   ],
+   [
+    "billion.",
+    1.34,
+    1.86
+   ],
+   [
+    "And",
+    2.6,
+    2.82
+   ],
+   [
+    "nothing",
+    2.82,
+    3.16
+   ],
+   [
+    "with",
+    3.16,
+    3.46
+   ],
+   [
+    "mass",
+    3.46,
+    3.8
+   ],
+   [
+    "can",
+    3.8,
+    4.06
+   ],
+   [
+    "catch",
+    4.06,
+    4.32
+   ],
+   [
+    "it:",
+    4.32,
+    4.68
+   ],
+   [
+    "the",
+    5.0,
+    5.2
+   ],
+   [
+    "closer",
+    5.2,
+    5.4
+   ],
+   [
+    "you",
+    5.4,
+    5.68
+   ],
+   [
+    "get,",
+    5.68,
+    5.9
+   ],
+   [
+    "the",
+    6.26,
+    6.36
+   ],
+   [
+    "more",
+    6.36,
+    6.58
+   ],
+   [
+    "energy",
+    6.58,
+    7.04
+   ],
+   [
+    "each",
+    7.04,
+    7.36
+   ],
+   [
+    "step",
+    7.36,
+    7.7
+   ],
+   [
+    "costs,",
+    7.7,
+    8.38
+   ],
+   [
+    "without",
+    8.4,
+    8.92
+   ],
+   [
+    "end.",
+    8.92,
+    9.34
+   ]
+  ],
+  "s5": [
+   [
+    "The",
+    0.0,
+    0.16
+   ],
+   [
+    "Large",
+    0.16,
+    0.48
+   ],
+   [
+    "Hadron",
+    0.48,
+    0.96
+   ],
+   [
+    "Collider",
+    0.96,
+    1.38
+   ],
+   [
+    "pushes",
+    1.38,
+    1.86
+   ],
+   [
+    "protons",
+    1.86,
+    2.56
+   ],
+   [
+    "to",
+    2.56,
+    2.76
+   ],
+   [
+    "within",
+    2.76,
+    3.0
+   ],
+   [
+    "a",
+    3.0,
+    3.2
+   ],
+   [
+    "hair",
+    3.2,
+    3.6
+   ],
+   [
+    "of",
+    3.6,
+    3.88
+   ],
+   [
+    "light",
+    3.88,
+    4.1
+   ],
+   [
+    "speed.",
+    4.1,
+    4.52
+   ],
+   [
+    "Close.",
+    5.32,
+    5.46
+   ],
+   [
+    "But",
+    6.3,
+    6.44
+   ],
+   [
+    "never",
+    6.44,
+    6.78
+   ],
+   [
+    "all",
+    6.78,
+    7.1
+   ],
+   [
+    "the",
+    7.1,
+    7.24
+   ],
+   [
+    "way.",
+    7.24,
+    7.46
+   ]
+  ]
+ },
+ "sweep": [
+  {
+   "word": "s1:You#1",
+   "measured_s_section": 0.033,
+   "caption_frame": 16,
+   "err_frames": 0.01,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:walk#1",
+   "measured_s_section": 0.214,
+   "caption_frame": 21,
+   "err_frames": -0.42,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:at#1",
+   "measured_s_section": 0.464,
+   "caption_frame": 29,
+   "err_frames": 0.08,
+   "source": "override"
+  },
+  {
+   "word": "s1:about#1",
+   "measured_s_section": 0.571,
+   "caption_frame": 32,
+   "err_frames": -0.13,
+   "source": "override"
+  },
+  {
+   "word": "s1:five#1",
+   "measured_s_section": 0.908,
+   "caption_frame": 42,
+   "err_frames": -0.24,
+   "source": "override"
+  },
+  {
+   "word": "s1:kilometres#1",
+   "measured_s_section": 1.403,
+   "caption_frame": 57,
+   "err_frames": -0.09,
+   "source": "override"
+  },
+  {
+   "word": "s1:an#1",
+   "measured_s_section": 1.74,
+   "caption_frame": 67,
+   "err_frames": -0.2,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:hour.#1",
+   "measured_s_section": 1.998,
+   "caption_frame": 75,
+   "err_frames": 0.06,
+   "source": "override"
+  },
+  {
+   "word": "s1:A#1",
+   "measured_s_section": 2.858,
+   "caption_frame": 101,
+   "err_frames": 0.26,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:cheetah#1",
+   "measured_s_section": 2.99,
+   "caption_frame": 105,
+   "err_frames": 0.3,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:sprints#1",
+   "measured_s_section": 3.464,
+   "caption_frame": 119,
+   "err_frames": 0.08,
+   "source": "override"
+  },
+  {
+   "word": "s1:at#2",
+   "measured_s_section": 3.888,
+   "caption_frame": 132,
+   "err_frames": 0.36,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:about#2",
+   "measured_s_section": 3.958,
+   "caption_frame": 134,
+   "err_frames": 0.26,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:a#1",
+   "measured_s_section": 4.156,
+   "caption_frame": 140,
+   "err_frames": 0.32,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:hundred.#1",
+   "measured_s_section": 4.228,
+   "caption_frame": 142,
+   "err_frames": 0.16,
+   "source": "override"
+  },
+  {
+   "word": "s1:A#2",
+   "measured_s_section": 5.214,
+   "caption_frame": 171,
+   "err_frames": -0.42,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:diving#1",
+   "measured_s_section": 5.346,
+   "caption_frame": 175,
+   "err_frames": -0.38,
+   "source": "override"
+  },
+  {
+   "word": "s1:falcon#1",
+   "measured_s_section": 5.716,
+   "caption_frame": 186,
+   "err_frames": -0.48,
+   "source": "override"
+  },
+  {
+   "word": "s1:hits#1",
+   "measured_s_section": 6.024,
+   "caption_frame": 196,
+   "err_frames": 0.28,
+   "source": "override"
+  },
+  {
+   "word": "s1:nearly#1",
+   "measured_s_section": 6.484,
+   "caption_frame": 210,
+   "err_frames": 0.48,
+   "source": "override"
+  },
+  {
+   "word": "s1:four#1",
+   "measured_s_section": 6.806,
+   "caption_frame": 219,
+   "err_frames": -0.18,
+   "source": "override"
+  },
+  {
+   "word": "s1:hundred.#2",
+   "measured_s_section": 7.258,
+   "caption_frame": 233,
+   "err_frames": 0.26,
+   "source": "override"
+  },
+  {
+   "word": "s2:Sound#1",
+   "measured_s_section": 0.033,
+   "caption_frame": 288,
+   "err_frames": 0.21,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:outruns#1",
+   "measured_s_section": 0.449,
+   "caption_frame": 300,
+   "err_frames": -0.27,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:them#1",
+   "measured_s_section": 0.958,
+   "caption_frame": 316,
+   "err_frames": 0.46,
+   "source": "override"
+  },
+  {
+   "word": "s2:all#1",
+   "measured_s_section": 1.279,
+   "caption_frame": 325,
+   "err_frames": -0.17,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:at#1",
+   "measured_s_section": 1.59,
+   "caption_frame": 334,
+   "err_frames": -0.5,
+   "source": "override"
+  },
+  {
+   "word": "s2:over#1",
+   "measured_s_section": 1.719,
+   "caption_frame": 338,
+   "err_frames": -0.37,
+   "source": "override"
+  },
+  {
+   "word": "s2:twelve#1",
+   "measured_s_section": 2.006,
+   "caption_frame": 347,
+   "err_frames": 0.02,
+   "source": "override"
+  },
+  {
+   "word": "s2:hundred.#1",
+   "measured_s_section": 2.184,
+   "caption_frame": 352,
+   "err_frames": -0.32,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:But#1",
+   "measured_s_section": 3.601,
+   "caption_frame": 395,
+   "err_frames": 0.17,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:sitting#1",
+   "measured_s_section": 3.726,
+   "caption_frame": 399,
+   "err_frames": 0.42,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:still,#1",
+   "measured_s_section": 3.936,
+   "caption_frame": 405,
+   "err_frames": 0.12,
+   "source": "override"
+  },
+  {
+   "word": "s2:you're#1",
+   "measured_s_section": 4.964,
+   "caption_frame": 436,
+   "err_frames": 0.28,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:doing#1",
+   "measured_s_section": 5.124,
+   "caption_frame": 441,
+   "err_frames": 0.48,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:over#2",
+   "measured_s_section": 5.364,
+   "caption_frame": 448,
+   "err_frames": 0.28,
+   "source": "override"
+  },
+  {
+   "word": "s2:a#1",
+   "measured_s_section": 5.543,
+   "caption_frame": 453,
+   "err_frames": -0.09,
+   "source": "override"
+  },
+  {
+   "word": "s2:hundred#1",
+   "measured_s_section": 5.724,
+   "caption_frame": 459,
+   "err_frames": 0.48,
+   "source": "override"
+  },
+  {
+   "word": "s2:thousand,#1",
+   "measured_s_section": 6.372,
+   "caption_frame": 478,
+   "err_frames": 0.04,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:riding#1",
+   "measured_s_section": 7.224,
+   "caption_frame": 504,
+   "err_frames": 0.48,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:Earth#1",
+   "measured_s_section": 7.686,
+   "caption_frame": 517,
+   "err_frames": -0.38,
+   "source": "override"
+  },
+  {
+   "word": "s2:around#1",
+   "measured_s_section": 7.948,
+   "caption_frame": 525,
+   "err_frames": -0.24,
+   "source": "override"
+  },
+  {
+   "word": "s2:the#1",
+   "measured_s_section": 8.266,
+   "caption_frame": 535,
+   "err_frames": 0.22,
+   "source": "override"
+  },
+  {
+   "word": "s2:Sun.#1",
+   "measured_s_section": 8.314,
+   "caption_frame": 536,
+   "err_frames": -0.22,
+   "source": "override"
+  },
+  {
+   "word": "s3:The#1",
+   "measured_s_section": 0.033,
+   "caption_frame": 592,
+   "err_frames": -0.44,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:fastest#1",
+   "measured_s_section": 0.053,
+   "caption_frame": 593,
+   "err_frames": -0.04,
+   "source": "override"
+  },
+  {
+   "word": "s3:thing#1",
+   "measured_s_section": 0.606,
+   "caption_frame": 610,
+   "err_frames": 0.37,
+   "source": "override"
+  },
+  {
+   "word": "s3:we've#1",
+   "measured_s_section": 0.98,
+   "caption_frame": 621,
+   "err_frames": 0.15,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:ever#1",
+   "measured_s_section": 1.34,
+   "caption_frame": 632,
+   "err_frames": 0.35,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:built,#1",
+   "measured_s_section": 1.688,
+   "caption_frame": 642,
+   "err_frames": -0.09,
+   "source": "override"
+  },
+  {
+   "word": "s3:the#1",
+   "measured_s_section": 2.3,
+   "caption_frame": 660,
+   "err_frames": -0.45,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:Parker#1",
+   "measured_s_section": 2.428,
+   "caption_frame": 664,
+   "err_frames": -0.29,
+   "source": "override"
+  },
+  {
+   "word": "s3:Solar#1",
+   "measured_s_section": 2.791,
+   "caption_frame": 675,
+   "err_frames": -0.18,
+   "source": "override"
+  },
+  {
+   "word": "s3:Probe,#1",
+   "measured_s_section": 3.078,
+   "caption_frame": 684,
+   "err_frames": 0.21,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:reached#1",
+   "measured_s_section": 3.924,
+   "caption_frame": 709,
+   "err_frames": -0.17,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:nearly#1",
+   "measured_s_section": 4.264,
+   "caption_frame": 719,
+   "err_frames": -0.37,
+   "source": "override"
+  },
+  {
+   "word": "s3:seven#1",
+   "measured_s_section": 4.616,
+   "caption_frame": 730,
+   "err_frames": 0.07,
+   "source": "override"
+  },
+  {
+   "word": "s3:hundred#1",
+   "measured_s_section": 4.941,
+   "caption_frame": 740,
+   "err_frames": 0.32,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:thousand,#1",
+   "measured_s_section": 5.739,
+   "caption_frame": 764,
+   "err_frames": 0.38,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:falling#1",
+   "measured_s_section": 6.696,
+   "caption_frame": 792,
+   "err_frames": -0.33,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:toward#1",
+   "measured_s_section": 7.193,
+   "caption_frame": 807,
+   "err_frames": -0.24,
+   "source": "override"
+  },
+  {
+   "word": "s3:the#2",
+   "measured_s_section": 7.466,
+   "caption_frame": 815,
+   "err_frames": -0.43,
+   "source": "override"
+  },
+  {
+   "word": "s3:Sun.#1",
+   "measured_s_section": 7.541,
+   "caption_frame": 818,
+   "err_frames": 0.32,
+   "source": "override"
+  },
+  {
+   "word": "s4:Light#1",
+   "measured_s_section": 0.036,
+   "caption_frame": 875,
+   "err_frames": 0.02,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:does#1",
+   "measured_s_section": 0.551,
+   "caption_frame": 890,
+   "err_frames": -0.43,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:over#1",
+   "measured_s_section": 0.834,
+   "caption_frame": 899,
+   "err_frames": 0.08,
+   "source": "override"
+  },
+  {
+   "word": "s4:a#1",
+   "measured_s_section": 1.121,
+   "caption_frame": 908,
+   "err_frames": 0.47,
+   "source": "override"
+  },
+  {
+   "word": "s4:billion.#1",
+   "measured_s_section": 1.528,
+   "caption_frame": 920,
+   "err_frames": 0.26,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:And#1",
+   "measured_s_section": 2.683,
+   "caption_frame": 954,
+   "err_frames": -0.39,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:nothing#1",
+   "measured_s_section": 2.796,
+   "caption_frame": 958,
+   "err_frames": 0.22,
+   "source": "override"
+  },
+  {
+   "word": "s4:with#1",
+   "measured_s_section": 3.168,
+   "caption_frame": 969,
+   "err_frames": 0.06,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:mass#1",
+   "measured_s_section": 3.484,
+   "caption_frame": 978,
+   "err_frames": -0.42,
+   "source": "override"
+  },
+  {
+   "word": "s4:can#1",
+   "measured_s_section": 3.978,
+   "caption_frame": 993,
+   "err_frames": -0.24,
+   "source": "override"
+  },
+  {
+   "word": "s4:catch#1",
+   "measured_s_section": 4.111,
+   "caption_frame": 997,
+   "err_frames": -0.23,
+   "source": "override"
+  },
+  {
+   "word": "s4:it:#1",
+   "measured_s_section": 4.413,
+   "caption_frame": 1006,
+   "err_frames": -0.29,
+   "source": "override"
+  },
+  {
+   "word": "s4:the#1",
+   "measured_s_section": 5.108,
+   "caption_frame": 1027,
+   "err_frames": -0.14,
+   "source": "override"
+  },
+  {
+   "word": "s4:closer#1",
+   "measured_s_section": 5.205,
+   "caption_frame": 1030,
+   "err_frames": -0.05,
+   "source": "override"
+  },
+  {
+   "word": "s4:you#1",
+   "measured_s_section": 5.532,
+   "caption_frame": 1040,
+   "err_frames": 0.14,
+   "source": "override"
+  },
+  {
+   "word": "s4:get,#1",
+   "measured_s_section": 5.724,
+   "caption_frame": 1046,
+   "err_frames": 0.38,
+   "source": "override"
+  },
+  {
+   "word": "s4:the#2",
+   "measured_s_section": 6.276,
+   "caption_frame": 1062,
+   "err_frames": -0.18,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:more#1",
+   "measured_s_section": 6.426,
+   "caption_frame": 1067,
+   "err_frames": 0.32,
+   "source": "override"
+  },
+  {
+   "word": "s4:energy#1",
+   "measured_s_section": 6.668,
+   "caption_frame": 1074,
+   "err_frames": 0.06,
+   "source": "override"
+  },
+  {
+   "word": "s4:each#1",
+   "measured_s_section": 7.046,
+   "caption_frame": 1085,
+   "err_frames": -0.28,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:step#1",
+   "measured_s_section": 7.216,
+   "caption_frame": 1090,
+   "err_frames": -0.38,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:costs,#1",
+   "measured_s_section": 7.586,
+   "caption_frame": 1101,
+   "err_frames": -0.48,
+   "source": "override"
+  },
+  {
+   "word": "s4:without#1",
+   "measured_s_section": 8.309,
+   "caption_frame": 1123,
+   "err_frames": -0.17,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:end.#1",
+   "measured_s_section": 8.893,
+   "caption_frame": 1141,
+   "err_frames": 0.31,
+   "source": "override"
+  },
+  {
+   "word": "s5:The#1",
+   "measured_s_section": 0.033,
+   "caption_frame": 1205,
+   "err_frames": -0.49,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:Large#1",
+   "measured_s_section": 0.148,
+   "caption_frame": 1209,
+   "err_frames": 0.06,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:Hadron#1",
+   "measured_s_section": 0.536,
+   "caption_frame": 1221,
+   "err_frames": 0.42,
+   "source": "override"
+  },
+  {
+   "word": "s5:Collider#1",
+   "measured_s_section": 1.011,
+   "caption_frame": 1235,
+   "err_frames": 0.17,
+   "source": "override"
+  },
+  {
+   "word": "s5:pushes#1",
+   "measured_s_section": 1.618,
+   "caption_frame": 1253,
+   "err_frames": -0.04,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:protons#1",
+   "measured_s_section": 2.014,
+   "caption_frame": 1265,
+   "err_frames": 0.08,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:to#1",
+   "measured_s_section": 2.669,
+   "caption_frame": 1285,
+   "err_frames": 0.43,
+   "source": "override"
+  },
+  {
+   "word": "s5:within#1",
+   "measured_s_section": 2.713,
+   "caption_frame": 1286,
+   "err_frames": 0.11,
+   "source": "override"
+  },
+  {
+   "word": "s5:a#1",
+   "measured_s_section": 3.036,
+   "caption_frame": 1296,
+   "err_frames": 0.42,
+   "source": "override"
+  },
+  {
+   "word": "s5:hair#1",
+   "measured_s_section": 3.148,
+   "caption_frame": 1299,
+   "err_frames": 0.06,
+   "source": "override"
+  },
+  {
+   "word": "s5:of#1",
+   "measured_s_section": 3.69,
+   "caption_frame": 1315,
+   "err_frames": -0.2,
+   "source": "override"
+  },
+  {
+   "word": "s5:light#1",
+   "measured_s_section": 3.911,
+   "caption_frame": 1322,
+   "err_frames": 0.17,
+   "source": "override"
+  },
+  {
+   "word": "s5:speed.#1",
+   "measured_s_section": 4.166,
+   "caption_frame": 1329,
+   "err_frames": -0.48,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:Close.#1",
+   "measured_s_section": 5.189,
+   "caption_frame": 1360,
+   "err_frames": -0.17,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:But#1",
+   "measured_s_section": 6.319,
+   "caption_frame": 1394,
+   "err_frames": -0.07,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:never#1",
+   "measured_s_section": 6.478,
+   "caption_frame": 1399,
+   "err_frames": 0.16,
+   "source": "override"
+  },
+  {
+   "word": "s5:all#1",
+   "measured_s_section": 6.812,
+   "caption_frame": 1409,
+   "err_frames": 0.14,
+   "source": "override"
+  },
+  {
+   "word": "s5:the#1",
+   "measured_s_section": 7.131,
+   "caption_frame": 1418,
+   "err_frames": -0.43,
+   "source": "override"
+  },
+  {
+   "word": "s5:way.#1",
+   "measured_s_section": 7.196,
+   "caption_frame": 1420,
+   "err_frames": -0.38,
+   "source": "override"
+  }
+ ],
+ "sweep_max_abs_err_frames": 0.5,
+ "anchors": {
+  "sc02": [
+   "s1",
+   "a",
+   1
+  ],
+  "sc03": [
+   "s1",
+   "a",
+   3
+  ],
+  "sc04": [
+   "s2",
+   "sound",
+   1
+  ],
+  "sc05": [
+   "s2",
+   "but",
+   1
+  ],
+  "sc06": [
+   "s3",
+   "the",
+   1
+  ],
+  "sc07": [
+   "s3",
+   "reached",
+   1
+  ],
+  "sc08": [
+   "s4",
+   "light",
+   1
+  ],
+  "sc09": [
+   "s4",
+   "and",
+   1
+  ],
+  "sc10": [
+   "s4",
+   "the",
+   1
+  ],
+  "sc11": [
+   "s5",
+   "the",
+   1
+  ],
+  "sc12": [
+   "s5",
+   "close",
+   1
+  ]
+ },
+ "overrides_section_relative_s": {
+  "s1:at#1": [
+   0.464,
+   null
+  ],
+  "s1:about#1": [
+   0.571,
+   null
+  ],
+  "s1:five#1": [
+   0.908,
+   null
+  ],
+  "s1:kilometres#1": [
+   1.403,
+   null
+  ],
+  "s1:hour.#1": [
+   1.998,
+   null
+  ],
+  "s1:sprints#1": [
+   3.464,
+   null
+  ],
+  "s1:hundred.#1": [
+   4.228,
+   null
+  ],
+  "s1:diving#1": [
+   5.346,
+   null
+  ],
+  "s1:falcon#1": [
+   5.716,
+   null
+  ],
+  "s1:hits#1": [
+   6.024,
+   null
+  ],
+  "s1:nearly#1": [
+   6.484,
+   null
+  ],
+  "s1:four#1": [
+   6.806,
+   null
+  ],
+  "s1:hundred.#2": [
+   7.258,
+   null
+  ],
+  "s2:them#1": [
+   0.958,
+   null
+  ],
+  "s2:at#1": [
+   1.59,
+   null
+  ],
+  "s2:over#1": [
+   1.719,
+   null
+  ],
+  "s2:twelve#1": [
+   2.006,
+   null
+  ],
+  "s2:still,#1": [
+   3.936,
+   null
+  ],
+  "s2:over#2": [
+   5.364,
+   null
+  ],
+  "s2:a#1": [
+   5.543,
+   null
+  ],
+  "s2:hundred#1": [
+   5.724,
+   null
+  ],
+  "s2:Earth#1": [
+   7.686,
+   null
+  ],
+  "s2:around#1": [
+   7.948,
+   null
+  ],
+  "s2:the#1": [
+   8.266,
+   null
+  ],
+  "s2:Sun.#1": [
+   8.314,
+   null
+  ],
+  "s3:fastest#1": [
+   0.053,
+   null
+  ],
+  "s3:thing#1": [
+   0.606,
+   null
+  ],
+  "s3:built,#1": [
+   1.688,
+   null
+  ],
+  "s3:Parker#1": [
+   2.428,
+   null
+  ],
+  "s3:Solar#1": [
+   2.791,
+   null
+  ],
+  "s3:nearly#1": [
+   4.264,
+   null
+  ],
+  "s3:seven#1": [
+   4.616,
+   null
+  ],
+  "s3:toward#1": [
+   7.193,
+   null
+  ],
+  "s3:the#2": [
+   7.466,
+   null
+  ],
+  "s3:Sun.#1": [
+   7.541,
+   null
+  ],
+  "s4:over#1": [
+   0.834,
+   null
+  ],
+  "s4:a#1": [
+   1.121,
+   null
+  ],
+  "s4:nothing#1": [
+   2.796,
+   null
+  ],
+  "s4:mass#1": [
+   3.484,
+   null
+  ],
+  "s4:can#1": [
+   3.978,
+   null
+  ],
+  "s4:catch#1": [
+   4.111,
+   null
+  ],
+  "s4:it:#1": [
+   4.413,
+   null
+  ],
+  "s4:the#1": [
+   5.108,
+   null
+  ],
+  "s4:closer#1": [
+   5.205,
+   null
+  ],
+  "s4:you#1": [
+   5.532,
+   null
+  ],
+  "s4:get,#1": [
+   5.724,
+   null
+  ],
+  "s4:more#1": [
+   6.426,
+   null
+  ],
+  "s4:energy#1": [
+   6.668,
+   null
+  ],
+  "s4:costs,#1": [
+   7.586,
+   null
+  ],
+  "s4:end.#1": [
+   8.893,
+   null
+  ],
+  "s5:Hadron#1": [
+   0.536,
+   null
+  ],
+  "s5:Collider#1": [
+   1.011,
+   null
+  ],
+  "s5:to#1": [
+   2.669,
+   null
+  ],
+  "s5:within#1": [
+   2.713,
+   null
+  ],
+  "s5:a#1": [
+   3.036,
+   null
+  ],
+  "s5:hair#1": [
+   3.148,
+   null
+  ],
+  "s5:of#1": [
+   3.69,
+   null
+  ],
+  "s5:light#1": [
+   3.911,
+   null
+  ],
+  "s5:never#1": [
+   6.478,
+   null
+  ],
+  "s5:all#1": [
+   6.812,
+   null
+  ],
+  "s5:the#1": [
+   7.131,
+   null
+  ],
+  "s5:way.#1": [
+   7.196,
+   null
+  ]
+ }
+}

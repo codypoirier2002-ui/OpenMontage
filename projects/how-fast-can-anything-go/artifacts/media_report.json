@@ -1,0 +1,70 @@
+{
+ "window": {
+  "x0": 580,
+  "x1": 920,
+  "y0": 440,
+  "y1": 893
+ },
+ "plates": {
+  "S1": {
+   "file": "stills/S1.png",
+   "placeholder": true,
+   "missing_source": "assets/images/plate_cheetah.png",
+   "window": {
+    "x0": 580,
+    "x1": 920,
+    "y0": 440,
+    "y1": 893
+   },
+   "scene": "sc02",
+   "push": [
+    1.0,
+    1.03
+   ],
+   "pending_qa": "4 legs, 1 tail, 2 ears at 4x (lesson 39) before any crop",
+   "note": "a labelled dark card in the window's size; replace by re-running prepare_media.py --force once the still exists"
+  },
+  "S2": {
+   "file": "stills/S2.png",
+   "placeholder": true,
+   "missing_source": "assets/images/plate_falcon_dive.png",
+   "window": {
+    "x0": 580,
+    "x1": 920,
+    "y0": 440,
+    "y1": 893
+   },
+   "scene": "sc03",
+   "push": [
+    1.0,
+    1.03
+   ],
+   "pending_qa": "1 head, 2 wings tucked, 1 tail; peregrine markings",
+   "note": "a labelled dark card in the window's size; replace by re-running prepare_media.py --force once the still exists"
+  },
+  "S3": {
+   "file": "stills/S3.png",
+   "placeholder": true,
+   "missing_source": "assets/images/plate_parker_probe.png",
+   "window": {
+    "x0": 580,
+    "x1": 920,
+    "y0": 440,
+    "y1": 893
+   },
+   "scene": "sc06",
+   "push": [
+    1.0,
+    1.04
+   ],
+   "pending_qa": "one spacecraft, heat shield toward the Sun, no text / logos",
+   "note": "a labelled dark card in the window's size; replace by re-running prepare_media.py --force once the still exists"
+  }
+ },
+ "placeholders": [
+  "S1",
+  "S2",
+  "S3"
+ ],
+ "process": "    python3 projects/how-fast-can-anything-go/prepare_media.py [--force]\n\nPattern of projects/how-a-cat-lands/prepare_media.py (video 15, QA passed). No AI clips. ONE window box for every plate\n(theme.ts L.win: x 580-920, y 440-893, 340 x 453, portrait 3:4, RIGHT of the rung labels so a seated label never sits under a\nphoto; the plan's x 470-920 box would have covered 'EARTH (orbit) · ~107,000' and 'PARKER (fastest built)'), so each crop has\nthe window's aspect (0.7506).\n\nTHE STILLS ARE NOT GENERATED YET (assets_report: S1-S3 'NOT GENERATED', the full ElevenLabs connector was denied). Until\nthey land this script writes a clearly labelled PLACEHOLDER plate per still (a dark card with the plate's name and 'PENDING\nSTILL' in the window's size) into public/stills/<id>.png and records \"placeholder\": true in artifacts/media_report.json, so the\nwhole chain (build_props.py, the composition, the stubs, the contact sheet) runs unchanged.\n\nWHEN THE REAL STILLS LAND (assets/images/plate_cheetah.png, plate_falcon_dive.png, plate_parker_probe.png; 9:16 2K):\n  1. count legs / wings / tails on each at 4x (lesson 39) and write the measured feature points into PLATES[*]['contains']\n     (every point is asserted inside the crop with a 20 px margin) and the crop box (lesson 9: measure from pixels, keep the\n     window's aspect; the plan asks for the middle 60 % to be the most interesting);\n  2. python3 projects/how-fast-can-anything-go/prepare_media.py --force   (re-stages the crops, drops the placeholders)\n  3. python3 projects/how-fast-can-anything-go/build_props.py             (the plates' 'placeholder' flags go false)\n  then re-render the affected stills (sc02, sc03, sc06, sc07). Nothing else changes.\n-> artifacts/media_report.json + renders/review/crops.jpg (the crops on their plates, or the placeholders).\n"
+}

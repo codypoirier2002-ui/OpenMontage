@@ -1,5 +1,7 @@
 // KIT TEMPLATE (docs/channel/kit, taken from video 14, QA passed). Copied by new_project.sh; the comments below describe
 // video 14 - rewrite them for this video. Contract with theme.ts / time.ts / types.ts: docs/channel/kit/KIT.md.
+// VIDEO 16 "How Fast Can Anything Go?": NO caption tones (the plan: plain only; CaptionTone = "plain"), so the TONE / GLOW maps
+// below carry the one channel-standard entry. Word onsets: align_narration.py, the 106-word sweep.
 // Caption slab (channel standard): x 140-940, y 1296-1488, text x 168-912. Copied from
 // projects/how-hot-can-it-get/overlay/Captions.tsx (video 13, QA passed; itself videos 9-12), incl. its QA fixes:
 // back-to-back pages keep the slab up (lesson 6; build_props.py also butts pages closer than 13 f and pages ending inside a

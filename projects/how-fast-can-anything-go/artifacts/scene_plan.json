@@ -6,14 +6,14 @@
    "id": "sc01",
    "type": "animation",
    "start_seconds": 0.0,
-   "end_seconds": 3.607,
+   "end_seconds": 3.3,
    "script_section_id": "s1",
-   "description": "Render: atelier component Walk. FRAME 0: night-ink sky (#070A12 -> #0D1424 vertical gradient, faint star dust), a vertical steel log-scale rail at x ~250 from y 1080 (1 km/h) to y 380 (10^9 km/h), decade ticks with small mono numbers (1, 10, 100, 1,000 ... 1,000,000,000), label 'km/h \u00b7 log scale'. At the very top a short red line labelled 'c' (dim until s4). A white-cyan marker (#BFF6FF core, soft glow) sits at 5 km/h with a rung label 'WALK \u00b7 ~5' and a tiny walker icon. ZEROS counter top right: '0'. MOTION: marker breathes; streaks length = log10(speed).",
-   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "description": "Render: atelier component Walk. FRAME 0: night-ink sky (#070A12 -> #0D1424 vertical gradient, faint star dust), a vertical steel log-scale rail at x ~250 from y 1080 (1 km/h) to y 380 (10^9 km/h), decade ticks with small mono numbers (1, 10, 100, 1,000 ... 1,000,000,000), label 'km/h · log scale'. At the very top a short red line labelled 'c' (dim until s4). A white-cyan marker (#BFF6FF core, soft glow) sits at 5 km/h with a rung label 'WALK · ~5' and a tiny walker icon. ZEROS counter top right: '0'. MOTION: marker breathes; streaks length = log10(speed).",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'You walk at about five kilometres an hour.'. TAB MEASURED. OVERLAYS: rail label 'km/h \u00b7 log scale'; rung 'WALK \u00b7 ~5'; counter 'ZEROS 0'. SFX: X1 soft whoosh as the rail draws.",
+   "overlay_notes": "CAPTION 'You walk at about five kilometres an hour.'. TAB MEASURED. OVERLAYS: rail label 'km/h · log scale'; rung 'WALK · ~5'; counter 'ZEROS 0'. SFX: X1 soft whoosh as the rail draws.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -43,15 +43,15 @@
   {
    "id": "sc02",
    "type": "broll",
-   "start_seconds": 3.607,
-   "end_seconds": 6.764,
+   "start_seconds": 3.3,
+   "end_seconds": 5.633,
    "script_section_id": "s1",
-   "description": "Render: atelier component Cheetah. The marker eases up to 100 (rung 'CHEETAH \u00b7 ~100' seats with its number on arrival); the counter ticks to 2. A window (x 470-920, y 420-900) opens on S1: a cheetah at full sprint (AI impression).",
-   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera; inset media framed from measured pixels (lesson 9).",
+   "description": "Render: atelier component Cheetah. The marker eases up to 100 (rung 'CHEETAH · ~100' seats with its number on arrival); the counter ticks to 2. A window (x 470-920, y 420-900) opens on S1: a cheetah at full sprint (AI impression).",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera; inset media framed from measured pixels (lesson 9).",
    "movement": "see description",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'A cheetah sprints at about a hundred.'. TAB MEASURED. OVERLAYS: rung 'CHEETAH \u00b7 ~100'; window tag 'AI impression'. SFX: X1 whoosh on the climb; X3 digit tick on the counter.",
+   "overlay_notes": "CAPTION 'A cheetah sprints at about a hundred.'. TAB MEASURED. OVERLAYS: rung 'CHEETAH · ~100'; window tag 'AI impression'. SFX: X1 whoosh on the climb; X3 digit tick on the counter.",
    "shot_language": {
     "shot_size": "wide",
     "camera_movement": "static",
@@ -81,15 +81,15 @@
   {
    "id": "sc03",
    "type": "broll",
-   "start_seconds": 6.764,
-   "end_seconds": 9.92,
+   "start_seconds": 5.633,
+   "end_seconds": 9.533,
    "script_section_id": "s1",
-   "description": "Render: atelier component Falcon. Window swaps (hard tag swap at the crossfade midpoint, lesson 38) to S2: a peregrine falcon in a steep dive (AI impression). The marker climbs to ~390 (rung 'FALCON (dive) \u00b7 ~390' with a hatched PROBABLY chip 'commonly cited').",
-   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera; inset media framed from measured pixels (lesson 9).",
+   "description": "Render: atelier component Falcon. Window swaps (hard tag swap at the crossfade midpoint, lesson 38) to S2: a peregrine falcon in a steep dive (AI impression). The marker climbs to ~390 (rung 'FALCON (dive) · ~390' with a hatched PROBABLY chip 'commonly cited').",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera; inset media framed from measured pixels (lesson 9).",
    "movement": "see description",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'A diving falcon hits nearly four hundred.'. TAB PROBABLY. OVERLAYS: rung 'FALCON (dive) \u00b7 ~390'; chip 'commonly cited'; window tag 'AI impression'. SFX: X1 whoosh.",
+   "overlay_notes": "CAPTION 'A diving falcon hits nearly four hundred.'. TAB PROBABLY. OVERLAYS: rung 'FALCON (dive) · ~390'; chip 'commonly cited'; window tag 'AI impression'. SFX: X1 whoosh.",
    "shot_language": {
     "shot_size": "wide",
     "camera_movement": "static",
@@ -119,15 +119,15 @@
   {
    "id": "sc04",
    "type": "animation",
-   "start_seconds": 9.92,
-   "end_seconds": 13.545,
+   "start_seconds": 9.533,
+   "end_seconds": 13.1,
    "script_section_id": "s2",
-   "description": "Render: atelier component Sound. Window closes. The marker crosses 1,235 (rung 'SOUND \u00b7 1,235') with a soft circular pressure ring expanding once from the marker; counter 3.",
-   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "description": "Render: atelier component Sound. Window closes. The marker crosses 1,235 (rung 'SOUND · 1,235') with a soft circular pressure ring expanding once from the marker; counter 3.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": "see description",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'Sound outruns them all at over twelve hundred.'. TAB MEASURED. OVERLAYS: rung 'SOUND \u00b7 1,235'. SFX: X2 soft sonic thump on the rung seat.",
+   "overlay_notes": "CAPTION 'Sound outruns them all at over twelve hundred.'. TAB MEASURED. OVERLAYS: rung 'SOUND · 1,235'. SFX: X2 soft sonic thump on the rung seat.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -157,15 +157,15 @@
   {
    "id": "sc05",
    "type": "animation",
-   "start_seconds": 13.545,
-   "end_seconds": 19.89,
+   "start_seconds": 13.1,
+   "end_seconds": 19.667,
    "script_section_id": "s2",
-   "description": "Render: atelier component YouAreFast. HERO. A small 'YOU' tag (a seated figure icon) appears at the WALK rung and then jumps up the rail to 107,000 on 'hundred thousand' (rung 'EARTH (orbit) \u00b7 ~107,000'); beside the rail a small drawn orbit diagram (Sun dot, Earth dot on a dashed circle, arrow) labelled 'drawn \u00b7 not to scale'. Counter 5.",
-   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "description": "Render: atelier component YouAreFast. HERO. A small 'YOU' tag (a seated figure icon) appears at the WALK rung and then jumps up the rail to 107,000 on 'hundred thousand' (rung 'EARTH (orbit) · ~107,000'); beside the rail a small drawn orbit diagram (Sun dot, Earth dot on a dashed circle, arrow) labelled 'drawn · not to scale'. Counter 5.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": "see description",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'But sitting still, you're doing over a hundred thousand, riding Earth around the Sun.'. TAB MEASURED. OVERLAYS: tag 'YOU'; rung 'EARTH (orbit) \u00b7 ~107,000'; inset tag 'drawn \u00b7 not to scale'. SFX: X1 big whoosh on the jump; X3 ticks on the counter.",
+   "overlay_notes": "CAPTION 'But sitting still, you're doing over a hundred thousand, riding Earth around the Sun.'. TAB MEASURED. OVERLAYS: tag 'YOU'; rung 'EARTH (orbit) · ~107,000'; inset tag 'drawn · not to scale'. SFX: X1 big whoosh on the jump; X3 ticks on the counter.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -195,15 +195,15 @@
   {
    "id": "sc06",
    "type": "broll",
-   "start_seconds": 19.89,
-   "end_seconds": 24.448,
+   "start_seconds": 19.667,
+   "end_seconds": 23.567,
    "script_section_id": "s3",
-   "description": "Render: atelier component Parker. Window opens on S3: a heat-shielded spacecraft close to the Sun (AI impression of the Parker Solar Probe). Label 'Parker Solar Probe \u00b7 NASA'.",
-   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera; inset media framed from measured pixels (lesson 9).",
+   "description": "Render: atelier component Parker. Window opens on S3: a heat-shielded spacecraft close to the Sun (AI impression of the Parker Solar Probe). Label 'Parker Solar Probe · NASA'.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera; inset media framed from measured pixels (lesson 9).",
    "movement": "see description",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'The fastest thing we've ever built, the Parker Solar Probe,'. TAB MEASURED. OVERLAYS: label 'Parker Solar Probe \u00b7 NASA'; window tag 'AI impression'. SFX: X4 low hum swells under the window (soft).",
+   "overlay_notes": "CAPTION 'The fastest thing we've ever built, the Parker Solar Probe,'. TAB MEASURED. OVERLAYS: label 'Parker Solar Probe · NASA'; window tag 'AI impression'. SFX: X4 low hum swells under the window (soft).",
    "shot_language": {
     "shot_size": "wide",
     "camera_movement": "static",
@@ -233,15 +233,15 @@
   {
    "id": "sc07",
    "type": "animation",
-   "start_seconds": 24.448,
-   "end_seconds": 28.55,
+   "start_seconds": 23.567,
+   "end_seconds": 29.1,
    "script_section_id": "s3",
-   "description": "Render: atelier component Falling. The marker climbs to 692,000 (rung 'PARKER (fastest built) \u00b7 ~692,000'); counter 5. A small arrow on the window plate points toward the Sun: 'falling toward the Sun'.",
-   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "description": "Render: atelier component Falling. The marker climbs to 692,000 (rung 'PARKER (fastest built) · ~692,000'); counter 5. A small arrow on the window plate points toward the Sun: 'falling toward the Sun'.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": "see description",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'reached nearly seven hundred thousand, falling toward the Sun.'. TAB MEASURED. OVERLAYS: rung 'PARKER (fastest built) \u00b7 ~692,000'; label 'falling toward the Sun'. SFX: X1 whoosh.",
+   "overlay_notes": "CAPTION 'reached nearly seven hundred thousand, falling toward the Sun.'. TAB MEASURED. OVERLAYS: rung 'PARKER (fastest built) · ~692,000'; label 'falling toward the Sun'. SFX: X1 whoosh.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -271,15 +271,15 @@
   {
    "id": "sc08",
    "type": "animation",
-   "start_seconds": 28.55,
-   "end_seconds": 30.817,
+   "start_seconds": 29.1,
+   "end_seconds": 31.733,
    "script_section_id": "s4",
-   "description": "Render: atelier component Light. Window closes. A thin beam races up the rail to the top (1,079,252,849) in a few frames; rung 'LIGHT \u00b7 1,079,252,849'; counter 9; the 'c' line at the top lights red.",
-   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "description": "Render: atelier component Light. Window closes. A thin beam races up the rail to the top (1,079,252,849) in a few frames; rung 'LIGHT · 1,079,252,849'; counter 9; the 'c' line at the top lights red.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": "see description",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'Light does over a billion.'. TAB MEASURED. OVERLAYS: rung 'LIGHT \u00b7 1,079,252,849'; line 'c'. SFX: X5 high shimmer on the beam.",
+   "overlay_notes": "CAPTION 'Light does over a billion.'. TAB MEASURED. OVERLAYS: rung 'LIGHT · 1,079,252,849'; line 'c'. SFX: X5 high shimmer on the beam.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -309,11 +309,11 @@
   {
    "id": "sc09",
    "type": "animation",
-   "start_seconds": 30.817,
-   "end_seconds": 33.99,
+   "start_seconds": 31.733,
+   "end_seconds": 34.167,
    "script_section_id": "s4",
    "description": "Render: atelier component Wall. The marker leaves PARKER and climbs toward 'c' but slows smoothly; label 'anything with mass' on the marker.",
-   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": "see description",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
@@ -347,15 +347,15 @@
   {
    "id": "sc10",
    "type": "diagram",
-   "start_seconds": 33.99,
-   "end_seconds": 39.43,
+   "start_seconds": 34.167,
+   "end_seconds": 40.1,
    "script_section_id": "s4",
-   "description": "Render: atelier component Energy. Beside the rail an 'ENERGY NEEDED' bar grows faster and faster as the marker inches up (a 1/sqrt(1-v^2/c^2) curve drawn small with axis labels 'speed' / 'energy', 'drawn \u00b7 not to scale'); the bar runs off the top of the frame on 'without end'.",
-   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "description": "Render: atelier component Energy. Beside the rail an 'ENERGY NEEDED' bar grows faster and faster as the marker inches up (a 1/sqrt(1-v^2/c^2) curve drawn small with axis labels 'speed' / 'energy', 'drawn · not to scale'); the bar runs off the top of the frame on 'without end'.",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": "see description",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'the closer you get, the more energy each step costs, without end.'. TAB MEASURED. OVERLAYS: label 'ENERGY NEEDED'; axis labels 'speed' / 'energy'; inset tag 'drawn \u00b7 not to scale'. SFX: X3 accelerating ticks as the bar grows.",
+   "overlay_notes": "CAPTION 'the closer you get, the more energy each step costs, without end.'. TAB MEASURED. OVERLAYS: label 'ENERGY NEEDED'; axis labels 'speed' / 'energy'; inset tag 'drawn · not to scale'. SFX: X3 accelerating ticks as the bar grows.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -385,11 +385,11 @@
   {
    "id": "sc11",
    "type": "text_card",
-   "start_seconds": 39.43,
-   "end_seconds": 45.082,
+   "start_seconds": 40.1,
+   "end_seconds": 45.267,
    "script_section_id": "s5",
    "description": "Render: atelier component LHC. HERO 2. A mono readout card: 'LHC protons' then '99.9999991 %' types digit by digit (each 9 on a tick); the marker creeps to just under 'c' with a tiny bracket 'the gap'. Placard credits CERN.",
-   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": "see description",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
@@ -423,11 +423,11 @@
   {
    "id": "sc12",
    "type": "animation",
-   "start_seconds": 45.082,
-   "end_seconds": 49.2,
+   "start_seconds": 45.267,
+   "end_seconds": 49.267,
    "script_section_id": "s5",
    "description": "Render: atelier component NeverAllTheWay. Everything settles: the full ladder visible, the marker steady just under 'c', the gap bracket stays. After 'way' a ~1.5 s still hold on the resolved chord; caption slab 'What's the fastest thing you've ridden?'; tab idle.",
-   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 470-920 y 420-900, counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+   "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": "see description",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
@@ -472,10 +472,10 @@
   "fps": 30,
   "resolution": "1080x1920",
   "aspect_ratio": "9:16",
-  "total_duration_seconds": 49.2,
-  "total_frames": 1476,
+  "total_duration_seconds": 49.267,
+  "total_frames": 1478,
   "platform": "tiktok",
-  "timing_basis": "PLANNED estimate from script.json (2.3 w/s, scene splits by word share). Re-time at the foundation stage from the aligned narration: every boundary after sc01 = its anchor word's measured onset - 2 frames. Bella reads fast: widen section gaps for >= 45 s (lesson 48).",
+  "timing_basis": "MEASURED (foundation): every scene boundary after sc01 = its anchor word's hand-measured onset - 2 frames (align_narration.py, the clean WAVs, 106/106 words swept); the film = 0.5 s lead + 47.375 s narration (widened gaps 1.2/1.2/1.2/1.45 s, lesson 48) to the release of 'way.' (47.74 s) + 1.5 s settle. Planned values kept in planned_total_*.",
   "build_mode": "LEAN: bash docs/channel/scripts/new_project.sh how-fast-can-anything-go SpeedLadder; reuse video 13's shared/Ladder.tsx, Window.tsx, Grain, Icons, the zeros counter and theme structure (no black-body colour); video 15's pipeline scripts (process_narration, align_narration, sweep_onsets, build_soundtrack incl. ending.closing_min_margin_db, build_props, prepare_media, sync_scene_plan, contact_sheet2). New: rail marker with log streaks, YOU tag + orbit inset, light beam + c wall, energy bar/curve, LHC nines readout. 2 scene builders. qa_auto.py, then 1 QA agent.",
   "taste_profile": {
    "design_read": "Youth science short: a calm climb up one speed ladder, from walking to light, ending at a wall that never moves.",
@@ -511,7 +511,7 @@
    "data": "video 13's mono face (numbers, counter, readout; slashed zeros)",
    "captions": "Bricolage Grotesque 800 (channel standard)",
    "tab": "Spline Sans Mono 600 (channel standard)",
-   "glyphs": "check ',', '\u00b7', '~', '%', '(', ')', digits; arrows SVG"
+   "glyphs": "check ',', '·', '~', '%', '(', ')', digits; arrows SVG"
   },
   "safe_areas": {
    "top_ui_y": [
@@ -530,17 +530,19 @@
     "y": [
      380,
      1080
-    ]
+    ],
+    "note": "spine x 250; decade numbers right-aligned at x 224 (the longest reaches x ~86); rung chips from x 280"
    },
    "window": {
     "x": [
-     470,
+     580,
      920
     ],
     "y": [
-     420,
-     900
-    ]
+     440,
+     893
+    ],
+    "note": "ONE portrait box (340 x 453) for S1, S2 and S3, right of the rung label chips (never over one: build_props asserts)"
    },
    "counter": {
     "x": [
@@ -550,7 +552,8 @@
     "y": [
      220,
      340
-    ]
+    ],
+    "note": "the ZEROS chip, right-aligned at x 920"
    },
    "placard_rail": {
     "x": [
@@ -586,14 +589,78 @@
     1574,
     1920
    ],
-   "right_rail": "x >= 929: sky only, no text"
+   "right_rail": "x >= 929: sky only, no text",
+   "rung_labels": {
+    "x": [
+     280,
+     572
+    ],
+    "note": "label chips (one line, or two lines for EARTH / PARKER) end before the window at x 580"
+   },
+   "orbit_inset": {
+    "x": [
+     600,
+     920
+    ],
+    "y": [
+     460,
+     800
+    ],
+    "scenes": "sc05 (window closed)"
+   },
+   "energy": {
+    "bar_x": [
+     600,
+     650
+    ],
+    "curve": {
+     "x": [
+      690,
+      920
+     ],
+     "y": [
+      440,
+      640
+     ]
+    },
+    "scenes": "sc10"
+   },
+   "readout": {
+    "x": [
+     600,
+     920
+    ],
+    "y": [
+     460,
+     600
+    ],
+    "scenes": "sc11-sc12"
+   },
+   "you_tag": {
+    "x": [
+     120,
+     224
+    ],
+    "note": "LEFT of the rail at its rung (WALK, then EARTH); the decade number within 26 px of it is hidden"
+   },
+   "mass_label": {
+    "x": [
+     280,
+     545
+    ],
+    "y": [
+     483,
+     517
+    ],
+    "scenes": "sc09-sc10 (fixed chip + a dotted leader to the marker)"
+   }
   },
   "signature_device": "One log-scale speed rail in km/h (1 to 10^9) with a single glowing marker that climbs rung by rung while a ZEROS counter ticks 0 -> 9; the top is a red 'c' line the marker approaches but never touches; streak length = log10(speed).",
   "hero_beats": [
    "sc05 'YOU' jumps from WALK to Earth's orbit (~107,000)",
    "sc11 the LHC nines fill while the gap under 'c' stays"
   ],
-  "honesty_grammar": "MEASURED solid tab; PROBABLY outline + hatch (the falcon dive). AI: 'AI impression' on S1-S3. Drawings: 'drawn \u00b7 not to scale' (orbit inset, energy curve). The rail is labelled 'km/h \u00b7 log scale'. Numbers on rungs are the brief's values; '~' where the brief gives a range.",
+  "honesty_grammar": "MEASURED solid tab; PROBABLY outline + hatch (the falcon dive). AI: 'AI impression' on S1-S3. Drawings: 'drawn · not to scale' (orbit inset, energy curve). The rail is labelled 'km/h · log scale'. Numbers on rungs are the brief's values; '~' where the brief gives a range.",
   "captions": {
    "role": "Word-highlight captions from script.json words verbatim",
    "slab": "channel standard: #0A0B10 62%, blur 10, r 24, x 140-940, y 1296-1488",
@@ -698,13 +765,14 @@
    },
    {
     "scenes": "sc04-sc05",
-    "text": "sound: 343 m/s in 20 \u00b0C air \u00b7 Earth: 29.78 km/s (NASA)",
+    "text": "sound: 343 m/s in 20 °C air · Earth: 29.78 km/s (NASA)",
     "fine_print": "km/h on a log scale: each tick is 10x"
    },
    {
     "scenes": "sc06-sc07",
-    "text": "Parker Solar Probe, NASA: ~692,000 km/h (Dec 2024)",
-    "fine_print": "speed from falling toward the Sun"
+    "text": "Parker Solar Probe: ~692,000 km/h (Dec 2024)",
+    "fine_print": "NASA's figure as reported by Space.com · speed from falling toward the Sun",
+    "lesson_32": "reworded by the foundation: the brief holds NASA's figure only through Space.com / SlashGear / Live Science reports"
    },
    {
     "scenes": "sc08-sc10",
@@ -732,7 +800,15 @@
     "qa": "9:16 2K; 4 legs, 1 tail, 2 ears; realistic; no text.",
     "honesty": "'AI impression' tag while visible.",
     "risk": "extra legs; merged limbs",
-    "fallback": "crop (lesson 39) or drawn icon only"
+    "fallback": "crop (lesson 39) or drawn icon only",
+    "placeholder": true,
+    "window": {
+     "x0": 580,
+     "x1": 920,
+     "y0": 440,
+     "y1": 893
+    },
+    "status": "NOT GENERATED: a labelled placeholder card is staged in public/stills/; re-run prepare_media.py --force + build_props.py when it lands"
    },
    {
     "still_id": "S2",
@@ -748,7 +824,15 @@
     "qa": "9:16 2K; 1 head, 2 wings tucked, 1 tail; realistic peregrine markings; no text.",
     "honesty": "'AI impression' tag while visible.",
     "risk": "extra wings; wrong species look",
-    "fallback": "crop or drawn icon only"
+    "fallback": "crop or drawn icon only",
+    "placeholder": true,
+    "window": {
+     "x0": 580,
+     "x1": 920,
+     "y0": 440,
+     "y1": 893
+    },
+    "status": "NOT GENERATED: a labelled placeholder card is staged in public/stills/; re-run prepare_media.py --force + build_props.py when it lands"
    },
    {
     "still_id": "S3",
@@ -765,7 +849,15 @@
     "qa": "9:16 2K; one spacecraft with a heat shield facing the Sun; no text/logos.",
     "honesty": "'AI impression' tag while visible.",
     "risk": "looks like a different spacecraft; text/logos",
-    "fallback": "drawn probe icon + label"
+    "fallback": "drawn probe icon + label",
+    "placeholder": true,
+    "window": {
+     "x0": 580,
+     "x1": 920,
+     "y0": 440,
+     "y1": 893
+    },
+    "status": "NOT GENERATED: a labelled placeholder card is staged in public/stills/; re-run prepare_media.py --force + build_props.py when it lands"
    }
   ],
   "ai_clips": [],
@@ -886,7 +978,7 @@
    "sc12": "Close. But never all the way."
   },
   "verified_on_screen_strings": [
-   "km/h \u00b7 log scale",
+   "km/h · log scale",
    "1",
    "10",
    "100",
@@ -898,17 +990,17 @@
    "100,000,000",
    "1,000,000,000",
    "c",
-   "WALK \u00b7 ~5",
-   "CHEETAH \u00b7 ~100",
-   "FALCON (dive) \u00b7 ~390",
+   "WALK · ~5",
+   "CHEETAH · ~100",
+   "FALCON (dive) · ~390",
    "commonly cited",
-   "SOUND \u00b7 1,235",
+   "SOUND · 1,235",
    "YOU",
-   "EARTH (orbit) \u00b7 ~107,000",
-   "Parker Solar Probe \u00b7 NASA",
-   "PARKER (fastest built) \u00b7 ~692,000",
+   "EARTH (orbit) · ~107,000",
+   "Parker Solar Probe · NASA",
+   "PARKER (fastest built) · ~692,000",
    "falling toward the Sun",
-   "LIGHT \u00b7 1,079,252,849",
+   "LIGHT · 1,079,252,849",
    "anything with mass",
    "ENERGY NEEDED",
    "speed",
@@ -918,7 +1010,7 @@
    "the gap",
    "ZEROS",
    "AI impression",
-   "drawn \u00b7 not to scale",
+   "drawn · not to scale",
    "What's the fastest thing you've ridden?"
   ],
   "forbidden_on_screen": [
@@ -978,6 +1070,20 @@
    "Honesty: AI tags; drawings 'not to scale'; log scale labelled; falcon PROBABLY"
   ],
   "planned_total_duration_seconds": 49.2,
-  "planned_total_frames": 1476
+  "planned_total_frames": 1476,
+  "foundation_changes": [
+   "Film 1478 f (49.267 s), not 1476: the read is 42.56 s raw; section gaps widened to 1.2/1.2/1.2/1.45 s (lead 0.5 s, settle 1.5 s); all 12 windows re-timed (anchor - 2 f).",
+   "ONE window box x 580-920, y 440-893 (portrait 3:4) for S1, S2, S3, right of the rung label chips (the plan's x 470-920 box covered 'EARTH (orbit) · ~107,000' and 'PARKER (fastest built) · ~692,000').",
+   "Rung labels are CHIPS (name in Saira Condensed 700 + number in IBM Plex Mono 500, slashed zeros); EARTH and PARKER are two-line chips (name over number) so they fit beside the open window; the strings are the verified ones.",
+   "Stills S1-S3 are PLACEHOLDER cards (labelled 'PENDING STILL') until they are generated; the window, its tag and the chain run unchanged.",
+   "Music bed M1 pending: the premix is voice + SFX; build_soundtrack.py picks up assets/music/bed_raw.mp3 automatically (last tonic from the audio, lesson 26).",
+   "Placard 3 reworded (lesson 32): 'Parker Solar Probe: ~692,000 km/h (Dec 2024)' + 'NASA's figure as reported by Space.com · speed from falling toward the Sun'.",
+   "Caption pages re-flowed (s1, s2, s4, s5) so each claim starts its own page (lesson 3) and no page is a 2-word orphan; the CTA is set on two lines (994 px at 52 px on one).",
+   "The YOU tag is ROOT-owned (it persists sc05 -> sc12 across both units); the orbit inset, the light beam, the mass label, the energy bar and the LHC readout are unit-mounted engines driven by root curves.",
+   "ZEROS counter = floor(log10) of the rung's number (the digits after the first: 1,235 -> 3, as the plan's 'counter 3'); it steps on X3 ticks ending ON each seat.",
+   "The gap under 'c' is DRAWN (14 px, marker centre to line; asserted >= 14 on every frame): 0.999999991 c would be invisible on any log scale; 'the gap' bracket + the log-scale label say so.",
+   "The 'anything with mass' label sits at a fixed chip (x 280, y 500) with a dotted leader to the moving marker (riding the marker would collide with the PARKER / LIGHT chips).",
+   "The s4 breath after 'Light' (0.28 s) is kept (the [awed] beat); no narration was cut."
+  ]
  }
 }

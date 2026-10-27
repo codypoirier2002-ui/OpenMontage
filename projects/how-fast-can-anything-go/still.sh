@@ -10,7 +10,7 @@ COMPOSER="$HERE/../../remotion-composer"
 LINK="$COMPOSER/projects/how-fast-can-anything-go"
 OUT_DIR="${OUT_DIR:-$HERE/renders/stills}"
 SCALE="${SCALE:-1}"
-BROWSER="${REMOTION_BROWSER_EXECUTABLE:-/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell}"
+BROWSER="${REMOTION_BROWSER_EXECUTABLE:-/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell}"
 mkdir -p "$OUT_DIR"
 OUT_DIR="$(cd "$OUT_DIR" && pwd)"   # absolute: the render runs from remotion-composer/
 if [ ! -L "$LINK" ]; then
