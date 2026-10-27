@@ -1,39 +1,25 @@
-// sc07 · Falling · U2. root: climb from climbParker (X1), PARKER chip (two lines) ON parkerSeat; the window (S3) stays open and closes windowClose2. U2 Overlay: an SVG <Arrow> on the plate pointing toward the Sun + the label 'falling toward the Sun' from fallArrow (the demo uses T.labels.falling).
-// FOUNDATION STUB: replace the <StubLabel> and the demo with the real scene; keep `mount`, the export names and the
-// device mounts noted in BUILD.md §7. Hooks at the top, before any early return (lesson 1).
+// sc07 · Falling · U2 (707-873). ROOT: the marker climbs EARTH -> PARKER from climbParker (X1 whoosh, streaks) and the
+// two-line PARKER chip seats ON parkerSeat; the window (S3, 'AI impression') stays open and closes windowClose2 -> 873;
+// the YOU tag holds at EARTH; counter 5. U2 OVERLAY (over the window): <FallArrow/>: an SVG arrow on the plate pointing at
+// the Sun (the top of the plate), drawing on from fallArrow ('falling'), with the label 'falling toward the Sun' on the same
+// first frame (lesson 31); both fade out 6 f ending ON windowClose2, 10 f before the LIGHT page (lessons 42 / 47).
+// The picture layer draws nothing: the climb and the chip are the root's. At 707 nothing of ours shows (seam with sc06).
+// Hooks at the top, before any early return (lesson 1).
 import React from "react";
 import { useCurrentFrame } from "remotion";
 import type { Mount, SceneProps } from "../../types";
-import { StubLabel } from "../_stub";
-import { useT } from "../../time";
-import { SceneTag } from "../../overlay/Tag";
-import { Arrow } from "../../shared/Icons";
-import { L } from "../../theme";
+import { FallArrow } from "./_fx";
 
 export const mount: Mount = { pre: 0, post: 0, z: 1 };
 
 export const Falling: React.FC<SceneProps> = ({ from, to }) => {
   const frame = useCurrentFrame();
   if (frame < from || frame >= to) return null;
-  return (
-    <>
-    </>
-  );
+  return null;
 };
 
 export const Overlay: React.FC<SceneProps> = ({ from, to }) => {
   const frame = useCurrentFrame();
-  const T = useT();
   if (frame < from || frame >= to) return null;
-  return (
-    <>
-      <StubLabel id="sc07" from={from} to={to} />
-      {frame >= T.sfx.fallArrow ? (
-        <svg width={L.W} height={L.H} style={{ position: "absolute", inset: 0 }}>
-          <Arrow x1={L.win.x0 + 170} y1={L.win.y1 - 130} x2={L.win.x0 + 170} y2={L.win.y0 + 120} width={4} head={14} />
-        </svg>
-      ) : null}
-      <SceneTag x={L.win.x0 + 16} y={L.win.y0 + 16} enter={T.sfx.fallArrow} exit={to} text={T.labels.falling} />
-    </>
-  );
+  return <FallArrow />;
 };

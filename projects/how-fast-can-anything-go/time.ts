@@ -143,8 +143,8 @@ export const makeTiming = (p: SpeedProps): Timing => {
   const N = p.nines;
   const nines = (frame: number) => {
     const count = N.count[Math.max(0, Math.min(total - 1, Math.floor(frame)))];
-    // the glyph groups: '99.9999991 %' lands as 9 | 9. | 9 | 9 | 9 | 9 | 9 | 9 | 1 % (10 landings)
-    const groups = ["9", "9.", "9", "9", "9", "9", "9", "9", "9", "1 %"];
+    // the glyph groups: '99.9999991 %' (six nines after the point, lesson 16) lands as 9 | 9. | 9 | 9 | 9 | 9 | 9 | 9 | 1 |  % (10 landings, 12 glyphs)
+    const groups = ["9", "9.", "9", "9", "9", "9", "9", "9", "1", " %"];
     return { count, alpha: sample(N.alpha, frame), shown: groups.slice(0, count).join("") };
   };
 

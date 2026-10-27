@@ -199,7 +199,7 @@ export const NinesReadoutLive: React.FC = () => {
     <div style={{ position: "absolute", left: b.x0, top: b.y0 + (frame < T.ninesInfo.seat ? s.y : 0), width: b.x1 - b.x0, height: b.y1 - b.y0, borderRadius: b.r, boxSizing: "border-box",
       backgroundColor: rgba(C.chip, 0.92), border: `1.5px solid ${rgba(C.steel, 0.5)}`, padding: "16px 22px", opacity: nn.alpha * s.opacity, boxShadow: "0 14px 40px rgba(0,0,0,0.5)" }}>
       <div style={{ fontFamily: FONT.display, fontWeight: 700, fontSize: 28, lineHeight: "34px", color: C.steel, letterSpacing: 0.5 }}>{T.ninesInfo.label}</div>
-      <div style={{ marginTop: 10, fontFamily: FONT.mono, fontWeight: 500, fontSize: 40, lineHeight: "50px", color: C.bone, whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums" }}>
+      <div style={{ marginTop: 10, fontFamily: FONT.mono, fontWeight: 500, fontSize: 38, lineHeight: "50px", color: C.bone, whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums" }}>
         <span>{nn.shown}</span>
         <span style={{ opacity: 0.16 }}>{rest}</span>
       </div>
