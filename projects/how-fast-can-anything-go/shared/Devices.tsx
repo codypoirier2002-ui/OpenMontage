@@ -142,18 +142,19 @@ export const EnergyLive: React.FC = () => {
   const cv = g.curve;
   const w = cv.x1 - cv.x0;
   const h = cv.y1 - cv.y0;
+  const ay = cv.y1 - 40; // the x axis sits 40 px above the box bottom so the 'speed' label fits under it, clear of the curve
   // the drawn curve: gamma(v) = 1 / sqrt(1 - v^2), 0 <= v < 0.995, plotted in a 'speed' x 'energy' box (not to scale)
   const pts: string[] = [];
   for (let i = 0; i <= 60; i++) {
     const v = (i / 60) * 0.992;
     const gm = 1 / Math.sqrt(1 - v * v);
-    const yy = cv.y1 - Math.min(1, (gm - 1) / 11) * (h - 24);
+    const yy = ay - Math.min(1, (gm - 1) / 11) * (h - 52);
     pts.push(`${i === 0 ? "M" : "L"} ${cv.x0 + 24 + v * (w - 36)} ${yy}`);
   }
   const vdot = Math.min(0.992, en.vc);
   const gdot = 1 / Math.sqrt(1 - vdot * vdot);
   const dx = cv.x0 + 24 + vdot * (w - 36);
-  const dy = cv.y1 - Math.min(1, (gdot - 1) / 11) * (h - 24);
+  const dy = ay - Math.min(1, (gdot - 1) / 11) * (h - 52);
   const barTop = g.y0 - en.barH;
   return (
     <div style={{ position: "absolute", inset: 0, opacity: en.alpha }}>
@@ -164,21 +165,21 @@ export const EnergyLive: React.FC = () => {
         <line x1={g.barX0 - 10} y1={g.y0} x2={g.barX1 + 10} y2={g.y0} stroke={C.steel} strokeWidth={2} />
         {/* the curve inset */}
         <rect x={cv.x0} y={cv.y0} width={w} height={h} rx={10} fill={rgba(C.chip, 0.85)} stroke={rgba(C.steel, 0.35)} strokeWidth={1} />
-        <line x1={cv.x0 + 24} y1={cv.y1 - 24} x2={cv.x1 - 12} y2={cv.y1 - 24} stroke={C.steel} strokeWidth={1.5} opacity={0.8} />
-        <line x1={cv.x0 + 24} y1={cv.y1 - 24} x2={cv.x0 + 24} y2={cv.y0 + 12} stroke={C.steel} strokeWidth={1.5} opacity={0.8} />
+        <line x1={cv.x0 + 24} y1={ay} x2={cv.x1 - 12} y2={ay} stroke={C.steel} strokeWidth={1.5} opacity={0.8} />
+        <line x1={cv.x0 + 24} y1={ay} x2={cv.x0 + 24} y2={cv.y0 + 12} stroke={C.steel} strokeWidth={1.5} opacity={0.8} />
         <path d={pts.join(" ")} stroke={C.bone} strokeWidth={2.5} fill="none" />
         <circle cx={dx} cy={dy} r={6} fill={C.bone} />
       </svg>
       <div style={{ position: "absolute", left: g.barX0 - 10, top: g.y0 + 8, fontFamily: FONT.display, fontWeight: 700, fontSize: 26, lineHeight: "30px", color: C.bone, whiteSpace: "nowrap", letterSpacing: 0.5 }}>
         {T.energyInfo.label}
       </div>
-      <div style={{ position: "absolute", left: cv.x0 + 24 + (w - 36) / 2 - 36, top: cv.y1 - 22, width: 72, textAlign: "center", fontFamily: FONT.mono, fontWeight: 400, fontSize: 24, lineHeight: "24px", color: C.steel }}>
+      <div style={{ position: "absolute", left: cv.x0 + 24 + (w - 36) / 2 - 36, top: ay + 8, width: 72, textAlign: "center", fontFamily: FONT.mono, fontWeight: 400, fontSize: 24, lineHeight: "24px", color: C.steel }}>
         {T.energyInfo.axisX}
       </div>
       <div style={{ position: "absolute", left: cv.x0 + 32, top: cv.y0 + 8, fontFamily: FONT.mono, fontWeight: 400, fontSize: 24, lineHeight: "24px", color: C.steel }}>
         {T.energyInfo.axisY}
       </div>
-      <div style={{ position: "absolute", left: cv.x0, top: cv.y1 + 6, height: 34, padding: "0 10px", display: "flex", alignItems: "center", borderRadius: 6, backgroundColor: rgba(C.shadow, 0.82),
+      <div style={{ position: "absolute", right: L.W - 912, top: cv.y1 + 6, height: 34, padding: "0 10px", display: "flex", alignItems: "center", borderRadius: 6, backgroundColor: rgba(C.shadow, 0.82),
         fontFamily: FONT.mono, fontWeight: 400, fontSize: 24, color: C.bone, whiteSpace: "nowrap" }}>
         {T.energyInfo.tag}
       </div>
