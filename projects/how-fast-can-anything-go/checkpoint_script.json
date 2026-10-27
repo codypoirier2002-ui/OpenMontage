@@ -3,15 +3,15 @@
   "project_id": "how-fast-can-anything-go",
   "pipeline_type": "unknown",
   "stage": "script",
-  "status": "awaiting_human",
-  "timestamp": "2026-10-27T00:04:55.333615+00:00",
+  "status": "completed",
+  "timestamp": "2026-10-27T13:48:54.399869+00:00",
   "checkpoint_policy": "guided",
   "human_approval_required": true,
-  "human_approved": false,
+  "human_approved": true,
   "artifacts": {
     "script": {
       "version": "1.0",
-      "title": "How Does a Cat Always Land on Its Feet?",
+      "title": "How Fast Can Anything Go?",
       "total_duration_seconds": 49.2,
       "voice_performance": {
         "performance_intent": "A calm, curious climb: each rung a little brighter, a surprise at 'sitting still', quiet awe at light, then a dry finished close.",
@@ -267,6 +267,7 @@
     "approved_budget_usd": 4.0
   },
   "metadata": {
-    "awaiting": "script approval"
+    "awaiting": "script approval",
+    "approval_basis": "Script approved by the user in session 2 (decision log d-001..d-010, 'run end to end to delivery'); the scene_plan gate after it was approved on the same basis. Checkpoint re-written completed after delivery of the master; the previous awaiting_human file is archived in history/."
   }
 }

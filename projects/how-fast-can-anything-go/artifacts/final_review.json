@@ -1,0 +1,49 @@
+{
+ "version": "1.0",
+ "output_path": "/home/user/OpenMontage/projects/how-fast-can-anything-go/renders/how-fast-can-anything-go.mp4",
+ "status": "pass",
+ "recommended_action": "present_to_user",
+ "checks": {
+  "technical_probe": {
+   "valid_container": true,
+   "duration_seconds": 49.267,
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "has_audio": true,
+   "codec": "h264",
+   "file_size_bytes": 7021981,
+   "issues": []
+  },
+  "visual_spotcheck": {
+   "frames_sampled": 1478,
+   "frame_paths": [
+    "/home/user/OpenMontage/projects/how-fast-can-anything-go/renders/master_sheet.jpg"
+   ],
+   "black_frames_detected": false,
+   "broken_overlays": false,
+   "missing_assets": false,
+   "unreadable_text": false,
+   "issues": [
+    "Rung chips are readable ~3 f before their seat while dropping the last 3-4 px (marker within 2.4 px of the rung; no wrong value shown).",
+    "LHC readout shows the final value as a 25% ghost from its seat (18 f before the first digit lands).",
+    "Picture is pixel-constant from frame 1440 (the tab's own settle runs 8 f past the release at 1432): the still hold is 1.27 s of the 1.53 s settle."
+   ]
+  },
+  "audio_spotcheck": {
+   "issues": [
+    "X1 whoosh onsets sit on the key frame while the eased marker's first >= 1 px move is 2-4 f later (the whoosh peak at key + 5 brackets the move).",
+    "The opening rail whoosh is at +2.8 dB to clear the lesson-5 bed margin (+4.4 dB); it overlaps 'You' - listen on a phone."
+   ]
+  },
+  "promise_preservation": {
+   "render_runtime_used": "remotion",
+   "issues": [
+    "Stills and music were generated on Creative Claw (same models) after the full ElevenLabs connector denied every call; narration and SFX on ElevenLabs as planned.",
+    "The window was moved to x 580-920 (the plan's 470-920 box covered the EARTH/PARKER chips)."
+   ]
+  },
+  "subtitle_check": {
+   "issues": []
+  }
+ }
+}

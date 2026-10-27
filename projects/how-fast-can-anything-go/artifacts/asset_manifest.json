@@ -1,0 +1,170 @@
+{
+ "version": "1.0",
+ "assets": [
+  {
+   "id": "N-s1",
+   "type": "narration",
+   "path": "assets/audio/narration/s1.mp3",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.024,
+   "model": "eleven_v4",
+   "scene_id": "sc01",
+   "generation_summary": "generation qO0vxKtcAcke9tnwrFmg (node vbMslrs9YxebJxegTmwX). QA: PASS: prompted decode exact; numbers read 'five', 'a hundred', 'four hundred'; silences 0.42 s at 2.51 and 4.85 s, both at full stops (digital silence), no lesson-29 pause; peak -3.6 dBFS."
+  },
+  {
+   "id": "N-s2",
+   "type": "narration",
+   "path": "assets/audio/narration/s2.mp3",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.0262,
+   "model": "eleven_v4",
+   "scene_id": "sc04",
+   "generation_summary": "generation p2V20KaxH0s7PQDTSLab (node kiXsC9meZHoSgJf5oub2). QA: PASS: prompted decode exact (WER 0.0); peak -3.6 dBFS; pauses at the full stop after \"twelve hundred.\" and the commas after \"still,\" / \"thousand,\"; no lesson-29 dead air"
+  },
+  {
+   "id": "N-s3",
+   "type": "narration",
+   "path": "assets/audio/narration/s3.mp3",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.024,
+   "model": "eleven_v4",
+   "scene_id": "sc06",
+   "generation_summary": "generation XMultt7ixzV6bLmPFHTn (node Di2EDMTTqRTupXJTJ4Lp). QA: PASS: prompted decode exact (WER 0.0); peak -3.7 dBFS; pauses at the commas around \"the Parker Solar Probe,\" and after \"thousand,\"; clean"
+  },
+  {
+   "id": "N-s4",
+   "type": "narration",
+   "path": "assets/audio/narration/s4.mp3",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.0245,
+   "model": "eleven_v4",
+   "scene_id": "sc08",
+   "generation_summary": "generation HEQiI29j2m0wzl95YeAu (node c4uj1mYm5k30MkZDmlLT). QA: PASS: prompted decode exact (WER 0.0); peak -2.1 dBFS; 0.28 s breath after \"Light\" (awed delivery, floor -71 dB, not digital silence), then stops at \"billion.\" / \"catch it:\" / \"costs,\"; acceptable"
+  },
+  {
+   "id": "N-s5",
+   "type": "narration",
+   "path": "assets/audio/narration/s5.mp3",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.0218,
+   "model": "eleven_v4",
+   "scene_id": "sc11",
+   "generation_summary": "generation 9ISVopMLKMJhkWTV750E (node Q21JmoZfNYTg43AFh1Rv). QA: PASS: prompted decode exact (WER 0.0); peak -2.7 dBFS; 0.58 s after \"speed.\" and 0.52 s after \"Close.\" - the two scripted beats; clean"
+  },
+  {
+   "id": "X1",
+   "type": "sfx",
+   "path": "assets/sfx/X1_whoosh.mp3",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.0009,
+   "model": "eleven_text_to_sound_v2",
+   "scene_id": "sc01",
+   "generation_summary": "generation BEvU2n33v766EiWNNfik (node 521TF84B28bGzZrFEIgR). QA: "
+  },
+  {
+   "id": "X2",
+   "type": "sfx",
+   "path": "assets/sfx/X2_boom.mp3",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.0012,
+   "model": "eleven_text_to_sound_v2",
+   "scene_id": "sc04",
+   "generation_summary": "generation qPZx2SovgNi0zwObE3a3 (node 4cC71GUw7jqp5bWFg7ts). QA: "
+  },
+  {
+   "id": "X3",
+   "type": "sfx",
+   "path": "assets/sfx/X3_tick.mp3",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.0003,
+   "model": "eleven_text_to_sound_v2",
+   "scene_id": "sc02",
+   "generation_summary": "generation XfPAEmcthdrw59sNh85J (node njMMbAfArYABpHis4ZI4). QA: "
+  },
+  {
+   "id": "X4",
+   "type": "sfx",
+   "path": "assets/sfx/X4_hum.mp3",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.0012,
+   "model": "eleven_text_to_sound_v2",
+   "scene_id": "sc06",
+   "generation_summary": "generation GgjAcdfp5IgRsB2qzwVX (node iLFSrIzusnJojJS1kZpk). QA: "
+  },
+  {
+   "id": "X5",
+   "type": "sfx",
+   "path": "assets/sfx/X5_shimmer.mp3",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.0006,
+   "model": "eleven_text_to_sound_v2",
+   "scene_id": "sc08",
+   "generation_summary": "generation YMRgYUr4J609tOKgWpgk (node u5mZ7RcisbByQdn2YQGA). QA: "
+  },
+  {
+   "id": "X6",
+   "type": "sfx",
+   "path": "assets/sfx/X6_tink.mp3",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.0006,
+   "model": "eleven_text_to_sound_v2",
+   "scene_id": "sc11",
+   "generation_summary": "generation l9MddFnW5Rvi4hd2Gevm (node l5vtEBZeW0nOZp3kZ8d0). QA: "
+  },
+  {
+   "id": "S1",
+   "type": "image",
+   "path": "assets/images/plate_cheetah.png",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.05,
+   "model": "image/gpt-image-2.5-sunburst",
+   "scene_id": "sc02",
+   "generation_summary": "generation 56858924-0ea0-4968-b47f-65618fb2737c (node creative-claw:b082c026). QA: PASS: 4 legs, 1 tail, 2 ears at 2x; paws clean; no text"
+  },
+  {
+   "id": "S2",
+   "type": "image",
+   "path": "assets/images/plate_falcon_dive.png",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.05,
+   "model": "image/gpt-image-2.5-sunburst",
+   "scene_id": "sc03",
+   "generation_summary": "generation 67f063b2-2120-41aa-878c-fa5283783465 (node creative-claw:6bbc30a0). QA: PASS: 1 head, 2 wings tucked, 1 tail, feet tucked (yellow); peregrine markings; no text"
+  },
+  {
+   "id": "S3",
+   "type": "image",
+   "path": "assets/images/plate_parker_probe.png",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.05,
+   "model": "image/gpt-image-2.5-sunburst",
+   "scene_id": "sc06",
+   "generation_summary": "generation 3bb6854b-f0dc-46a4-a64a-99abc1cbf36d (node creative-claw:a8c6d819). QA: PASS: one craft, flat white shield toward the Sun, 2 panels, bus in shadow; no text/logos"
+  },
+  {
+   "id": "M1",
+   "type": "music",
+   "path": "assets/music/bed_raw.wav",
+   "source_tool": "elevenlabs:creative_run_flow_nodes",
+   "provider": "elevenlabs",
+   "cost_usd": 0.16,
+   "model": "music/elevenlabs-music-v2.5",
+   "scene_id": "sc01",
+   "generation_summary": "generation 9cdc244f-6eb9-4e5f-9cc8-24eb146bf77e (node creative-claw:01715738). QA: key heard G major (D major requested, lesson 26); last tonic attack 55.79 s (assets/music/music_qa.json); +6 dB level step at 18 s evened by build_soundtrack; ring-out to -49 dBFS by 58 s"
+  }
+ ]
+}
