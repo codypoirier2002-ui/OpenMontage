@@ -1,0 +1,247 @@
+{
+ "master": "projects/how-fast-can-anything-go/renders/dry_master.mp4",
+ "verdict": "FAIL",
+ "fails": 1,
+ "warns": 2,
+ "checks": [
+  {
+   "check": "resolution",
+   "lesson": "format",
+   "status": "PASS",
+   "value": "1080x1920",
+   "expect": "1080x1920",
+   "note": ""
+  },
+  {
+   "check": "fps",
+   "lesson": "format",
+   "status": "PASS",
+   "value": 30.0,
+   "expect": 30,
+   "note": ""
+  },
+  {
+   "check": "frame count",
+   "lesson": "format",
+   "status": "PASS",
+   "value": 1478,
+   "expect": 1478,
+   "note": ""
+  },
+  {
+   "check": "video codec",
+   "lesson": "L7",
+   "status": "PASS",
+   "value": "h264 High",
+   "expect": "h264 High",
+   "note": ""
+  },
+  {
+   "check": "colour",
+   "lesson": "L7",
+   "status": "PASS",
+   "value": "bt709/tv",
+   "expect": "bt709/tv",
+   "note": ""
+  },
+  {
+   "check": "audio",
+   "lesson": "format",
+   "status": "PASS",
+   "value": "aac 48000 2ch",
+   "expect": "aac 48000 2ch",
+   "note": ""
+  },
+  {
+   "check": "strict decode",
+   "lesson": "format",
+   "status": "PASS",
+   "value": "clean",
+   "expect": "clean",
+   "note": ""
+  },
+  {
+   "check": "file size",
+   "lesson": "format",
+   "status": "PASS",
+   "value": 6.0,
+   "expect": "< 60 MB",
+   "note": ""
+  },
+  {
+   "check": "integrated loudness",
+   "lesson": "master",
+   "status": "PASS",
+   "value": -14.1,
+   "expect": "-14 +-0.5 LUFS",
+   "note": ""
+  },
+  {
+   "check": "true peak",
+   "lesson": "master",
+   "status": "PASS",
+   "value": -1.9,
+   "expect": "<= -1.0 dBTP",
+   "note": ""
+  },
+  {
+   "check": "captions verbatim",
+   "lesson": "L17",
+   "status": "PASS",
+   "value": "106 caption words / 106 script words",
+   "expect": "identical word list",
+   "note": ""
+  },
+  {
+   "check": "caption onsets",
+   "lesson": "L2/L13",
+   "status": "PASS",
+   "value": "106 words, worst +0 f",
+   "expect": "within +-3 f of aligned onset",
+   "note": ""
+  },
+  {
+   "check": "caption pages",
+   "lesson": "format",
+   "status": "PASS",
+   "value": "26 pages, 0 over",
+   "expect": "<= 6 words, <= 2 lines",
+   "note": "[]"
+  },
+  {
+   "check": "tab on caption page starts",
+   "lesson": "L3",
+   "status": "PASS",
+   "value": "0 off-page tab changes",
+   "expect": "every tab change on a page start",
+   "note": "[]"
+  },
+  {
+   "check": "forbidden strings",
+   "lesson": "L16/L20",
+   "status": "PASS",
+   "value": "none",
+   "expect": "none of scene_plan forbidden_on_screen in props",
+   "note": ""
+  },
+  {
+   "check": "settle length",
+   "lesson": "L25",
+   "status": "PASS",
+   "value": "1.53 s after 'way'",
+   "expect": "1.5 s +-2 f",
+   "note": ""
+  },
+  {
+   "check": "chord after last word",
+   "lesson": "L26",
+   "status": "PASS",
+   "value": "0.167 s",
+   "expect": "0.08-0.25 s after release",
+   "note": ""
+  },
+  {
+   "check": "end fade (no cut chord)",
+   "lesson": "L43",
+   "status": "PASS",
+   "value": "last 50 ms -180.0 dB, last 20 ms -180.0 dB",
+   "expect": "last 50 ms <= -30, last 20 ms <= -33 dBFS",
+   "note": ""
+  },
+  {
+   "check": "end decays smoothly",
+   "lesson": "L43",
+   "status": "PASS",
+   "value": [
+    -180.0,
+    -180.0,
+    -180.0,
+    -180.0,
+    -180.0,
+    -180.0
+   ],
+   "expect": "no 50 ms step up > 3 dB in the last 0.3 s",
+   "note": ""
+  },
+  {
+   "check": "last word broadband",
+   "lesson": "L30",
+   "status": "PASS",
+   "value": "'way.' -17.4 vs sentence median -16.2 dB",
+   "expect": "loudest 100 ms <= 5 dB under its sentence's median (FAIL)",
+   "note": ""
+  },
+  {
+   "check": "last word broadband (soft)",
+   "lesson": "L30",
+   "status": "PASS",
+   "value": "+1.2 dB under",
+   "expect": "<= 3 dB under",
+   "note": "3-5 dB under can be a natural falling cadence; listen on a phone speaker"
+  },
+  {
+   "check": "last word over bed",
+   "lesson": "L18",
+   "status": "WARN",
+   "value": "not measurable (< 2 word gaps)",
+   "expect": ">= +12 dB in 300-4000 Hz",
+   "note": "measure it on the stems (clean narration vs the ducked bed)"
+  },
+  {
+   "check": "audio floor",
+   "lesson": "L6/L29",
+   "status": "FAIL",
+   "value": "-120.0 dBFS at 8.36 s",
+   "expect": ">= -42 dBFS (100 ms windows)",
+   "note": ""
+  },
+  {
+   "check": "sfx land on their frames",
+   "lesson": "L4/L41",
+   "status": "PASS",
+   "value": "34 cues, 0 off",
+   "expect": "landing within 1 f of its key frame",
+   "note": ""
+  },
+  {
+   "check": "props key frames == soundtrack",
+   "lesson": "L4",
+   "status": "PASS",
+   "value": "0 mismatched",
+   "expect": "props.audio == soundtrack_report.frames",
+   "note": "[]"
+  },
+  {
+   "check": "no black frames",
+   "lesson": "picture",
+   "status": "PASS",
+   "value": "0 frames",
+   "expect": "mean luma >= 6",
+   "note": "[]"
+  },
+  {
+   "check": "no one-frame flashes",
+   "lesson": "picture",
+   "status": "PASS",
+   "value": "0 frames",
+   "expect": "no frame unlike both neighbours",
+   "note": "[]"
+  },
+  {
+   "check": "bottom UI zone y>=1574",
+   "lesson": "safe zones",
+   "status": "PASS",
+   "value": "0 frames with new detail",
+   "expect": "no text there",
+   "note": ""
+  },
+  {
+   "check": "right rail x>=929",
+   "lesson": "safe zones",
+   "status": "WARN",
+   "value": "167 frames with new detail",
+   "expect": "no text there",
+   "note": "frames 1029-1195 - look: text there is a fail"
+  }
+ ]
+}

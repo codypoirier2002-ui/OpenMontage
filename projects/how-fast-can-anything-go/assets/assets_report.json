@@ -1,6 +1,6 @@
 {
  "project": "how-fast-can-anything-go",
- "status": "PARTIAL - narration s1-s5 and SFX X1-X6 generated and QA-passed (ElevenLabs restricted connector, flow 18VH83ipjnViF9nyxvKe). Stills S1-S3 and music M1 NOT generated: the full ElevenLabs connector denies every tool call (connector tool permissions); the restricted connector has no image/music nodes.",
+ "status": "COMPLETE - narration s1-s5 + SFX X1-X6 on ElevenLabs (flows), stills S1-S3 + music M1 on Creative Claw (user-approved provider change, decision d-011). All QA-passed.",
  "flow": {
   "name": "How Fast Can Anything Go?",
   "flow_id": "QQrEkYtv7r3zlWHCLNrq",
@@ -20,6 +20,15 @@
    "estimate_usd": 0.1125,
    "actual_usd": 0.1014,
    "credits": 557.6,
+   "date": "2026-10-27"
+  },
+  {
+   "what": "3 stills (gpt-image-2.5-sunburst 1152x2048 high) + music (elevenlabs-music-v2.5, 58 s)",
+   "provider": "Creative Claw",
+   "estimate_credits": 59,
+   "actual_credits": 59,
+   "credits_remaining": 695,
+   "usd_note": "Creative Claw credits; at the ElevenLabs list prices the same items are ~$0.15 (3 stills) + ~$0.16 (music) = ~$0.31; recorded at $0.31 pending the credit rate",
    "date": "2026-10-27"
   }
  ],
@@ -187,22 +196,60 @@
   {
    "id": "S1",
    "name": "plate_cheetah",
-   "status": "NOT GENERATED (full ElevenLabs connector denied)"
+   "type": "still",
+   "file": "assets/images/plate_cheetah.png",
+   "provider": "Creative Claw",
+   "model": "image/gpt-image-2.5-sunburst",
+   "size": "1152x2048 (9:16)",
+   "quality": "high",
+   "job_id": "56858924-0ea0-4968-b47f-65618fb2737c",
+   "asset_id": "b082c026-8b91-4835-a12d-c5156f2a93e1",
+   "credits": 10,
+   "qa": "PASS: 4 legs, 1 tail, 2 ears at 2x; paws clean; no text",
+   "crop": "measured, see artifacts/media_report.json"
   },
   {
    "id": "S2",
    "name": "plate_falcon_dive",
-   "status": "NOT GENERATED (full ElevenLabs connector denied)"
+   "type": "still",
+   "file": "assets/images/plate_falcon_dive.png",
+   "provider": "Creative Claw",
+   "model": "image/gpt-image-2.5-sunburst",
+   "size": "1152x2048 (9:16)",
+   "quality": "high",
+   "job_id": "67f063b2-2120-41aa-878c-fa5283783465",
+   "asset_id": "6bbc30a0-5156-49c4-a4ef-35e0ff6c7951",
+   "credits": 10,
+   "qa": "PASS: 1 head, 2 wings tucked, 1 tail, feet tucked (yellow); peregrine markings; no text",
+   "crop": "measured, see artifacts/media_report.json"
   },
   {
    "id": "S3",
    "name": "plate_parker_probe",
-   "status": "NOT GENERATED (full ElevenLabs connector denied)"
+   "type": "still",
+   "file": "assets/images/plate_parker_probe.png",
+   "provider": "Creative Claw",
+   "model": "image/gpt-image-2.5-sunburst",
+   "size": "1152x2048 (9:16)",
+   "quality": "high",
+   "job_id": "3bb6854b-f0dc-46a4-a64a-99abc1cbf36d",
+   "asset_id": "a8c6d819-2177-44e9-9b13-4a6bfc557b54",
+   "credits": 10,
+   "qa": "PASS: one craft, flat white shield toward the Sun, 2 panels, bus in shadow; no text/logos",
+   "crop": "measured, see artifacts/media_report.json"
   },
   {
    "id": "M1",
    "type": "music",
-   "status": "NOT GENERATED (full ElevenLabs connector denied)"
+   "file": "assets/music/bed_raw.wav",
+   "provider": "Creative Claw",
+   "model": "music/elevenlabs-music-v2.5",
+   "length_s": 58.0,
+   "format": "pcm_48000 stereo",
+   "job_id": "9cdc244f-6eb9-4e5f-9cc8-24eb146bf77e",
+   "asset_id": "01715738-2059-48c6-a616-c5212133e936",
+   "credits": 29,
+   "qa": "key heard G major (D major requested, lesson 26); last tonic attack 55.79 s (assets/music/music_qa.json); +6 dB level step at 18 s evened by build_soundtrack; ring-out to -49 dBFS by 58 s"
   }
  ],
  "narration_summary": {
@@ -213,8 +260,9 @@
   "note": "Only s1 exists; total read length unknown until s2-s5 are generated."
  },
  "quality_concerns": [
-  "s4 has a 0.28 s breath after \"Light\" (awed tag); keep or trim at the edit, not a retake.",
-  "Stills and music pending; foundation can run with placeholder windows and a voice+SFX premix until they land."
+  "s4 has a 0.28 s breath after \"Light\" (kept).",
+  "The bed ignored the requested key (G major, not D) - harmless, cadence found from the audio.",
+  "The bed has a +6 dB step at 18 s - evened by the 2 s level evening in build_soundtrack."
  ],
  "contact_sheet": null,
  "total_usd": 0.024,
@@ -242,9 +290,9 @@
  },
  "spend": {
   "session1_usd": 0.024,
-  "session3_usd": 0.1014,
-  "total_usd": 0.1254,
-  "cap_usd": 4.0,
-  "raw_narration_total_s": 42.56
+  "session3_elevenlabs_usd": 0.1014,
+  "session3_creative_claw": "59 credits (~$0.31 at list prices)",
+  "total_usd_est": 0.435,
+  "cap_usd": 4.0
  }
 }

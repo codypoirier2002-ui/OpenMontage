@@ -65,7 +65,7 @@ import numpy as np
 
 P = Path("projects/how-fast-can-anything-go")
 NDIR = P / "assets/audio/narration/clean"
-BED = P / "assets/music/bed_raw.mp3"
+BED = (P / "assets/music/bed_raw.wav") if (P / "assets/music/bed_raw.wav").exists() else (P / "assets/music/bed_raw.mp3")  # lossless WAV preferred when present
 MUSIC_QA = P / "assets/music/music_qa.json"
 SR = 48000
 FPS = 30
@@ -79,7 +79,7 @@ EVEN_SMOOTH_S = 1.5
 DUCK_DB = -12.0
 CLOSING_DUCK_DB = -13.0
 CLOSING_LEAD_S = 0.55
-END_DUCK_DB = -5.0
+END_DUCK_DB = -3.0
 END_DUCK_IN_S = 0.10
 END_LIFT_DB = 3.0
 END_LIFT_EDGE_S = 0.02
@@ -428,7 +428,14 @@ def main() -> None:
         src = np.frombuffer(raw, dtype=np.float32).reshape(-1, 2).copy()
         a0 = int(round(trim_src * out_rate)) - int(0.002 * out_rate)
         bed = src[max(0, a0):].copy()
-        assert len(bed) >= n, ("the bed is shorter than the film", len(bed) / SR, total_s)
+        if len(bed) < n:
+            # the bed's ring-out ends a little before the film does: pad with silence only when the shortfall is < 1 s and the
+            # bed's last 50 ms are already quiet (<= -40 dBFS), so the pad continues a decay that is effectively over
+            short_s = (n - len(bed)) / SR
+            tail_db = 20 * np.log10(np.sqrt(np.mean(bed[-int(0.05 * SR):] ** 2)) + 1e-12)
+            assert short_s < 1.0 and tail_db <= -40.0, ("the bed is shorter than the film", len(bed) / SR, total_s, tail_db)
+            print(f"NOTE: bed ends {short_s:.3f} s before the film; its last 50 ms are {tail_db:.1f} dBFS; padded with silence")
+            bed = np.concatenate([bed, np.zeros((n - len(bed), 2), np.float32)])
         fi = int((0.008 if best else 0.03) * SR)
         bed[:fi] *= np.linspace(0, 1, fi)[:, None]
         music = bed[:n].copy()
@@ -595,25 +602,25 @@ def main() -> None:
     assert onset_of(tink) < 0.005 * SR, "X6's attack is its first samples (start-aligned)"
 
     PLACE = [
-        ("X1", "rail_draw", whoosh, -14.0, K["railDraw"], "the rail starts drawing bright (sc01, 'You')", "peak", w_on),
-        ("X1", "climb_cheetah", whoosh, -11.0, K["climbCheetah"], "the marker's first moving frame toward CHEETAH (sc02)", "peak", w_on),
-        ("X3", "tick_cheetah_1", tick, -15.0, K["cheetahTicks"][0], "counter 0 -> 1", "peak", tick_peak),
-        ("X3", "tick_cheetah_2", tick, -15.0, K["cheetahTicks"][1], "counter 1 -> 2 ON the CHEETAH seat", "peak", tick_peak),
-        ("X1", "climb_falcon", whoosh, -11.0, K["climbFalcon"], "the marker's first moving frame toward FALCON (sc03)", "peak", w_on),
-        ("X1", "climb_sound", whoosh, -11.0, K["climbSound"], "the marker's first moving frame toward SOUND (sc04)", "peak", w_on),
+        ("X1", "rail_draw", whoosh, 3.0, K["railDraw"], "the rail starts drawing bright (sc01, 'You')", "peak", w_on),
+        ("X1", "climb_cheetah", whoosh, -6.0, K["climbCheetah"], "the marker's first moving frame toward CHEETAH (sc02)", "peak", w_on),
+        ("X3", "tick_cheetah_1", tick, -13.5, K["cheetahTicks"][0], "counter 0 -> 1", "peak", tick_peak),
+        ("X3", "tick_cheetah_2", tick, -13.5, K["cheetahTicks"][1], "counter 1 -> 2 ON the CHEETAH seat", "peak", tick_peak),
+        ("X1", "climb_falcon", whoosh, -6.0, K["climbFalcon"], "the marker's first moving frame toward FALCON (sc03)", "peak", w_on),
+        ("X1", "climb_sound", whoosh, -3.0, K["climbSound"], "the marker's first moving frame toward SOUND (sc04)", "peak", w_on),
         ("X2", "sound_thump", boom, -12.0, K["soundSeat"], "the SOUND rung SEATED: the pressure ring starts (sc04, 'hundred')", "peak", pk_(boom)),
         ("X1", "jump_you", whoosh, -5.0, K["jumpStart"], "the YOU tag + the marker's first moving frame of the jump (sc05, 'doing'; the big whoosh)", "peak", w_on),
-        ("X3", "tick_earth_1", tick, -15.0, K["earthTicks"][0], "counter 3 -> 4", "peak", tick_peak),
-        ("X3", "tick_earth_2", tick, -15.0, K["earthTicks"][1], "counter 4 -> 5 ON the EARTH seat", "peak", tick_peak),
+        ("X3", "tick_earth_1", tick, -13.5, K["earthTicks"][0], "counter 3 -> 4", "peak", tick_peak),
+        ("X3", "tick_earth_2", tick, -13.5, K["earthTicks"][1], "counter 4 -> 5 ON the EARTH seat", "peak", tick_peak),
         ("X4", "hum_probe", hum, -22.0, K["windowOpen2"], "the window's first visible frame (S3, sc06); a soft swell under the plate", "start", 0.0),
-        ("X1", "climb_parker", whoosh, -11.0, K["climbParker"], "the marker's first moving frame toward PARKER (sc07)", "peak", w_on),
+        ("X1", "climb_parker", whoosh, -3.0, K["climbParker"], "the marker's first moving frame toward PARKER (sc07)", "peak", w_on),
         ("X5", "beam_shimmer", shimmer, -14.0, K["beamStart"], "the light beam's first frame (sc08); it reaches 'c' on lightSeat", "start", 0.0),
-        ("X3", "tick_light_1", tick, -15.0, K["lightTicks"][0], "counter 5 -> 6", "peak", tick_peak),
-        ("X3", "tick_light_2", tick, -15.0, K["lightTicks"][1], "counter 6 -> 7", "peak", tick_peak),
-        ("X3", "tick_light_3", tick, -15.0, K["lightTicks"][2], "counter 7 -> 8", "peak", tick_peak),
-        ("X3", "tick_light_4", tick, -15.0, K["lightTicks"][3], "counter 8 -> 9 ON the LIGHT seat", "peak", tick_peak),
+        ("X3", "tick_light_1", tick, -13.5, K["lightTicks"][0], "counter 5 -> 6", "peak", tick_peak),
+        ("X3", "tick_light_2", tick, -13.5, K["lightTicks"][1], "counter 6 -> 7", "peak", tick_peak),
+        ("X3", "tick_light_3", tick, -13.5, K["lightTicks"][2], "counter 7 -> 8", "peak", tick_peak),
+        ("X3", "tick_light_4", tick, -13.5, K["lightTicks"][3], "counter 8 -> 9 ON the LIGHT seat", "peak", tick_peak),
     ] + [("X3", f"tick_bar_{i + 1}", tick, -16.0, f, f"the ENERGY NEEDED bar's accelerating tick {i + 1}/6 (sc10)", "peak", tick_peak) for i, f in enumerate(K["barTicks"])] \
-      + [("X3", f"tick_digit_{i + 1}", tick, -16.0, f, f"LHC readout glyph {i + 1}/{N_DIGITS} lands (sc11)", "peak", tick_peak) for i, f in enumerate(K["digitTicks"])] \
+      + [("X3", f"tick_digit_{i + 1}", tick, -14.5, f, f"LHC readout glyph {i + 1}/{N_DIGITS} lands (sc11)", "peak", tick_peak) for i, f in enumerate(K["digitTicks"])] \
       + [("X6", "gap_tink", tink, -16.0, K["gapBracket"], "the marker's final stop + the gap bracket (sc11, 'hair'); before the closing sentence", "start", 0.0)]
     PLACE.sort(key=lambda p: p[4])
     sfx = np.zeros((n, 2), dtype=np.float32)

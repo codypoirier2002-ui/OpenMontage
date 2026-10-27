@@ -36,14 +36,15 @@ FORCE = "--force" in sys.argv
 WIN = {"x0": 580, "x1": 920, "y0": 440, "y1": 893}
 WW, WH = WIN["x1"] - WIN["x0"], WIN["y1"] - WIN["y0"]
 
-# crop boxes are DEFAULTS for a 1152 x 2048 (9:16 2K) plate: the middle 60 % band, the window's aspect; replace with
+# crop boxes MEASURED on the 1152 x 2048 plates (2026-10-27; legs/wings/tails counted at 2x: S1 4 legs 1 tail 2 ears, S2 1 head 2 wings 1 tail feet tucked, S3 one craft, shield to the Sun, no text)
+# (previously: DEFAULTS for a 1152 x 2048 (9:16 2K) plate: the middle 60 % band, the window's aspect; replace with
 # measured boxes + feature points when the stills land (lesson 9 / 39)
 PLATES = {
-    "S1": {"src": "plate_cheetah.png", "crop": None, "scene": "sc02", "push": [1.0, 1.03], "contains": {}, "label": "S1 plate_cheetah",
+    "S1": {"src": "plate_cheetah.png", "crop": (0, 300, 1152, 1835), "scene": "sc02", "push": [1.0, 1.03], "contains": {"head": (1000, 760), "ear": (960, 730), "tail_tip": (45, 850), "hind_paw": (150, 1100), "front_paw": (1110, 1150)}, "label": "S1 plate_cheetah",
            "qa": "4 legs, 1 tail, 2 ears at 4x (lesson 39) before any crop"},
-    "S2": {"src": "plate_falcon_dive.png", "crop": None, "scene": "sc03", "push": [1.0, 1.03], "contains": {}, "label": "S2 plate_falcon_dive",
+    "S2": {"src": "plate_falcon_dive.png", "crop": (0, 130, 1152, 1665), "scene": "sc03", "push": [1.0, 1.03], "contains": {"tail_top": (200, 175), "beak": (917, 1536), "eye": (850, 1430), "foot": (277, 810), "wing_edge": (700, 1050)}, "label": "S2 plate_falcon_dive",
            "qa": "1 head, 2 wings tucked, 1 tail; peregrine markings"},
-    "S3": {"src": "plate_parker_probe.png", "crop": None, "scene": "sc06", "push": [1.0, 1.04], "contains": {}, "label": "S3 plate_parker_probe",
+    "S3": {"src": "plate_parker_probe.png", "crop": (0, 100, 1152, 1635), "scene": "sc06", "push": [1.0, 1.04], "contains": {"shield": (600, 1000), "left_panel": (240, 1200), "right_panel": (700, 1350), "bus": (480, 1150), "sun_limb": (600, 700)}, "label": "S3 plate_parker_probe",
            "qa": "one spacecraft, heat shield toward the Sun, no text / logos"},
 }
 
