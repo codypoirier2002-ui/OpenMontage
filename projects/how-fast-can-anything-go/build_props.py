@@ -126,7 +126,7 @@ C_KMH = 1079252849
 L_C = math.log10(C_KMH)
 PPD = (RAIL["axisY0"] - RAIL["cY"]) / L_C
 MARKER_R = 6
-MARKER_GAP_PX = 14            # the marker's CENTRE stays >= 14 px under the c line (>= 8 px clear of its 6 px radius)
+MARKER_GAP_PX = 24            # the marker's CENTRE stays >= 24 px under the c line (>= 18 px clear of its 6 px radius; QA B-01: 14 read as touching at phone scale)
 # (id, name, number string, km/h, probably?, chip)
 RUNGS = [
     ("walk", "WALK", "~5", 5, False, None),
@@ -474,7 +474,7 @@ def main() -> None:
         for ps_ in starts:
             if ps_ <= enter < ps_ + PLACARD_PAGE_GUARD_F:
                 enter = ps_ + PLACARD_PAGE_GUARD_F
-        exit_ = sc[order[order.index(last) + 1]]["from"] if last != order[-1] else rel
+        exit_ = (sc[order[order.index(last) + 1]]["from"] - 8) if last != order[-1] else rel - 14   # gone before the next page's tab glide / before the release (lessons 42/47, 25; QA A-02, A-04)
         assert exit_ - enter >= PLACARD_MIN_F, ("placard held < 1.2 s", line, enter, exit_)
         size = next((px for px in PLACARD_SIZES if bc[px](line) <= PLACARD_TEXT_W), None)
         assert size, ("placard line too long", line)

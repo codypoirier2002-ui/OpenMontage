@@ -19,7 +19,7 @@
   "plateSwap": 169,
   "climbFalcon": 197,
   "falconSeat": 233,
-  "windowClose1": 278,
+  "windowClose1": 268,
   "climbSound": 316,
   "soundSeat": 352,
   "youSeat": 405,
@@ -36,7 +36,7 @@
   "climbParker": 728,
   "parkerSeat": 764,
   "fallArrow": 792,
-  "windowClose2": 865,
+  "windowClose2": 855,
   "beamStart": 908,
   "lightSeat": 920,
   "lightTicks": [
@@ -79,7 +79,7 @@
   "wayFrame": 1420,
   "wayEndFrame": 1432,
   "chordFrame": 1437,
-  "ctaFrame": 1436
+  "ctaFrame": 1432
  },
  "motion": {
   "SEAT_F": 8,
@@ -353,20 +353,20 @@
    "name": "rail_draw",
    "frame": 16,
    "seconds": 0.533,
-   "peak_dbfs": 3.0,
+   "peak_dbfs": 2.8,
    "landing": "peak",
    "landing_offset_in_sample_s": 0.1667,
    "placed_at_s": 0.3666,
    "rule": "the rail starts drawing bright (sc01, 'You')",
    "final_phone_band_dbfs": {
-    "sfx": -18.1,
+    "sfx": -18.3,
     "bed": -23.2,
     "voice": -25.2,
-    "sfx_over_bed_db": 5.1,
-    "hit_30ms_sfx_dbfs": -19.9,
-    "hit_30ms_sfx_over_bed_db": 4.4
+    "sfx_over_bed_db": 4.9,
+    "hit_30ms_sfx_dbfs": -20.1,
+    "hit_30ms_sfx_over_bed_db": 4.2
    },
-   "sample_peak_dbfs": 7.9
+   "sample_peak_dbfs": 7.7
   },
   {
    "id": "X1",
@@ -1047,7 +1047,7 @@
   "mono_at_frame": 1389.6,
   "windows_below_minus42": 0,
   "mono_windows_below_minus42": 0,
-  "lead_in_min_100ms_rms_dbfs": -19.2,
+  "lead_in_min_100ms_rms_dbfs": -19.3,
   "final_fade": {
    "seconds": 0.6,
    "floor_gain_db": -36.0,

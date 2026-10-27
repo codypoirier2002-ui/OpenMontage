@@ -118,6 +118,7 @@ OVERRIDES: dict[tuple[str, str, int], tuple[float | None, float | None]] = {
     ("s2", "Sun.", 1):        (8.314, None),   # whisper 8.380 (-2.0 f): 'the' vowel to 8.31, s noise 8.316 (HF 5-6, LF falls)
     ("s3", "fastest", 1):     (0.053, None),   # whisper 0.140 (-2.6 f): 'The' = dh + a swallowed schwa (0.03-0.05); f noise 0.053 (HF 4), the ae vowel 0.065 ('th'fastest', read fast)
     ("s3", "thing", 1):       (0.606, None),   # whisper 0.660 (-1.6 f): 'fastest' s 0.54-0.57, t closure 0.581-0.596, burst 0.601 fused into the th noise 0.606 (LF 1-3, HF 5-7), vowel 0.631
+    ("s3", "we've", 1):       (0.848, None),   # QA A-01: 54 ms silent gap after 'thing' (0.794-0.848); the w voicing resumes at 0.848 (whisper/first pass 0.980 = +4 f late)
     ("s3", "built,", 1):      (1.688, None),   # whisper 1.560 (+3.8 f): 'ever' er to 1.64, b closure 1.641-1.681, b BURST 1.688 (whisper 1.56 sat in 'ever')
     ("s3", "Parker", 1):      (2.428, None),   # whisper 2.400 (+0.8 f): 'the' decays to 2.42, p closure, p BURST 2.428
     ("s3", "Solar", 1):       (2.791, None),   # whisper 2.720 (+2.1 f): 'Parker' k burst 2.661, aspiration, 'er' 2.706-2.79, s noise 2.791 (HF 5-6, LF falls; whisper 2.72 sat in 'er')
@@ -176,7 +177,6 @@ CONFIRMED: dict[tuple[str, str, int], float] = {
     ("s2", "thousand,", 1):   6.372,           # whisper 6.370 (+0.1 f): after the pause: th noise 6.372
     ("s2", "riding", 1):      7.224,           # whisper 7.220 (+0.1 f): after the pause: r voicing 7.224
     ("s3", "The", 1):         0.033,           # whisper 0.020 (+0.4 f): dh voicing out of the lead
-    ("s3", "we've", 1):       0.980,           # whisper 0.980 (+0.0 f): 'thing' ng murmur 0.961-0.98 (HF 0), w glide 0.980 (soft)
     ("s3", "ever", 1):        1.340,           # whisper 1.330 (+0.3 f): after the pause: soft onset 1.336-1.346 (tot -42 dB), full voicing 1.351
     ("s3", "the", 1):         2.300,           # whisper 2.300 (+0.0 f): after the pause: voicing 2.301
     ("s3", "Probe,", 1):      3.078,           # whisper 3.080 (-0.1 f): 'Solar' lar, p burst 3.078-3.081 (HF 2)

@@ -575,10 +575,10 @@
    "cand": 1.014,
    "how": "flux",
    "diff_f": -1.01,
-   "measured": 0.98,
-   "source": "confirmed",
-   "measured_minus_whisper_f": 0.0,
-   "measured_minus_candidate_f": -1.02
+   "measured": 0.848,
+   "source": "override",
+   "measured_minus_whisper_f": -3.96,
+   "measured_minus_candidate_f": -4.98
   },
   {
    "k": 4,

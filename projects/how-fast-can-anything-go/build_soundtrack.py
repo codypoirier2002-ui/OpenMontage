@@ -157,7 +157,7 @@ def key_frames(tl: dict) -> dict:
         "plateSwap": sc["sc03"]["from"],
         "climbFalcon": max(on("s1", "falcon"), falcon_seat - CLIMB_F),
         "falconSeat": falcon_seat,
-        "windowClose1": sc["sc04"]["from"] - WINDOW_CLOSE_F,
+        "windowClose1": sc["sc04"]["from"] - WINDOW_CLOSE_F - 10,   # gone >= 6 f before the SOUND page's tab glide (lessons 42/47; QA A-02)
         # sc04 Sound: climb from 'Sound' (X1), seat ON 'hundred' (X2 soft thump; U1's pressure ring expands from there);
         # counter 2 -> 3 on the seat (no X3 under the thump)
         "climbSound": max(on("s2", "sound"), sound_seat - CLIMB_F),
@@ -180,7 +180,7 @@ def key_frames(tl: dict) -> dict:
         "climbParker": max(on("s3", "reached"), parker_seat - CLIMB_F),
         "parkerSeat": parker_seat,
         "fallArrow": on("s3", "falling"),
-        "windowClose2": sc["sc08"]["from"] - WINDOW_CLOSE_F,
+        "windowClose2": sc["sc08"]["from"] - WINDOW_CLOSE_F - 10,   # same for the LIGHT page (QA A-03)
         # sc08 Light: the beam races the rail over BEAM_F frames and reaches 'c' ON 'billion' (LIGHT label seats, the c line
         # lights red; X5 shimmer start-aligned on the beam's first frame); counter 5 -> 9 (X3 x4) ending ON the seat
         "beamStart": light_seat - BEAM_F,
@@ -209,7 +209,7 @@ def key_frames(tl: dict) -> dict:
         "wayFrame": on("s5", "way"),
         "wayEndFrame": rel_f,
         "chordFrame": chord_f,
-        "ctaFrame": rel_f + 4,
+        "ctaFrame": rel_f,   # the CTA swaps ON the release so the settle is still from the release (lesson 25; QA A-04)
     }
     # ordering / spacing asserts (the visuals are built on these)
     assert 0 < K["railDraw"] < K["walkSeat"] < K["windowOpen1"] < K["climbCheetah"] < K["cheetahSeat"] < K["plateSwap"], K
@@ -224,7 +224,7 @@ def key_frames(tl: dict) -> dict:
     assert K["barTicks"][0] == K["barStart"] and K["barTicks"][-1] == K["barOff"] and all(b > a for a, b in zip(K["barTicks"], K["barTicks"][1:]))
     assert K["energyOut"] < K["readoutSeat"] < K["digitTicks"][0] and K["digitTicks"][-1] < K["creepEnd"] == K["gapBracket"] < K["closingStart"], K
     assert K["gapBracket"] + 45 <= K["closingStart"], "the X6 tink (1 s) must end before the closing sentence"
-    assert K["closingStart"] < K["wayFrame"] < rel_f < K["ctaFrame"] < chord_f < tl["total_frames"] - 30, K
+    assert K["closingStart"] < K["wayFrame"] < rel_f <= K["ctaFrame"] < chord_f < tl["total_frames"] - 30, K   # the CTA may swap ON the release (lesson 25)
     return K
 
 
@@ -598,11 +598,12 @@ def main() -> None:
     hum, hum_mode = with_harmonics((hum_raw * henv[:, None]).astype(np.float32), db=-8.0, decay_s=HUM_LEN_S)
     shimmer_raw = fades(decode(sd / "X5_shimmer.mp3", 2)[: int(SHIMMER_LEN_S * SR)], 0.001, 0.05)
     shimmer, shimmer_mode = with_harmonics(shimmer_raw, db=-6.0, decay_s=0.5)
+    whoosh_h, whoosh_h_mode = with_harmonics(whoosh, db=-4.0, decay_s=0.6)   # the opening whoosh: in-band harmonics instead of +3 dB broadband, so it does not sit over 'You' (QA A-06)
     tink = fades(decode(sd / "X6_tink.mp3", 2)[: int(TINK_LEN_S * SR)], 0.002, 0.08)
     assert onset_of(tink) < 0.005 * SR, "X6's attack is its first samples (start-aligned)"
 
     PLACE = [
-        ("X1", "rail_draw", whoosh, 3.0, K["railDraw"], "the rail starts drawing bright (sc01, 'You')", "peak", w_on),
+        ("X1", "rail_draw", whoosh, 2.8, K["railDraw"], "the rail starts drawing bright (sc01, 'You')", "peak", w_on),
         ("X1", "climb_cheetah", whoosh, -6.0, K["climbCheetah"], "the marker's first moving frame toward CHEETAH (sc02)", "peak", w_on),
         ("X3", "tick_cheetah_1", tick, -13.5, K["cheetahTicks"][0], "counter 0 -> 1", "peak", tick_peak),
         ("X3", "tick_cheetah_2", tick, -13.5, K["cheetahTicks"][1], "counter 1 -> 2 ON the CHEETAH seat", "peak", tick_peak),

@@ -113,7 +113,7 @@ export const L = {
   /** THE WINDOW (root): ONE portrait box for S1 / S2 / S3, right of the rung labels (never over them: build_props asserts) */
   win: { x0: 580, x1: 920, y0: 440, y1: 893, r: 22, frame: 6 },
   /** THE ZEROS COUNTER (root, shared/Counter.tsx): a chip right-aligned at x 920, top right */
-  counter: { x0: 640, x1: 920, y0: 220, y1: 340, digitPx: 72, labelPx: 22 },
+  counter: { x0: 640, x1: 920, y0: 220, y1: 340, digitPx: 72, labelPx: 24 },
   /** the YOU tag (units: <YouTagLive/>), LEFT of the rail at the rung it sits on (its right edge at numRight) */
   you: { right: 224, h: 36 },
   /** the orbit inset (U1, sc05): the window's column while the window is closed */

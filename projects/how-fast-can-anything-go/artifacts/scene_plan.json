@@ -801,14 +801,30 @@
     "honesty": "'AI impression' tag while visible.",
     "risk": "extra legs; merged limbs",
     "fallback": "crop (lesson 39) or drawn icon only",
-    "placeholder": true,
+    "placeholder": false,
     "window": {
      "x0": 580,
      "x1": 920,
      "y0": 440,
      "y1": 893
     },
-    "status": "NOT GENERATED: a labelled placeholder card is staged in public/stills/; re-run prepare_media.py --force + build_props.py when it lands"
+    "status": "NOT GENERATED: a labelled placeholder card is staged in public/stills/; re-run prepare_media.py --force + build_props.py when it lands",
+    "crop_px": [
+     0,
+     300,
+     1152,
+     1835
+    ],
+    "crop_pct": {
+     "x": [
+      0.0,
+      100.0
+     ],
+     "y": [
+      14.6,
+      89.6
+     ]
+    }
    },
    {
     "still_id": "S2",
@@ -825,14 +841,30 @@
     "honesty": "'AI impression' tag while visible.",
     "risk": "extra wings; wrong species look",
     "fallback": "crop or drawn icon only",
-    "placeholder": true,
+    "placeholder": false,
     "window": {
      "x0": 580,
      "x1": 920,
      "y0": 440,
      "y1": 893
     },
-    "status": "NOT GENERATED: a labelled placeholder card is staged in public/stills/; re-run prepare_media.py --force + build_props.py when it lands"
+    "status": "NOT GENERATED: a labelled placeholder card is staged in public/stills/; re-run prepare_media.py --force + build_props.py when it lands",
+    "crop_px": [
+     0,
+     130,
+     1152,
+     1665
+    ],
+    "crop_pct": {
+     "x": [
+      0.0,
+      100.0
+     ],
+     "y": [
+      6.3,
+      81.3
+     ]
+    }
    },
    {
     "still_id": "S3",
@@ -850,14 +882,30 @@
     "honesty": "'AI impression' tag while visible.",
     "risk": "looks like a different spacecraft; text/logos",
     "fallback": "drawn probe icon + label",
-    "placeholder": true,
+    "placeholder": false,
     "window": {
      "x0": 580,
      "x1": 920,
      "y0": 440,
      "y1": 893
     },
-    "status": "NOT GENERATED: a labelled placeholder card is staged in public/stills/; re-run prepare_media.py --force + build_props.py when it lands"
+    "status": "NOT GENERATED: a labelled placeholder card is staged in public/stills/; re-run prepare_media.py --force + build_props.py when it lands",
+    "crop_px": [
+     0,
+     100,
+     1152,
+     1635
+    ],
+    "crop_pct": {
+     "x": [
+      0.0,
+      100.0
+     ],
+     "y": [
+      4.9,
+      79.8
+     ]
+    }
    }
   ],
   "ai_clips": [],

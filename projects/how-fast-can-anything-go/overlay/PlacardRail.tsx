@@ -55,7 +55,7 @@ export const SettleCta: React.FC<{ pages: CaptionPage[] }> = ({ pages }) => {
   const frame = useCurrentFrame();
   const T = useT();
   if (frame < T.cta.frame) return null;
-  const a = prog(frame, T.cta.frame + 1, T.cta.frame + 7);
+  const a = prog(frame, T.cta.frame, T.cta.frame + 3);   // KIT: 3 f swap so the settle is still from cta + 3 (video 16, lesson 25)
   const outA = 1 - prog(frame, T.cta.frame, T.cta.frame + 3);
   const last = pages.find((p) => p.exitFrame === T.cta.frame);
   return (

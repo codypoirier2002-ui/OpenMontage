@@ -887,10 +887,10 @@
   },
   {
    "word": "s3:we've#1",
-   "measured_s_section": 0.98,
-   "caption_frame": 621,
-   "err_frames": 0.15,
-   "source": "confirmed"
+   "measured_s_section": 0.848,
+   "caption_frame": 617,
+   "err_frames": 0.11,
+   "source": "override"
   },
   {
    "word": "s3:ever#1",
@@ -1464,6 +1464,10 @@
   ],
   "s3:thing#1": [
    0.606,
+   null
+  ],
+  "s3:we've#1": [
+   0.848,
    null
   ],
   "s3:built,#1": [

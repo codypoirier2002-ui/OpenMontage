@@ -134,6 +134,7 @@ const Spine: React.FC<{ T: Timing; frame: number }> = ({ T, frame }) => {
         <line x1={R.x} y1={R.axisY0} x2={R.x} y2={R.cY} stroke={C.steelDim} strokeWidth={3} opacity={0.55} />
         {ld.railDraw > 0 ? <line x1={R.x} y1={R.axisY0} x2={R.x} y2={drawn} stroke={C.steel} strokeWidth={3} opacity={0.9} /> : null}
         {DECADES.map((_, d) => {
+          if (d === 9) return null; // the 10^9 tick sits 2.6 px under the red c line and read as covering it (QA B-01): the red line is that mark
           const y = T.railY(d);
           const a = 0.35 + 0.45 * prog(y, drawn, drawn + 1) * 0 + 0.45 * (ld.railDraw >= 1 || y >= drawn ? 1 : 0);
           return <line key={d} x1={R.tickX0} y1={y} x2={R.tickX1} y2={y} stroke={C.steelDim} strokeWidth={2} opacity={a} />;
@@ -154,7 +155,7 @@ const Spine: React.FC<{ T: Timing; frame: number }> = ({ T, frame }) => {
         const nearYou = you.alpha > 0 && Math.abs(y - you.y) < 26;
         const a = (y >= drawn || ld.railDraw >= 1 ? 0.8 : 0.4) * (nearYou ? 0 : 1);
         return (
-          <div key={d} style={{ position: "absolute", right: L.W - R.numRight, top: y - 11, fontFamily: FONT.mono, fontWeight: 400, fontSize: 18, lineHeight: "22px", color: C.steelDim,
+          <div key={d} style={{ position: "absolute", right: L.W - R.numRight, top: y - 11, fontFamily: FONT.mono, fontWeight: 400, fontSize: 24, lineHeight: "22px", color: C.steelDim,
             opacity: a, whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums" }}>
             {txt}
           </div>
