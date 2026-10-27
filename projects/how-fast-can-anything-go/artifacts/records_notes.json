@@ -1,0 +1,49 @@
+{
+ "composition": "SpeedLadder",
+ "master": "renders/how-fast-can-anything-go.mp4",
+ "raw": "renders/raw.mp4",
+ "scene_map": {
+  "N-s1": "sc01",
+  "N-s2": "sc04",
+  "N-s3": "sc06",
+  "N-s4": "sc08",
+  "N-s5": "sc11",
+  "S1": "sc02",
+  "S2": "sc03",
+  "S3": "sc06",
+  "M1": "sc01",
+  "X1": "sc01",
+  "X2": "sc04",
+  "X3": "sc02",
+  "X4": "sc06",
+  "X5": "sc08",
+  "X6": "sc11"
+ },
+ "approval_basis": "proposal d-001..d-007, script + scene plan 'approve' (d-010 run-through policy); Creative Claw for stills/music approved in chat (d-011); contact sheets 1-3 sent",
+ "transition_in": "Continuous frame (the ladder persists; scene devices fade).",
+ "verification_notes": [
+  "Lean build: kit + video 13's ladder/window engine + video 15's pipeline; foundation agent, 2 builders, qa_auto (30/30 PASS, 0 WARN on the first master), 1 independent QA agent (0 blockers, 3 majors, 9 minors), one fix round, re-render, targeted re-check.",
+  "All 106 caption onsets hand-measured on the clean WAVs (62 OVERRIDES + 44 CONFIRMED); QA re-measured independently: one word ('we've') 4 f late, fixed.",
+  "Music bed (G major, not the requested D): last tonic attack measured at src 55.79 s and pinned in assets/music/music_qa.json after the automatic finder picked a pluck in the decay (56.98 s); chord 0.11 s after the release of 'way'; closing words >= +14.8 dB over the bed in 300-4000 Hz.",
+  "Master: BT.709 tv, x264 crf 18 VBV 20M/25M, -14 LUFS from the premix, AAC 192k 48 kHz."
+ ],
+ "visual_issues": [
+  "Rung chips are readable ~3 f before their seat while dropping the last 3-4 px (marker within 2.4 px of the rung; no wrong value shown).",
+  "LHC readout shows the final value as a 25% ghost from its seat (18 f before the first digit lands).",
+  "Picture is pixel-constant from frame 1440 (the tab's own settle runs 8 f past the release at 1432): the still hold is 1.27 s of the 1.53 s settle.",
+  "Dashed YOU ghost at WALK clips the bottom 3 rows of the '10' decade number during f441-504 (pre-existing B-06c, ~2 px larger at 24 px).",
+  "'end.' caption page opens +3 f after the measured 't' release (baked 200 ms pause before it); on the +-3 f limit."
+ ],
+ "audio_issues": [
+  "X1 whoosh onsets sit on the key frame while the eased marker's first >= 1 px move is 2-4 f later (the whoosh peak at key + 5 brackets the move).",
+  "The opening rail whoosh peaks 6 f before the rail draws (f10 vs f16) over a bed ducked from frame 0 (lead-in treated as voiced): hit +5.1 dB over the bed; whoosh+bed +2.4 dB over 'You' in 300-4000 Hz (was +7.2 at +2.8 dB on the key frame)."
+ ],
+ "promise_issues": [
+  "Stills and music were generated on Creative Claw (same models) after the full ElevenLabs connector denied every call; narration and SFX on ElevenLabs as planned.",
+  "The window was moved to x 580-920 (the plan's 470-920 box covered the EARTH/PARKER chips)."
+ ],
+ "subtitle_issues": [],
+ "duck_level_db": -12,
+ "music_path": "assets/music/bed_raw.wav",
+ "budget_usd": 4.0
+}

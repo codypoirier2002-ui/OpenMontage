@@ -1,0 +1,310 @@
+{
+ "project": "how-fast-can-anything-go",
+ "status": "COMPLETE - narration s1-s5 + SFX X1-X6 on ElevenLabs (flows), stills S1-S3 + music M1 on Creative Claw (user-approved provider change, decision d-011). All QA-passed.",
+ "flow": {
+  "name": "How Fast Can Anything Go?",
+  "flow_id": "QQrEkYtv7r3zlWHCLNrq",
+  "url": "https://elevenlabs.io/app/flows/QQrEkYtv7r3zlWHCLNrq"
+ },
+ "policy": "One flow; generations_count=1; estimate_only before the paid run (1488.19 cr / $0.2706 for 5 TTS + 3 stills); image nodes set 9:16 2K high at creation; prompts verbatim.",
+ "runs": [
+  {
+   "what": "5 TTS + 3 stills",
+   "estimate_usd": 0.2706,
+   "actual_usd": 0.024,
+   "credits": 131.987,
+   "note": "Only N-s1 generated. N-s2..s5 and S1..S3 were refused with quota_exceeded (plan quota 122934; 248 cr left at submit, ~116 after s1). Refused jobs are not charged."
+  },
+  {
+   "what": "4 TTS + 6 SFX, one take each",
+   "estimate_usd": 0.1125,
+   "actual_usd": 0.1014,
+   "credits": 557.6,
+   "date": "2026-10-27"
+  },
+  {
+   "what": "3 stills (gpt-image-2.5-sunburst 1152x2048 high) + music (elevenlabs-music-v2.5, 58 s)",
+   "provider": "Creative Claw",
+   "estimate_credits": 59,
+   "actual_credits": 59,
+   "credits_remaining": 695,
+   "usd_note": "Creative Claw credits; at the ElevenLabs list prices the same items are ~$0.15 (3 stills) + ~$0.16 (music) = ~$0.31; recorded at $0.31 pending the credit rate",
+   "date": "2026-10-27"
+  }
+ ],
+ "still_gate": {},
+ "fallbacks_triggered": [],
+ "retakes": [],
+ "assets": [
+  {
+   "id": "N-s1",
+   "type": "narration",
+   "section": "s1",
+   "file": "assets/audio/narration/s1.mp3",
+   "wav_48k_mono": "assets/audio/narration/s1.wav",
+   "take_file": "assets/audio/narration/takes/s1_take1.mp3",
+   "node_id": "vbMslrs9YxebJxegTmwX",
+   "generation_id": "qO0vxKtcAcke9tnwrFmg",
+   "flow_id": "QQrEkYtv7r3zlWHCLNrq",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.024,
+   "credits": 131.987,
+   "duration_s": 7.92,
+   "qa": "PASS: prompted decode exact; numbers read 'five', 'a hundred', 'four hundred'; silences 0.42 s at 2.51 and 4.85 s, both at full stops (digital silence), no lesson-29 pause; peak -3.6 dBFS."
+  },
+  {
+   "id": "N-s2",
+   "type": "narration",
+   "section": "s2",
+   "file": "assets/audio/narration/s2.mp3",
+   "wav_48k_mono": "assets/audio/narration/s2.wav",
+   "take_file": "assets/audio/narration/takes/s2_take1.mp3",
+   "node_id": "kiXsC9meZHoSgJf5oub2",
+   "generation_id": "p2V20KaxH0s7PQDTSLab",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0262,
+   "credits": 143.99,
+   "duration_s": 8.96,
+   "qa": "PASS: prompted decode exact (WER 0.0); peak -3.6 dBFS; pauses at the full stop after \"twelve hundred.\" and the commas after \"still,\" / \"thousand,\"; no lesson-29 dead air"
+  },
+  {
+   "id": "N-s3",
+   "type": "narration",
+   "section": "s3",
+   "file": "assets/audio/narration/s3.mp3",
+   "wav_48k_mono": "assets/audio/narration/s3.wav",
+   "take_file": "assets/audio/narration/takes/s3_take1.mp3",
+   "node_id": "Di2EDMTTqRTupXJTJ4Lp",
+   "generation_id": "XMultt7ixzV6bLmPFHTn",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.024,
+   "credits": 131.99,
+   "duration_s": 8.24,
+   "qa": "PASS: prompted decode exact (WER 0.0); peak -3.7 dBFS; pauses at the commas around \"the Parker Solar Probe,\" and after \"thousand,\"; clean"
+  },
+  {
+   "id": "N-s4",
+   "type": "narration",
+   "section": "s4",
+   "file": "assets/audio/narration/s4.mp3",
+   "wav_48k_mono": "assets/audio/narration/s4.wav",
+   "take_file": "assets/audio/narration/takes/s4_take1.mp3",
+   "node_id": "c4uj1mYm5k30MkZDmlLT",
+   "generation_id": "HEQiI29j2m0wzl95YeAu",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0245,
+   "credits": 134.99,
+   "duration_s": 9.68,
+   "qa": "PASS: prompted decode exact (WER 0.0); peak -2.1 dBFS; 0.28 s breath after \"Light\" (awed delivery, floor -71 dB, not digital silence), then stops at \"billion.\" / \"catch it:\" / \"costs,\"; acceptable"
+  },
+  {
+   "id": "N-s5",
+   "type": "narration",
+   "section": "s5",
+   "file": "assets/audio/narration/s5.mp3",
+   "wav_48k_mono": "assets/audio/narration/s5.wav",
+   "take_file": "assets/audio/narration/takes/s5_take1.mp3",
+   "node_id": "Q21JmoZfNYTg43AFh1Rv",
+   "generation_id": "9ISVopMLKMJhkWTV750E",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0218,
+   "credits": 119.99,
+   "duration_s": 7.76,
+   "qa": "PASS: prompted decode exact (WER 0.0); peak -2.7 dBFS; 0.58 s after \"speed.\" and 0.52 s after \"Close.\" - the two scripted beats; clean"
+  },
+  {
+   "id": "X1",
+   "type": "sfx",
+   "file": "assets/sfx/X1_whoosh.mp3",
+   "node_id": "521TF84B28bGzZrFEIgR",
+   "generation_id": "BEvU2n33v766EiWNNfik",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "model": "eleven_text_to_sound_v2",
+   "cost_usd": 0.0009,
+   "credits": 5.0,
+   "duration_s": 1.48
+  },
+  {
+   "id": "X2",
+   "type": "sfx",
+   "file": "assets/sfx/X2_boom.mp3",
+   "node_id": "4cC71GUw7jqp5bWFg7ts",
+   "generation_id": "qPZx2SovgNi0zwObE3a3",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "model": "eleven_text_to_sound_v2",
+   "cost_usd": 0.0012,
+   "credits": 6.67,
+   "duration_s": 2.0
+  },
+  {
+   "id": "X3",
+   "type": "sfx",
+   "file": "assets/sfx/X3_tick.mp3",
+   "node_id": "njMMbAfArYABpHis4ZI4",
+   "generation_id": "XfPAEmcthdrw59sNh85J",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "model": "eleven_text_to_sound_v2",
+   "cost_usd": 0.0003,
+   "credits": 1.67,
+   "duration_s": 0.48
+  },
+  {
+   "id": "X4",
+   "type": "sfx",
+   "file": "assets/sfx/X4_hum.mp3",
+   "node_id": "iLFSrIzusnJojJS1kZpk",
+   "generation_id": "GgjAcdfp5IgRsB2qzwVX",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "model": "eleven_text_to_sound_v2",
+   "cost_usd": 0.0012,
+   "credits": 6.67,
+   "duration_s": 2.0
+  },
+  {
+   "id": "X5",
+   "type": "sfx",
+   "file": "assets/sfx/X5_shimmer.mp3",
+   "node_id": "u5mZ7RcisbByQdn2YQGA",
+   "generation_id": "YMRgYUr4J609tOKgWpgk",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "model": "eleven_text_to_sound_v2",
+   "cost_usd": 0.0006,
+   "credits": 3.33,
+   "duration_s": 1.0
+  },
+  {
+   "id": "X6",
+   "type": "sfx",
+   "file": "assets/sfx/X6_tink.mp3",
+   "node_id": "l5vtEBZeW0nOZp3kZ8d0",
+   "generation_id": "l9MddFnW5Rvi4hd2Gevm",
+   "flow_id": "18VH83ipjnViF9nyxvKe",
+   "model": "eleven_text_to_sound_v2",
+   "cost_usd": 0.0006,
+   "credits": 3.33,
+   "duration_s": 1.0
+  },
+  {
+   "id": "S1",
+   "name": "plate_cheetah",
+   "type": "still",
+   "file": "assets/images/plate_cheetah.png",
+   "provider": "Creative Claw",
+   "model": "image/gpt-image-2.5-sunburst",
+   "size": "1152x2048 (9:16)",
+   "quality": "high",
+   "job_id": "56858924-0ea0-4968-b47f-65618fb2737c",
+   "asset_id": "b082c026-8b91-4835-a12d-c5156f2a93e1",
+   "credits": 10,
+   "qa": "PASS: 4 legs, 1 tail, 2 ears at 2x; paws clean; no text",
+   "crop": "measured, see artifacts/media_report.json",
+   "cost_usd": 0.05,
+   "generation_id": "56858924-0ea0-4968-b47f-65618fb2737c",
+   "node_id": "creative-claw:b082c026"
+  },
+  {
+   "id": "S2",
+   "name": "plate_falcon_dive",
+   "type": "still",
+   "file": "assets/images/plate_falcon_dive.png",
+   "provider": "Creative Claw",
+   "model": "image/gpt-image-2.5-sunburst",
+   "size": "1152x2048 (9:16)",
+   "quality": "high",
+   "job_id": "67f063b2-2120-41aa-878c-fa5283783465",
+   "asset_id": "6bbc30a0-5156-49c4-a4ef-35e0ff6c7951",
+   "credits": 10,
+   "qa": "PASS: 1 head, 2 wings tucked, 1 tail, feet tucked (yellow); peregrine markings; no text",
+   "crop": "measured, see artifacts/media_report.json",
+   "cost_usd": 0.05,
+   "generation_id": "67f063b2-2120-41aa-878c-fa5283783465",
+   "node_id": "creative-claw:6bbc30a0"
+  },
+  {
+   "id": "S3",
+   "name": "plate_parker_probe",
+   "type": "still",
+   "file": "assets/images/plate_parker_probe.png",
+   "provider": "Creative Claw",
+   "model": "image/gpt-image-2.5-sunburst",
+   "size": "1152x2048 (9:16)",
+   "quality": "high",
+   "job_id": "3bb6854b-f0dc-46a4-a64a-99abc1cbf36d",
+   "asset_id": "a8c6d819-2177-44e9-9b13-4a6bfc557b54",
+   "credits": 10,
+   "qa": "PASS: one craft, flat white shield toward the Sun, 2 panels, bus in shadow; no text/logos",
+   "crop": "measured, see artifacts/media_report.json",
+   "cost_usd": 0.05,
+   "generation_id": "3bb6854b-f0dc-46a4-a64a-99abc1cbf36d",
+   "node_id": "creative-claw:a8c6d819"
+  },
+  {
+   "id": "M1",
+   "type": "music",
+   "file": "assets/music/bed_raw.wav",
+   "provider": "Creative Claw",
+   "model": "music/elevenlabs-music-v2.5",
+   "length_s": 58.0,
+   "format": "pcm_48000 stereo",
+   "job_id": "9cdc244f-6eb9-4e5f-9cc8-24eb146bf77e",
+   "asset_id": "01715738-2059-48c6-a616-c5212133e936",
+   "credits": 29,
+   "qa": "key heard G major (D major requested, lesson 26); last tonic attack 55.79 s (assets/music/music_qa.json); +6 dB level step at 18 s evened by build_soundtrack; ring-out to -49 dBFS by 58 s",
+   "cost_usd": 0.16,
+   "generation_id": "9cdc244f-6eb9-4e5f-9cc8-24eb146bf77e",
+   "node_id": "creative-claw:01715738"
+  }
+ ],
+ "narration_summary": {
+  "durations_s": {
+   "s1": 7.92
+  },
+  "total_raw_s": null,
+  "note": "Only s1 exists; total read length unknown until s2-s5 are generated."
+ },
+ "quality_concerns": [
+  "s4 has a 0.28 s breath after \"Light\" (kept).",
+  "The bed ignored the requested key (G major, not D) - harmless, cadence found from the audio.",
+  "The bed has a +6 dB step at 18 s - evened by the 2 s level evening in build_soundtrack."
+ ],
+ "contact_sheet": null,
+ "total_usd": 0.4353,
+ "hard_limit_usd": 1.0,
+ "expected_usd": 0.45,
+ "user_cap_usd": 4.0,
+ "cost_basis": "price from creative_get_flow_run_status: 131.987 cr = $0.0240",
+ "resume_attempt": {
+  "when": "2026-10-27",
+  "action": "creative_get_flow on QQrEkYtv7r3zlWHCLNrq",
+  "result": "tool unavailable in this session; nothing generated, nothing charged",
+  "account_or_flow_change": "none recorded (could not reach the server to tell whether the flow is still reachable or whether a new account is connected)"
+ },
+ "sessions": [
+  {
+   "date": "2026-10-27",
+   "spent_usd": 0.0,
+   "note": "no paid call made; ElevenLabs creative tools absent"
+  }
+ ],
+ "flow_v2": {
+  "name": "How Fast Can Anything Go? (v16, audio)",
+  "flow_id": "18VH83ipjnViF9nyxvKe",
+  "connector": "ElevenLabs (restricted: speech + SFX)"
+ },
+ "spend": {
+  "session1_usd": 0.024,
+  "session3_elevenlabs_usd": 0.1014,
+  "session3_creative_claw": "59 credits (~$0.31 at list prices)",
+  "total_usd_est": 0.435,
+  "cap_usd": 4.0
+ }
+}

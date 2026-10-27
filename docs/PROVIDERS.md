@@ -1144,6 +1144,10 @@ cd remotion-composer && npm install && cd ..
 
 Requires **Node.js 18+** and `npx`. The `remotion-composer/` project is included in the repo.
 
+On first render Remotion downloads its own headless Chrome from `remotion.media`. On offline or
+proxy-restricted machines that already have a Chromium, set `REMOTION_BROWSER_EXECUTABLE` to its
+path (e.g. Playwright's `headless_shell`) and `video_compose` passes it as `--browser-executable`.
+
 #### What Remotion Renders
 
 | Component | What it produces |
@@ -1220,8 +1224,8 @@ pip install piper-tts
 # Or download the binary from GitHub
 # https://github.com/rhasspy/piper/releases
 
-# Download a voice model (first run downloads automatically)
-piper --download-dir ~/.piper/models --model en_US-lessac-medium
+# Download a voice model (piper_tts looks in $PIPER_DATA_DIR, default ~/.piper/models)
+python -m piper.download_voices --download-dir ~/.piper/models en_US-lessac-medium
 ```
 
 **Available voices:** ~30 English voices plus voices for German, French, Spanish, Italian, and other languages. Lower variety than cloud providers but completely free and offline.

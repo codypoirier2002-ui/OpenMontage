@@ -136,6 +136,15 @@ class TestPiperTTS:
 
         assert PiperTTS().get_status() == ToolStatus.UNAVAILABLE
 
+    def test_resolves_bare_voice_name_from_data_dir(self, tmp_path, monkeypatch):
+        """The piper CLI only searches cwd for bare names, so voices downloaded
+        to the documented data dir must be passed as a full .onnx path."""
+        (tmp_path / "en_US-lessac-medium.onnx").write_bytes(b"")
+        monkeypatch.setenv("PIPER_DATA_DIR", str(tmp_path))
+
+        assert PiperTTS._resolve_model("en_US-lessac-medium") == str(tmp_path / "en_US-lessac-medium.onnx")
+        assert PiperTTS._resolve_model("missing-voice") == "missing-voice"
+
 
 class TestGoogleTTS:
     def test_identity(self):

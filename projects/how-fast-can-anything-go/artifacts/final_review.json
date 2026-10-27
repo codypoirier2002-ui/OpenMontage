@@ -1,0 +1,51 @@
+{
+ "version": "1.0",
+ "output_path": "/home/user/OpenMontage/projects/how-fast-can-anything-go/renders/how-fast-can-anything-go.mp4",
+ "status": "pass",
+ "recommended_action": "present_to_user",
+ "checks": {
+  "technical_probe": {
+   "valid_container": true,
+   "duration_seconds": 49.267,
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "has_audio": true,
+   "codec": "h264",
+   "file_size_bytes": 7021370,
+   "issues": []
+  },
+  "visual_spotcheck": {
+   "frames_sampled": 1478,
+   "frame_paths": [
+    "/home/user/OpenMontage/projects/how-fast-can-anything-go/renders/master_sheet.jpg"
+   ],
+   "black_frames_detected": false,
+   "broken_overlays": false,
+   "missing_assets": false,
+   "unreadable_text": false,
+   "issues": [
+    "Rung chips are readable ~3 f before their seat while dropping the last 3-4 px (marker within 2.4 px of the rung; no wrong value shown).",
+    "LHC readout shows the final value as a 25% ghost from its seat (18 f before the first digit lands).",
+    "Picture is pixel-constant from frame 1440 (the tab's own settle runs 8 f past the release at 1432): the still hold is 1.27 s of the 1.53 s settle.",
+    "Dashed YOU ghost at WALK clips the bottom 3 rows of the '10' decade number during f441-504 (pre-existing B-06c, ~2 px larger at 24 px).",
+    "'end.' caption page opens +3 f after the measured 't' release (baked 200 ms pause before it); on the +-3 f limit."
+   ]
+  },
+  "audio_spotcheck": {
+   "issues": [
+    "X1 whoosh onsets sit on the key frame while the eased marker's first >= 1 px move is 2-4 f later (the whoosh peak at key + 5 brackets the move).",
+    "The opening rail whoosh peaks 6 f before the rail draws (f10 vs f16) over a bed ducked from frame 0 (lead-in treated as voiced): hit +5.1 dB over the bed; whoosh+bed +2.4 dB over 'You' in 300-4000 Hz (was +7.2 at +2.8 dB on the key frame)."
+   ]
+  },
+  "promise_preservation": {
+   "render_runtime_used": "remotion",
+   "issues": [
+    "Stills and music were generated on Creative Claw (same models) after the full ElevenLabs connector denied every call; narration and SFX on ElevenLabs as planned.",
+    "The window was moved to x 580-920 (the plan's 470-920 box covered the EARTH/PARKER chips)."
+   ]
+  },
+  "subtitle_check": {
+   "issues": []
+  }
+ }
+}

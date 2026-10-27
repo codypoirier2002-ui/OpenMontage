@@ -1,0 +1,251 @@
+{
+ "version": "1.0",
+ "title": "How Fast Can Anything Go?",
+ "total_duration_seconds": 49.2,
+ "voice_performance": {
+  "performance_intent": "A calm, curious climb: each rung a little brighter, a surprise at 'sitting still', quiet awe at light, then a dry finished close.",
+  "pacing_profile": "conversational",
+  "energy_curve": "s1 building; s2 surprise; s3 impressed; s4 awe -> explanation; s5 calm, dry, resolved.",
+  "pause_policy": "Gaps widened at the foundation for a >= 45 s film (lesson 48); ~1.5 s settle after s5 on the resolved chord.",
+  "sample_section_id": "s2",
+  "provider_notes": {
+   "elevenlabs": "Bella hpp4J3VqNfWAUOO0d1Us, eleven_v4 tags in delivery_cues.provider_text. ONE take per section; retake only if Whisper QA fails; max 2. Check baked-in pauses (lesson 29) and the last word 'way' level (lesson 30)."
+  }
+ },
+ "sections": [
+  {
+   "id": "s1",
+   "label": "Hook - the first rungs",
+   "text": "You walk at about five kilometres an hour. A cheetah sprints at about a hundred. A diving falcon hits nearly four hundred.",
+   "speaker_directions": "Curious and clear; three quick steps up, each a little brighter.",
+   "delivery_cues": {
+    "pace": "measured",
+    "energy": "curious, building",
+    "emphasis_words": [
+     "five",
+     "hundred",
+     "four hundred"
+    ],
+    "pause_after_seconds": 0.35,
+    "delivery_note": "No lead-in breath.",
+    "provider_text": "[curious] You walk at about five kilometres an hour. A cheetah sprints at about a hundred. A diving falcon hits nearly four hundred."
+   },
+   "enhancement_cues": [
+    {
+     "type": "animation",
+     "description": "Log rail: marker climbs WALK -> CHEETAH (window S1)",
+     "timestamp_seconds": 0.5
+    },
+    {
+     "type": "animation",
+     "description": "FALCON rung (window S2) - PROBABLY",
+     "timestamp_seconds": 5.0
+    }
+   ],
+   "source_ref": "research_brief: WALK, CHEETAH, FALCON",
+   "pronunciation_guides": [],
+   "start_seconds": 0.0,
+   "end_seconds": 9.92
+  },
+  {
+   "id": "s2",
+   "label": "Sound, and you",
+   "text": "Sound outruns them all at over twelve hundred. But sitting still, you're doing over a hundred thousand, riding Earth around the Sun.",
+   "speaker_directions": "Pleased on 'twelve hundred'; a turn on 'But sitting still' - a little surprise.",
+   "delivery_cues": {
+    "pace": "measured",
+    "energy": "building, then surprised",
+    "emphasis_words": [
+     "twelve hundred",
+     "sitting still",
+     "hundred thousand"
+    ],
+    "pause_after_seconds": 0.4,
+    "delivery_note": "Small beat before 'But'.",
+    "provider_text": "Sound outruns them all at over twelve hundred. [surprised] But sitting still, you're doing over a hundred thousand, riding Earth around the Sun."
+   },
+   "enhancement_cues": [
+    {
+     "type": "animation",
+     "description": "SOUND rung",
+     "timestamp_seconds": 10.22
+    },
+    {
+     "type": "animation",
+     "description": "HERO: 'YOU' tag jumps to EARTH 107,000",
+     "timestamp_seconds": 12.92
+    }
+   ],
+   "source_ref": "research_brief: SOUND, ORBIT",
+   "pronunciation_guides": [],
+   "start_seconds": 9.92,
+   "end_seconds": 19.89
+  },
+  {
+   "id": "s3",
+   "label": "Our fastest machine",
+   "text": "The fastest thing we've ever built, the Parker Solar Probe, reached nearly seven hundred thousand, falling toward the Sun.",
+   "speaker_directions": "Proud but plain; 'falling toward the Sun' lighter.",
+   "delivery_cues": {
+    "pace": "measured",
+    "energy": "impressed",
+    "emphasis_words": [
+     "fastest",
+     "Parker Solar Probe",
+     "seven hundred thousand"
+    ],
+    "pause_after_seconds": 0.4,
+    "delivery_note": "",
+    "provider_text": "The fastest thing we've ever built, the Parker Solar Probe, reached nearly seven hundred thousand, [lightly] falling toward the Sun."
+   },
+   "enhancement_cues": [
+    {
+     "type": "broll",
+     "description": "Window S3 Parker Solar Probe (AI impression)",
+     "timestamp_seconds": 20.39
+    },
+    {
+     "type": "animation",
+     "description": "PARKER rung",
+     "timestamp_seconds": 21.89
+    }
+   ],
+   "source_ref": "research_brief: PROBE",
+   "pronunciation_guides": [],
+   "start_seconds": 19.89,
+   "end_seconds": 28.55
+  },
+  {
+   "id": "s4",
+   "label": "Light, and the wall",
+   "text": "Light does over a billion. And nothing with mass can catch it: the closer you get, the more energy each step costs, without end.",
+   "speaker_directions": "Quiet awe on 'over a billion'; then clear and steady through the explanation.",
+   "delivery_cues": {
+    "pace": "measured",
+    "energy": "awed, then explanatory",
+    "emphasis_words": [
+     "billion",
+     "nothing",
+     "without end"
+    ],
+    "pause_after_seconds": 0.45,
+    "delivery_note": "Beat after 'billion.'",
+    "provider_text": "[awed] Light does over a billion. And nothing with mass can catch it: the closer you get, the more energy each step costs, without end."
+   },
+   "enhancement_cues": [
+    {
+     "type": "animation",
+     "description": "LIGHT at the top; red 'c' wall line",
+     "timestamp_seconds": 28.85
+    },
+    {
+     "type": "animation",
+     "description": "energy bar grows without limit",
+     "timestamp_seconds": 31.55
+    }
+   ],
+   "source_ref": "research_brief: LIGHT, WALL",
+   "pronunciation_guides": [],
+   "start_seconds": 28.55,
+   "end_seconds": 39.43
+  },
+  {
+   "id": "s5",
+   "label": "Never all the way - finished close",
+   "text": "The Large Hadron Collider pushes protons to within a hair of light speed. Close. But never all the way.",
+   "speaker_directions": "Calm; 'Close.' a soft beat; the last sentence slow and dry, falling to a finished cadence on 'way'.",
+   "delivery_cues": {
+    "pace": "slow",
+    "energy": "calm, dry, resolved",
+    "emphasis_words": [
+     "within a hair",
+     "Close",
+     "never"
+    ],
+    "pause_after_seconds": 0.0,
+    "delivery_note": "End on a falling, finished cadence; keep 'way' clear (lesson 30).",
+    "provider_text": "The Large Hadron Collider pushes protons to within a hair of light speed. [softly] Close. [dryly] But never all the way."
+   },
+   "enhancement_cues": [
+    {
+     "type": "stat_card",
+     "description": "LHC readout fills '99.9999991 %'",
+     "timestamp_seconds": 39.93
+    },
+    {
+     "type": "animation",
+     "description": "marker stops just under the wall; settle",
+     "timestamp_seconds": 43.43
+    }
+   ],
+   "source_ref": "research_brief: LHC",
+   "pronunciation_guides": [],
+   "start_seconds": 39.43,
+   "end_seconds": 47.69
+  }
+ ],
+ "metadata": {
+  "word_count": 106,
+  "section_word_counts": {
+   "s1": 22,
+   "s2": 22,
+   "s3": 19,
+   "s4": 24,
+   "s5": 19
+  },
+  "word_count_method": "whitespace split, numbers as spoken (lesson 17)",
+  "rate_assumption_wps": 2.3,
+  "estimated_speech_seconds": 46.1,
+  "estimated_film_seconds": 49.2,
+  "ending": "finished_line",
+  "ending_details": {
+   "rule": "User's standing rule (d-003): end on a finished line.",
+   "closing_line": "Close. But never all the way.",
+   "settle_after_last_word_seconds": 1.5,
+   "after_last_word": "Resolved chord ~0.15 s after 'way'; the marker still just under the wall; ~1.5 s hold. No SFX under the closing sentence; duck deeper from 'But' (lesson 44); 'way' >= +12 dB over the bed (300-4000 Hz) and within ~3 dB of its sentence; 0.6 s end fade (lesson 43). build_soundtrack writes ending.closing_min_margin_db (lesson 49).",
+   "loop_cut": "optional only, on request"
+  },
+  "honesty_meter": {
+   "MEASURED": "measured, or an established finding stated simply",
+   "PROBABLY": "weakly sourced or a simplification",
+   "MAYBE": "single-source or unconfirmed (none used)"
+  },
+  "claim_tags": {
+   "s1": {
+    "walking ~5 km/h (WALK)": "MEASURED",
+    "cheetah ~100 km/h (CHEETAH)": "MEASURED",
+    "diving peregrine nearly 400 km/h (FALCON)": "PROBABLY"
+   },
+   "s2": {
+    "sound ~1,235 km/h (SOUND)": "MEASURED",
+    "Earth orbits the Sun at ~107,000 km/h (ORBIT)": "MEASURED"
+   },
+   "s3": {
+    "Parker Solar Probe ~692,000 km/h, fastest human-made object, from falling toward the Sun (PROBE)": "MEASURED"
+   },
+   "s4": {
+    "light ~1.08 billion km/h (LIGHT)": "MEASURED",
+    "nothing with mass can reach it; energy grows without limit (WALL)": "MEASURED"
+   },
+   "s5": {
+    "LHC protons to 99.9999991% of light speed (LHC)": "MEASURED"
+   }
+  },
+  "wording_changes_from_outline": {
+   "s1": "Unchanged (approved).",
+   "s2": "Unchanged.",
+   "s3": "Unchanged.",
+   "s4": "Unchanged.",
+   "s5": "Unchanged (approved closing line)."
+  },
+  "fact_notes": [
+   "'about a hundred' = cheetah 95 (wild, collar) to 103 km/h (track)",
+   "'nearly four hundred' = peregrine dive ~386-390 km/h, weakly sourced -> PROBABLY",
+   "'over twelve hundred' = 343 m/s in 20 C air = 1,235 km/h",
+   "'over a hundred thousand' = Earth's orbit 29.78 km/s = 107,200 km/h",
+   "'nearly seven hundred thousand' = Parker 430,000 mph = 692,000 km/h (Dec 2024)",
+   "'over a billion' = 1,079,252,849 km/h (c = 299,792,458 m/s exactly)",
+   "'within a hair' = LHC protons 0.999999991 c (shown on screen as 99.9999991 %)"
+  ]
+ }
+}

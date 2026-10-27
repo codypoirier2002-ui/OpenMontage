@@ -1,0 +1,155 @@
+[
+ {
+  "id": "A-01",
+  "severity": "major",
+  "area": "captions / onsets",
+  "frames_or_seconds": "s3 'we've': props f0 621 (20.695 s); measured onset 20.563 s = frame 617",
+  "what": "Caption word 'we've' lights ~4 f LATE. The clean WAV s3 has a 54 ms silent gap (-73 dB) after 'thing' (0.794-0.848 s section time); voicing (the w glide) resumes at 0.848 s, the claimed onset is 0.980 s, 132 ms into the word. The builder listed it as a 'soft +-1-2 f' merged-vowel call; the spectrogram shows a clean gap, not a merge.",
+  "evidence": "renders/review/qa/spec_s3_03_we've.png (green = claimed 0.980, red = measured 0.848); onsets3.json delta -4.0 f",
+  "suggested_fix": "OVERRIDE s3 'we've' to 0.85 s section time (film 20.565 s, f617); re-run build_props; qa_auto."
+ },
+ {
+  "id": "A-02",
+  "severity": "major",
+  "area": "honesty / lessons 31-42-47",
+  "frames_or_seconds": "frames 278-288 (sc03 -> sc04)",
+  "what": "The falcon plate (the PROBABLY claim's visual) and the cheetah/falcon placard are still on screen while the honesty tab glides PROBABLY -> MEASURED. Window alpha: 1.0 @278, 0.85 @280, 0.5 @282 (glide starts), 0.15 @284, 0.04 @285, 0 @286; SOUND page @288. Placard 1 exits 286 (same fade). Gone only 2 f before the page, 4 f into the glide; the rule is gone before the glide (~6 f before the page).",
+  "evidence": "renders/review/qa/window_close1.png (f280-f288 strip); props.window.open; props.placards[0].exit=286; meter glideStart 282",
+  "suggested_fix": "Close window 1 (and fade placard 1) 8 f earlier: windowClose1 270 -> 278 so open==0 by 278 <= glideStart-4; same for the placard exit."
+ },
+ {
+  "id": "A-03",
+  "severity": "minor",
+  "area": "honesty / lessons 31-42-47",
+  "frames_or_seconds": "frames 865-875 (sc07 -> sc08)",
+  "what": "Same pattern for the probe plate + 'falling toward the Sun' label + placard 3: window 0.69 @868, 0.31 @870 (glide 869), 0 @873; LIGHT page 875. Both states are MEASURED (tab pulse), so lower severity.",
+  "evidence": "renders/review/qa/window_close2.png; props.window.open 864-873",
+  "suggested_fix": "windowClose2 857 -> 865 and placard 3 exit 865 (gone before glideStart 869)."
+ },
+ {
+  "id": "B-01",
+  "severity": "major",
+  "area": "picture / the gap under c",
+  "frames_or_seconds": "frames 1295-1477 (and 1141-1299 as it closes)",
+  "what": "The marker does not visibly clear the wall at phone scale. Column profile at the spine (x~250): LIGHT rung tick (steel) y378-382, marker glow 383-388, marker core 389-398 (centre ~394): centre-to-line 14 px as asserted, but core-edge-to-tick only 6 px and the halo fills it; the red 'c' line's glow (bbox y374-389) meets the core's top row 389. On the spine the red line is COVERED by the steel LIGHT tick, so the thing the marker stops under is a grey tick, red only survives as two stubs (x215-232, x268-277). At 360x640 the marker reads as sitting on the line; 'the gap' bracket is ~10 px.",
+  "evidence": "renders/review/qa/zoom_c_1400.png (4x), phone_scale.png (5th/6th panels), column profile f1300/1400/1477 printed in session; frame_stats cyan ymin - red ymax = -1..-3 px",
+  "suggested_fix": "Either widen the drawn gap (centre >= ~24 px under c, still 'not to scale'), tighten the halo at the final stop, and draw the LIGHT tick short of / under the red line so the red stays continuous; or at least kill the halo overlap. Re-check at 360x640."
+ },
+ {
+  "id": "A-04",
+  "severity": "minor",
+  "area": "ending / lesson 25",
+  "frames_or_seconds": "frames 1432-1446",
+  "what": "Picture is not constant from the release: placard 5 fades out 1432-1444, the caption slab fades 'But never all the way.' -> CTA 1436-1446, tab glides to IDLE 1430-1436. Pixel diffs: f1432 vs f1450 45,103 px differ (bbox y264-1447); f1440 vs f1477 22,423; f1445 vs f1477 4 px; f1448..f1477 identical (max 5). Still hold = 1446-1477 = 1.03 s of the 1.53 s settle. The CTA is planned (scene plan sc12) but lesson 25 says every channel constant through the settle.",
+  "evidence": "renders/review/qa/diff_1432_1450.png, diff_1440_1477.png, diff_1450_1477.png (empty)",
+  "suggested_fix": "Move the placard exit to <= 1420 and switch slab/tab to the CTA/IDLE with a hard cut (or a <= 4 f fade) at 1432, or accept and record the 1.03 s true hold."
+ },
+ {
+  "id": "B-02",
+  "severity": "minor",
+  "area": "rung labels / lessons 33-46-22",
+  "frames_or_seconds": "CHEETAH 137-142, EARTH 473-478, PARKER 759-764 (FALCON/SOUND/LIGHT likely same)",
+  "what": "Each rung chip (name + number) is readable before the marker arrives: text appears dim at seat-5, full brightness at seat-3, then drops 3-4 px/f (CHEETAH y905->916 over 139-142) until the seat. The marker is within 0.8-2.4 px of the rung by seat-3 (sub-pixel), so no wrong number is shown; strict reading of 'label seats with its number only when the marker arrives' is not met.",
+  "evidence": "renders/review/qa/seat_cheetah.png, seat_earth.png, seat_parker.png; chip pixel counts per frame printed in session; props.ladder.markerL offsets at seat-3: -1.72/-2.43/-1.07 px",
+  "suggested_fix": "Record as accepted (kit gravity drop) or delay the chip's fade-in to seat-2."
+ },
+ {
+  "id": "C-01",
+  "severity": "minor",
+  "area": "A/V sync / X1 whoosh vs first visible motion",
+  "frames_or_seconds": "rail 16/17; climbs 106->109, 197->201, 316->320, 441->443, 728->731",
+  "what": "All 34 cues land exactly on their key frames in the master (matched filters: 0.00 f for every cue; master audio vs premix offset 0.00 ms). But the X1 10%-of-peak onset is on the key frame while the marker's first >= 1 px move is 2-4 f later (ease-in): cheetah 109, falcon 201, sound 320, jump 443, parker 731; the rail's first drawn frame is 17 (cue 16). The whoosh is a swell (peak at key+5 f), so audibly it still leads/brackets the move; worst visible lag 4 f (falcon).",
+  "evidence": "sfx_match.json; props.ladder.markerL / railDraw deltas printed in session",
+  "suggested_fix": "Optional: place X1 climbs at key+2 (onset on the first visible px) or keep; rail_draw at 17."
+ },
+ {
+  "id": "A-05",
+  "severity": "minor",
+  "area": "captions / borderline onsets (within +-3 f)",
+  "frames_or_seconds": "s1 'about' f32 (meas ~f35, +2.8), s1 'about' f134 (meas ~f136.5, +2.7), s4 'end.' f1141 (meas ~f1138, -2.9), s5 'Collider' f1235 (meas f1237, +2.3), s2 'at' f335 (+3.0, uncertain: all->at merged)",
+  "what": "Both 'about' onsets sit inside the t-closure of the preceding 'at' (caption lights during silence, the vowel starts ~95 ms later); 'end.' lights ~95 ms after the t release of 'without'; 'Collider' lights 33 ms before the k closure starts (while 'Hadron's n still sounds). All inside +-3 f, none a FAIL; 'end.' matters because barOff is keyed to it (1141).",
+  "evidence": "renders/review/qa/spec_s1_03_about.png, spec_s1_12_about.png, spec_s4_23_end.png, spec_s5_03_Collider.png, spec_s2_04_at.png",
+  "suggested_fix": "If a fix round happens anyway: about -> +0.09 s (both), end. -> -0.09 s (and barOff 1138), Collider -> +0.08 s."
+ },
+ {
+  "id": "B-03",
+  "severity": "minor",
+  "area": "hero 2 / readout",
+  "frames_or_seconds": "frames 1235-1252",
+  "what": "The LHC readout shows the whole value '99.9999991 %' as a ~25% ghost from the card's seat (1235), 18 f before the first digit lands (1253); the digit-by-digit reveal is pre-revealed. The number is correct, so no lesson-33 wrong-value frame.",
+  "evidence": "renders/review/qa/readout_1235.png vs readout_1289.png",
+  "suggested_fix": "Drop the ghost (empty slots or underscores) until each digit lands, or accept."
+ },
+ {
+  "id": "B-04",
+  "severity": "minor",
+  "area": "type sizes",
+  "frames_or_seconds": "whole film",
+  "what": "Below the stated minimums (labels >= 28 px, fine print >= 24 px): decade numbers 18 px (shared/Ladder.tsx:157), 'ZEROS' label 22 px (theme counter.labelPx), 'YOU' 26 px, 'ENERGY NEEDED' 26 px (shared/Devices.tsx:42,173), placard main line 26 px (props.placards size 26). At 360 px wide the decade numbers are ~6 px.",
+  "evidence": "theme.ts / shared/Devices.tsx / shared/Ladder.tsx font sizes; phone_scale.png",
+  "suggested_fix": "Accept as axis furniture, or raise decade numbers to 22-24 and ZEROS to 24."
+ },
+ {
+  "id": "B-05",
+  "severity": "minor",
+  "area": "honesty / wording on an AI plate",
+  "frames_or_seconds": "frames 664-865 (sc06-sc07)",
+  "what": "'Parker Solar Probe \u00b7 NASA' wraps to two lines on the plate ('\u00b7 NASA' orphaned on line 2) and sits on an 'AI impression' plate, where '\u00b7 NASA' can read as an image credit.",
+  "evidence": "renders/review/qa/crop_0664.png",
+  "suggested_fix": "One line (narrower font or smaller) and consider 'Parker Solar Probe (NASA mission)'."
+ },
+ {
+  "id": "B-06",
+  "severity": "minor",
+  "area": "layout collisions",
+  "frames_or_seconds": "792-865; ~1115-1196; 441-504; 1141-1196",
+  "what": "(a) 'falling toward the Sun' label box reaches the window's right frame x~920 (under the 929 limit, but touching). (b) 'drawn \u00b7 not to scale' tag's left edge sits on the grey ENERGY NEEDED bar once the bar is tall; the bar passes 2 px from the LIGHT chip and runs through the top UI band (y<192) by design. (c) The dashed YOU ghost at WALK overlaps the decade number '10' (f478).",
+  "evidence": "renders/review/qa/crop_0792.png, crop_1141.png, crop_0478.png",
+  "suggested_fix": "Nudge the label 8 px left; shift the tag right of the bar; hide '10' while the ghost shows."
+ },
+ {
+  "id": "B-07",
+  "severity": "note",
+  "area": "counter semantics",
+  "frames_or_seconds": "frames 958-1299",
+  "what": "ZEROS stays 9 (light) while the 'anything with mass' marker leaves PARKER (5 zeros) and climbs through 6-8 zeros to the gap; counter = highest rung reached rather than the marker's rung. Correct again at the final stop (0.999999991 c has 9 zeros).",
+  "evidence": "props.counter.value changes end at 920; markerL 958-1299",
+  "suggested_fix": "Accept or make the counter follow the marker (9 again at the stop)."
+ },
+ {
+  "id": "A-06",
+  "severity": "minor",
+  "area": "mix / opening SFX",
+  "frames_or_seconds": "0.37-0.9 s (frames 11-27)",
+  "what": "X1 rail_draw is normalised to +3 dBFS peak (every other whoosh -3..-6); in 300-4000 Hz it is -18.1 dBFS vs the voice -25.2 around 'You' (report numbers, consistent with the premix). The hook's first word is under the loudest SFX of the film.",
+  "evidence": "soundtrack_report sfx[0]; master band levels",
+  "suggested_fix": "Listen on a phone; if 'You walk' is masked, drop rail_draw 4-6 dB."
+ },
+ {
+  "id": "A-07",
+  "severity": "note",
+  "area": "ending / music",
+  "frames_or_seconds": "47.74-49.27 s",
+  "what": "Measured on the master: release 47.74 s, duck release ramp 47.77-47.87, tonic attack 47.90-47.92 s (+0.16-0.18 s after release; chroma G/D), then plucks at 48.22, 48.52, 48.83 s at -14 dBFS (as loud as the chord) ride into the fade; last 0.6 s: -21.2 -23.0 -24.8 -22.5 -26.4 -30.5 -31.4 -35.4 -41.2 -42.0 -50.0 -62.5 dBFS (one +2.3 dB step at 48.82); last 20 ms -68.8 dBFS, max sample step 9e-5, last sample 0: no click. Floor: min 100 ms window -36.7 dBFS (47.71 s), mono -37.4 (46.32 s), none < -42. Closing words in 300-4000 Hz over the bed estimate (-46.2 dBFS in the full-duck gap 46.33-46.42): But +22.0, never +15.8, all +17.3, the +18.6, way +22.7; 'way' loudest 100 ms -17.3 vs sentence median -16.0 (-1.2 dB).",
+  "evidence": "mix.py output in session",
+  "suggested_fix": "None; the ring-out is an arpeggio into the fade rather than one chord - listen once."
+ },
+ {
+  "id": "D-01",
+  "severity": "note",
+  "area": "records",
+  "frames_or_seconds": "renders/",
+  "what": "renders/master_sheet.jpg (contact sheet 3) does not exist; only assets_sheet.jpg and foundation_sheet.jpg. artifacts/script.json title is stale ('How Does a Cat Always Land on Its Feet?'). research_brief WALK data point cites the Britannica speed-of-sound URL (not credited on screen).",
+  "evidence": "ls renders; script.json title",
+  "suggested_fix": "Make contact sheet 3 from the master; fix the title before records.py."
+ },
+ {
+  "id": "P-00",
+  "severity": "note",
+  "area": "verified OK",
+  "frames_or_seconds": "film",
+  "what": "Checked and passing: master audio == premix (0.00 ms, ncc 0.999); every SFX cue found at its key frame (0.00 f, master and premix); chip stops moving on CHEETAH 142 / EARTH 478 / PARKER 764; digits land on 1253..1289 = ticks; counter steps on ticks; bar starts 1075 (tick 1074), off top 1141; beam 908-920; gap bracket complete 1299; windows first visible 99/590; exactly one 'AI impression' tag at the crossfade (f175); 'drawn \u00b7 not to scale' shares the orbit inset's first frame (505) and the energy inset's; orbit gone 583 (page 592), mass/energy gone 1196 (page 1205); tab states match claim_tags (FALCON PROBABLY, all else MEASURED) on page starts; placards credit only brief sources; rung numbers = brief; no text at y>=1574 / x>=929 on any frame; red only on c + inside the photo plates, white-cyan only on the rail; no black / one-frame-flash frames; seams: all boundary PSNRs >= 28.9 dB and all <30 dB frames are caption page starts or seats; plates: cheetah 4 legs/1 tail/2 ears, falcon 1 head/2 tucked wings/1 tail, probe one craft with shield sunward, no text/logos; crops keep subjects whole; '%' and glyphs not clipped; 104/106 onsets within +-3 f on independent measurement.",
+  "evidence": "qa_sheet.jpg, frame_stats.json, sfx_match.json, onsets3.json",
+  "suggested_fix": "-"
+ }
+]

@@ -1,0 +1,898 @@
+{
+ "fps": 30,
+ "width": 1080,
+ "height": 1920,
+ "lead_seconds": 0.5,
+ "settle_seconds": 1.5,
+ "narration_seconds": 47.375,
+ "total_seconds": 49.267,
+ "total_frames": 1478,
+ "voice_end_seconds": 47.74,
+ "way_end_seconds": 47.74,
+ "way_end_frame": 1432,
+ "sections": [
+  {
+   "id": "s1",
+   "start": 0.5,
+   "end": 9.56,
+   "audio": "assets/audio/narration/clean/s1.wav",
+   "from": 15,
+   "durationInFrames": 272
+  },
+  {
+   "id": "s2",
+   "start": 9.56,
+   "end": 19.715,
+   "audio": "assets/audio/narration/clean/s2.wav",
+   "from": 287,
+   "durationInFrames": 304
+  },
+  {
+   "id": "s3",
+   "start": 19.715,
+   "end": 29.13,
+   "audio": "assets/audio/narration/clean/s3.wav",
+   "from": 591,
+   "durationInFrames": 283
+  },
+  {
+   "id": "s4",
+   "start": 29.13,
+   "end": 40.15,
+   "audio": "assets/audio/narration/clean/s4.wav",
+   "from": 874,
+   "durationInFrames": 330
+  },
+  {
+   "id": "s5",
+   "start": 40.15,
+   "end": 47.875,
+   "audio": "assets/audio/narration/clean/s5.wav",
+   "from": 1204,
+   "durationInFrames": 232
+  }
+ ],
+ "scenes": [
+  {
+   "id": "sc01",
+   "section": "s1",
+   "from": 0,
+   "durationInFrames": 99,
+   "start": 0.0,
+   "end": 3.3
+  },
+  {
+   "id": "sc02",
+   "section": "s1",
+   "from": 99,
+   "durationInFrames": 70,
+   "start": 3.3,
+   "end": 5.633
+  },
+  {
+   "id": "sc03",
+   "section": "s1",
+   "from": 169,
+   "durationInFrames": 117,
+   "start": 5.633,
+   "end": 9.533
+  },
+  {
+   "id": "sc04",
+   "section": "s2",
+   "from": 286,
+   "durationInFrames": 107,
+   "start": 9.533,
+   "end": 13.1
+  },
+  {
+   "id": "sc05",
+   "section": "s2",
+   "from": 393,
+   "durationInFrames": 197,
+   "start": 13.1,
+   "end": 19.667
+  },
+  {
+   "id": "sc06",
+   "section": "s3",
+   "from": 590,
+   "durationInFrames": 117,
+   "start": 19.667,
+   "end": 23.567
+  },
+  {
+   "id": "sc07",
+   "section": "s3",
+   "from": 707,
+   "durationInFrames": 166,
+   "start": 23.567,
+   "end": 29.1
+  },
+  {
+   "id": "sc08",
+   "section": "s4",
+   "from": 873,
+   "durationInFrames": 79,
+   "start": 29.1,
+   "end": 31.733
+  },
+  {
+   "id": "sc09",
+   "section": "s4",
+   "from": 952,
+   "durationInFrames": 73,
+   "start": 31.733,
+   "end": 34.167
+  },
+  {
+   "id": "sc10",
+   "section": "s4",
+   "from": 1025,
+   "durationInFrames": 178,
+   "start": 34.167,
+   "end": 40.1
+  },
+  {
+   "id": "sc11",
+   "section": "s5",
+   "from": 1203,
+   "durationInFrames": 155,
+   "start": 40.1,
+   "end": 45.267
+  },
+  {
+   "id": "sc12",
+   "section": "s5",
+   "from": 1358,
+   "durationInFrames": 120,
+   "start": 45.267,
+   "end": 49.267
+  }
+ ],
+ "words": [
+  {
+   "section": "s1",
+   "i": 0,
+   "text": "You",
+   "start": 0.533,
+   "end": 0.714
+  },
+  {
+   "section": "s1",
+   "i": 1,
+   "text": "walk",
+   "start": 0.714,
+   "end": 0.964
+  },
+  {
+   "section": "s1",
+   "i": 2,
+   "text": "at",
+   "start": 0.964,
+   "end": 1.071
+  },
+  {
+   "section": "s1",
+   "i": 3,
+   "text": "about",
+   "start": 1.071,
+   "end": 1.408
+  },
+  {
+   "section": "s1",
+   "i": 4,
+   "text": "five",
+   "start": 1.408,
+   "end": 1.903
+  },
+  {
+   "section": "s1",
+   "i": 5,
+   "text": "kilometres",
+   "start": 1.903,
+   "end": 2.24
+  },
+  {
+   "section": "s1",
+   "i": 6,
+   "text": "an",
+   "start": 2.24,
+   "end": 2.498
+  },
+  {
+   "section": "s1",
+   "i": 7,
+   "text": "hour.",
+   "start": 2.498,
+   "end": 2.86
+  },
+  {
+   "section": "s1",
+   "i": 8,
+   "text": "A",
+   "start": 3.358,
+   "end": 3.49
+  },
+  {
+   "section": "s1",
+   "i": 9,
+   "text": "cheetah",
+   "start": 3.49,
+   "end": 3.964
+  },
+  {
+   "section": "s1",
+   "i": 10,
+   "text": "sprints",
+   "start": 3.964,
+   "end": 4.388
+  },
+  {
+   "section": "s1",
+   "i": 11,
+   "text": "at",
+   "start": 4.388,
+   "end": 4.458
+  },
+  {
+   "section": "s1",
+   "i": 12,
+   "text": "about",
+   "start": 4.458,
+   "end": 4.656
+  },
+  {
+   "section": "s1",
+   "i": 13,
+   "text": "a",
+   "start": 4.656,
+   "end": 4.728
+  },
+  {
+   "section": "s1",
+   "i": 14,
+   "text": "hundred.",
+   "start": 4.728,
+   "end": 5.26
+  },
+  {
+   "section": "s1",
+   "i": 15,
+   "text": "A",
+   "start": 5.714,
+   "end": 5.846
+  },
+  {
+   "section": "s1",
+   "i": 16,
+   "text": "diving",
+   "start": 5.846,
+   "end": 6.216
+  },
+  {
+   "section": "s1",
+   "i": 17,
+   "text": "falcon",
+   "start": 6.216,
+   "end": 6.524
+  },
+  {
+   "section": "s1",
+   "i": 18,
+   "text": "hits",
+   "start": 6.524,
+   "end": 6.984
+  },
+  {
+   "section": "s1",
+   "i": 19,
+   "text": "nearly",
+   "start": 6.984,
+   "end": 7.306
+  },
+  {
+   "section": "s1",
+   "i": 20,
+   "text": "four",
+   "start": 7.306,
+   "end": 7.758
+  },
+  {
+   "section": "s1",
+   "i": 21,
+   "text": "hundred.",
+   "start": 7.758,
+   "end": 8.18
+  },
+  {
+   "section": "s2",
+   "i": 0,
+   "text": "Sound",
+   "start": 9.593,
+   "end": 10.009
+  },
+  {
+   "section": "s2",
+   "i": 1,
+   "text": "outruns",
+   "start": 10.009,
+   "end": 10.518
+  },
+  {
+   "section": "s2",
+   "i": 2,
+   "text": "them",
+   "start": 10.518,
+   "end": 10.839
+  },
+  {
+   "section": "s2",
+   "i": 3,
+   "text": "all",
+   "start": 10.839,
+   "end": 11.15
+  },
+  {
+   "section": "s2",
+   "i": 4,
+   "text": "at",
+   "start": 11.15,
+   "end": 11.279
+  },
+  {
+   "section": "s2",
+   "i": 5,
+   "text": "over",
+   "start": 11.279,
+   "end": 11.566
+  },
+  {
+   "section": "s2",
+   "i": 6,
+   "text": "twelve",
+   "start": 11.566,
+   "end": 11.744
+  },
+  {
+   "section": "s2",
+   "i": 7,
+   "text": "hundred.",
+   "start": 11.744,
+   "end": 12.58
+  },
+  {
+   "section": "s2",
+   "i": 8,
+   "text": "But",
+   "start": 13.161,
+   "end": 13.286
+  },
+  {
+   "section": "s2",
+   "i": 9,
+   "text": "sitting",
+   "start": 13.286,
+   "end": 13.496
+  },
+  {
+   "section": "s2",
+   "i": 10,
+   "text": "still,",
+   "start": 13.496,
+   "end": 14.25
+  },
+  {
+   "section": "s2",
+   "i": 11,
+   "text": "you're",
+   "start": 14.524,
+   "end": 14.684
+  },
+  {
+   "section": "s2",
+   "i": 12,
+   "text": "doing",
+   "start": 14.684,
+   "end": 14.924
+  },
+  {
+   "section": "s2",
+   "i": 13,
+   "text": "over",
+   "start": 14.924,
+   "end": 15.103
+  },
+  {
+   "section": "s2",
+   "i": 14,
+   "text": "a",
+   "start": 15.103,
+   "end": 15.284
+  },
+  {
+   "section": "s2",
+   "i": 15,
+   "text": "hundred",
+   "start": 15.284,
+   "end": 15.932
+  },
+  {
+   "section": "s2",
+   "i": 16,
+   "text": "thousand,",
+   "start": 15.932,
+   "end": 16.55
+  },
+  {
+   "section": "s2",
+   "i": 17,
+   "text": "riding",
+   "start": 16.784,
+   "end": 17.246
+  },
+  {
+   "section": "s2",
+   "i": 18,
+   "text": "Earth",
+   "start": 17.246,
+   "end": 17.508
+  },
+  {
+   "section": "s2",
+   "i": 19,
+   "text": "around",
+   "start": 17.508,
+   "end": 17.826
+  },
+  {
+   "section": "s2",
+   "i": 20,
+   "text": "the",
+   "start": 17.826,
+   "end": 17.874
+  },
+  {
+   "section": "s2",
+   "i": 21,
+   "text": "Sun.",
+   "start": 17.874,
+   "end": 18.42
+  },
+  {
+   "section": "s3",
+   "i": 0,
+   "text": "The",
+   "start": 19.748,
+   "end": 19.768
+  },
+  {
+   "section": "s3",
+   "i": 1,
+   "text": "fastest",
+   "start": 19.768,
+   "end": 20.321
+  },
+  {
+   "section": "s3",
+   "i": 2,
+   "text": "thing",
+   "start": 20.321,
+   "end": 20.563
+  },
+  {
+   "section": "s3",
+   "i": 3,
+   "text": "we've",
+   "start": 20.563,
+   "end": 21.055
+  },
+  {
+   "section": "s3",
+   "i": 4,
+   "text": "ever",
+   "start": 21.055,
+   "end": 21.403
+  },
+  {
+   "section": "s3",
+   "i": 5,
+   "text": "built,",
+   "start": 21.403,
+   "end": 21.675
+  },
+  {
+   "section": "s3",
+   "i": 6,
+   "text": "the",
+   "start": 22.015,
+   "end": 22.143
+  },
+  {
+   "section": "s3",
+   "i": 7,
+   "text": "Parker",
+   "start": 22.143,
+   "end": 22.506
+  },
+  {
+   "section": "s3",
+   "i": 8,
+   "text": "Solar",
+   "start": 22.506,
+   "end": 22.793
+  },
+  {
+   "section": "s3",
+   "i": 9,
+   "text": "Probe,",
+   "start": 22.793,
+   "end": 23.35
+  },
+  {
+   "section": "s3",
+   "i": 10,
+   "text": "reached",
+   "start": 23.639,
+   "end": 23.979
+  },
+  {
+   "section": "s3",
+   "i": 11,
+   "text": "nearly",
+   "start": 23.979,
+   "end": 24.331
+  },
+  {
+   "section": "s3",
+   "i": 12,
+   "text": "seven",
+   "start": 24.331,
+   "end": 24.656
+  },
+  {
+   "section": "s3",
+   "i": 13,
+   "text": "hundred",
+   "start": 24.656,
+   "end": 25.454
+  },
+  {
+   "section": "s3",
+   "i": 14,
+   "text": "thousand,",
+   "start": 25.454,
+   "end": 26.09
+  },
+  {
+   "section": "s3",
+   "i": 15,
+   "text": "falling",
+   "start": 26.411,
+   "end": 26.908
+  },
+  {
+   "section": "s3",
+   "i": 16,
+   "text": "toward",
+   "start": 26.908,
+   "end": 27.181
+  },
+  {
+   "section": "s3",
+   "i": 17,
+   "text": "the",
+   "start": 27.181,
+   "end": 27.256
+  },
+  {
+   "section": "s3",
+   "i": 18,
+   "text": "Sun.",
+   "start": 27.256,
+   "end": 27.77
+  },
+  {
+   "section": "s4",
+   "i": 0,
+   "text": "Light",
+   "start": 29.166,
+   "end": 29.681
+  },
+  {
+   "section": "s4",
+   "i": 1,
+   "text": "does",
+   "start": 29.681,
+   "end": 29.964
+  },
+  {
+   "section": "s4",
+   "i": 2,
+   "text": "over",
+   "start": 29.964,
+   "end": 30.251
+  },
+  {
+   "section": "s4",
+   "i": 3,
+   "text": "a",
+   "start": 30.251,
+   "end": 30.44
+  },
+  {
+   "section": "s4",
+   "i": 4,
+   "text": "billion.",
+   "start": 30.658,
+   "end": 31.32
+  },
+  {
+   "section": "s4",
+   "i": 5,
+   "text": "And",
+   "start": 31.813,
+   "end": 31.926
+  },
+  {
+   "section": "s4",
+   "i": 6,
+   "text": "nothing",
+   "start": 31.926,
+   "end": 32.298
+  },
+  {
+   "section": "s4",
+   "i": 7,
+   "text": "with",
+   "start": 32.298,
+   "end": 32.614
+  },
+  {
+   "section": "s4",
+   "i": 8,
+   "text": "mass",
+   "start": 32.614,
+   "end": 33.108
+  },
+  {
+   "section": "s4",
+   "i": 9,
+   "text": "can",
+   "start": 33.108,
+   "end": 33.241
+  },
+  {
+   "section": "s4",
+   "i": 10,
+   "text": "catch",
+   "start": 33.241,
+   "end": 33.543
+  },
+  {
+   "section": "s4",
+   "i": 11,
+   "text": "it:",
+   "start": 33.543,
+   "end": 33.78
+  },
+  {
+   "section": "s4",
+   "i": 12,
+   "text": "the",
+   "start": 34.238,
+   "end": 34.335
+  },
+  {
+   "section": "s4",
+   "i": 13,
+   "text": "closer",
+   "start": 34.335,
+   "end": 34.662
+  },
+  {
+   "section": "s4",
+   "i": 14,
+   "text": "you",
+   "start": 34.662,
+   "end": 34.854
+  },
+  {
+   "section": "s4",
+   "i": 15,
+   "text": "get,",
+   "start": 34.854,
+   "end": 35.06
+  },
+  {
+   "section": "s4",
+   "i": 16,
+   "text": "the",
+   "start": 35.406,
+   "end": 35.556
+  },
+  {
+   "section": "s4",
+   "i": 17,
+   "text": "more",
+   "start": 35.556,
+   "end": 35.798
+  },
+  {
+   "section": "s4",
+   "i": 18,
+   "text": "energy",
+   "start": 35.798,
+   "end": 36.176
+  },
+  {
+   "section": "s4",
+   "i": 19,
+   "text": "each",
+   "start": 36.176,
+   "end": 36.346
+  },
+  {
+   "section": "s4",
+   "i": 20,
+   "text": "step",
+   "start": 36.346,
+   "end": 36.716
+  },
+  {
+   "section": "s4",
+   "i": 21,
+   "text": "costs,",
+   "start": 36.716,
+   "end": 37.439
+  },
+  {
+   "section": "s4",
+   "i": 22,
+   "text": "without",
+   "start": 37.439,
+   "end": 38.023
+  },
+  {
+   "section": "s4",
+   "i": 23,
+   "text": "end.",
+   "start": 38.023,
+   "end": 38.47
+  },
+  {
+   "section": "s5",
+   "i": 0,
+   "text": "The",
+   "start": 40.183,
+   "end": 40.298
+  },
+  {
+   "section": "s5",
+   "i": 1,
+   "text": "Large",
+   "start": 40.298,
+   "end": 40.686
+  },
+  {
+   "section": "s5",
+   "i": 2,
+   "text": "Hadron",
+   "start": 40.686,
+   "end": 41.161
+  },
+  {
+   "section": "s5",
+   "i": 3,
+   "text": "Collider",
+   "start": 41.161,
+   "end": 41.768
+  },
+  {
+   "section": "s5",
+   "i": 4,
+   "text": "pushes",
+   "start": 41.768,
+   "end": 42.164
+  },
+  {
+   "section": "s5",
+   "i": 5,
+   "text": "protons",
+   "start": 42.164,
+   "end": 42.819
+  },
+  {
+   "section": "s5",
+   "i": 6,
+   "text": "to",
+   "start": 42.819,
+   "end": 42.863
+  },
+  {
+   "section": "s5",
+   "i": 7,
+   "text": "within",
+   "start": 42.863,
+   "end": 43.186
+  },
+  {
+   "section": "s5",
+   "i": 8,
+   "text": "a",
+   "start": 43.186,
+   "end": 43.298
+  },
+  {
+   "section": "s5",
+   "i": 9,
+   "text": "hair",
+   "start": 43.298,
+   "end": 43.84
+  },
+  {
+   "section": "s5",
+   "i": 10,
+   "text": "of",
+   "start": 43.84,
+   "end": 44.061
+  },
+  {
+   "section": "s5",
+   "i": 11,
+   "text": "light",
+   "start": 44.061,
+   "end": 44.316
+  },
+  {
+   "section": "s5",
+   "i": 12,
+   "text": "speed.",
+   "start": 44.316,
+   "end": 44.7
+  },
+  {
+   "section": "s5",
+   "i": 13,
+   "text": "Close.",
+   "start": 45.339,
+   "end": 45.61
+  },
+  {
+   "section": "s5",
+   "i": 14,
+   "text": "But",
+   "start": 46.469,
+   "end": 46.628
+  },
+  {
+   "section": "s5",
+   "i": 15,
+   "text": "never",
+   "start": 46.628,
+   "end": 46.962
+  },
+  {
+   "section": "s5",
+   "i": 16,
+   "text": "all",
+   "start": 46.962,
+   "end": 47.281
+  },
+  {
+   "section": "s5",
+   "i": 17,
+   "text": "the",
+   "start": 47.281,
+   "end": 47.346
+  },
+  {
+   "section": "s5",
+   "i": 18,
+   "text": "way.",
+   "start": 47.346,
+   "end": 47.74
+  }
+ ],
+ "notes": "Timings measured from THE CLEAN WAVs (assets/audio/narration/clean/sN.wav: ElevenLabs Bella eleven_v4, take 1 of every section; the s4 breath after 'Light' kept (nothing cut); lead/tail trimmed; ONE constant gain per section to -21.5 LUFS (s5 TP-capped at -22.8; no loudnorm); widened gaps 1.2/1.2/1.2/1.45 s inside the files; no time-stretch). Lead-in 0.5 s before s1; sections back to back at their measured durations. Words: faster-whisper small.en aligned to the script text (script punctuation, punctuation); onsets snapped to the RMS envelope (-40 dB, <= 250 ms); every onset swept (OVERRIDES / CONFIRMED, section-relative). Scene splits = anchor-word onset - 2 frames (ALL scenes after sc01). FINISHED-LINE ending: the film runs 1.5 s past the aligned end of 'way.' (inside sc12; no loop splice). Captions show script text."
+}

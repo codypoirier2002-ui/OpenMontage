@@ -1,0 +1,600 @@
+{
+  "version": "1.0",
+  "project_id": "how-fast-can-anything-go",
+  "pipeline_type": "unknown",
+  "stage": "proposal",
+  "status": "awaiting_human",
+  "timestamp": "2026-10-26T18:55:16.864849+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": true,
+  "human_approved": false,
+  "artifacts": {
+    "proposal_packet": {
+      "version": "1.0",
+      "concept_options": [
+        {
+          "narrative_structure": "tutorial",
+          "target_platform": "tiktok",
+          "target_duration_seconds": 48.0,
+          "key_points": [
+            "You walk ~5 km/h; a cheetah ~100; a diving falcon nearly 400",
+            "Sound ~1,235 km/h; sitting still you ride Earth around the Sun at over 100,000",
+            "The fastest thing we've built, the Parker Solar Probe: ~692,000 km/h",
+            "Light: over a billion km/h - and nothing with mass can reach it (energy without limit)",
+            "The LHC gets protons to 99.9999991% of light speed - never all the way"
+          ],
+          "grounded_in": [
+            "artifacts/research_brief.json: WALK, CHEETAH, FALCON, SOUND, ORBIT, PROBE, LIGHT, WALL, LHC"
+          ],
+          "id": "C1",
+          "title": "How Fast Can Anything Go? - Speed Ladder (style of video 13)",
+          "hook": "You walk at about five kilometres an hour. A cheetah sprints at about a hundred. A diving falcon hits nearly four hundred.",
+          "visual_approach": "REUSED ENGINE 'Black-Body' (video 13's log-scale ladder, zeros counter, window plates and tags), re-dressed as 'Speed Ladder': a night-ink sky with a vertical log-scale rail in km/h from 1 to 10^9; a single glowing marker climbs rung by rung (WALK 5 \u00b7 CHEETAH ~100 \u00b7 FALCON ~390 \u00b7 SOUND 1,235 \u00b7 EARTH 107,000 \u00b7 PARKER 692,000 \u00b7 LIGHT 1,079,252,849) with a ZEROS counter (0 -> 9) and speed streaks whose length grows with the log of speed. The top of the rail is a hard line 'c'. The marker can approach it but never touch it: in the close, an LHC readout fills nines '99.9999991 %' while the gap shrinks and stays. Windows show tagged AI stills (cheetah, falcon, Parker Solar Probe near the Sun). Colour is NOT a temperature here: one white-cyan accent for the marker, steel for the rail.",
+          "core_message": "You're already fast; our fastest machine is a crawl next to light; and light speed is a wall nothing with mass can reach.",
+          "cta": "Spoken finished close: 'Close. But never all the way.' Caption: 'What's the fastest thing you've ridden?'",
+          "tone": "curious, building, then a quiet deadpan close",
+          "why_this_works": "Completes the 'How X can it get' set (loud, cold, hot) with the same log-ladder grammar viewers already know, reusing video 13's ladder and counter code. The 'you're doing 100,000 km/h right now' beat puts the viewer on the scale. Risk: same engine as video 13 - re-dressed (no black-body colour, white-cyan marker, speed streaks) and the twist is different (a wall, not a fray)."
+        },
+        {
+          "narrative_structure": "tutorial",
+          "target_platform": "tiktok",
+          "target_duration_seconds": 48.0,
+          "key_points": [
+            "You walk ~5 km/h; a cheetah ~100; a diving falcon nearly 400",
+            "Sound ~1,235 km/h; sitting still you ride Earth around the Sun at over 100,000",
+            "The fastest thing we've built, the Parker Solar Probe: ~692,000 km/h",
+            "Light: over a billion km/h - and nothing with mass can reach it (energy without limit)",
+            "The LHC gets protons to 99.9999991% of light speed - never all the way"
+          ],
+          "grounded_in": [
+            "artifacts/research_brief.json: WALK, CHEETAH, FALCON, SOUND, ORBIT, PROBE, LIGHT, WALL, LHC"
+          ],
+          "id": "C2",
+          "title": "How Fast Can Anything Go? - Pressure Column (style of video 10)",
+          "hook": "You walk at about five kilometres an hour. A cheetah sprints at about a hundred. A diving falcon hits nearly four hundred.",
+          "visual_approach": "REUSED 'Pressure Column': a vertical gauge rail with lift-indicator readout; dots stream faster per rung.",
+          "why_this_works": "Familiar series look. Risk: the dot field is tuned for sound, not speed; older code."
+        },
+        {
+          "narrative_structure": "tutorial",
+          "target_platform": "tiktok",
+          "target_duration_seconds": 48.0,
+          "key_points": [
+            "You walk ~5 km/h; a cheetah ~100; a diving falcon nearly 400",
+            "Sound ~1,235 km/h; sitting still you ride Earth around the Sun at over 100,000",
+            "The fastest thing we've built, the Parker Solar Probe: ~692,000 km/h",
+            "Light: over a billion km/h - and nothing with mass can reach it (energy without limit)",
+            "The LHC gets protons to 99.9999991% of light speed - never all the way"
+          ],
+          "grounded_in": [
+            "artifacts/research_brief.json: WALK, CHEETAH, FALCON, SOUND, ORBIT, PROBE, LIGHT, WALL, LHC"
+          ],
+          "id": "C3",
+          "title": "How Fast Can Anything Go? - Test Lab (style of video 15)",
+          "hook": "You walk at about five kilometres an hour. A cheetah sprints at about a hundred. A diving falcon hits nearly four hundred.",
+          "visual_approach": "REUSED test lab: a 'SPEED TRIAL' checklist ticking each rung with a stopwatch.",
+          "why_this_works": "Newest code. Risk: a checklist is weak for a log scale; looks like the last video."
+        },
+        {
+          "narrative_structure": "tutorial",
+          "target_platform": "tiktok",
+          "target_duration_seconds": 48.0,
+          "key_points": [
+            "You walk ~5 km/h; a cheetah ~100; a diving falcon nearly 400",
+            "Sound ~1,235 km/h; sitting still you ride Earth around the Sun at over 100,000",
+            "The fastest thing we've built, the Parker Solar Probe: ~692,000 km/h",
+            "Light: over a billion km/h - and nothing with mass can reach it (energy without limit)",
+            "The LHC gets protons to 99.9999991% of light speed - never all the way"
+          ],
+          "grounded_in": [
+            "artifacts/research_brief.json: WALK, CHEETAH, FALCON, SOUND, ORBIT, PROBE, LIGHT, WALL, LHC"
+          ],
+          "id": "C4",
+          "title": "How Fast Can Anything Go? - Kinetic type",
+          "hook": "You walk at about five kilometres an hour. A cheetah sprints at about a hundred. A diving falcon hits nearly four hundred.",
+          "visual_approach": "Big numbers and type only; $0 visuals.",
+          "why_this_works": "Cheapest. Risk: flat."
+        }
+      ],
+      "selected_concept": {
+        "concept_id": "C1",
+        "rationale": "PENDING user approval (recommended)."
+      },
+      "production_plan": {
+        "pipeline": "animated-explainer",
+        "playbook": "custom",
+        "render_runtime": "remotion",
+        "renderer_family": "explainer-teacher",
+        "composition_mode": "atelier",
+        "delivery_promise": {
+          "promise_type": "teacher_explainer",
+          "motion_required": true,
+          "tone_mode": "deadpan clinical, curious",
+          "quality_floor": "broadcast"
+        },
+        "music_source": {
+          "source_type": "ai_generated"
+        },
+        "taste_profile": {
+          "design_read": "Youth science short: a calm climb up one speed ladder, from walking to light, ending at a wall that never moves.",
+          "visual_variance": 4,
+          "motion_intensity": 4,
+          "information_density": 4,
+          "palette_discipline": "Night ink sky, steel rail, ONE white-cyan accent for the marker; no temperature colours; red only for 'c' (the wall).",
+          "layout_variation": "Log rail + marker, zeros counter, window plates, the LHC nines readout.",
+          "reference_strategy": "Numbers from the brief only; AI stills as short tagged inserts.",
+          "anti_patterns": [
+            "'faster than light' as possible",
+            "exact snail speed",
+            "'the falcon is the fastest animal' as fact without the dive caveat",
+            "warp-drive imagery"
+          ],
+          "quality_gates": [
+            "Every rung's number matches the brief",
+            "Log scale labelled as such",
+            "The marker never touches 'c'",
+            "Falcon tagged PROBABLY"
+          ]
+        },
+        "stages": [
+          {
+            "stage": "research",
+            "tools": [
+              {
+                "tool_name": "WebSearch",
+                "role": "fact verification (3 searches, 9 sources, 11 data points)",
+                "available": true,
+                "estimated_cost_usd": 0.0
+              }
+            ],
+            "approach": "Complete. Falcon dive ~390 km/h kept as PROBABLY (weak sourcing); cheetah 'about a hundred' (collar 95, track 103); snail dropped."
+          },
+          {
+            "stage": "proposal",
+            "tools": [],
+            "approach": "This document; approval gate. No paid generation has run."
+          },
+          {
+            "stage": "script",
+            "tools": [],
+            "approach": "~106 spoken words in 5 sections; closing line complete."
+          },
+          {
+            "stage": "scene_plan",
+            "tools": [],
+            "approach": "~12 scenes; hero beats: 'sitting still you're doing 100,000' and the marker stopping short of 'c' while the nines fill. Last scene: calm, finished."
+          },
+          {
+            "stage": "assets",
+            "tools": [
+              {
+                "tool_name": "elevenlabs (creative_generate_speech)",
+                "role": "narration, Bella hpp4J3VqNfWAUOO0d1Us, eleven_v4, 1 take per section (retake only on failed Whisper QA, max 2)",
+                "available": true,
+                "provider": "elevenlabs",
+                "estimated_cost_usd": 0.14
+              },
+              {
+                "tool_name": "elevenlabs (image, gpt-image-2.5-sunburst 2K 9:16)",
+                "role": "3 stills x 1: S1 cheetah at full sprint (AI impression); S2 peregrine falcon in a steep dive, wings tucked (AI impression); S3 a heat-shielded spacecraft close to the Sun (AI impression of the Parker Solar Probe)",
+                "available": true,
+                "provider": "elevenlabs",
+                "estimated_cost_usd": 0.15
+              },
+              {
+                "tool_name": "elevenlabs (video, kling-3-pro i2v, generate_audio=false)",
+                "role": "0 clips; motion is drawn.",
+                "available": true,
+                "provider": "elevenlabs",
+                "estimated_cost_usd": 0.0
+              },
+              {
+                "tool_name": "elevenlabs (music, eleven_music)",
+                "role": "1 bed that slowly gains energy (light synth pulse + strings, ~100 BPM, steady loudness), resolved final chord with ring-out",
+                "available": true,
+                "provider": "elevenlabs",
+                "estimated_cost_usd": 0.16
+              },
+              {
+                "tool_name": "elevenlabs (sfx)",
+                "role": "6 x 1: soft whoosh (rung climb), sonic thump (sound barrier, soft), digit tick (counter), low hum (probe), high shimmer (light), soft glass 'tink' (the wall)",
+                "available": true,
+                "provider": "elevenlabs",
+                "estimated_cost_usd": 0.024
+              }
+            ],
+            "approach": "estimate_only before every run; narration first; stills QA (9:16 2K, no faces, no text); clips only from passing stills; globe, maps (real coastline data), readouts, tiles, captions and tab are code at $0.",
+            "fallback_if_unavailable": "Failed still -> code glow/thermal panel (no re-roll). Failed clip -> slow code parallax on the still."
+          },
+          {
+            "stage": "edit",
+            "tools": [],
+            "approach": "Music ducked ~12 dB; SFX on visible landings (lessons 4, 22) and phone-band checked (lesson 5); last word 'know' >= +12 dB over bed in 300-4000 Hz AND broadband within ~3 dB of its sentence (lessons 18, 30); final chord ~0.15 s after 'know', ~1.5 s settle."
+          },
+          {
+            "stage": "compose",
+            "tools": [
+              {
+                "tool_name": "video_compose",
+                "role": "Remotion render 1080x1920 @ 30 fps",
+                "available": true,
+                "estimated_cost_usd": 0
+              }
+            ],
+            "approach": "Atelier render; check_hooks + full 0.25-scale test; finish_master.sh (-14 LUFS, <= -1 dBTP); upload copy at maxrate ~12M only if the master passes ~60 MB (lesson 21); three independent QA agents."
+          }
+        ],
+        "quality_tradeoffs": [
+          {
+            "tradeoff": "Remotion vs HyperFrames vs FFmpeg",
+            "recommendation": "Remotion (atelier)",
+            "quality_impact": "Remotion atelier via the kit, reusing video 13's ladder/counter/window code and video 15's latest pipeline scripts; qa_auto.py before QA."
+          },
+          {
+            "tradeoff": "Atelier vs templated",
+            "recommendation": "Atelier",
+            "quality_impact": "A new one-off look as on videos 3-11; costs more tokens/iteration, $0 extra spend."
+          },
+          {
+            "tradeoff": "0 Kling clips vs 1",
+            "recommendation": "0 clips",
+            "quality_impact": "The ladder is drawn; AI clips of a cheetah or falcon add little. Saves ~$0.62."
+          },
+          {
+            "tradeoff": "Music: eleven_music vs your own track vs none",
+            "recommendation": "eleven_music ($0.16)",
+            "quality_impact": "music_library/ is empty and no local music generator is configured; you can drop a track in music_library/ instead, or go without (not recommended: the finished-line ending relies on a resolved chord)."
+          }
+        ],
+        "alternative_paths": [
+          {
+            "description": "Add 1 Kling clip (falcon dive) from S2",
+            "total_cost_usd": 1.12,
+            "quality_level": "standard"
+          },
+          {
+            "description": "No AI stills: code only",
+            "total_cost_usd": 0.35,
+            "quality_level": "budget"
+          }
+        ],
+        "decision_log_ref": "/home/user/OpenMontage/projects/how-fast-can-anything-go/decision_log.json"
+      },
+      "cost_estimate": {
+        "total_estimated_usd": 0.56,
+        "budget_cap_usd": 4.0,
+        "budget_verdict": "within_budget",
+        "line_items": [
+          {
+            "tool": "elevenlabs image (gpt-image-2.5-sunburst 2K)",
+            "operation": "S1-S3 x 1",
+            "quantity": 3,
+            "estimated_usd": 0.15,
+            "notes": "$0.05/image billed"
+          },
+          {
+            "tool": "elevenlabs video (kling-3-pro)",
+            "operation": "none (0 clips)",
+            "quantity": 0,
+            "estimated_usd": 0.0,
+            "notes": "$0.617/clip billed"
+          },
+          {
+            "tool": "elevenlabs tts (Bella eleven_v4)",
+            "operation": "5 sections x 1 take",
+            "quantity": 5,
+            "estimated_usd": 0.14
+          },
+          {
+            "tool": "elevenlabs music",
+            "operation": "~56 s bed x 1",
+            "quantity": 1,
+            "estimated_usd": 0.16
+          },
+          {
+            "tool": "elevenlabs sfx",
+            "operation": "6 SFX x 1",
+            "quantity": 6,
+            "estimated_usd": 0.02
+          },
+          {
+            "tool": "QA-failure reserve",
+            "operation": "1 narration retake + 1 image re-run, only if automated QA fails",
+            "estimated_usd": 0.085
+          },
+          {
+            "tool": "video_compose / ffmpeg / whisper",
+            "operation": "none (0 clips)",
+            "estimated_usd": 0.0,
+            "quantity": 0
+          }
+        ],
+        "savings_options": [
+          "Drop S3 (probe still): -$0.05",
+          "Drop all AI stills: -$0.15"
+        ]
+      },
+      "approval": {
+        "status": "pending",
+        "approved_budget_usd": 4.0,
+        "user_notes": "Topic (speed), budget ($4 minimal takes) and lean build reusing a look chosen by the user; concept, hook/close pending."
+      },
+      "metadata": {
+        "generation_policy": "1 generation per asset; retake only when automated QA fails (narration max 2); never re-roll images/clips - code fallback; estimate_only before every paid run; generating agent hard limit ~$2",
+        "hook": "You walk at about five kilometres an hour. A cheetah sprints at about a hundred. A diving falcon hits nearly four hundred.",
+        "beat_outline": [
+          {
+            "id": "s1",
+            "label": "Hook - the first rungs",
+            "narration": "You walk at about five kilometres an hour. A cheetah sprints at about a hundred. A diving falcon hits nearly four hundred.",
+            "words": 22,
+            "on_screen": "Log rail: marker climbs WALK 5 -> CHEETAH ~100 (window S1) -> FALCON ~390 (window S2, PROBABLY)",
+            "claim_tag": "MEASURED / PROBABLY (FALCON)"
+          },
+          {
+            "id": "s2",
+            "label": "Sound, and you",
+            "narration": "Sound outruns them all at over twelve hundred. But sitting still, you're doing over a hundred thousand, riding Earth around the Sun.",
+            "words": 22,
+            "on_screen": "SOUND 1,235 rung (soft thump); hero: a 'YOU' tag jumps to EARTH 107,000; the zeros counter reads 5",
+            "claim_tag": "MEASURED (SOUND, ORBIT)"
+          },
+          {
+            "id": "s3",
+            "label": "Our fastest machine",
+            "narration": "The fastest thing we've ever built, the Parker Solar Probe, reached nearly seven hundred thousand, falling toward the Sun.",
+            "words": 19,
+            "on_screen": "PARKER ~692,000 rung; window S3 (AI impression); 'falling toward the Sun' arrow",
+            "claim_tag": "MEASURED (PROBE)"
+          },
+          {
+            "id": "s4",
+            "label": "Light, and the wall",
+            "narration": "Light does over a billion. And nothing with mass can catch it: the closer you get, the more energy each step costs, without end.",
+            "words": 24,
+            "on_screen": "LIGHT 1,079,252,849 at the top; a red 'c' wall line; an energy bar that grows without limit as the marker nears c",
+            "claim_tag": "MEASURED (LIGHT, WALL)"
+          },
+          {
+            "id": "s5",
+            "label": "Never all the way - finished close",
+            "narration": "The Large Hadron Collider pushes protons to within a hair of light speed. Close. But never all the way.",
+            "words": 19,
+            "on_screen": "LHC readout fills '99.9999991 %'; the marker stops just under the wall; the gap stays",
+            "claim_tag": "MEASURED (LHC)"
+          }
+        ],
+        "word_count": 106,
+        "word_count_method": "whitespace split, numbers as spoken (lesson 17): 'fifty-seven', 'four hundred sixty-five', 'forty-eight', 'thirty-two' counted as spoken words",
+        "rate_assumption_wps": 2.3,
+        "estimated_narration_seconds": 46.1,
+        "estimated_film_seconds": 49.6,
+        "ending": {
+          "rule": "END ON A FINISHED LINE",
+          "closing_line": "Close. But never all the way.",
+          "after_last_word": "~0.15 s -> resolved chord ~1.5 s -> the marker still just under the wall -> end. No SFX under the closing sentence."
+        },
+        "music_plan": {
+          "source": "eleven_music x1 (~$0.16)",
+          "brief": "light synth pulse + strings ~100 BPM, steady loudness; resolved final chord",
+          "duck_db": 12,
+          "user_library": "music_library/ does not exist"
+        },
+        "honesty_meter": "Tab keyed to caption lines: s1 MEASURED, the falcon page PROBABLY; s2-s5 MEASURED. AI stills tagged 'AI impression'; the rail labelled 'log scale'.",
+        "lessons_applied": [
+          "17 numbers as spoken",
+          "20 absolutes: 'nothing with mass' is the physics; falcon PROBABLY",
+          "33 labels only with their values (rungs seat with their numbers)",
+          "42 graphics leave before the tab glide",
+          "45 lean reuse",
+          "46 value labels appear when the marker seats",
+          "48 plan gaps for a fast read"
+        ],
+        "runtime_presentation": "Remotion recommended (captions/tab/mastering parity); HyperFrames unavailable on this machine; FFmpeg rejected.",
+        "pending_user_choices": [
+          "concept/look (C1 recommended)",
+          "hook and closing line",
+          "asset plan: 3 stills, 0 clips (~$0.50)",
+          "music: eleven_music bed"
+        ],
+        "build_mode": "LEAN (user choice): new_project.sh kit + video 13's ladder/counter/window + video 15's pipeline scripts; 2 scene builders; qa_auto.py then 1 QA agent; 1 fix round + targeted re-check."
+      }
+    },
+    "decision_log": {
+      "version": "1.0",
+      "project_id": "how-fast-can-anything-go",
+      "decisions": [
+        {
+          "decision_id": "d-001",
+          "stage": "proposal",
+          "category": "concept_selection",
+          "subject": "Video topic",
+          "options_considered": [
+            {
+              "option_id": "speed",
+              "label": "How Fast Can Anything Go?",
+              "score": 0.9,
+              "reason": "User picked it"
+            },
+            {
+              "option_id": "sun",
+              "label": "What If the Sun Vanished?",
+              "score": 0.6,
+              "reason": "offered"
+            },
+            {
+              "option_id": "gecko",
+              "label": "How Do Geckos Walk on Ceilings?",
+              "score": 0.6,
+              "reason": "offered"
+            },
+            {
+              "option_id": "yawn",
+              "label": "Why Do We Yawn?",
+              "score": 0.5,
+              "reason": "offered"
+            }
+          ],
+          "selected": "speed",
+          "reason": "User chose it.",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.95
+        },
+        {
+          "decision_id": "d-002",
+          "stage": "proposal",
+          "category": "budget_tradeoff",
+          "subject": "Budget and generation count",
+          "options_considered": [
+            {
+              "option_id": "cap4_min",
+              "label": "$4, minimal takes",
+              "score": 0.9,
+              "reason": "default offer"
+            },
+            {
+              "option_id": "cap2",
+              "label": "$2",
+              "score": 0.4,
+              "reason": "offered"
+            },
+            {
+              "option_id": "cap6",
+              "label": "$6",
+              "score": 0.4,
+              "reason": "offered"
+            }
+          ],
+          "selected": "cap4_min",
+          "reason": "User chose $4 minimal takes.",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.95
+        },
+        {
+          "decision_id": "d-003",
+          "stage": "proposal",
+          "category": "playbook_override",
+          "subject": "Ending rule (end on a finished line)",
+          "options_considered": [
+            {
+              "option_id": "finished",
+              "label": "Finished line + ~1.5 s settle",
+              "score": 1.0,
+              "reason": "Channel standing rule"
+            },
+            {
+              "option_id": "loop",
+              "label": "Loop cut",
+              "score": 0.1,
+              "reason": "old style",
+              "rejected_because": "user found loop endings cut off"
+            }
+          ],
+          "selected": "finished",
+          "reason": "Channel standing rule.",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 1.0
+        },
+        {
+          "decision_id": "d-004",
+          "stage": "proposal",
+          "category": "playbook_override",
+          "subject": "Build mode",
+          "options_considered": [
+            {
+              "option_id": "lean_reuse",
+              "label": "Lean, reuse a look",
+              "score": 0.9,
+              "reason": "fewest tokens"
+            },
+            {
+              "option_id": "lean_new",
+              "label": "Lean, new look",
+              "score": 0.5,
+              "reason": "offered"
+            }
+          ],
+          "selected": "lean_reuse",
+          "reason": "User chose lean, reuse a look.",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.95
+        },
+        {
+          "decision_id": "d-005",
+          "stage": "proposal",
+          "category": "concept_selection",
+          "subject": "Concept and look",
+          "options_considered": [
+            {
+              "option_id": "C1",
+              "label": "Speed Ladder (video 13 engine)",
+              "score": 0.85,
+              "reason": "recommended"
+            },
+            {
+              "option_id": "C2",
+              "label": "Pressure Column",
+              "score": 0.5,
+              "reason": "offered"
+            },
+            {
+              "option_id": "C3",
+              "label": "Test Lab",
+              "score": 0.4,
+              "reason": "offered"
+            },
+            {
+              "option_id": "C4",
+              "label": "Kinetic type",
+              "score": 0.3,
+              "reason": "offered"
+            }
+          ],
+          "selected": "C1",
+          "reason": "PENDING user approval.",
+          "user_visible": true,
+          "user_approved": false,
+          "confidence": 0.7
+        },
+        {
+          "decision_id": "d-006",
+          "stage": "proposal",
+          "category": "render_runtime_selection",
+          "subject": "Render runtime",
+          "options_considered": [
+            {
+              "option_id": "remotion",
+              "label": "Remotion atelier via the kit",
+              "score": 0.9,
+              "reason": "reuse"
+            },
+            {
+              "option_id": "ffmpeg",
+              "label": "FFmpeg",
+              "score": 0.1,
+              "reason": "cuts only",
+              "rejected_because": "cannot animate the ladder"
+            }
+          ],
+          "selected": "remotion",
+          "reason": "Follows the lean reuse choice.",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.9
+        }
+      ]
+    }
+  },
+  "cost_snapshot": {
+    "stage_cost_usd": 0.0,
+    "total_spent_usd": 0.0,
+    "approved_budget_usd": 4.0
+  },
+  "metadata": {
+    "awaiting": "concept, hook/close, assets"
+  }
+}

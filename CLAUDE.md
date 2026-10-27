@@ -7,3 +7,7 @@ It contains routing rules that determine your first action based on what the use
 Skipping it WILL cause you to take the wrong action.
 
 There are no instructions in this file. All instructions are in AGENT_GUIDE.md.
+
+**Making videos for this user's channel?** After AGENT_GUIDE.md, also read [`docs/channel/CHANNEL_FORMULA.md`](docs/channel/CHANNEL_FORMULA.md):
+the user's standing rules (approval gates, budget caps, finished-line endings, screenshot sets), the series styles,
+provider IDs and prices, the build process, and the lessons from earlier videos.

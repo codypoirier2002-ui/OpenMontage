@@ -1,0 +1,36 @@
+{
+ "version": "1.0",
+ "outputs": [
+  {
+   "path": "renders/how-fast-can-anything-go.mp4",
+   "format": "mp4",
+   "codec": "h264",
+   "audio_codec": "aac",
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "platform_target": "tiktok_9x16",
+   "duration_seconds": 49.267,
+   "file_size_bytes": 7021370
+  },
+  {
+   "path": "renders/raw.mp4",
+   "format": "mp4",
+   "codec": "h264",
+   "audio_codec": "aac",
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "platform_target": "intermediate",
+   "duration_seconds": 49.323,
+   "file_size_bytes": 6865206
+  }
+ ],
+ "render_grammar": "explainer-teacher",
+ "decision_log_ref": "/home/user/OpenMontage/projects/how-fast-can-anything-go/decision_log.json",
+ "verification_notes": [
+  "Lean build: kit + video 13's ladder/window engine + video 15's pipeline; foundation agent, 2 builders, qa_auto (30/30 PASS, 0 WARN on the first master), 1 independent QA agent (0 blockers, 3 majors, 9 minors), one fix round, re-render, targeted re-check.",
+  "All 106 caption onsets hand-measured on the clean WAVs (62 OVERRIDES + 44 CONFIRMED); QA re-measured independently: one word ('we've') 4 f late, fixed.",
+  "Music bed (G major, not the requested D): last tonic attack measured at src 55.79 s and pinned in assets/music/music_qa.json after the automatic finder picked a pluck in the decay (56.98 s); chord 0.11 s after the release of 'way'; closing words >= +14.8 dB over the bed in 300-4000 Hz.",
+  "Master: BT.709 tv, x264 crf 18 VBV 20M/25M, -14 LUFS from the premix, AAC 192k 48 kHz.",
+  "qa_auto.py: PASS (0 fail, 0 warn)."
+ ]
+}

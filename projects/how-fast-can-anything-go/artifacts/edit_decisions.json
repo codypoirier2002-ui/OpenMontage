@@ -1,0 +1,142 @@
+{
+ "version": "1.0",
+ "render_runtime": "remotion",
+ "renderer_family": "explainer-teacher",
+ "composition_mode": "atelier",
+ "cuts": [
+  {
+   "id": "cut-sc01",
+   "source": "bespoke_sc01",
+   "in_seconds": 0.0,
+   "out_seconds": 3.3,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the ladder persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc01 (section s1). Render: atelier component Walk. FRAME 0: night-ink sky (#070A12 -> #0D1424 vertical gradient, faint star dust), a vertical steel log-scale rail at x ~250 from y 1080 (1 km/h) to y 380 (10^9 km/h), decade ticks with small mono numbers (1, 10, 100, 1,000 ... 1,000,000,000), label 'km/h \u00b7 log scale'. At the very top a short red line labelled 'c' (dim until s4). A white-cyan marker (#BFF6FF core, soft"
+  },
+  {
+   "id": "cut-sc02",
+   "source": "bespoke_sc02",
+   "in_seconds": 3.3,
+   "out_seconds": 5.633,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the ladder persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc02 (section s1). Render: atelier component Cheetah. The marker eases up to 100 (rung 'CHEETAH \u00b7 ~100' seats with its number on arrival); the counter ticks to 2. A window (x 470-920, y 420-900) opens on S1: a cheetah at full sprint (AI impression)."
+  },
+  {
+   "id": "cut-sc03",
+   "source": "bespoke_sc03",
+   "in_seconds": 5.633,
+   "out_seconds": 9.533,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the ladder persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc03 (section s1). Render: atelier component Falcon. Window swaps (hard tag swap at the crossfade midpoint, lesson 38) to S2: a peregrine falcon in a steep dive (AI impression). The marker climbs to ~390 (rung 'FALCON (dive) \u00b7 ~390' with a hatched PROBABLY chip 'commonly cited')."
+  },
+  {
+   "id": "cut-sc04",
+   "source": "bespoke_sc04",
+   "in_seconds": 9.533,
+   "out_seconds": 13.1,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the ladder persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc04 (section s2). Render: atelier component Sound. Window closes. The marker crosses 1,235 (rung 'SOUND \u00b7 1,235') with a soft circular pressure ring expanding once from the marker; counter 3."
+  },
+  {
+   "id": "cut-sc05",
+   "source": "bespoke_sc05",
+   "in_seconds": 13.1,
+   "out_seconds": 19.667,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the ladder persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc05 (section s2). Render: atelier component YouAreFast. HERO. A small 'YOU' tag (a seated figure icon) appears at the WALK rung and then jumps up the rail to 107,000 on 'hundred thousand' (rung 'EARTH (orbit) \u00b7 ~107,000'); beside the rail a small drawn orbit diagram (Sun dot, Earth dot on a dashed circle, arrow) labelled 'drawn \u00b7 not to scale'. Counter 5."
+  },
+  {
+   "id": "cut-sc06",
+   "source": "bespoke_sc06",
+   "in_seconds": 19.667,
+   "out_seconds": 23.567,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the ladder persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc06 (section s3). Render: atelier component Parker. Window opens on S3: a heat-shielded spacecraft close to the Sun (AI impression of the Parker Solar Probe). Label 'Parker Solar Probe \u00b7 NASA'."
+  },
+  {
+   "id": "cut-sc07",
+   "source": "bespoke_sc07",
+   "in_seconds": 23.567,
+   "out_seconds": 29.1,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the ladder persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc07 (section s3). Render: atelier component Falling. The marker climbs to 692,000 (rung 'PARKER (fastest built) \u00b7 ~692,000'); counter 5. A small arrow on the window plate points toward the Sun: 'falling toward the Sun'."
+  },
+  {
+   "id": "cut-sc08",
+   "source": "bespoke_sc08",
+   "in_seconds": 29.1,
+   "out_seconds": 31.733,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the ladder persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc08 (section s4). Render: atelier component Light. Window closes. A thin beam races up the rail to the top (1,079,252,849) in a few frames; rung 'LIGHT \u00b7 1,079,252,849'; counter 9; the 'c' line at the top lights red."
+  },
+  {
+   "id": "cut-sc09",
+   "source": "bespoke_sc09",
+   "in_seconds": 31.733,
+   "out_seconds": 34.167,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the ladder persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc09 (section s4). Render: atelier component Wall. The marker leaves PARKER and climbs toward 'c' but slows smoothly; label 'anything with mass' on the marker."
+  },
+  {
+   "id": "cut-sc10",
+   "source": "bespoke_sc10",
+   "in_seconds": 34.167,
+   "out_seconds": 40.1,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the ladder persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc10 (section s4). Render: atelier component Energy. Beside the rail an 'ENERGY NEEDED' bar grows faster and faster as the marker inches up (a 1/sqrt(1-v^2/c^2) curve drawn small with axis labels 'speed' / 'energy', 'drawn \u00b7 not to scale'); the bar runs off the top of the frame on 'without end'."
+  },
+  {
+   "id": "cut-sc11",
+   "source": "bespoke_sc11",
+   "in_seconds": 40.1,
+   "out_seconds": 45.267,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the ladder persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc11 (section s5). Render: atelier component LHC. HERO 2. A mono readout card: 'LHC protons' then '99.9999991 %' types digit by digit (each 9 on a tick); the marker creeps to just under 'c' with a tiny bracket 'the gap'. Placard credits CERN."
+  },
+  {
+   "id": "cut-sc12",
+   "source": "bespoke_sc12",
+   "in_seconds": 45.267,
+   "out_seconds": 49.267,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the ladder persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc12 (section s5). Render: atelier component NeverAllTheWay. Everything settles: the full ladder visible, the marker steady just under 'c', the gap bracket stays. After 'way' a ~1.5 s still hold on the resolved chord; caption slab 'What's the fastest thing you've ridden?'; tab idle."
+  }
+ ],
+ "music": {
+  "track_id": "M1",
+  "path": "assets/music/bed_raw.wav",
+  "volume": 1.0,
+  "duck_under_narration": true,
+  "duck_level_db": -12,
+  "fade_in_seconds": 0.0,
+  "fade_out_seconds": 0.6
+ },
+ "subtitles": {
+  "enabled": true,
+  "style": "word_highlight",
+  "source": "artifacts/props.json captionPages"
+ }
+}

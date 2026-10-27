@@ -1,0 +1,277 @@
+{
+ "version": "1.0",
+ "project_id": "how-fast-can-anything-go",
+ "decisions": [
+  {
+   "decision_id": "d-001",
+   "stage": "proposal",
+   "category": "concept_selection",
+   "subject": "Video topic",
+   "options_considered": [
+    {
+     "option_id": "speed",
+     "label": "How Fast Can Anything Go?",
+     "score": 0.9,
+     "reason": "User picked it"
+    },
+    {
+     "option_id": "sun",
+     "label": "What If the Sun Vanished?",
+     "score": 0.6,
+     "reason": "offered"
+    },
+    {
+     "option_id": "gecko",
+     "label": "How Do Geckos Walk on Ceilings?",
+     "score": 0.6,
+     "reason": "offered"
+    },
+    {
+     "option_id": "yawn",
+     "label": "Why Do We Yawn?",
+     "score": 0.5,
+     "reason": "offered"
+    }
+   ],
+   "selected": "speed",
+   "reason": "User chose it.",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.95
+  },
+  {
+   "decision_id": "d-002",
+   "stage": "proposal",
+   "category": "budget_tradeoff",
+   "subject": "Budget and generation count",
+   "options_considered": [
+    {
+     "option_id": "cap4_min",
+     "label": "$4, minimal takes",
+     "score": 0.9,
+     "reason": "default offer"
+    },
+    {
+     "option_id": "cap2",
+     "label": "$2",
+     "score": 0.4,
+     "reason": "offered"
+    },
+    {
+     "option_id": "cap6",
+     "label": "$6",
+     "score": 0.4,
+     "reason": "offered"
+    }
+   ],
+   "selected": "cap4_min",
+   "reason": "User chose $4 minimal takes.",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.95
+  },
+  {
+   "decision_id": "d-003",
+   "stage": "proposal",
+   "category": "playbook_override",
+   "subject": "Ending rule (end on a finished line)",
+   "options_considered": [
+    {
+     "option_id": "finished",
+     "label": "Finished line + ~1.5 s settle",
+     "score": 1.0,
+     "reason": "Channel standing rule"
+    },
+    {
+     "option_id": "loop",
+     "label": "Loop cut",
+     "score": 0.1,
+     "reason": "old style",
+     "rejected_because": "user found loop endings cut off"
+    }
+   ],
+   "selected": "finished",
+   "reason": "Channel standing rule.",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 1.0
+  },
+  {
+   "decision_id": "d-004",
+   "stage": "proposal",
+   "category": "playbook_override",
+   "subject": "Build mode",
+   "options_considered": [
+    {
+     "option_id": "lean_reuse",
+     "label": "Lean, reuse a look",
+     "score": 0.9,
+     "reason": "fewest tokens"
+    },
+    {
+     "option_id": "lean_new",
+     "label": "Lean, new look",
+     "score": 0.5,
+     "reason": "offered"
+    }
+   ],
+   "selected": "lean_reuse",
+   "reason": "User chose lean, reuse a look.",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.95
+  },
+  {
+   "decision_id": "d-005",
+   "stage": "proposal",
+   "category": "concept_selection",
+   "subject": "Concept and look",
+   "options_considered": [
+    {
+     "option_id": "C1",
+     "label": "Speed Ladder (video 13 engine)",
+     "score": 0.85,
+     "reason": "recommended"
+    },
+    {
+     "option_id": "C2",
+     "label": "Pressure Column",
+     "score": 0.5,
+     "reason": "offered"
+    },
+    {
+     "option_id": "C3",
+     "label": "Test Lab",
+     "score": 0.4,
+     "reason": "offered"
+    },
+    {
+     "option_id": "C4",
+     "label": "Kinetic type",
+     "score": 0.3,
+     "reason": "offered"
+    }
+   ],
+   "selected": "C1",
+   "reason": "PENDING user approval.",
+   "user_visible": true,
+   "user_approved": false,
+   "confidence": 0.7
+  },
+  {
+   "decision_id": "d-006",
+   "stage": "proposal",
+   "category": "render_runtime_selection",
+   "subject": "Render runtime",
+   "options_considered": [
+    {
+     "option_id": "remotion",
+     "label": "Remotion atelier via the kit",
+     "score": 0.9,
+     "reason": "reuse"
+    },
+    {
+     "option_id": "ffmpeg",
+     "label": "FFmpeg",
+     "score": 0.1,
+     "reason": "cuts only",
+     "rejected_because": "cannot animate the ladder"
+    }
+   ],
+   "selected": "remotion",
+   "reason": "Follows the lean reuse choice.",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.9
+  },
+  {
+   "decision_id": "d-007",
+   "stage": "proposal",
+   "category": "concept_selection",
+   "subject": "Concept and look",
+   "options_considered": [
+    {
+     "option_id": "C1",
+     "label": "Speed Ladder (video 13 engine)",
+     "score": 0.85,
+     "reason": "recommended"
+    },
+    {
+     "option_id": "C2",
+     "label": "Pressure Column",
+     "score": 0.5,
+     "reason": "offered"
+    },
+    {
+     "option_id": "C3",
+     "label": "Test Lab",
+     "score": 0.4,
+     "reason": "offered"
+    },
+    {
+     "option_id": "C4",
+     "label": "Kinetic type",
+     "score": 0.3,
+     "reason": "offered"
+    }
+   ],
+   "selected": "C1",
+   "reason": "User approved C1 Speed Ladder ('approve aq').",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.9
+  },
+  {
+   "decision_id": "d-010",
+   "stage": "scene_plan",
+   "category": "playbook_override",
+   "subject": "Scene plan approval and run-through policy",
+   "options_considered": [
+    {
+     "option_id": "run",
+     "label": "Run end to end to delivery",
+     "score": 0.95,
+     "reason": "standing rule after the scene-plan gate"
+    }
+   ],
+   "selected": "run",
+   "reason": "User replied 'approve' at the scene-plan gate; standing rule: run end to end to delivery unless asked to pause.",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.95
+  },
+  {
+   "decision_id": "d-011",
+   "stage": "assets",
+   "category": "provider_selection",
+   "subject": "Still and music generation provider",
+   "options_considered": [
+    {
+     "option_id": "elevenlabs_full",
+     "label": "ElevenLabs full connector (gpt-image-2.5-sunburst + eleven_music), the approved plan",
+     "score": 0.9,
+     "reason": "planned",
+     "rejected_because": "every tool call denied by the connector's permission rule in this session; the restricted connector has no image/music nodes"
+    },
+    {
+     "option_id": "creative_claw",
+     "label": "Creative Claw: image/gpt-image-2.5-sunburst 9:16 2K + music/elevenlabs-music-v2.5, prompts verbatim",
+     "score": 0.8,
+     "reason": "same models, different billing"
+    },
+    {
+     "option_id": "code_fallback",
+     "label": "drawn icons in the windows, no bed",
+     "score": 0.3,
+     "reason": "loses the resolved-chord ending",
+     "rejected_because": "not chosen"
+    }
+   ],
+   "selected": "creative_claw",
+   "reason": "User replied 'use Creative Claw' after the ElevenLabs full connector stayed denied. Narration and SFX stay on ElevenLabs.",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.9
+  }
+ ]
+}

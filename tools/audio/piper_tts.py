@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import shutil
 import subprocess
 import time
@@ -39,7 +40,8 @@ class PiperTTS(BaseTool):
         "  pip install piper-tts\n"
         "Or download from https://github.com/rhasspy/piper/releases\n"
         "Then download a voice model:\n"
-        "  piper --download-dir ~/.piper/models --model en_US-lessac-medium"
+        "  python -m piper.download_voices --download-dir ~/.piper/models en_US-lessac-medium\n"
+        "Voices are looked up in $PIPER_DATA_DIR (default ~/.piper/models)."
     )
     agent_skills = ["text-to-speech"]
 
@@ -116,6 +118,21 @@ class PiperTTS(BaseTool):
         result.duration_seconds = round(time.time() - start, 2)
         return result
 
+    @staticmethod
+    def _resolve_model(model: str) -> str:
+        """Map a bare voice name to <data_dir>/<name>.onnx when it exists there.
+
+        The piper CLI only searches the current directory for bare names, so
+        voices downloaded to the documented location would never be found.
+        """
+        if Path(model).expanduser().is_file():
+            return str(Path(model).expanduser())
+        data_dir = Path(os.environ.get("PIPER_DATA_DIR", "~/.piper/models")).expanduser()
+        candidate = data_dir / f"{model}.onnx"
+        if candidate.is_file():
+            return str(candidate)
+        return model
+
     def _generate(self, inputs: dict[str, Any]) -> ToolResult:
         output_path = Path(inputs.get("output_path", "tts_output.wav"))
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -123,7 +140,7 @@ class PiperTTS(BaseTool):
         proc = subprocess.run(
             [
                 "piper",
-                "--model", inputs.get("model", "en_US-lessac-medium"),
+                "--model", self._resolve_model(inputs.get("model", "en_US-lessac-medium")),
                 "--speaker", str(inputs.get("speaker_id", 0)),
                 "--length-scale", str(inputs.get("length_scale", 1.0)),
                 "--sentence-silence", str(inputs.get("sentence_silence", 0.3)),
