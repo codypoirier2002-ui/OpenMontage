@@ -206,7 +206,10 @@
    "asset_id": "b082c026-8b91-4835-a12d-c5156f2a93e1",
    "credits": 10,
    "qa": "PASS: 4 legs, 1 tail, 2 ears at 2x; paws clean; no text",
-   "crop": "measured, see artifacts/media_report.json"
+   "crop": "measured, see artifacts/media_report.json",
+   "cost_usd": 0.05,
+   "generation_id": "56858924-0ea0-4968-b47f-65618fb2737c",
+   "node_id": "creative-claw:b082c026"
   },
   {
    "id": "S2",
@@ -221,7 +224,10 @@
    "asset_id": "6bbc30a0-5156-49c4-a4ef-35e0ff6c7951",
    "credits": 10,
    "qa": "PASS: 1 head, 2 wings tucked, 1 tail, feet tucked (yellow); peregrine markings; no text",
-   "crop": "measured, see artifacts/media_report.json"
+   "crop": "measured, see artifacts/media_report.json",
+   "cost_usd": 0.05,
+   "generation_id": "67f063b2-2120-41aa-878c-fa5283783465",
+   "node_id": "creative-claw:6bbc30a0"
   },
   {
    "id": "S3",
@@ -236,7 +242,10 @@
    "asset_id": "a8c6d819-2177-44e9-9b13-4a6bfc557b54",
    "credits": 10,
    "qa": "PASS: one craft, flat white shield toward the Sun, 2 panels, bus in shadow; no text/logos",
-   "crop": "measured, see artifacts/media_report.json"
+   "crop": "measured, see artifacts/media_report.json",
+   "cost_usd": 0.05,
+   "generation_id": "3bb6854b-f0dc-46a4-a64a-99abc1cbf36d",
+   "node_id": "creative-claw:a8c6d819"
   },
   {
    "id": "M1",
@@ -249,7 +258,10 @@
    "job_id": "9cdc244f-6eb9-4e5f-9cc8-24eb146bf77e",
    "asset_id": "01715738-2059-48c6-a616-c5212133e936",
    "credits": 29,
-   "qa": "key heard G major (D major requested, lesson 26); last tonic attack 55.79 s (assets/music/music_qa.json); +6 dB level step at 18 s evened by build_soundtrack; ring-out to -49 dBFS by 58 s"
+   "qa": "key heard G major (D major requested, lesson 26); last tonic attack 55.79 s (assets/music/music_qa.json); +6 dB level step at 18 s evened by build_soundtrack; ring-out to -49 dBFS by 58 s",
+   "cost_usd": 0.16,
+   "generation_id": "9cdc244f-6eb9-4e5f-9cc8-24eb146bf77e",
+   "node_id": "creative-claw:01715738"
   }
  ],
  "narration_summary": {
@@ -265,7 +277,7 @@
   "The bed has a +6 dB step at 18 s - evened by the 2 s level evening in build_soundtrack."
  ],
  "contact_sheet": null,
- "total_usd": 0.024,
+ "total_usd": 0.4353,
  "hard_limit_usd": 1.0,
  "expected_usd": 0.45,
  "user_cap_usd": 4.0,
