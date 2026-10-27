@@ -1,6 +1,6 @@
 {
  "project": "how-fast-can-anything-go",
- "status": "BLOCKED - ElevenLabs quota exhausted on first run; on resume (after the reported top-up) the ElevenLabs MCP tools were unavailable in this agent session (server disconnected; creative_get_flow rejected as 'No such tool available' / permission deny rule)",
+ "status": "BLOCKED - session 3 (2026-10-27): the ElevenLabs connector is connected and enabled in chat, but this session exposes only its agents_create_draft / agents_run_tests tools; none of the creative_* flow tools (speech, image, music, SFX, estimate) are available, so N-s2..s5, S1..S3, M1 and X1..X6 could not be generated. Container prepared: remotion-composer/projects symlink created, npm ci done. Waiting for the user to reconnect the ElevenLabs connector (https://claude.ai/customize/connectors) or approve another provider.",
  "flow": {
   "name": "How Fast Can Anything Go?",
   "flow_id": "QQrEkYtv7r3zlWHCLNrq",
@@ -129,5 +129,12 @@
   "action": "creative_get_flow on QQrEkYtv7r3zlWHCLNrq",
   "result": "tool unavailable in this session; nothing generated, nothing charged",
   "account_or_flow_change": "none recorded (could not reach the server to tell whether the flow is still reachable or whether a new account is connected)"
- }
+ },
+ "sessions": [
+  {
+   "date": "2026-10-27",
+   "spent_usd": 0.0,
+   "note": "no paid call made; ElevenLabs creative tools absent"
+  }
+ ]
 }
