@@ -1,0 +1,176 @@
+{
+ "window": {
+  "x0": 580,
+  "x1": 920,
+  "y0": 440,
+  "y1": 893
+ },
+ "plates": {
+  "S1": {
+   "file": "stills/S1.png",
+   "placeholder": false,
+   "source": "assets/images/plate_sand.png",
+   "source_px": [
+    1152,
+    2048
+   ],
+   "crop_px": [
+    0,
+    100,
+    1152,
+    1635
+   ],
+   "crop_pct": {
+    "x": [
+     0.0,
+     100.0
+    ],
+    "y": [
+     4.9,
+     79.8
+    ]
+   },
+   "scale": 0.2951,
+   "window": {
+    "x0": 580,
+    "x1": 920,
+    "y0": 440,
+    "y1": 893
+   },
+   "scene": "sc01",
+   "push": [
+    1.0,
+    1.03
+   ],
+   "contains_asserted": {
+    "quartz_grain": [
+     560,
+     860
+    ],
+    "amber_grain_top": [
+     190,
+     300
+    ],
+    "grain_bottom": [
+     500,
+     1460
+    ]
+   },
+   "crop_basis": "measured (PLATES crop)"
+  },
+  "S2": {
+   "file": "stills/S2.png",
+   "placeholder": false,
+   "source": "assets/images/plate_blood_cells.png",
+   "source_px": [
+    1152,
+    2048
+   ],
+   "crop_px": [
+    0,
+    250,
+    1152,
+    1785
+   ],
+   "crop_pct": {
+    "x": [
+     0.0,
+     100.0
+    ],
+    "y": [
+     12.2,
+     87.2
+    ]
+   },
+   "scale": 0.2951,
+   "window": {
+    "x0": 580,
+    "x1": 920,
+    "y0": 440,
+    "y1": 893
+   },
+   "scene": "sc04",
+   "push": [
+    1.0,
+    1.03
+   ],
+   "contains_asserted": {
+    "front_cell": [
+     536,
+     1000
+    ],
+    "cell_top": [
+     440,
+     300
+    ],
+    "cell_low": [
+     480,
+     1420
+    ]
+   },
+   "crop_basis": "measured (PLATES crop)"
+  },
+  "S3": {
+   "file": "stills/S3.png",
+   "placeholder": false,
+   "source": "assets/images/plate_virus.png",
+   "source_px": [
+    1152,
+    2048
+   ],
+   "crop_px": [
+    0,
+    173,
+    1152,
+    1708
+   ],
+   "crop_pct": {
+    "x": [
+     0.0,
+     100.0
+    ],
+    "y": [
+     8.4,
+     83.4
+    ]
+   },
+   "scale": 0.2951,
+   "window": {
+    "x0": 580,
+    "x1": 920,
+    "y0": 440,
+    "y1": 893
+   },
+   "scene": "sc05",
+   "push": [
+    1.0,
+    1.03
+   ],
+   "contains_asserted": {
+    "virion_centre": [
+     572,
+     940
+    ],
+    "spike_top": [
+     572,
+     440
+    ],
+    "spike_bottom": [
+     572,
+     1440
+    ],
+    "spike_left": [
+     60,
+     940
+    ],
+    "spike_right": [
+     1090,
+     940
+    ]
+   },
+   "crop_basis": "measured (PLATES crop)"
+  }
+ },
+ "placeholders": [],
+ "process": "    python3 projects/how-small-can-anything-get/prepare_media.py [--force]\n\nPattern of projects/how-a-cat-lands/prepare_media.py (video 15, QA passed). No AI clips. ONE window box for every plate\n(theme.ts L.win: x 580-920, y 440-893, 340 x 453, portrait 3:4, RIGHT of the rung labels so a seated label never sits under a\nphoto; the plan's x 470-920 box would have covered 'EARTH (orbit) · ~107,000' and 'PARKER (fastest built)'), so each crop has\nthe window's aspect (0.7506).\n\nThe three AI stills exist (assets/images/plate_sand.png, plate_blood_cells.png, plate_virus.png; 1152 x 2048). Crop boxes\nare MEASURED on them (lesson 9: from pixels, the window's aspect) with the subject inside (lesson 39: feature points asserted\ninside the crop with a 20 px margin). The window's fourth state (sc06-sc07, the atom) is DRAWN in code (shared/Window.tsx), not\na plate. A missing source still falls back to a labelled placeholder card (\"placeholder\": true).\n-> artifacts/media_report.json + renders/review/crops.jpg (the crops on their plates, or the placeholders).\n"
+}

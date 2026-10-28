@@ -1,0 +1,47 @@
+{
+ "composition": "ScaleWell",
+ "master": "renders/how-small-can-anything-get.mp4",
+ "raw": "renders/raw.mp4",
+ "scene_map": {
+  "N-s1": "sc01",
+  "N-s2": "sc04",
+  "N-s3": "sc06",
+  "N-s4": "sc08",
+  "N-s5": "sc11",
+  "S1": "sc02",
+  "S2": "sc03",
+  "S3": "sc06",
+  "M1": "sc01",
+  "X1": "sc01",
+  "X2": "sc04",
+  "X3": "sc02",
+  "X4": "sc06",
+  "X5": "sc08",
+  "X6": "sc11"
+ },
+ "approval_basis": "topic + $4 cap chosen by the user (d-001, d-002); proposal + script approved together (d-003, d-004); 'run end to end after scene plan' (d-005, d-006); providers as video 16 (ElevenLabs speech, Creative Claw stills + music); contact sheets 1-3 sent",
+ "transition_in": "Continuous frame (the well persists; scene devices fade).",
+ "verification_notes": [
+  "Lean build: video 16's per-video files and pipeline copied and flipped; 1 builder agent for the visual layer (props, engine, 12 scenes, contact sheet 2, BUILD_SPEC.md); qa_auto 0 fail / 0 warn on the master after one audio fix (opening whoosh was +7.2 dB over 'A grain', now -11.3 dB); 1 targeted QA agent briefed with BUILD_SPEC.md frame lists.",
+  "Caption onsets: all 111 words from the automatic onset sweep (sweep_onsets.py); 74 differ from Whisper by > 0.5 f and were adopted without hand-reading (lean); QA spot-checks the 14 that differ by > 1.5 f.",
+  "Independent QA agent: 0 blockers, 1 major (A1: the marker stayed bright on PROTON while the narration named the electron and the Planck length; fixed by dimming it to a 0.3 ghost from 'Electrons'), 6 minors (A4 empty readout card 7 f before its first glyph: fixed; A2/A3/A5/A7 layout notes and A6 four caption onsets at the +-2 f edge: accepted). One fix round, re-render, qa_auto 0 fail / 0 warn."
+ ],
+ "visual_issues": [
+  "YOUR EYE and LIGHT MICROSCOPE labels hide the decade numbers beside them while shown (QA A2, accepted).",
+  "The readout card sits beside the VIRUS row, not near the Planck line it describes (QA A3, accepted).",
+  "The Planck label and placard 4 are close (QA A5).",
+  "The right column is empty during s4 (QA A7)."
+ ],
+ "audio_issues": [
+  "Bed duck has a 300 ms look-ahead before every voiced run (new in video 17) so cues on a section's first frame clear the bed; the closing duck is -9.5 dB (not -13) to keep the mono fold above -42 dBFS."
+ ],
+ "promise_issues": [
+  "None: providers, models and cap as proposed; SFX reused from video 16 at no cost."
+ ],
+ "subtitle_issues": [
+  "'Maybe', 'after', s4 'that' and 'sand' highlight ~2 f early, at the edge of the +-2 f tolerance (QA A6); 'blood' and 'that,' unmeasurable under the bed."
+ ],
+ "duck_level_db": -12,
+ "music_path": "assets/music/bed_raw.wav",
+ "budget_usd": 4.0
+}

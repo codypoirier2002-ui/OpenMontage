@@ -1,0 +1,933 @@
+{
+ "fps": 30,
+ "width": 1080,
+ "height": 1920,
+ "lead_seconds": 0.5,
+ "settle_seconds": 1.5,
+ "narration_seconds": 46.64,
+ "total_seconds": 48.533,
+ "total_frames": 1456,
+ "voice_end_seconds": 47.01,
+ "way_end_seconds": 47.03,
+ "way_end_frame": 1411,
+ "sections": [
+  {
+   "id": "s1",
+   "start": 0.5,
+   "end": 8.8,
+   "audio": "assets/audio/narration/clean/s1.wav",
+   "from": 15,
+   "durationInFrames": 249
+  },
+  {
+   "id": "s2",
+   "start": 8.8,
+   "end": 18.8,
+   "audio": "assets/audio/narration/clean/s2.wav",
+   "from": 264,
+   "durationInFrames": 300
+  },
+  {
+   "id": "s3",
+   "start": 18.8,
+   "end": 28.605,
+   "audio": "assets/audio/narration/clean/s3.wav",
+   "from": 564,
+   "durationInFrames": 294
+  },
+  {
+   "id": "s4",
+   "start": 28.605,
+   "end": 40.2,
+   "audio": "assets/audio/narration/clean/s4.wav",
+   "from": 858,
+   "durationInFrames": 348
+  },
+  {
+   "id": "s5",
+   "start": 40.2,
+   "end": 47.14,
+   "audio": "assets/audio/narration/clean/s5.wav",
+   "from": 1206,
+   "durationInFrames": 208
+  }
+ ],
+ "scenes": [
+  {
+   "id": "sc01",
+   "section": "s1",
+   "from": 0,
+   "durationInFrames": 100,
+   "start": 0.0,
+   "end": 3.333
+  },
+  {
+   "id": "sc02",
+   "section": "s1",
+   "from": 100,
+   "durationInFrames": 72,
+   "start": 3.333,
+   "end": 5.733
+  },
+  {
+   "id": "sc03",
+   "section": "s1",
+   "from": 172,
+   "durationInFrames": 91,
+   "start": 5.733,
+   "end": 8.767
+  },
+  {
+   "id": "sc04",
+   "section": "s2",
+   "from": 263,
+   "durationInFrames": 103,
+   "start": 8.767,
+   "end": 12.2
+  },
+  {
+   "id": "sc05",
+   "section": "s2",
+   "from": 366,
+   "durationInFrames": 197,
+   "start": 12.2,
+   "end": 18.767
+  },
+  {
+   "id": "sc06",
+   "section": "s3",
+   "from": 563,
+   "durationInFrames": 109,
+   "start": 18.767,
+   "end": 22.4
+  },
+  {
+   "id": "sc07",
+   "section": "s3",
+   "from": 672,
+   "durationInFrames": 185,
+   "start": 22.4,
+   "end": 28.567
+  },
+  {
+   "id": "sc08",
+   "section": "s4",
+   "from": 857,
+   "durationInFrames": 152,
+   "start": 28.567,
+   "end": 33.633
+  },
+  {
+   "id": "sc09",
+   "section": "s4",
+   "from": 1009,
+   "durationInFrames": 196,
+   "start": 33.633,
+   "end": 40.167
+  },
+  {
+   "id": "sc10",
+   "section": "s5",
+   "from": 1205,
+   "durationInFrames": 96,
+   "start": 40.167,
+   "end": 43.367
+  },
+  {
+   "id": "sc11",
+   "section": "s5",
+   "from": 1301,
+   "durationInFrames": 55,
+   "start": 43.367,
+   "end": 45.2
+  },
+  {
+   "id": "sc12",
+   "section": "s5",
+   "from": 1356,
+   "durationInFrames": 100,
+   "start": 45.2,
+   "end": 48.533
+  }
+ ],
+ "words": [
+  {
+   "section": "s1",
+   "i": 0,
+   "text": "A",
+   "start": 0.532,
+   "end": 0.665
+  },
+  {
+   "section": "s1",
+   "i": 1,
+   "text": "grain",
+   "start": 0.665,
+   "end": 0.906
+  },
+  {
+   "section": "s1",
+   "i": 2,
+   "text": "of",
+   "start": 0.906,
+   "end": 0.979
+  },
+  {
+   "section": "s1",
+   "i": 3,
+   "text": "sand",
+   "start": 0.979,
+   "end": 1.355
+  },
+  {
+   "section": "s1",
+   "i": 4,
+   "text": "is",
+   "start": 1.355,
+   "end": 1.543
+  },
+  {
+   "section": "s1",
+   "i": 5,
+   "text": "about",
+   "start": 1.543,
+   "end": 1.858
+  },
+  {
+   "section": "s1",
+   "i": 6,
+   "text": "half",
+   "start": 1.858,
+   "end": 2.14
+  },
+  {
+   "section": "s1",
+   "i": 7,
+   "text": "a",
+   "start": 2.14,
+   "end": 2.379
+  },
+  {
+   "section": "s1",
+   "i": 8,
+   "text": "millimetre.",
+   "start": 2.379,
+   "end": 2.97
+  },
+  {
+   "section": "s1",
+   "i": 9,
+   "text": "A",
+   "start": 3.394,
+   "end": 3.454
+  },
+  {
+   "section": "s1",
+   "i": 10,
+   "text": "human",
+   "start": 3.454,
+   "end": 3.822
+  },
+  {
+   "section": "s1",
+   "i": 11,
+   "text": "hair",
+   "start": 3.822,
+   "end": 4.195
+  },
+  {
+   "section": "s1",
+   "i": 12,
+   "text": "is",
+   "start": 4.195,
+   "end": 4.462
+  },
+  {
+   "section": "s1",
+   "i": 13,
+   "text": "a",
+   "start": 4.462,
+   "end": 4.572
+  },
+  {
+   "section": "s1",
+   "i": 14,
+   "text": "tenth",
+   "start": 4.572,
+   "end": 4.819
+  },
+  {
+   "section": "s1",
+   "i": 15,
+   "text": "of",
+   "start": 4.819,
+   "end": 5.043
+  },
+  {
+   "section": "s1",
+   "i": 16,
+   "text": "that.",
+   "start": 5.043,
+   "end": 5.28
+  },
+  {
+   "section": "s1",
+   "i": 17,
+   "text": "And",
+   "start": 5.796,
+   "end": 5.948
+  },
+  {
+   "section": "s1",
+   "i": 18,
+   "text": "that's",
+   "start": 5.948,
+   "end": 6.099
+  },
+  {
+   "section": "s1",
+   "i": 19,
+   "text": "about",
+   "start": 6.099,
+   "end": 6.304
+  },
+  {
+   "section": "s1",
+   "i": 20,
+   "text": "where",
+   "start": 6.304,
+   "end": 6.629
+  },
+  {
+   "section": "s1",
+   "i": 21,
+   "text": "your",
+   "start": 6.629,
+   "end": 6.756
+  },
+  {
+   "section": "s1",
+   "i": 22,
+   "text": "eyes",
+   "start": 6.756,
+   "end": 6.946
+  },
+  {
+   "section": "s1",
+   "i": 23,
+   "text": "give",
+   "start": 6.946,
+   "end": 7.25
+  },
+  {
+   "section": "s1",
+   "i": 24,
+   "text": "up.",
+   "start": 7.25,
+   "end": 7.44
+  },
+  {
+   "section": "s2",
+   "i": 0,
+   "text": "A",
+   "start": 8.821,
+   "end": 8.998
+  },
+  {
+   "section": "s2",
+   "i": 1,
+   "text": "red",
+   "start": 8.998,
+   "end": 9.222
+  },
+  {
+   "section": "s2",
+   "i": 2,
+   "text": "blood",
+   "start": 9.222,
+   "end": 9.445
+  },
+  {
+   "section": "s2",
+   "i": 3,
+   "text": "cell",
+   "start": 9.445,
+   "end": 9.821
+  },
+  {
+   "section": "s2",
+   "i": 4,
+   "text": "is",
+   "start": 9.821,
+   "end": 10.11
+  },
+  {
+   "section": "s2",
+   "i": 5,
+   "text": "ten",
+   "start": 10.11,
+   "end": 10.309
+  },
+  {
+   "section": "s2",
+   "i": 6,
+   "text": "times",
+   "start": 10.309,
+   "end": 10.789
+  },
+  {
+   "section": "s2",
+   "i": 7,
+   "text": "smaller",
+   "start": 10.789,
+   "end": 11.211
+  },
+  {
+   "section": "s2",
+   "i": 8,
+   "text": "again.",
+   "start": 11.211,
+   "end": 11.68
+  },
+  {
+   "section": "s2",
+   "i": 9,
+   "text": "Most",
+   "start": 12.278,
+   "end": 12.559
+  },
+  {
+   "section": "s2",
+   "i": 10,
+   "text": "viruses",
+   "start": 12.559,
+   "end": 13.005
+  },
+  {
+   "section": "s2",
+   "i": 11,
+   "text": "are",
+   "start": 13.005,
+   "end": 13.253
+  },
+  {
+   "section": "s2",
+   "i": 12,
+   "text": "smaller",
+   "start": 13.253,
+   "end": 13.589
+  },
+  {
+   "section": "s2",
+   "i": 13,
+   "text": "still,",
+   "start": 13.589,
+   "end": 14.14
+  },
+  {
+   "section": "s2",
+   "i": 14,
+   "text": "too",
+   "start": 14.628,
+   "end": 14.846
+  },
+  {
+   "section": "s2",
+   "i": 15,
+   "text": "small",
+   "start": 14.846,
+   "end": 15.226
+  },
+  {
+   "section": "s2",
+   "i": 16,
+   "text": "for",
+   "start": 15.226,
+   "end": 15.511
+  },
+  {
+   "section": "s2",
+   "i": 17,
+   "text": "any",
+   "start": 15.511,
+   "end": 15.732
+  },
+  {
+   "section": "s2",
+   "i": 18,
+   "text": "ordinary",
+   "start": 15.732,
+   "end": 16.286
+  },
+  {
+   "section": "s2",
+   "i": 19,
+   "text": "microscope",
+   "start": 16.286,
+   "end": 16.798
+  },
+  {
+   "section": "s2",
+   "i": 20,
+   "text": "to",
+   "start": 16.798,
+   "end": 17.068
+  },
+  {
+   "section": "s2",
+   "i": 21,
+   "text": "see.",
+   "start": 17.068,
+   "end": 17.42
+  },
+  {
+   "section": "s3",
+   "i": 0,
+   "text": "An",
+   "start": 18.83,
+   "end": 19.002
+  },
+  {
+   "section": "s3",
+   "i": 1,
+   "text": "atom",
+   "start": 19.002,
+   "end": 19.363
+  },
+  {
+   "section": "s3",
+   "i": 2,
+   "text": "is",
+   "start": 19.363,
+   "end": 19.559
+  },
+  {
+   "section": "s3",
+   "i": 3,
+   "text": "a",
+   "start": 19.559,
+   "end": 19.911
+  },
+  {
+   "section": "s3",
+   "i": 4,
+   "text": "thousand",
+   "start": 19.911,
+   "end": 20.193
+  },
+  {
+   "section": "s3",
+   "i": 5,
+   "text": "times",
+   "start": 20.193,
+   "end": 20.669
+  },
+  {
+   "section": "s3",
+   "i": 6,
+   "text": "smaller",
+   "start": 20.669,
+   "end": 21.136
+  },
+  {
+   "section": "s3",
+   "i": 7,
+   "text": "than",
+   "start": 21.136,
+   "end": 21.421
+  },
+  {
+   "section": "s3",
+   "i": 8,
+   "text": "a",
+   "start": 21.421,
+   "end": 21.487
+  },
+  {
+   "section": "s3",
+   "i": 9,
+   "text": "virus.",
+   "start": 21.487,
+   "end": 22.18
+  },
+  {
+   "section": "s3",
+   "i": 10,
+   "text": "And",
+   "start": 22.479,
+   "end": 22.622
+  },
+  {
+   "section": "s3",
+   "i": 11,
+   "text": "the",
+   "start": 22.622,
+   "end": 22.74
+  },
+  {
+   "section": "s3",
+   "i": 12,
+   "text": "proton",
+   "start": 22.74,
+   "end": 23.34
+  },
+  {
+   "section": "s3",
+   "i": 13,
+   "text": "at",
+   "start": 23.34,
+   "end": 23.439
+  },
+  {
+   "section": "s3",
+   "i": 14,
+   "text": "its",
+   "start": 23.439,
+   "end": 23.571
+  },
+  {
+   "section": "s3",
+   "i": 15,
+   "text": "centre",
+   "start": 23.571,
+   "end": 23.919
+  },
+  {
+   "section": "s3",
+   "i": 16,
+   "text": "is",
+   "start": 23.919,
+   "end": 24.288
+  },
+  {
+   "section": "s3",
+   "i": 17,
+   "text": "sixty",
+   "start": 24.288,
+   "end": 24.72
+  },
+  {
+   "section": "s3",
+   "i": 18,
+   "text": "thousand",
+   "start": 24.72,
+   "end": 25.297
+  },
+  {
+   "section": "s3",
+   "i": 19,
+   "text": "times",
+   "start": 25.297,
+   "end": 25.829
+  },
+  {
+   "section": "s3",
+   "i": 20,
+   "text": "smaller",
+   "start": 25.829,
+   "end": 26.314
+  },
+  {
+   "section": "s3",
+   "i": 21,
+   "text": "than",
+   "start": 26.314,
+   "end": 26.619
+  },
+  {
+   "section": "s3",
+   "i": 22,
+   "text": "the",
+   "start": 26.619,
+   "end": 26.781
+  },
+  {
+   "section": "s3",
+   "i": 23,
+   "text": "atom.",
+   "start": 26.781,
+   "end": 27.3
+  },
+  {
+   "section": "s4",
+   "i": 0,
+   "text": "Electrons",
+   "start": 28.621,
+   "end": 29.187
+  },
+  {
+   "section": "s4",
+   "i": 1,
+   "text": "are",
+   "start": 29.187,
+   "end": 29.313
+  },
+  {
+   "section": "s4",
+   "i": 2,
+   "text": "so",
+   "start": 29.313,
+   "end": 29.743
+  },
+  {
+   "section": "s4",
+   "i": 3,
+   "text": "small",
+   "start": 29.743,
+   "end": 30.355
+  },
+  {
+   "section": "s4",
+   "i": 4,
+   "text": "that",
+   "start": 30.355,
+   "end": 30.564
+  },
+  {
+   "section": "s4",
+   "i": 5,
+   "text": "no",
+   "start": 30.564,
+   "end": 30.9
+  },
+  {
+   "section": "s4",
+   "i": 6,
+   "text": "experiment",
+   "start": 30.9,
+   "end": 31.436
+  },
+  {
+   "section": "s4",
+   "i": 7,
+   "text": "has",
+   "start": 31.436,
+   "end": 31.635
+  },
+  {
+   "section": "s4",
+   "i": 8,
+   "text": "found",
+   "start": 31.635,
+   "end": 32.08
+  },
+  {
+   "section": "s4",
+   "i": 9,
+   "text": "any",
+   "start": 32.08,
+   "end": 32.335
+  },
+  {
+   "section": "s4",
+   "i": 10,
+   "text": "size",
+   "start": 32.335,
+   "end": 32.623
+  },
+  {
+   "section": "s4",
+   "i": 11,
+   "text": "at",
+   "start": 32.623,
+   "end": 32.745
+  },
+  {
+   "section": "s4",
+   "i": 12,
+   "text": "all.",
+   "start": 32.745,
+   "end": 33.17
+  },
+  {
+   "section": "s4",
+   "i": 13,
+   "text": "Below",
+   "start": 33.702,
+   "end": 33.885
+  },
+  {
+   "section": "s4",
+   "i": 14,
+   "text": "that,",
+   "start": 33.885,
+   "end": 34.325
+  },
+  {
+   "section": "s4",
+   "i": 15,
+   "text": "physicists",
+   "start": 34.638,
+   "end": 35.06
+  },
+  {
+   "section": "s4",
+   "i": 16,
+   "text": "point",
+   "start": 35.06,
+   "end": 35.388
+  },
+  {
+   "section": "s4",
+   "i": 17,
+   "text": "to",
+   "start": 35.388,
+   "end": 35.705
+  },
+  {
+   "section": "s4",
+   "i": 18,
+   "text": "the",
+   "start": 35.705,
+   "end": 35.805
+  },
+  {
+   "section": "s4",
+   "i": 19,
+   "text": "Planck",
+   "start": 35.805,
+   "end": 36.157
+  },
+  {
+   "section": "s4",
+   "i": 20,
+   "text": "length,",
+   "start": 36.157,
+   "end": 36.58
+  },
+  {
+   "section": "s4",
+   "i": 21,
+   "text": "twenty",
+   "start": 36.857,
+   "end": 37.25
+  },
+  {
+   "section": "s4",
+   "i": 22,
+   "text": "more",
+   "start": 37.25,
+   "end": 37.725
+  },
+  {
+   "section": "s4",
+   "i": 23,
+   "text": "zeros",
+   "start": 37.725,
+   "end": 38.117
+  },
+  {
+   "section": "s4",
+   "i": 24,
+   "text": "down.",
+   "start": 38.117,
+   "end": 38.465
+  },
+  {
+   "section": "s5",
+   "i": 0,
+   "text": "Thirty-four",
+   "start": 40.223,
+   "end": 40.898
+  },
+  {
+   "section": "s5",
+   "i": 1,
+   "text": "zeros",
+   "start": 40.898,
+   "end": 41.424
+  },
+  {
+   "section": "s5",
+   "i": 2,
+   "text": "after",
+   "start": 41.424,
+   "end": 41.808
+  },
+  {
+   "section": "s5",
+   "i": 3,
+   "text": "the",
+   "start": 41.808,
+   "end": 41.932
+  },
+  {
+   "section": "s5",
+   "i": 4,
+   "text": "decimal",
+   "start": 41.932,
+   "end": 42.37
+  },
+  {
+   "section": "s5",
+   "i": 5,
+   "text": "point.",
+   "start": 42.37,
+   "end": 42.66
+  },
+  {
+   "section": "s5",
+   "i": 6,
+   "text": "Maybe",
+   "start": 43.442,
+   "end": 43.648
+  },
+  {
+   "section": "s5",
+   "i": 7,
+   "text": "that's",
+   "start": 43.648,
+   "end": 44.12
+  },
+  {
+   "section": "s5",
+   "i": 8,
+   "text": "the",
+   "start": 44.12,
+   "end": 44.231
+  },
+  {
+   "section": "s5",
+   "i": 9,
+   "text": "floor.",
+   "start": 44.231,
+   "end": 44.74
+  },
+  {
+   "section": "s5",
+   "i": 10,
+   "text": "Or",
+   "start": 45.259,
+   "end": 45.571
+  },
+  {
+   "section": "s5",
+   "i": 11,
+   "text": "maybe",
+   "start": 45.571,
+   "end": 45.936
+  },
+  {
+   "section": "s5",
+   "i": 12,
+   "text": "there",
+   "start": 45.936,
+   "end": 46.427
+  },
+  {
+   "section": "s5",
+   "i": 13,
+   "text": "isn't",
+   "start": 46.427,
+   "end": 46.655
+  },
+  {
+   "section": "s5",
+   "i": 14,
+   "text": "one.",
+   "start": 46.655,
+   "end": 47.03
+  }
+ ],
+ "notes": "Timings measured from THE CLEAN WAVs (assets/audio/narration/clean/sN.wav: ElevenLabs Bella eleven_v4, take 1 of every section; the s4 breath after 'Light' kept (nothing cut); lead/tail trimmed; ONE constant gain per section to -21.5 LUFS (s5 TP-capped at -22.8; no loudnorm); widened gaps 1.2/1.2/1.2/1.45 s inside the files; no time-stretch). Lead-in 0.5 s before s1; sections back to back at their measured durations. Words: faster-whisper small.en aligned to the script text (script punctuation, punctuation); onsets snapped to the RMS envelope (-40 dB, <= 250 ms); every onset swept (OVERRIDES / CONFIRMED, section-relative). Scene splits = anchor-word onset - 2 frames (ALL scenes after sc01). FINISHED-LINE ending: the film runs 1.5 s past the aligned end of 'way.' (inside sc12; no loop splice). Captions show script text."
+}

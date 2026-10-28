@@ -1,0 +1,204 @@
+{
+ "status": "COMPLETE",
+ "runs": [
+  {
+   "what": "5 TTS, one take each",
+   "provider": "ElevenLabs (restricted connector)",
+   "estimate_usd": 0.1163,
+   "actual_usd": 0.1196,
+   "credits": 657.94,
+   "date": "2026-10-28"
+  },
+  {
+   "what": "3 stills (gpt-image-2.5-sunburst 1152x2048 high) + music (elevenlabs-music-v2.5, 58 s)",
+   "provider": "Creative Claw",
+   "estimate_credits": 59,
+   "actual_credits": 59,
+   "credits_remaining": 620,
+   "usd_note": "recorded at ~$0.31 list as for video 16",
+   "date": "2026-10-28"
+  }
+ ],
+ "assets": [
+  {
+   "id": "N-s1",
+   "type": "narration",
+   "section": "s1",
+   "file": "assets/audio/narration/s1.mp3",
+   "take_file": "assets/audio/narration/takes/s1_take1.mp3",
+   "generation_id": "ykIaBblmUSbQUHPk2Ajj",
+   "flow_id": "eQbJ28vqCibxhAZqP6NB",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0233,
+   "credits": 127.99,
+   "duration_s": 7.12,
+   "qa": "PASS: Whisper WER 0.0; pauses only at punctuation; peak -1.5 dBFS"
+  },
+  {
+   "id": "N-s2",
+   "type": "narration",
+   "section": "s2",
+   "file": "assets/audio/narration/s2.mp3",
+   "take_file": "assets/audio/narration/takes/s2_take1.mp3",
+   "generation_id": "LMZ3QVPivxbWsuDirnln",
+   "flow_id": "eQbJ28vqCibxhAZqP6NB",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0222,
+   "credits": 121.99,
+   "duration_s": 8.8,
+   "qa": "PASS: Whisper WER 0.0; pauses only at punctuation; peak -3.1 dBFS"
+  },
+  {
+   "id": "N-s3",
+   "type": "narration",
+   "section": "s3",
+   "file": "assets/audio/narration/s3.mp3",
+   "take_file": "assets/audio/narration/takes/s3_take1.mp3",
+   "generation_id": "hiLPYqzVtuTauhbKNJFa",
+   "flow_id": "eQbJ28vqCibxhAZqP6NB",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0249,
+   "credits": 136.99,
+   "duration_s": 8.64,
+   "qa": "PASS: Whisper WER 0.0; pauses only at punctuation; peak -6.0 dBFS"
+  },
+  {
+   "id": "N-s4",
+   "type": "narration",
+   "section": "s4",
+   "file": "assets/audio/narration/s4.mp3",
+   "take_file": "assets/audio/narration/takes/s4_take1.mp3",
+   "generation_id": "Zxptu8gOlqWJGAa3n7kd",
+   "flow_id": "eQbJ28vqCibxhAZqP6NB",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0282,
+   "credits": 154.98,
+   "duration_s": 10.24,
+   "qa": "PASS: Whisper WER 0.0; pauses only at punctuation; peak -2.0 dBFS"
+  },
+  {
+   "id": "N-s5",
+   "type": "narration",
+   "section": "s5",
+   "file": "assets/audio/narration/s5.mp3",
+   "take_file": "assets/audio/narration/takes/s5_take1.mp3",
+   "generation_id": "khHwLbrxTs3jw6xNDhzH",
+   "flow_id": "eQbJ28vqCibxhAZqP6NB",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0211,
+   "credits": 115.99,
+   "duration_s": 6.96,
+   "qa": "PASS: Whisper WER 0.0; pauses only at punctuation; peak -8.0 dBFS"
+  },
+  {
+   "id": "S1",
+   "type": "image",
+   "file": "assets/images/plate_sand.png",
+   "provider": "Creative Claw",
+   "model": "image/gpt-image-2.5-sunburst",
+   "size": "1152x2048 (9:16)",
+   "quality": "high",
+   "job_id": "dbe4df86-017c-40cf-904a-26ac174b1d82",
+   "credits": 10,
+   "cost_usd": 0.05,
+   "tag": "AI impression",
+   "qa": "PASS: sand grains macro, no text or watermark, subject in the middle 60%"
+  },
+  {
+   "id": "S2",
+   "type": "image",
+   "file": "assets/images/plate_blood_cells.png",
+   "provider": "Creative Claw",
+   "model": "image/gpt-image-2.5-sunburst",
+   "size": "1152x2048 (9:16)",
+   "quality": "high",
+   "job_id": "ec313929-a941-40a2-8a3e-3c39acaa5c3f",
+   "credits": 10,
+   "cost_usd": 0.05,
+   "tag": "AI impression",
+   "qa": "PASS: red blood cells, no text or watermark, subject in the middle 60%"
+  },
+  {
+   "id": "S3",
+   "type": "image",
+   "file": "assets/images/plate_virus.png",
+   "provider": "Creative Claw",
+   "model": "image/gpt-image-2.5-sunburst",
+   "size": "1152x2048 (9:16)",
+   "quality": "high",
+   "job_id": "c84dfdd2-2ee2-46e7-b438-8f435bf77086",
+   "credits": 10,
+   "cost_usd": 0.05,
+   "tag": "AI impression",
+   "qa": "PASS: influenza virus particle, no text or watermark, subject in the middle 60%"
+  },
+  {
+   "id": "M1",
+   "type": "music",
+   "file": "assets/music/bed_raw.wav",
+   "provider": "Creative Claw",
+   "model": "music/elevenlabs-music-v2.5",
+   "job_id": "0066e014-d812-4c74-acf0-fe4930b68bd3",
+   "credits": 29,
+   "cost_usd": 0.16,
+   "duration_s": 58.0,
+   "qa": "pending last-tonic check (lesson 51)"
+  },
+  {
+   "id": "X1",
+   "type": "sfx",
+   "file": "assets/sfx/X1_whoosh.mp3",
+   "provider": "reused from video 16 (ElevenLabs SFX)",
+   "cost_usd": 0.0
+  },
+  {
+   "id": "X2",
+   "type": "sfx",
+   "file": "assets/sfx/X2_boom.mp3",
+   "provider": "reused from video 16 (ElevenLabs SFX)",
+   "cost_usd": 0.0
+  },
+  {
+   "id": "X3",
+   "type": "sfx",
+   "file": "assets/sfx/X3_tick.mp3",
+   "provider": "reused from video 16 (ElevenLabs SFX)",
+   "cost_usd": 0.0
+  },
+  {
+   "id": "X4",
+   "type": "sfx",
+   "file": "assets/sfx/X4_hum.mp3",
+   "provider": "reused from video 16 (ElevenLabs SFX)",
+   "cost_usd": 0.0
+  },
+  {
+   "id": "X5",
+   "type": "sfx",
+   "file": "assets/sfx/X5_shimmer.mp3",
+   "provider": "reused from video 16 (ElevenLabs SFX)",
+   "cost_usd": 0.0
+  },
+  {
+   "id": "X6",
+   "type": "sfx",
+   "file": "assets/sfx/X6_tink.mp3",
+   "provider": "reused from video 16 (ElevenLabs SFX)",
+   "cost_usd": 0.0
+  }
+ ],
+ "total_usd": 0.4296,
+ "spend": {
+  "cap_usd": 4.0,
+  "spent_usd": 0.4296,
+  "remaining_usd": 3.57
+ },
+ "quality_concerns": [],
+ "retakes": 0,
+ "rerolls": 0
+}

@@ -1,0 +1,160 @@
+{
+  "version": "1.0",
+  "project_id": "how-small-can-anything-get",
+  "pipeline_type": "unknown",
+  "stage": "edit",
+  "status": "completed",
+  "timestamp": "2026-10-28T12:46:26.804804+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": false,
+  "human_approved": false,
+  "artifacts": {
+    "edit_decisions": {
+      "version": "1.0",
+      "render_runtime": "remotion",
+      "renderer_family": "explainer-teacher",
+      "composition_mode": "atelier",
+      "cuts": [
+        {
+          "id": "cut-sc01",
+          "source": "bespoke_sc01",
+          "in_seconds": 0.0,
+          "out_seconds": 3.333,
+          "layer": "primary",
+          "transition_in": "Continuous frame (the well persists; scene devices fade).",
+          "transition_duration": 0.0,
+          "reason": "Hand-authored scene sc01 (section s1). Render: atelier component sc01. 'Scale Well': the speed ladder turned into a well. Ink sky darkening downward (#0A0D14 top -> #04050A bottom, faint grain); a vertical steel log rail at x ~250, 1 mm at the TOP (y 380) to 10^-18 m at y 1000, decade ticks every 10x with mono numbers in metres ('1 mm', '100 um' ... written as powers: 10^-3 ... 10^-18, 24 px); label 'metres \u00b7 log scale'. A warm white-a"
+        },
+        {
+          "id": "cut-sc02",
+          "source": "bespoke_sc02",
+          "in_seconds": 3.333,
+          "out_seconds": 5.733,
+          "layer": "primary",
+          "transition_in": "Continuous frame (the well persists; scene devices fade).",
+          "transition_duration": 0.0,
+          "reason": "Hand-authored scene sc02 (section s1). Render: atelier component sc02. Continuous Scale Well frame. one step down: HAIR."
+        },
+        {
+          "id": "cut-sc03",
+          "source": "bespoke_sc03",
+          "in_seconds": 5.733,
+          "out_seconds": 8.767,
+          "layer": "primary",
+          "transition_in": "Continuous frame (the well persists; scene devices fade).",
+          "transition_duration": 0.0,
+          "reason": "Hand-authored scene sc03 (section s1). Render: atelier component sc03. Continuous Scale Well frame. the eye limit."
+        },
+        {
+          "id": "cut-sc04",
+          "source": "bespoke_sc04",
+          "in_seconds": 8.767,
+          "out_seconds": 12.2,
+          "layer": "primary",
+          "transition_in": "Continuous frame (the well persists; scene devices fade).",
+          "transition_duration": 0.0,
+          "reason": "Hand-authored scene sc04 (section s2). Render: atelier component sc04. Continuous Scale Well frame. CELL."
+        },
+        {
+          "id": "cut-sc05",
+          "source": "bespoke_sc05",
+          "in_seconds": 12.2,
+          "out_seconds": 18.767,
+          "layer": "primary",
+          "transition_in": "Continuous frame (the well persists; scene devices fade).",
+          "transition_duration": 0.0,
+          "reason": "Hand-authored scene sc05 (section s2). Render: atelier component sc05. Continuous Scale Well frame. VIRUS below the light limit."
+        },
+        {
+          "id": "cut-sc06",
+          "source": "bespoke_sc06",
+          "in_seconds": 18.767,
+          "out_seconds": 22.4,
+          "layer": "primary",
+          "transition_in": "Continuous frame (the well persists; scene devices fade).",
+          "transition_duration": 0.0,
+          "reason": "Hand-authored scene sc06 (section s3). Render: atelier component sc06. Continuous Scale Well frame. ATOM."
+        },
+        {
+          "id": "cut-sc07",
+          "source": "bespoke_sc07",
+          "in_seconds": 22.4,
+          "out_seconds": 28.567,
+          "layer": "primary",
+          "transition_in": "Continuous frame (the well persists; scene devices fade).",
+          "transition_duration": 0.0,
+          "reason": "Hand-authored scene sc07 (section s3). Render: atelier component sc07. Continuous Scale Well frame. PROTON."
+        },
+        {
+          "id": "cut-sc08",
+          "source": "bespoke_sc08",
+          "in_seconds": 28.567,
+          "out_seconds": 33.633,
+          "layer": "primary",
+          "transition_in": "Continuous frame (the well persists; scene devices fade).",
+          "transition_duration": 0.0,
+          "reason": "Hand-authored scene sc08 (section s4). Render: atelier component sc08. Continuous Scale Well frame. ELECTRON: no size found."
+        },
+        {
+          "id": "cut-sc09",
+          "source": "bespoke_sc09",
+          "in_seconds": 33.633,
+          "out_seconds": 40.167,
+          "layer": "primary",
+          "transition_in": "Continuous frame (the well persists; scene devices fade).",
+          "transition_duration": 0.0,
+          "reason": "Hand-authored scene sc09 (section s4). Render: atelier component sc09. Continuous Scale Well frame. the break and the Planck line."
+        },
+        {
+          "id": "cut-sc10",
+          "source": "bespoke_sc10",
+          "in_seconds": 40.167,
+          "out_seconds": 43.367,
+          "layer": "primary",
+          "transition_in": "Continuous frame (the well persists; scene devices fade).",
+          "transition_duration": 0.0,
+          "reason": "Hand-authored scene sc10 (section s5). Render: atelier component sc10. Continuous Scale Well frame. the number written out."
+        },
+        {
+          "id": "cut-sc11",
+          "source": "bespoke_sc11",
+          "in_seconds": 43.367,
+          "out_seconds": 45.2,
+          "layer": "primary",
+          "transition_in": "Continuous frame (the well persists; scene devices fade).",
+          "transition_duration": 0.0,
+          "reason": "Hand-authored scene sc11 (section s5). Render: atelier component sc11. Continuous Scale Well frame. the floor?."
+        },
+        {
+          "id": "cut-sc12",
+          "source": "bespoke_sc12",
+          "in_seconds": 45.2,
+          "out_seconds": 48.533,
+          "layer": "primary",
+          "transition_in": "Continuous frame (the well persists; scene devices fade).",
+          "transition_duration": 0.0,
+          "reason": "Hand-authored scene sc12 (section s5). Render: atelier component sc12. Continuous Scale Well frame. finished line."
+        }
+      ],
+      "music": {
+        "track_id": "M1",
+        "path": "assets/music/bed_raw.wav",
+        "volume": 1.0,
+        "duck_under_narration": true,
+        "duck_level_db": -12,
+        "fade_in_seconds": 0.0,
+        "fade_out_seconds": 0.6
+      },
+      "subtitles": {
+        "enabled": true,
+        "style": "word_highlight",
+        "source": "artifacts/props.json captionPages"
+      }
+    }
+  },
+  "cost_snapshot": {
+    "stage_cost_usd": 0.0,
+    "total_spent_usd": 0.4296,
+    "approved_budget_usd": 4.0
+  }
+}

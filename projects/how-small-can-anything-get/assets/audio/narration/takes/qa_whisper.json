@@ -1,0 +1,97 @@
+{
+ "s1": {
+  "wer": 0.0,
+  "hyp": "A grain of sand is about half a millimetre. A human hair is a tenth of that. And that's about where your eyes give up.",
+  "gaps_over_350ms": [
+   [
+    2.48,
+    0.44,
+    "millimetre."
+   ],
+   [
+    4.8,
+    0.48,
+    "that."
+   ]
+  ],
+  "peak_dbfs": -1.5,
+  "dur": 7.12,
+  "status": "PASS"
+ },
+ "s2": {
+  "wer": 0.0,
+  "hyp": "A red blood cell is ten times smaller again. Most viruses are smaller still, too small for any ordinary microscope to see.",
+  "gaps_over_350ms": [
+   [
+    2.84,
+    0.72,
+    "again."
+   ],
+   [
+    5.24,
+    0.52,
+    "still,"
+   ]
+  ],
+  "peak_dbfs": -3.1,
+  "dur": 8.8,
+  "status": "PASS"
+ },
+ "s3": {
+  "wer": 0.0,
+  "hyp": "An atom is a thousand times smaller than a virus. And the proton at its centre is sixty thousand times smaller than the atom.",
+  "gaps_over_350ms": [
+   [
+    3.16,
+    0.54,
+    "virus."
+   ]
+  ],
+  "peak_dbfs": -6.0,
+  "dur": 8.64,
+  "status": "PASS"
+ },
+ "s4": {
+  "wer": 0.0,
+  "hyp": "Electrons are so small that no experiment has found any size at all. Below that, physicists point to the Planck length, twenty more zeros down.",
+  "gaps_over_350ms": [
+   [
+    4.58,
+    0.7,
+    "all."
+   ],
+   [
+    5.78,
+    0.42,
+    "that,"
+   ],
+   [
+    7.98,
+    0.38,
+    "length,"
+   ]
+  ],
+  "peak_dbfs": -2.0,
+  "dur": 10.24,
+  "status": "PASS"
+ },
+ "s5": {
+  "wer": 0.0,
+  "hyp": "Thirty -four zeros after the decimal point. Maybe that's the floor. Or maybe there isn't one.",
+  "gaps_over_350ms": [
+   [
+    2.46,
+    0.78,
+    "point."
+   ],
+   [
+    4.36,
+    0.72,
+    "floor."
+   ]
+  ],
+  "peak_dbfs": -8.0,
+  "dur": 6.96,
+  "status": "PASS"
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "version": "1.0",
+ "output_path": "/home/user/OpenMontage/projects/how-small-can-anything-get/renders/how-small-can-anything-get.mp4",
+ "status": "pass",
+ "recommended_action": "present_to_user",
+ "checks": {
+  "technical_probe": {
+   "valid_container": true,
+   "duration_seconds": 48.533,
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "has_audio": true,
+   "codec": "h264",
+   "file_size_bytes": 7608034,
+   "issues": []
+  },
+  "visual_spotcheck": {
+   "frames_sampled": 1456,
+   "frame_paths": [
+    "/home/user/OpenMontage/projects/how-small-can-anything-get/renders/master_sheet.jpg"
+   ],
+   "black_frames_detected": false,
+   "broken_overlays": false,
+   "missing_assets": false,
+   "unreadable_text": false,
+   "issues": [
+    "YOUR EYE and LIGHT MICROSCOPE labels hide the decade numbers beside them while shown (QA A2, accepted).",
+    "The readout card sits beside the VIRUS row, not near the Planck line it describes (QA A3, accepted).",
+    "The Planck label and placard 4 are close (QA A5).",
+    "The right column is empty during s4 (QA A7)."
+   ]
+  },
+  "audio_spotcheck": {
+   "issues": [
+    "Bed duck has a 300 ms look-ahead before every voiced run (new in video 17) so cues on a section's first frame clear the bed; the closing duck is -9.5 dB (not -13) to keep the mono fold above -42 dBFS."
+   ]
+  },
+  "promise_preservation": {
+   "render_runtime_used": "remotion",
+   "issues": [
+    "None: providers, models and cap as proposed; SFX reused from video 16 at no cost."
+   ]
+  },
+  "subtitle_check": {
+   "issues": [
+    "'Maybe', 'after', s4 'that' and 'sand' highlight ~2 f early, at the edge of the +-2 f tolerance (QA A6); 'blood' and 'that,' unmeasurable under the bed."
+   ]
+  }
+ }
+}

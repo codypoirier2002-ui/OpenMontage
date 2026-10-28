@@ -1,0 +1,168 @@
+{
+ "s1": {
+  "raw_file": "assets/audio/narration/s1.wav",
+  "raw_duration": 7.12,
+  "lead_trimmed_s": 0.02,
+  "tail_trimmed_s": 0.0,
+  "last_20ms_db_re_peak": -80.4,
+  "internal_silences_ge_0.2s_[start,dur]": [
+   [
+    2.47,
+    0.44
+   ],
+   [
+    4.84,
+    0.46
+   ]
+  ],
+  "lesson29": "2 internal pauses >= 0.2 s for 2 internal punctuation marks: all at punctuation (nothing cut)",
+  "in_I_lufs": -21.5,
+  "in_TP_dbfs": -1.6,
+  "gain_db": 0.0,
+  "gain_tp_capped": false,
+  "out_I_lufs": -21.5,
+  "out_TP_dbfs": -1.6,
+  "normalisation": "ONE constant linear gain (no loudnorm, no dynamics)",
+  "gap_after": 1.2,
+  "script_pause_after": 0.35,
+  "duration": 8.3,
+  "start_in_full": 0.0,
+  "speech_s": 7.1,
+  "file": "assets/audio/narration/clean/s1.wav"
+ },
+ "s2": {
+  "raw_file": "assets/audio/narration/s2.wav",
+  "raw_duration": 8.8,
+  "lead_trimmed_s": 0.0,
+  "tail_trimmed_s": 0.0,
+  "last_20ms_db_re_peak": -92.0,
+  "internal_silences_ge_0.2s_[start,dur]": [
+   [
+    2.94,
+    0.54
+   ],
+   [
+    5.42,
+    0.42
+   ]
+  ],
+  "lesson29": "2 internal pauses >= 0.2 s for 2 internal punctuation marks: all at punctuation (nothing cut)",
+  "in_I_lufs": -20.9,
+  "in_TP_dbfs": -3.1,
+  "gain_db": -0.6,
+  "gain_tp_capped": false,
+  "out_I_lufs": -21.5,
+  "out_TP_dbfs": -3.7,
+  "normalisation": "ONE constant linear gain (no loudnorm, no dynamics)",
+  "gap_after": 1.2,
+  "script_pause_after": 0.4,
+  "duration": 10.0,
+  "start_in_full": 8.3,
+  "speech_s": 8.8,
+  "file": "assets/audio/narration/clean/s2.wav"
+ },
+ "s3": {
+  "raw_file": "assets/audio/narration/s3.wav",
+  "raw_duration": 8.64,
+  "lead_trimmed_s": 0.02,
+  "tail_trimmed_s": 0.015,
+  "last_20ms_db_re_peak": -86.1,
+  "internal_silences_ge_0.2s_[start,dur]": [
+   [
+    3.36,
+    0.32
+   ]
+  ],
+  "lesson29": "1 internal pauses >= 0.2 s for 1 internal punctuation marks: all at punctuation (nothing cut)",
+  "in_I_lufs": -21.5,
+  "in_TP_dbfs": -5.6,
+  "gain_db": 0.0,
+  "gain_tp_capped": false,
+  "out_I_lufs": -21.5,
+  "out_TP_dbfs": -5.6,
+  "normalisation": "ONE constant linear gain (no loudnorm, no dynamics)",
+  "gap_after": 1.2,
+  "script_pause_after": 0.4,
+  "duration": 9.805,
+  "start_in_full": 18.3,
+  "speech_s": 8.605,
+  "file": "assets/audio/narration/clean/s3.wav"
+ },
+ "s4": {
+  "raw_file": "assets/audio/narration/s4.wav",
+  "raw_duration": 10.24,
+  "lead_trimmed_s": 0.07,
+  "tail_trimmed_s": 0.025,
+  "last_20ms_db_re_peak": -88.6,
+  "internal_silences_ge_0.2s_[start,dur]": [
+   [
+    4.55,
+    0.55
+   ],
+   [
+    5.75,
+    0.29
+   ],
+   [
+    7.98,
+    0.27
+   ]
+  ],
+  "lesson29": "3 internal pauses >= 0.2 s for 3 internal punctuation marks: all at punctuation (nothing cut)",
+  "in_I_lufs": -21.0,
+  "in_TP_dbfs": -1.9,
+  "gain_db": -0.5,
+  "gain_tp_capped": false,
+  "out_I_lufs": -21.5,
+  "out_TP_dbfs": -2.4,
+  "normalisation": "ONE constant linear gain (no loudnorm, no dynamics)",
+  "gap_after": 1.45,
+  "script_pause_after": 0.45,
+  "duration": 11.595,
+  "start_in_full": 28.105,
+  "speech_s": 10.145,
+  "file": "assets/audio/narration/clean/s4.wav"
+ },
+ "s5": {
+  "raw_file": "assets/audio/narration/s5.wav",
+  "raw_duration": 6.96,
+  "lead_trimmed_s": 0.0,
+  "tail_trimmed_s": 0.02,
+  "last_20ms_db_re_peak": -84.8,
+  "internal_silences_ge_0.2s_[start,dur]": [
+   [
+    2.68,
+    0.62
+   ],
+   [
+    4.56,
+    0.5
+   ]
+  ],
+  "lesson29": "2 internal pauses >= 0.2 s for 2 internal punctuation marks: all at punctuation (nothing cut)",
+  "in_I_lufs": -27.0,
+  "in_TP_dbfs": -7.9,
+  "gain_db": 5.5,
+  "gain_tp_capped": false,
+  "out_I_lufs": -21.6,
+  "out_TP_dbfs": -2.4,
+  "normalisation": "ONE constant linear gain (no loudnorm, no dynamics)",
+  "gap_after": 0.0,
+  "script_pause_after": 0.0,
+  "duration": 6.94,
+  "start_in_full": 39.7,
+  "speech_s": 6.94,
+  "file": "assets/audio/narration/clean/s5.wav"
+ },
+ "total_seconds": 46.64,
+ "film_estimate_s": 48.52,
+ "gaps": {
+  "s1": 1.2,
+  "s2": 1.2,
+  "s3": 1.2,
+  "s4": 1.45,
+  "s5": 0.0
+ },
+ "target_lufs": -21.5,
+ "process": "    python3 projects/how-small-can-anything-get/process_narration.py        # from the repo root\n\nCopied from projects/how-a-cat-lands/process_narration.py (video 15, QA passed). NO loudnorm: each section gets ONE\nCONSTANT linear gain (video 13 QA: loudnorm fell back to dynamic normalisation).\n\nThe assets stage delivered UNTRIMMED, UN-NORMALISED takes (assets/audio/narration/sN.wav, 48 kHz mono, take 1 of every\nsection; Whisper QA passed verbatim). This script makes the only WAVs used from here on for alignment, OVERRIDES, the premix\nand QA A:\n\n  1. Lead / tail: keep LEAD_PRE_S before the first 5 ms block above -50 dB re. the section peak, and TAIL_POST_S after the\n     last one (3 ms fade-in, 20 ms fade-out on digital near-silence). No take ends on a click (asserted: the last 20 ms of\n     every trimmed section sit < -60 dB re. its peak).\n  2. Loudness: ONE constant gain per section so every section measures TARGET_LUFS integrated (ffmpeg ebur128 on the\n     trimmed section), capped so the true peak stays <= TP_MAX (recorded, never compressed). The premix sets the delivery\n     loudness with one master gain.\n  3. + the section GAP as digital silence at the end of each file (s1-s4), so align_narration.py lays the sections back to\n     back unchanged. THE READ IS SHORT (42.56 s raw vs 49.2 s planned; lesson 48): the script's pause_after (0.35 / 0.4 /\n     0.4 / 0.45 s) would put the film at ~45 s, the bottom of the window, so the gaps are WIDENED (GAPS: 1.2 / 1.2 / 1.2 s\n     after s1-s3, 1.45 s after s4 = the beat before the LHC close); with the 0.5 s lead-in and the 1.5 s settle after 'way'\n     the film is >= 45.2 s (asserted below on the estimate; align_narration.py measures it).\nLesson 29 (baked-in pauses): every internal silence >= 0.2 s of every section is listed in process_report.json with the\npreceding script punctuation check; all sit at punctuation (asserted: their count per section <= the section's internal\npunctuation marks), so NOTHING is cut. s4's 0.28 s breath after 'Light' (assets_report: the '[awed]' delivery, floor -71\ndB, not digital silence) is KEPT: it reads as the awe the script asks for and sits inside the first clause.\nThe lesson-30 lift on 'way' is NOT applied here (the clean WAVs stay the untouched alignment / QA reference):\nbuild_soundtrack.py applies it as a constant gain on the voice lane of the premix.\n"
+}
