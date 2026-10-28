@@ -4,14 +4,14 @@ align_narration.py and prepare_media.py):
 
     python3 projects/how-long-can-anything-last/sync_scene_plan.py
 
-Video 17 ("How Small Can Anything Get?", the Scale Well). The plan was copied from video 16; this script makes its metadata
-video 17's and keeps it in step with the build:
-  * every scene's start / end from the measured timeline (anchor onset - 2 f; artifacts/timeline.json); metadata.total_*
-    = the film; the planned values stay in metadata.planned_total_*;
-  * metadata.captions.pages = the caption pages AS BUILT (re-flowed from the narration: <= 2 lines, <= 6 words, every claim
-    starts its own page, no 2-word orphans); build_props.py reads them and asserts they cover the narration;
-  * metadata.placards (4, the source rail), verified_on_screen_strings, forbidden_on_screen, honesty_grammar, stills
-    (S1-S3 as staged by prepare_media.py, crop boxes from media_report.json), safe_areas as built (theme.ts L);
+Video 19 ("How Long Can Anything Last?", the Lifespan Column). The plan was drafted before the build; this script makes its
+metadata the build's and keeps it in step:
+  * every scene's start / end from the measured timeline (anchor onset - 2 f; artifacts/timeline.json) and a description of what
+    the scene shows; metadata.total_* = the film; the planned values stay in metadata.planned_total_*;
+  * metadata.captions.pages = the caption pages AS BUILT (<= 2 lines, <= 6 words, every claim starts its own page, no 2-word
+    orphans); build_props.py reads them and asserts they cover the narration;
+  * metadata.placards (5, the source rail), palette, signature device, verified_on_screen_strings, forbidden_on_screen,
+    honesty_grammar, stills (S1-S3 as staged by prepare_media.py), safe_areas as built (theme.ts L);
   * metadata.foundation_changes lists the divergences; validated against schemas/artifacts/scene_plan.schema.json.
 """
 from __future__ import annotations
@@ -24,30 +24,49 @@ import jsonschema
 P = Path("projects/how-long-can-anything-last")
 
 PAGES = [
-    ("s1", "A grain of sand"), ("s1", "is about half a millimetre."), ("s1", "A human hair"), ("s1", "is a tenth of that."),
-    ("s1", "And that's about where"), ("s1", "your eyes give up."),
-    ("s2", "A red blood cell"), ("s2", "is ten times smaller again."), ("s2", "Most viruses are smaller still,"),
-    ("s2", "too small for any ordinary"), ("s2", "microscope to see."),
-    ("s3", "An atom is a thousand"), ("s3", "times smaller than a virus."), ("s3", "And the proton at its centre"),
-    ("s3", "is sixty thousand times smaller"), ("s3", "than the atom."),
-    ("s4", "Electrons are so small"), ("s4", "that no experiment has found"), ("s4", "any size at all."),
-    ("s4", "Below that, physicists point"), ("s4", "to the Planck length,"), ("s4", "twenty more zeros down."),
-    ("s5", "Thirty-four zeros after the decimal point."), ("s5", "Maybe that's the floor."), ("s5", "Or maybe there isn't one."),
+    ("s1", "An adult mayfly"), ("s1", "lives about a day."), ("s1", "You live about seventy-three years."),
+    ("s1", "A tortoise named Jonathan"), ("s1", "is nearly two hundred."),
+    ("s2", "A Greenland shark can live"), ("s2", "about four hundred years."),
+    ("s2", "The oldest known tree,"), ("s2", "a bristlecone pine,"), ("s2", "is nearly five thousand."),
+    ("s3", "The Sun will shine"), ("s3", "for about ten billion years."),
+    ("s3", "A small red dwarf star,"), ("s3", "for four trillion."),
+    ("s4", "A proton, though,"), ("s4", "has never been seen to decay."), ("s4", "It would take more than"), ("s4", "a billion trillion trillion years."),
+    ("s5", "That's thirty-three zeros,"), ("s5", "and still nobody"), ("s5", "has caught one going."),
+    ("s5", "Maybe something really does last forever."),
 ]
 PLACARDS = [
-    {"scenes": "sc01-sc03", "text": "sand ~0.06-2 mm (Wentworth) · hair 17-180 µm", "fine_print": "naked-eye limit ~0.04-0.1 mm, varies"},
-    {"scenes": "sc04-sc05", "text": "red blood cell ~8 µm · influenza ~100 nm (NCBI)", "fine_print": "light-microscope limit ~200 nm (Abbe)"},
-    {"scenes": "sc06-sc07", "text": "proton radius 0.8414 fm (CODATA 2018)", "fine_print": "atom ~0.1-0.3 nm across"},
-    {"scenes": "sc08-sc12", "text": "electron: no size found, < 10⁻¹⁸ m", "fine_print": "Planck length 1.6 × 10⁻³⁵ m: not proven to be a minimum"},
+    {"scenes": "sc01-sc02", "text": "mayfly adults ~30 min-2 days (NC State) · people 73.3 yr (WHO)", "fine_print": "global life expectancy at birth, 2023"},
+    {"scenes": "sc03-sc05", "text": "Jonathan ~193 yr (Guinness) · shark 392 ± 120 yr (Nielsen 2016)", "fine_print": "oldest known bristlecone ~4,850 yr (Guinness)"},
+    {"scenes": "sc06-sc07", "text": "Sun ~10 billion yr (NASA) · red dwarf ~4 trillion yr (Space.com)", "fine_print": "stellar-model predictions, not measured lifetimes"},
+    {"scenes": "sc08-sc11", "text": "no proton decay seen: lifetime > 10³³ yr (Super-Kamiokande)", "fine_print": "a lower limit, not a measured lifetime"},
+    {"scenes": "sc12", "text": "whether protons decay at all is unknown (APS Physics)", "fine_print": "some theories predict decay near 10³⁴-10³⁶ yr"},
 ]
-DECADES = [f"10⁻{''.join('⁰¹²³⁴⁵⁶⁷⁸⁹'[int(c)] for c in str(n))} m" for n in range(3, 19)]
-VERIFIED = ["metres · log scale", *DECADES, "ZEROS", *[str(n) for n in range(0, 35)],
-            "SAND · ~0.5 mm", "HAIR · ~70 µm", "RED BLOOD CELL · ~8 µm", "VIRUS · ~100 nm", "ATOM · ~0.1 nm", "PROTON · ~1.7 fm across",
-            "YOUR EYE · ~0.1 mm", "LIGHT MICROSCOPE · ~200 nm", "ELECTRON", "no size found · < 10⁻¹⁸ m", "PLANCK LENGTH · 1.6 × 10⁻³⁵ m",
-            "a floor? unproven", "0." + "0" * 34 + "16 m", "to scale, this dot would be ~0.006 px", "AI impression", "drawn · not to scale",
-            "What's the smallest thing you've ever seen?"]
-FORBIDDEN = ["smallest possible (the Planck length is not proven to be a minimum)", "proven floor", "electrons are points",
-             "the smallest thing in the universe", "actual size"]
+SUPD = "⁰¹²³⁴⁵⁶⁷⁸⁹"
+DECADES = [f"10{''.join('⁻' if c == '-' else SUPD[int(c)] for c in str(n))} yr" for n in range(-3, 34, 3)]
+RUNG_LINES = ["MAYFLY · ~1 day", "YOU · ~73 yr", "TORTOISE · ~190 yr", "SHARK · ~400 yr", "PINE · ~4,800 yr", "SUN · ~10 billion yr", "RED DWARF · ~4 trillion yr",
+              "PROTON", "> 10³³ yr", "lower limit"]
+READOUT = "1" + "0" * 33 + " yr"
+VERIFIED = ["years · log scale", *DECADES, "ZEROS", *[str(n) for n in range(0, 34)], *RUNG_LINES,
+            "forever?", "Sun", "red dwarf", "~10 billion yr", "~4 trillion yr", "no decay seen", "water detector", READOUT,
+            "AI impression", "drawn · not to scale", "What's the oldest thing you've ever seen?"]
+FORBIDDEN = ["proven forever (no proton decay is a lower limit, not a lifetime)", "protons last forever", "protons are stable", "the red dwarf has died",
+             "red dwarfs live trillions of years (observed)", "actual size"]
+
+
+SCENE_TEXT = {
+    "sc01": "Render: atelier component sc01. 'Lifespan Column': the rail draws bottom -> top; the marker sits on MAYFLY ~1 day, ZEROS 0 seats on 'day'.",
+    "sc02": "Render: atelier component sc02. The marker climbs to YOU ~73 yr (ZEROS 1).",
+    "sc03": "Render: atelier component sc03. The window opens on the AI tortoise plate; TORTOISE ~190 yr seats (ZEROS 2).",
+    "sc04": "Render: atelier component sc04. The window crossfades to the AI Greenland shark plate; SHARK ~400 yr seats (ZEROS stays 2).",
+    "sc05": "Render: atelier component sc05. The window crossfades to the AI bristlecone pine plate; PINE ~4,800 yr seats (ZEROS 3).",
+    "sc06": "Render: atelier component sc06. The window shows a DRAWN Sun; the marker climbs to SUN ~10 billion yr, ZEROS 4 -> 10.",
+    "sc07": "Render: atelier component sc07. A much smaller DRAWN red dwarf joins the Sun; RED DWARF ~4 trillion yr seats (ZEROS 12).",
+    "sc08": "Render: atelier component sc08. The window shows a DRAWN detector tank, nothing flashing, 'no decay seen'.",
+    "sc09": "Render: atelier component sc09. The marker climbs to the PROTON's lower limit (> 10^33 yr, dashed open rung + up arrow) as ZEROS runs 12 -> 33; the rail BREAKS above it.",
+    "sc10": "Render: atelier component sc10. The readout types 1 followed by 33 zeros under the tank window.",
+    "sc11": "Render: atelier component sc11. The readout holds, then fades; the tank stays quiet.",
+    "sc12": "Render: atelier component sc12. A dashed 'forever?' line rises through the break under the MAYBE tab; the finished line, the settle, the CTA.",
+}
 
 
 def main() -> None:
@@ -72,36 +91,60 @@ def main() -> None:
         words.setdefault(w["section"], []).append(w["text"])
     for sid, toks in words.items():
         assert " ".join(t for s_, t in PAGES if s_ == sid) == " ".join(toks), ("caption pages do not cover the narration", sid)
+    md.setdefault("captions", {})
     md["captions"]["pages"] = [{"section": s_, "page": t} for s_, t in PAGES]
     md["captions"]["note"] = "re-flowed by the foundation (lesson 3): every claim starts its own page; <= 2 lines / <= 6 words; no 2-word orphan"
     md["placards"] = PLACARDS
     md["verified_on_screen_strings"] = VERIFIED
     md["forbidden_on_screen"] = FORBIDDEN
-    md["honesty_grammar"] = ("MEASURED solid tab (sand, hair, cell, virus, atom, proton, electron's upper bound); PROBABLY outline + hatch (the "
-                             "naked-eye limit); MAYBE dashed ghost (the Planck length as a floor, from 'Below that,' to the end of s5); IDLE at the CTA. "
-                             "AI plates S1-S3 tagged 'AI impression'; the atom is 'drawn · not to scale'. The rail is labelled 'metres · log scale'.")
+    md["honesty_grammar"] = ("MEASURED solid tab (people's life expectancy; the proton's LOWER LIMIT, sublabel 'lower limit'; the arithmetic of the zeros); "
+                             "PROBABLY outline + hatch (mayfly, tortoise, shark, pine, the Sun, the red dwarf: estimates and stellar models); MAYBE dashed ghost "
+                             "(the closing 'forever', from 'Maybe' to the end of s5); IDLE at the CTA. AI plates S1-S3 tagged 'AI impression'; the Sun inset and "
+                             "the detector tank are 'drawn · not to scale'. The rail is labelled 'years · log scale'.")
+    md["palette"] = {"Night Ink (sky)": "#0B0E16 -> #05060A", "Steel (rail, ticks)": "#AEB8C2", "Marker (ONLY the marker)": "#BFF6FF",
+                     "Chip / card": "#121722", "Bone (text)": "#F4EFE6", "Sun / red dwarf tints": "#FFE3A3 / #D9654A (only the two drawn discs in the Sun inset)",
+                     "red": "none: the red wall of video 16 is dropped"}
+    md["signature_device"] = ("One log-scale lifespan rail in years (10^-4 to 10^33) with a single white-cyan marker that CLIMBS rung by rung (MAYFLY ~1 day to PROTON > 10^33 yr) while a ZEROS "
+                              "counter ticks 0 -> 33; the PROTON is an open, dashed rung with an up arrow (a lower limit), the rail BREAKS above it and a dashed 'forever?' line rises to the top.")
+    md["hero_beats"] = ["sc09 the marker climbs from the red dwarf to the proton's lower limit while ZEROS runs 12 -> 33 and the rail breaks above it",
+                        "sc12 the dashed 'forever?' line rises through the break under the MAYBE tab"]
+    md["series_style"] = "Lifespan Column: video 16-18's ladder engine, ascending in years (video 18's layout)"
+    md["taste_profile"] = {"design_read": "Youth science short: one long climb from a day to thirty-three zeros of years, ending on a dashed line that nobody can measure.",
+                           "visual_variance": 4, "motion_intensity": 4, "information_density": 4,
+                           "palette_discipline": "Night ink, steel rail, ONE white-cyan marker; no red; the two stars tinted only inside their drawn inset.",
+                           "layout_variation": "Log rail + marker, zeros counter, AI plates then drawn insets, the typed 1 + 33 zeros readout.",
+                           "reference_strategy": "Numbers from the brief only; AI stills as short tagged inserts.",
+                           "anti_patterns": ["'protons last forever' as fact", "a measured lifetime for the proton", "a red dwarf drawn to scale", "any flash in the detector"],
+                           "quality_gates": ["Every rung's number matches the brief", "Log scale labelled as such", "The proton rung is a LOWER LIMIT (dashed, open, 'lower limit')", "Closing claim is MAYBE"]}
+    md["risks"] = [{"risk": "Log scale misread as linear", "fallback": "'years · log scale' label + a power of ten every 3 decades"},
+                   {"risk": "A lower limit read as a lifetime", "fallback": "dashed open rung, up arrow, 'lower limit' in the chip, the tab sublabel and the placard"},
+                   {"risk": "Detector drawing implies decays were seen", "fallback": "nothing flashes; 'no decay seen' seats in the tank"}]
+    md["ending"] = {"rule": "finished line", "closing_line": "Maybe something really does last forever.", "settle_seconds": 1.5, "loop_cut": "optional only"}
+    md["audio"] = {**md.get("audio", {}), "duck_db": 12, "alignment": "last tonic pinned by assets/music/music_qa.json; chord ~0.15 s after 'forever.'; duck deeper + a voice-only lift on the soft closing sentence"}
+    for sc in plan["scenes"]:
+        sc["description"] = SCENE_TEXT[sc["id"]]
     md["stills"] = [{"still_id": k, "name": Path(v.get("source", v["file"])).stem, "output_path": v.get("source"), "used_in": [v["scene"]],
                      "placeholder": v["placeholder"], "window": v["window"], "crop_px": v.get("crop_px"), "crop_pct": v.get("crop_pct"),
                      "honesty": "'AI impression' tag while visible."} for k, v in media["plates"].items()]
     md["safe_areas"] = {
         "top_ui_y": 192, "bottom_ui_y": 1574, "right_rail": 929,
-        "rail": {"x": [100, 330], "y": [380, 1110], "note": "spine x 250, L = -log10(m): y = 380 + (L - 3) * 620 / 15; decade powers right-aligned at x 224; the break y 1012-1040; the Planck line y 1080"},
-        "rung_labels": {"x": [280, 572], "note": "chips de-overlapped top-down with leaders; never under the open window (build_props asserts)"},
-        "reference_labels": {"x": [40, 224], "note": "'YOUR EYE' / 'LIGHT MICROSCOPE' left of the rail (the decade powers under them are hidden)"},
-        "window": {"x": [580, 920], "y": [440, 893], "note": "S1 sand, S2 blood cells, S3 virus, then the DRAWN atom"},
+        "rail": {"x": [100, 330], "y": [206, 1020], "note": "spine x 250, L = log10(years): y = 1020 - (L + 4) * 520 / 37; powers every 3 right-aligned at x 224; the PROTON at y 500, the break y 432-458, the dashed 'forever?' line to y 240, its label y 206-250"},
+        "rung_labels": {"x": [280, 572], "note": "chips de-overlapped bottom-up with leaders; never under the open window (build_props asserts)"},
+        "axis_label": {"x": [100, 400], "y": [1050, 1078]},
+        "window": {"x": [580, 920], "y": [440, 893], "note": "S1 tortoise, S2 shark, S3 pine, then the DRAWN Sun + red dwarf, then the DRAWN detector tank"},
         "counter": {"x": [640, 920], "y": [220, 340], "note": "the ZEROS chip, right-aligned at x 920"},
-        "electron": {"x": [270, 700], "y": [960, 1040], "scenes": "sc08-sc12"},
-        "readout": {"x": [580, 920], "y": [470, 600], "scenes": "sc10-sc12"},
+        "readout": {"x": [580, 920], "y": [930, 1060], "scenes": "sc10-sc11", "note": "1 + 33 zeros card under the window"},
         "placard_rail": {"x": [140, 912], "y": [1124, 1204]}, "honesty_tab": {"x": [140, 628], "y": [1236, 1290]},
         "caption_slab": {"x": [140, 940], "y": [1296, 1488]},
     }
     md["foundation_changes"] = [
-        "Copied from video 16 (Speed Ladder); the visual layer is the Scale Well: the log ladder flipped DOWNWARD in metres (top 1 mm, bottom 10⁻¹⁸ m).",
-        "Caption pages re-flowed from the narration (lesson 3): each claim starts its own page; 'And that's about where' / 'your eyes give up.' is two pages (8 words > 6), the PROBABLY key sits on the first.",
-        "The reference lines' labels (YOUR EYE, LIGHT MICROSCOPE) sit LEFT of the rail (they are 6 / 12 px from the HAIR / VIRUS rungs; on the right they would shove seated chips).",
-        "Superscripts (⁻ ⁴-⁹ ⁰) are in none of the faces: the powers are DRAWN as raised text >= 24 px (shared/Type.tsx <Sci>).",
-        "PROTON is a two-line chip (name over '~1.7 fm across') so it fits beside the open window.",
-        "script.json claim_tags are still video 16's: build_props.py keys the meter from its own CLAIMS (the brief's grades) instead of asserting against them.",
+        "Built on video 18's ascending engine (Weight Column) re-dressed in years: bottom 10^-4 yr (about an hour), top = the PROTON's lower limit 10^33 yr at y 500.",
+        "The PROTON is an OPEN rung (dashed tick + up arrow, three-line chip with 'lower limit'); the rail breaks above it and a dashed 'forever?' line rises to y 240.",
+        "ZEROS = the power of ten of the active rung's years; MAYFLY shows 0 (under a year); SHARK keeps 2; the run 12 -> 33 accelerates across the PROTON climb and lands ON 'years'.",
+        "Window states: AI tortoise / shark / pine, a DRAWN Sun + red dwarf, a DRAWN detector tank (open to sc11); the typed readout sits under the window (y 930-1060), fading before the MAYBE glide.",
+        "Honesty: the tab sublabel 'lower limit' on the PROTON and ZEROS keys; the tortoise's age is an estimate (PROBABLY). No red anywhere except the dwarf disc.",
+        "The closing sentence is soft: a voice-only lift (+5.5 dB, from 'Maybe') and a -12 dB closing duck; script.json claim_tags are not used (build_props.py CLAIMS).",
+        "Superscripts are in none of the faces: the powers are DRAWN as raised text >= 24 px (shared/Type.tsx <Sci>).",
     ]
     schema = json.loads(Path("schemas/artifacts/scene_plan.schema.json").read_text())
     jsonschema.validate(plan, schema)

@@ -1,4 +1,4 @@
-// sc05 · Virus. root: S2 -> S3 from plateSwap2, VIRUS seats on virusSeat (ZEROS 6), 'LIGHT MICROSCOPE' draws ON lightLine, the window closes from windowClose1. Here: rings on the seat and the line.
+// sc01 · Mayfly. root: the rail draws bottom -> top from railDraw, MAYFLY seats with its number on mayflySeat, ZEROS 0. Here: a glint riding the draw head + a ring on the MAYFLY seat.
 // The ladder, chips, counter, window and the root devices are ROOT-owned (Composition.tsx); a scene adds emphasis only, keyed
 // through useT(). Hooks at the top, before any early return (lesson 1).
 import React from "react";
@@ -7,18 +7,18 @@ import type { Mount, SceneProps } from "../../types";
 import { Ping } from "../../shared/Devices";
 import { useT } from "../../time";
 import { L } from "../../theme";
-
+import { RailGlint } from "./_fx";
 
 export const mount: Mount = { pre: 0, post: 0, z: 1 };
 
-export const Virus: React.FC<SceneProps> = ({ from, to }) => {
+export const Mayfly: React.FC<SceneProps> = ({ from, to }) => {
   const frame = useCurrentFrame();
   const T = useT();
   if (frame < from || frame >= to) return null;
   return (
     <>
-      <Ping at={T.sfx.virusSeat} x={L.rail.x} y={T.railY(T.rung("virus").L)} />
-      <Ping at={T.sfx.lightLine} x={L.rail.x} y={T.railY(T.dev.refs[1].L)} r1={34} />
+      <RailGlint />
+      <Ping at={T.sfx.mayflySeat} x={L.rail.x} y={T.railY(T.rung("mayfly").L)} />
     </>
   );
 };

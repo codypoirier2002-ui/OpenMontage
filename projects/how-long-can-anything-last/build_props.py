@@ -4,30 +4,29 @@
     python3 projects/how-long-can-anything-last/build_props.py          # write
     python3 projects/how-long-can-anything-last/build_props.py --check  # print pages + schedules only
 
-Video 17 "How Small Can Anything Get?" / the SCALE WELL. Copied from projects/how-fast-can-anything-go/build_props.py (video
-16, QA passed) and flipped: the log ladder runs DOWNWARD in metres (L = -log10(m)). Inputs: artifacts/timeline.json (aligned
-words, sections, scene windows), artifacts/scene_plan.json (caption pages, placards, verified / forbidden strings: written by
-sync_scene_plan.py), artifacts/soundtrack_report.json (key frames + motion constants: build_soundtrack.py owns K, asserted
-== build_soundtrack.key_frames(timeline)), artifacts/media_report.json (the window plates). Everything out is ABSOLUTE frames.
+Video 19 "How Long Can Anything Last?" / the LIFESPAN COLUMN. Copied from projects/how-heavy-can-anything-get/build_props.py (video
+18, QA passed): the log ladder climbs in YEARS (L = log10(years)). Inputs: artifacts/timeline.json (aligned words, sections, scene
+windows), artifacts/scene_plan.json (caption pages, placards, verified / forbidden strings: written by sync_scene_plan.py),
+artifacts/soundtrack_report.json (key frames + motion constants: build_soundtrack.py owns K, asserted == build_soundtrack.
+key_frames(timeline)), artifacts/media_report.json (the window plates). Everything out is ABSOLUTE frames.
 
-Caption pages: scene_plan.metadata.captions.pages (<= 2 lines / <= 6 words, every claim starts its own page, no 2-word
-orphan; asserted to cover the narration word for word); the line break is chosen with Bricolage Grotesque 800 @ 58 px
-advance widths against a 700 px budget. Exit = 4 f after the page's last word ends (held >= 36 f when the next page allows),
-clipped / butted to the next page (lesson 6). The CTA takes the slab ON ctaFrame.
+Caption pages: scene_plan.metadata.captions.pages (<= 2 lines / <= 6 words, every claim starts its own page, no 2-word orphan;
+asserted to cover the narration word for word); the line break is chosen with Bricolage Grotesque 800 @ 58 px advance widths
+against a 700 px budget. Exit = 4 f after the page's last word ends (held >= 36 f when the next page allows), clipped / butted to
+the next page (lesson 6). The CTA takes the slab ON ctaFrame.
 
-Honesty meter (lesson 3: keyed to the START of the caption page carrying the claim; consecutive pages of one claim merge; a
-new claim of the same grade pulses): SAND, HAIR MEASURED; EYE PROBABLY; CELL, VIRUS, ATOM, PROTON, ELECTRON (upper bound)
-MEASURED; PLANCK MAYBE from 'Below that,' through all of s5; IDLE at the CTA. (script.json's claim_tags are still video 16's:
-the grades here are the brief's.)
+Honesty meter (lesson 3: keyed to the START of the caption page carrying the claim; a new claim of the same grade pulses):
+MAYFLY PROBABLY; YOU MEASURED; TORTOISE, SHARK, PINE, SUN, RED DWARF PROBABLY; PROTON MEASURED (a LOWER LIMIT: sublabel 'lower limit');
+ZEROS (the arithmetic) MEASURED; the closing 'forever' MAYBE from 'Maybe' to the end of s5; IDLE at the CTA.
 
-THE LADDER: props.ladder.markerL descends rung by rung on eased moves whose FIRST MOVING FRAME is descend* and which END ON
-*Seat (asserted); rung chips seat on their seats with their numbers (Ladder.tsx, T.seat); props.counter (ZEROS = zeros after
-the decimal point of the active rung's metres, asserted on every seat; 7/8/9 on atomTicks, 10..14 on protonTicks, then an
-accelerating spin 15..34 landing 34 ON spinEnd); props.window (S1 sand -> S2 cells -> S3 virus, the drawn ATOM); props.devices
-(the reference lines, the electron bracket, the break, the Planck line, the readout, the atom note). Asserted: chips never sit
-under the open window and never overlap each other or the electron labels; claim graphics (window states, the atom note) are
-gone >= 6 f before the next tab glide; placards exit >= 6 f before the next glide; every channel is constant from the release
-(lesson 25); a literal scan of scenes/u*/ against verified_on_screen_strings / forbidden_on_screen (lesson 20).
+THE LADDER: props.ladder.markerL climbs rung by rung on eased moves whose FIRST MOVING FRAME is climb* and which END ON *Seat
+(asserted, length <= CLIMB_F); rung chips seat on their seats with their numbers (Ladder.tsx, T.seat); the marker ghosts (0.3) from
+foreverDraw (lesson 60); props.counter (ZEROS = the power of ten of the active rung's years, asserted on every seat, MAYFLY shows 0;
+steps ON every *Ticks frame; 12 -> 33 accelerating across the PROTON climb, 33 ON protonSeat); props.window (S1 tortoise -> S2 shark
+-> S3 pine, the drawn Sun + red dwarf, the drawn detector tank); props.devices (the break, the 'forever?' line, the readout, the
+drawn insets' lifetimes and note). Asserted: chips never sit under the open window and never overlap each other; claim graphics
+(window states, the readout) are gone >= 6 f before the next tab glide; placards exit >= 6 f before the next glide; every channel is
+constant from the release (lesson 25); a literal scan of scenes/u*/ against verified_on_screen_strings / forbidden_on_screen.
 """
 from __future__ import annotations
 
@@ -51,68 +50,69 @@ MIN_PAGE = 36
 WITHIN_SENTENCE_BUTT_F = 21
 BUTT_GAP = 13
 GLIDE_LEAD = 6
+FADE_F = 12
 CLAIM_EXIT_F = 6              # claim graphics / placards gone >= 6 f before the next tab glide (lessons 42 / 52)
 PLACARD_MIN_F = 36
 PLACARD_PAGE_GUARD_F = 4
 PLACARD_TEXT_W = 772 - 2 * 28
 PLACARD_SIZES = [26, 25, 24]
 FINE_SIZES = [25, 24]
-CTA_TEXT = "What's the smallest thing you've ever seen?"
-CTA_LINES = ["What's the smallest thing", "you've ever seen?"]
+CTA_TEXT = "What's the oldest thing you've ever seen?"
+CTA_LINES = ["What's the oldest thing", "you've ever seen?"]
 CTA_PX = 52
-CLAIMS = {   # first words of a page -> (claim id, state); a page belongs to the claim of the last key at or before it
-    ("s1", "A grain of sand"): ("SAND", "MEASURED"),
-    ("s1", "A human hair"): ("HAIR", "MEASURED"),
-    ("s1", "And that's about where"): ("EYE", "PROBABLY"),
-    ("s2", "A red blood cell"): ("CELL", "MEASURED"),
-    ("s2", "Most viruses are smaller still,"): ("VIRUS", "MEASURED"),
-    ("s3", "An atom is a thousand"): ("ATOM", "MEASURED"),
-    ("s3", "And the proton at its centre"): ("PROTON", "MEASURED"),
-    ("s4", "Electrons are so small"): ("ELECTRON", "MEASURED"),
-    ("s4", "Below that, physicists point"): ("PLANCK", "MAYBE"),
+CLAIMS = {   # first words of a page -> (claim id, state, sublabel); a page belongs to the claim of the last key at or before it
+    ("s1", "An adult mayfly"): ("MAYFLY", "PROBABLY", ""),
+    ("s1", "You live about seventy-three years."): ("YOU", "MEASURED", ""),
+    ("s1", "A tortoise named Jonathan"): ("TORTOISE", "PROBABLY", ""),
+    ("s2", "A Greenland shark can live"): ("SHARK", "PROBABLY", ""),
+    ("s2", "The oldest known tree,"): ("PINE", "PROBABLY", ""),
+    ("s3", "The Sun will shine"): ("SUN", "PROBABLY", ""),
+    ("s3", "A small red dwarf star,"): ("RED DWARF", "PROBABLY", ""),
+    ("s4", "A proton, though,"): ("PROTON", "MEASURED", "lower limit"),
+    ("s5", "That's thirty-three zeros,"): ("ZEROS", "MEASURED", "lower limit"),
+    ("s5", "Maybe something really does last forever."): ("FOREVER", "MAYBE", ""),
 }
-WEAK_END = {"a", "an", "the", "to", "of", "and", "is", "in", "it", "at", "as", "its", "by", "for", "if", "so", "with", "on", "no", "any", "that"}
-BOUND = {("grain", "of"), ("of", "sand"), ("half", "a"), ("a", "millimetre"), ("human", "hair"), ("a", "tenth"), ("red", "blood"), ("blood", "cell"),
-         ("ten", "times"), ("any", "ordinary"), ("ordinary", "microscope"), ("a", "thousand"), ("a", "virus"), ("sixty", "thousand"), ("its", "centre"),
-         ("no", "experiment"), ("the", "planck"), ("planck", "length"), ("more", "zeros"), ("the", "decimal"), ("decimal", "point"), ("the", "floor"),
-         ("isnt", "one"), ("thirtyfour", "zeros")}
-PLACARD_SCENES = {"sc01-sc03": ("sc01", "sc03"), "sc04-sc05": ("sc04", "sc05"), "sc06-sc07": ("sc06", "sc07"), "sc08-sc12": ("sc08", "sc12")}
+WEAK_END = {"a", "an", "the", "to", "of", "and", "is", "in", "it", "at", "as", "its", "by", "for", "if", "so", "with", "on", "no", "any", "that", "can", "we"}
+BOUND = {("adult", "mayfly"), ("a", "day"), ("seventy", "three"), ("named", "jonathan"), ("two", "hundred"), ("greenland", "shark"), ("four", "hundred"),
+         ("oldest", "known"), ("known", "tree"), ("bristlecone", "pine"), ("five", "thousand"), ("the", "sun"), ("ten", "billion"), ("red", "dwarf"),
+         ("dwarf", "star"), ("four", "trillion"), ("a", "proton"), ("more", "than"), ("a", "billion"), ("billion", "trillion"), ("trillion", "trillion"),
+         ("trillion", "years"), ("thirtythree", "zeros"), ("something", "really"), ("really", "does"), ("last", "forever")}
+PLACARD_SCENES = {"sc01-sc02": ("sc01", "sc02"), "sc03-sc05": ("sc03", "sc05"), "sc06-sc07": ("sc06", "sc07"), "sc08-sc11": ("sc08", "sc11"),
+                  "sc12": ("sc12", "sc12")}
 # THE LADDER (mirrored in theme.ts L; asserted against it)
-RAIL = {"x": 250, "y0": 380, "y1": 1000, "L0": 3, "L1": 18}
+RAIL = {"x": 250, "y0": 500, "y1": 1020, "L0": -4, "L1": 33}
 PPD = (RAIL["y1"] - RAIL["y0"]) / (RAIL["L1"] - RAIL["L0"])
 WIN = {"x0": 580, "x1": 920, "y0": 440, "y1": 893}
 COUNTER = {"x0": 640, "x1": 920, "y0": 220, "y1": 340}
-READOUT = {"x0": 580, "x1": 920, "y0": 470, "y1": 600}
+READOUT = {"x0": 580, "x1": 920, "y0": 930, "y1": 1060}
 READOUT_PX = 26
-ELECTRON = {"x": 300, "nameY": 972, "subY": 1010}
-PLANCK_Y = 1080
+BREAK = {"y0": 432, "y1": 458, "arrow": 468, "f0": 424, "f1": 240}
+FOREVER_LABEL = "forever?"
 LABEL_X = 280
 CHIP_MAX_RIGHT = WIN["x0"] - 8
-MARKER_R = 6
-LABEL_PX = 28
-ROW_H, CHIP_PAD, CHIP_GAP = 36, 12, 6
-# (id, name, number string, metres, L as placed by the brief, seat key, descend key)
+MARKER_R = 7
+NAME_PX, NUM_PX = 28, 26
+ROW_H, CHIP_PAD, CHIP_GAP = 30, 12, 6
+# (id, name, number string, years, L as placed by the brief, seat key, climb key, explicit chip lines or None, open)
 RUNGS = [
-    ("sand", "SAND", "~0.5 mm", 5e-4, 3.30, "sandSeat", None),
-    ("hair", "HAIR", "~70 µm", 7e-5, 4.15, "hairSeat", "descendHair"),
-    ("cell", "RED BLOOD CELL", "~8 µm", 8e-6, 5.10, "cellSeat", "descendCell"),
-    ("virus", "VIRUS", "~100 nm", 1e-7, 7.00, "virusSeat", "descendVirus"),
-    ("atom", "ATOM", "~0.1 nm", 1e-10, 10.0, "atomSeat", "descendAtom"),
-    ("proton", "PROTON", "~1.7 fm across", 1.7e-15, 14.77, "protonSeat", "descendProton"),
+    ("mayfly", "MAYFLY", "~1 day", 1 / 365.25, -2.56, "mayflySeat", None, None, False),
+    ("you", "YOU", "~73 yr", 73.3, 1.87, "youSeat", "climbYou", None, False),
+    ("tortoise", "TORTOISE", "~190 yr", 193, 2.29, "tortoiseSeat", "climbTortoise", None, False),
+    ("shark", "SHARK", "~400 yr", 392, 2.59, "sharkSeat", "climbShark", None, False),
+    ("pine", "PINE", "~4,800 yr", 4850, 3.69, "pineSeat", "climbPine", None, False),
+    ("sun", "SUN", "~10 billion yr", 1e10, 10.0, "sunSeat", "climbSun", None, False),
+    ("dwarf", "RED DWARF", "~4 trillion yr", 4e12, 12.6, "dwarfSeat", "climbDwarf", None, False),
+    ("proton", "PROTON", "> 10³³ yr", 1e33, 33.0, "protonSeat", "climbProton", ["PROTON", "> 10³³ yr", "lower limit"], True),
 ]
-PLANCK_M = 1.6e-35
 SUP = str.maketrans("-0123456789", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹")
-DECADES = [f"10{('-' + str(n)).translate(SUP)} m" for n in range(RAIL["L0"], RAIL["L1"] + 1)]
-REFS = [("eye", 4.0, ["YOUR EYE", "~0.1 mm"], "YOUR EYE · ~0.1 mm", "eyeLine"),
-        ("micro", 6.70, ["LIGHT MICROSCOPE", "~200 nm"], "LIGHT MICROSCOPE · ~200 nm", "lightLine")]
-LABELS = {"axis": "metres · log scale", "zeros": "ZEROS", "ai": "AI impression", "drawn": "drawn · not to scale"}
-ELECTRON_NAME, ELECTRON_SUB = "ELECTRON", "no size found · < 10⁻¹⁸ m"
-PLANCK_LABEL, FLOOR_LABEL = "PLANCK LENGTH · 1.6 × 10⁻³⁵ m", "a floor? unproven"
-READOUT_TEXT = "0." + "0" * 34 + "16 m"
-READOUT_LINES = ["0." + "0" * 18, "0" * 16 + "16 m"]
-ATOM_NOTE = "to scale, this dot would be ~0.006 px"
-ATOM_NOTE_LINES = ["to scale, this dot", "would be ~0.006 px"]
-SPIN_OFFSETS = [0, 2, 4, 6, 8, 10, 12, 14] + list(range(15, 27))   # the spin's 20 steps (15..34) after spinStart: every 2 f, then every frame (accelerating)
+DECADES = [f"10{str(n).translate(SUP)} yr" for n in range(-3, 34, 3)]
+LABELS = {"axis": "years · log scale", "zeros": "ZEROS", "ai": "AI impression", "drawn": "drawn · not to scale"}
+READOUT_LINES = ["1" + "0" * 18, "0" * 15 + " yr"]
+READOUT_TEXT = "".join(READOUT_LINES)
+SUN_NAMES, SUN_LIFETIMES = ["Sun", "red dwarf"], ["~10 billion yr", "~4 trillion yr"]
+TANK_NOTE = "no decay seen"
+TANK_TITLE = "water detector"
+SUB_LOWER = "lower limit"
 
 norm = lambda t: re.sub(r"[^a-z0-9]", "", t.lower())
 
@@ -161,11 +161,12 @@ class Track:
 
 
 def rail_y(Lv: float) -> float:
-    return RAIL["y0"] + (Lv - RAIL["L0"]) * PPD
+    return RAIL["y1"] - (Lv - RAIL["L0"]) * PPD
 
 
-def zeros_after_point(metres: float) -> int:
-    return math.ceil(-math.log10(metres) - 1e-9) - 1
+def power_of_ten(years: float) -> int:
+    """the ZEROS counter's value: the power of ten of the rung's years (a rung under a year, the MAYFLY, shows 0)"""
+    return max(0, math.floor(math.log10(years) + 1e-9))
 
 
 def main() -> None:
@@ -186,7 +187,7 @@ def main() -> None:
     for k in ("SEAT_F", "WINDOW_OPEN_F", "WINDOW_CLOSE_F", "XFADE_F", "CLIMB_F", "TICK_STEP_F"):
         assert mo[k] == getattr(snd, k), ("motion constant differs from build_soundtrack.py", k)
     T = total
-    rel = fr["wayEndFrame"]
+    rel = fr["releaseFrame"]
     SEAT_F, WO, WC, XF = mo["SEAT_F"], mo["WINDOW_OPEN_F"], mo["WINDOW_CLOSE_F"], mo["XFADE_F"]
 
     words = [{**w, "f0": round(w["start"] * FPS), "f1": max(round(w["end"] * FPS), round(w["start"] * FPS) + 2)} for w in tl["words"]]
@@ -269,10 +270,10 @@ def main() -> None:
     for (sid, text), pg in zip(PAGES, out_pages):
         if (sid, text) not in CLAIMS:
             continue
-        cid, state = CLAIMS[(sid, text)]
+        cid, state, sub = CLAIMS[(sid, text)]
         prev = meter[-1]
         f = pg["startFrame"]
-        meter.append({"frame": f, "glideStart": max(0, f - GLIDE_LEAD), "state": state, "sublabel": "", "section": sid,
+        meter.append({"frame": f, "glideStart": max(0, f - GLIDE_LEAD), "state": state, "sublabel": sub, "section": sid,
                       "anchor": f"page '{text}'", "claim": cid, "repeat": state == prev["state"] and state != "IDLE"})
     meter.append({"frame": fr["ctaFrame"], "glideStart": fr["ctaFrame"] - GLIDE_LEAD, "state": "IDLE", "sublabel": "", "section": "",
                   "anchor": "the CTA (settle)", "claim": "none (settle)", "repeat": False})
@@ -281,168 +282,198 @@ def main() -> None:
     keyed = [k["frame"] for k in meter[1:]]
     assert len(keyed) == len(set(keyed)), ("two claims keyed on one caption page (lesson 3)", keyed)
     mkey = {k["claim"]: k for k in meter}
-    assert mkey["EYE"]["state"] == "PROBABLY" and mkey["PLANCK"]["state"] == "MAYBE" and meter[-2]["claim"] == "PLANCK"
+    for c_ in ("MAYFLY", "TORTOISE", "SHARK", "PINE", "SUN", "RED DWARF"):
+        assert mkey[c_]["state"] == "PROBABLY", c_
+    assert mkey["YOU"]["state"] == "MEASURED" and mkey["PROTON"]["state"] == "MEASURED" and mkey["PROTON"]["sublabel"] == SUB_LOWER
+    assert mkey["FOREVER"]["state"] == "MAYBE" and meter[-2]["claim"] == "FOREVER" and mkey["FOREVER"]["frame"] == fr["closingStart"]
     glides = [k["glideStart"] for k in meter[1:]]
     next_glide = lambda f: min(g for g in glides if g > f)
 
     # --- THE LADDER: rungs + the marker -----------------------------------------------------------------------------------
-    saira = advance("SairaCondensed-normal-700-latin.woff2", LABEL_PX)
-    mono = advance("IBMPlexMono-normal-500-latin.woff2", LABEL_PX)
-    one_w = lambda name, num: saira(name) + saira(" · ") + mono(num) + 2 * CHIP_PAD
+    saira = advance("SairaCondensed-normal-700-latin.woff2", NAME_PX)
+    mono = advance("IBMPlexMono-normal-500-latin.woff2", NUM_PX)
+    fits = lambda w: LABEL_X + w + 2 * CHIP_PAD <= CHIP_MAX_RIGHT
     rungs = []
-    for rid, name, num, metres, Lv, seatk, desck in RUNGS:
-        assert abs(Lv + math.log10(metres)) < 0.06, ("the rung's L is not -log10(metres)", rid)
-        lines = [f"{name} · {num}"] if LABEL_X + one_w(name, num) <= CHIP_MAX_RIGHT else [name, num]
-        rungs.append({"id": rid, "name": name, "num": num, "lines": lines, "metres": metres, "L": Lv, "seat": fr[seatk], "_desc": desck})
+    for rid, name, num, years, Lv, seatk, climbk, lines_, open_ in RUNGS:
+        assert abs(Lv - math.log10(years)) < 0.06, ("the rung's L is not log10(years)", rid)
+        if lines_ is not None:
+            lines = lines_
+        elif fits(saira(name) + saira(" · ") + mono(num)):
+            lines = [f"{name} · {num}"]
+        else:
+            lines = [name, num]
+        lw = lambda l: saira(name) + saira(" · ") + mono(num) if l == f"{name} · {num}" else (saira(l) if l == name else mono(l))
+        assert all(fits(lw(l)) for l in lines), ("a rung line does not fit beside the window", rid)
+        rungs.append({"id": rid, "name": name, "num": num, "lines": lines, "years": years, "L": Lv, "seat": fr[seatk], "open": open_, "_climb": climbk})
     Lof = {r["id"]: r["L"] for r in rungs}
-    mk = Track(T, Lof["sand"])
+    mk = Track(T, Lof["mayfly"])
     for r in rungs[1:]:
-        mk.to(fr[r["_desc"]] - 1, r["seat"], r["L"], "sine")
+        mk.to(fr[r["_climb"]] - 1, r["seat"], r["L"], "sine")
     markerL = mk.build()
     for r in rungs[1:]:
-        d, s_ = fr[r["_desc"]], r["seat"]
-        assert markerL[d - 1] == markerL[d - 2] and markerL[d] > markerL[d - 1], ("the descent's first moving frame must be its key frame", r["id"])
-        assert markerL[s_] == r["L"] and markerL[s_ - 1] < r["L"], ("the descent must land ON the seat", r["id"])
-    assert np.all(np.diff(markerL) >= 0), "the marker only descends"
-    assert markerL[fr["electronIn"]:].max() == markerL[fr["electronIn"]:].min() == Lof["proton"], "the marker does not move from sc08 (nothing to stand on)"
-    # QA A1 (lesson 33): from 'Electrons' the narration leaves the proton; the marker stays (there is no size to land on)
-    # but dims to a ghost so the eye follows the electron bracket and the Planck line
-    vis = Track(T, 1.0).to(fr["electronIn"], fr["electronIn"] + 12, 0.3, "sine").build()
-    assert vis[fr["electronIn"]] == 1.0 and abs(vis[-1] - 0.3) < 1e-6
+        s_, c = r["seat"], fr[r["_climb"]]
+        assert markerL[c - 1] == markerL[c - 2] and markerL[c] > markerL[c - 1], ("the climb's first moving frame must be its key frame", r["id"])
+        assert markerL[s_] == r["L"] and markerL[s_ - 1] < r["L"], ("the climb must land ON the seat", r["id"])
+        assert 12 <= s_ - c <= mo["CLIMB_F"], ("climb length", r["id"], s_ - c)
+    assert fr["climbProton"] + mo["CLIMB_F"] == fr["protonSeat"]
+    assert np.all(np.diff(markerL) >= 0), "the marker only climbs"
+    assert markerL[fr["protonSeat"]:].max() == markerL[fr["protonSeat"]:].min() == Lof["proton"], "the marker does not move from the PROTON limit"
+    # lesson 60: from foreverDraw the story leaves the rungs ('forever' is off the rail): the marker stays but dims to a ghost
+    FD = fr["foreverDraw"]
+    vis = Track(T, 1.0).to(FD, FD + 12, 0.3, "sine").build()
+    assert vis[FD] == 1.0 and vis[FD + 1] < 1 and abs(vis[-1] - 0.3) < 1e-6
     rail_draw = Track(T, 0.0).to(fr["railDraw"] - 1, fr["railDraw"] + 15, 1.0, "outquad").build()
     assert rail_draw[fr["railDraw"] - 1] == 0 and rail_draw[fr["railDraw"]] > 0
-    veil = Track(T, 0.0).to(fr["eyeLine"] - 1, fr["eyeLine"] + 11, 0.2, "linear").build()
 
-    # chip boxes as Ladder.tsx lays them (top-down de-overlap); widths from the faces' advances
+    # chip boxes as Ladder.tsx lays them (bottom-up de-overlap); widths from the faces' advances
     def chip_w(r) -> float:
-        if len(r["lines"]) == 1:
-            return one_w(r["name"], r["num"])
-        return max(saira(r["name"]), mono(r["num"])) + 2 * CHIP_PAD
-    boxes, prev_bottom = {}, -1e9
-    for r in sorted(rungs, key=lambda r: rail_y(r["L"])):
+        ws = []
+        for l in r["lines"]:
+            if l.startswith(r["name"] + " · "):
+                ws.append(saira(r["name"]) + saira(" · ") + mono(l[len(r["name"]) + 3:]))
+            else:
+                ws.append(saira(l) if l == r["name"] else mono(l))
+        return max(ws) + 2 * CHIP_PAD
+    boxes, prev_top = {}, 1e9
+    for r in sorted(rungs, key=lambda r: -rail_y(r["L"])):
         h = len(r["lines"]) * ROW_H + 8
-        cy = max(rail_y(r["L"]), prev_bottom + CHIP_GAP + h / 2)
+        cy = min(rail_y(r["L"]), prev_top - CHIP_GAP - h / 2)
         boxes[r["id"]] = (LABEL_X, LABEL_X + chip_w(r), cy - h / 2, cy + h / 2)
-        prev_bottom = cy + h / 2
+        prev_top = cy - h / 2
     for r in rungs:
         x0, x1, y0, y1 = boxes[r["id"]]
         assert x1 <= CHIP_MAX_RIGHT, ("a rung chip would reach under the window", r["id"], round(x1))
-        assert y0 >= 342, ("a chip reaches the counter band", r["id"])
-    ebox = (ELECTRON["x"], ELECTRON["x"] + 420, ELECTRON["nameY"] - 18, ELECTRON["subY"] + 18)
-    assert boxes["proton"][3] + 6 <= ebox[2], ("the PROTON chip overlaps the electron labels", boxes["proton"], ebox)
-    ladder_notes = "y(L) = 380 + (L - 3) * 620 / 15, L = -log10(m) (no camera); chips de-overlapped top-down (Ladder.tsx, mirrored here)"
+        assert y1 <= RAIL["y1"] + 30, ("a chip falls below the rail", r["id"])
+    ids = [r["id"] for r in rungs]
+    for i, a_ in enumerate(ids):
+        for b_ in ids[i + 1:]:
+            A, B = boxes[a_], boxes[b_]
+            assert A[3] + CHIP_GAP - 0.01 <= B[2] or B[3] + CHIP_GAP - 0.01 <= A[2], ("chips overlap", a_, b_)
+    assert boxes["proton"][2] >= BREAK["y0"] + 4 + 0 and boxes["proton"][2] > BREAK["f0"] - 10, ("the PROTON chip reaches the break", boxes["proton"])
+    top_chip = min(boxes[r["id"]][2] for r in rungs if r["id"] != "proton")
+    assert boxes["dwarf"][2] > boxes["proton"][3] + 10, ("the RED DWARF chip reaches the PROTON chip", boxes["dwarf"], boxes["proton"])
+    # chips seat in climbing order, so a new chip never shoves a seated one (bottom-up de-overlap keeps the lower chips put)
+    assert [r["seat"] for r in sorted(rungs, key=lambda r: -rail_y(r["L"]))] == sorted(r["seat"] for r in rungs)
+    # the marker (r 7, glow 3x) never covers a label: chips start at x 280, powers end at x 224
+    assert RAIL["x"] + 3 * MARKER_R < LABEL_X and RAIL["x"] - 3 * MARKER_R > 224
+    ladder_notes = "y(L) = 1020 - (L + 4) * 520 / 37, L = log10(years) (no camera); chips de-overlapped bottom-up (Ladder.tsx, mirrored here)"
 
-    # --- THE COUNTER (ZEROS after the decimal point) ---------------------------------------------------------------------
+    # --- THE COUNTER (ZEROS = the power of ten) ---------------------------------------------------------------------------
     value = np.zeros(T, dtype=int)
-    steps = [(fr["sandSeat"], 3), (fr["hairSeat"], 4), (fr["cellSeat"], 5), (fr["virusSeat"], 6)]
-    steps += [(f_, 7 + i) for i, f_ in enumerate(fr["atomTicks"])] + [(f_, 10 + i) for i, f_ in enumerate(fr["protonTicks"])]
+    steps = [(fr["youSeat"], 1), (fr["tortoiseSeat"], 2), (fr["pineSeat"], 3)]
+    steps += [(f_, 4 + i) for i, f_ in enumerate(fr["sunTicks"])] + [(f_, 11 + i) for i, f_ in enumerate(fr["dwarfTicks"])]
+    st = fr["spinTicks"]
+    s0 = fr["spinStart"]
+    assert st == [s0 + snd.SPIN_OFFSETS[i] for i in snd.SPIN_TICK_IDX] and snd.SPIN_OFFSETS[-1] == fr["spinEnd"] - s0 and len(snd.SPIN_OFFSETS) == 33 - 12
+    steps += [(s0 + o, 13 + i) for i, o in enumerate(snd.SPIN_OFFSETS)]
     for f_, v_ in steps:
         value[f_:] = v_
-    st = fr["spinTicks"]
-    assert st[0] == fr["spinStart"] and st[-1] == fr["spinEnd"] and SPIN_OFFSETS[-1] == fr["spinEnd"] - fr["spinStart"] and len(SPIN_OFFSETS) == 20
-    for i, off in enumerate(SPIN_OFFSETS):
-        value[fr["spinStart"] + off:] = 15 + i
-    spin = [int(v) for v in value[st[0] - 1: st[-1] + 1]]
-    assert spin[0] == 14 and spin[1] == 15 and spin[-1] == 34 and spin[-2] == 33 and sorted(set(spin)) == list(range(14, 35)), ("spin 14 -> 34, 20 steps", spin)
-    gaps = np.diff(SPIN_OFFSETS)
-    assert np.all(np.diff(gaps) <= 0) and gaps[0] > gaps[-1], ("the spin must accelerate", gaps)
-    for f_ in st + fr["atomTicks"] + fr["protonTicks"]:
+    gaps = np.diff(snd.SPIN_OFFSETS)
+    assert np.all(np.diff(gaps) <= 0) and gaps[0] > gaps[-1], ("the run must accelerate", gaps)
+    for f_ in fr["youTicks"] + fr["tortoiseTicks"] + fr["pineTicks"] + fr["sunTicks"] + fr["dwarfTicks"] + st:
         assert value[f_] > value[f_ - 1], ("the counter must step ON every tick", f_)
     for r in rungs:
-        assert value[r["seat"]] == zeros_after_point(r["metres"]) and value[r["seat"] - 1] < value[r["seat"]], ("counter != zeros of the rung ON its seat", r["id"])
-    assert value[-1] == zeros_after_point(PLANCK_M) == 34
-    calpha = Track(T, 0.0).to(fr["sandSeat"], fr["sandSeat"], 1.0, "step").build()
-    assert calpha[fr["sandSeat"] - 1] == 0 and calpha[fr["sandSeat"]] == 1
+        assert value[r["seat"]] == power_of_ten(r["years"]), ("counter != the rung's power of ten ON its seat", r["id"], int(value[r["seat"]]))
+        if r["id"] not in ("mayfly", "shark"):
+            assert value[r["seat"] - 1] < value[r["seat"]], ("counter must step ON the seat", r["id"])
+    assert value[fr["sharkSeat"]] == value[fr["tortoiseSeat"]] == 2 and value[fr["mayflySeat"]] == 0
+    assert value[fr["spinEnd"]] == value[-1] == 33 and value[fr["spinEnd"] - 1] == 32 and value[s0 - 1] == 12
+    calpha = Track(T, 0.0).to(fr["mayflySeat"], fr["mayflySeat"], 1.0, "step").build()
+    assert calpha[fr["mayflySeat"] - 1] == 0 and calpha[fr["mayflySeat"]] == 1
     ticks = [f_ for f_ in range(1, T) if value[f_] != value[f_ - 1]]
+    ticks = sorted(set(ticks) | set(fr["mayflyTicks"]))
     counter = {"value": [int(v) for v in value], "alpha": [float(a) for a in calpha], "ticks": ticks, "label": LABELS["zeros"]}
 
     # --- THE WINDOW ------------------------------------------------------------------------------------------------------
-    o1, c1, o2, c2 = fr["windowOpen1"], fr["windowClose1"], fr["windowOpen2"], fr["windowClose2"]
-    wopen = Track(T, 0.0).to(o1 - 1, o1 - 1 + WO, 1.0, "outquad").to(c1 - 1, c1 - 1 + WC, 0.0).to(o2 - 1, o2 - 1 + WO, 1.0, "outquad").to(c2 - 1, c2 - 1 + WC, 0.0).build()
-    for o in (o1, o2):
+    o1, c1, o2, c2, o3, c3 = fr["windowOpen1"], fr["windowClose1"], fr["windowOpen2"], fr["windowClose2"], fr["windowOpen3"], fr["windowClose3"]
+    wt = Track(T, 0.0)
+    for o, c in ((o1, c1), (o2, c2), (o3, c3)):
+        wt.to(o - 1, o - 1 + WO, 1.0, "outquad").to(c - 1, c - 1 + WC, 0.0)
+    wopen = wt.build()
+    for o in (o1, o2, o3):
         assert wopen[o - 1] == 0 and wopen[o] > 0.25, ("the window's first visible frame must be its key frame", o)
-    for c in (c1, c2):
+    for c in (c1, c2, c3):
         assert wopen[c - 1] == 1 and wopen[c] < 1 and wopen[c - 1 + WC] == 0, ("the window closes from its key frame", c)
     p1, p2 = fr["plateSwap1"], fr["plateSwap2"]
-    shut1 = c1 - 1 + WC
+    shut1, shut2, shut3 = c1 - 1 + WC, c2 - 1 + WC, c3 - 1 + WC
     aS1 = Track(T, 1.0).to(p1 - 1, p1 - 1 + XF, 0.0, "linear").build()
     aS2 = Track(T, 0.0).to(p1 - 1, p1 - 1 + XF, 1.0, "linear").to(p2 - 1, p2 - 1 + XF, 0.0, "linear").build()
     aS3 = Track(T, 0.0).to(p2 - 1, p2 - 1 + XF, 1.0, "linear").to(shut1, shut1, 0.0, "step").build()
-    aA = Track(T, 0.0).to(o2 - 1, o2 - 1, 1.0, "step").build()
+    aSun = Track(T, 0.0).to(o2 - 1, o2 - 1, 1.0, "step").to(shut2, shut2, 0.0, "step").build()
+    aTank = Track(T, 0.0).to(o3 - 1, o3 - 1, 1.0, "step").to(shut3, shut3, 0.0, "step").build()
     for p_, a_, b_ in ((p1, aS1, aS2), (p2, aS2, aS3)):
         assert a_[p_ - 1] == 1 and a_[p_] < 1 and b_[p_] > 0, ("the crossfade starts ON its key frame", p_)
         sw = next(f for f in range(p_, p_ + XF + 1) if b_[f] > a_[f])
         assert abs(sw - (p_ - 1 + XF / 2)) <= 1, ("the tag swaps at the crossfade midpoint", sw)
+    assert aS1[o1 - 1] == 1, "S1 is the plate showing when the window opens"
     mp = media["plates"]
     assert media["window"] == WIN
     plates = [
-        {"id": "S1", "scene": "sc01", "alpha": [round(float(v), 4) for v in aS1], "push": mp["S1"]["push"], "pushFrom": o1, "pushTo": p1 + XF,
+        {"id": "S1", "scene": "sc03", "alpha": [round(float(v), 4) for v in aS1], "push": mp["S1"]["push"], "pushFrom": o1, "pushTo": p1 + XF,
          "tag": LABELS["ai"], "base": mp["S1"]["file"], "placeholder": mp["S1"]["placeholder"]},
         {"id": "S2", "scene": "sc04", "alpha": [round(float(v), 4) for v in aS2], "push": mp["S2"]["push"], "pushFrom": p1, "pushTo": p2 + XF,
          "tag": LABELS["ai"], "base": mp["S2"]["file"], "placeholder": mp["S2"]["placeholder"]},
         {"id": "S3", "scene": "sc05", "alpha": [round(float(v), 4) for v in aS3], "push": mp["S3"]["push"], "pushFrom": p2, "pushTo": shut1,
          "tag": LABELS["ai"], "base": mp["S3"]["file"], "placeholder": mp["S3"]["placeholder"]},
-        {"id": "ATOM", "scene": "sc06", "alpha": [round(float(v), 4) for v in aA], "push": [1.0, 1.04], "pushFrom": o2, "pushTo": c2 - 1 + WC,
+        {"id": "SUN", "scene": "sc06", "alpha": [round(float(v), 4) for v in aSun], "push": [1.0, 1.0], "pushFrom": o2, "pushTo": shut2,
+         "tag": LABELS["drawn"], "base": None, "placeholder": False},
+        {"id": "TANK", "scene": "sc08", "alpha": [round(float(v), 4) for v in aTank], "push": [1.0, 1.0], "pushFrom": o3, "pushTo": shut3,
          "tag": LABELS["drawn"], "base": None, "placeholder": False},
     ]
     window = {"box": WIN, "radius": 22, "frame": 6, "open": [round(float(v), 4) for v in wopen], "plates": plates}
     # claim graphics in the window are gone >= 6 f before the next claim's glide (lessons 42 / 52)
-    assert wopen[next_glide(c1) - CLAIM_EXIT_F] == 0, ("window 1 still open at the ATOM glide - 6", next_glide(c1))
-    assert wopen[next_glide(c2) - CLAIM_EXIT_F] == 0, ("window 2 still open at the ELECTRON glide - 6", next_glide(c2))
+    for c in (c1, c2, c3):
+        assert wopen[next_glide(c) - CLAIM_EXIT_F] == 0, ("the window still open at the next glide - 6", c, next_glide(c))
 
     # --- THE DEVICES -----------------------------------------------------------------------------------------------------
-    refs = []
-    for rid, Lv, lines, _full, key in REFS:
-        a = fr[key]
-        draw = Track(T, 0.0).to(a - 6, a, 1.0, "outquad").build()
-        assert draw[a] == 1 and draw[a - 1] < 1 and draw[a - 6] == 0, rid
-        refs.append({"id": rid, "L": Lv, "lines": lines, "draw": [round(float(v), 4) for v in draw], "at": a})
-    eA = Track(T, 0.0).to(fr["electronIn"] - 1, fr["electronIn"] + 7, 1.0, "linear").build()
-    assert eA[fr["electronIn"] - 1] == 0 and eA[fr["electronIn"]] > 0
     brk = Track(T, 0.0).to(fr["breakDraw"] - 1, fr["breakDraw"] + 11, 1.0, "outquad").build()
     assert brk[fr["breakDraw"] - 1] == 0 and brk[fr["breakDraw"]] > 0
-    pA = Track(T, 0.0).to(fr["planckIn"] - 6, fr["planckIn"], 1.0, "linear").build()
-    assert pA[fr["planckIn"]] == 1 and pA[fr["planckIn"] - 1] < 1
-    pG = Track(T, 0.0).to(fr["floorGlow"] - 6, fr["floorGlow"], 1.0, "outquad").build()
-    assert pG[fr["floorGlow"]] == 1 and pG[fr["floorGlow"] - 1] < 1
+    fd = Track(T, 0.0).to(FD - 1, FD + 40, 1.0, "outquad").build()
+    assert fd[FD - 1] == 0 and fd[FD] > 0 and fd[FD + 40] == 1 and FD + 40 < fr["foreverSeat"]
+    assert fr["foreverSeat"] + SEAT_F <= rel
+    dA = Track(T, 0.0).to(fr["dwarfIn"] - 6, fr["dwarfIn"], 1.0, "linear").to(shut2, shut2, 0.0, "step").build()
+    assert dA[fr["dwarfIn"]] == 1 and dA[fr["dwarfIn"] - 6] == 0 and dA[fr["dwarfIn"] - 1] < 1
     rs, re_ = fr["readoutStart"], fr["readoutEnd"]
     n = len(READOUT_TEXT)
     count = np.zeros(T, dtype=int)
     for f_ in range(rs, T):
         count[f_] = min(n, 1 + (n - 1) * (f_ - rs) // (re_ - rs))
     assert count[rs - 1] == 0 and count[rs] == 1 and count[re_] == n and count[re_ - 1] < n and np.all(np.diff(count) >= 0)
-    assert "".join(READOUT_LINES) == READOUT_TEXT and READOUT_TEXT.count("0") == 1 + 34 and READOUT_TEXT.startswith("0." + "0" * 34 + "16")
-    rA = Track(T, 0.0).to(rs - 2, rs, 1.0, "linear").build()   # QA A4: the card appears with its first glyph, not 8 f empty
+    assert "".join(READOUT_LINES) == READOUT_TEXT and READOUT_TEXT.count("0") == 33 and READOUT_TEXT.startswith("1" + "0" * 33) and READOUT_TEXT.endswith(" yr")
+    mglide = mkey["FOREVER"]["glideStart"]
+    r_out_end = mglide - CLAIM_EXIT_F
+    r_out_start = r_out_end - FADE_F
+    assert r_out_start > re_ + 30, "the readout holds >= 1 s after it is typed"
+    rA = Track(T, 0.0).to(rs - 2, rs, 1.0, "linear").to(r_out_start, r_out_end, 0.0, "linear").build()
+    assert rA[rs] == 1 and rA[rs - 2] == 0 and rA[r_out_end] == 0 and rA[r_out_start] == 1
     rmono = advance("IBMPlexMono-normal-500-latin.woff2", READOUT_PX)
-    assert READOUT["x0"] + 12 + max(rmono(l) for l in READOUT_LINES) <= 912, ("the readout reaches x >= 912", [rmono(l) for l in READOUT_LINES])
-    nA = Track(T, 0.0).to(fr["nucleusPulse"] - SEAT_F, fr["nucleusPulse"], 1.0, "linear").to(c2 - 1, c2 - 1 + WC, 0.0).build()
-    assert nA[fr["nucleusPulse"]] == 1 and nA[fr["nucleusPulse"] - SEAT_F] == 0 and nA[next_glide(c2) - CLAIM_EXIT_F] == 0
-    nmono = advance("IBMPlexMono-normal-400-latin.woff2", 24)
-    assert all(WIN["x0"] + 20 + nmono(l) <= WIN["x1"] - 20 for l in ATOM_NOTE_LINES) and " ".join(ATOM_NOTE_LINES) == ATOM_NOTE
-    # the readout card never covers the marker, the Planck line or the ATOM / PROTON chips
-    for rid in ("atom", "proton", "virus", "cell", "hair", "sand"):
-        x0, x1, y0, y1 = boxes[rid]
-        assert x1 <= READOUT["x0"] or y1 <= READOUT["y0"] or y0 >= READOUT["y1"], ("the readout covers a chip", rid)
-    assert READOUT["x0"] > RAIL["x"] + 30 and READOUT["y1"] < PLANCK_Y - 40
+    assert READOUT["x0"] + 12 + max(rmono(l) for l in READOUT_LINES) <= 912
+    assert READOUT["y0"] > WIN["y1"] + 20 and READOUT["y1"] < 1124 - 20, "the readout sits between the window and the placard rail"
+    lab24 = advance("IBMPlexMono-normal-400-latin.woff2", 24)
+    lab26 = advance("IBMPlexMono-normal-500-latin.woff2", 26)
+    sw_ = WIN["x1"] - WIN["x0"]
+    for t_ in SUN_LIFETIMES:
+        assert lab24(t_) <= sw_ - 20, t_
+    assert lab26(SUN_NAMES[1]) <= sw_ - 20 and lab26(TANK_NOTE) <= sw_ - 20 and lab24(TANK_TITLE) <= sw_ - 20
+    dsp = advance("SairaCondensed-normal-700-latin.woff2", 38)
+    assert 280 + dsp(FOREVER_LABEL) <= 600 and BREAK["f1"] >= 192 + 20, "the 'forever?' label sits left of the counter, under the top UI"
+    assert 206 >= 192, "the forever label clears the top UI"
     devices = {
-        "refs": refs,
-        "electron": {"alpha": [round(float(v), 4) for v in eA], "name": ELECTRON_NAME, "sub": ELECTRON_SUB, "subSeat": fr["noSize"]},
         "brk": [round(float(v), 4) for v in brk],
-        "planck": {"y": PLANCK_Y, "alpha": [round(float(v), 4) for v in pA], "glow": [round(float(v), 4) for v in pG], "label": PLANCK_LABEL,
-                   "floor": FLOOR_LABEL, "floorSeat": fr["floorGlow"]},
+        "forever": {"draw": [round(float(v), 4) for v in fd], "label": FOREVER_LABEL, "labelSeat": fr["foreverSeat"]},
         "readout": {"count": [int(v) for v in count], "alpha": [round(float(v), 4) for v in rA], "text": READOUT_TEXT, "lines": READOUT_LINES},
-        "atomNote": {"lines": ATOM_NOTE_LINES, "seat": fr["nucleusPulse"], "alpha": [round(float(v), 4) for v in nA], "pulse": fr["nucleusPulse"]},
+        "sun": {"dwarfAlpha": [round(float(v), 4) for v in dA], "names": SUN_NAMES, "lifetimes": SUN_LIFETIMES, "sunSeat": fr["sunSeat"], "dwarfSeat": fr["dwarfSeat"]},
+        "tank": {"note": TANK_NOTE, "noteSeat": fr["noDecay"]},
     }
 
     # theme.ts must equal these numbers
     theme = (P / "theme.ts").read_text()
-    assert re.search(r"rail:\s*\{\s*x:\s*250,\s*y0:\s*380,\s*y1:\s*1000,\s*L0:\s*3,\s*L1:\s*18,\s*ppd:\s*620 / 15", theme), "theme.ts L.rail stale"
-    assert re.search(r"planckY:\s*%d" % PLANCK_Y, theme) and re.search(r"labelX:\s*%d" % LABEL_X, theme), "theme.ts L.rail stale"
+    assert re.search(r"rail:\s*\{\s*x:\s*250,\s*y0:\s*500,\s*y1:\s*1020,\s*L0:\s*-4,\s*L1:\s*33,\s*ppd:\s*520 / 37", theme), "theme.ts L.rail stale"
+    assert re.search(r"labelX:\s*%d" % LABEL_X, theme), "theme.ts L.rail stale"
+    assert re.search(r"breakY0:\s*%d,\s*breakY1:\s*%d,\s*arrowTip:\s*%d,\s*foreverY0:\s*%d,\s*foreverY1:\s*%d" % (BREAK["y0"], BREAK["y1"], BREAK["arrow"], BREAK["f0"], BREAK["f1"]), theme), "theme.ts L.rail break stale"
     for name, d_ in (("win", WIN), ("counter", COUNTER), ("readout", READOUT)):
         m = re.search(name + r":\s*\{\s*x0:\s*(\d+),\s*x1:\s*(\d+),\s*y0:\s*(\d+),\s*y1:\s*(\d+)", theme)
         assert m and [int(v) for v in m.groups()] == [d_[k] for k in ("x0", "x1", "y0", "y1")], f"theme.ts L.{name} stale"
-    m = re.search(r"electron:\s*\{\s*x:\s*(\d+),\s*nameY:\s*(\d+),\s*subY:\s*(\d+)", theme)
-    assert m and [int(v) for v in m.groups()] == [ELECTRON["x"], ELECTRON["nameY"], ELECTRON["subY"]], "theme.ts L.electron stale"
 
     # --- placards (root rail) ----------------------------------------------------------------------------------------------
     bc = {px: advance("SairaCondensed-normal-600-latin.woff2", px) for px in set(PLACARD_SIZES + FINE_SIZES)}
@@ -463,7 +494,7 @@ def main() -> None:
         assert exit_ <= next_glide(exit_ - 1) - CLAIM_EXIT_F, ("placard exits < 6 f before the next glide", line)
         assert exit_ - enter >= PLACARD_MIN_F, ("placard held < 1.2 s", line, enter, exit_)
         size = next((px for px in PLACARD_SIZES if bc[px](line) <= PLACARD_TEXT_W), None)
-        assert size, ("placard line too long", line)
+        assert size, ("placard line too long", line, bc[24](line))
         fsize = next((px for px in FINE_SIZES if bc[px](fine) <= PLACARD_TEXT_W), None) if fine else None
         assert fine is None or fsize, ("fine print too long at >= 24 px (lesson 31)", fine)
         assert size * 1.15 + (fsize * 1.15 + 2 if fine else 0) <= 80 - 6, ("placard rows overflow the 80 px rail", line)
@@ -474,14 +505,14 @@ def main() -> None:
     for a, b in zip(placards, placards[1:]):
         assert a["exit"] <= b["enter"], (a, b)
     brief = json.dumps(json.loads((P / "artifacts/research_brief.json").read_text())).lower()
-    for src in ("wentworth", "ncbi", "abbe", "codata", "planck"):
+    for src in ("nc state", "who global health", "guinness", "nielsen", "nasa", "space.com", "super-kamiokande", "aps physics"):
         assert src in brief, ("placard source not in the research brief (lesson 32)", src)
 
     # --- strings: verified / forbidden (lessons 20, 32) ---------------------------------------------------------------------
     verified = set(plan["metadata"]["verified_on_screen_strings"])
     forbidden = [f.split(" (")[0].lower() for f in plan["metadata"]["forbidden_on_screen"]]
-    root_strings = list(LABELS.values()) + [CTA_TEXT, ELECTRON_NAME, ELECTRON_SUB, PLANCK_LABEL, FLOOR_LABEL, READOUT_TEXT, ATOM_NOTE] \
-        + ATOM_NOTE_LINES + [ln for r in rungs for ln in r["lines"]] + [ln for r in REFS for ln in r[2]] + [r[3] for r in REFS] + DECADES \
+    root_strings = list(LABELS.values()) + [CTA_TEXT, FOREVER_LABEL, TANK_NOTE, TANK_TITLE, SUB_LOWER, READOUT_TEXT] + SUN_NAMES + SUN_LIFETIMES \
+        + [ln for r in rungs for ln in r["lines"]] + [r["name"] + " · " + r["num"] for r in rungs if len(r["lines"]) == 1] + DECADES \
         + [str(v) for v in sorted(set(value.tolist()))]
     for s_ in root_strings:
         assert any(s_ in v for v in verified), ("root string not in verified_on_screen_strings (lesson 20)", s_)
@@ -490,8 +521,8 @@ def main() -> None:
         src = f.read_text()
         lit |= set(re.findall(r'text(?:=|:\s*)\{?"([^"]+)"', src))
         lit |= set(re.findall(r'(?:TEXT|LINE|LABEL|NUM)\w*\s*=\s*"([^"]+)"', src))
-        for old in ("km/h", "cheetah", "falcon", "LHC", "YouTag", "Orbit", "Beam", "Energy", "Nines", "MassLabel"):
-            assert old not in src, ("a video-16 device / string is left in a scene", f.name, old)
+        for old in ("kg", "kilogram", "Mercury", "Universe", "metres", "Planck", "Electron", "Whale", "Eiffel", "Neutron", "Humans", "Earth", "SgrA", "DarkMatter", "Atom", "Sand"):
+            assert old not in src, ("a video-16/17/18 device / string is left in a scene", f.name, old)
     bad = sorted(t_ for t_ in lit if not any(t_ in v for v in verified))
     assert not bad, ("on-screen literals not in verified_on_screen_strings (lesson 20)", bad)
     placard_text = " ".join(p["line"] + " " + (p["fine"] or "") for p in placards)
@@ -500,18 +531,16 @@ def main() -> None:
     print("verified on-screen literals in scenes:", len(lit))
 
     # --- the settle is STILL (lesson 25) ------------------------------------------------------------------------------------
-    chans = {"ladder.markerL": markerL, "ladder.vis": vis, "ladder.railDraw": rail_draw, "ladder.veil": veil, "counter": value.astype(float),
-             "counter.alpha": calpha, "window.open": wopen, "S1": aS1, "S2": aS2, "S3": aS3, "ATOM": aA, "electron": eA, "brk": brk,
-             "planck.alpha": pA, "planck.glow": pG, "readout.count": count.astype(float), "readout.alpha": rA, "atomNote": nA}
-    for r in refs:
-        chans["ref." + r["id"]] = np.array(r["draw"])
+    chans = {"ladder.markerL": markerL, "ladder.vis": vis, "ladder.railDraw": rail_draw, "counter": value.astype(float),
+             "counter.alpha": calpha, "window.open": wopen, "S1": aS1, "S2": aS2, "S3": aS3, "SUN": aSun, "TANK": aTank, "brk": brk,
+             "forever": fd, "readout.count": count.astype(float), "readout.alpha": rA, "sun.dwarf": dA}
     for name, arr in chans.items():
         assert np.all(np.abs(arr[rel:] - arr[rel]) < 1e-9), ("the settle must be still", name)
     assert wopen[rel] == 0 and placards[-1]["exit"] <= rel and fr["ctaFrame"] == rel
 
     r4 = lambda a: [round(float(v), 4) for v in a]
     for r in rungs:
-        r.pop("_desc")
+        r.pop("_climb")
     props = {
         "timeline": {
             "fps": FPS, "width": 1080, "height": 1920, "total_frames": total, "lead_frames": round(tl["lead_seconds"] * FPS),
@@ -521,7 +550,7 @@ def main() -> None:
         },
         "captionPages": [{k: v for k, v in p.items() if k != "text"} for p in out_pages],
         "meter": meter,
-        "ladder": {"markerL": [round(float(v), 5) for v in markerL], "markerVis": r4(vis), "railDraw": r4(rail_draw), "veil": r4(veil),
+        "ladder": {"markerL": [round(float(v), 5) for v in markerL], "markerVis": r4(vis), "railDraw": r4(rail_draw),
                    "rungs": rungs, "markerR": MARKER_R, "notes": ladder_notes},
         "devices": devices,
         "counter": counter,
@@ -544,7 +573,7 @@ def main() -> None:
             lines.setdefault(w["line"], []).append(w["text"])
         print(f'{pg["startFrame"]:5d}-{pg["exitFrame"]:5d} {pg["section"]} | ' + " / ".join(" ".join(v) for v in lines.values()))
     for k in meter:
-        print(f'meter {k["glideStart"]:5d}->{k["frame"]:5d} {k["state"]:<9}{" (pulse)" if k["repeat"] else "        "} {k["anchor"]}')
+        print(f'meter {k["glideStart"]:5d}->{k["frame"]:5d} {k["state"]:<9}{" (pulse)" if k["repeat"] else "        "} {k["anchor"]} {k["sublabel"]}')
     print("placards:", [(p["enter"], p["exit"], p["size"], p["fineSize"], p["line"][:30]) for p in placards])
     print("chips:", {k: [round(v) for v in b] for k, b in boxes.items()})
     print("counter steps:", [(f_, int(value[f_])) for f_ in ticks])

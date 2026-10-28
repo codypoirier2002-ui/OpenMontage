@@ -3,15 +3,14 @@
 
     python3 projects/how-long-can-anything-last/prepare_media.py [--force]
 
-Pattern of projects/how-a-cat-lands/prepare_media.py (video 15, QA passed). No AI clips. ONE window box for every plate
+Pattern of video 17 / 18. No AI clips. ONE window box for every plate
 (theme.ts L.win: x 580-920, y 440-893, 340 x 453, portrait 3:4, RIGHT of the rung labels so a seated label never sits under a
 photo; the plan's x 470-920 box would have covered 'EARTH (orbit) · ~107,000' and 'PARKER (fastest built)'), so each crop has
 the window's aspect (0.7506).
 
-The three AI stills exist (assets/images/plate_sand.png, plate_blood_cells.png, plate_virus.png; 1152 x 2048). Crop boxes
+The three AI stills exist (assets/images/plate_tortoise.png, plate_shark.png, plate_pine.png; 1152 x 2048). Crop boxes
 are MEASURED on them (lesson 9: from pixels, the window's aspect) with the subject inside (lesson 39: feature points asserted
-inside the crop with a 20 px margin). The window's fourth state (sc06-sc07, the atom) is DRAWN in code (shared/Window.tsx), not
-a plate. A missing source still falls back to a labelled placeholder card ("placeholder": true).
+inside the crop with a 20 px margin). The window's other states (the Sun vs a red dwarf, the detector tank) are DRAWN in code (shared/Window.tsx), not plates. A missing source still falls back to a labelled placeholder card ("placeholder": true).
 -> artifacts/media_report.json + renders/review/crops.jpg (the crops on their plates, or the placeholders).
 """
 from __future__ import annotations
@@ -28,19 +27,22 @@ FORCE = "--force" in sys.argv
 WIN = {"x0": 580, "x1": 920, "y0": 440, "y1": 893}
 WW, WH = WIN["x1"] - WIN["x0"], WIN["y1"] - WIN["y0"]
 
-# crop boxes MEASURED on the 1152 x 2048 plates (video 17, 2026-10-28, read at 1/4 scale then checked in renders/review/crops.jpg):
-# S1 the clear quartz grain sits centre-left (~560, 860); S2 the frontal biconcave cell (~536, 1000); S3 the whole virion
-# (centre ~572, 940, radius ~520 px, spikes included). Full plate width, the window's aspect (1152 x 1535).
+# crop boxes MEASURED on the 1152 x 2048 plates (video 19, read at 1/2 scale then checked in renders/review/crops.jpg): full plate
+# width, the window's aspect (1152 x 1535). `middle` = the SUBJECT's centre points, asserted inside the middle 60 % of the crop on
+# both axes; `contains` = further feature points asserted inside the crop with a 20 px margin (the head / tail / tips at the edge).
 PLATES = {
-    "S1": {"src": "plate_sand.png", "crop": (0, 100, 1152, 1635), "scene": "sc01", "push": [1.0, 1.03],
-           "contains": {"quartz_grain": (560, 860), "amber_grain_top": (190, 300), "grain_bottom": (500, 1460)}, "label": "S1 plate_sand",
-           "qa": "loose grains, no scale bar / text"},
-    "S2": {"src": "plate_blood_cells.png", "crop": (0, 250, 1152, 1785), "scene": "sc04", "push": [1.0, 1.03],
-           "contains": {"front_cell": (536, 1000), "cell_top": (440, 300), "cell_low": (480, 1420)}, "label": "S2 plate_blood_cells",
-           "qa": "biconcave discs, no text"},
-    "S3": {"src": "plate_virus.png", "crop": (0, 173, 1152, 1708), "scene": "sc05", "push": [1.0, 1.03],
-           "contains": {"virion_centre": (572, 940), "spike_top": (572, 440), "spike_bottom": (572, 1440), "spike_left": (60, 940), "spike_right": (1090, 940)},
-           "label": "S3 plate_virus", "qa": "one whole virion in the crop, spikes included, no text"},
+    "S1": {"src": "plate_tortoise.png", "crop": (0, 193, 1152, 1728), "scene": "sc03", "push": [1.0, 1.03],
+           "middle": {"shell_centre": (461, 737), "front_leg": (625, 1230)},
+           "contains": {"head": (1085, 901), "rear_foot": (300, 1300)}, "label": "S1 plate_tortoise",
+           "qa": "one giant tortoise on grass, no text"},
+    "S2": {"src": "plate_shark.png", "crop": (0, 88, 1152, 1623), "scene": "sc04", "push": [1.0, 1.03],
+           "middle": {"body_centre": (573, 850), "eye": (886, 960)},
+           "contains": {"snout": (1090, 990), "tail": (82, 660)}, "label": "S2 plate_shark",
+           "qa": "one Greenland shark, no text"},
+    "S3": {"src": "plate_pine.png", "crop": (0, 130, 1152, 1665), "scene": "sc05", "push": [1.0, 1.03],
+           "middle": {"trunk_mid": (512, 1024), "canopy": (778, 614)},
+           "contains": {"top_tip": (328, 174), "trunk_base": (700, 1500)}, "label": "S3 plate_pine",
+           "qa": "one bristlecone pine on a ridge, no text"},
 }
 
 
@@ -86,12 +88,15 @@ def crop_plate(mid: str, cfg: dict) -> dict:
     assert abs((x1 - x0) / (y1 - y0) - WW / WH) < 0.004, (mid, (x1 - x0) / (y1 - y0), WW / WH)
     for name, (x, y) in cfg["contains"].items():
         assert x0 + 20 <= x <= x1 - 20 and y0 + 20 <= y <= y1 - 20, ("feature outside the crop", mid, name)
+    for name, (x, y) in cfg["middle"].items():
+        cw, ch = x1 - x0, y1 - y0
+        assert x0 + 0.2 * cw <= x <= x1 - 0.2 * cw and y0 + 0.2 * ch <= y <= y1 - 0.2 * ch, ("subject outside the middle 60 % of the crop", mid, name)
     if FORCE or not out.exists():
         im.crop((x0, y0, x1, y1)).resize((WW, WH), Image.LANCZOS).save(out)
     return {"file": f"stills/{mid}.png", "placeholder": False, "source": f"assets/images/{cfg['src']}", "source_px": [im.width, im.height],
             "crop_px": [x0, y0, x1, y1], "crop_pct": {"x": [round(100 * x0 / im.width, 1), round(100 * x1 / im.width, 1)],
             "y": [round(100 * y0 / im.height, 1), round(100 * y1 / im.height, 1)]}, "scale": round(WW / (x1 - x0), 4), "window": WIN,
-            "scene": cfg["scene"], "push": cfg["push"], "contains_asserted": cfg["contains"],
+            "scene": cfg["scene"], "push": cfg["push"], "contains_asserted": cfg["contains"], "middle_60pct_asserted": cfg["middle"],
             "crop_basis": "measured (PLATES crop)" if cfg["crop"] else "DEFAULT middle band (measure it: lesson 9)"}
 
 
@@ -106,7 +111,7 @@ def review(rep: dict) -> None:
         d = ImageDraw.Draw(im)
         x0, y0, x1, y1 = r["crop_px"]
         d.rectangle([x0, y0, x1, y1], outline=(60, 230, 60), width=8)
-        for _, (x, y) in PLATES[mid]["contains"].items():
+        for _, (x, y) in {**PLATES[mid]["contains"], **PLATES[mid]["middle"]}.items():
             d.ellipse([x - 14, y - 14, x + 14, y + 14], outline=(255, 220, 0), width=5)
         tiles.append(im.resize((240, 427)))
     sheet = Image.new("RGB", (3 * 248 + 8, max(t.size[1] for t in tiles) + 16), (20, 26, 30))

@@ -1,54 +1,53 @@
-# BUILD.md: builder contract for "How Small Can Anything Get?" (the Scale Well, video 17)
+# BUILD.md: builder contract for "How Long Can Anything Last?" (the Lifespan Column, video 19)
 
-A copy of video 16 (`projects/how-fast-can-anything-go/`, QA passed) with the visual layer rebuilt. **Audio, narration,
-alignment and key frames are FIXED** (`build_soundtrack.py`, `align_narration.py`, `process_narration.py`,
-`artifacts/timeline.json`, `public/audio/soundtrack.wav`): never edit them. **Every number** (frames, chip boxes, placard
-windows, meter keys, counter steps) lives in the generated spec `artifacts/BUILD_SPEC.md` and in `artifacts/props.json`; this
-file holds the rules only. Composition **`ScaleWell`**, 1080x1920 @ 30 fps.
+Video 18's ascending ladder engine (`projects/how-heavy-can-anything-get/`) re-dressed in years. **Audio, narration, alignment and
+key frames are FIXED** (`build_soundtrack.py`, `align_narration.py`, `process_narration.py`, `artifacts/timeline.json`,
+`public/audio/soundtrack.wav`): never edit them. **Every number** (frames, chip boxes, placard windows, meter keys, counter steps)
+lives in the generated spec `artifacts/BUILD_SPEC.md` (`python3 docs/channel/scripts/build_spec.py projects/how-long-can-anything-last`)
+and in `artifacts/props.json`; this file holds the rules only. Composition **`LifespanColumn`**, 1080x1920 @ 30 fps.
 
-## 1. Pipeline (repo root, in order)
+## 1. Pipeline (repo root, in order; python3 = the system one with fontTools, the .venv for build_soundtrack.py)
 
 ```bash
-python3 projects/how-small-can-anything-get/prepare_media.py --force   # S1-S3 crops (measured boxes, subject asserted inside)
-python3 projects/how-small-can-anything-get/sync_scene_plan.py         # scene times, caption pages, placards, verified/forbidden strings
-python3 projects/how-small-can-anything-get/build_props.py             # props.json + props.generated.ts, ALL asserts
-(cd remotion-composer && npx tsc -p projects/how-small-can-anything-get/tsconfig.json)
-(cd projects/how-small-can-anything-get && python3 check_hooks.py scenes shared overlay)
-cd projects/how-small-can-anything-get && node stills.cjs --frames 29,115,... --scale 0.5 --out renders/review/<dir>
-python3 projects/how-small-can-anything-get/contact_sheet2.py          # after its two stills.cjs runs (see its docstring)
+python3 projects/how-long-can-anything-last/prepare_media.py --force   # S1-S3 crops (measured boxes, subject asserted in the middle 60 %)
+python3 projects/how-long-can-anything-last/sync_scene_plan.py         # scene times, caption pages, placards, verified/forbidden strings
+python3 projects/how-long-can-anything-last/build_props.py             # props.json + props.generated.ts, ALL asserts
+(cd remotion-composer && npx tsc -p projects/how-long-can-anything-last/tsconfig.json)
+(cd projects/how-long-can-anything-last && python3 check_hooks.py scenes shared overlay)
+cd projects/how-long-can-anything-last && node stills.cjs --frames 68,139,... --scale 0.5 --out renders/review/<dir>
+python3 projects/how-long-can-anything-last/contact_sheet2.py          # after its two stills.cjs runs (see its docstring)
 ```
-Headless shell: `/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell`. Render
-through the symlink `remotion-composer/projects/how-small-can-anything-get` (video 16's BUILD.md §1 has the render command,
-with `ScaleWell`). 0.25-scale segments only for tests; delete test renders.
+Headless shell: `/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell`. Render through the
+symlink `remotion-composer/projects/how-long-can-anything-last` (CHANNEL_FORMULA step 9, composition `LifespanColumn`). 0.25-scale
+segments only for tests; delete test renders.
 
 ## 2. Ownership
 
-- **ROOT** (Composition.tsx): `Sky`, `Ladder` (rail, decade powers, reference lines + veil, rung ticks + chips, marker),
-  `RootDevices` (electron bracket, break, Planck line, readout), `WindowView` (S1/S2/S3 + the drawn atom), `Counter`, `Grain`,
-  and the overlay plane (`WindowTags`, `AtomNote`, placards, tab, captions, CTA).
-- **SCENES** (`scenes/u1` sc01-sc06, `scenes/u2` sc07-sc12): emphasis only (rings, the rail-draw glint). Keep `mount` +
-  `SceneProps`; hooks first (check_hooks 0); every trigger through `useT()` (`T.sfx.*`, `T.rung()`, `T.dev`); never re-author
-  the marker or a root device; no hard-coded frames.
+- **ROOT** (Composition.tsx): `Sky`, `Ladder` (rail, powers every 3 decades, rung ticks + chips, the open PROTON rung, marker),
+  `RootDevices` (break, 'forever?' line, readout card), `WindowView` (S1 tortoise, S2 shark, S3 pine, the drawn Sun + red dwarf, the
+  drawn detector tank), `Counter`, `Grain`, and the overlay plane (`WindowTags`, placards, tab, captions, CTA).
+- **SCENES** (`scenes/u1` sc01-sc06, `scenes/u2` sc07-sc12): emphasis only (rings, the rail-draw glint). Keep `mount` + `SceneProps`;
+  hooks first (check_hooks 0); every trigger through `useT()`; never re-author the marker or a root device; no hard-coded frames.
 
 ## 3. Rules build_props.py asserts
 
 - `props.audio == soundtrack_report.frames == build_soundtrack.key_frames(timeline)`; motion constants equal build_soundtrack's.
-- Lesson 4: each SFX on its visual frame: descents' FIRST moving frame = `descend*`, landing ON `*Seat`; window first visible
-  frame = `windowOpen*`, first closing frame = `windowClose*`; crossfades start ON `plateSwap*` with the tag swap at the midpoint;
-  reference lines fully drawn ON `eyeLine` / `lightLine`; electron in from `electronIn`; break from `breakDraw`; Planck ON
-  `planckIn`, glow ON `floorGlow`; readout first glyph ON `readoutStart`, last ON `readoutEnd`.
-- Counter = zeros after the decimal point of the active rung's metres ON every seat; steps ON every atom / proton / spin tick;
-  the spin 15..34 accelerates and lands 34 ON `spinEnd`; hidden before `sandSeat`.
-- Chips never under the open window, never overlapping each other or the electron labels; the readout never covers the marker,
-  the Planck line or a chip; nothing textual at x >= 912 / y >= 1574; fine print >= 24 px (superscripts drawn >= 24 px).
-- Lesson 3: meter keys on the START of the page carrying the claim (SAND, HAIR MEASURED; EYE PROBABLY; CELL, VIRUS, ATOM,
-  PROTON, ELECTRON MEASURED; PLANCK MAYBE to the end of s5; IDLE at the CTA). Pages <= 2 lines, 3-6 words.
-- Lessons 42/52: window states / atom note / placards gone >= 6 f before the next tab glide.
-- Lesson 25: every channel constant from the release; the CTA swaps in ON `ctaFrame`.
-- Lesson 20: literal scan of `scenes/u*/` against `verified_on_screen_strings`, no `forbidden_on_screen`, no video-16 devices.
+- Lesson 4: climbs' FIRST moving frame = `climb*`, landing ON `*Seat` (<= CLIMB_F); window first visible frame = `windowOpen*`, first
+  closing frame = `windowClose*`; the S1 -> S2 -> S3 crossfades start ON `plateSwap*` with the tag swap at the midpoint; break first
+  visible ON `breakDraw`; the 'forever?' line first visible ON `foreverDraw`, its label seats ON `foreverSeat` (no SFX: the closing
+  sentence is SFX-free); readout first glyph ON `readoutStart`, last ON `readoutEnd`.
+- Counter = the power of ten of the active rung's years ON every seat (MAYFLY 0, SHARK stays 2); steps ON every `*Ticks` frame; the
+  run 12 -> 33 accelerates and lands 33 ON `protonSeat`; hidden before `mayflySeat`.
+- Chips (de-overlapped bottom-up) never under the open window, never overlapping; nothing textual at x >= 912 / y >= 1574; fine
+  print >= 24 px. The PROTON is an OPEN (dashed, arrow) rung with 'lower limit' in its chip.
+- Lesson 3: meter keys on the START of the page carrying the claim (grades in build_props.py CLAIMS; sublabel 'lower limit' on the
+  PROTON and ZEROS keys; FOREVER MAYBE to the end of s5; IDLE at the CTA). Pages <= 2 lines, 3-6 words.
+- Lessons 42/52: window states / readout / placards gone >= 6 f before the next tab glide.
+- Lesson 60: the marker dims to a ghost (0.3) from `foreverDraw`. Lesson 25: every channel constant from the release.
+- Lesson 20: literal scan of `scenes/u*/` against `verified_on_screen_strings`, no `forbidden_on_screen`, no video-16/17/18 devices.
 
 ## 4. Known deviations
 
-- `script.json` claim_tags are still video 16's: the meter grades come from build_props.py CLAIMS (the brief).
-- 'And that's about where your eyes give up.' is two pages (8 words); PROBABLY keys on the first.
-- Reference labels sit LEFT of the rail; the decade powers they would collide with are hidden while they show.
+- The marker barely moves for YOU -> TORTOISE -> SHARK (6 and 4 px on the log scale); the chips stack upward with leaders.
+- `script.json` claim_tags are the build's grades; build_props.py keys the meter from its own CLAIMS.
+- Mono fold / closing numbers: see `artifacts/soundtrack_report.json` (ending.closing_min_margin_db).

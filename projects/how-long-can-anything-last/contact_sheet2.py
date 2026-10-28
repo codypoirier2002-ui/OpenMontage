@@ -2,11 +2,10 @@
 """Contact sheet 2 (foundation layout) -> renders/foundation_sheet.jpg. Run from the repo root AFTER:
     node projects/how-long-can-anything-last/stills.cjs --frames $(python3 projects/how-long-can-anything-last/contact_sheet2.py --frames) --scale 0.5 --out renders/review/foundation/sheet
     node projects/how-long-can-anything-last/stills.cjs --frames $(python3 projects/how-long-can-anything-last/contact_sheet2.py --pic) --scale 0.5 --layers picture --out renders/review/foundation/sheet_pic
-Rows 1-2: one stub frame per scene (all layers: the ladder + window + counter + root tags + overlay + stub labels + the
-FOUNDATION DEMOS). Row 3: the engine's states on the picture layer (frame 0, the rail drawn, the CHEETAH seat with the
-placeholder window, the FALCON chip, the SOUND ring, the YOU jump mid-air, EARTH seated + orbit, PARKER two-line chip, the
-beam mid-rail, LIGHT lit, the energy bar, the nines, the settle). Right: the sc05 hero frame with the safe zones drawn, and
-the media crops / placeholders (renders/review/crops.jpg). Pattern of video 15's contact_sheet2.py."""
+Rows 1-2: one frame per scene (all layers: the rail + chips + window + counter + overlay). Row 3: the engine's key states on the
+picture layer (frame 0, the rail drawn, MAYFLY seat, YOU, the tortoise window, PINE, the drawn Sun, the red dwarf, the detector
+tank, the PROTON's lower limit + the break, the readout, the 'forever?' line, the settle). Right: the sc09 hero frame with the safe
+zones drawn, and the media crops (renders/review/crops.jpg). Pattern of videos 15-18's contact_sheet2.py."""
 from __future__ import annotations
 
 import json
@@ -22,11 +21,11 @@ scenes = props["timeline"]["scenes"]
 FR = [s["from"] + int(s["durationInFrames"] * (0.62 if s["id"] != "sc12" else 0.92)) for s in scenes]
 K = props["audio"]
 T_ = props["timeline"]["total_frames"]
-PIC = [0, K["railDraw"] + 8, K["sandSeat"], K["hairSeat"], K["eyeLine"], K["plateSwap1"] + 6, K["virusSeat"], K["atomSeat"], K["nucleusPulse"],
-       K["protonSeat"], K["noSize"], K["spinEnd"], K["readoutEnd"], K["floorGlow"], T_ - 1]
-PIC_LABEL = ["f0: dim rail, marker at SAND", "rail drawing down", "SAND seat + ZEROS 3", "HAIR seat", "YOUR EYE line + veil", "S1 -> S2 crossfade",
-             "VIRUS seat, S3", "ATOM seat, drawn atom", "nucleus pulse + note", "PROTON seat, ZEROS 14", "ELECTRON no size", "spin lands 34",
-             "readout typed", "Planck floor glow", "settle (last frame)"]
+PIC = [0, K["railDraw"] + 8, K["mayflySeat"], K["youSeat"], K["tortoiseSeat"], K["plateSwap1"] + 8, K["pineSeat"], K["sunSeat"], K["dwarfSeat"],
+       K["noDecay"] + 8, K["protonSeat"], K["breakDraw"] + 14, K["readoutEnd"], K["foreverSeat"], T_ - 1]
+PIC_LABEL = ["f0: dim rail, marker on MAYFLY", "rail drawing up", "MAYFLY seat, ZEROS 0", "YOU seat, ZEROS 1", "TORTOISE (AI tortoise)", "S1 -> S2 crossfade",
+             "PINE seat, ZEROS 3", "SUN seat, ZEROS 10", "RED DWARF seat", "drawn tank: no decay seen", "PROTON lower limit, 33", "rail BREAK drawn",
+             "readout 1 + 33 zeros", "forever? line + MAYBE", "settle (last frame)"]
 TW, TH = 216, 384
 try:
     font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
@@ -54,7 +53,7 @@ def main() -> None:
     H = max(60 + 3 * (TH + 34) + 40, 60 + 964 + 30 + crops.size[1] + 30)
     out = Image.new("RGB", (W, H), (28, 36, 42))
     d = ImageDraw.Draw(out)
-    d.text((8, 8), f"How Small Can Anything Get? - contact sheet 2: the Scale Well (ladder, window, counter, devices, overlay). {T_} f / {T_ / 30:.2f} s.",
+    d.text((8, 8), f"How Long Can Anything Last? - contact sheet 2: the Lifespan Column (ladder, window, counter, devices, overlay). {T_} f / {T_ / 30:.2f} s.",
            fill=(240, 236, 228), font=big)
     d.text((8, 34), "Rows 1-2: one frame per scene (all layers). Row 3: picture layer only, the key states.",
            fill=(180, 190, 186), font=font)
@@ -69,7 +68,7 @@ def main() -> None:
         out.paste(Image.open(R / f"sheet_pic/f{f:04d}.png").convert("RGB").resize((TW, TH), Image.LANCZOS), (x, y))
         d.text((x, y + TH + 4), f"f{f}", fill=(160, 220, 230), font=font)
         d.text((x, y + TH + 18), PIC_LABEL[i][:28], fill=(160, 220, 230), font=font)
-    f5 = FR[4]
+    f5 = FR[8]
     big_im = Image.open(R / f"sheet/f{f5:04d}.png").convert("RGB").resize((540, 960), Image.LANCZOS)
     z = ImageDraw.Draw(big_im, "RGBA")
     s = 0.5
@@ -80,9 +79,10 @@ def main() -> None:
     rect(0, 0, 1080, 192, (255, 80, 80), "top UI: no content", (255, 80, 80, 40))
     rect(0, 1574, 1080, 1920, (255, 80, 80), "bottom UI y>=1574: no text", (255, 80, 80, 40))
     rect(929, 192, 1080, 1574, (255, 80, 80), "x>=929", (255, 80, 80, 40))
-    rect(100, 380, 330, 1110, (120, 220, 120), "RAIL")
-    rect(280, 360, 572, 920, (120, 220, 120), "rung chips")
-    rect(580, 440, 920, 893, (240, 236, 228), "WINDOW / readout")
+    rect(100, 206, 330, 1080, (120, 220, 120), "RAIL")
+    rect(280, 440, 572, 1020, (120, 220, 120), "rung chips")
+    rect(580, 440, 920, 893, (240, 236, 228), "WINDOW")
+    rect(580, 930, 920, 1060, (240, 236, 228), "readout")
     rect(640, 220, 920, 340, (232, 163, 61), "COUNTER")
     rect(140, 1124, 912, 1204, (230, 230, 120), "placard rail")
     rect(140, 1236, 628, 1290, (230, 230, 120), "tab")

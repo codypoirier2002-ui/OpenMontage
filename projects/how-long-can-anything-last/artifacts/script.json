@@ -208,23 +208,24 @@
   },
   "claim_tags": {
    "s1": {
-    "walking ~5 km/h (WALK)": "MEASURED",
-    "cheetah ~100 km/h (CHEETAH)": "MEASURED",
-    "diving peregrine nearly 400 km/h (FALCON)": "PROBABLY"
+    "adult mayfly lives about a day (MAYFLY)": "PROBABLY",
+    "people live ~73 years (YOU)": "MEASURED",
+    "tortoise Jonathan ~190 (TORTOISE)": "PROBABLY"
    },
    "s2": {
-    "sound ~1,235 km/h (SOUND)": "MEASURED",
-    "Earth orbits the Sun at ~107,000 km/h (ORBIT)": "MEASURED"
+    "Greenland shark ~400 yr (SHARK)": "PROBABLY",
+    "bristlecone pine ~4,800-5,000 yr (PINE)": "PROBABLY"
    },
    "s3": {
-    "Parker Solar Probe ~692,000 km/h, fastest human-made object, from falling toward the Sun (PROBE)": "MEASURED"
+    "Sun ~10 billion yr (SUN)": "PROBABLY",
+    "red dwarf ~4 trillion yr (RED DWARF)": "PROBABLY"
    },
    "s4": {
-    "light ~1.08 billion km/h (LIGHT)": "MEASURED",
-    "nothing with mass can reach it; energy grows without limit (WALL)": "MEASURED"
+    "proton never seen to decay; lifetime > 10^33 yr, a lower limit (PROTON)": "MEASURED"
    },
    "s5": {
-    "LHC protons to 99.9999991% of light speed (LHC)": "MEASURED"
+    "10^33 = 1 followed by 33 zeros (ZEROS)": "MEASURED",
+    "'forever' is unproven (FOREVER)": "MAYBE"
    }
   },
   "wording_changes_from_outline": {
@@ -235,13 +236,13 @@
    "s5": "Unchanged (approved closing line)."
   },
   "fact_notes": [
-   "'about a hundred' = cheetah 95 (wild, collar) to 103 km/h (track)",
-   "'nearly four hundred' = peregrine dive ~386-390 km/h, weakly sourced -> PROBABLY",
-   "'over twelve hundred' = 343 m/s in 20 C air = 1,235 km/h",
-   "'over a hundred thousand' = Earth's orbit 29.78 km/s = 107,200 km/h",
-   "'nearly seven hundred thousand' = Parker 430,000 mph = 692,000 km/h (Dec 2024)",
-   "'over a billion' = 1,079,252,849 km/h (c = 299,792,458 m/s exactly)",
-   "'within a hair' = LHC protons 0.999999991 c (shown on screen as 99.9999991 %)"
+   "mayfly adults ~30 min to 1-2 days by species; 'about a day' typical",
+   "73.3 yr = WHO global life expectancy 2023",
+   "Jonathan hatched ~1832: ~193 yr, estimated hatch year",
+   "Greenland shark 392 +/- 120 yr by eye-lens radiocarbon (Nielsen 2016)",
+   "Methuselah ~4,850 yr (Guinness), not independently reproduced",
+   "Sun ~10 billion yr main sequence (NASA); red dwarf ~4 trillion yr is a model prediction",
+   "Super-Kamiokande lower limits 3.6e33-5.9e33 yr; 'more than a billion trillion trillion' = >1e33"
   ]
  }
 }

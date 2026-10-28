@@ -1,56 +1,37 @@
 #!/usr/bin/env python3
-"""Build the soundtrack premix: narration (+ the lesson-30 lift on 'way') + the ducked, level-evened music bed (its LAST
-TONIC attack landing ~0.15 s after 'way.') + the SFX -> public/audio/soundtrack.wav (frame-aligned: exactly total_frames x
-1600 samples @ 48 kHz) and artifacts/soundtrack_report.json (video 15's shape: sfx[] rows with frame / placed_at_s /
-landing_offset_in_sample_s, frames{}, ending{}, min_window; docs/channel/scripts/qa_auto.py reads them).
+"""Build the soundtrack premix: narration (+ the closing-sentence voice lift and the lesson-30 lift on 'forever.') + the ducked,
+level-evened music bed (its LAST TONIC attack landing ~0.15 s after 'forever.') + the SFX -> public/audio/soundtrack.wav
+(frame-aligned: exactly total_frames x 1600 samples @ 48 kHz) and artifacts/soundtrack_report.json (sfx[] rows with frame /
+placed_at_s / landing_offset_in_sample_s, frames{}, ending{}, min_window; docs/channel/scripts/qa_auto.py reads them).
 
 Run from the repo root:  python3 projects/how-long-can-anything-last/build_soundtrack.py
 
-Copied from projects/how-a-cat-lands/build_soundtrack.py (video 15, QA passed; itself videos 12-14). Every film time comes
-from artifacts/timeline.json; the only seconds written here are positions INSIDE the source files.
+Video 19 "How Long Can Anything Last?" (the Lifespan Column). Pipeline of videos 17 / 18 (QA passed). Every film time comes from
+artifacts/timeline.json; the only seconds written here are positions INSIDE the source files.
 
 THIS FILE OWNS THE KEY FRAMES (`K`, -> soundtrack_report.json 'frames' -> props.audio -> T.sfx.*): every root curve in
-build_props.py (the marker's climbs, the rung seats, the counter ticks, the window plates, the YOU jump, the beam, the energy
-bar, the LHC digits, the gap bracket) and every SFX landing derive from them, so a visual and its sound can never drift
-apart. A beat that needs a new key frame is a §7 request.
+build_props.py (the marker's climbs, the rung seats, the counter ticks, the window states, the readout, the break, the 'forever?'
+line) and every SFX landing derive from them, so a visual and its sound can never drift apart.
 
-THE MUSIC BED IS NOT GENERATED YET (assets_report M1 'NOT GENERATED'). This script runs WITHOUT it: voice + SFX only, the
-bed section skipped with a clear warning, `ending.closing_min_margin_db` left null (qa_auto then falls back to its gap
-estimate and WARNs; the number is written from the stems the moment the bed exists). It picks up
-assets/music/bed_raw.mp3 AUTOMATICALLY when the file exists:
-  * lesson 26: the final cadence is found FROM THE AUDIO: the last strong attack of the file whose tail only decays
-    (`last_tonic_attack`), overridable by assets/music/music_qa.json {"last_tonic_attack_s": ...} when the music QA measured it;
-  * the head trim = chord_src - (release of 'way.' + CHORD_AFTER_S), snapped to the nearest detected attack within +-0.4 s
-    (a beat, so the bed starts on a hit, not mid-note) when that costs <= MAX_CENTS of resampling; otherwise trimmed exactly,
-    with no speed change;
-  * LEVEL EVENING on 2 s windows (+-LEVEL_EVEN_MAX_DB, smoothed EVEN_SMOOTH_S, frozen 0.5 s before the chord), the bed at
-    BED_LUFS (-19) before the duck; DUCK_DB (-12) under narration (120 ms attack, 400 ms release, 250 ms hold);
-    CLOSING_DUCK_DB (-13) more from the first word of the closing sentence 'But' (lesson 44), ramped in from 'But' -
-    CLOSING_LEAD_S; END_DUCK_DB more under 'way' + a +END_LIFT_DB 300-4000 Hz lift on the word; all released linearly from
-    the release of 'way.' to 20 ms before the chord; RING_LIFT_DB on the ring-out from the chord + 0.15 s;
-  * FLOOR: where the 100 ms mix level would fall under FLOOR_PRE_DBFS the duck is eased back (never above the undipped bed),
-    so no 100 ms window of the premix is under -42 dBFS (lesson 5); never under the closing sentence (lesson 18 wins there).
-    WITHOUT A BED this check is DEFERRED (the voice-only premix has silent gaps by construction; reported, not asserted).
-THE LIFTS (lesson 30, constant gains on the voice lane, raised-cosine 40 ms in / 30 ms out, never a limiter):
-  s5 as a section: S5_GAIN_DB (its clean WAV was true-peak-capped at -22.8 LUFS, the others sit at -21.5: + 1.3 dB);
-  'way.' WAY_GAIN_START_DB, raised in 1 dB steps until qa_auto's lesson-30 metric (the loudest 100 ms of 'way' vs the MEDIAN
-  of its sentence 'But never all the way.') is <= WAY_MAX_UNDER_DB.
-END (lesson 43): cos^2 fade over the last FINAL_FADE_S to FINAL_FADE_FLOOR_DB, then a 10 ms ramp: last 50 ms <= -30 dBFS and
-last 20 ms <= -33 dBFS (asserted, qa_auto's thresholds), no click.
-SFX (assets/sfx/X*.mp3, 44.1 kHz stereo, decoded to 48 kHz; every transient ON its visible frame, lessons 4 / 14 / 22 / 41).
-Phone band (lesson 5; measured in the file analysis):
-  X1 whoosh   98 % in 300-4000 Hz, a slow swell: its 10 %-of-peak ONSET (0.167 s) lands on the FIRST MOVING FRAME of a climb
-              (the rail draw sc01; the marker's climbs sc02 / sc03 / sc04 / sc07; the YOU jump sc05 at +6 dB).
-  X2 boom     96 % < 250 Hz: + with_harmonics (LF saturation) + a 1-3 kHz body; its PEAK (0.221 s) ON the SOUND rung's seat.
-  X3 tick     a 10-tick rattle, 99 % > 4 kHz: ONE tick cut TICK_CUT + a 1-3 kHz body + with_harmonics (HF rectification);
-              its peak ON every counter step (sc02 x2, sc05 x2, sc08 x4), the energy bar's accelerating ticks (sc10 x6) and
-              every LHC digit (sc11 x10).
-  X4 hum      a flat 0 dBFS drone, 96 % < 250 Hz: SHAPED (0.4 s in, 0.6 s out, HUM_LEN_S) + harmonics; soft, start-aligned
-              on the window's first visible frame (S3, sc06).
-  X5 shimmer  99 % > 4 kHz, decaying from its first ms: + harmonics; START-aligned on the beam's first frame (sc08).
-  X6 tink     a soft sustained glass tone whose attack IS sample 0 (-31 dBFS peak, 50 % in band): normalised, START-aligned
-              on the gap bracket's frame (sc11, 'hair': the marker's final stop; 1.4 s before the closing sentence).
-  NOTHING from 50 ms before 'But' (the closing sentence) to the end (asserted on the SFX lane).
+MUSIC: assets/music/bed_raw.wav (+ music_qa.json pins the last tonic, lesson 51):
+  * the head trim = chord_src - (release of 'forever.' + CHORD_AFTER_S), snapped to a detected attack when that costs <= MAX_CENTS;
+  * LEVEL EVENING on 2 s windows, the bed at BED_LUFS before the duck; DUCK_DB under narration (look-ahead 300 ms before every
+    voiced run, lesson 59); CLOSING_DUCK_DB more from the first word of the closing sentence 'Maybe' (lesson 44);
+    END_DUCK_DB more under 'forever' + a +END_LIFT_DB 300-4000 Hz lift on the word; all released linearly from the release of
+    'forever.' to 20 ms before the chord; RING_LIFT_DB on the ring-out;
+  * FLOOR: no 100 ms window of the premix under -42 dBFS (stereo and mono fold, lesson 5).
+THE LIFTS (constant gains on the voice lane, never a limiter): S5_GAIN_DB over s5; CLOSING_VOICE_LIFT_DB on the soft closing
+sentence 'Maybe something really does last forever.' only (ramped in the pause before it); 'forever.' WAY_GAIN_START_DB raised in
+1 dB steps until the loudest 100 ms of 'forever' is within WAY_MAX_UNDER_DB of its sentence's median (lesson 30).
+END (lesson 43): cos^2 fade over the last FINAL_FADE_S, then a 10 ms ramp.
+SFX (assets/sfx/X*.mp3, reused from video 16; every transient ON its visible frame, lessons 4 / 14 / 22 / 41):
+  X1 whoosh  its 10 %-of-peak onset lands on the FIRST MOVING FRAME of a climb (the rail draw, the five big climbs, the rail break)
+  X2 boom    its PEAK on the PROTON seat (the climb's end, counter 33)
+  X3 tick    ONE tick of the rattle + body + harmonics, its peak ON every counter step / readout glyph tick
+  X4 hum     shaped, soft, start-aligned on the first visible frame of a DRAWN window (the Sun vs red dwarf, the detector tank)
+  X5 shimmer start-aligned on the red dwarf disc appearing (sc07)
+  X6 tink    start-aligned on the 'no decay seen' note (sc08)
+  NOTHING from 50 ms before 'Maybe' (the closing sentence) to the end (asserted on the SFX lane).
 """
 from __future__ import annotations
 
@@ -77,14 +58,15 @@ LEVEL_EVEN_MAX_DB = 5.0
 LEVEL_WIN_S = 2.0
 EVEN_SMOOTH_S = 1.5
 DUCK_DB = -12.0
-CLOSING_DUCK_DB = -9.5
+CLOSING_DUCK_DB = -12.0
 CLOSING_LEAD_S = 0.55
 END_DUCK_DB = -3.0
 END_DUCK_IN_S = 0.10
 END_LIFT_DB = 3.0
 END_LIFT_EDGE_S = 0.02
 RING_LIFT_DB = 5.0
-S5_GAIN_DB = 1.3           # s5 was true-peak-capped at -22.8 LUFS (others -21.5): ONE constant gain over the section (ramps in the gap before it)
+CLOSING_VOICE_LIFT_DB = 5.5   # the soft closing sentence only (video 18)
+S5_GAIN_DB = 0.0           # s5 was true-peak-capped at -22.8 LUFS (others -21.5): ONE constant gain over the section (ramps in the gap before it)
 WAY_GAIN_START_DB = 3.0
 WAY_GAIN_MAX_DB = 9.0
 WAY_MAX_UNDER_DB = 2.5
@@ -118,6 +100,12 @@ XFADE_F = 12          # S1 -> S2 plate crossfade (the tag swaps by a HARD cut at
 CLIMB_F = 36          # the longest a rung-to-rung climb takes (it ends ON the seat; a shorter word gap shortens it)
 BEAM_F = 12           # the light beam races the whole rail in BEAM_F frames, reaching 'c' ON lightSeat
 TICK_STEP_F = 6       # counter steps before a seat (…, seat - 12, seat - 6, seat)
+# the PROTON climb's counter run 12 -> 33 (21 steps, accelerating, 33 ON the seat); the SFX ticks are the steps at SPIN_TICK_IDX
+SPIN_GAPS = [4, 4, 3, 3] + [2] * 6 + [1] * 10
+SPIN_OFFSETS = [0]
+for _g in SPIN_GAPS:
+    SPIN_OFFSETS.append(SPIN_OFFSETS[-1] + _g)
+SPIN_TICK_IDX = [0, 4, 8, 12, 16, 20]
 FADE_F = 12           # the lesson-42 exits (mass label, energy bar, orbit inset) fade over FADE_F, ending >= 8 f before the next tab page
 DIGIT_STEP_F = 4      # the LHC readout lands one glyph every DIGIT_STEP_F
 N_DIGITS = 10         # '99.9999991 %' = 9, 9, ., 9, 9, 9, 9, 9, 9, 1 -> the '.' rides with the 2nd 9, ' %' with the final 1: 10 landings
@@ -134,81 +122,86 @@ def key_frames(tl: dict) -> dict:
     sc = {s["id"]: s for s in tl["scenes"]}
     rel_f = tl["way_end_frame"]
     chord_f = int(round((tl["way_end_seconds"] + CHORD_AFTER_S) * FPS))
-    sand_seat, hair_seat, cell_seat, virus_seat = on("s1", "sand"), on("s1", "hair"), on("s2", "cell"), on("s2", "viruses")
-    atom_seat, proton_seat = on("s3", "thousand", 1), on("s3", "thousand", 2)
-    spin0, spin1 = on("s4", "twenty"), on("s4", "zeros")
-    ro0, ro1 = on("s5", "thirty-four"), on("s5", "point")
+    climb = lambda word, seat: max(word, seat - CLIMB_F)
+    steps = lambda seat, n: [seat - (n - 1 - i) * TICK_STEP_F for i in range(n)]
+    mayfly_seat, you_seat, tort_seat = on("s1", "day"), on("s1", "years"), on("s1", "hundred")
+    shark_seat, pine_seat = on("s2", "years"), on("s2", "thousand")
+    sun_seat, dwarf_seat, proton_seat = on("s3", "years"), on("s3", "trillion"), on("s4", "years")
+    spin0 = proton_seat - CLIMB_F
+    ro0, ro1 = on("s5", "thirty-three"), on("s5", "zeros")
     K = {
-        # sc01 Sand: the dim well + marker at SAND from frame 0; the rail DRAWS top -> bottom from 'grain' (X1 peaks 6 f
-        # before it, lesson 57); the SAND label + ZEROS 3 seat on 'sand' (X3); the window opens with S1 on the seat + 4
-        "railDraw": max(4, on("s1", "a") - 6),   # the rail draws BEFORE the first word so its whoosh (peak 6 f earlier) is clear of "A grain" (lesson 57; measured +7.2 dB when on "grain")
-        "sandSeat": sand_seat,
-        "sandTicks": [sand_seat],
-        "windowOpen1": sand_seat + 4,
-        # sc02 Hair: the marker DESCENDS from 'human' and lands ON 'hair' (counter 3 -> 4, X3); a drawn hair line by the rung
-        "descendHair": max(on("s1", "human"), hair_seat - CLIMB_F),
-        "hairSeat": hair_seat,
-        "hairTicks": [hair_seat],
-        # sc03 Eye: the dashed 'YOUR EYE ~0.1 mm' line draws on 'eyes'; everything below it dims (PROBABLY page)
-        "eyeLine": on("s1", "eyes"),
-        # sc04 Cell: S1 -> S2 crossfade from the scene start; descend from 'red', seat ON 'cell' (4 -> 5)
+        # sc01 Mayfly: the dim column + marker at MAYFLY from frame 0; the rail DRAWS bottom -> top 6 f before 'An' (lesson 57);
+        # MAYFLY seats with its number on 'day' (counter appears: 0)
+        "railDraw": max(4, on("s1", "an") - 6),
+        "mayflySeat": mayfly_seat,
+        "mayflyTicks": [mayfly_seat],
+        # sc02 You: climb, seat ON 'years' (0 -> 1)
+        "climbYou": climb(on("s1", "you"), you_seat),
+        "youSeat": you_seat,
+        "youTicks": [you_seat],
+        # sc03 Tortoise: the window opens with S1 on the scene start; a tiny climb, seat ON 'hundred' (1 -> 2)
+        "windowOpen1": sc["sc03"]["from"],
+        "climbTortoise": climb(on("s1", "is"), tort_seat),
+        "tortoiseSeat": tort_seat,
+        "tortoiseTicks": [tort_seat],
+        # sc04 Shark: S1 -> S2 crossfade from the scene start; a tiny climb, seat ON 'years' (counter stays 2)
         "plateSwap1": sc["sc04"]["from"],
-        "descendCell": max(on("s2", "red"), cell_seat - CLIMB_F),
-        "cellSeat": cell_seat,
-        "cellTicks": [cell_seat],
-        # sc05 Virus: S2 -> S3 crossfade from the scene start; descend from 'Most', seat ON 'viruses' (5 -> 6); the dashed
-        # 'LIGHT MICROSCOPE ~200 nm' line draws on 'microscope'; the window closes >= 6 f before sc06's tab glide (L42/L52)
+        "climbShark": climb(on("s2", "live"), shark_seat),
+        "sharkSeat": shark_seat,
+        # sc05 Pine: S2 -> S3 crossfade from the scene start; climb, seat ON 'thousand' (2 -> 3); the window closes >= 6 f
+        # before sc06's tab glide (L42 / L52)
         "plateSwap2": sc["sc05"]["from"],
-        "descendVirus": max(on("s2", "most"), virus_seat - CLIMB_F),
-        "virusSeat": virus_seat,
-        "virusTicks": [virus_seat],
-        "lightLine": on("s2", "microscope"),
+        "climbPine": climb(on("s2", "is"), pine_seat),
+        "pineSeat": pine_seat,
+        "pineTicks": [pine_seat],
         "windowClose1": sc["sc06"]["from"] - WINDOW_CLOSE_F - 10,
-        # sc06 Atom: the window re-opens ON the scene start with the DRAWN atom (X4 hum); descend from 'An', seat ON
-        # 'thousand' (6 -> 7 -> 8 -> 9, X3 x3 ending on the seat)
+        # sc06 Sun: the window re-opens ON the scene start with the DRAWN Sun (X4 hum); climb, seat ON 'years' (3 -> 10, X3 x7)
         "windowOpen2": sc["sc06"]["from"],
-        "descendAtom": max(on("s3", "an"), atom_seat - CLIMB_F),
-        "atomSeat": atom_seat,
-        "atomTicks": [atom_seat - 2 * TICK_STEP_F, atom_seat - TICK_STEP_F, atom_seat],
-        # sc07 Proton: the drawn nucleus pulses on 'proton'; descend, seat ON 'thousand' (2nd) (9 -> 14, X3 x5); the window
+        "climbSun": climb(on("s3", "sun"), sun_seat),
+        "sunSeat": sun_seat,
+        "sunTicks": steps(sun_seat, 7),
+        # sc07 Red dwarf: the drawn dwarf disc appears on 'dwarf' (X5); climb, seat ON 'trillion' (10 -> 12, X3 x2); the window
         # closes >= 6 f before sc08's tab glide
-        "nucleusPulse": on("s3", "proton"),
-        "descendProton": max(on("s3", "proton"), proton_seat - CLIMB_F),
-        "protonSeat": proton_seat,
-        "protonTicks": [proton_seat - (4 - i) * TICK_STEP_F for i in range(5)],
+        "dwarfIn": on("s3", "dwarf"),
+        "climbDwarf": climb(on("s3", "small"), dwarf_seat),
+        "dwarfSeat": dwarf_seat,
+        "dwarfTicks": steps(dwarf_seat, 2),
         "windowClose2": sc["sc08"]["from"] - WINDOW_CLOSE_F - 10,
-        # sc08 Electron: the bracket under 1e-18 draws on 'Electrons'; 'no size found' seats on 'size' (X6 tink)
-        "electronIn": on("s4", "electrons"),
-        "noSize": on("s4", "size"),
-        # sc09 Planck: the rail BREAK draws on 'Below' (X1); the dashed violet PLANCK line on 'Planck' (X5 shimmer); the
-        # counter spins 14 -> 34 from 'twenty' to 'zeros' (X3 x6, accelerating)
-        "breakDraw": on("s4", "below"),
-        "planckIn": on("s4", "planck"),
+        # sc08 Proton: the window opens ON the scene start with the DRAWN detector tank (X4 hum); 'no decay seen' seats on 'decay' (X6)
+        "windowOpen3": sc["sc08"]["from"],
+        "noDecay": on("s4", "decay"),
+        # sc09 limit: the marker climbs 12.6 -> 33 (X1) while the counter runs 12 -> 33 (accelerating X3 x6), PROTON seats ON the
+        # second 'trillion'... ON 'years' (X2 boom, the dashed open rung + arrow); the rail BREAK draws 8 f later (X1)
+        "climbProton": spin0,
         "spinStart": spin0,
-        "spinEnd": spin1,
-        "spinTicks": [spin0 + int(round((spin1 - spin0) * q)) for q in (0.0, 0.38, 0.64, 0.82, 0.93, 1.0)],
-        # sc10 Zeros: the centre readout types '0.' + 34 zeros + '16 m' from 'Thirty-four' to 'point' (X3 every 4th glyph)
+        "protonSeat": proton_seat,
+        "spinEnd": proton_seat,
+        "spinTicks": [spin0 + SPIN_OFFSETS[i] for i in SPIN_TICK_IDX],
+        "breakDraw": proton_seat + 8,
+        # sc10 Zeros: the readout types '1' + 33 zeros + ' yr' from 'thirty-three' to 'zeros' (X3 x9); the window (tank) stays
         "readoutStart": ro0,
         "readoutEnd": ro1,
         "readoutTicks": [ro0 + int(round((ro1 - ro0) * i / 8)) for i in range(9)],
-        # sc11 Floor: the Planck line brightens + 'a floor? unproven' on 'floor'
-        "floorGlow": on("s5", "floor"),
-        # sc12: NO SFX from 'Or' - 50 ms; release wayEndFrame; chord chordFrame; CTA on the release (lesson 25)
-        "closingStart": on("s5", "or"),
-        "wayFrame": on("s5", "one"),
-        "wayEndFrame": rel_f,
+        # sc12: NO SFX from 'Maybe' - 50 ms. The dashed 'forever?' line draws up through the break from 'Maybe' (the MAYBE page), its
+        # label seats ON 'forever'; the window closes >= 6 f before the MAYBE glide; release; chord; CTA on the release (lesson 25)
+        "closingStart": on("s5", "maybe"),
+        "foreverDraw": on("s5", "maybe"),
+        "windowClose3": sc["sc12"]["from"] - WINDOW_CLOSE_F - 10,
+        "foreverSeat": on("s5", "forever"),
+        "releaseFrame": rel_f,
         "chordFrame": chord_f,
         "ctaFrame": rel_f,
     }
-    seats = ["railDraw", "sandSeat", "windowOpen1", "descendHair", "hairSeat", "eyeLine", "plateSwap1", "descendCell", "cellSeat",
-             "plateSwap2", "descendVirus", "virusSeat", "lightLine", "windowClose1", "windowOpen2", "descendAtom", "atomSeat",
-             "nucleusPulse", "protonSeat", "windowClose2", "electronIn", "noSize", "breakDraw", "planckIn", "spinStart", "spinEnd",
-             "readoutStart", "readoutEnd", "floorGlow", "closingStart", "wayFrame"]
-    assert all(K[a] <= K[b] for a, b in zip(seats, seats[1:])), [(a, K[a], b, K[b]) for a, b in zip(seats, seats[1:]) if K[a] > K[b]]
+    seq = ["railDraw", "mayflySeat", "climbYou", "youSeat", "windowOpen1", "climbTortoise", "tortoiseSeat", "plateSwap1", "climbShark", "sharkSeat",
+           "plateSwap2", "climbPine", "pineSeat", "windowClose1", "windowOpen2", "climbSun", "sunSeat", "dwarfIn", "climbDwarf", "dwarfSeat",
+           "windowClose2", "windowOpen3", "noDecay", "climbProton", "protonSeat", "breakDraw", "readoutStart", "readoutEnd", "windowClose3",
+           "closingStart", "foreverSeat"]
+    assert all(K[a] <= K[b] for a, b in zip(seq, seq[1:])), [(a, K[a], b, K[b]) for a, b in zip(seq, seq[1:]) if K[a] > K[b]]
     assert K["plateSwap1"] + XFADE_F < K["plateSwap2"] and K["plateSwap2"] + XFADE_F < K["windowClose1"], K
-    assert K["windowClose1"] + WINDOW_CLOSE_F <= K["windowOpen2"] and K["windowClose2"] + WINDOW_CLOSE_F <= K["electronIn"], K
-    assert K["noSize"] + 30 <= K["breakDraw"] and K["readoutTicks"][-1] + 30 <= K["closingStart"], K
-    assert K["closingStart"] < K["wayFrame"] < rel_f <= K["ctaFrame"] < chord_f < tl["total_frames"] - 30, K
+    assert K["windowClose1"] + WINDOW_CLOSE_F <= K["windowOpen2"] and K["windowClose2"] + WINDOW_CLOSE_F <= K["windowOpen3"], K
+    assert K["dwarfSeat"] + 2 < K["windowClose2"] and K["noDecay"] + 30 < K["climbProton"] and K["readoutTicks"][-1] + 30 <= K["closingStart"], K
+    assert K["climbProton"] > K["noDecay"] and SPIN_OFFSETS[-1] == CLIMB_F and len(SPIN_OFFSETS) == 33 - 12, (SPIN_OFFSETS[-1], len(SPIN_OFFSETS))
+    assert K["closingStart"] < K["foreverSeat"] < rel_f <= K["ctaFrame"] < chord_f < tl["total_frames"] - 30, K
     return K
 
 
@@ -485,10 +478,15 @@ def main() -> None:
     s5env = np.clip((t - (s5w[0]["start"] - 0.25)) / 0.2, 0, 1)
     assert s5w[0]["start"] - 0.25 > s5sec["start"] - 1.45, "the s5 gain ramp must sit in the gap before s5"
     narration = (narration * (1 + (10 ** (S5_GAIN_DB / 20) - 1) * s5env)).astype(np.float32)
+    # the closing sentence ('Maybe something really does last forever.') is delivered softly: lift THAT sentence only (ramped in the
+    # pause before it), so lesson 18's +12 dB holds without a deep duck (floor) or a whole-s5 lift (evenness)
+    cl_word = next(x for x in s5w if x["text"] == "Maybe")
+    clenv = np.clip((t - (cl_word["start"] - 0.25)) / 0.2, 0, 1)
+    narration = (narration * (1 + (10 ** (CLOSING_VOICE_LIFT_DB / 20) - 1) * clenv)).astype(np.float32)
     i_but = max(i for i, x in enumerate(s5w[:-1]) if x["text"].rstrip().endswith((".", "?", "!", ":"))) + 1
     sent = s5w[i_but:]
-    assert sent[0]["text"] == "Or" and sent[-1]["text"] == "one.", sent
-    ww = word("s5", "one")
+    assert sent[0]["text"] == "Maybe" and sent[-1]["text"] == "forever.", sent
+    ww = word("s5", "forever")
     lifted_base = narration.copy()
     way_gain = WAY_GAIN_START_DB
     while True:
@@ -500,12 +498,12 @@ def main() -> None:
         way_gain += 1.0
     narration = cand
     pk_before = [peak100(narration_unlifted, x["start"], x["end"]) for x in sent]
-    way_metric = {"metric": "qa_auto lesson 30: loudest 100 ms of 'way.' vs the median of its sentence's words (voice lane)",
+    way_metric = {"metric": "qa_auto lesson 30: loudest 100 ms of 'forever.' vs the median of its sentence's words (voice lane)",
                   "gain_db": way_gain, "span_film_s": [round(ww["start"] - GAIN_RAMP_IN_S, 3), round(rel_s, 3)],
                   "words": [x["text"] for x in sent], "peak100_before_dbfs": [round(v, 1) for v in pk_before],
                   "peak100_after_dbfs": [round(v, 1) for v in pk], "way_under_median_before_db": round(float(np.median(pk_before)) - pk_before[-1], 1),
                   "way_under_median_after_db": round(under, 1)}
-    assert under <= 3.0, ("lesson 30: 'way' still > 3 dB under its sentence median", way_metric)
+    assert under <= 3.0, ("lesson 30: 'forever' still > 3 dB under its sentence median", way_metric)
     g_on = ww["start"]
     a, b, e = int((g_on - 0.01) * SR), int((rel_s + 0.01) * SR), int(END_LIFT_EDGE_S * SR)
     pad = int(0.2 * SR)
@@ -551,7 +549,7 @@ def main() -> None:
     r0, r1 = rel_s, chord_film_actual - 0.02
     relr = np.clip((t - r0) / (r1 - r0), 0, 1)
     duck_db = np.where(t >= r0, np.minimum(0.0, duck_db[int(r0 * SR)] * (1 - relr)), duck_db)
-    but_on = word("s5", "or")["start"]
+    but_on = word("s5", "maybe")["start"]
     cl_env = np.clip((t - (but_on - CLOSING_LEAD_S)) / (CLOSING_LEAD_S - 0.15), 0, 1)
     cl_env = np.where(t >= r0, 1 - relr, 0.5 - 0.5 * np.cos(np.pi * cl_env))
     duck_db = duck_db + CLOSING_DUCK_DB * cl_env
@@ -597,18 +595,20 @@ def main() -> None:
 
     PLACE = [
         ("X1", "rail_draw", whoosh, -3.2, K["railDraw"] - 6, "the rail starts drawing (sc01): the whoosh peaks 6 f BEFORE the move, off the first word (lesson 57)", "peak", w_on),
-        ("X1", "descend_hair", whoosh, -3.5, K["descendHair"], "the marker's first moving frame toward HAIR (sc02)", "peak", w_on),
-        ("X1", "descend_cell", whoosh, -2.0, K["descendCell"], "the marker's first moving frame toward CELL (sc04)", "peak", w_on),
-        ("X1", "descend_virus", whoosh, -1.0, K["descendVirus"], "the marker's first moving frame toward VIRUS (sc05)", "peak", w_on),
-        ("X4", "hum_atom", hum, -22.0, K["windowOpen2"], "the window re-opens on the drawn atom (sc06)", "start", 0.0),
-        ("X1", "descend_atom", whoosh, -1.0, K["descendAtom"], "the marker's first moving frame toward ATOM (sc06)", "peak", w_on),
-        ("X1", "descend_proton", whoosh, -3.0, K["descendProton"], "the marker's first moving frame toward PROTON (sc07)", "peak", w_on),
-        ("X6", "no_size_tink", tink, -16.0, K["noSize"], "'no size found' seats under the electron bracket (sc08)", "start", 0.0),
-        ("X1", "rail_break", whoosh, -1.0, K["breakDraw"], "the rail BREAK draws (sc09, 'Below')", "peak", w_on),
-        ("X5", "planck_shimmer", shimmer, -14.0, K["planckIn"], "the dashed PLANCK line fades in (sc09)", "start", 0.0),
+        ("X1", "climb_you", whoosh, -3.0, K["climbYou"], "the marker's first moving frame toward YOU (sc02)", "peak", w_on),
+        ("X1", "climb_pine", whoosh, -2.0, K["climbPine"], "the marker's first moving frame toward the PINE (sc05)", "peak", w_on),
+        ("X4", "hum_sun", hum, -22.0, K["windowOpen2"], "the window opens on the drawn Sun (sc06)", "start", 0.0),
+        ("X1", "climb_sun", whoosh, -1.5, K["climbSun"], "the marker's first moving frame toward the SUN (sc06)", "peak", w_on),
+        ("X5", "dwarf_shimmer", shimmer, -14.0, K["dwarfIn"], "the drawn red dwarf appears beside the Sun (sc07)", "start", 0.0),
+        ("X1", "climb_dwarf", whoosh, -2.5, K["climbDwarf"], "the marker's first moving frame toward the RED DWARF (sc07)", "peak", w_on),
+        ("X4", "hum_tank", hum, -22.0, K["windowOpen3"], "the window opens on the drawn detector tank (sc08)", "start", 0.0),
+        ("X6", "no_decay_tink", tink, -16.0, K["noDecay"], "'no decay seen' seats in the tank (sc08)", "start", 0.0),
+        ("X1", "climb_proton", whoosh, -1.0, K["climbProton"], "the marker's first moving frame toward the PROTON limit (sc09)", "peak", w_on),
+        ("X2", "proton_thump", boom, -12.0, K["protonSeat"], "the PROTON rung SEATED, counter 33 (sc09)", "peak", pk_(boom)),
+        ("X1", "rail_break", whoosh, -2.0, K["breakDraw"], "the rail BREAK draws above the proton (sc09)", "peak", w_on),
     ] + [("X3", f"tick_{name}_{i + 1}", tick, -13.5, f, f"ZEROS counter step on the {name.upper()} rung", "peak", tick_peak)
-         for name in ("sand", "hair", "cell", "virus", "atom", "proton") for i, f in enumerate(K[f"{name}Ticks"])] \
-      + [("X3", f"tick_spin_{i + 1}", tick, -15.0, f, f"counter spin 14 -> 34, accelerating tick {i + 1}/6 (sc09)", "peak", tick_peak) for i, f in enumerate(K["spinTicks"])] \
+         for name in ("mayfly", "you", "tortoise", "pine", "sun", "dwarf") for i, f in enumerate(K[f"{name}Ticks"])] \
+      + [("X3", f"tick_spin_{i + 1}", tick, -15.0, f, f"counter 12 -> 33, accelerating tick {i + 1}/6 (sc09)", "peak", tick_peak) for i, f in enumerate(K["spinTicks"])] \
       + [("X3", f"tick_readout_{i + 1}", tick, -11.0 if i == 0 else -16.0, f, f"readout typing tick {i + 1}/9 (sc10)", "peak", tick_peak) for i, f in enumerate(K["readoutTicks"])]
     PLACE.sort(key=lambda p: p[4])
     sfx = np.zeros((n, 2), dtype=np.float32)
@@ -768,12 +768,12 @@ def main() -> None:
         parts[x["text"]] = {"window_s5_s": [round(x["start"] - s5_0, 3), round(x["end"] - s5_0, 3)], "voice": round(rms_db(ph_voice[a:b]), 1),
                             "bed": round(rms_db(ph_bed[a:b]), 1) if has_bed else None}
         parts[x["text"]]["voice_over_bed_db"] = round(parts[x["text"]]["voice"] - parts[x["text"]]["bed"], 1) if has_bed else None
-    for k_, (a_s, b_s) in {"way: w + ay (onset + vowel)": (ww["start"], ww["start"] + 0.18), "way: tail": (rel_s - 0.12, rel_s)}.items():
+    for k_, (a_s, b_s) in {"forever: onset + vowel": (ww["start"], ww["start"] + 0.18), "forever: tail": (rel_s - 0.12, rel_s)}.items():
         a, b = int(a_s * SR), int(b_s * SR)
         parts[k_] = {"window_s5_s": [round(a_s - s5_0, 3), round(b_s - s5_0, 3)], "voice": round(rms_db(ph_voice[a:b]), 1),
                      "bed": round(rms_db(ph_bed[a:b]), 1) if has_bed else None}
         parts[k_]["voice_over_bed_db"] = round(parts[k_]["voice"] - parts[k_]["bed"], 1) if has_bed else None
-    margin = min(v["voice_over_bed_db"] for k_, v in parts.items() if k_ != "way: tail") if has_bed else None
+    margin = min(v["voice_over_bed_db"] for k_, v in parts.items() if k_ != "forever: tail") if has_bed else None
     if has_bed:
         assert margin >= MIN_LAST_MARGIN_DB, ("lesson 18: the closing sentence under +12 dB over the bed in 300-4000 Hz", parts)
     vm = np.repeat(voiced, hop)[:n]
@@ -784,23 +784,23 @@ def main() -> None:
     chord_meas = measured_onset(bed_final.mean(axis=1), chord_film_actual, 0.06) if has_bed else None
     ending = {
         "release_s": rel_s, "release_frame": rel_f,
-        "release_definition": "timeline.json way_end_seconds: the last voiced 10 ms (-40 dB re. the narration max) of s5 (the end of 'way')",
+        "release_definition": "timeline.json way_end_seconds: the last voiced 10 ms (-40 dB re. the narration max) of s5 (the end of 'forever')",
         "chord": ("the bed's LAST TONIC attack found from the audio (lesson 26)" if has_bed else
                   "NO BED YET: chord_frame is the planned release + 0.15 s; the bed's last tonic will be aligned to it (lesson 26) when bed_raw.mp3 lands"),
         "chord_film_s": round(chord_film_actual, 4), "chord_measured_on_premix_bed_s": round(chord_meas, 4) if chord_meas else None,
         "chord_after_release_s": round(chord_film_actual - rel_s, 3), "chord_frame": K["chordFrame"],
         "duck_release_s": [round(r0, 3), round(r1, 3)],
-        "closing_duck": {"db": CLOSING_DUCK_DB, "ramp_from_s": round(but_on - CLOSING_LEAD_S, 3), "full_from_s": round(but_on - 0.15, 3), "from_word": "But (lesson 44)"},
+        "closing_duck": {"db": CLOSING_DUCK_DB, "ramp_from_s": round(but_on - CLOSING_LEAD_S, 3), "full_from_s": round(but_on - 0.15, 3), "from_word": "Maybe (lesson 44)"},
         "end_duck": {"db": END_DUCK_DB, "from_s": round(g_on - END_DUCK_IN_S, 3)},
         "end_lift": {"db": END_LIFT_DB, "band_hz": [300, 4000], "film_s": [round(g_on - 0.01, 3), round(rel_s + 0.01, 3)]},
         "ring_lift": {"db": RING_LIFT_DB, "from_s": round(chord_film_actual + 0.15, 3)},
         "way_lift": way_metric, "s5_section_gain_db": S5_GAIN_DB,
         "closing_words_300_4000": parts, "closing_min_margin_db": margin,
         "closing_min_margin_note": None if has_bed else "no bed: not measurable from the stems yet; written as a number (>= 12 asserted) when bed_raw.mp3 lands (lesson 49)",
-        "limiter_max_reduction_on_way_db": lim_way_db,
+        "limiter_max_reduction_on_forever_db": lim_way_db,
         "mix_rms_by_100ms_after_chord_dbfs": [round(rms_db(mix[int(chord_film_actual * SR) + i * w100: int(chord_film_actual * SR) + (i + 1) * w100]), 1) for i in range((n - int(chord_film_actual * SR)) // w100)],
         "settle_after_chord_s": round(total_s - chord_film_actual, 3),
-        "nothing_under_closing_line": "asserted: the SFX lane is silent from 'But' - 0.05 s to the end",
+        "nothing_under_closing_line": "asserted: the SFX lane is silent from 'Maybe' - 0.05 s to the end",
     }
     report = {
         "total_seconds": round(total_s, 4), "total_frames": total_frames, "samples": n, "sample_rate": SR, "channels": 2,
@@ -827,8 +827,8 @@ def main() -> None:
     }
     (P / "artifacts/soundtrack_report.json").write_text(json.dumps(report, indent=1, ensure_ascii=False))
     print(f"integrated {integ} LUFS, true peak {tpk} dBFS, master gain {gain_total:+.2f} dB; bed: {'present' if has_bed else 'NONE'}")
-    print("chord film", round(chord_film_actual, 3), "after release", round(chord_film_actual - rel_s, 3), "But", round(but_on, 3))
-    print("way", way_metric["gain_db"], "dB, under median", way_metric["way_under_median_before_db"], "->", way_metric["way_under_median_after_db"])
+    print("chord film", round(chord_film_actual, 3), "after release", round(chord_film_actual - rel_s, 3), "Maybe", round(but_on, 3))
+    print("forever", way_metric["gain_db"], "dB, under median", way_metric["way_under_median_before_db"], "->", way_metric["way_under_median_after_db"])
     for k_, v in parts.items():
         print(f"  {k_:<30} voice {v['voice']:6.1f} bed {v['bed']}  over {v['voice_over_bed_db']}")
     for c in cues:

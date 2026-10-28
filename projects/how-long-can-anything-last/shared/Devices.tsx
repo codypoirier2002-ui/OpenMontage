@@ -1,21 +1,21 @@
-// THE DEVICES below the proton (ROOT: Composition.tsx mounts <RootDevices/> once, above the ladder, under the scenes) and
-// the window's drawn atom. All driven by props.devices (build_props.py), pure functions of the frame. Hooks at the top
-// (lesson 1). No blend modes (lesson 24).
-//   ELECTRON   sc08 ->: a cap under the rail's bottom (L 18) + an OPEN downward dashed arrow (no floor found) + 'ELECTRON'
-//              (in from electronIn) + 'no size found · < 10⁻¹⁸ m' SEATING on noSize. The marker does not move.
-//   BREAK      sc09 ->: the rail continues past L 18 through a drawn zigzag (y 1012-1040) to the Planck line (draws from breakDraw).
-//   PLANCK     sc09 ->: the dashed violet line at y 1080 + 'PLANCK LENGTH · 1.6 × 10⁻³⁵ m' (fully in ON planckIn); it
-//              brightens ON floorGlow with 'a floor? unproven' seating there (sc11).
-//   READOUT    sc10 ->: '0.' + 34 zeros + '16 m' typed glyph by glyph (readoutStart -> readoutEnd) on a card in the window's column.
-//   ATOM       <AtomDrawing/> (the window's 4th state, DRAWN: an electron-cloud haze + a tiny bright nucleus, pulsing ON
-//              nucleusPulse) and <AtomNote/> (overlay plane: 'to scale, this dot would be ~0.006 px', seating ON nucleusPulse).
+// THE DEVICES of the Lifespan Column (ROOT: Composition.tsx mounts <RootDevices/> once, above the ladder, under the scenes; the
+// window's two DRAWN insets; the overlay notes). All driven by props.devices (build_props.py), pure functions of the frame.
+// Hooks at the top (lesson 1). No blend modes (lesson 24).
+//   BREAK      sc09 ->: a drawn zigzag above the PROTON's open arrow (y 432-458), drawing from breakDraw: the rail cannot go on.
+//   FOREVER    sc12: the dashed 'forever?' line rising from the break to y 240 (draw from foreverDraw = 'Maybe', MAYBE page), its label
+//              seats ON foreverSeat ('forever'). No sound (the closing sentence is SFX-free).
+//   READOUT    sc10 ->: '1' + 33 zeros + ' yr' typed glyph by glyph (readoutStart -> readoutEnd) on a card under the window; fades out
+//              before the MAYBE glide.
+//   SUN        <SunDrawing/> (the window's 4th state, DRAWN): the Sun disc + a much smaller red dwarf (in ON dwarfIn); each lifetime
+//              seats ON its rung's seat. 'drawn · not to scale' (WindowTags).
+//   TANK       <TankDrawing/> (the window's 5th state, DRAWN): a water detector tank ringed with idle light sensors, nothing
+//              flashing; 'no decay seen' seats ON noDecay.
 //   <Ping/>    a one-shot ring for the scenes' emphasis.
 
 import React from "react";
 import { useCurrentFrame } from "remotion";
 import { C, FONT, L, rgba } from "../theme";
-import { prog, useT } from "../time";
-import { Sci } from "./Type";
+import { useT } from "../time";
 
 const R = L.rail;
 const FULL: React.CSSProperties = { position: "absolute", inset: 0, overflow: "visible" };
@@ -35,47 +35,13 @@ export const Ping: React.FC<{ at: number; x: number; y: number; r0?: number; r1?
   );
 };
 
-const Electron: React.FC = () => {
-  const frame = useCurrentFrame();
-  const T = useT();
-  const e = T.dev.electron;
-  const a = T.ch(e.alpha, frame);
-  const s = T.seat(frame, e.subSeat, T.motion.SEAT_F, 14);
-  if (a <= 0) return null;
-  const E = L.electron;
-  const yB = R.y1;
-  const ax = R.rungX1 + 8;
-  return (
-    <>
-      <svg width={L.W} height={L.H} style={{ ...FULL, opacity: a }}>
-        {/* the cap under L 18 and the open arrow down: nothing found to stand on */}
-        <path d={`M ${R.rungX0} ${yB - 8} L ${R.rungX0} ${yB} L ${R.rungX1} ${yB} L ${R.rungX1} ${yB - 8}`} stroke={C.bone} strokeWidth={2.5} fill="none" strokeLinecap="round" />
-        <line x1={ax} y1={yB - 30} x2={ax} y2={yB + 44} stroke={C.bone} strokeWidth={2} strokeDasharray="5 6" />
-        <path d={`M ${ax - 9} ${yB + 34} L ${ax} ${yB + 48} L ${ax + 9} ${yB + 34}`} stroke={C.bone} strokeWidth={2.5} fill="none" strokeLinecap="round" strokeLinejoin="round" />
-        <line x1={ax} y1={E.nameY} x2={E.x - 8} y2={E.nameY} stroke={rgba(C.steel, 0.6)} strokeWidth={1.5} />
-      </svg>
-      <div style={{ position: "absolute", left: E.x, top: E.nameY - 17, height: 34, fontFamily: FONT.display, fontWeight: 700, fontSize: 32, lineHeight: "34px", color: C.bone,
-        opacity: a, whiteSpace: "nowrap", letterSpacing: 1 }}>
-        {e.name}
-      </div>
-      {s.visible ? (
-        <div style={{ position: "absolute", left: E.x, top: E.subY - 14 + s.y, height: 30, fontFamily: FONT.mono, fontWeight: 400, fontSize: 28, lineHeight: "30px", color: C.steel,
-          opacity: s.opacity * a, whiteSpace: "nowrap" }}>
-          <Sci text={e.sub} size={28} />
-        </div>
-      ) : null}
-    </>
-  );
-};
-
 const Break: React.FC = () => {
   const frame = useCurrentFrame();
   const T = useT();
   const b = T.ch(T.dev.brk, frame);
   if (b <= 0) return null;
   const x = R.x;
-  const y0 = R.y1;
-  const d = `M ${x} ${y0} L ${x} ${R.breakY0} L ${x + 12} ${R.breakY0 + 7} L ${x - 12} ${R.breakY0 + 14} L ${x + 12} ${R.breakY0 + 21} L ${x} ${R.breakY1} L ${x} ${R.planckY}`;
+  const d = `M ${x} ${R.arrowTip - 2} L ${x} ${R.breakY1} L ${x + 12} ${R.breakY1 - 7} L ${x - 12} ${R.breakY1 - 14} L ${x + 12} ${R.breakY1 - 21} L ${x} ${R.breakY0} L ${x} ${R.foreverY0}`;
   return (
     <svg width={L.W} height={L.H} style={FULL}>
       <path d={d} pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - b} stroke={C.steel} strokeWidth={3} fill="none" strokeLinejoin="round" opacity={0.85} />
@@ -83,34 +49,27 @@ const Break: React.FC = () => {
   );
 };
 
-const Planck: React.FC = () => {
+const Forever: React.FC = () => {
   const frame = useCurrentFrame();
   const T = useT();
-  const p = T.dev.planck;
-  const a = T.ch(p.alpha, frame);
-  const g = T.ch(p.glow, frame);
-  const s = T.seat(frame, p.floorSeat, T.motion.SEAT_F, 12);
-  if (a <= 0) return null;
-  const x0 = R.tickX0 - 40;
-  const x1 = 900;
-  const xd = x0 + (x1 - x0) * Math.min(1, a * 1.25);
-  const [name, val] = p.label.split(" · ");
+  const f = T.dev.forever;
+  const d = T.ch(f.draw, frame);
+  const s = T.seat(frame, f.labelSeat, T.motion.SEAT_F, 12);
+  if (d <= 0) return null;
+  const y1 = R.foreverY0 - (R.foreverY0 - R.foreverY1) * d;
+  const done = d >= 0.999;
   return (
     <>
       <svg width={L.W} height={L.H} style={FULL}>
-        {g > 0 ? <line x1={x0} y1={p.y} x2={xd} y2={p.y} stroke={C.planck} strokeWidth={10} opacity={0.25 * g} strokeDasharray="14 10" /> : null}
-        <line x1={x0} y1={p.y} x2={xd} y2={p.y} stroke={C.planck} strokeWidth={3 + 1 * g} strokeDasharray="14 10" opacity={(0.7 + 0.3 * g) * a} />
+        <line x1={R.x} y1={R.foreverY0} x2={R.x} y2={y1} stroke={C.bone} strokeWidth={3} strokeDasharray="10 9" opacity={0.85} />
+        {d > 0.02 ? (
+          <path d={`M ${R.x - 10} ${y1 + 14} L ${R.x} ${y1} L ${R.x + 10} ${y1 + 14}`} stroke={C.bone} strokeWidth={3.5} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={done ? 0.9 : 0.6} />
+        ) : null}
       </svg>
-      <div style={{ position: "absolute", left: R.labelX + 20, top: p.y + 6, height: 32, fontSize: 28, lineHeight: "32px", color: C.planck, opacity: a, whiteSpace: "nowrap",
-        textShadow: g > 0 ? `0 0 14px ${rgba(C.planck, 0.55 * g)}` : "none" }}>
-        <span style={{ fontFamily: FONT.display, fontWeight: 700 }}>{name}</span>
-        <span style={{ fontFamily: FONT.display, fontWeight: 700 }}> · </span>
-        <span style={{ fontFamily: FONT.mono, fontWeight: 500 }}><Sci text={val} size={28} /></span>
-      </div>
       {s.visible ? (
-        <div style={{ position: "absolute", right: L.W - 900, top: p.y - 40 + s.y, height: 30, fontFamily: FONT.mono, fontWeight: 500, fontSize: 26, lineHeight: "30px", color: C.planck,
-          opacity: s.opacity, whiteSpace: "nowrap" }}>
-          {p.floor}
+        <div style={{ position: "absolute", left: L.forever.x, top: L.forever.y + s.y, height: 44, fontFamily: FONT.display, fontWeight: 700, fontSize: 38, lineHeight: "44px", color: C.bone,
+          opacity: s.opacity, whiteSpace: "nowrap", letterSpacing: 1 }}>
+          {f.label}
         </div>
       ) : null}
     </>
@@ -147,62 +106,98 @@ export const RootDevices: React.FC = () => {
   return (
     <>
       <Break />
-      <Planck />
-      <Electron />
+      <Forever />
       <Readout />
     </>
   );
 };
 
-/** the window's DRAWN atom (inside <WindowFrame/>): an electron-cloud haze + a tiny bright nucleus that pulses ON nucleusPulse */
-export const AtomDrawing: React.FC<{ w: number; h: number }> = ({ w, h }) => {
+/** the window's DRAWN Sun + red dwarf (inside <WindowFrame/>): two discs (NOT to scale), lifetimes seating on their rungs' seats */
+export const SunDrawing: React.FC<{ w: number; h: number }> = ({ w, h }) => {
   const frame = useCurrentFrame();
   const T = useT();
-  const pulse = T.dev.atomNote.pulse;
+  const s = T.dev.sun;
   const lf = T.loopFrame(frame);
-  const up = prog(frame, pulse - 6, pulse);
-  const down = 1 - prog(frame, pulse, pulse + 18);
-  const k = frame < pulse ? up : down;
-  const cx = w / 2;
-  const cy = h * 0.58;
+  const da = T.ch(s.dwarfAlpha, frame);
+  const ss = T.seat(frame, s.sunSeat, T.motion.SEAT_F, 12);
+  const ds = T.seat(frame, s.dwarfSeat, T.motion.SEAT_F, 12);
   const breathe = 1 + 0.02 * Math.sin((lf / 50) * Math.PI * 2);
+  const cx = w / 2;
+  const txt: React.CSSProperties = { position: "absolute", left: 0, width: w, textAlign: "center", whiteSpace: "nowrap" };
   return (
-    <svg width={w} height={h} style={{ position: "absolute", inset: 0 }}>
-      <defs>
-        <radialGradient id="atomCloud" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor={C.steel} stopOpacity={0.42} />
-          <stop offset="35%" stopColor={C.steel} stopOpacity={0.24} />
-          <stop offset="70%" stopColor={C.steelDim} stopOpacity={0.1} />
-          <stop offset="100%" stopColor={C.steelDim} stopOpacity={0} />
-        </radialGradient>
-      </defs>
-      <rect width={w} height={h} fill={C.skyBottom} />
-      <circle cx={cx} cy={cy} r={150 * breathe} fill="url(#atomCloud)" />
-      {[0.42, 0.7, 0.95].map((q, i) => (
-        <circle key={i} cx={cx} cy={cy} r={150 * q * breathe} fill="none" stroke={C.steel} strokeWidth={1} strokeDasharray="2 7" opacity={0.25} />
-      ))}
-      {k > 0 ? <circle cx={cx} cy={cy} r={6 + 26 * k} fill="none" stroke={C.marker} strokeWidth={2} opacity={0.7 * k} /> : null}
-      <circle cx={cx} cy={cy} r={5 + 4 * k} fill={C.marker} opacity={0.35} />
-      <circle cx={cx} cy={cy} r={2.5 + 1.5 * k} fill={C.marker} />
-    </svg>
+    <div style={{ position: "absolute", inset: 0 }}>
+      <svg width={w} height={h} style={{ position: "absolute", inset: 0 }}>
+        <defs>
+          <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="45%" stopColor={C.sun} stopOpacity={0.5} />
+            <stop offset="100%" stopColor={C.sun} stopOpacity={0} />
+          </radialGradient>
+          <radialGradient id="dwarfGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="40%" stopColor={C.dwarf} stopOpacity={0.45} />
+            <stop offset="100%" stopColor={C.dwarf} stopOpacity={0} />
+          </radialGradient>
+        </defs>
+        <rect width={w} height={h} fill={C.skyBottom} />
+        <circle cx={cx} cy={105} r={120 * breathe} fill="url(#sunGlow)" />
+        <circle cx={cx} cy={105} r={70} fill={C.sun} />
+        <g opacity={da}>
+          <circle cx={cx} cy={290} r={46 * breathe} fill="url(#dwarfGlow)" />
+          <circle cx={cx} cy={290} r={26} fill={C.dwarf} />
+        </g>
+      </svg>
+      <div style={{ ...txt, top: 186, fontFamily: FONT.mono, fontWeight: 500, fontSize: 26, lineHeight: "30px", color: C.bone }}>Sun</div>
+      {ss.visible ? (
+        <div style={{ ...txt, top: 218 + ss.y, fontFamily: FONT.mono, fontWeight: 400, fontSize: 24, lineHeight: "28px", color: C.steel, opacity: ss.opacity }}>{s.lifetimes[0]}</div>
+      ) : null}
+      <div style={{ ...txt, top: 326, fontFamily: FONT.mono, fontWeight: 500, fontSize: 26, lineHeight: "30px", color: C.bone, opacity: da }}>red dwarf</div>
+      {ds.visible ? (
+        <div style={{ ...txt, top: 358 + ds.y, fontFamily: FONT.mono, fontWeight: 400, fontSize: 24, lineHeight: "28px", color: C.steel, opacity: ds.opacity }}>{s.lifetimes[1]}</div>
+      ) : null}
+    </div>
   );
 };
 
-/** OVERLAY: the note under the drawn atom's title area, inside the window; seats ON nucleusPulse, leaves with the window */
-export const AtomNote: React.FC = () => {
+/** the window's DRAWN detector tank: a water tank with a ring of idle light sensors; nothing flashes; 'no decay seen' seats ON noDecay */
+export const TankDrawing: React.FC<{ w: number; h: number }> = ({ w, h }) => {
   const frame = useCurrentFrame();
   const T = useT();
-  const n = T.dev.atomNote;
-  const a = T.ch(n.alpha, frame);
-  const s = T.seat(frame, n.seat, T.motion.SEAT_F, 12);
-  if (a <= 0 || !s.visible) return null;
-  const b = L.win;
+  const k = T.dev.tank;
+  const s = T.seat(frame, k.noteSeat, T.motion.SEAT_F, 12);
+  const lf = T.loopFrame(frame);
+  const x0 = 56, x1 = w - 56, y0 = 96, y1 = 322, ry = 22;
+  const cols = 8, rows = 6;
+  const sensors: React.ReactNode[] = [];
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const x = x0 + 18 + ((x1 - x0 - 36) * c) / (cols - 1);
+      const y = y0 + ry + 18 + ((y1 - y0 - 2 * ry - 36) * r) / (rows - 1);
+      const tw = 0.5 + 0.12 * Math.sin(lf / 31 + r * 1.7 + c * 0.9);
+      sensors.push(<circle key={`${r}-${c}`} cx={x} cy={y} r={6} fill="none" stroke={C.steel} strokeWidth={2} opacity={tw} />);
+    }
+  }
   return (
-    <div style={{ position: "absolute", left: b.x0, width: b.x1 - b.x0, top: b.y0 + 34 + s.y, display: "flex", flexDirection: "column", alignItems: "center",
-      fontFamily: FONT.mono, fontWeight: 400, fontSize: 24, lineHeight: "30px", color: C.bone, opacity: a * s.opacity, whiteSpace: "nowrap" }}>
-      {n.lines.map((l, i) => (
-        <div key={i}><Sci text={l} size={24} /></div>
-      ))}
+    <div style={{ position: "absolute", inset: 0 }}>
+      <svg width={w} height={h} style={{ position: "absolute", inset: 0 }}>
+        <defs>
+          <linearGradient id="tankWater" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={C.steel} stopOpacity={0.16} />
+            <stop offset="100%" stopColor={C.steel} stopOpacity={0.05} />
+          </linearGradient>
+        </defs>
+        <rect width={w} height={h} fill={C.skyBottom} />
+        <path d={`M ${x0} ${y0} L ${x0} ${y1} A ${(x1 - x0) / 2} ${ry} 0 0 0 ${x1} ${y1} L ${x1} ${y0} Z`} fill="url(#tankWater)" stroke={C.steel} strokeWidth={3} />
+        <ellipse cx={w / 2} cy={y0} rx={(x1 - x0) / 2} ry={ry} fill={rgba(C.steel, 0.1)} stroke={C.steel} strokeWidth={3} />
+        {sensors}
+      </svg>
+      <div style={{ position: "absolute", left: 0, width: w, top: 30, textAlign: "center", fontFamily: FONT.mono, fontWeight: 400, fontSize: 24, lineHeight: "28px", color: C.steel, whiteSpace: "nowrap" }}>
+        water detector
+      </div>
+      {s.visible ? (
+        <div style={{ position: "absolute", left: 0, width: w, top: 346 + s.y, textAlign: "center", fontFamily: FONT.mono, fontWeight: 500, fontSize: 26, lineHeight: "30px", color: C.bone,
+          opacity: s.opacity, whiteSpace: "nowrap" }}>
+          {k.note}
+        </div>
+      ) : null}
     </div>
   );
 };
