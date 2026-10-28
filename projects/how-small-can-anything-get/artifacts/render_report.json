@@ -1,0 +1,35 @@
+{
+ "version": "1.0",
+ "outputs": [
+  {
+   "path": "renders/how-small-can-anything-get.mp4",
+   "format": "mp4",
+   "codec": "h264",
+   "audio_codec": "aac",
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "platform_target": "tiktok_9x16",
+   "duration_seconds": 48.533,
+   "file_size_bytes": 7608034
+  },
+  {
+   "path": "renders/raw.mp4",
+   "format": "mp4",
+   "codec": "h264",
+   "audio_codec": "aac",
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "platform_target": "intermediate",
+   "duration_seconds": 48.576,
+   "file_size_bytes": 7486601
+  }
+ ],
+ "render_grammar": "explainer-teacher",
+ "decision_log_ref": "/home/user/OpenMontage/projects/how-small-can-anything-get/decision_log.json",
+ "verification_notes": [
+  "Lean build: video 16's per-video files and pipeline copied and flipped; 1 builder agent for the visual layer (props, engine, 12 scenes, contact sheet 2, BUILD_SPEC.md); qa_auto 0 fail / 0 warn on the master after one audio fix (opening whoosh was +7.2 dB over 'A grain', now -11.3 dB); 1 targeted QA agent briefed with BUILD_SPEC.md frame lists.",
+  "Caption onsets: all 111 words from the automatic onset sweep (sweep_onsets.py); 74 differ from Whisper by > 0.5 f and were adopted without hand-reading (lean); QA spot-checks the 14 that differ by > 1.5 f.",
+  "Independent QA agent: 0 blockers, 1 major (A1: the marker stayed bright on PROTON while the narration named the electron and the Planck length; fixed by dimming it to a 0.3 ghost from 'Electrons'), 6 minors (A4 empty readout card 7 f before its first glyph: fixed; A2/A3/A5/A7 layout notes and A6 four caption onsets at the +-2 f edge: accepted). One fix round, re-render, qa_auto 0 fail / 0 warn.",
+  "qa_auto.py: PASS (0 fail, 0 warn)."
+ ]
+}

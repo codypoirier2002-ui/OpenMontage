@@ -305,7 +305,10 @@ def main() -> None:
         assert markerL[s_] == r["L"] and markerL[s_ - 1] < r["L"], ("the descent must land ON the seat", r["id"])
     assert np.all(np.diff(markerL) >= 0), "the marker only descends"
     assert markerL[fr["electronIn"]:].max() == markerL[fr["electronIn"]:].min() == Lof["proton"], "the marker does not move from sc08 (nothing to stand on)"
-    vis = np.ones(T)
+    # QA A1 (lesson 33): from 'Electrons' the narration leaves the proton; the marker stays (there is no size to land on)
+    # but dims to a ghost so the eye follows the electron bracket and the Planck line
+    vis = Track(T, 1.0).to(fr["electronIn"], fr["electronIn"] + 12, 0.3, "sine").build()
+    assert vis[fr["electronIn"]] == 1.0 and abs(vis[-1] - 0.3) < 1e-6
     rail_draw = Track(T, 0.0).to(fr["railDraw"] - 1, fr["railDraw"] + 15, 1.0, "outquad").build()
     assert rail_draw[fr["railDraw"] - 1] == 0 and rail_draw[fr["railDraw"]] > 0
     veil = Track(T, 0.0).to(fr["eyeLine"] - 1, fr["eyeLine"] + 11, 0.2, "linear").build()
@@ -409,7 +412,7 @@ def main() -> None:
         count[f_] = min(n, 1 + (n - 1) * (f_ - rs) // (re_ - rs))
     assert count[rs - 1] == 0 and count[rs] == 1 and count[re_] == n and count[re_ - 1] < n and np.all(np.diff(count) >= 0)
     assert "".join(READOUT_LINES) == READOUT_TEXT and READOUT_TEXT.count("0") == 1 + 34 and READOUT_TEXT.startswith("0." + "0" * 34 + "16")
-    rA = Track(T, 0.0).to(rs - 8, rs, 1.0, "linear").build()
+    rA = Track(T, 0.0).to(rs - 2, rs, 1.0, "linear").build()   # QA A4: the card appears with its first glyph, not 8 f empty
     rmono = advance("IBMPlexMono-normal-500-latin.woff2", READOUT_PX)
     assert READOUT["x0"] + 12 + max(rmono(l) for l in READOUT_LINES) <= 912, ("the readout reaches x >= 912", [rmono(l) for l in READOUT_LINES])
     nA = Track(T, 0.0).to(fr["nucleusPulse"] - SEAT_F, fr["nucleusPulse"], 1.0, "linear").to(c2 - 1, c2 - 1 + WC, 0.0).build()
