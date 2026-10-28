@@ -3,11 +3,11 @@
   "project_id": "how-long-can-anything-last",
   "pipeline_type": "unknown",
   "stage": "proposal",
-  "status": "awaiting_human",
-  "timestamp": "2026-10-28T15:31:16.340878+00:00",
+  "status": "completed",
+  "timestamp": "2026-10-28T15:49:58.362738+00:00",
   "checkpoint_policy": "guided",
   "human_approval_required": true,
-  "human_approved": false,
+  "human_approved": true,
   "artifacts": {
     "proposal_packet": {
       "version": "1.0",
@@ -362,9 +362,9 @@
         ]
       },
       "approval": {
-        "status": "pending",
+        "status": "approved",
         "approved_budget_usd": 4.0,
-        "user_notes": "Topic (How Long Can Anything Last?), $4 cap and run-through (proposal + script together) chosen by the user 2026-10-28."
+        "user_notes": "User 2026-10-28: 'Approve' (proposal and script together; run end to end per d-003)."
       },
       "metadata": {
         "generation_policy": "1 generation per asset; retake only when automated QA fails (narration max 2); never re-roll images/clips - code fallback; estimate_only before every paid run; generating agent hard limit ~$2",

@@ -1,0 +1,1029 @@
+{
+  "version": "1.0",
+  "project_id": "how-long-can-anything-last",
+  "pipeline_type": "unknown",
+  "stage": "scene_plan",
+  "status": "completed",
+  "timestamp": "2026-10-28T15:49:58.540204+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": true,
+  "human_approved": true,
+  "artifacts": {
+    "scene_plan": {
+      "version": "1.0",
+      "style_playbook": "custom",
+      "scenes": [
+        {
+          "id": "sc01",
+          "type": "animation",
+          "start_seconds": 0.0,
+          "end_seconds": 3.36,
+          "script_section_id": "s1",
+          "description": "Render: atelier component sc01. 'Lifespan Column': the ladder engine pointing UP in years. Ink background slightly lighter toward the top (#05060A bottom -> #0B0E16 top, faint grain). A vertical steel log rail at x ~250 from 1 day (bottom, y ~1000) to 10^34 years (top, y ~380); ticks every 3 powers with numbers as powers of ten in years (24 px), label 'years \u00b7 log scale'. A warm amber marker (#FFC878 core) CLIMBS rung by rung. Above 10^33 the rail BREAKS (zigzag) with an open-ended arrow and a dashed line 'forever?'. ZEROS counter top right = the power of ten of the active rung. Window x 580-920 y 440-893 for AI plates and drawn insets. MAYFLY.",
+          "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+          "movement": " marker breathes; streaks length = log10(speed).",
+          "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "overlay_notes": "CAPTION 'An adult mayfly lives about a day.'. TAB PROBABLY. OVERLAYS: rail draws bottom->top before the first word; rung 'MAYFLY \u00b7 ~1 day'; counter 'ZEROS 0'.",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "MAYFLY",
+          "narrative_role": "establish_context",
+          "information_role": "MAYFLY",
+          "hero_moment": false,
+          "texture_keywords": [
+            "log-scale lifespan column",
+            "climbing marker",
+            "zeros counter",
+            "dashed forever line"
+          ],
+          "required_assets": [
+            {
+              "type": "code",
+              "description": "Remotion atelier (video 16-18 ladder engine, upward, via the kit)",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc02",
+          "type": "animation",
+          "start_seconds": 3.36,
+          "end_seconds": 5.9,
+          "script_section_id": "s1",
+          "description": "Render: atelier component sc02. Continuous Lifespan Column frame. YOU.",
+          "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+          "movement": " marker breathes; streaks length = log10(speed).",
+          "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "overlay_notes": "CAPTION 'You live about seventy-three years.'. TAB MEASURED. OVERLAYS: marker climbs to 'YOU \u00b7 73 yr' (WHO 2023); counter 0->1.",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "YOU",
+          "narrative_role": "build_tension",
+          "information_role": "YOU",
+          "hero_moment": false,
+          "texture_keywords": [
+            "log-scale lifespan column",
+            "climbing marker",
+            "zeros counter",
+            "dashed forever line"
+          ],
+          "required_assets": [
+            {
+              "type": "code",
+              "description": "Remotion atelier (video 16-18 ladder engine, upward, via the kit)",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc03",
+          "type": "animation",
+          "start_seconds": 5.9,
+          "end_seconds": 9.66,
+          "script_section_id": "s1",
+          "description": "Render: atelier component sc03. Continuous Lifespan Column frame. TORTOISE.",
+          "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+          "movement": " marker breathes; streaks length = log10(speed).",
+          "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "overlay_notes": "CAPTION 'A tortoise named Jonathan is nearly two hundred.'. TAB PROBABLY. OVERLAYS: marker to 'JONATHAN \u00b7 ~193 yr'; counter 1->2; window opens with plate S1 (giant tortoise, AI impression).",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "TORTOISE",
+          "narrative_role": "build_tension",
+          "information_role": "TORTOISE",
+          "hero_moment": false,
+          "texture_keywords": [
+            "log-scale lifespan column",
+            "climbing marker",
+            "zeros counter",
+            "dashed forever line"
+          ],
+          "required_assets": [
+            {
+              "type": "code",
+              "description": "Remotion atelier (video 16-18 ladder engine, upward, via the kit)",
+              "source": "generate"
+            },
+            {
+              "type": "image",
+              "description": "a giant tortoise (AI impression)",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc04",
+          "type": "animation",
+          "start_seconds": 9.66,
+          "end_seconds": 13.84,
+          "script_section_id": "s2",
+          "description": "Render: atelier component sc04. Continuous Lifespan Column frame. SHARK.",
+          "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+          "movement": " marker breathes; streaks length = log10(speed).",
+          "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "overlay_notes": "CAPTION 'A Greenland shark can live about four hundred years.'. TAB PROBABLY. OVERLAYS: marker to 'GREENLAND SHARK \u00b7 ~400 yr'; counter stays 2; window crossfades to S2 (Greenland shark, AI impression).",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "SHARK",
+          "narrative_role": "build_tension",
+          "information_role": "SHARK",
+          "hero_moment": false,
+          "texture_keywords": [
+            "log-scale lifespan column",
+            "climbing marker",
+            "zeros counter",
+            "dashed forever line"
+          ],
+          "required_assets": [
+            {
+              "type": "code",
+              "description": "Remotion atelier (video 16-18 ladder engine, upward, via the kit)",
+              "source": "generate"
+            },
+            {
+              "type": "image",
+              "description": "a Greenland shark (AI impression)",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc05",
+          "type": "animation",
+          "start_seconds": 13.84,
+          "end_seconds": 18.83,
+          "script_section_id": "s2",
+          "description": "Render: atelier component sc05. Continuous Lifespan Column frame. PINE.",
+          "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+          "movement": " marker breathes; streaks length = log10(speed).",
+          "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "overlay_notes": "CAPTION 'The oldest known tree, a bristlecone pine, is nearly five thousand.'. TAB PROBABLY. OVERLAYS: marker to 'BRISTLECONE PINE \u00b7 ~4,850 yr'; counter 2->3; window crossfades to S3 (bristlecone pine, AI impression), closes before the next tab glide.",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "PINE",
+          "narrative_role": "build_tension",
+          "information_role": "PINE",
+          "hero_moment": false,
+          "texture_keywords": [
+            "log-scale lifespan column",
+            "climbing marker",
+            "zeros counter",
+            "dashed forever line"
+          ],
+          "required_assets": [
+            {
+              "type": "code",
+              "description": "Remotion atelier (video 16-18 ladder engine, upward, via the kit)",
+              "source": "generate"
+            },
+            {
+              "type": "image",
+              "description": "a bristlecone pine (AI impression)",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc06",
+          "type": "animation",
+          "start_seconds": 18.83,
+          "end_seconds": 23.0,
+          "script_section_id": "s3",
+          "description": "Render: atelier component sc06. Continuous Lifespan Column frame. SUN.",
+          "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+          "movement": " marker breathes; streaks length = log10(speed).",
+          "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "overlay_notes": "CAPTION 'The Sun will shine for about ten billion years.'. TAB PROBABLY. OVERLAYS: marker climbs to 'SUN \u00b7 ~10 billion yr'; counter 3->10 (accelerating ticks).",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "SUN",
+          "narrative_role": "deliver_payload",
+          "information_role": "SUN",
+          "hero_moment": true,
+          "texture_keywords": [
+            "log-scale lifespan column",
+            "climbing marker",
+            "zeros counter",
+            "dashed forever line"
+          ],
+          "required_assets": [
+            {
+              "type": "code",
+              "description": "Remotion atelier (video 16-18 ladder engine, upward, via the kit)",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc07",
+          "type": "animation",
+          "start_seconds": 23.0,
+          "end_seconds": 26.77,
+          "script_section_id": "s3",
+          "description": "Render: atelier component sc07. Continuous Lifespan Column frame. RED DWARF.",
+          "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+          "movement": " marker breathes; streaks length = log10(speed).",
+          "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "overlay_notes": "CAPTION 'A small red dwarf star, for four trillion.'. TAB PROBABLY. OVERLAYS: marker to 'RED DWARF \u00b7 ~4 trillion yr'; counter 10->12; window opens with a DRAWN Sun beside a much smaller red dwarf, tagged 'drawn \u00b7 not to scale'; closes before the next tab glide.",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "RED DWARF",
+          "narrative_role": "build_tension",
+          "information_role": "RED DWARF",
+          "hero_moment": false,
+          "texture_keywords": [
+            "log-scale lifespan column",
+            "climbing marker",
+            "zeros counter",
+            "dashed forever line"
+          ],
+          "required_assets": [
+            {
+              "type": "code",
+              "description": "Remotion atelier (video 16-18 ladder engine, upward, via the kit)",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc08",
+          "type": "animation",
+          "start_seconds": 26.77,
+          "end_seconds": 30.94,
+          "script_section_id": "s4",
+          "description": "Render: atelier component sc08. Continuous Lifespan Column frame. PROTON never seen to decay.",
+          "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+          "movement": " marker breathes; streaks length = log10(speed).",
+          "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "overlay_notes": "CAPTION 'A proton, though, has never been seen to decay.'. TAB MEASURED. OVERLAYS: the PROTON rung appears dashed and open-ended at the top; window opens with a DRAWN water-tank detector, nothing flashing, tagged 'drawn'.",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "PROTON never seen to decay",
+          "narrative_role": "build_tension",
+          "information_role": "PROTON never seen to decay",
+          "hero_moment": false,
+          "texture_keywords": [
+            "log-scale lifespan column",
+            "climbing marker",
+            "zeros counter",
+            "dashed forever line"
+          ],
+          "required_assets": [
+            {
+              "type": "code",
+              "description": "Remotion atelier (video 16-18 ladder engine, upward, via the kit)",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc09",
+          "type": "animation",
+          "start_seconds": 30.94,
+          "end_seconds": 35.52,
+          "script_section_id": "s4",
+          "description": "Render: atelier component sc09. Continuous Lifespan Column frame. PROTON lower limit.",
+          "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+          "movement": " marker breathes; streaks length = log10(speed).",
+          "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "overlay_notes": "CAPTION 'It would take more than a billion trillion trillion years.'. TAB MEASURED. OVERLAYS: marker climbs to the dashed rung 'PROTON \u00b7 lower limit > 10^33 yr'; the rail BREAK draws; counter spins 12->33; window closes before the next tab glide.",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "PROTON lower limit",
+          "narrative_role": "deliver_payload",
+          "information_role": "PROTON lower limit",
+          "hero_moment": true,
+          "texture_keywords": [
+            "log-scale lifespan column",
+            "climbing marker",
+            "zeros counter",
+            "dashed forever line"
+          ],
+          "required_assets": [
+            {
+              "type": "code",
+              "description": "Remotion atelier (video 16-18 ladder engine, upward, via the kit)",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc10",
+          "type": "animation",
+          "start_seconds": 35.52,
+          "end_seconds": 37.32,
+          "script_section_id": "s5",
+          "description": "Render: atelier component sc10. Continuous Lifespan Column frame. 1 followed by 33 zeros.",
+          "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+          "movement": " marker breathes; streaks length = log10(speed).",
+          "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "overlay_notes": "CAPTION 'That's thirty-three zeros,'. TAB MEASURED. OVERLAYS: centre readout types '1' then 33 zeros then ' yr' glyph by glyph (soft ticks).",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "1 followed by 33 zeros",
+          "narrative_role": "deliver_payload",
+          "information_role": "1 followed by 33 zeros",
+          "hero_moment": true,
+          "texture_keywords": [
+            "log-scale lifespan column",
+            "climbing marker",
+            "zeros counter",
+            "dashed forever line"
+          ],
+          "required_assets": [
+            {
+              "type": "code",
+              "description": "Remotion atelier (video 16-18 ladder engine, upward, via the kit)",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc11",
+          "type": "animation",
+          "start_seconds": 37.32,
+          "end_seconds": 40.68,
+          "script_section_id": "s5",
+          "description": "Render: atelier component sc11. Continuous Lifespan Column frame. never caught one.",
+          "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+          "movement": " marker breathes; streaks length = log10(speed).",
+          "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "overlay_notes": "CAPTION 'and still nobody has caught one going.'. TAB MEASURED. OVERLAYS: the chip text 'never seen to decay' brightens; nothing else moves.",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "never caught one",
+          "narrative_role": "build_tension",
+          "information_role": "never caught one",
+          "hero_moment": false,
+          "texture_keywords": [
+            "log-scale lifespan column",
+            "climbing marker",
+            "zeros counter",
+            "dashed forever line"
+          ],
+          "required_assets": [
+            {
+              "type": "code",
+              "description": "Remotion atelier (video 16-18 ladder engine, upward, via the kit)",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc12",
+          "type": "animation",
+          "start_seconds": 40.68,
+          "end_seconds": 45.13,
+          "script_section_id": "s5",
+          "description": "Render: atelier component sc12. Continuous Lifespan Column frame. finished line.",
+          "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
+          "movement": " marker breathes; streaks length = log10(speed).",
+          "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
+          "overlay_notes": "CAPTION 'Maybe something really does last forever.'. TAB MAYBE. OVERLAYS: the dashed 'forever?' line above the break brightens; 1.5 s settle on a resolved chord; CTA 'What's the oldest thing you've ever seen?'.",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "finished line",
+          "narrative_role": "emotional_beat",
+          "information_role": "finished line",
+          "hero_moment": false,
+          "texture_keywords": [
+            "log-scale lifespan column",
+            "climbing marker",
+            "zeros counter",
+            "dashed forever line"
+          ],
+          "required_assets": [
+            {
+              "type": "code",
+              "description": "Remotion atelier (video 16-18 ladder engine, upward, via the kit)",
+              "source": "generate"
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "project_id": "how-long-can-anything-last",
+        "title": "How Long Can Anything Last?",
+        "stage": "scene_plan",
+        "pipeline": "animated-explainer",
+        "director_skill_used": "skills/pipelines/explainer/scene-director.md",
+        "render_runtime": "remotion",
+        "composition_mode": "atelier",
+        "renderer_family": "explainer-teacher",
+        "series_style": "REUSED ENGINE: video 16-18 ladder upward in years as 'Lifespan Column'",
+        "fps": 30,
+        "resolution": "1080x1920",
+        "aspect_ratio": "9:16",
+        "total_duration_seconds": 45.13,
+        "total_frames": 1354,
+        "platform": "tiktok",
+        "timing_basis": "PLANNED from word counts; sync_scene_plan.py rewrites every boundary from measured onsets after alignment (anchor onset - 2 f).",
+        "build_mode": "LEAN: copy video 17's per-video files and pipeline; ladder upward (L = log10 years); new devices: dashed open-ended proton rung + rail break + 'forever?' line, drawn Sun vs red dwarf, drawn detector tank, typed 1 + 33 zeros readout. Reuse video 16 SFX and bed. 1 builder agent; qa_auto; 1 targeted QA agent; build_spec.py.",
+        "taste_profile": {
+          "design_read": "Youth science short: a calm climb up one speed ladder, from walking to light, ending at a wall that never moves.",
+          "visual_variance": 4,
+          "motion_intensity": 4,
+          "information_density": 4,
+          "palette_discipline": "Night ink sky, steel rail, ONE white-cyan accent for the marker; no temperature colours; red only for 'c' (the wall).",
+          "layout_variation": "Log rail + marker, zeros counter, window plates, the LHC nines readout.",
+          "reference_strategy": "Numbers from the brief only; AI stills as short tagged inserts.",
+          "anti_patterns": [
+            "'faster than light' as possible",
+            "exact snail speed",
+            "'the falcon is the fastest animal' as fact without the dive caveat",
+            "warp-drive imagery"
+          ],
+          "quality_gates": [
+            "Every rung's number matches the brief",
+            "Log scale labelled as such",
+            "The marker never touches 'c'",
+            "Falcon tagged PROBABLY"
+          ]
+        },
+        "palette": {
+          "Night Ink (sky)": "#070A12 -> #0D1424",
+          "Steel (rail, ticks)": "#AEB8C2",
+          "Marker (ONLY the moving marker and light beam)": "#BFF6FF",
+          "Wall red (ONLY the c line)": "#E5484D",
+          "Chip / card": "#141B2B",
+          "Bone (text)": "#F4EFE6"
+        },
+        "typography": {
+          "display": "video 13's display face (headers, rung names)",
+          "data": "video 13's mono face (numbers, counter, readout; slashed zeros)",
+          "captions": "Bricolage Grotesque 800 (channel standard)",
+          "tab": "Spline Sans Mono 600 (channel standard)",
+          "glyphs": "check ',', '\u00b7', '~', '%', '(', ')', digits; arrows SVG"
+        },
+        "safe_areas": {
+          "top_ui_y": 192,
+          "bottom_ui_y": 1574,
+          "right_rail": 929,
+          "rail": {
+            "x": [
+              100,
+              330
+            ],
+            "y": [
+              380,
+              1110
+            ],
+            "note": "spine x 250, L = -log10(m): y = 380 + (L - 3) * 620 / 15; decade powers right-aligned at x 224; the break y 1012-1040; the Planck line y 1080"
+          },
+          "rung_labels": {
+            "x": [
+              280,
+              572
+            ],
+            "note": "chips de-overlapped top-down with leaders; never under the open window (build_props asserts)"
+          },
+          "reference_labels": {
+            "x": [
+              40,
+              224
+            ],
+            "note": "'YOUR EYE' / 'LIGHT MICROSCOPE' left of the rail (the decade powers under them are hidden)"
+          },
+          "window": {
+            "x": [
+              580,
+              920
+            ],
+            "y": [
+              440,
+              893
+            ],
+            "note": "S1 sand, S2 blood cells, S3 virus, then the DRAWN atom"
+          },
+          "counter": {
+            "x": [
+              640,
+              920
+            ],
+            "y": [
+              220,
+              340
+            ],
+            "note": "the ZEROS chip, right-aligned at x 920"
+          },
+          "electron": {
+            "x": [
+              270,
+              700
+            ],
+            "y": [
+              960,
+              1040
+            ],
+            "scenes": "sc08-sc12"
+          },
+          "readout": {
+            "x": [
+              580,
+              920
+            ],
+            "y": [
+              470,
+              600
+            ],
+            "scenes": "sc10-sc12"
+          },
+          "placard_rail": {
+            "x": [
+              140,
+              912
+            ],
+            "y": [
+              1124,
+              1204
+            ]
+          },
+          "honesty_tab": {
+            "x": [
+              140,
+              628
+            ],
+            "y": [
+              1236,
+              1290
+            ]
+          },
+          "caption_slab": {
+            "x": [
+              140,
+              940
+            ],
+            "y": [
+              1296,
+              1488
+            ]
+          }
+        },
+        "signature_device": "One log-scale speed rail in km/h (1 to 10^9) with a single glowing marker that climbs rung by rung while a ZEROS counter ticks 0 -> 9; the top is a red 'c' line the marker approaches but never touches; streak length = log10(speed).",
+        "hero_beats": [
+          "sc05 'YOU' jumps from WALK to Earth's orbit (~107,000)",
+          "sc11 the LHC nines fill while the gap under 'c' stays"
+        ],
+        "honesty_grammar": "MEASURED solid tab (sand, hair, cell, virus, atom, proton, electron's upper bound); PROBABLY outline + hatch (the naked-eye limit); MAYBE dashed ghost (the Planck length as a floor, from 'Below that,' to the end of s5); IDLE at the CTA. AI plates S1-S3 tagged 'AI impression'; the atom is 'drawn \u00b7 not to scale'. The rail is labelled 'metres \u00b7 log scale'.",
+        "placards": [
+          {
+            "scenes": "sc01-sc03",
+            "text": "sand ~0.06-2 mm (Wentworth) \u00b7 hair 17-180 \u00b5m",
+            "fine_print": "naked-eye limit ~0.04-0.1 mm, varies"
+          },
+          {
+            "scenes": "sc04-sc05",
+            "text": "red blood cell ~8 \u00b5m \u00b7 influenza ~100 nm (NCBI)",
+            "fine_print": "light-microscope limit ~200 nm (Abbe)"
+          },
+          {
+            "scenes": "sc06-sc07",
+            "text": "proton radius 0.8414 fm (CODATA 2018)",
+            "fine_print": "atom ~0.1-0.3 nm across"
+          },
+          {
+            "scenes": "sc08-sc12",
+            "text": "electron: no size found, < 10\u207b\u00b9\u2078 m",
+            "fine_print": "Planck length 1.6 \u00d7 10\u207b\u00b3\u2075 m: not proven to be a minimum"
+          }
+        ],
+        "stills": [
+          {
+            "still_id": "S1",
+            "name": "plate_sand",
+            "output_path": "assets/images/plate_sand.png",
+            "used_in": [
+              "sc01"
+            ],
+            "placeholder": false,
+            "window": {
+              "x0": 580,
+              "x1": 920,
+              "y0": 440,
+              "y1": 893
+            },
+            "crop_px": [
+              0,
+              100,
+              1152,
+              1635
+            ],
+            "crop_pct": {
+              "x": [
+                0.0,
+                100.0
+              ],
+              "y": [
+                4.9,
+                79.8
+              ]
+            },
+            "honesty": "'AI impression' tag while visible."
+          },
+          {
+            "still_id": "S2",
+            "name": "plate_blood_cells",
+            "output_path": "assets/images/plate_blood_cells.png",
+            "used_in": [
+              "sc04"
+            ],
+            "placeholder": false,
+            "window": {
+              "x0": 580,
+              "x1": 920,
+              "y0": 440,
+              "y1": 893
+            },
+            "crop_px": [
+              0,
+              250,
+              1152,
+              1785
+            ],
+            "crop_pct": {
+              "x": [
+                0.0,
+                100.0
+              ],
+              "y": [
+                12.2,
+                87.2
+              ]
+            },
+            "honesty": "'AI impression' tag while visible."
+          },
+          {
+            "still_id": "S3",
+            "name": "plate_virus",
+            "output_path": "assets/images/plate_virus.png",
+            "used_in": [
+              "sc05"
+            ],
+            "placeholder": false,
+            "window": {
+              "x0": 580,
+              "x1": 920,
+              "y0": 440,
+              "y1": 893
+            },
+            "crop_px": [
+              0,
+              173,
+              1152,
+              1708
+            ],
+            "crop_pct": {
+              "x": [
+                0.0,
+                100.0
+              ],
+              "y": [
+                8.4,
+                83.4
+              ]
+            },
+            "honesty": "'AI impression' tag while visible."
+          }
+        ],
+        "ai_clips": [],
+        "archival": [],
+        "audio": {
+          "narration": {
+            "voice": "Bella hpp4J3VqNfWAUOO0d1Us, eleven_v4, provider_text from script.json",
+            "policy": "1 take per section; retake only on failed Whisper QA; max 2",
+            "estimated_usd": 0.14
+          },
+          "music": {
+            "tool": "eleven_music, instrumental, ~58 s, 1 generation",
+            "prompt": "Instrumental bed for a curious, uplifting science short about speed, from walking pace to the speed of light, 58 seconds, about 100 BPM, D major. A light, steady texture from the very first beat: soft synth pulse, plucked strings and a gentle shimmering pad. Keep the same instruments, density and loudness from 0 to about 52 seconds: no intro build, no drop, no breakdown, no hits, no risers, no fade, no silence, no drums. Then in the last 6 seconds play one clear resolved final cadence (IV - V - I) and end on a single sustained major chord that rings out naturally for about 3 seconds.",
+            "alignment": "find the final tonic attack from the audio (lesson 26); align ~0.15 s after 'way'; flatten level steps; duck -13 dB from 'But' (lesson 44); 0.6 s end fade (lesson 43); write ending.closing_min_margin_db (lesson 49)",
+            "duck_db": 12
+          },
+          "sfx": [
+            {
+              "id": "X1",
+              "prompt": "soft airy upward whoosh, short, clean",
+              "use": "sc01-sc07, sc05 bigger",
+              "estimated_usd": 0.003
+            },
+            {
+              "id": "X2",
+              "prompt": "soft muffled sonic boom thump, distant, gentle",
+              "use": "sc04",
+              "estimated_usd": 0.003
+            },
+            {
+              "id": "X3",
+              "prompt": "small clean digital counter tick",
+              "use": "counter, sc10, sc11",
+              "estimated_usd": 0.003
+            },
+            {
+              "id": "X4",
+              "prompt": "low warm electrical hum swelling then fading, 2 s",
+              "use": "sc06",
+              "estimated_usd": 0.003
+            },
+            {
+              "id": "X5",
+              "prompt": "bright high crystalline shimmer sweep upward, 1 s",
+              "use": "sc08",
+              "estimated_usd": 0.003
+            },
+            {
+              "id": "X6",
+              "prompt": "single soft glass tink, delicate",
+              "use": "sc12",
+              "estimated_usd": 0.003
+            }
+          ]
+        },
+        "budget_table": {
+          "line_items": [
+            {
+              "item": "Stills S1-S3",
+              "count": 3,
+              "unit_usd": 0.05,
+              "subtotal_usd": 0.15
+            },
+            {
+              "item": "Clips",
+              "count": 0,
+              "unit_usd": 0.617,
+              "subtotal_usd": 0.0
+            },
+            {
+              "item": "Narration 5 sections",
+              "count": 5,
+              "subtotal_usd": 0.14
+            },
+            {
+              "item": "Music",
+              "count": 1,
+              "subtotal_usd": 0.16
+            },
+            {
+              "item": "SFX X1-X6",
+              "count": 6,
+              "unit_usd": 0.003,
+              "subtotal_usd": 0.018
+            }
+          ],
+          "planned_total_usd": 0.468,
+          "qa_reserve_usd": 0.085,
+          "expected_usd": 0.45,
+          "worst_case_usd": 0.65,
+          "approved_cap_usd": 4.0,
+          "generating_agent_hard_limit_usd": 1.0
+        },
+        "generation_order": [
+          "narration s1-s5 (locks timing) + Whisper QA",
+          "S1-S3 - check aspect/size; count legs/wings (lesson 39); probe has no text/logos",
+          "music",
+          "SFX X1-X6"
+        ],
+        "ending": {
+          "rule": "finished line",
+          "closing_line": "Close. But never all the way.",
+          "settle_seconds": 1.5,
+          "loop_cut": "optional only"
+        },
+        "narration_by_scene": {
+          "sc01": "An adult mayfly lives about a day.",
+          "sc02": "You live about seventy-three years.",
+          "sc03": "A tortoise named Jonathan is nearly two hundred.",
+          "sc04": "A Greenland shark can live about four hundred years.",
+          "sc05": "The oldest known tree, a bristlecone pine, is nearly five thousand.",
+          "sc06": "The Sun will shine for about ten billion years.",
+          "sc07": "A small red dwarf star, for four trillion.",
+          "sc08": "A proton, though, has never been seen to decay.",
+          "sc09": "It would take more than a billion trillion trillion years.",
+          "sc10": "That's thirty-three zeros,",
+          "sc11": "and still nobody has caught one going.",
+          "sc12": "Maybe something really does last forever."
+        },
+        "verified_on_screen_strings": [
+          "metres \u00b7 log scale",
+          "10\u207b\u00b3 m",
+          "10\u207b\u2074 m",
+          "10\u207b\u2075 m",
+          "10\u207b\u2076 m",
+          "10\u207b\u2077 m",
+          "10\u207b\u2078 m",
+          "10\u207b\u2079 m",
+          "10\u207b\u00b9\u2070 m",
+          "10\u207b\u00b9\u00b9 m",
+          "10\u207b\u00b9\u00b2 m",
+          "10\u207b\u00b9\u00b3 m",
+          "10\u207b\u00b9\u2074 m",
+          "10\u207b\u00b9\u2075 m",
+          "10\u207b\u00b9\u2076 m",
+          "10\u207b\u00b9\u2077 m",
+          "10\u207b\u00b9\u2078 m",
+          "ZEROS",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "SAND \u00b7 ~0.5 mm",
+          "HAIR \u00b7 ~70 \u00b5m",
+          "RED BLOOD CELL \u00b7 ~8 \u00b5m",
+          "VIRUS \u00b7 ~100 nm",
+          "ATOM \u00b7 ~0.1 nm",
+          "PROTON \u00b7 ~1.7 fm across",
+          "YOUR EYE \u00b7 ~0.1 mm",
+          "LIGHT MICROSCOPE \u00b7 ~200 nm",
+          "ELECTRON",
+          "no size found \u00b7 < 10\u207b\u00b9\u2078 m",
+          "PLANCK LENGTH \u00b7 1.6 \u00d7 10\u207b\u00b3\u2075 m",
+          "a floor? unproven",
+          "0.000000000000000000000000000000000016 m",
+          "to scale, this dot would be ~0.006 px",
+          "AI impression",
+          "drawn \u00b7 not to scale",
+          "What's the smallest thing you've ever seen?"
+        ],
+        "forbidden_on_screen": [
+          "smallest possible (the Planck length is not proven to be a minimum)",
+          "proven floor",
+          "electrons are points",
+          "the smallest thing in the universe",
+          "actual size"
+        ],
+        "lessons_applied": {
+          "L01": "no hooks after early returns (kit)",
+          "L02": "caption onsets swept on clean WAVs",
+          "L03": "tab keyed to caption page starts",
+          "L04": "SFX on contact-1 / visible seat",
+          "L06": "slab across short gaps (kit)",
+          "L17": "numbers as spoken",
+          "L20": "'nothing with mass' is the physics; falcon PROBABLY",
+          "L25": "settle constant",
+          "L26": "final cadence from the audio",
+          "L30": "'way' level",
+          "L31/L42": "graphics leave before the tab glide",
+          "L33/L46": "rung labels seat with their numbers; no number before the marker arrives",
+          "L38": "AI-tag swaps by hard cut",
+          "L39": "count legs/wings on AI animals",
+          "L43": "0.6 s end fade",
+          "L44": "duck from 'But'",
+          "L45": "lean reuse",
+          "L48": "widen gaps for a fast read",
+          "L49": "closing margin from stems"
+        },
+        "risks": [
+          {
+            "risk": "Log scale misread as linear",
+            "fallback": "'log scale' label + 'each tick is 10x' fine print"
+          },
+          {
+            "risk": "Marker appears to touch c",
+            "fallback": "build_props asserts the marker stays >= 6 px under the c line on every frame"
+          },
+          {
+            "risk": "Probe still has text/logos or looks wrong",
+            "fallback": "crop or drawn probe icon"
+          },
+          {
+            "risk": "Same look as video 13",
+            "fallback": "no black-body colour; single white-cyan accent; speed streaks; red c wall"
+          }
+        ],
+        "changes_from_proposal": [
+          "Energy bar + small relativistic curve added to sc10 so 'more energy each step, without end' is shown",
+          "Falcon rung carries a hatched 'commonly cited' chip"
+        ],
+        "approval_gate": [
+          "Art direction: Speed Ladder (video 13 engine), 12 scenes, heroes sc05 + sc11 (art-direction.md, scenes.md)",
+          "Assets: S1-S3, 0 clips, 5 TTS, 1 music bed, 6 SFX; expected ~$0.45 vs $4 cap",
+          "Honesty: AI tags; drawings 'not to scale'; log scale labelled; falcon PROBABLY"
+        ],
+        "planned_total_duration_seconds": 49.2,
+        "planned_total_frames": 1476,
+        "foundation_changes": [
+          "Copied from video 16 (Speed Ladder); the visual layer is the Scale Well: the log ladder flipped DOWNWARD in metres (top 1 mm, bottom 10\u207b\u00b9\u2078 m).",
+          "Caption pages re-flowed from the narration (lesson 3): each claim starts its own page; 'And that's about where' / 'your eyes give up.' is two pages (8 words > 6), the PROBABLY key sits on the first.",
+          "The reference lines' labels (YOUR EYE, LIGHT MICROSCOPE) sit LEFT of the rail (they are 6 / 12 px from the HAIR / VIRUS rungs; on the right they would shove seated chips).",
+          "Superscripts (\u207b \u2074-\u2079 \u2070) are in none of the faces: the powers are DRAWN as raised text >= 24 px (shared/Type.tsx <Sci>).",
+          "PROTON is a two-line chip (name over '~1.7 fm across') so it fits beside the open window.",
+          "script.json claim_tags are still video 16's: build_props.py keys the meter from its own CLAIMS (the brief's grades) instead of asserting against them."
+        ]
+      }
+    }
+  }
+}

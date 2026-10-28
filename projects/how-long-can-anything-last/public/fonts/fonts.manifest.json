@@ -1,0 +1,326 @@
+{
+ "faces": [
+  {
+   "family": "Saira Condensed",
+   "import": "SairaCondensed",
+   "weight": "600",
+   "esm": "@remotion/google-fonts/dist/esm/SairaCondensed.mjs",
+   "file": "SairaCondensed-normal-600-latin.woff2",
+   "url": "https://fonts.gstatic.com/s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnfc9Q962f.woff2",
+   "bytes": 17980,
+   "probe": {
+    "·": true,
+    "~": true,
+    "%": true,
+    ":": true,
+    "(": true,
+    ")": true,
+    "'": true,
+    "’": true,
+    "-": true,
+    "×": true,
+    "°": true,
+    ",": true,
+    "?": true,
+    "/": true,
+    "=": true,
+    "→": false,
+    "≈": false,
+    "✓": false,
+    "⁹": false
+   },
+   "required_missing": [],
+   "lacks": [
+    "→",
+    "≈",
+    "✓",
+    "⁹"
+   ]
+  },
+  {
+   "family": "Saira Condensed",
+   "import": "SairaCondensed",
+   "weight": "700",
+   "esm": "@remotion/google-fonts/dist/esm/SairaCondensed.mjs",
+   "file": "SairaCondensed-normal-700-latin.woff2",
+   "url": "https://fonts.gstatic.com/s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnGc5Q962f.woff2",
+   "bytes": 17808,
+   "probe": {
+    "·": true,
+    "~": true,
+    "%": true,
+    ":": true,
+    "(": true,
+    ")": true,
+    "'": true,
+    "’": true,
+    "-": true,
+    "×": true,
+    "°": true,
+    ",": true,
+    "?": true,
+    "/": true,
+    "=": true,
+    "→": false,
+    "≈": false,
+    "✓": false,
+    "⁹": false
+   },
+   "required_missing": [],
+   "lacks": [
+    "→",
+    "≈",
+    "✓",
+    "⁹"
+   ]
+  },
+  {
+   "family": "IBM Plex Mono",
+   "import": "IBMPlexMono",
+   "weight": "400",
+   "esm": "@remotion/google-fonts/dist/esm/IBMPlexMono.mjs",
+   "file": "IBMPlexMono-normal-400-latin.woff2",
+   "url": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2",
+   "bytes": 14708,
+   "probe": {
+    "·": true,
+    "~": true,
+    "%": true,
+    ":": true,
+    "(": true,
+    ")": true,
+    "'": true,
+    "’": true,
+    "-": true,
+    "×": true,
+    "°": true,
+    ",": true,
+    "?": true,
+    "/": true,
+    "=": true,
+    "→": false,
+    "≈": false,
+    "✓": false,
+    "⁹": false
+   },
+   "required_missing": [],
+   "lacks": [
+    "→",
+    "≈",
+    "✓",
+    "⁹"
+   ]
+  },
+  {
+   "family": "IBM Plex Mono",
+   "import": "IBMPlexMono",
+   "weight": "500",
+   "esm": "@remotion/google-fonts/dist/esm/IBMPlexMono.mjs",
+   "file": "IBMPlexMono-normal-500-latin.woff2",
+   "url": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2",
+   "bytes": 14888,
+   "probe": {
+    "·": true,
+    "~": true,
+    "%": true,
+    ":": true,
+    "(": true,
+    ")": true,
+    "'": true,
+    "’": true,
+    "-": true,
+    "×": true,
+    "°": true,
+    ",": true,
+    "?": true,
+    "/": true,
+    "=": true,
+    "→": false,
+    "≈": false,
+    "✓": false,
+    "⁹": false
+   },
+   "required_missing": [],
+   "lacks": [
+    "→",
+    "≈",
+    "✓",
+    "⁹"
+   ]
+  },
+  {
+   "family": "Bricolage Grotesque",
+   "import": "BricolageGrotesque",
+   "weight": "800",
+   "esm": "@remotion/google-fonts/dist/esm/BricolageGrotesque.mjs",
+   "file": "BricolageGrotesque-normal-800-latin.woff2",
+   "url": "https://fonts.gstatic.com/s/bricolagegrotesque/v9/3y9H6as8bTXq_nANBjzKo3IeZx8z6up5BeSl5jBNz_19PpbpMXuECpwUxJBOm_OJWiawA1Xp.woff2",
+   "bytes": 41344,
+   "probe": {
+    "·": true,
+    "~": true,
+    "%": true,
+    ":": true,
+    "(": true,
+    ")": true,
+    "'": true,
+    "’": true,
+    "-": true,
+    "×": true,
+    "°": true,
+    ",": true,
+    "?": true,
+    "/": true,
+    "=": true,
+    "→": false,
+    "≈": false,
+    "✓": false,
+    "⁹": false
+   },
+   "required_missing": [],
+   "lacks": [
+    "→",
+    "≈",
+    "✓",
+    "⁹"
+   ]
+  },
+  {
+   "family": "Spline Sans Mono",
+   "import": "SplineSansMono",
+   "weight": "600",
+   "esm": "@remotion/google-fonts/dist/esm/SplineSansMono.mjs",
+   "file": "SplineSansMono-normal-600-latin.woff2",
+   "url": "https://fonts.gstatic.com/s/splinesansmono/v13/R70BjzAei_CDNLfgZxrW6wrZOF2WX5KZmA.woff2",
+   "bytes": 36476,
+   "probe": {
+    "·": true,
+    "~": true,
+    "%": true,
+    ":": true,
+    "(": true,
+    ")": true,
+    "'": true,
+    "’": true,
+    "-": true,
+    "×": true,
+    "°": true,
+    ",": true,
+    "?": true,
+    "/": true,
+    "=": true,
+    "→": false,
+    "≈": false,
+    "✓": false,
+    "⁹": false
+   },
+   "required_missing": [],
+   "lacks": [
+    "→",
+    "≈",
+    "✓",
+    "⁹"
+   ]
+  }
+ ],
+ "slashed_zero": {
+  "IBMPlexMono-normal-400-latin.woff2": true,
+  "IBMPlexMono-normal-500-latin.woff2": true
+ },
+ "placard_fit": {
+  "SairaCondensed600": [
+   {
+    "text": "cheetah: collar study, Wilson et al., Nature 2013",
+    "fine_print": "falcon dive ~390 km/h is commonly cited, weakly sourced",
+    "main_px_one_line": 26,
+    "fine_px": 26,
+    "main_w_at_24": 402.6,
+    "fine_w_at_24": 488.6,
+    "fits_80px_rail": true
+   },
+   {
+    "text": "sound: 343 m/s in 20 °C air · Earth: 29.78 km/s (NASA)",
+    "fine_print": "km/h on a log scale: each tick is 10x",
+    "main_px_one_line": 26,
+    "fine_px": 26,
+    "main_w_at_24": 456.2,
+    "fine_w_at_24": 298.3,
+    "fits_80px_rail": true
+   },
+   {
+    "text": "Parker Solar Probe: ~692,000 km/h (Dec 2024)",
+    "fine_print": "NASA's figure as reported by Space.com · speed from falling toward the Sun",
+    "main_px_one_line": 26,
+    "fine_px": 26,
+    "main_w_at_24": 397.7,
+    "fine_w_at_24": 641.3,
+    "fits_80px_rail": true
+   },
+   {
+    "text": "c = 299,792,458 m/s exactly (NIST)",
+    "fine_print": "energy needed grows without limit as speed nears c",
+    "main_px_one_line": 26,
+    "fine_px": 26,
+    "main_w_at_24": 297.8,
+    "fine_w_at_24": 440.8,
+    "fits_80px_rail": true
+   },
+   {
+    "text": "CERN LHC: protons at 6.8 TeV (2022)",
+    "fine_print": "0.999999991 of light speed",
+    "main_px_one_line": 26,
+    "fine_px": 26,
+    "main_w_at_24": 306.6,
+    "fine_w_at_24": 235.3,
+    "fits_80px_rail": true
+   }
+  ],
+  "IBMPlexMono400": [
+   {
+    "text": "cheetah: collar study, Wilson et al., Nature 2013",
+    "fine_print": "falcon dive ~390 km/h is commonly cited, weakly sourced",
+    "main_px_one_line": 24,
+    "fine_px": null,
+    "main_w_at_24": 705.6,
+    "fine_w_at_24": 792.0,
+    "fits_80px_rail": false
+   },
+   {
+    "text": "sound: 343 m/s in 20 °C air · Earth: 29.78 km/s (NASA)",
+    "fine_print": "km/h on a log scale: each tick is 10x",
+    "main_px_one_line": 22,
+    "fine_px": 26,
+    "main_w_at_24": 777.6,
+    "fine_w_at_24": 532.8,
+    "fits_80px_rail": true
+   },
+   {
+    "text": "Parker Solar Probe: ~692,000 km/h (Dec 2024)",
+    "fine_print": "NASA's figure as reported by Space.com · speed from falling toward the Sun",
+    "main_px_one_line": 26,
+    "fine_px": null,
+    "main_w_at_24": 633.6,
+    "fine_w_at_24": 1065.6,
+    "fits_80px_rail": false
+   },
+   {
+    "text": "c = 299,792,458 m/s exactly (NIST)",
+    "fine_print": "energy needed grows without limit as speed nears c",
+    "main_px_one_line": 26,
+    "fine_px": null,
+    "main_w_at_24": 489.6,
+    "fine_w_at_24": 720.0,
+    "fits_80px_rail": false
+   },
+   {
+    "text": "CERN LHC: protons at 6.8 TeV (2022)",
+    "fine_print": "0.999999991 of light speed",
+    "main_px_one_line": 26,
+    "fine_px": 26,
+    "main_w_at_24": 504.0,
+    "fine_w_at_24": 374.4,
+    "fits_80px_rail": true
+   }
+  ]
+ }
+}
