@@ -35,7 +35,7 @@ PAGES = [
 ]
 PLACARDS = [
     {"scenes": "sc01-sc03", "text": "Eiffel Tower 10,100 t (toureiffel.paris) · blue whale up to ~150-190 t (NOAA)", "fine_print": "adult ~70 kg, typical"},
-    {"scenes": "sc04-sc05", "text": "all humans ~287-390 million t (2012, 2018 studies)", "fine_print": "Earth 5.97 × 10²⁴ kg (NASA)"},
+    {"scenes": "sc04-sc05", "text": "all humans ~290-520 million t (2012, 2018 studies; 8 bn × ~65 kg)", "fine_print": "Earth 5.97 × 10²⁴ kg (NASA)"},
     {"scenes": "sc06-sc07", "text": "Sun = 333,000 Earths (NASA)", "fine_print": "neutron star ~1.4 Suns in ~20 km"},
     {"scenes": "sc08-sc09", "text": "Sgr A* ~4 million Suns (EHT, NASA)", "fine_print": "horizon ~24 million km; Mercury's orbit ~116 million km"},
     {"scenes": "sc10-sc12", "text": "ordinary matter ~1.5 × 10⁵³ kg (critical-density estimate)", "fine_print": "dark matter ~5.4 : 1 (Planck 2018, inferred)"},
@@ -43,7 +43,7 @@ PLACARDS = [
 SUPD = "⁰¹²³⁴⁵⁶⁷⁸⁹"
 DECADES = [f"10{''.join(SUPD[int(c)] for c in str(n))} kg" for n in range(0, 37, 3)]
 RUNG_LINES = ["YOU · ~70 kg", "BLUE WHALE · up to ~150,000 kg", "EIFFEL TOWER · ~10 million kg", "ALL HUMANS · ~400 billion kg",
-              "EARTH · 6 × 10²⁴ kg", "SUN · 2 × 10³⁰ kg", "NEUTRON STAR · ~1.4 Suns, ~20 km wide", "SGR A* · 4 million Suns"]
+              "EARTH · 6 × 10²⁴ kg", "SUN · 2 × 10³⁰ kg", "NEUTRON STAR · ≈ 3 × 10³⁰ kg, ~20 km wide", "SGR A* · 4 million Suns"]
 VERIFIED = ["kilograms · log scale", *DECADES, "ZEROS", *[str(n) for n in range(0, 54)], *RUNG_LINES,
             "OBSERVABLE UNIVERSE · ~10⁵³ kg (ordinary matter)", "ordinary matter", "DARK MATTER", "~5 : 1 · inferred", "drawn",
             "Mercury's orbit", "AI impression", "drawn · not to scale", "What's the heaviest thing you've ever lifted?"]

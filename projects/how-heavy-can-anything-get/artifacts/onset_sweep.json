@@ -587,10 +587,10 @@
    "cand": 4.887,
    "how": "flux",
    "diff_f": -0.2,
-   "measured": 4.887,
-   "source": "confirmed",
-   "measured_minus_whisper_f": 0.21,
-   "measured_minus_candidate_f": 0.0
+   "measured": 4.652,
+   "source": "override",
+   "measured_minus_whisper_f": -6.84,
+   "measured_minus_candidate_f": -7.05
   },
   {
    "k": 13,
@@ -599,10 +599,10 @@
    "cand": 5.22,
    "how": "flux",
    "diff_f": 1.21,
-   "measured": 5.22,
+   "measured": 4.962,
    "source": "override",
-   "measured_minus_whisper_f": -1.2,
-   "measured_minus_candidate_f": 0.0
+   "measured_minus_whisper_f": -8.94,
+   "measured_minus_candidate_f": -7.74
   },
   {
    "k": 14,

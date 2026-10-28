@@ -1,0 +1,50 @@
+{
+ "version": "1.0",
+ "output_path": "/home/user/OpenMontage/projects/how-heavy-can-anything-get/renders/how-heavy-can-anything-get.mp4",
+ "status": "pass",
+ "recommended_action": "present_to_user",
+ "checks": {
+  "technical_probe": {
+   "valid_container": true,
+   "duration_seconds": 48.8,
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "has_audio": true,
+   "codec": "h264",
+   "file_size_bytes": 6902296,
+   "issues": []
+  },
+  "visual_spotcheck": {
+   "frames_sampled": 1464,
+   "frame_paths": [
+    "/home/user/OpenMontage/projects/how-heavy-can-anything-get/renders/master_sheet.jpg"
+   ],
+   "black_frames_detected": false,
+   "broken_overlays": false,
+   "missing_assets": false,
+   "unreadable_text": false,
+   "issues": [
+    "The bars' 'drawn' tag floats above the ordinary bar f1272-1345 (QA A3).",
+    "Chip text and '(ordinary matter)' marginal at 360x640 (QA A4).",
+    "A small ring at the dark bar's top at f1386 (QA A5).",
+    "Right half empty through s2 (QA A6)."
+   ]
+  },
+  "audio_spotcheck": {
+   "issues": [
+    "Generated bed (C minor, no cadence) unused; video 16's G major bed reused (d-007).",
+    "Closing sentence lifted +4.5 dB on the voice lane only (soft delivery); closing duck -11 dB.",
+    "WARN claim graphics gone before the glide: 1 late"
+   ]
+  },
+  "promise_preservation": {
+   "render_runtime_used": "remotion",
+   "issues": [
+    "Music bed is video 16's, not a new one (generated bed failed the cadence check; re-rolls not allowed)."
+   ]
+  },
+  "subtitle_check": {
+   "issues": []
+  }
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "version": "1.0",
+ "outputs": [
+  {
+   "path": "renders/how-heavy-can-anything-get.mp4",
+   "format": "mp4",
+   "codec": "h264",
+   "audio_codec": "aac",
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "platform_target": "tiktok_9x16",
+   "duration_seconds": 48.8,
+   "file_size_bytes": 6902296
+  },
+  {
+   "path": "renders/raw.mp4",
+   "format": "mp4",
+   "codec": "h264",
+   "audio_codec": "aac",
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "platform_target": "intermediate",
+   "duration_seconds": 48.853,
+   "file_size_bytes": 6739767
+  }
+ ],
+ "render_grammar": "explainer-teacher",
+ "decision_log_ref": "/home/user/OpenMontage/projects/how-heavy-can-anything-get/decision_log.json",
+ "verification_notes": [
+  "Lean build: video 17's files and pipeline copied and turned upward; 1 builder agent; qa_auto 0 fail / 1 accepted warn (placard 5 sources both final claims, so it stays through the dark-matter tab pulse); 1 targeted QA agent (0 blockers, 2 majors, 5 minors), one fix round, re-render.",
+  "QA A1 fixed: 'star' and 'squeezes' captions were 7-8 f late from the automatic onset sweep; measured overrides. QA A2 fixed: the NEUTRON STAR chip states '\u2248 3 \u00d7 10\u00b3\u2070 kg' so its stacked position cannot read as 10^33-36. QA A7 fixed: placard range widened to ~290-520 million t to cover the on-screen ~400 billion kg.",
+  "qa_auto.py: PASS (0 fail, 1 warn)."
+ ]
+}

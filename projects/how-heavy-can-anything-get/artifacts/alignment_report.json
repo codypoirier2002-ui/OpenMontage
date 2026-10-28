@@ -864,16 +864,16 @@
   },
   {
    "word": "s3:star#1",
-   "measured_s_section": 4.887,
-   "caption_frame": 759,
-   "err_frames": -0.06,
-   "source": "confirmed"
+   "measured_s_section": 4.652,
+   "caption_frame": 752,
+   "err_frames": -0.01,
+   "source": "override"
   },
   {
    "word": "s3:squeezes#1",
-   "measured_s_section": 5.22,
-   "caption_frame": 769,
-   "err_frames": -0.05,
+   "measured_s_section": 4.962,
+   "caption_frame": 761,
+   "err_frames": -0.31,
    "source": "override"
   },
   {
@@ -1286,6 +1286,14 @@
   ]
  },
  "overrides_section_relative_s": {
+  "s3:squeezes#1": [
+   4.962,
+   null
+  ],
+  "s3:star#1": [
+   4.652,
+   null
+  ],
   "s1:weigh#1": [
    0.329,
    null
@@ -1396,10 +1404,6 @@
   ],
   "s3:a#1": [
    4.231,
-   null
-  ],
-  "s3:squeezes#1": [
-   5.22,
    null
   ],
   "s3:even#1": [

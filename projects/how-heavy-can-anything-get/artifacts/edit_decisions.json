@@ -1,0 +1,142 @@
+{
+ "version": "1.0",
+ "render_runtime": "remotion",
+ "renderer_family": "explainer-teacher",
+ "composition_mode": "atelier",
+ "cuts": [
+  {
+   "id": "cut-sc01",
+   "source": "bespoke_sc01",
+   "in_seconds": 0.0,
+   "out_seconds": 3.033,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the well persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc01 (section s1). Render: atelier component sc01. 'Weight Column': the ladder engine pointing UP in kilograms. Ink background lightening slightly toward the top (#05060A bottom -> #0B0E16 top, faint grain); a vertical steel log rail at x ~250 from 1 kg (bottom, y ~1000) to 10^37 kg (y ~380), ticks every 3 powers with numbers as powers of ten (24 px), label 'kilograms \u00b7 log scale'. A heavy bronze-white marker (#FFD9"
+  },
+  {
+   "id": "cut-sc02",
+   "source": "bespoke_sc02",
+   "in_seconds": 3.033,
+   "out_seconds": 6.533,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the well persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc02 (section s1). Render: atelier component sc02. Continuous Weight Column frame. WHALE."
+  },
+  {
+   "id": "cut-sc03",
+   "source": "bespoke_sc03",
+   "in_seconds": 6.533,
+   "out_seconds": 10.3,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the well persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc03 (section s1). Render: atelier component sc03. Continuous Weight Column frame. EIFFEL."
+  },
+  {
+   "id": "cut-sc04",
+   "source": "bespoke_sc04",
+   "in_seconds": 10.3,
+   "out_seconds": 15.633,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the well persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc04 (section s2). Render: atelier component sc04. Continuous Weight Column frame. ALL HUMANS."
+  },
+  {
+   "id": "cut-sc05",
+   "source": "bespoke_sc05",
+   "in_seconds": 15.633,
+   "out_seconds": 20.367,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the well persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc05 (section s2). Render: atelier component sc05. Continuous Weight Column frame. EARTH."
+  },
+  {
+   "id": "cut-sc06",
+   "source": "bespoke_sc06",
+   "in_seconds": 20.367,
+   "out_seconds": 24.433,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the well persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc06 (section s3). Render: atelier component sc06. Continuous Weight Column frame. SUN."
+  },
+  {
+   "id": "cut-sc07",
+   "source": "bespoke_sc07",
+   "in_seconds": 24.433,
+   "out_seconds": 30.533,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the well persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc07 (section s3). Render: atelier component sc07. Continuous Weight Column frame. NEUTRON STAR."
+  },
+  {
+   "id": "cut-sc08",
+   "source": "bespoke_sc08",
+   "in_seconds": 30.533,
+   "out_seconds": 35.367,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the well persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc08 (section s4). Render: atelier component sc08. Continuous Weight Column frame. SGR A*."
+  },
+  {
+   "id": "cut-sc09",
+   "source": "bespoke_sc09",
+   "in_seconds": 35.367,
+   "out_seconds": 39.167,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the well persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc09 (section s4). Render: atelier component sc09. Continuous Weight Column frame. fits inside Mercury's orbit."
+  },
+  {
+   "id": "cut-sc10",
+   "source": "bespoke_sc10",
+   "in_seconds": 39.167,
+   "out_seconds": 44.767,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the well persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc10 (section s5). Render: atelier component sc10. Continuous Weight Column frame. the observable universe."
+  },
+  {
+   "id": "cut-sc11",
+   "source": "bespoke_sc11",
+   "in_seconds": 44.767,
+   "out_seconds": 46.133,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the well persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc11 (section s5). Render: atelier component sc11. Continuous Weight Column frame. dark matter."
+  },
+  {
+   "id": "cut-sc12",
+   "source": "bespoke_sc12",
+   "in_seconds": 46.133,
+   "out_seconds": 48.8,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the well persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc12 (section s5). Render: atelier component sc12. Continuous Weight Column frame. finished line."
+  }
+ ],
+ "music": {
+  "track_id": "M1",
+  "path": "assets/music/bed_raw.wav",
+  "volume": 1.0,
+  "duck_under_narration": true,
+  "duck_level_db": -12,
+  "fade_in_seconds": 0.0,
+  "fade_out_seconds": 0.6
+ },
+ "subtitles": {
+  "enabled": true,
+  "style": "word_highlight",
+  "source": "artifacts/props.json captionPages"
+ }
+}

@@ -91,6 +91,8 @@ def derive_anchors(plan: dict, script: dict) -> dict[str, tuple[str, str, int]]:
 # > 0.5 f; CONFIRMED = within 0.5 f (the measured value is used for every word). QA A must re-measure every onset
 # independently (lesson 13).
 OVERRIDES: dict[tuple[str, str, int], tuple[float | None, float | None]] = {
+    ('s3', 'squeezes', 1): (4.962, None),   # QA A1 (video 18): measured onset (5 ms band profile) f761.3; the automatic sweep was ~7-8 f late
+    ('s3', 'star', 1): (4.652, None),   # QA A1 (video 18): measured onset (5 ms band profile) f752; the automatic sweep was ~7-8 f late
     ('s1', 'weigh', 1): (0.329, None),   # whisper 0.260 (-2.1 f): automatic sweep (flux), not hand-read (lean build)
     ('s1', 'about', 1): (0.434, None),   # whisper 0.480 (+1.4 f): automatic sweep (flux), not hand-read (lean build)
     ('s1', 'seventy', 1): (0.915, None),   # whisper 0.880 (-1.1 f): automatic sweep (flux), not hand-read (lean build)
@@ -119,7 +121,7 @@ OVERRIDES: dict[tuple[str, str, int], tuple[float | None, float | None]] = {
     ('s3', 'hundred', 1): (1.523, None),   # whisper 1.460 (-1.9 f): automatic sweep (flux), not hand-read (lean build)
     ('s3', 'Earths.', 1): (3.040, None),   # whisper 3.020 (-0.6 f): automatic sweep (flux), not hand-read (lean build)
     ('s3', 'a', 1): (4.231, None),   # whisper 4.260 (+0.9 f): automatic sweep (flux), not hand-read (lean build)
-    ('s3', 'squeezes', 1): (5.220, None),   # whisper 5.260 (+1.2 f): automatic sweep (flux), not hand-read (lean build)
+
     ('s3', 'even', 1): (5.762, None),   # whisper 5.800 (+1.1 f): automatic sweep (flux), not hand-read (lean build)
     ('s3', 'more', 1): (6.100, None),   # whisper 6.160 (+1.8 f): automatic sweep (flux), not hand-read (lean build)
     ('s3', 'into', 1): (6.657, None),   # whisper 6.600 (-1.7 f): automatic sweep (flux), not hand-read (lean build)
@@ -180,7 +182,7 @@ CONFIRMED: dict[tuple[str, str, int], float] = {
     ('s3', 'thousand', 1): 2.657,   # whisper 2.650 (-0.2 f)
     ('s3', 'And', 1): 4.077,   # whisper 4.090 (+0.4 f)
     ('s3', 'neutron', 1): 4.415,   # whisper 4.420 (+0.1 f)
-    ('s3', 'star', 1): 4.887,   # whisper 4.880 (-0.2 f)
+
     ('s3', 'ball', 1): 7.205,   # whisper 7.190 (-0.4 f)
     ('s4', 'The', 1): 0.039,   # whisper 0.040 (+0.0 f)
     ('s4', 'black', 1): 0.234,   # whisper 0.230 (-0.1 f)

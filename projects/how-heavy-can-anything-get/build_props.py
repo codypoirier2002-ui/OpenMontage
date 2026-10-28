@@ -101,7 +101,7 @@ RUNGS = [
     ("humans", "ALL HUMANS", "~400 billion kg", 4e11, 11.6, "humansSeat", "climbHumans"),
     ("earth", "EARTH", "6 × 10²⁴ kg", 6e24, 24.78, "earthSeat", "climbEarth"),
     ("sun", "SUN", "2 × 10³⁰ kg", 2e30, 30.30, "sunSeat", "climbSun"),
-    ("neutron", "NEUTRON STAR", "~1.4 Suns, ~20 km wide", 2.8e30, 30.44, "neutronSeat", None),
+    ("neutron", "NEUTRON STAR", "≈ 3 × 10³⁰ kg, ~20 km wide", 2.8e30, 30.44, "neutronSeat", None),   # QA A2: the mass stated, so the stacked chip cannot read as 10^33-36
     ("sgra", "SGR A*", "4 million Suns", 8e36, 36.9, "sgraSeat", "climbSgra"),
 ]
 UNIVERSE_KG = 1.5e53
