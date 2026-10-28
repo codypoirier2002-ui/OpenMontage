@@ -203,6 +203,11 @@ recent delivered project's layout for the per-video files. `projects/how-fast-ca
 - `new_project.sh <id> <CompName>`: scaffolds a project from `docs/channel/kit/`.
 - `finish_master.sh`: the mastering chain described above. Run it as `P=... RAW=... OUT=... bash finish_master.sh`.
 - `preflight.sh [projects/<id>]`: step 0; tooling checks plus the connector checklist. No tokens.
+- `build_spec.py projects/<id>`: writes `artifacts/BUILD_SPEC.md` (~160 lines) from timeline / props / soundtrack_report /
+  scene_plan: sections, scenes, caption pages, tab states, claim graphics, key frames, SFX cues, every animated channel's
+  active range, the ending, and the frames a QA agent should look at. Re-run after every build_props.py. Builders and QA
+  agents read it instead of BUILD.md's numbers and the 170 KB props.json; BUILD.md keeps only the contract (APIs, rules,
+  divergences) and must not repeat numbers that live in the spec.
 - `qa_auto.py projects/<id> [--master …] [--no-pixels]`: the mechanical QA pass (step 11); writes `artifacts/qa_auto.json`, exits 1 on FAIL.
   Lessons that are now checks (do not spend a QA agent on them): 4, 5, 6, 18, 25 (still hold), 26, 29, 30, 33/54 (fine print incl. tsx fontSize),
   41, 42/52 (claim graphics gone before the glide), 43, 57 (SFX under the first word), black frames, flashes, safe zones.
