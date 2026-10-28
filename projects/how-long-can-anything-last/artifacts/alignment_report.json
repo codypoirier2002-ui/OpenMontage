@@ -1,0 +1,1422 @@
+{
+ "exact_match_ratio": {
+  "s1": 0.95,
+  "s2": 1.0,
+  "s3": 1.0,
+  "s4": 1.0,
+  "s5": 0.938
+ },
+ "whisper_heard": {
+  "s1": "An adult mayfly lives about a day. You live about seventy -three years. A tortoise named Jonathan is nearly two hundred.",
+  "s2": "A Greenland shark can live about four hundred years. The oldest known tree, a bristlecone pine, is nearly five thousand.",
+  "s3": "The Sun will shine for about ten billion years. A small red dwarf star, for four trillion.",
+  "s4": "A proton, though, has never been seen to decay. It would take more than a billion trillion trillion years.",
+  "s5": "That's thirty -three zeros, and still nobody has caught one going. Maybe something really does last forever."
+ },
+ "whisper_raw_section_rel": {
+  "s1": [
+   [
+    "An",
+    0.0,
+    0.14
+   ],
+   [
+    "adult",
+    0.14,
+    0.44
+   ],
+   [
+    "mayfly",
+    0.44,
+    1.0
+   ],
+   [
+    "lives",
+    1.0,
+    1.32
+   ],
+   [
+    "about",
+    1.32,
+    1.6
+   ],
+   [
+    "a",
+    1.6,
+    1.78
+   ],
+   [
+    "day.",
+    1.78,
+    2.02
+   ],
+   [
+    "You",
+    2.7,
+    2.84
+   ],
+   [
+    "live",
+    2.84,
+    3.08
+   ],
+   [
+    "about",
+    3.08,
+    3.36
+   ],
+   [
+    "seventy-three",
+    3.36,
+    4.2
+   ],
+   [
+    "years.",
+    4.2,
+    4.64
+   ],
+   [
+    "A",
+    5.3,
+    5.38
+   ],
+   [
+    "tortoise",
+    5.38,
+    5.76
+   ],
+   [
+    "named",
+    5.76,
+    6.06
+   ],
+   [
+    "Jonathan",
+    6.06,
+    6.46
+   ],
+   [
+    "is",
+    6.46,
+    6.86
+   ],
+   [
+    "nearly",
+    6.86,
+    7.24
+   ],
+   [
+    "two",
+    7.24,
+    7.56
+   ],
+   [
+    "hundred.",
+    7.56,
+    8.12
+   ]
+  ],
+  "s2": [
+   [
+    "A",
+    0.0,
+    0.16
+   ],
+   [
+    "Greenland",
+    0.16,
+    0.46
+   ],
+   [
+    "shark",
+    0.46,
+    0.94
+   ],
+   [
+    "can",
+    0.94,
+    1.22
+   ],
+   [
+    "live",
+    1.22,
+    1.42
+   ],
+   [
+    "about",
+    1.42,
+    1.68
+   ],
+   [
+    "four",
+    1.68,
+    2.06
+   ],
+   [
+    "hundred",
+    2.06,
+    2.44
+   ],
+   [
+    "years.",
+    2.44,
+    2.9
+   ],
+   [
+    "The",
+    3.58,
+    3.66
+   ],
+   [
+    "oldest",
+    3.66,
+    3.96
+   ],
+   [
+    "known",
+    3.96,
+    4.26
+   ],
+   [
+    "tree,",
+    4.26,
+    4.68
+   ],
+   [
+    "a",
+    5.12,
+    5.16
+   ],
+   [
+    "bristlecone",
+    5.16,
+    5.66
+   ],
+   [
+    "pine,",
+    5.66,
+    6.1
+   ],
+   [
+    "is",
+    6.5,
+    6.7
+   ],
+   [
+    "nearly",
+    6.7,
+    7.04
+   ],
+   [
+    "five",
+    7.04,
+    7.44
+   ],
+   [
+    "thousand.",
+    7.44,
+    7.9
+   ]
+  ],
+  "s3": [
+   [
+    "The",
+    0.0,
+    0.18
+   ],
+   [
+    "Sun",
+    0.18,
+    0.48
+   ],
+   [
+    "will",
+    0.48,
+    0.7
+   ],
+   [
+    "shine",
+    0.7,
+    1.0
+   ],
+   [
+    "for",
+    1.0,
+    1.24
+   ],
+   [
+    "about",
+    1.24,
+    1.48
+   ],
+   [
+    "ten",
+    1.48,
+    1.92
+   ],
+   [
+    "billion",
+    1.92,
+    2.48
+   ],
+   [
+    "years.",
+    2.48,
+    3.18
+   ],
+   [
+    "A",
+    3.68,
+    3.84
+   ],
+   [
+    "small",
+    3.84,
+    4.14
+   ],
+   [
+    "red",
+    4.14,
+    4.42
+   ],
+   [
+    "dwarf",
+    4.42,
+    4.7
+   ],
+   [
+    "star,",
+    4.7,
+    5.14
+   ],
+   [
+    "for",
+    5.4,
+    5.54
+   ],
+   [
+    "four",
+    5.54,
+    5.86
+   ],
+   [
+    "trillion.",
+    5.86,
+    6.32
+   ]
+  ],
+  "s4": [
+   [
+    "A",
+    0.0,
+    0.24
+   ],
+   [
+    "proton,",
+    0.24,
+    0.74
+   ],
+   [
+    "though,",
+    0.76,
+    1.02
+   ],
+   [
+    "has",
+    1.3,
+    1.48
+   ],
+   [
+    "never",
+    1.48,
+    1.86
+   ],
+   [
+    "been",
+    1.86,
+    2.12
+   ],
+   [
+    "seen",
+    2.12,
+    2.42
+   ],
+   [
+    "to",
+    2.42,
+    2.6
+   ],
+   [
+    "decay.",
+    2.6,
+    2.98
+   ],
+   [
+    "It",
+    3.58,
+    3.74
+   ],
+   [
+    "would",
+    3.74,
+    3.84
+   ],
+   [
+    "take",
+    3.84,
+    4.02
+   ],
+   [
+    "more",
+    4.02,
+    4.26
+   ],
+   [
+    "than",
+    4.26,
+    4.42
+   ],
+   [
+    "a",
+    4.42,
+    4.64
+   ],
+   [
+    "billion",
+    4.64,
+    5.0
+   ],
+   [
+    "trillion",
+    5.0,
+    5.74
+   ],
+   [
+    "trillion",
+    5.74,
+    6.28
+   ],
+   [
+    "years.",
+    6.28,
+    6.9
+   ]
+  ],
+  "s5": [
+   [
+    "That's",
+    0.0,
+    0.38
+   ],
+   [
+    "thirty-three",
+    0.38,
+    1.08
+   ],
+   [
+    "zeros,",
+    1.08,
+    1.68
+   ],
+   [
+    "and",
+    2.12,
+    2.34
+   ],
+   [
+    "still",
+    2.34,
+    2.74
+   ],
+   [
+    "nobody",
+    2.74,
+    3.32
+   ],
+   [
+    "has",
+    3.32,
+    3.62
+   ],
+   [
+    "caught",
+    3.62,
+    3.84
+   ],
+   [
+    "one",
+    3.84,
+    4.04
+   ],
+   [
+    "going.",
+    4.04,
+    4.44
+   ],
+   [
+    "Maybe",
+    5.14,
+    5.3
+   ],
+   [
+    "something",
+    5.3,
+    5.7
+   ],
+   [
+    "really",
+    5.7,
+    6.1
+   ],
+   [
+    "does",
+    6.1,
+    6.48
+   ],
+   [
+    "last",
+    6.48,
+    6.82
+   ],
+   [
+    "forever.",
+    6.82,
+    7.24
+   ]
+  ]
+ },
+ "sweep": [
+  {
+   "word": "s1:An#1",
+   "measured_s_section": 0.032,
+   "caption_frame": 16,
+   "err_frames": 0.04,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:adult#1",
+   "measured_s_section": 0.142,
+   "caption_frame": 19,
+   "err_frames": -0.26,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:mayfly#1",
+   "measured_s_section": 0.499,
+   "caption_frame": 30,
+   "err_frames": 0.03,
+   "source": "override"
+  },
+  {
+   "word": "s1:lives#1",
+   "measured_s_section": 0.998,
+   "caption_frame": 45,
+   "err_frames": 0.06,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:about#1",
+   "measured_s_section": 1.264,
+   "caption_frame": 53,
+   "err_frames": 0.08,
+   "source": "override"
+  },
+  {
+   "word": "s1:a#1",
+   "measured_s_section": 1.627,
+   "caption_frame": 64,
+   "err_frames": 0.19,
+   "source": "override"
+  },
+  {
+   "word": "s1:day.#1",
+   "measured_s_section": 1.78,
+   "caption_frame": 68,
+   "err_frames": -0.4,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:You#1",
+   "measured_s_section": 2.595,
+   "caption_frame": 93,
+   "err_frames": 0.15,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:live#1",
+   "measured_s_section": 2.87,
+   "caption_frame": 101,
+   "err_frames": -0.1,
+   "source": "override"
+  },
+  {
+   "word": "s1:about#2",
+   "measured_s_section": 3.037,
+   "caption_frame": 106,
+   "err_frames": -0.11,
+   "source": "override"
+  },
+  {
+   "word": "s1:seventy-three#1",
+   "measured_s_section": 3.399,
+   "caption_frame": 117,
+   "err_frames": 0.03,
+   "source": "override"
+  },
+  {
+   "word": "s1:years.#1",
+   "measured_s_section": 4.139,
+   "caption_frame": 139,
+   "err_frames": -0.17,
+   "source": "override"
+  },
+  {
+   "word": "s1:A#1",
+   "measured_s_section": 5.282,
+   "caption_frame": 173,
+   "err_frames": -0.46,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:tortoise#1",
+   "measured_s_section": 5.407,
+   "caption_frame": 177,
+   "err_frames": -0.21,
+   "source": "override"
+  },
+  {
+   "word": "s1:named#1",
+   "measured_s_section": 5.717,
+   "caption_frame": 187,
+   "err_frames": 0.49,
+   "source": "override"
+  },
+  {
+   "word": "s1:Jonathan#1",
+   "measured_s_section": 6.024,
+   "caption_frame": 196,
+   "err_frames": 0.28,
+   "source": "override"
+  },
+  {
+   "word": "s1:is#1",
+   "measured_s_section": 6.526,
+   "caption_frame": 211,
+   "err_frames": 0.22,
+   "source": "override"
+  },
+  {
+   "word": "s1:nearly#1",
+   "measured_s_section": 6.844,
+   "caption_frame": 220,
+   "err_frames": -0.32,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:two#1",
+   "measured_s_section": 7.249,
+   "caption_frame": 232,
+   "err_frames": -0.47,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:hundred.#1",
+   "measured_s_section": 7.516,
+   "caption_frame": 240,
+   "err_frames": -0.48,
+   "source": "override"
+  },
+  {
+   "word": "s2:A#1",
+   "measured_s_section": 0.03,
+   "caption_frame": 308,
+   "err_frames": -0.4,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:Greenland#1",
+   "measured_s_section": 0.167,
+   "caption_frame": 313,
+   "err_frames": 0.49,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:shark#1",
+   "measured_s_section": 0.446,
+   "caption_frame": 321,
+   "err_frames": 0.12,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:can#1",
+   "measured_s_section": 0.988,
+   "caption_frame": 337,
+   "err_frames": -0.14,
+   "source": "override"
+  },
+  {
+   "word": "s2:live#1",
+   "measured_s_section": 1.17,
+   "caption_frame": 343,
+   "err_frames": 0.4,
+   "source": "override"
+  },
+  {
+   "word": "s2:about#1",
+   "measured_s_section": 1.357,
+   "caption_frame": 348,
+   "err_frames": -0.21,
+   "source": "override"
+  },
+  {
+   "word": "s2:four#1",
+   "measured_s_section": 1.697,
+   "caption_frame": 358,
+   "err_frames": -0.41,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:hundred#1",
+   "measured_s_section": 1.995,
+   "caption_frame": 367,
+   "err_frames": -0.35,
+   "source": "override"
+  },
+  {
+   "word": "s2:years.#1",
+   "measured_s_section": 2.491,
+   "caption_frame": 382,
+   "err_frames": -0.23,
+   "source": "override"
+  },
+  {
+   "word": "s2:The#1",
+   "measured_s_section": 3.533,
+   "caption_frame": 413,
+   "err_frames": -0.49,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:oldest#1",
+   "measured_s_section": 3.692,
+   "caption_frame": 418,
+   "err_frames": -0.26,
+   "source": "override"
+  },
+  {
+   "word": "s2:known#1",
+   "measured_s_section": 3.966,
+   "caption_frame": 426,
+   "err_frames": -0.48,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:tree,#1",
+   "measured_s_section": 4.262,
+   "caption_frame": 435,
+   "err_frames": -0.36,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:a#1",
+   "measured_s_section": 5.024,
+   "caption_frame": 458,
+   "err_frames": -0.22,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:bristlecone#1",
+   "measured_s_section": 5.194,
+   "caption_frame": 463,
+   "err_frames": -0.32,
+   "source": "override"
+  },
+  {
+   "word": "s2:pine,#1",
+   "measured_s_section": 5.682,
+   "caption_frame": 478,
+   "err_frames": 0.04,
+   "source": "override"
+  },
+  {
+   "word": "s2:is#1",
+   "measured_s_section": 6.58,
+   "caption_frame": 505,
+   "err_frames": 0.1,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:nearly#1",
+   "measured_s_section": 6.632,
+   "caption_frame": 506,
+   "err_frames": -0.46,
+   "source": "override"
+  },
+  {
+   "word": "s2:five#1",
+   "measured_s_section": 7.06,
+   "caption_frame": 519,
+   "err_frames": -0.3,
+   "source": "override"
+  },
+  {
+   "word": "s2:thousand.#1",
+   "measured_s_section": 7.683,
+   "caption_frame": 538,
+   "err_frames": 0.01,
+   "source": "override"
+  },
+  {
+   "word": "s3:The#1",
+   "measured_s_section": 0.031,
+   "caption_frame": 600,
+   "err_frames": -0.03,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:Sun#1",
+   "measured_s_section": 0.116,
+   "caption_frame": 603,
+   "err_frames": 0.42,
+   "source": "override"
+  },
+  {
+   "word": "s3:will#1",
+   "measured_s_section": 0.503,
+   "caption_frame": 614,
+   "err_frames": -0.19,
+   "source": "override"
+  },
+  {
+   "word": "s3:shine#1",
+   "measured_s_section": 0.671,
+   "caption_frame": 619,
+   "err_frames": -0.23,
+   "source": "override"
+  },
+  {
+   "word": "s3:for#1",
+   "measured_s_section": 0.967,
+   "caption_frame": 628,
+   "err_frames": -0.11,
+   "source": "override"
+  },
+  {
+   "word": "s3:about#1",
+   "measured_s_section": 1.23,
+   "caption_frame": 636,
+   "err_frames": 0.0,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:ten#1",
+   "measured_s_section": 1.616,
+   "caption_frame": 648,
+   "err_frames": 0.42,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:billion#1",
+   "measured_s_section": 2.175,
+   "caption_frame": 664,
+   "err_frames": -0.35,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:years.#1",
+   "measured_s_section": 2.537,
+   "caption_frame": 675,
+   "err_frames": -0.21,
+   "source": "override"
+  },
+  {
+   "word": "s3:A#1",
+   "measured_s_section": 3.7,
+   "caption_frame": 710,
+   "err_frames": -0.1,
+   "source": "override"
+  },
+  {
+   "word": "s3:small#1",
+   "measured_s_section": 3.805,
+   "caption_frame": 713,
+   "err_frames": -0.25,
+   "source": "override"
+  },
+  {
+   "word": "s3:red#1",
+   "measured_s_section": 4.156,
+   "caption_frame": 724,
+   "err_frames": 0.22,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:dwarf#1",
+   "measured_s_section": 4.476,
+   "caption_frame": 733,
+   "err_frames": -0.38,
+   "source": "override"
+  },
+  {
+   "word": "s3:star,#1",
+   "measured_s_section": 4.665,
+   "caption_frame": 739,
+   "err_frames": -0.05,
+   "source": "override"
+  },
+  {
+   "word": "s3:for#2",
+   "measured_s_section": 5.39,
+   "caption_frame": 761,
+   "err_frames": 0.2,
+   "source": "override"
+  },
+  {
+   "word": "s3:four#1",
+   "measured_s_section": 5.558,
+   "caption_frame": 766,
+   "err_frames": 0.16,
+   "source": "override"
+  },
+  {
+   "word": "s3:trillion.#1",
+   "measured_s_section": 5.794,
+   "caption_frame": 773,
+   "err_frames": 0.08,
+   "source": "override"
+  },
+  {
+   "word": "s4:A#1",
+   "measured_s_section": 0.025,
+   "caption_frame": 844,
+   "err_frames": 0.1,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:proton,#1",
+   "measured_s_section": 0.184,
+   "caption_frame": 849,
+   "err_frames": 0.33,
+   "source": "override"
+  },
+  {
+   "word": "s4:though,#1",
+   "measured_s_section": 0.821,
+   "caption_frame": 868,
+   "err_frames": 0.22,
+   "source": "override"
+  },
+  {
+   "word": "s4:has#1",
+   "measured_s_section": 1.233,
+   "caption_frame": 880,
+   "err_frames": -0.14,
+   "source": "override"
+  },
+  {
+   "word": "s4:never#1",
+   "measured_s_section": 1.432,
+   "caption_frame": 886,
+   "err_frames": -0.11,
+   "source": "override"
+  },
+  {
+   "word": "s4:been#1",
+   "measured_s_section": 1.812,
+   "caption_frame": 898,
+   "err_frames": 0.49,
+   "source": "override"
+  },
+  {
+   "word": "s4:seen#1",
+   "measured_s_section": 2.153,
+   "caption_frame": 908,
+   "err_frames": 0.26,
+   "source": "override"
+  },
+  {
+   "word": "s4:to#1",
+   "measured_s_section": 2.409,
+   "caption_frame": 915,
+   "err_frames": -0.42,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:decay.#1",
+   "measured_s_section": 2.62,
+   "caption_frame": 922,
+   "err_frames": 0.25,
+   "source": "override"
+  },
+  {
+   "word": "s4:It#1",
+   "measured_s_section": 3.607,
+   "caption_frame": 951,
+   "err_frames": -0.36,
+   "source": "override"
+  },
+  {
+   "word": "s4:would#1",
+   "measured_s_section": 3.759,
+   "caption_frame": 956,
+   "err_frames": 0.08,
+   "source": "override"
+  },
+  {
+   "word": "s4:take#1",
+   "measured_s_section": 3.86,
+   "caption_frame": 959,
+   "err_frames": 0.05,
+   "source": "override"
+  },
+  {
+   "word": "s4:more#1",
+   "measured_s_section": 4.033,
+   "caption_frame": 964,
+   "err_frames": -0.14,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:than#1",
+   "measured_s_section": 4.21,
+   "caption_frame": 969,
+   "err_frames": -0.45,
+   "source": "override"
+  },
+  {
+   "word": "s4:a#1",
+   "measured_s_section": 4.424,
+   "caption_frame": 976,
+   "err_frames": 0.13,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:billion#1",
+   "measured_s_section": 4.698,
+   "caption_frame": 984,
+   "err_frames": -0.09,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:trillion#1",
+   "measured_s_section": 5.008,
+   "caption_frame": 993,
+   "err_frames": -0.39,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:trillion#2",
+   "measured_s_section": 5.764,
+   "caption_frame": 1016,
+   "err_frames": -0.07,
+   "source": "override"
+  },
+  {
+   "word": "s4:years.#1",
+   "measured_s_section": 6.213,
+   "caption_frame": 1030,
+   "err_frames": 0.46,
+   "source": "override"
+  },
+  {
+   "word": "s5:That's#1",
+   "measured_s_section": 0.029,
+   "caption_frame": 1110,
+   "err_frames": -0.27,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:thirty-three#1",
+   "measured_s_section": 0.421,
+   "caption_frame": 1122,
+   "err_frames": -0.03,
+   "source": "override"
+  },
+  {
+   "word": "s5:zeros,#1",
+   "measured_s_section": 1.115,
+   "caption_frame": 1143,
+   "err_frames": 0.15,
+   "source": "override"
+  },
+  {
+   "word": "s5:and#1",
+   "measured_s_section": 2.184,
+   "caption_frame": 1175,
+   "err_frames": 0.08,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:still#1",
+   "measured_s_section": 2.321,
+   "caption_frame": 1179,
+   "err_frames": -0.03,
+   "source": "override"
+  },
+  {
+   "word": "s5:nobody#1",
+   "measured_s_section": 2.777,
+   "caption_frame": 1193,
+   "err_frames": 0.29,
+   "source": "override"
+  },
+  {
+   "word": "s5:has#1",
+   "measured_s_section": 3.255,
+   "caption_frame": 1207,
+   "err_frames": -0.05,
+   "source": "override"
+  },
+  {
+   "word": "s5:caught#1",
+   "measured_s_section": 3.671,
+   "caption_frame": 1220,
+   "err_frames": 0.47,
+   "source": "override"
+  },
+  {
+   "word": "s5:one#1",
+   "measured_s_section": 3.855,
+   "caption_frame": 1225,
+   "err_frames": -0.05,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:going.#1",
+   "measured_s_section": 4.11,
+   "caption_frame": 1233,
+   "err_frames": 0.3,
+   "source": "override"
+  },
+  {
+   "word": "s5:Maybe#1",
+   "measured_s_section": 5.08,
+   "caption_frame": 1262,
+   "err_frames": 0.2,
+   "source": "override"
+  },
+  {
+   "word": "s5:something#1",
+   "measured_s_section": 5.294,
+   "caption_frame": 1268,
+   "err_frames": -0.22,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:really#1",
+   "measured_s_section": 5.7,
+   "caption_frame": 1280,
+   "err_frames": -0.4,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:does#1",
+   "measured_s_section": 6.289,
+   "caption_frame": 1298,
+   "err_frames": -0.07,
+   "source": "override"
+  },
+  {
+   "word": "s5:last#1",
+   "measured_s_section": 6.471,
+   "caption_frame": 1304,
+   "err_frames": 0.47,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:forever.#1",
+   "measured_s_section": 6.814,
+   "caption_frame": 1314,
+   "err_frames": 0.18,
+   "source": "confirmed"
+  }
+ ],
+ "sweep_max_abs_err_frames": 0.49,
+ "anchors": {
+  "sc02": [
+   "s1",
+   "you",
+   1
+  ],
+  "sc03": [
+   "s1",
+   "a",
+   2
+  ],
+  "sc04": [
+   "s2",
+   "a",
+   1
+  ],
+  "sc05": [
+   "s2",
+   "the",
+   1
+  ],
+  "sc06": [
+   "s3",
+   "the",
+   1
+  ],
+  "sc07": [
+   "s3",
+   "a",
+   1
+  ],
+  "sc08": [
+   "s4",
+   "a",
+   1
+  ],
+  "sc09": [
+   "s4",
+   "it",
+   1
+  ],
+  "sc10": [
+   "s5",
+   "thats",
+   1
+  ],
+  "sc11": [
+   "s5",
+   "and",
+   1
+  ],
+  "sc12": [
+   "s5",
+   "maybe",
+   1
+  ]
+ },
+ "overrides_section_relative_s": {
+  "s1:mayfly#1": [
+   0.499,
+   null
+  ],
+  "s1:about#1": [
+   1.264,
+   null
+  ],
+  "s1:a#1": [
+   1.627,
+   null
+  ],
+  "s1:live#1": [
+   2.87,
+   null
+  ],
+  "s1:about#2": [
+   3.037,
+   null
+  ],
+  "s1:seventy-three#1": [
+   3.399,
+   null
+  ],
+  "s1:years.#1": [
+   4.139,
+   null
+  ],
+  "s1:tortoise#1": [
+   5.407,
+   null
+  ],
+  "s1:named#1": [
+   5.717,
+   null
+  ],
+  "s1:Jonathan#1": [
+   6.024,
+   null
+  ],
+  "s1:is#1": [
+   6.526,
+   null
+  ],
+  "s1:hundred.#1": [
+   7.516,
+   null
+  ],
+  "s2:can#1": [
+   0.988,
+   null
+  ],
+  "s2:live#1": [
+   1.17,
+   null
+  ],
+  "s2:about#1": [
+   1.357,
+   null
+  ],
+  "s2:hundred#1": [
+   1.995,
+   null
+  ],
+  "s2:years.#1": [
+   2.491,
+   null
+  ],
+  "s2:oldest#1": [
+   3.692,
+   null
+  ],
+  "s2:bristlecone#1": [
+   5.194,
+   null
+  ],
+  "s2:pine,#1": [
+   5.682,
+   null
+  ],
+  "s2:nearly#1": [
+   6.632,
+   null
+  ],
+  "s2:five#1": [
+   7.06,
+   null
+  ],
+  "s2:thousand.#1": [
+   7.683,
+   null
+  ],
+  "s3:Sun#1": [
+   0.116,
+   null
+  ],
+  "s3:will#1": [
+   0.503,
+   null
+  ],
+  "s3:shine#1": [
+   0.671,
+   null
+  ],
+  "s3:for#1": [
+   0.967,
+   null
+  ],
+  "s3:years.#1": [
+   2.537,
+   null
+  ],
+  "s3:A#1": [
+   3.7,
+   null
+  ],
+  "s3:small#1": [
+   3.805,
+   null
+  ],
+  "s3:dwarf#1": [
+   4.476,
+   null
+  ],
+  "s3:star,#1": [
+   4.665,
+   null
+  ],
+  "s3:for#2": [
+   5.39,
+   null
+  ],
+  "s3:four#1": [
+   5.558,
+   null
+  ],
+  "s3:trillion.#1": [
+   5.794,
+   null
+  ],
+  "s4:proton,#1": [
+   0.184,
+   null
+  ],
+  "s4:though,#1": [
+   0.821,
+   null
+  ],
+  "s4:has#1": [
+   1.233,
+   null
+  ],
+  "s4:never#1": [
+   1.432,
+   null
+  ],
+  "s4:been#1": [
+   1.812,
+   null
+  ],
+  "s4:seen#1": [
+   2.153,
+   null
+  ],
+  "s4:decay.#1": [
+   2.62,
+   null
+  ],
+  "s4:It#1": [
+   3.607,
+   null
+  ],
+  "s4:would#1": [
+   3.759,
+   null
+  ],
+  "s4:take#1": [
+   3.86,
+   null
+  ],
+  "s4:than#1": [
+   4.21,
+   null
+  ],
+  "s4:trillion#2": [
+   5.764,
+   null
+  ],
+  "s4:years.#1": [
+   6.213,
+   null
+  ],
+  "s5:thirty-three#1": [
+   0.421,
+   null
+  ],
+  "s5:zeros,#1": [
+   1.115,
+   null
+  ],
+  "s5:still#1": [
+   2.321,
+   null
+  ],
+  "s5:nobody#1": [
+   2.777,
+   null
+  ],
+  "s5:has#1": [
+   3.255,
+   null
+  ],
+  "s5:caught#1": [
+   3.671,
+   null
+  ],
+  "s5:going.#1": [
+   4.11,
+   null
+  ],
+  "s5:Maybe#1": [
+   5.08,
+   null
+  ],
+  "s5:does#1": [
+   6.289,
+   null
+  ]
+ }
+}

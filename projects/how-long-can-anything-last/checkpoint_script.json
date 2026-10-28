@@ -1,0 +1,260 @@
+{
+  "version": "1.0",
+  "project_id": "how-long-can-anything-last",
+  "pipeline_type": "unknown",
+  "stage": "script",
+  "status": "completed",
+  "timestamp": "2026-10-28T15:49:58.492456+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": true,
+  "human_approved": true,
+  "artifacts": {
+    "script": {
+      "version": "1.0",
+      "title": "How Long Can Anything Last?",
+      "total_duration_seconds": 43.1,
+      "voice_performance": {
+        "performance_intent": "A calm, curious climb up the lifespans, each rung longer and more impressed; a hush at the proton; a quiet, open close.",
+        "pacing_profile": "conversational",
+        "energy_curve": "s1 curious; s2 building; s3 impressed; s4 hushed; s5 calm, wondering, resolved.",
+        "pause_policy": "Gaps widened at the foundation for a >= 45 s film (lesson 48); ~1.5 s settle after s5 on the resolved chord.",
+        "sample_section_id": "s1",
+        "provider_notes": {
+          "elevenlabs": "Bella hpp4J3VqNfWAUOO0d1Us, eleven_v4 tags in delivery_cues.provider_text. ONE take per section; retake only if Whisper QA fails; max 2. Check baked-in pauses (lesson 29) and the last word 'way' level (lesson 30)."
+        }
+      },
+      "sections": [
+        {
+          "id": "s1",
+          "label": "Hook - mayfly, you, Jonathan",
+          "text": "An adult mayfly lives about a day. You live about seventy-three years. A tortoise named Jonathan is nearly two hundred.",
+          "speaker_directions": "curious, stepping up",
+          "delivery_cues": {
+            "pace": "measured",
+            "energy": "curious, stepping up",
+            "emphasis_words": [
+              "about a day",
+              "seventy-three",
+              "nearly two hundred"
+            ],
+            "pause_after_seconds": 0.35,
+            "delivery_note": "",
+            "provider_text": "[curious] An adult mayfly lives about a day. You live about seventy-three years. A tortoise named Jonathan is nearly two hundred."
+          },
+          "enhancement_cues": [
+            {
+              "type": "animation",
+              "description": "Log rail: marker climbs WALK -> CHEETAH (window S1)",
+              "timestamp_seconds": 0.5
+            },
+            {
+              "type": "animation",
+              "description": "FALCON rung (window S2) - PROBABLY",
+              "timestamp_seconds": 5.0
+            }
+          ],
+          "source_ref": "research_brief: WALK, CHEETAH, FALCON",
+          "pronunciation_guides": [],
+          "start_seconds": 0.0,
+          "end_seconds": 9.92
+        },
+        {
+          "id": "s2",
+          "label": "Shark and pine",
+          "text": "A Greenland shark can live about four hundred years. The oldest known tree, a bristlecone pine, is nearly five thousand.",
+          "speaker_directions": "building",
+          "delivery_cues": {
+            "pace": "measured",
+            "energy": "building",
+            "emphasis_words": [
+              "four hundred",
+              "nearly five thousand"
+            ],
+            "pause_after_seconds": 0.4,
+            "delivery_note": "",
+            "provider_text": "A Greenland shark can live about four hundred years. The oldest known tree, a bristlecone pine, is nearly five thousand."
+          },
+          "enhancement_cues": [
+            {
+              "type": "animation",
+              "description": "SOUND rung",
+              "timestamp_seconds": 10.22
+            },
+            {
+              "type": "animation",
+              "description": "HERO: 'YOU' tag jumps to EARTH 107,000",
+              "timestamp_seconds": 12.92
+            }
+          ],
+          "source_ref": "research_brief: SOUND, ORBIT",
+          "pronunciation_guides": [],
+          "start_seconds": 9.92,
+          "end_seconds": 19.89
+        },
+        {
+          "id": "s3",
+          "label": "Sun and red dwarf",
+          "text": "The Sun will shine for about ten billion years. A small red dwarf star, for four trillion.",
+          "speaker_directions": "impressed",
+          "delivery_cues": {
+            "pace": "measured",
+            "energy": "impressed",
+            "emphasis_words": [
+              "ten billion",
+              "four trillion"
+            ],
+            "pause_after_seconds": 0.4,
+            "delivery_note": "",
+            "provider_text": "[impressed] The Sun will shine for about ten billion years. A small red dwarf star, for four trillion."
+          },
+          "enhancement_cues": [
+            {
+              "type": "broll",
+              "description": "Window S3 Parker Solar Probe (AI impression)",
+              "timestamp_seconds": 20.39
+            },
+            {
+              "type": "animation",
+              "description": "PARKER rung",
+              "timestamp_seconds": 21.89
+            }
+          ],
+          "source_ref": "research_brief: PROBE",
+          "pronunciation_guides": [],
+          "start_seconds": 19.89,
+          "end_seconds": 28.55
+        },
+        {
+          "id": "s4",
+          "label": "The proton",
+          "text": "A proton, though, has never been seen to decay. It would take more than a billion trillion trillion years.",
+          "speaker_directions": "hushed, intrigued",
+          "delivery_cues": {
+            "pace": "measured",
+            "energy": "hushed, intrigued",
+            "emphasis_words": [
+              "never been seen",
+              "billion trillion trillion"
+            ],
+            "pause_after_seconds": 0.45,
+            "delivery_note": "",
+            "provider_text": "[intrigued] A proton, though, has never been seen to decay. It would take more than a billion trillion trillion years."
+          },
+          "enhancement_cues": [
+            {
+              "type": "animation",
+              "description": "LIGHT at the top; red 'c' wall line",
+              "timestamp_seconds": 28.85
+            },
+            {
+              "type": "animation",
+              "description": "energy bar grows without limit",
+              "timestamp_seconds": 31.55
+            }
+          ],
+          "source_ref": "research_brief: LIGHT, WALL",
+          "pronunciation_guides": [],
+          "start_seconds": 28.55,
+          "end_seconds": 39.43
+        },
+        {
+          "id": "s5",
+          "label": "Close - zeros, forever?",
+          "text": "That's thirty-three zeros, and still nobody has caught one going. Maybe something really does last forever.",
+          "speaker_directions": "calm, wondering, resolved",
+          "delivery_cues": {
+            "pace": "slow",
+            "energy": "calm, wondering, resolved",
+            "emphasis_words": [
+              "thirty-three zeros",
+              "forever"
+            ],
+            "pause_after_seconds": 0.0,
+            "delivery_note": "End on a falling, finished cadence; keep 'forever' clear (lesson 30).",
+            "provider_text": "That's thirty-three zeros, and still nobody has caught one going. [softly] Maybe something really does last forever."
+          },
+          "enhancement_cues": [
+            {
+              "type": "stat_card",
+              "description": "LHC readout fills '99.9999991 %'",
+              "timestamp_seconds": 39.93
+            },
+            {
+              "type": "animation",
+              "description": "marker stops just under the wall; settle",
+              "timestamp_seconds": 43.43
+            }
+          ],
+          "source_ref": "research_brief: LHC",
+          "pronunciation_guides": [],
+          "start_seconds": 39.43,
+          "end_seconds": 47.69
+        }
+      ],
+      "metadata": {
+        "word_count": 92,
+        "section_word_counts": {
+          "s1": 20,
+          "s2": 20,
+          "s3": 17,
+          "s4": 19,
+          "s5": 16
+        },
+        "word_count_method": "whitespace split, numbers as spoken (lesson 17)",
+        "rate_assumption_wps": 2.3,
+        "estimated_speech_seconds": 40.0,
+        "estimated_film_seconds": 43.1,
+        "ending": "finished_line",
+        "ending_details": {
+          "rule": "User's standing rule (d-003): end on a finished line.",
+          "closing_line": "Maybe something really does last forever.",
+          "settle_after_last_word_seconds": 1.5,
+          "after_last_word": "Resolved chord ~0.15 s after 'forever'; 1.5 s settle; CTA swaps in.",
+          "loop_cut": "optional only, on request"
+        },
+        "honesty_meter": {
+          "MEASURED": "measured, or an established finding stated simply",
+          "PROBABLY": "weakly sourced or a simplification",
+          "MAYBE": "single-source or unconfirmed (none used)"
+        },
+        "claim_tags": {
+          "s1": {
+            "walking ~5 km/h (WALK)": "MEASURED",
+            "cheetah ~100 km/h (CHEETAH)": "MEASURED",
+            "diving peregrine nearly 400 km/h (FALCON)": "PROBABLY"
+          },
+          "s2": {
+            "sound ~1,235 km/h (SOUND)": "MEASURED",
+            "Earth orbits the Sun at ~107,000 km/h (ORBIT)": "MEASURED"
+          },
+          "s3": {
+            "Parker Solar Probe ~692,000 km/h, fastest human-made object, from falling toward the Sun (PROBE)": "MEASURED"
+          },
+          "s4": {
+            "light ~1.08 billion km/h (LIGHT)": "MEASURED",
+            "nothing with mass can reach it; energy grows without limit (WALL)": "MEASURED"
+          },
+          "s5": {
+            "LHC protons to 99.9999991% of light speed (LHC)": "MEASURED"
+          }
+        },
+        "wording_changes_from_outline": {
+          "s1": "Unchanged (approved).",
+          "s2": "Unchanged.",
+          "s3": "Unchanged.",
+          "s4": "Unchanged.",
+          "s5": "Unchanged (approved closing line)."
+        },
+        "fact_notes": [
+          "'about a hundred' = cheetah 95 (wild, collar) to 103 km/h (track)",
+          "'nearly four hundred' = peregrine dive ~386-390 km/h, weakly sourced -> PROBABLY",
+          "'over twelve hundred' = 343 m/s in 20 C air = 1,235 km/h",
+          "'over a hundred thousand' = Earth's orbit 29.78 km/s = 107,200 km/h",
+          "'nearly seven hundred thousand' = Parker 430,000 mph = 692,000 km/h (Dec 2024)",
+          "'over a billion' = 1,079,252,849 km/h (c = 299,792,458 m/s exactly)",
+          "'within a hair' = LHC protons 0.999999991 c (shown on screen as 99.9999991 %)"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,800 @@
+{
+ "fps": 30,
+ "width": 1080,
+ "height": 1920,
+ "lead_seconds": 0.5,
+ "settle_seconds": 1.5,
+ "narration_seconds": 44.135,
+ "total_seconds": 45.967,
+ "total_frames": 1379,
+ "voice_end_seconds": 44.45,
+ "way_end_seconds": 44.45,
+ "way_end_frame": 1334,
+ "sections": [
+  {
+   "id": "s1",
+   "start": 0.5,
+   "end": 10.25,
+   "audio": "assets/audio/narration/clean/s1.wav",
+   "from": 15,
+   "durationInFrames": 293
+  },
+  {
+   "id": "s2",
+   "start": 10.25,
+   "end": 19.97,
+   "audio": "assets/audio/narration/clean/s2.wav",
+   "from": 308,
+   "durationInFrames": 291
+  },
+  {
+   "id": "s3",
+   "start": 19.97,
+   "end": 28.105,
+   "audio": "assets/audio/narration/clean/s3.wav",
+   "from": 599,
+   "durationInFrames": 244
+  },
+  {
+   "id": "s4",
+   "start": 28.105,
+   "end": 36.98,
+   "audio": "assets/audio/narration/clean/s4.wav",
+   "from": 843,
+   "durationInFrames": 266
+  },
+  {
+   "id": "s5",
+   "start": 36.98,
+   "end": 44.635,
+   "audio": "assets/audio/narration/clean/s5.wav",
+   "from": 1109,
+   "durationInFrames": 230
+  }
+ ],
+ "scenes": [
+  {
+   "id": "sc01",
+   "section": "s1",
+   "from": 0,
+   "durationInFrames": 91,
+   "start": 0.0,
+   "end": 3.033
+  },
+  {
+   "id": "sc02",
+   "section": "s1",
+   "from": 91,
+   "durationInFrames": 80,
+   "start": 3.033,
+   "end": 5.7
+  },
+  {
+   "id": "sc03",
+   "section": "s1",
+   "from": 171,
+   "durationInFrames": 135,
+   "start": 5.7,
+   "end": 10.2
+  },
+  {
+   "id": "sc04",
+   "section": "s2",
+   "from": 306,
+   "durationInFrames": 105,
+   "start": 10.2,
+   "end": 13.7
+  },
+  {
+   "id": "sc05",
+   "section": "s2",
+   "from": 411,
+   "durationInFrames": 187,
+   "start": 13.7,
+   "end": 19.933
+  },
+  {
+   "id": "sc06",
+   "section": "s3",
+   "from": 598,
+   "durationInFrames": 110,
+   "start": 19.933,
+   "end": 23.6
+  },
+  {
+   "id": "sc07",
+   "section": "s3",
+   "from": 708,
+   "durationInFrames": 134,
+   "start": 23.6,
+   "end": 28.067
+  },
+  {
+   "id": "sc08",
+   "section": "s4",
+   "from": 842,
+   "durationInFrames": 107,
+   "start": 28.067,
+   "end": 31.633
+  },
+  {
+   "id": "sc09",
+   "section": "s4",
+   "from": 949,
+   "durationInFrames": 159,
+   "start": 31.633,
+   "end": 36.933
+  },
+  {
+   "id": "sc10",
+   "section": "s5",
+   "from": 1108,
+   "durationInFrames": 65,
+   "start": 36.933,
+   "end": 39.1
+  },
+  {
+   "id": "sc11",
+   "section": "s5",
+   "from": 1173,
+   "durationInFrames": 87,
+   "start": 39.1,
+   "end": 42.0
+  },
+  {
+   "id": "sc12",
+   "section": "s5",
+   "from": 1260,
+   "durationInFrames": 119,
+   "start": 42.0,
+   "end": 45.967
+  }
+ ],
+ "words": [
+  {
+   "section": "s1",
+   "i": 0,
+   "text": "An",
+   "start": 0.532,
+   "end": 0.642
+  },
+  {
+   "section": "s1",
+   "i": 1,
+   "text": "adult",
+   "start": 0.642,
+   "end": 0.999
+  },
+  {
+   "section": "s1",
+   "i": 2,
+   "text": "mayfly",
+   "start": 0.999,
+   "end": 1.498
+  },
+  {
+   "section": "s1",
+   "i": 3,
+   "text": "lives",
+   "start": 1.498,
+   "end": 1.764
+  },
+  {
+   "section": "s1",
+   "i": 4,
+   "text": "about",
+   "start": 1.764,
+   "end": 2.127
+  },
+  {
+   "section": "s1",
+   "i": 5,
+   "text": "a",
+   "start": 2.127,
+   "end": 2.28
+  },
+  {
+   "section": "s1",
+   "i": 6,
+   "text": "day.",
+   "start": 2.28,
+   "end": 2.54
+  },
+  {
+   "section": "s1",
+   "i": 7,
+   "text": "You",
+   "start": 3.095,
+   "end": 3.37
+  },
+  {
+   "section": "s1",
+   "i": 8,
+   "text": "live",
+   "start": 3.37,
+   "end": 3.537
+  },
+  {
+   "section": "s1",
+   "i": 9,
+   "text": "about",
+   "start": 3.537,
+   "end": 3.899
+  },
+  {
+   "section": "s1",
+   "i": 10,
+   "text": "seventy-three",
+   "start": 3.899,
+   "end": 4.639
+  },
+  {
+   "section": "s1",
+   "i": 11,
+   "text": "years.",
+   "start": 4.639,
+   "end": 5.16
+  },
+  {
+   "section": "s1",
+   "i": 12,
+   "text": "A",
+   "start": 5.782,
+   "end": 5.907
+  },
+  {
+   "section": "s1",
+   "i": 13,
+   "text": "tortoise",
+   "start": 5.907,
+   "end": 6.217
+  },
+  {
+   "section": "s1",
+   "i": 14,
+   "text": "named",
+   "start": 6.217,
+   "end": 6.524
+  },
+  {
+   "section": "s1",
+   "i": 15,
+   "text": "Jonathan",
+   "start": 6.524,
+   "end": 7.026
+  },
+  {
+   "section": "s1",
+   "i": 16,
+   "text": "is",
+   "start": 7.026,
+   "end": 7.344
+  },
+  {
+   "section": "s1",
+   "i": 17,
+   "text": "nearly",
+   "start": 7.344,
+   "end": 7.749
+  },
+  {
+   "section": "s1",
+   "i": 18,
+   "text": "two",
+   "start": 7.749,
+   "end": 8.016
+  },
+  {
+   "section": "s1",
+   "i": 19,
+   "text": "hundred.",
+   "start": 8.016,
+   "end": 8.65
+  },
+  {
+   "section": "s2",
+   "i": 0,
+   "text": "A",
+   "start": 10.28,
+   "end": 10.417
+  },
+  {
+   "section": "s2",
+   "i": 1,
+   "text": "Greenland",
+   "start": 10.417,
+   "end": 10.696
+  },
+  {
+   "section": "s2",
+   "i": 2,
+   "text": "shark",
+   "start": 10.696,
+   "end": 11.238
+  },
+  {
+   "section": "s2",
+   "i": 3,
+   "text": "can",
+   "start": 11.238,
+   "end": 11.42
+  },
+  {
+   "section": "s2",
+   "i": 4,
+   "text": "live",
+   "start": 11.42,
+   "end": 11.607
+  },
+  {
+   "section": "s2",
+   "i": 5,
+   "text": "about",
+   "start": 11.607,
+   "end": 11.947
+  },
+  {
+   "section": "s2",
+   "i": 6,
+   "text": "four",
+   "start": 11.947,
+   "end": 12.245
+  },
+  {
+   "section": "s2",
+   "i": 7,
+   "text": "hundred",
+   "start": 12.245,
+   "end": 12.741
+  },
+  {
+   "section": "s2",
+   "i": 8,
+   "text": "years.",
+   "start": 12.741,
+   "end": 13.29
+  },
+  {
+   "section": "s2",
+   "i": 9,
+   "text": "The",
+   "start": 13.783,
+   "end": 13.942
+  },
+  {
+   "section": "s2",
+   "i": 10,
+   "text": "oldest",
+   "start": 13.942,
+   "end": 14.216
+  },
+  {
+   "section": "s2",
+   "i": 11,
+   "text": "known",
+   "start": 14.216,
+   "end": 14.512
+  },
+  {
+   "section": "s2",
+   "i": 12,
+   "text": "tree,",
+   "start": 14.512,
+   "end": 15.12
+  },
+  {
+   "section": "s2",
+   "i": 13,
+   "text": "a",
+   "start": 15.274,
+   "end": 15.444
+  },
+  {
+   "section": "s2",
+   "i": 14,
+   "text": "bristlecone",
+   "start": 15.444,
+   "end": 15.932
+  },
+  {
+   "section": "s2",
+   "i": 15,
+   "text": "pine,",
+   "start": 15.932,
+   "end": 16.55
+  },
+  {
+   "section": "s2",
+   "i": 16,
+   "text": "is",
+   "start": 16.83,
+   "end": 16.882
+  },
+  {
+   "section": "s2",
+   "i": 17,
+   "text": "nearly",
+   "start": 16.882,
+   "end": 17.31
+  },
+  {
+   "section": "s2",
+   "i": 18,
+   "text": "five",
+   "start": 17.31,
+   "end": 17.933
+  },
+  {
+   "section": "s2",
+   "i": 19,
+   "text": "thousand.",
+   "start": 17.933,
+   "end": 18.32
+  },
+  {
+   "section": "s3",
+   "i": 0,
+   "text": "The",
+   "start": 20.001,
+   "end": 20.086
+  },
+  {
+   "section": "s3",
+   "i": 1,
+   "text": "Sun",
+   "start": 20.086,
+   "end": 20.473
+  },
+  {
+   "section": "s3",
+   "i": 2,
+   "text": "will",
+   "start": 20.473,
+   "end": 20.641
+  },
+  {
+   "section": "s3",
+   "i": 3,
+   "text": "shine",
+   "start": 20.641,
+   "end": 20.937
+  },
+  {
+   "section": "s3",
+   "i": 4,
+   "text": "for",
+   "start": 20.937,
+   "end": 21.2
+  },
+  {
+   "section": "s3",
+   "i": 5,
+   "text": "about",
+   "start": 21.2,
+   "end": 21.586
+  },
+  {
+   "section": "s3",
+   "i": 6,
+   "text": "ten",
+   "start": 21.586,
+   "end": 22.145
+  },
+  {
+   "section": "s3",
+   "i": 7,
+   "text": "billion",
+   "start": 22.145,
+   "end": 22.507
+  },
+  {
+   "section": "s3",
+   "i": 8,
+   "text": "years.",
+   "start": 22.507,
+   "end": 23.27
+  },
+  {
+   "section": "s3",
+   "i": 9,
+   "text": "A",
+   "start": 23.67,
+   "end": 23.775
+  },
+  {
+   "section": "s3",
+   "i": 10,
+   "text": "small",
+   "start": 23.775,
+   "end": 24.126
+  },
+  {
+   "section": "s3",
+   "i": 11,
+   "text": "red",
+   "start": 24.126,
+   "end": 24.446
+  },
+  {
+   "section": "s3",
+   "i": 12,
+   "text": "dwarf",
+   "start": 24.446,
+   "end": 24.635
+  },
+  {
+   "section": "s3",
+   "i": 13,
+   "text": "star,",
+   "start": 24.635,
+   "end": 25.25
+  },
+  {
+   "section": "s3",
+   "i": 14,
+   "text": "for",
+   "start": 25.36,
+   "end": 25.528
+  },
+  {
+   "section": "s3",
+   "i": 15,
+   "text": "four",
+   "start": 25.528,
+   "end": 25.764
+  },
+  {
+   "section": "s3",
+   "i": 16,
+   "text": "trillion.",
+   "start": 25.764,
+   "end": 26.49
+  },
+  {
+   "section": "s4",
+   "i": 0,
+   "text": "A",
+   "start": 28.13,
+   "end": 28.289
+  },
+  {
+   "section": "s4",
+   "i": 1,
+   "text": "proton,",
+   "start": 28.289,
+   "end": 28.845
+  },
+  {
+   "section": "s4",
+   "i": 2,
+   "text": "though,",
+   "start": 28.926,
+   "end": 29.125
+  },
+  {
+   "section": "s4",
+   "i": 3,
+   "text": "has",
+   "start": 29.338,
+   "end": 29.537
+  },
+  {
+   "section": "s4",
+   "i": 4,
+   "text": "never",
+   "start": 29.537,
+   "end": 29.917
+  },
+  {
+   "section": "s4",
+   "i": 5,
+   "text": "been",
+   "start": 29.917,
+   "end": 30.258
+  },
+  {
+   "section": "s4",
+   "i": 6,
+   "text": "seen",
+   "start": 30.258,
+   "end": 30.514
+  },
+  {
+   "section": "s4",
+   "i": 7,
+   "text": "to",
+   "start": 30.514,
+   "end": 30.725
+  },
+  {
+   "section": "s4",
+   "i": 8,
+   "text": "decay.",
+   "start": 30.725,
+   "end": 31.17
+  },
+  {
+   "section": "s4",
+   "i": 9,
+   "text": "It",
+   "start": 31.712,
+   "end": 31.864
+  },
+  {
+   "section": "s4",
+   "i": 10,
+   "text": "would",
+   "start": 31.864,
+   "end": 31.965
+  },
+  {
+   "section": "s4",
+   "i": 11,
+   "text": "take",
+   "start": 31.965,
+   "end": 32.138
+  },
+  {
+   "section": "s4",
+   "i": 12,
+   "text": "more",
+   "start": 32.138,
+   "end": 32.315
+  },
+  {
+   "section": "s4",
+   "i": 13,
+   "text": "than",
+   "start": 32.315,
+   "end": 32.529
+  },
+  {
+   "section": "s4",
+   "i": 14,
+   "text": "a",
+   "start": 32.529,
+   "end": 32.803
+  },
+  {
+   "section": "s4",
+   "i": 15,
+   "text": "billion",
+   "start": 32.803,
+   "end": 33.113
+  },
+  {
+   "section": "s4",
+   "i": 16,
+   "text": "trillion",
+   "start": 33.113,
+   "end": 33.869
+  },
+  {
+   "section": "s4",
+   "i": 17,
+   "text": "trillion",
+   "start": 33.869,
+   "end": 34.318
+  },
+  {
+   "section": "s4",
+   "i": 18,
+   "text": "years.",
+   "start": 34.318,
+   "end": 35.05
+  },
+  {
+   "section": "s5",
+   "i": 0,
+   "text": "That's",
+   "start": 37.009,
+   "end": 37.401
+  },
+  {
+   "section": "s5",
+   "i": 1,
+   "text": "thirty-three",
+   "start": 37.401,
+   "end": 38.095
+  },
+  {
+   "section": "s5",
+   "i": 2,
+   "text": "zeros,",
+   "start": 38.095,
+   "end": 38.79
+  },
+  {
+   "section": "s5",
+   "i": 3,
+   "text": "and",
+   "start": 39.164,
+   "end": 39.301
+  },
+  {
+   "section": "s5",
+   "i": 4,
+   "text": "still",
+   "start": 39.301,
+   "end": 39.757
+  },
+  {
+   "section": "s5",
+   "i": 5,
+   "text": "nobody",
+   "start": 39.757,
+   "end": 40.235
+  },
+  {
+   "section": "s5",
+   "i": 6,
+   "text": "has",
+   "start": 40.235,
+   "end": 40.651
+  },
+  {
+   "section": "s5",
+   "i": 7,
+   "text": "caught",
+   "start": 40.651,
+   "end": 40.835
+  },
+  {
+   "section": "s5",
+   "i": 8,
+   "text": "one",
+   "start": 40.835,
+   "end": 41.09
+  },
+  {
+   "section": "s5",
+   "i": 9,
+   "text": "going.",
+   "start": 41.09,
+   "end": 41.44
+  },
+  {
+   "section": "s5",
+   "i": 10,
+   "text": "Maybe",
+   "start": 42.06,
+   "end": 42.274
+  },
+  {
+   "section": "s5",
+   "i": 11,
+   "text": "something",
+   "start": 42.274,
+   "end": 42.68
+  },
+  {
+   "section": "s5",
+   "i": 12,
+   "text": "really",
+   "start": 42.68,
+   "end": 43.269
+  },
+  {
+   "section": "s5",
+   "i": 13,
+   "text": "does",
+   "start": 43.269,
+   "end": 43.451
+  },
+  {
+   "section": "s5",
+   "i": 14,
+   "text": "last",
+   "start": 43.451,
+   "end": 43.794
+  },
+  {
+   "section": "s5",
+   "i": 15,
+   "text": "forever.",
+   "start": 43.794,
+   "end": 44.45
+  }
+ ],
+ "notes": "Timings measured from THE CLEAN WAVs (assets/audio/narration/clean/sN.wav: ElevenLabs Bella eleven_v4, take 1 of every section; the s4 breath after 'Light' kept (nothing cut); lead/tail trimmed; ONE constant gain per section to -21.5 LUFS (s5 TP-capped at -22.8; no loudnorm); widened gaps 1.2/1.2/1.2/1.45 s inside the files; no time-stretch). Lead-in 0.5 s before s1; sections back to back at their measured durations. Words: faster-whisper small.en aligned to the script text (script punctuation, punctuation); onsets snapped to the RMS envelope (-40 dB, <= 250 ms); every onset swept (OVERRIDES / CONFIRMED, section-relative). Scene splits = anchor-word onset - 2 frames (ALL scenes after sc01). FINISHED-LINE ending: the film runs 1.5 s past the aligned end of 'way.' (inside sc12; no loop splice). Captions show script text."
+}

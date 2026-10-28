@@ -1,0 +1,247 @@
+{
+  "version": "1.0",
+  "project_id": "how-long-can-anything-last",
+  "pipeline_type": "unknown",
+  "stage": "research",
+  "status": "completed",
+  "timestamp": "2026-10-28T15:31:16.160776+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": false,
+  "human_approved": false,
+  "artifacts": {
+    "research_brief": {
+      "version": "1.0",
+      "topic": "How Long Can Anything Last?",
+      "research_date": "2026-10-28",
+      "research_summary": "A log-years ladder: an adult mayfly (~a day), the average person (73.3 yr), the oldest tortoise (~193 yr), the Greenland shark (~392 +/- 120 yr), the oldest non-clonal tree (~4,850 yr), the Sun (~10 billion yr), a red dwarf (~4 trillion yr), and the proton (never seen to decay; lower limits above 1e33 yr). The honest twist: the longest rung is a limit nobody has reached, so 'forever' stays a MAYBE.",
+      "landscape": {
+        "existing_content": [
+          {
+            "title": "The Last Thing To Ever Happen In The Universe",
+            "source": "Kurzgesagt",
+            "angle": "end-of-time narrative",
+            "what_it_covers": "stars dying, black holes evaporating; 9.8M views"
+          },
+          {
+            "title": "Oldest living things lists",
+            "source": "YouTube / listicles",
+            "angle": "ranked list",
+            "what_it_covers": "tree, shark, tortoise ages without a common scale"
+          },
+          {
+            "title": "How long do X live? explainers",
+            "source": "short explainers",
+            "angle": "one species per video",
+            "what_it_covers": "single-animal lifespans"
+          }
+        ],
+        "saturated_angles": [
+          "Ranked 'oldest animals' lists"
+        ],
+        "underserved_gaps": [
+          "One scale from a day to 10^33 years in 45 s",
+          "Honesty about the last rung: a proton may last forever and nobody can say"
+        ]
+      },
+      "data_points": [
+        {
+          "claim": "Adult mayflies live from ~30 minutes to 1-2 days depending on species; 'about a day' is typical. PROBABLY (varies by species) [MAYFLY]",
+          "source_url": "https://en.wikipedia.org/wiki/Mayfly",
+          "source_name": "Wikipedia / NC State entomology",
+          "credibility": "secondary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "hook"
+        },
+        {
+          "claim": "Global life expectancy at birth was 73.3 years in 2023 (WHO Global Health Estimates, Oct 2026). MEASURED [HUMAN]",
+          "source_url": "https://www.ctvnews.ca/health/article/life-expectancy-almost-back-to-pre-covid-levels-says-who/",
+          "source_name": "WHO via CTV News",
+          "credibility": "primary_source",
+          "surprise_factor": "expected",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Jonathan, a Seychelles/Aldabra giant tortoise on St Helena, hatched ~1832: age ~193-194 in 2026; oldest known living land animal (Guinness). PROBABLY (hatch year estimated) [TORTOISE]",
+          "source_url": "https://www.guinnessworldrecords.com/world-records/511806-oldest-living-land-animal",
+          "source_name": "Guinness World Records",
+          "credibility": "primary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Greenland shark: largest animal (502 cm) aged 392 +/- 120 years by eye-lens radiocarbon; range 272-512 yr; longest-lived known vertebrate (Nielsen et al., Science 2016). PROBABLY [SHARK]",
+          "source_url": "https://news.mongabay.com/2016/08/400-year-old-greenland-shark-is-the-longest-living-vertebrate/",
+          "source_name": "Science 353:702 via Mongabay",
+          "credibility": "primary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Methuselah, a Great Basin bristlecone pine in California, is ~4,789-4,856 years old (Guinness 4,856 in 2024); oldest known non-clonal tree; its age has not been independently reproduced (missing core). PROBABLY [PINE]",
+          "source_url": "https://en.wikipedia.org/wiki/Methuselah_(pine_tree)",
+          "source_name": "Wikipedia / Guinness",
+          "credibility": "secondary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Sun: ~4.6 billion years old, about halfway through a ~10 billion year main-sequence life (NASA). PROBABLY (stellar model) [SUN]",
+          "source_url": "https://www.nasa.gov/directorates/smd/will-the-sun-ever-burn-out-we-asked-a-nasa-expert-episode-60/",
+          "source_name": "NASA",
+          "credibility": "primary_source",
+          "surprise_factor": "expected",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Red dwarfs burn hydrogen so slowly that Proxima Centauri is expected to stay on the main sequence ~4 trillion years (smaller ones up to ~10 trillion). PROBABLY (stellar model) [DWARF]",
+          "source_url": "https://www.space.com/23772-red-dwarf-stars.html",
+          "source_name": "Space.com / Hubble coverage",
+          "credibility": "secondary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "No proton decay has ever been observed; Super-Kamiokande sets lower limits on the proton lifetime of 3.6e33 yr (p -> mu+ K0) and 5.9e33 yr (p -> nu K+) at 90% CL. MEASURED (a lower limit) [PROTON]",
+          "source_url": "https://arxiv.org/pdf/2208.13188",
+          "source_name": "Super-Kamiokande Collaboration (arXiv 2208.13188)",
+          "credibility": "primary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Some grand unified theories predict proton decay near 1e34-1e36 yr; whether protons decay at all is unknown. MAYBE [FOREVER]",
+          "source_url": "https://physics.aps.org/articles/v7/s119",
+          "source_name": "APS Physics synopsis",
+          "credibility": "primary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "1e33 is a 1 followed by 33 zeros; spoken, a billion trillion trillion (1e9 x 1e24). The ZEROS counter shows the power of ten of each rung (mayfly 0, you 1, tortoise 2, shark 2, pine 3, Sun 10, dwarf 12, proton 33). MEASURED (arithmetic) [ZEROS]",
+          "source_url": "https://arxiv.org/pdf/2208.13188",
+          "source_name": "derived",
+          "credibility": "primary_source",
+          "surprise_factor": "expected",
+          "usable_as": "script_anchor"
+        }
+      ],
+      "audience_insights": {
+        "common_questions": [
+          "What is the oldest living thing?",
+          "How long do stars live?",
+          "Will anything last forever?"
+        ],
+        "misconceptions": [
+          {
+            "myth": "The Greenland shark is known to be 500 years old",
+            "reality": "392 +/- 120 years is a radiocarbon estimate; 512 is the upper end of the range, not a measured age.",
+            "source": "Nielsen et al., Science 2016"
+          },
+          {
+            "myth": "Protons are known to last forever",
+            "reality": "No decay has been seen, which only sets a lower limit of ~1e33 years; theory leaves open that they decay.",
+            "source": "Super-Kamiokande"
+          }
+        ],
+        "knowledge_level": "general curious viewer"
+      },
+      "expert_voices": [
+        {
+          "name": "Particle Data Group",
+          "position": "proton radius 0.8414 fm"
+        },
+        {
+          "name": "CODATA 2018",
+          "position": "recommended constants"
+        }
+      ],
+      "angles_discovered": [
+        {
+          "name": "Count the zeros",
+          "hook": "From a day to thirty-three zeros of years.",
+          "type": "data_driven",
+          "why_now": "fourth in the ZEROS series (16 speed, 17 size, 18 weight)",
+          "grounded_in": [
+            "ZEROS"
+          ]
+        },
+        {
+          "name": "The honest ceiling",
+          "hook": "The longest-lasting thing on the ladder is a limit nobody has reached.",
+          "type": "contrarian",
+          "why_now": "twist ending: a lower limit is not a lifetime",
+          "grounded_in": [
+            "PROTON",
+            "FOREVER"
+          ]
+        },
+        {
+          "name": "Living records",
+          "hook": "A tortoise hatched in 1832 is still alive.",
+          "type": "narrative",
+          "why_now": "Jonathan is in the news every birthday",
+          "grounded_in": [
+            "TORTOISE"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.guinnessworldrecords.com/world-records/511806-oldest-living-land-animal",
+          "title": "Guinness: oldest living land animal",
+          "used_for": "TORTOISE",
+          "reliability": "primary"
+        },
+        {
+          "url": "https://news.mongabay.com/2016/08/400-year-old-greenland-shark-is-the-longest-living-vertebrate/",
+          "title": "Mongabay on Nielsen et al. 2016",
+          "used_for": "SHARK",
+          "reliability": "secondary"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Methuselah_(pine_tree)",
+          "title": "Methuselah (pine tree)",
+          "used_for": "PINE",
+          "reliability": "secondary"
+        },
+        {
+          "url": "https://www.nasa.gov/directorates/smd/will-the-sun-ever-burn-out-we-asked-a-nasa-expert-episode-60/",
+          "title": "NASA: will the Sun ever burn out",
+          "used_for": "SUN",
+          "reliability": "primary"
+        },
+        {
+          "url": "https://www.space.com/23772-red-dwarf-stars.html",
+          "title": "Space.com: red dwarf stars",
+          "used_for": "DWARF",
+          "reliability": "secondary"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2208.13188",
+          "title": "Super-Kamiokande proton decay search",
+          "used_for": "PROTON",
+          "reliability": "primary"
+        },
+        {
+          "url": "https://www.ctvnews.ca/health/article/life-expectancy-almost-back-to-pre-covid-levels-says-who/",
+          "title": "WHO life expectancy 2023",
+          "used_for": "HUMAN",
+          "reliability": "secondary"
+        }
+      ],
+      "metadata": {
+        "searches": 8,
+        "webfetch": "none",
+        "dropped_claims": [
+          "'The Greenland shark lives 500 years' (512 is an upper bound, not a measured age)",
+          "'Protons last 10^34 years' (the limit is channel-dependent, 3.6e33 to 2.4e34; the script says 'more than a billion trillion trillion')",
+          "'Pando is the oldest living thing' (a clonal colony, ages disputed; not an individual)"
+        ],
+        "myths": [
+          "Greenland sharks are 500 years old",
+          "Protons are proven stable"
+        ]
+      }
+    }
+  }
+}

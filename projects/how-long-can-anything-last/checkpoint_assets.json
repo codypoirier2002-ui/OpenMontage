@@ -1,0 +1,191 @@
+{
+  "version": "1.0",
+  "project_id": "how-long-can-anything-last",
+  "pipeline_type": "unknown",
+  "stage": "assets",
+  "status": "completed",
+  "timestamp": "2026-10-28T16:27:15.939033+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": true,
+  "human_approved": true,
+  "artifacts": {
+    "asset_manifest": {
+      "version": "1.0",
+      "assets": [
+        {
+          "id": "N-s1",
+          "type": "narration",
+          "path": "assets/audio/narration/s1.mp3",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.0235,
+          "model": "eleven_v4",
+          "scene_id": "sc01",
+          "generation_summary": "generation 0qgmK4jzyrlyPZli2mdz (node None). QA: PASS: Whisper WER 0.0 (digits for number words only); pauses only at punctuation"
+        },
+        {
+          "id": "N-s2",
+          "type": "narration",
+          "path": "assets/audio/narration/s2.mp3",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.0218,
+          "model": "eleven_v4",
+          "scene_id": "sc04",
+          "generation_summary": "generation WzFbZhs6b4FlJDppSSst (node None). QA: PASS: Whisper WER 0.0 (digits for number words only); pauses only at punctuation"
+        },
+        {
+          "id": "N-s3",
+          "type": "narration",
+          "path": "assets/audio/narration/s3.mp3",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.0185,
+          "model": "eleven_v4",
+          "scene_id": "sc06",
+          "generation_summary": "generation b6TdiuPIFAKkTeNbYFoc (node None). QA: PASS: Whisper WER 0.0 (digits for number words only); pauses only at punctuation"
+        },
+        {
+          "id": "N-s4",
+          "type": "narration",
+          "path": "assets/audio/narration/s4.mp3",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.0215,
+          "model": "eleven_v4",
+          "scene_id": "sc08",
+          "generation_summary": "generation L9Y8WXR3uVwjseysdOPE (node None). QA: PASS: Whisper WER 0.0 (digits for number words only); pauses only at punctuation"
+        },
+        {
+          "id": "N-s5",
+          "type": "narration",
+          "path": "assets/audio/narration/s5.mp3",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.0211,
+          "model": "eleven_v4",
+          "scene_id": "sc10",
+          "generation_summary": "generation ibbt10zTybpfj7PuXBfB (node None). QA: PASS: Whisper WER 0.0 (digits for number words only); pauses only at punctuation"
+        },
+        {
+          "id": "S1",
+          "type": "image",
+          "path": "assets/images/plate_tortoise.png",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.05,
+          "model": "image/gpt-image-2.5-sunburst",
+          "scene_id": "sc03",
+          "generation_summary": "generation None (node None). QA: PASS: giant tortoise, anatomy fine, no text or watermark, subject in the middle 60%"
+        },
+        {
+          "id": "S2",
+          "type": "image",
+          "path": "assets/images/plate_shark.png",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.05,
+          "model": "image/gpt-image-2.5-sunburst",
+          "scene_id": "sc04",
+          "generation_summary": "generation None (node None). QA: PASS: Greenland shark, anatomy fine, no text or watermark, subject in the middle 60%"
+        },
+        {
+          "id": "S3",
+          "type": "image",
+          "path": "assets/images/plate_pine.png",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.05,
+          "model": "image/gpt-image-2.5-sunburst",
+          "scene_id": "sc05",
+          "generation_summary": "generation None (node None). QA: PASS: bristlecone pine, no text or watermark, subject in the middle 60%"
+        },
+        {
+          "id": "M1",
+          "type": "music",
+          "path": "assets/music/bed_raw.wav",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.0,
+          "model": "music/elevenlabs-music-v2.5",
+          "scene_id": "sc01",
+          "generation_summary": "generation None (node None). QA: last tonic attack pinned 55.79 s (music_qa.json)"
+        },
+        {
+          "id": "X1",
+          "type": "sfx",
+          "path": "assets/sfx/X1_whoosh.mp3",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.0,
+          "model": "",
+          "scene_id": "sc01",
+          "generation_summary": "generation None (node None). QA: "
+        },
+        {
+          "id": "X2",
+          "type": "sfx",
+          "path": "assets/sfx/X2_boom.mp3",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.0,
+          "model": "",
+          "scene_id": "sc04",
+          "generation_summary": "generation None (node None). QA: "
+        },
+        {
+          "id": "X3",
+          "type": "sfx",
+          "path": "assets/sfx/X3_tick.mp3",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.0,
+          "model": "",
+          "scene_id": "sc02",
+          "generation_summary": "generation None (node None). QA: "
+        },
+        {
+          "id": "X4",
+          "type": "sfx",
+          "path": "assets/sfx/X4_hum.mp3",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.0,
+          "model": "",
+          "scene_id": "sc06",
+          "generation_summary": "generation None (node None). QA: "
+        },
+        {
+          "id": "X5",
+          "type": "sfx",
+          "path": "assets/sfx/X5_shimmer.mp3",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.0,
+          "model": "",
+          "scene_id": "sc08",
+          "generation_summary": "generation None (node None). QA: "
+        },
+        {
+          "id": "X6",
+          "type": "sfx",
+          "path": "assets/sfx/X6_tink.mp3",
+          "source_tool": "elevenlabs:creative_run_flow_nodes",
+          "provider": "elevenlabs",
+          "cost_usd": 0.0,
+          "model": "",
+          "scene_id": "sc11",
+          "generation_summary": "generation None (node None). QA: "
+        }
+      ]
+    }
+  },
+  "cost_snapshot": {
+    "stage_cost_usd": 0.2564,
+    "total_spent_usd": 0.2564,
+    "approved_budget_usd": 4.0
+  },
+  "metadata": {
+    "approval_basis": "topic + $4 cap chosen by the user; proposal + script approved ('Approve'); run end to end after scene plan; providers as video 16-17 (ElevenLabs speech, Creative Claw stills); contact sheets 1-3 sent"
+  }
+}

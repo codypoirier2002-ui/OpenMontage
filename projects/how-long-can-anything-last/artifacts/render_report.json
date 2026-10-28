@@ -1,0 +1,35 @@
+{
+ "version": "1.0",
+ "outputs": [
+  {
+   "path": "renders/how-long-can-anything-last.mp4",
+   "format": "mp4",
+   "codec": "h264",
+   "audio_codec": "aac",
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "platform_target": "tiktok_9x16",
+   "duration_seconds": 45.967,
+   "file_size_bytes": 7207145
+  },
+  {
+   "path": "renders/raw.mp4",
+   "format": "mp4",
+   "codec": "h264",
+   "audio_codec": "aac",
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "platform_target": "intermediate",
+   "duration_seconds": 46.016,
+   "file_size_bytes": 7086543
+  }
+ ],
+ "render_grammar": "explainer-teacher",
+ "decision_log_ref": "/home/user/OpenMontage/projects/how-long-can-anything-last/decision_log.json",
+ "verification_notes": [
+  "Lean build: video 18's ascending ladder engine re-dressed in years; 1 builder agent (soundtrack key frames, props, engine, scenes, contact sheet 2, BUILD_SPEC.md); qa_auto 0 fail / 0 warn on the first master; no music generated (bed and SFX reused).",
+  "Caption onsets: all 92 words from the automatic onset sweep, 57 adopted without hand-reading (lean).",
+  "Independent QA agent: 0 blockers, 0 should-fix, 6 nits accepted without a fix round (see visual_issues).",
+  "qa_auto.py: PASS (0 fail, 0 warn)."
+ ]
+}

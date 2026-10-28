@@ -1,0 +1,186 @@
+{
+ "window": {
+  "x0": 580,
+  "x1": 920,
+  "y0": 440,
+  "y1": 893
+ },
+ "plates": {
+  "S1": {
+   "file": "stills/S1.png",
+   "placeholder": false,
+   "source": "assets/images/plate_tortoise.png",
+   "source_px": [
+    1152,
+    2048
+   ],
+   "crop_px": [
+    0,
+    193,
+    1152,
+    1728
+   ],
+   "crop_pct": {
+    "x": [
+     0.0,
+     100.0
+    ],
+    "y": [
+     9.4,
+     84.4
+    ]
+   },
+   "scale": 0.2951,
+   "window": {
+    "x0": 580,
+    "x1": 920,
+    "y0": 440,
+    "y1": 893
+   },
+   "scene": "sc03",
+   "push": [
+    1.0,
+    1.03
+   ],
+   "contains_asserted": {
+    "head": [
+     1085,
+     901
+    ],
+    "rear_foot": [
+     300,
+     1300
+    ]
+   },
+   "middle_60pct_asserted": {
+    "shell_centre": [
+     461,
+     737
+    ],
+    "front_leg": [
+     625,
+     1230
+    ]
+   },
+   "crop_basis": "measured (PLATES crop)"
+  },
+  "S2": {
+   "file": "stills/S2.png",
+   "placeholder": false,
+   "source": "assets/images/plate_shark.png",
+   "source_px": [
+    1152,
+    2048
+   ],
+   "crop_px": [
+    0,
+    88,
+    1152,
+    1623
+   ],
+   "crop_pct": {
+    "x": [
+     0.0,
+     100.0
+    ],
+    "y": [
+     4.3,
+     79.2
+    ]
+   },
+   "scale": 0.2951,
+   "window": {
+    "x0": 580,
+    "x1": 920,
+    "y0": 440,
+    "y1": 893
+   },
+   "scene": "sc04",
+   "push": [
+    1.0,
+    1.03
+   ],
+   "contains_asserted": {
+    "snout": [
+     1090,
+     990
+    ],
+    "tail": [
+     82,
+     660
+    ]
+   },
+   "middle_60pct_asserted": {
+    "body_centre": [
+     573,
+     850
+    ],
+    "eye": [
+     886,
+     960
+    ]
+   },
+   "crop_basis": "measured (PLATES crop)"
+  },
+  "S3": {
+   "file": "stills/S3.png",
+   "placeholder": false,
+   "source": "assets/images/plate_pine.png",
+   "source_px": [
+    1152,
+    2048
+   ],
+   "crop_px": [
+    0,
+    130,
+    1152,
+    1665
+   ],
+   "crop_pct": {
+    "x": [
+     0.0,
+     100.0
+    ],
+    "y": [
+     6.3,
+     81.3
+    ]
+   },
+   "scale": 0.2951,
+   "window": {
+    "x0": 580,
+    "x1": 920,
+    "y0": 440,
+    "y1": 893
+   },
+   "scene": "sc05",
+   "push": [
+    1.0,
+    1.03
+   ],
+   "contains_asserted": {
+    "top_tip": [
+     328,
+     174
+    ],
+    "trunk_base": [
+     700,
+     1500
+    ]
+   },
+   "middle_60pct_asserted": {
+    "trunk_mid": [
+     512,
+     1024
+    ],
+    "canopy": [
+     778,
+     614
+    ]
+   },
+   "crop_basis": "measured (PLATES crop)"
+  }
+ },
+ "placeholders": [],
+ "process": "    python3 projects/how-long-can-anything-last/prepare_media.py [--force]\n\nPattern of video 17 / 18. No AI clips. ONE window box for every plate\n(theme.ts L.win: x 580-920, y 440-893, 340 x 453, portrait 3:4, RIGHT of the rung labels so a seated label never sits under a\nphoto; the plan's x 470-920 box would have covered 'EARTH (orbit) · ~107,000' and 'PARKER (fastest built)'), so each crop has\nthe window's aspect (0.7506).\n\nThe three AI stills exist (assets/images/plate_tortoise.png, plate_shark.png, plate_pine.png; 1152 x 2048). Crop boxes\nare MEASURED on them (lesson 9: from pixels, the window's aspect) with the subject inside (lesson 39: feature points asserted\ninside the crop with a 20 px margin). The window's other states (the Sun vs a red dwarf, the detector tank) are DRAWN in code (shared/Window.tsx), not plates. A missing source still falls back to a labelled placeholder card (\"placeholder\": true).\n-> artifacts/media_report.json + renders/review/crops.jpg (the crops on their plates, or the placeholders).\n"
+}

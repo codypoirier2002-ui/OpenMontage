@@ -1,0 +1,50 @@
+{
+ "version": "1.0",
+ "output_path": "/home/user/OpenMontage/projects/how-long-can-anything-last/renders/how-long-can-anything-last.mp4",
+ "status": "pass",
+ "recommended_action": "present_to_user",
+ "checks": {
+  "technical_probe": {
+   "valid_container": true,
+   "duration_seconds": 45.967,
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "has_audio": true,
+   "codec": "h264",
+   "file_size_bytes": 7207145,
+   "issues": []
+  },
+  "visual_spotcheck": {
+   "frames_sampled": 1379,
+   "frame_paths": [
+    "/home/user/OpenMontage/projects/how-long-can-anything-last/renders/master_sheet.jpg"
+   ],
+   "black_frames_detected": false,
+   "broken_overlays": false,
+   "missing_assets": false,
+   "unreadable_text": false,
+   "issues": [
+    "Mid-glide the tab pill briefly overlaps its neighbour labels for ~8 f (f87/f167/f838/f1256).",
+    "The 'lower limit' chip and rail chips are small at 360x640.",
+    "The mayfly marker sits ~0.4 decade low against the ~1 day value.",
+    "Sun and tank cards are top-heavy with empty space below."
+   ]
+  },
+  "audio_spotcheck": {
+   "issues": [
+    "Closing sentence is soft: +5.5 dB voice-only lift from 'Maybe' and -12 dB closing duck (closing margin +12.5 dB)."
+   ]
+  },
+  "promise_preservation": {
+   "render_runtime_used": "remotion",
+   "issues": [
+    "None: providers, models and cap as proposed; music and SFX reused at no cost."
+   ]
+  },
+  "subtitle_check": {
+   "issues": [
+    "None."
+   ]
+  }
+ }
+}
