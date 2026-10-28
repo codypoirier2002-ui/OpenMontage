@@ -1,0 +1,398 @@
+{
+ "version": "1.0",
+ "concept_options": [
+  {
+   "narrative_structure": "tutorial",
+   "target_platform": "tiktok",
+   "target_duration_seconds": 48.0,
+   "key_points": [
+    "An adult mayfly lives about a day. You live about seventy-three years. A tortoise named Jonathan is nearly two hundred.",
+    "A Greenland shark can live about four hundred years. The oldest known tree, a bristlecone pine, is nearly five thousand.",
+    "The Sun will shine for about ten billion years. A small red dwarf star, for four trillion.",
+    "A proton, though, has never been seen to decay. It would take more than a billion trillion trillion years.",
+    "That's thirty-three zeros, and still nobody has caught one going. Maybe something really does last forever."
+   ],
+   "grounded_in": [
+    "MAYFLY",
+    "HUMAN",
+    "TORTOISE",
+    "SHARK",
+    "PINE",
+    "SUN",
+    "DWARF",
+    "PROTON",
+    "FOREVER",
+    "ZEROS"
+   ],
+   "id": "c1",
+   "title": "How Long Can Anything Last?",
+   "hook": "An adult mayfly lives about a day.",
+   "visual_approach": "'Lifespan Column': the ladder engine pointing UP in years (log10 years, 1 day at the bottom to 10^34 at the top). A warm amber marker climbs rung by rung: MAYFLY ~1 day, YOU 73 yr, TORTOISE ~193 yr, GREENLAND SHARK ~400 yr, BRISTLECONE PINE ~4,850 yr, SUN ~10 billion yr, RED DWARF ~4 trillion yr, PROTON > 10^33 yr (a lower limit: the chip says so and the rung is drawn dashed, open-ended). ZEROS counter 0 -> 33. Window: three AI plates (giant tortoise, Greenland shark, bristlecone pine), then drawn insets (the Sun beside a tiny red dwarf; a water-tank detector with nothing flashing). Rail break and an open-ended arrow above 10^33, and the last page ends on a dashed 'forever?' line.",
+   "core_message": "Lifespans stretch from a day to thirty-three zeros of years, and the longest one is a limit nobody has reached.",
+   "cta": "What's the oldest thing you've ever seen?",
+   "tone": "curious, building, then a quiet deadpan close",
+   "why_this_works": "Completes the 'How X can it get' set (loud, cold, hot) with the same log-ladder grammar viewers already know, reusing video 13's ladder and counter code. The 'you're doing 100,000 km/h right now' beat puts the viewer on the scale. Risk: same engine as video 13 - re-dressed (no black-body colour, white-cyan marker, speed streaks) and the twist is different (a wall, not a fray)."
+  },
+  {
+   "narrative_structure": "tutorial",
+   "target_platform": "tiktok",
+   "target_duration_seconds": 48.0,
+   "key_points": [
+    "A grain of sand is about half a millimetre. A human hair is a tenth of that. And that's about where your eyes give up.",
+    "A red blood cell is ten times smaller again. Most viruses are smaller still, too small for any ordinary microscope to see.",
+    "An atom is a thousand times smaller than a virus. And the proton at its centre is sixty thousand times smaller than the atom.",
+    "Electrons are so small that no experiment has found any size at all. Below that, physicists point to the Planck length, twenty more zeros down.",
+    "Thirty-four zeros after the decimal point. Maybe that's the floor. Or maybe there isn't one."
+   ],
+   "grounded_in": [
+    "SAND",
+    "HAIR",
+    "EYE",
+    "CELL",
+    "VIRUS",
+    "LIMIT",
+    "ATOM",
+    "PROTON",
+    "ELECTRON",
+    "PLANCK",
+    "ZEROS"
+   ],
+   "id": "c2",
+   "title": "Oldest Living Things",
+   "hook": "Every step adds zeros after the decimal point.",
+   "visual_approach": "Same ladder, the counter as the hero: huge digits centre-frame, the rail small at the side.",
+   "core_message": "Each step down adds zeros; the last jump is twenty, and nobody knows if it stops.",
+   "cta": "What's the smallest thing you've ever seen?",
+   "tone": "curious, building, then a quiet deadpan close",
+   "why_this_works": "Completes the 'How X can it get' set (loud, cold, hot) with the same log-ladder grammar viewers already know, reusing video 13's ladder and counter code. The 'you're doing 100,000 km/h right now' beat puts the viewer on the scale. Risk: same engine as video 13 - re-dressed (no black-body colour, white-cyan marker, speed streaks) and the twist is different (a wall, not a fray)."
+  },
+  {
+   "narrative_structure": "tutorial",
+   "target_platform": "tiktok",
+   "target_duration_seconds": 48.0,
+   "key_points": [
+    "A grain of sand is about half a millimetre. A human hair is a tenth of that. And that's about where your eyes give up.",
+    "A red blood cell is ten times smaller again. Most viruses are smaller still, too small for any ordinary microscope to see.",
+    "An atom is a thousand times smaller than a virus. And the proton at its centre is sixty thousand times smaller than the atom.",
+    "Electrons are so small that no experiment has found any size at all. Below that, physicists point to the Planck length, twenty more zeros down.",
+    "Thirty-four zeros after the decimal point. Maybe that's the floor. Or maybe there isn't one."
+   ],
+   "grounded_in": [
+    "SAND",
+    "HAIR",
+    "EYE",
+    "CELL",
+    "VIRUS",
+    "LIMIT",
+    "ATOM",
+    "PROTON",
+    "ELECTRON",
+    "PLANCK",
+    "ZEROS"
+   ],
+   "id": "c3",
+   "title": "The Longest Candle",
+   "hook": "Your eyes give up at a hair.",
+   "visual_approach": "Built around the instruments: eye, light microscope, electron microscope, collider, each with its limit drawn as a wall.",
+   "core_message": "Each step down adds zeros; the last jump is twenty, and nobody knows if it stops.",
+   "cta": "What's the smallest thing you've ever seen?",
+   "tone": "curious, building, then a quiet deadpan close",
+   "why_this_works": "Completes the 'How X can it get' set (loud, cold, hot) with the same log-ladder grammar viewers already know, reusing video 13's ladder and counter code. The 'you're doing 100,000 km/h right now' beat puts the viewer on the scale. Risk: same engine as video 13 - re-dressed (no black-body colour, white-cyan marker, speed streaks) and the twist is different (a wall, not a fray)."
+  },
+  {
+   "narrative_structure": "tutorial",
+   "target_platform": "tiktok",
+   "target_duration_seconds": 48.0,
+   "key_points": [
+    "A grain of sand is about half a millimetre. A human hair is a tenth of that. And that's about where your eyes give up.",
+    "A red blood cell is ten times smaller again. Most viruses are smaller still, too small for any ordinary microscope to see.",
+    "An atom is a thousand times smaller than a virus. And the proton at its centre is sixty thousand times smaller than the atom.",
+    "Electrons are so small that no experiment has found any size at all. Below that, physicists point to the Planck length, twenty more zeros down.",
+    "Thirty-four zeros after the decimal point. Maybe that's the floor. Or maybe there isn't one."
+   ],
+   "grounded_in": [
+    "SAND",
+    "HAIR",
+    "EYE",
+    "CELL",
+    "VIRUS",
+    "LIMIT",
+    "ATOM",
+    "PROTON",
+    "ELECTRON",
+    "PLANCK",
+    "ZEROS"
+   ],
+   "id": "c4",
+   "title": "Will Anything Last Forever?",
+   "hook": "Inside one grain of sand.",
+   "visual_approach": "Continuous Powers-of-Ten zoom in AI plates; more paid imagery, weaker numbers on screen (saturated angle).",
+   "core_message": "Each step down adds zeros; the last jump is twenty, and nobody knows if it stops.",
+   "cta": "What's the smallest thing you've ever seen?",
+   "tone": "curious, building, then a quiet deadpan close",
+   "why_this_works": "Completes the 'How X can it get' set (loud, cold, hot) with the same log-ladder grammar viewers already know, reusing video 13's ladder and counter code. The 'you're doing 100,000 km/h right now' beat puts the viewer on the scale. Risk: same engine as video 13 - re-dressed (no black-body colour, white-cyan marker, speed streaks) and the twist is different (a wall, not a fray)."
+  }
+ ],
+ "selected_concept": {
+  "concept_id": "c1",
+  "rationale": "Fourth in the extremes series (16 speed, 17 size, 18 weight); reuses the ladder engine (lean); the twist is that the longest rung is a limit, not a lifetime."
+ },
+ "production_plan": {
+  "pipeline": "animated-explainer",
+  "playbook": "custom",
+  "render_runtime": "remotion",
+  "renderer_family": "explainer-teacher",
+  "composition_mode": "atelier",
+  "delivery_promise": {
+   "promise_type": "teacher_explainer",
+   "motion_required": true,
+   "tone_mode": "deadpan clinical, curious",
+   "quality_floor": "broadcast"
+  },
+  "music_source": {
+   "source_type": "ai_generated"
+  },
+  "taste_profile": {
+   "design_read": "Youth science short: a calm climb up one speed ladder, from walking to light, ending at a wall that never moves.",
+   "visual_variance": 4,
+   "motion_intensity": 4,
+   "information_density": 4,
+   "palette_discipline": "Night ink sky, steel rail, ONE white-cyan accent for the marker; no temperature colours; red only for 'c' (the wall).",
+   "layout_variation": "Log rail + marker, zeros counter, window plates, the LHC nines readout.",
+   "reference_strategy": "Numbers from the brief only; AI stills as short tagged inserts.",
+   "anti_patterns": [
+    "'faster than light' as possible",
+    "exact snail speed",
+    "'the falcon is the fastest animal' as fact without the dive caveat",
+    "warp-drive imagery"
+   ],
+   "quality_gates": [
+    "Every rung's number matches the brief",
+    "Log scale labelled as such",
+    "The marker never touches 'c'",
+    "Falcon tagged PROBABLY"
+   ]
+  },
+  "stages": [
+   {
+    "stage": "research",
+    "tools": [
+     {
+      "tool_name": "WebSearch",
+      "role": "fact verification (3 searches, 9 sources, 11 data points)",
+      "available": true,
+      "estimated_cost_usd": 0.0
+     }
+    ],
+    "approach": "Complete. Falcon dive ~390 km/h kept as PROBABLY (weak sourcing); cheetah 'about a hundred' (collar 95, track 103); snail dropped."
+   },
+   {
+    "stage": "proposal",
+    "tools": [],
+    "approach": "This document; approval gate. No paid generation has run."
+   },
+   {
+    "stage": "script",
+    "tools": [],
+    "approach": "~106 spoken words in 5 sections; closing line complete."
+   },
+   {
+    "stage": "scene_plan",
+    "tools": [],
+    "approach": "~12 scenes; hero beats: 'sitting still you're doing 100,000' and the marker stopping short of 'c' while the nines fill. Last scene: calm, finished."
+   },
+   {
+    "stage": "assets",
+    "tools": [
+     {
+      "tool_name": "elevenlabs (creative_generate_speech)",
+      "role": "narration, Bella hpp4J3VqNfWAUOO0d1Us, eleven_v4, 1 take per section (retake only on failed Whisper QA, max 2)",
+      "available": true,
+      "provider": "elevenlabs",
+      "estimated_cost_usd": 0.14
+     },
+     {
+      "tool_name": "elevenlabs (image, gpt-image-2.5-sunburst 2K 9:16)",
+      "role": "3 stills x 1: S1 cheetah at full sprint (AI impression); S2 peregrine falcon in a steep dive, wings tucked (AI impression); S3 a heat-shielded spacecraft close to the Sun (AI impression of the Parker Solar Probe)",
+      "available": true,
+      "provider": "elevenlabs",
+      "estimated_cost_usd": 0.15
+     },
+     {
+      "tool_name": "elevenlabs (video, kling-3-pro i2v, generate_audio=false)",
+      "role": "0 clips; motion is drawn.",
+      "available": true,
+      "provider": "elevenlabs",
+      "estimated_cost_usd": 0.0
+     },
+     {
+      "tool_name": "elevenlabs (music, eleven_music)",
+      "role": "1 bed that slowly gains energy (light synth pulse + strings, ~100 BPM, steady loudness), resolved final chord with ring-out",
+      "available": true,
+      "provider": "elevenlabs",
+      "estimated_cost_usd": 0.16
+     },
+     {
+      "tool_name": "elevenlabs (sfx)",
+      "role": "6 x 1: soft whoosh (rung climb), sonic thump (sound barrier, soft), digit tick (counter), low hum (probe), high shimmer (light), soft glass 'tink' (the wall)",
+      "available": true,
+      "provider": "elevenlabs",
+      "estimated_cost_usd": 0.024
+     }
+    ],
+    "approach": "estimate_only before every run; narration first; stills QA (9:16 2K, no faces, no text); clips only from passing stills; globe, maps (real coastline data), readouts, tiles, captions and tab are code at $0.",
+    "fallback_if_unavailable": "Failed still -> code glow/thermal panel (no re-roll). Failed clip -> slow code parallax on the still."
+   },
+   {
+    "stage": "edit",
+    "tools": [],
+    "approach": "Music ducked ~12 dB; SFX on visible landings (lessons 4, 22) and phone-band checked (lesson 5); last word 'know' >= +12 dB over bed in 300-4000 Hz AND broadband within ~3 dB of its sentence (lessons 18, 30); final chord ~0.15 s after 'know', ~1.5 s settle."
+   },
+   {
+    "stage": "compose",
+    "tools": [
+     {
+      "tool_name": "video_compose",
+      "role": "Remotion render 1080x1920 @ 30 fps",
+      "available": true,
+      "estimated_cost_usd": 0
+     }
+    ],
+    "approach": "Atelier render; check_hooks + full 0.25-scale test; finish_master.sh (-14 LUFS, <= -1 dBTP); upload copy at maxrate ~12M only if the master passes ~60 MB (lesson 21); three independent QA agents."
+   }
+  ],
+  "quality_tradeoffs": [
+   {
+    "tradeoff": "Remotion vs HyperFrames vs FFmpeg",
+    "recommendation": "Remotion (atelier)",
+    "quality_impact": "Remotion atelier via the kit, reusing video 13's ladder/counter/window code and video 15's latest pipeline scripts; qa_auto.py before QA."
+   },
+   {
+    "tradeoff": "Atelier vs templated",
+    "recommendation": "Atelier",
+    "quality_impact": "A new one-off look as on videos 3-11; costs more tokens/iteration, $0 extra spend."
+   },
+   {
+    "tradeoff": "0 Kling clips vs 1",
+    "recommendation": "0 clips",
+    "quality_impact": "The ladder is drawn; AI clips of a cheetah or falcon add little. Saves ~$0.62."
+   },
+   {
+    "tradeoff": "Music: eleven_music vs your own track vs none",
+    "recommendation": "eleven_music ($0.16)",
+    "quality_impact": "music_library/ is empty and no local music generator is configured; you can drop a track in music_library/ instead, or go without (not recommended: the finished-line ending relies on a resolved chord)."
+   }
+  ],
+  "alternative_paths": [
+   {
+    "description": "Add 1 Kling clip (falcon dive) from S2",
+    "total_cost_usd": 1.12,
+    "quality_level": "standard"
+   },
+   {
+    "description": "No AI stills: code only",
+    "total_cost_usd": 0.35,
+    "quality_level": "budget"
+   }
+  ]
+ },
+ "cost_estimate": {
+  "total_estimated_usd": 0.3,
+  "budget_cap_usd": 4.0,
+  "budget_verdict": "within_budget",
+  "line_items": [
+   {
+    "tool": "elevenlabs image (gpt-image-2.5-sunburst 2K)",
+    "operation": "S1-S3 x 1",
+    "quantity": 3,
+    "estimated_usd": 0.15,
+    "notes": "$0.05/image billed"
+   },
+   {
+    "tool": "elevenlabs video (kling-3-pro)",
+    "operation": "none (0 clips)",
+    "quantity": 0,
+    "estimated_usd": 0.0,
+    "notes": "$0.617/clip billed"
+   },
+   {
+    "tool": "elevenlabs tts (Bella eleven_v4)",
+    "operation": "5 sections x 1 take",
+    "quantity": 5,
+    "estimated_usd": 0.14
+   },
+   {
+    "tool": "elevenlabs music",
+    "operation": "~56 s bed x 1",
+    "quantity": 1,
+    "estimated_usd": 0.16
+   },
+   {
+    "tool": "elevenlabs sfx",
+    "operation": "6 SFX x 1",
+    "quantity": 6,
+    "estimated_usd": 0.02
+   },
+   {
+    "tool": "QA-failure reserve",
+    "operation": "1 narration retake + 1 image re-run, only if automated QA fails",
+    "estimated_usd": 0.085
+   },
+   {
+    "tool": "video_compose / ffmpeg / whisper",
+    "operation": "none (0 clips)",
+    "estimated_usd": 0.0,
+    "quantity": 0
+   }
+  ],
+  "savings_options": [
+   "Drop S3 (probe still): -$0.05",
+   "Drop all AI stills: -$0.15"
+  ]
+ },
+ "approval": {
+  "status": "pending",
+  "approved_budget_usd": 4.0,
+  "user_notes": "Topic (How Long Can Anything Last?), $4 cap and run-through (proposal + script together) chosen by the user 2026-10-28."
+ },
+ "metadata": {
+  "generation_policy": "1 generation per asset; retake only when automated QA fails (narration max 2); never re-roll images/clips - code fallback; estimate_only before every paid run; generating agent hard limit ~$2",
+  "hook": "An adult mayfly lives about a day.",
+  "beat_outline": [
+   "s1: An adult mayfly lives about a day. You live about seventy-three years. A tortoise named Jonathan is nearly two hundred.",
+   "s2: A Greenland shark can live about four hundred years. The oldest known tree, a bristlecone pine, is nearly five thousand.",
+   "s3: The Sun will shine for about ten billion years. A small red dwarf star, for four trillion.",
+   "s4: A proton, though, has never been seen to decay. It would take more than a billion trillion trillion years.",
+   "s5: That's thirty-three zeros, and still nobody has caught one going. Maybe something really does last forever."
+  ],
+  "word_count": 92,
+  "word_count_method": "whitespace split, numbers as spoken (lesson 17): 'fifty-seven', 'four hundred sixty-five', 'forty-eight', 'thirty-two' counted as spoken words",
+  "rate_assumption_wps": 2.3,
+  "estimated_narration_seconds": 37.6,
+  "estimated_film_seconds": 40.1,
+  "ending": {
+   "rule": "finished line",
+   "closing_line": "Maybe something really does last forever.",
+   "after_last_word": "~1.5 s settle on a resolved chord; the dashed 'forever?' line still"
+  },
+  "music_plan": {
+   "source": "reuse video 16's verified G major bed (no spend; last tonic pinned)",
+   "brief": "none generated",
+   "duck_db": -12,
+   "user_library": "n/a"
+  },
+  "honesty_meter": "Tab keyed to caption lines: s1 MEASURED, the falcon page PROBABLY; s2-s5 MEASURED. AI stills tagged 'AI impression'; the rail labelled 'log scale'.",
+  "lessons_applied": [
+   "17 numbers as spoken",
+   "20 absolutes: 'nothing with mass' is the physics; falcon PROBABLY",
+   "33 labels only with their values (rungs seat with their numbers)",
+   "42 graphics leave before the tab glide",
+   "45 lean reuse",
+   "46 value labels appear when the marker seats",
+   "48 plan gaps for a fast read"
+  ],
+  "runtime_presentation": "Remotion recommended (captions/tab/mastering parity); HyperFrames unavailable on this machine; FFmpeg rejected.",
+  "pending_user_choices": [],
+  "build_mode": "LEAN: video 16's engine re-dressed + kit + build_spec.py + 2 builders + qa_auto + 1 targeted QA agent"
+ }
+}
