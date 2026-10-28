@@ -1,0 +1,1554 @@
+{
+ "exact_match_ratio": {
+  "s1": 1.0,
+  "s2": 1.0,
+  "s3": 1.0,
+  "s4": 1.0,
+  "s5": 0.955
+ },
+ "whisper_heard": {
+  "s1": "You weigh about seventy kilograms. A blue whale can reach a hundred and fifty thousand. The Eiffel Tower, about ten million.",
+  "s2": "Every human alive, put together. Around four hundred billion. The whole Earth. Six trillion trillion.",
+  "s3": "The Sun outweighs three hundred and thirty thousand Earths. And a neutron star squeezes even more into a ball the size of a city.",
+  "s4": "The black hole at the centre of our galaxy weighs four million Suns, packed smaller than Mercury's orbit.",
+  "s5": "All the ordinary matter we can see comes to about fifty -three zeros of kilograms. And dark matter outweighs it five to one."
+ },
+ "whisper_raw_section_rel": {
+  "s1": [
+   [
+    "You",
+    0.0,
+    0.26
+   ],
+   [
+    "weigh",
+    0.26,
+    0.48
+   ],
+   [
+    "about",
+    0.48,
+    0.88
+   ],
+   [
+    "seventy",
+    0.88,
+    1.36
+   ],
+   [
+    "kilograms.",
+    1.36,
+    1.92
+   ],
+   [
+    "A",
+    2.6,
+    2.7
+   ],
+   [
+    "blue",
+    2.7,
+    2.92
+   ],
+   [
+    "whale",
+    2.92,
+    3.2
+   ],
+   [
+    "can",
+    3.2,
+    3.44
+   ],
+   [
+    "reach",
+    3.44,
+    3.68
+   ],
+   [
+    "a",
+    3.68,
+    3.86
+   ],
+   [
+    "hundred",
+    3.86,
+    4.16
+   ],
+   [
+    "and",
+    4.16,
+    4.4
+   ],
+   [
+    "fifty",
+    4.4,
+    4.68
+   ],
+   [
+    "thousand.",
+    4.68,
+    5.38
+   ],
+   [
+    "The",
+    6.02,
+    6.22
+   ],
+   [
+    "Eiffel",
+    6.22,
+    6.52
+   ],
+   [
+    "Tower,",
+    6.52,
+    6.88
+   ],
+   [
+    "about",
+    7.24,
+    7.48
+   ],
+   [
+    "ten",
+    7.48,
+    7.78
+   ],
+   [
+    "million.",
+    7.78,
+    8.06
+   ]
+  ],
+  "s2": [
+   [
+    "Every",
+    0.0,
+    0.38
+   ],
+   [
+    "human",
+    0.38,
+    0.7
+   ],
+   [
+    "alive,",
+    0.7,
+    1.26
+   ],
+   [
+    "put",
+    1.7,
+    1.8
+   ],
+   [
+    "together:",
+    1.8,
+    2.22
+   ],
+   [
+    "around",
+    3.08,
+    3.18
+   ],
+   [
+    "four",
+    3.18,
+    3.58
+   ],
+   [
+    "hundred",
+    3.58,
+    4.1
+   ],
+   [
+    "billion.",
+    4.1,
+    4.6
+   ],
+   [
+    "The",
+    5.28,
+    5.46
+   ],
+   [
+    "whole",
+    5.46,
+    5.76
+   ],
+   [
+    "Earth:",
+    5.76,
+    6.12
+   ],
+   [
+    "six",
+    6.86,
+    7.1
+   ],
+   [
+    "trillion",
+    7.1,
+    7.72
+   ],
+   [
+    "trillion.",
+    7.72,
+    8.22
+   ]
+  ],
+  "s3": [
+   [
+    "The",
+    0.0,
+    0.16
+   ],
+   [
+    "Sun",
+    0.16,
+    0.5
+   ],
+   [
+    "outweighs",
+    0.5,
+    1.28
+   ],
+   [
+    "three",
+    1.28,
+    1.46
+   ],
+   [
+    "hundred",
+    1.46,
+    1.84
+   ],
+   [
+    "and",
+    1.84,
+    2.0
+   ],
+   [
+    "thirty",
+    2.0,
+    2.42
+   ],
+   [
+    "thousand",
+    2.42,
+    3.02
+   ],
+   [
+    "Earths.",
+    3.02,
+    4.0
+   ],
+   [
+    "And",
+    4.1,
+    4.26
+   ],
+   [
+    "a",
+    4.26,
+    4.42
+   ],
+   [
+    "neutron",
+    4.42,
+    4.88
+   ],
+   [
+    "star",
+    4.88,
+    5.26
+   ],
+   [
+    "squeezes",
+    5.26,
+    5.8
+   ],
+   [
+    "even",
+    5.8,
+    6.16
+   ],
+   [
+    "more",
+    6.16,
+    6.6
+   ],
+   [
+    "into",
+    6.6,
+    6.9
+   ],
+   [
+    "a",
+    6.9,
+    7.16
+   ],
+   [
+    "ball",
+    7.16,
+    7.36
+   ],
+   [
+    "the",
+    7.36,
+    7.6
+   ],
+   [
+    "size",
+    7.6,
+    7.84
+   ],
+   [
+    "of",
+    7.84,
+    8.02
+   ],
+   [
+    "a",
+    8.02,
+    8.1
+   ],
+   [
+    "city.",
+    8.1,
+    8.46
+   ]
+  ],
+  "s4": [
+   [
+    "The",
+    0.0,
+    0.18
+   ],
+   [
+    "black",
+    0.18,
+    0.54
+   ],
+   [
+    "hole",
+    0.54,
+    0.94
+   ],
+   [
+    "at",
+    0.94,
+    1.14
+   ],
+   [
+    "the",
+    1.14,
+    1.3
+   ],
+   [
+    "centre",
+    1.3,
+    1.56
+   ],
+   [
+    "of",
+    1.56,
+    1.78
+   ],
+   [
+    "our",
+    1.78,
+    1.92
+   ],
+   [
+    "galaxy",
+    1.92,
+    2.38
+   ],
+   [
+    "weighs",
+    2.38,
+    2.68
+   ],
+   [
+    "four",
+    2.68,
+    3.18
+   ],
+   [
+    "million",
+    3.18,
+    3.78
+   ],
+   [
+    "Suns,",
+    3.78,
+    4.32
+   ],
+   [
+    "packed",
+    4.9,
+    5.14
+   ],
+   [
+    "smaller",
+    5.14,
+    5.6
+   ],
+   [
+    "than",
+    5.6,
+    5.92
+   ],
+   [
+    "Mercury's",
+    5.92,
+    6.5
+   ],
+   [
+    "orbit.",
+    6.5,
+    6.76
+   ]
+  ],
+  "s5": [
+   [
+    "All",
+    0.0,
+    0.22
+   ],
+   [
+    "the",
+    0.22,
+    0.4
+   ],
+   [
+    "ordinary",
+    0.4,
+    0.88
+   ],
+   [
+    "matter",
+    0.88,
+    1.24
+   ],
+   [
+    "we",
+    1.24,
+    1.42
+   ],
+   [
+    "can",
+    1.42,
+    1.58
+   ],
+   [
+    "see",
+    1.58,
+    1.98
+   ],
+   [
+    "comes",
+    1.98,
+    2.32
+   ],
+   [
+    "to",
+    2.32,
+    2.58
+   ],
+   [
+    "about",
+    2.58,
+    2.82
+   ],
+   [
+    "fifty-three",
+    2.82,
+    3.68
+   ],
+   [
+    "zeros",
+    3.68,
+    4.16
+   ],
+   [
+    "of",
+    4.16,
+    4.38
+   ],
+   [
+    "kilograms.",
+    4.38,
+    4.82
+   ],
+   [
+    "And",
+    5.64,
+    5.8
+   ],
+   [
+    "dark",
+    5.8,
+    6.06
+   ],
+   [
+    "matter",
+    6.06,
+    6.4
+   ],
+   [
+    "outweighs",
+    6.4,
+    6.98
+   ],
+   [
+    "it",
+    6.98,
+    7.08
+   ],
+   [
+    "five",
+    7.08,
+    7.44
+   ],
+   [
+    "to",
+    7.44,
+    7.66
+   ],
+   [
+    "one.",
+    7.66,
+    7.96
+   ]
+  ]
+ },
+ "sweep": [
+  {
+   "word": "s1:You#1",
+   "measured_s_section": 0.02,
+   "caption_frame": 16,
+   "err_frames": 0.4,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:weigh#1",
+   "measured_s_section": 0.329,
+   "caption_frame": 25,
+   "err_frames": 0.13,
+   "source": "override"
+  },
+  {
+   "word": "s1:about#1",
+   "measured_s_section": 0.434,
+   "caption_frame": 28,
+   "err_frames": -0.02,
+   "source": "override"
+  },
+  {
+   "word": "s1:seventy#1",
+   "measured_s_section": 0.915,
+   "caption_frame": 42,
+   "err_frames": -0.45,
+   "source": "override"
+  },
+  {
+   "word": "s1:kilograms.#1",
+   "measured_s_section": 1.332,
+   "caption_frame": 55,
+   "err_frames": 0.04,
+   "source": "override"
+  },
+  {
+   "word": "s1:A#1",
+   "measured_s_section": 2.599,
+   "caption_frame": 93,
+   "err_frames": 0.03,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:blue#1",
+   "measured_s_section": 2.74,
+   "caption_frame": 97,
+   "err_frames": -0.2,
+   "source": "override"
+  },
+  {
+   "word": "s1:whale#1",
+   "measured_s_section": 2.945,
+   "caption_frame": 103,
+   "err_frames": -0.35,
+   "source": "override"
+  },
+  {
+   "word": "s1:can#1",
+   "measured_s_section": 3.206,
+   "caption_frame": 111,
+   "err_frames": -0.18,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:reach#1",
+   "measured_s_section": 3.456,
+   "caption_frame": 119,
+   "err_frames": 0.32,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:a#1",
+   "measured_s_section": 3.657,
+   "caption_frame": 125,
+   "err_frames": 0.29,
+   "source": "override"
+  },
+  {
+   "word": "s1:hundred#1",
+   "measured_s_section": 3.84,
+   "caption_frame": 130,
+   "err_frames": -0.2,
+   "source": "override"
+  },
+  {
+   "word": "s1:and#1",
+   "measured_s_section": 4.108,
+   "caption_frame": 138,
+   "err_frames": -0.24,
+   "source": "override"
+  },
+  {
+   "word": "s1:fifty#1",
+   "measured_s_section": 4.385,
+   "caption_frame": 147,
+   "err_frames": 0.45,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:thousand.#1",
+   "measured_s_section": 4.737,
+   "caption_frame": 157,
+   "err_frames": -0.11,
+   "source": "override"
+  },
+  {
+   "word": "s1:The#1",
+   "measured_s_section": 6.089,
+   "caption_frame": 198,
+   "err_frames": 0.33,
+   "source": "override"
+  },
+  {
+   "word": "s1:Eiffel#1",
+   "measured_s_section": 6.244,
+   "caption_frame": 202,
+   "err_frames": -0.32,
+   "source": "override"
+  },
+  {
+   "word": "s1:Tower,#1",
+   "measured_s_section": 6.537,
+   "caption_frame": 211,
+   "err_frames": -0.11,
+   "source": "override"
+  },
+  {
+   "word": "s1:about#2",
+   "measured_s_section": 7.198,
+   "caption_frame": 231,
+   "err_frames": 0.06,
+   "source": "confirmed"
+  },
+  {
+   "word": "s1:ten#1",
+   "measured_s_section": 7.548,
+   "caption_frame": 241,
+   "err_frames": -0.44,
+   "source": "override"
+  },
+  {
+   "word": "s1:million.#1",
+   "measured_s_section": 7.73,
+   "caption_frame": 247,
+   "err_frames": 0.1,
+   "source": "override"
+  },
+  {
+   "word": "s2:Every#1",
+   "measured_s_section": 0.02,
+   "caption_frame": 311,
+   "err_frames": -0.1,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:human#1",
+   "measured_s_section": 0.427,
+   "caption_frame": 323,
+   "err_frames": -0.31,
+   "source": "override"
+  },
+  {
+   "word": "s2:alive,#1",
+   "measured_s_section": 0.698,
+   "caption_frame": 331,
+   "err_frames": -0.44,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:put#1",
+   "measured_s_section": 1.669,
+   "caption_frame": 361,
+   "err_frames": 0.43,
+   "source": "override"
+  },
+  {
+   "word": "s2:together:#1",
+   "measured_s_section": 1.844,
+   "caption_frame": 366,
+   "err_frames": 0.18,
+   "source": "override"
+  },
+  {
+   "word": "s2:around#1",
+   "measured_s_section": 2.878,
+   "caption_frame": 397,
+   "err_frames": 0.16,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:four#1",
+   "measured_s_section": 3.201,
+   "caption_frame": 407,
+   "err_frames": 0.47,
+   "source": "override"
+  },
+  {
+   "word": "s2:hundred#1",
+   "measured_s_section": 3.53,
+   "caption_frame": 416,
+   "err_frames": -0.4,
+   "source": "override"
+  },
+  {
+   "word": "s2:billion.#1",
+   "measured_s_section": 4.339,
+   "caption_frame": 441,
+   "err_frames": 0.33,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:The#1",
+   "measured_s_section": 5.346,
+   "caption_frame": 471,
+   "err_frames": 0.12,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:whole#1",
+   "measured_s_section": 5.459,
+   "caption_frame": 474,
+   "err_frames": -0.27,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:Earth:#1",
+   "measured_s_section": 5.81,
+   "caption_frame": 485,
+   "err_frames": 0.2,
+   "source": "override"
+  },
+  {
+   "word": "s2:six#1",
+   "measured_s_section": 6.678,
+   "caption_frame": 511,
+   "err_frames": 0.16,
+   "source": "confirmed"
+  },
+  {
+   "word": "s2:trillion#1",
+   "measured_s_section": 7.161,
+   "caption_frame": 525,
+   "err_frames": -0.33,
+   "source": "override"
+  },
+  {
+   "word": "s2:trillion.#1",
+   "measured_s_section": 7.746,
+   "caption_frame": 543,
+   "err_frames": 0.12,
+   "source": "override"
+  },
+  {
+   "word": "s3:The#1",
+   "measured_s_section": 0.028,
+   "caption_frame": 613,
+   "err_frames": -0.29,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:Sun#1",
+   "measured_s_section": 0.092,
+   "caption_frame": 615,
+   "err_frames": -0.21,
+   "source": "override"
+  },
+  {
+   "word": "s3:outweighs#1",
+   "measured_s_section": 0.471,
+   "caption_frame": 627,
+   "err_frames": 0.42,
+   "source": "override"
+  },
+  {
+   "word": "s3:three#1",
+   "measured_s_section": 1.249,
+   "caption_frame": 650,
+   "err_frames": 0.08,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:hundred#1",
+   "measured_s_section": 1.523,
+   "caption_frame": 658,
+   "err_frames": -0.14,
+   "source": "override"
+  },
+  {
+   "word": "s3:and#1",
+   "measured_s_section": 1.854,
+   "caption_frame": 668,
+   "err_frames": -0.07,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:thirty#1",
+   "measured_s_section": 2.173,
+   "caption_frame": 678,
+   "err_frames": 0.36,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:thousand#1",
+   "measured_s_section": 2.657,
+   "caption_frame": 692,
+   "err_frames": -0.16,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:Earths.#1",
+   "measured_s_section": 3.04,
+   "caption_frame": 704,
+   "err_frames": 0.35,
+   "source": "override"
+  },
+  {
+   "word": "s3:And#1",
+   "measured_s_section": 4.077,
+   "caption_frame": 735,
+   "err_frames": 0.24,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:a#1",
+   "measured_s_section": 4.231,
+   "caption_frame": 739,
+   "err_frames": -0.38,
+   "source": "override"
+  },
+  {
+   "word": "s3:neutron#1",
+   "measured_s_section": 4.415,
+   "caption_frame": 745,
+   "err_frames": 0.1,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:star#1",
+   "measured_s_section": 4.887,
+   "caption_frame": 759,
+   "err_frames": -0.06,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:squeezes#1",
+   "measured_s_section": 5.22,
+   "caption_frame": 769,
+   "err_frames": -0.05,
+   "source": "override"
+  },
+  {
+   "word": "s3:even#1",
+   "measured_s_section": 5.762,
+   "caption_frame": 785,
+   "err_frames": -0.31,
+   "source": "override"
+  },
+  {
+   "word": "s3:more#1",
+   "measured_s_section": 6.1,
+   "caption_frame": 795,
+   "err_frames": -0.45,
+   "source": "override"
+  },
+  {
+   "word": "s3:into#1",
+   "measured_s_section": 6.657,
+   "caption_frame": 812,
+   "err_frames": -0.16,
+   "source": "override"
+  },
+  {
+   "word": "s3:a#2",
+   "measured_s_section": 6.864,
+   "caption_frame": 818,
+   "err_frames": -0.37,
+   "source": "override"
+  },
+  {
+   "word": "s3:ball#1",
+   "measured_s_section": 7.205,
+   "caption_frame": 829,
+   "err_frames": 0.4,
+   "source": "confirmed"
+  },
+  {
+   "word": "s3:the#1",
+   "measured_s_section": 7.414,
+   "caption_frame": 835,
+   "err_frames": 0.13,
+   "source": "override"
+  },
+  {
+   "word": "s3:size#1",
+   "measured_s_section": 7.547,
+   "caption_frame": 839,
+   "err_frames": 0.14,
+   "source": "override"
+  },
+  {
+   "word": "s3:of#1",
+   "measured_s_section": 7.866,
+   "caption_frame": 848,
+   "err_frames": -0.43,
+   "source": "override"
+  },
+  {
+   "word": "s3:a#3",
+   "measured_s_section": 8.054,
+   "caption_frame": 854,
+   "err_frames": -0.07,
+   "source": "override"
+  },
+  {
+   "word": "s3:city.#1",
+   "measured_s_section": 8.118,
+   "caption_frame": 856,
+   "err_frames": 0.01,
+   "source": "override"
+  },
+  {
+   "word": "s4:The#1",
+   "measured_s_section": 0.039,
+   "caption_frame": 918,
+   "err_frames": 0.18,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:black#1",
+   "measured_s_section": 0.234,
+   "caption_frame": 924,
+   "err_frames": 0.33,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:hole#1",
+   "measured_s_section": 0.582,
+   "caption_frame": 934,
+   "err_frames": -0.11,
+   "source": "override"
+  },
+  {
+   "word": "s4:at#1",
+   "measured_s_section": 1.0,
+   "caption_frame": 947,
+   "err_frames": 0.35,
+   "source": "override"
+  },
+  {
+   "word": "s4:the#1",
+   "measured_s_section": 1.167,
+   "caption_frame": 952,
+   "err_frames": 0.34,
+   "source": "override"
+  },
+  {
+   "word": "s4:centre#1",
+   "measured_s_section": 1.276,
+   "caption_frame": 955,
+   "err_frames": 0.07,
+   "source": "override"
+  },
+  {
+   "word": "s4:of#1",
+   "measured_s_section": 1.532,
+   "caption_frame": 963,
+   "err_frames": 0.39,
+   "source": "override"
+  },
+  {
+   "word": "s4:our#1",
+   "measured_s_section": 1.793,
+   "caption_frame": 970,
+   "err_frames": -0.44,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:galaxy#1",
+   "measured_s_section": 1.975,
+   "caption_frame": 976,
+   "err_frames": 0.1,
+   "source": "override"
+  },
+  {
+   "word": "s4:weighs#1",
+   "measured_s_section": 2.447,
+   "caption_frame": 990,
+   "err_frames": -0.06,
+   "source": "override"
+  },
+  {
+   "word": "s4:four#1",
+   "measured_s_section": 2.701,
+   "caption_frame": 998,
+   "err_frames": 0.32,
+   "source": "override"
+  },
+  {
+   "word": "s4:million#1",
+   "measured_s_section": 3.25,
+   "caption_frame": 1014,
+   "err_frames": -0.15,
+   "source": "override"
+  },
+  {
+   "word": "s4:Suns,#1",
+   "measured_s_section": 3.751,
+   "caption_frame": 1029,
+   "err_frames": -0.18,
+   "source": "override"
+  },
+  {
+   "word": "s4:packed#1",
+   "measured_s_section": 4.878,
+   "caption_frame": 1063,
+   "err_frames": 0.01,
+   "source": "override"
+  },
+  {
+   "word": "s4:smaller#1",
+   "measured_s_section": 5.14,
+   "caption_frame": 1071,
+   "err_frames": 0.15,
+   "source": "confirmed"
+  },
+  {
+   "word": "s4:than#1",
+   "measured_s_section": 5.629,
+   "caption_frame": 1086,
+   "err_frames": 0.48,
+   "source": "override"
+  },
+  {
+   "word": "s4:Mercury's#1",
+   "measured_s_section": 5.968,
+   "caption_frame": 1096,
+   "err_frames": 0.31,
+   "source": "override"
+  },
+  {
+   "word": "s4:orbit.#1",
+   "measured_s_section": 6.5,
+   "caption_frame": 1112,
+   "err_frames": 0.35,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:All#1",
+   "measured_s_section": 0.029,
+   "caption_frame": 1177,
+   "err_frames": -0.02,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:the#1",
+   "measured_s_section": 0.236,
+   "caption_frame": 1183,
+   "err_frames": -0.23,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:ordinary#1",
+   "measured_s_section": 0.466,
+   "caption_frame": 1190,
+   "err_frames": -0.13,
+   "source": "override"
+  },
+  {
+   "word": "s5:matter#1",
+   "measured_s_section": 0.926,
+   "caption_frame": 1204,
+   "err_frames": 0.07,
+   "source": "override"
+  },
+  {
+   "word": "s5:we#1",
+   "measured_s_section": 1.189,
+   "caption_frame": 1212,
+   "err_frames": 0.18,
+   "source": "override"
+  },
+  {
+   "word": "s5:can#1",
+   "measured_s_section": 1.455,
+   "caption_frame": 1220,
+   "err_frames": 0.2,
+   "source": "override"
+  },
+  {
+   "word": "s5:see#1",
+   "measured_s_section": 1.6,
+   "caption_frame": 1224,
+   "err_frames": -0.15,
+   "source": "override"
+  },
+  {
+   "word": "s5:comes#1",
+   "measured_s_section": 1.934,
+   "caption_frame": 1234,
+   "err_frames": -0.17,
+   "source": "override"
+  },
+  {
+   "word": "s5:to#1",
+   "measured_s_section": 2.366,
+   "caption_frame": 1247,
+   "err_frames": -0.13,
+   "source": "override"
+  },
+  {
+   "word": "s5:about#1",
+   "measured_s_section": 2.584,
+   "caption_frame": 1254,
+   "err_frames": 0.33,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:fifty-three#1",
+   "measured_s_section": 2.872,
+   "caption_frame": 1262,
+   "err_frames": -0.31,
+   "source": "override"
+  },
+  {
+   "word": "s5:zeros#1",
+   "measured_s_section": 3.708,
+   "caption_frame": 1287,
+   "err_frames": -0.39,
+   "source": "override"
+  },
+  {
+   "word": "s5:of#1",
+   "measured_s_section": 4.19,
+   "caption_frame": 1302,
+   "err_frames": 0.15,
+   "source": "override"
+  },
+  {
+   "word": "s5:kilograms.#1",
+   "measured_s_section": 4.468,
+   "caption_frame": 1310,
+   "err_frames": -0.19,
+   "source": "override"
+  },
+  {
+   "word": "s5:And#1",
+   "measured_s_section": 5.616,
+   "caption_frame": 1345,
+   "err_frames": 0.37,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:dark#1",
+   "measured_s_section": 5.844,
+   "caption_frame": 1351,
+   "err_frames": -0.47,
+   "source": "override"
+  },
+  {
+   "word": "s5:matter#2",
+   "measured_s_section": 6.06,
+   "caption_frame": 1358,
+   "err_frames": 0.05,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:outweighs#1",
+   "measured_s_section": 6.467,
+   "caption_frame": 1370,
+   "err_frames": -0.16,
+   "source": "override"
+  },
+  {
+   "word": "s5:it#1",
+   "measured_s_section": 6.73,
+   "caption_frame": 1378,
+   "err_frames": -0.05,
+   "source": "confirmed"
+  },
+  {
+   "word": "s5:five#1",
+   "measured_s_section": 7.011,
+   "caption_frame": 1386,
+   "err_frames": -0.48,
+   "source": "override"
+  },
+  {
+   "word": "s5:to#2",
+   "measured_s_section": 7.48,
+   "caption_frame": 1401,
+   "err_frames": 0.45,
+   "source": "override"
+  },
+  {
+   "word": "s5:one.#1",
+   "measured_s_section": 7.79,
+   "caption_frame": 1410,
+   "err_frames": 0.15,
+   "source": "confirmed"
+  }
+ ],
+ "sweep_max_abs_err_frames": 0.48,
+ "anchors": {
+  "sc02": [
+   "s1",
+   "a",
+   1
+  ],
+  "sc03": [
+   "s1",
+   "the",
+   1
+  ],
+  "sc04": [
+   "s2",
+   "every",
+   1
+  ],
+  "sc05": [
+   "s2",
+   "the",
+   1
+  ],
+  "sc06": [
+   "s3",
+   "the",
+   1
+  ],
+  "sc07": [
+   "s3",
+   "and",
+   2
+  ],
+  "sc08": [
+   "s4",
+   "the",
+   1
+  ],
+  "sc09": [
+   "s4",
+   "packed",
+   1
+  ],
+  "sc10": [
+   "s5",
+   "all",
+   1
+  ],
+  "sc11": [
+   "s5",
+   "and",
+   1
+  ],
+  "sc12": [
+   "s5",
+   "five",
+   1
+  ]
+ },
+ "overrides_section_relative_s": {
+  "s1:weigh#1": [
+   0.329,
+   null
+  ],
+  "s1:about#1": [
+   0.434,
+   null
+  ],
+  "s1:seventy#1": [
+   0.915,
+   null
+  ],
+  "s1:kilograms.#1": [
+   1.332,
+   null
+  ],
+  "s1:blue#1": [
+   2.74,
+   null
+  ],
+  "s1:whale#1": [
+   2.945,
+   null
+  ],
+  "s1:a#1": [
+   3.657,
+   null
+  ],
+  "s1:hundred#1": [
+   3.84,
+   null
+  ],
+  "s1:and#1": [
+   4.108,
+   null
+  ],
+  "s1:thousand.#1": [
+   4.737,
+   null
+  ],
+  "s1:The#1": [
+   6.089,
+   null
+  ],
+  "s1:Eiffel#1": [
+   6.244,
+   null
+  ],
+  "s1:Tower,#1": [
+   6.537,
+   null
+  ],
+  "s1:ten#1": [
+   7.548,
+   null
+  ],
+  "s1:million.#1": [
+   7.73,
+   null
+  ],
+  "s2:human#1": [
+   0.427,
+   null
+  ],
+  "s2:put#1": [
+   1.669,
+   null
+  ],
+  "s2:together:#1": [
+   1.844,
+   null
+  ],
+  "s2:four#1": [
+   3.201,
+   null
+  ],
+  "s2:hundred#1": [
+   3.53,
+   null
+  ],
+  "s2:Earth:#1": [
+   5.81,
+   null
+  ],
+  "s2:trillion#1": [
+   7.161,
+   null
+  ],
+  "s2:trillion.#1": [
+   7.746,
+   null
+  ],
+  "s3:Sun#1": [
+   0.092,
+   null
+  ],
+  "s3:outweighs#1": [
+   0.471,
+   null
+  ],
+  "s3:hundred#1": [
+   1.523,
+   null
+  ],
+  "s3:Earths.#1": [
+   3.04,
+   null
+  ],
+  "s3:a#1": [
+   4.231,
+   null
+  ],
+  "s3:squeezes#1": [
+   5.22,
+   null
+  ],
+  "s3:even#1": [
+   5.762,
+   null
+  ],
+  "s3:more#1": [
+   6.1,
+   null
+  ],
+  "s3:into#1": [
+   6.657,
+   null
+  ],
+  "s3:a#2": [
+   6.864,
+   null
+  ],
+  "s3:the#1": [
+   7.414,
+   null
+  ],
+  "s3:size#1": [
+   7.547,
+   null
+  ],
+  "s3:of#1": [
+   7.866,
+   null
+  ],
+  "s3:a#3": [
+   8.054,
+   null
+  ],
+  "s3:city.#1": [
+   8.118,
+   null
+  ],
+  "s4:hole#1": [
+   0.582,
+   null
+  ],
+  "s4:at#1": [
+   1.0,
+   null
+  ],
+  "s4:the#1": [
+   1.167,
+   null
+  ],
+  "s4:centre#1": [
+   1.276,
+   null
+  ],
+  "s4:of#1": [
+   1.532,
+   null
+  ],
+  "s4:galaxy#1": [
+   1.975,
+   null
+  ],
+  "s4:weighs#1": [
+   2.447,
+   null
+  ],
+  "s4:four#1": [
+   2.701,
+   null
+  ],
+  "s4:million#1": [
+   3.25,
+   null
+  ],
+  "s4:Suns,#1": [
+   3.751,
+   null
+  ],
+  "s4:packed#1": [
+   4.878,
+   null
+  ],
+  "s4:than#1": [
+   5.629,
+   null
+  ],
+  "s4:Mercury's#1": [
+   5.968,
+   null
+  ],
+  "s5:ordinary#1": [
+   0.466,
+   null
+  ],
+  "s5:matter#1": [
+   0.926,
+   null
+  ],
+  "s5:we#1": [
+   1.189,
+   null
+  ],
+  "s5:can#1": [
+   1.455,
+   null
+  ],
+  "s5:see#1": [
+   1.6,
+   null
+  ],
+  "s5:comes#1": [
+   1.934,
+   null
+  ],
+  "s5:to#1": [
+   2.366,
+   null
+  ],
+  "s5:fifty-three#1": [
+   2.872,
+   null
+  ],
+  "s5:zeros#1": [
+   3.708,
+   null
+  ],
+  "s5:of#1": [
+   4.19,
+   null
+  ],
+  "s5:kilograms.#1": [
+   4.468,
+   null
+  ],
+  "s5:dark#1": [
+   5.844,
+   null
+  ],
+  "s5:outweighs#1": [
+   6.467,
+   null
+  ],
+  "s5:five#1": [
+   7.011,
+   null
+  ],
+  "s5:to#2": [
+   7.48,
+   null
+  ]
+ }
+}

@@ -94,6 +94,94 @@
    "user_visible": true,
    "user_approved": true,
    "confidence": 0.95
+  },
+  {
+   "decision_id": "d-004",
+   "stage": "proposal",
+   "category": "approval",
+   "subject": "Proposal",
+   "options_considered": [
+    {
+     "option_id": "approve",
+     "label": "Approve",
+     "score": 1,
+     "reason": "user"
+    }
+   ],
+   "selected": "approve",
+   "reason": "User: 'Approve' 2026-10-28.",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 1.0
+  },
+  {
+   "decision_id": "d-005",
+   "stage": "script",
+   "category": "approval",
+   "subject": "Script",
+   "options_considered": [
+    {
+     "option_id": "approve",
+     "label": "Approve",
+     "score": 1,
+     "reason": "user"
+    }
+   ],
+   "selected": "approve",
+   "reason": "Approved with the proposal (d-003).",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 1.0
+  },
+  {
+   "decision_id": "d-006",
+   "stage": "scene_plan",
+   "category": "approval",
+   "subject": "Scene plan",
+   "options_considered": [
+    {
+     "option_id": "approve",
+     "label": "Approve",
+     "score": 1,
+     "reason": "user"
+    }
+   ],
+   "selected": "approve",
+   "reason": "Covered by the run-through approval (d-003); sent with contact sheet 2.",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 1.0
+  },
+  {
+   "decision_id": "d-007",
+   "stage": "assets",
+   "category": "asset_fallback",
+   "subject": "Music bed",
+   "options_considered": [
+    {
+     "option_id": "reuse16",
+     "label": "Reuse video 16's verified bed (free)",
+     "score": 0.8,
+     "reason": "G major cadence, pinned; fits the uplifting tone"
+    },
+    {
+     "option_id": "keep",
+     "label": "Keep the new C minor bed with its fade",
+     "score": 0.2,
+     "reason": "breaks the finished-line rule"
+    },
+    {
+     "option_id": "reroll",
+     "label": "Re-roll the music",
+     "score": 0.0,
+     "reason": "forbidden by the standing rule"
+    }
+   ],
+   "selected": "reuse16",
+   "reason": "The generated bed has no cadence or ring-out (finished-line rule); re-rolls are not allowed; reuse is free.",
+   "user_visible": true,
+   "user_approved": false,
+   "confidence": 0.85
   }
  ]
 }

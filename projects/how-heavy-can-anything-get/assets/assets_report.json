@@ -1,0 +1,217 @@
+{
+ "status": "COMPLETE",
+ "runs": [
+  {
+   "what": "5 TTS, one take each",
+   "provider": "ElevenLabs (restricted connector)",
+   "estimate_usd": 0.12,
+   "actual_usd": 0.1127,
+   "credits": 619.95,
+   "date": "2026-10-28"
+  },
+  {
+   "what": "3 stills + music",
+   "provider": "Creative Claw",
+   "estimate_credits": 59,
+   "actual_credits": 59,
+   "credits_remaining": 561,
+   "usd_note": "recorded at ~$0.31 list as for videos 16-17",
+   "date": "2026-10-28"
+  }
+ ],
+ "assets": [
+  {
+   "id": "N-s1",
+   "type": "narration",
+   "section": "s1",
+   "file": "assets/audio/narration/s1.mp3",
+   "take_file": "assets/audio/narration/takes/s1_take1.mp3",
+   "generation_id": "mThBq10NTWg7R29l3VCG",
+   "flow_id": "oRb8rw0GPFDQlMyafOw0",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0244,
+   "credits": 133.99,
+   "duration_s": 8.56,
+   "qa": "PASS: Whisper WER 0.0; pauses only at punctuation; peak -3.1 dBFS"
+  },
+  {
+   "id": "N-s2",
+   "type": "narration",
+   "section": "s2",
+   "file": "assets/audio/narration/s2.mp3",
+   "take_file": "assets/audio/narration/takes/s2_take1.mp3",
+   "generation_id": "XYWWbkb6yG20sE9G6fvW",
+   "flow_id": "oRb8rw0GPFDQlMyafOw0",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0184,
+   "credits": 100.99,
+   "duration_s": 8.72,
+   "qa": "PASS: Whisper WER 0.0; pauses only at punctuation; peak -1.6 dBFS"
+  },
+  {
+   "id": "N-s3",
+   "type": "narration",
+   "section": "s3",
+   "file": "assets/audio/narration/s3.mp3",
+   "take_file": "assets/audio/narration/takes/s3_take1.mp3",
+   "generation_id": "dXCK0SILFqMHZ34Z2fWT",
+   "flow_id": "oRb8rw0GPFDQlMyafOw0",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0256,
+   "credits": 140.99,
+   "duration_s": 8.8,
+   "qa": "PASS: Whisper WER 0.0; pauses only at punctuation; peak -5.4 dBFS"
+  },
+  {
+   "id": "N-s4",
+   "type": "narration",
+   "section": "s4",
+   "file": "assets/audio/narration/s4.mp3",
+   "take_file": "assets/audio/narration/takes/s4_take1.mp3",
+   "generation_id": "gPsx4mQsKBWhub9NE8rg",
+   "flow_id": "oRb8rw0GPFDQlMyafOw0",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.0204,
+   "credits": 111.99,
+   "duration_s": 7.12,
+   "qa": "PASS: Whisper WER 0.0; pauses only at punctuation; peak -6.7 dBFS"
+  },
+  {
+   "id": "N-s5",
+   "type": "narration",
+   "section": "s5",
+   "file": "assets/audio/narration/s5.mp3",
+   "take_file": "assets/audio/narration/takes/s5_take1.mp3",
+   "generation_id": "9Eqct2EhnQytttLN4Nat",
+   "flow_id": "oRb8rw0GPFDQlMyafOw0",
+   "voice": "Bella hpp4J3VqNfWAUOO0d1Us",
+   "model": "eleven_v4",
+   "cost_usd": 0.024,
+   "credits": 131.99,
+   "duration_s": 8.24,
+   "qa": "PASS: Whisper WER 0.0; pauses only at punctuation; peak -4.5 dBFS"
+  },
+  {
+   "id": "S1",
+   "type": "image",
+   "file": "assets/images/plate_whale.png",
+   "provider": "Creative Claw",
+   "model": "image/gpt-image-2.5-sunburst",
+   "size": "1152x2048 (9:16)",
+   "quality": "high",
+   "job_id": "387f6dad-7f7f-4dd5-bbf5-2fa0b9a3a09c",
+   "credits": 10,
+   "cost_usd": 0.05,
+   "tag": "AI impression",
+   "qa": "PASS: blue whale underwater, no text or watermark, subject in the middle 60%"
+  },
+  {
+   "id": "S2",
+   "type": "image",
+   "file": "assets/images/plate_eiffel.png",
+   "provider": "Creative Claw",
+   "model": "image/gpt-image-2.5-sunburst",
+   "size": "1152x2048 (9:16)",
+   "quality": "high",
+   "job_id": "9e037e43-6e7f-4205-9f02-aa3c65ed8436",
+   "credits": 10,
+   "cost_usd": 0.05,
+   "tag": "AI impression",
+   "qa": "PASS: Eiffel Tower at blue hour, no text or watermark, subject in the middle 60%"
+  },
+  {
+   "id": "S3",
+   "type": "image",
+   "file": "assets/images/plate_neutron.png",
+   "provider": "Creative Claw",
+   "model": "image/gpt-image-2.5-sunburst",
+   "size": "1152x2048 (9:16)",
+   "quality": "high",
+   "job_id": "875d3836-5311-42f4-95e1-94f8eec26cf4",
+   "credits": 10,
+   "cost_usd": 0.05,
+   "tag": "AI impression",
+   "qa": "PASS: neutron star with polar beams, no text or watermark, subject in the middle 60%"
+  },
+  {
+   "id": "M1",
+   "type": "music",
+   "file": "assets/music/bed_unused_cminor_no_cadence.wav",
+   "provider": "Creative Claw",
+   "model": "music/elevenlabs-music-v2.5",
+   "job_id": "dd4c7117-84a1-4854-a8b8-6e5bf4940e8f",
+   "credits": 29,
+   "cost_usd": 0.16,
+   "duration_s": 58.0,
+   "qa": "FAIL (unused): requested E major with a IV-V-I cadence and a sustained final chord; heard C minor arpeggios running into a fade, no cadence, no ring-out (chroma + attacks 48-58 s). Not re-rolled (standing rule).",
+   "used": false
+  },
+  {
+   "id": "X1",
+   "type": "sfx",
+   "file": "assets/sfx/X1_whoosh.mp3",
+   "provider": "reused from video 16 (ElevenLabs SFX)",
+   "cost_usd": 0.0
+  },
+  {
+   "id": "X2",
+   "type": "sfx",
+   "file": "assets/sfx/X2_boom.mp3",
+   "provider": "reused from video 16 (ElevenLabs SFX)",
+   "cost_usd": 0.0
+  },
+  {
+   "id": "X3",
+   "type": "sfx",
+   "file": "assets/sfx/X3_tick.mp3",
+   "provider": "reused from video 16 (ElevenLabs SFX)",
+   "cost_usd": 0.0
+  },
+  {
+   "id": "X4",
+   "type": "sfx",
+   "file": "assets/sfx/X4_hum.mp3",
+   "provider": "reused from video 16 (ElevenLabs SFX)",
+   "cost_usd": 0.0
+  },
+  {
+   "id": "X5",
+   "type": "sfx",
+   "file": "assets/sfx/X5_shimmer.mp3",
+   "provider": "reused from video 16 (ElevenLabs SFX)",
+   "cost_usd": 0.0
+  },
+  {
+   "id": "X6",
+   "type": "sfx",
+   "file": "assets/sfx/X6_tink.mp3",
+   "provider": "reused from video 16 (ElevenLabs SFX)",
+   "cost_usd": 0.0
+  },
+  {
+   "id": "M2",
+   "type": "music",
+   "file": "assets/music/bed_raw.wav",
+   "provider": "reused from video 16 (Creative Claw, elevenlabs-music-v2.5)",
+   "cost_usd": 0.0,
+   "duration_s": 58.0,
+   "qa": "PASS: G major IV-V-I, last tonic attack pinned 55.79 s (video 16 music_qa.json)",
+   "used": true
+  }
+ ],
+ "total_usd": 0.4227,
+ "spend": {
+  "cap_usd": 4.0,
+  "spent_usd": 0.4227,
+  "remaining_usd": 3.58
+ },
+ "quality_concerns": [
+  "M1 bed delivered in the wrong key with no cadence; replaced at no cost by video 16's verified bed (M2)."
+ ],
+ "retakes": 0,
+ "rerolls": 0
+}
