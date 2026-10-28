@@ -1,0 +1,142 @@
+{
+ "version": "1.0",
+ "render_runtime": "remotion",
+ "renderer_family": "explainer-teacher",
+ "composition_mode": "atelier",
+ "cuts": [
+  {
+   "id": "cut-sc01",
+   "source": "bespoke_sc01",
+   "in_seconds": 0.0,
+   "out_seconds": 3.033,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the column persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc01 (section s1). Render: atelier component sc01. 'Lifespan Column': the rail draws bottom -> top; the marker sits on MAYFLY ~1 day, ZEROS 0 seats on 'day'."
+  },
+  {
+   "id": "cut-sc02",
+   "source": "bespoke_sc02",
+   "in_seconds": 3.033,
+   "out_seconds": 5.7,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the column persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc02 (section s1). Render: atelier component sc02. The marker climbs to YOU ~73 yr (ZEROS 1)."
+  },
+  {
+   "id": "cut-sc03",
+   "source": "bespoke_sc03",
+   "in_seconds": 5.7,
+   "out_seconds": 10.2,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the column persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc03 (section s1). Render: atelier component sc03. The window opens on the AI tortoise plate; TORTOISE ~190 yr seats (ZEROS 2)."
+  },
+  {
+   "id": "cut-sc04",
+   "source": "bespoke_sc04",
+   "in_seconds": 10.2,
+   "out_seconds": 13.7,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the column persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc04 (section s2). Render: atelier component sc04. The window crossfades to the AI Greenland shark plate; SHARK ~400 yr seats (ZEROS stays 2)."
+  },
+  {
+   "id": "cut-sc05",
+   "source": "bespoke_sc05",
+   "in_seconds": 13.7,
+   "out_seconds": 19.933,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the column persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc05 (section s2). Render: atelier component sc05. The window crossfades to the AI bristlecone pine plate; PINE ~4,800 yr seats (ZEROS 3)."
+  },
+  {
+   "id": "cut-sc06",
+   "source": "bespoke_sc06",
+   "in_seconds": 19.933,
+   "out_seconds": 23.6,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the column persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc06 (section s3). Render: atelier component sc06. The window shows a DRAWN Sun; the marker climbs to SUN ~10 billion yr, ZEROS 4 -> 10."
+  },
+  {
+   "id": "cut-sc07",
+   "source": "bespoke_sc07",
+   "in_seconds": 23.6,
+   "out_seconds": 28.067,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the column persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc07 (section s3). Render: atelier component sc07. A much smaller DRAWN red dwarf joins the Sun; RED DWARF ~4 trillion yr seats (ZEROS 12)."
+  },
+  {
+   "id": "cut-sc08",
+   "source": "bespoke_sc08",
+   "in_seconds": 28.067,
+   "out_seconds": 31.633,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the column persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc08 (section s4). Render: atelier component sc08. The window shows a DRAWN detector tank, nothing flashing, 'no decay seen'."
+  },
+  {
+   "id": "cut-sc09",
+   "source": "bespoke_sc09",
+   "in_seconds": 31.633,
+   "out_seconds": 36.933,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the column persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc09 (section s4). Render: atelier component sc09. The marker climbs to the PROTON's lower limit (> 10^33 yr, dashed open rung + up arrow) as ZEROS runs 12 -> 33; the rail BREAKS above it."
+  },
+  {
+   "id": "cut-sc10",
+   "source": "bespoke_sc10",
+   "in_seconds": 36.933,
+   "out_seconds": 39.1,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the column persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc10 (section s5). Render: atelier component sc10. The readout types 1 followed by 33 zeros under the tank window."
+  },
+  {
+   "id": "cut-sc11",
+   "source": "bespoke_sc11",
+   "in_seconds": 39.1,
+   "out_seconds": 42.0,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the column persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc11 (section s5). Render: atelier component sc11. The readout holds, then fades; the tank stays quiet."
+  },
+  {
+   "id": "cut-sc12",
+   "source": "bespoke_sc12",
+   "in_seconds": 42.0,
+   "out_seconds": 45.967,
+   "layer": "primary",
+   "transition_in": "Continuous frame (the column persists; scene devices fade).",
+   "transition_duration": 0.0,
+   "reason": "Hand-authored scene sc12 (section s5). Render: atelier component sc12. A dashed 'forever?' line rises through the break under the MAYBE tab; the finished line, the settle, the CTA."
+  }
+ ],
+ "music": {
+  "track_id": "M1",
+  "path": "assets/music/bed_raw.wav",
+  "volume": 1.0,
+  "duck_under_narration": true,
+  "duck_level_db": -12,
+  "fade_in_seconds": 0.0,
+  "fade_out_seconds": 0.6
+ },
+ "subtitles": {
+  "enabled": true,
+  "style": "word_highlight",
+  "source": "artifacts/props.json captionPages"
+ }
+}

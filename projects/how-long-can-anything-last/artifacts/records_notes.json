@@ -1,0 +1,47 @@
+{
+ "composition": "LifespanColumn",
+ "master": "renders/how-long-can-anything-last.mp4",
+ "raw": "renders/raw.mp4",
+ "scene_map": {
+  "N-s1": "sc01",
+  "N-s2": "sc04",
+  "N-s3": "sc06",
+  "N-s4": "sc08",
+  "N-s5": "sc10",
+  "S1": "sc03",
+  "S2": "sc04",
+  "S3": "sc05",
+  "M1": "sc01",
+  "X1": "sc01",
+  "X2": "sc04",
+  "X3": "sc02",
+  "X4": "sc06",
+  "X5": "sc08",
+  "X6": "sc11"
+ },
+ "approval_basis": "topic + $4 cap chosen by the user; proposal + script approved ('Approve'); run end to end after scene plan; providers as video 16-17 (ElevenLabs speech, Creative Claw stills); contact sheets 1-3 sent",
+ "transition_in": "Continuous frame (the column persists; scene devices fade).",
+ "verification_notes": [
+  "Lean build: video 18's ascending ladder engine re-dressed in years; 1 builder agent (soundtrack key frames, props, engine, scenes, contact sheet 2, BUILD_SPEC.md); qa_auto 0 fail / 0 warn on the first master; no music generated (bed and SFX reused).",
+  "Caption onsets: all 92 words from the automatic onset sweep, 57 adopted without hand-reading (lean).",
+  "Independent QA agent: 0 blockers, 0 should-fix, 6 nits accepted without a fix round (see visual_issues)."
+ ],
+ "visual_issues": [
+  "Mid-glide the tab pill briefly overlaps its neighbour labels for ~8 f (f87/f167/f838/f1256).",
+  "The 'lower limit' chip and rail chips are small at 360x640.",
+  "The mayfly marker sits ~0.4 decade low against the ~1 day value.",
+  "Sun and tank cards are top-heavy with empty space below."
+ ],
+ "audio_issues": [
+  "Closing sentence is soft: +5.5 dB voice-only lift from 'Maybe' and -12 dB closing duck (closing margin +12.5 dB)."
+ ],
+ "promise_issues": [
+  "None: providers, models and cap as proposed; music and SFX reused at no cost."
+ ],
+ "subtitle_issues": [
+  "None."
+ ],
+ "duck_level_db": -12,
+ "music_path": "assets/music/bed_raw.wav",
+ "budget_usd": 4.0
+}
