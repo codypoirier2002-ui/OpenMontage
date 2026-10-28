@@ -1,0 +1,247 @@
+{
+  "version": "1.0",
+  "project_id": "how-heavy-can-anything-get",
+  "pipeline_type": "unknown",
+  "stage": "research",
+  "status": "completed",
+  "timestamp": "2026-10-28T13:13:40.383535+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": false,
+  "human_approved": false,
+  "artifacts": {
+    "research_brief": {
+      "version": "1.0",
+      "topic": "How Heavy Can Anything Get?",
+      "research_date": "2026-10-28",
+      "research_summary": "A log ladder upward in kilograms: you, a blue whale, the Eiffel Tower, all of humanity, Earth, the Sun and a neutron star, the Milky Way's black hole, then a break to the observable universe's ordinary matter; dark matter outweighs it about five to one.",
+      "landscape": {
+        "existing_content": [
+          {
+            "title": "Powers of Ten",
+            "source": "Eames Office (1977)",
+            "angle": "continuous zoom",
+            "what_it_covers": "scale from galaxy to proton by powers of ten"
+          },
+          {
+            "title": "Scale-of-the-universe zooms",
+            "source": "YouTube explainers",
+            "angle": "interactive zoom",
+            "what_it_covers": "sizes from Planck length to observable universe, little honesty about the floor"
+          },
+          {
+            "title": "How small is an atom",
+            "source": "short explainers",
+            "angle": "analogy",
+            "what_it_covers": "atoms vs everyday objects"
+          }
+        ],
+        "saturated_angles": [
+          "Continuous zoom-in with no numbers on screen"
+        ],
+        "underserved_gaps": [
+          "Counting the zeros as the meter: a counter that jumps 14 -> 34 at the Planck length",
+          "Honesty about the floor: the Planck length is not proven to be the smallest length"
+        ]
+      },
+      "data_points": [
+        {
+          "claim": "Typical adult ~70 kg. MEASURED (typical) [YOU]",
+          "source_url": "https://www.ncbi.nlm.nih.gov/",
+          "source_name": "general reference",
+          "credibility": "secondary_source",
+          "surprise_factor": "expected",
+          "usable_as": "hook"
+        },
+        {
+          "claim": "Blue whale: largest animal; adults commonly ~100-150 t, largest weighed ~190 t. PROBABLY ('can reach a hundred and fifty thousand' kg) [WHALE]",
+          "source_url": "https://www.fisheries.noaa.gov/species/blue-whale",
+          "source_name": "NOAA Fisheries",
+          "credibility": "primary_source",
+          "surprise_factor": "expected",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Eiffel Tower total 10,100 t (metal frame 7,300 t) = ~10 million kg. MEASURED [EIFFEL]",
+          "source_url": "https://www.toureiffel.paris/en/the-monument/key-figures",
+          "source_name": "Tour Eiffel key figures",
+          "credibility": "primary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "All humans combined: estimates 287-390 million t (2005-2018 studies); ~8 billion x ~65 kg = ~520 million t; 'around four hundred billion kg'. PROBABLY [HUMANITY]",
+          "source_url": "https://e360.yale.edu/digest/mass-of-humans-livestock-wild-mammals",
+          "source_name": "Yale e360 (Bar-On et al. 2018) / BMC Public Health 2012",
+          "credibility": "secondary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Earth 5.97e24 kg ('six trillion trillion'). MEASURED [EARTH]",
+          "source_url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+          "source_name": "NASA Earth fact sheet",
+          "credibility": "primary_source",
+          "surprise_factor": "expected",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Sun 1.989e30 kg = ~333,000 Earth masses. MEASURED [SUN]",
+          "source_url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html",
+          "source_name": "NASA Sun fact sheet",
+          "credibility": "primary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Neutron star: typically ~1.4 solar masses in a sphere ~20 km across (city-sized). MEASURED (typical) [NEUTRON]",
+          "source_url": "https://imagine.gsfc.nasa.gov/science/objects/neutron_stars1.html",
+          "source_name": "NASA Imagine the Universe",
+          "credibility": "primary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Sagittarius A*: ~4 million solar masses (~8e36 kg); its event horizon (~24 million km across) would fit well inside Mercury's orbit (~116 million km across). MEASURED [SGRA]",
+          "source_url": "https://heasarc.gsfc.nasa.gov/docs/objects/heapow/archive/compact_objects/sgra_eht.html",
+          "source_name": "NASA HEASARC / EHT",
+          "credibility": "primary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Ordinary (baryonic) matter in the observable universe ~1.5e53 kg (critical density x Omega_b 0.0485 x volume). PROBABLY (an estimate) [UNIVERSE]",
+          "source_url": "https://en.wikipedia.org/wiki/Observable_universe",
+          "source_name": "Wikipedia (Planck 2018 parameters)",
+          "credibility": "secondary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Dark matter outweighs ordinary matter ~5.4 to 1 (Omega_c 0.265 vs Omega_b 0.049, Planck 2018). PROBABLY (inferred, not directly detected) [DARK]",
+          "source_url": "https://arxiv.org/abs/1807.06209",
+          "source_name": "Planck 2018 results VI",
+          "credibility": "primary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "1.5e53 kg is a 1 followed by about 53 zeros (10^53); the ZEROS counter shows the power of ten of each rung (YOU 70 kg = 1, Sgr A* ~8e36 kg = 36, universe 53). MEASURED (arithmetic) [ZEROS]",
+          "source_url": "https://en.wikipedia.org/wiki/Observable_universe",
+          "source_name": "derived",
+          "credibility": "primary_source",
+          "surprise_factor": "expected",
+          "usable_as": "script_anchor"
+        }
+      ],
+      "audience_insights": {
+        "common_questions": [
+          "What is the heaviest thing in the universe?",
+          "How heavy is a black hole?",
+          "How much does the universe weigh?"
+        ],
+        "misconceptions": [
+          {
+            "myth": "Black holes are infinitely heavy",
+            "reality": "They have definite masses; Sgr A* is about 4 million Suns.",
+            "source": "NASA HEASARC"
+          },
+          {
+            "myth": "The universe's mass is mostly stars",
+            "reality": "Ordinary matter is ~1/6 of all matter; dark matter makes up the rest.",
+            "source": "Planck 2018"
+          }
+        ],
+        "knowledge_level": "general curious viewer"
+      },
+      "expert_voices": [
+        {
+          "name": "Particle Data Group",
+          "position": "proton radius 0.8414 fm"
+        },
+        {
+          "name": "CODATA 2018",
+          "position": "recommended constants"
+        }
+      ],
+      "angles_discovered": [
+        {
+          "name": "Count the zeros",
+          "hook": "Each rung adds zeros; the last jump is seventeen.",
+          "type": "data_driven",
+          "why_now": "third in the ZEROS series (16 speed, 17 size)",
+          "grounded_in": [
+            "ZEROS"
+          ]
+        },
+        {
+          "name": "Dense not big",
+          "hook": "A neutron star is a Sun in a city.",
+          "type": "evergreen",
+          "why_now": "density twist inside the ladder",
+          "grounded_in": [
+            "NEUTRON"
+          ]
+        },
+        {
+          "name": "The unseen majority",
+          "hook": "After all that, most of the mass is something we can't see.",
+          "type": "contrarian",
+          "why_now": "finished line with a twist",
+          "grounded_in": [
+            "DARK"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.toureiffel.paris/en/the-monument/key-figures",
+          "title": "Eiffel Tower key figures",
+          "used_for": "EIFFEL",
+          "reliability": "primary"
+        },
+        {
+          "url": "https://e360.yale.edu/digest/mass-of-humans-livestock-wild-mammals",
+          "title": "Yale e360: mass of humans",
+          "used_for": "HUMANITY",
+          "reliability": "secondary"
+        },
+        {
+          "url": "https://zmescience.com/ecology/world-problems/world-human-population-mass-287-million-tonnes-432432",
+          "title": "ZME Science: 287 million tonnes",
+          "used_for": "HUMANITY",
+          "reliability": "secondary"
+        },
+        {
+          "url": "https://heasarc.gsfc.nasa.gov/docs/objects/heapow/archive/compact_objects/sgra_eht.html",
+          "title": "NASA HEASARC: Sgr A*",
+          "used_for": "SGRA",
+          "reliability": "primary"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Observable_universe",
+          "title": "Observable universe",
+          "used_for": "UNIVERSE",
+          "reliability": "secondary"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2112.04473",
+          "title": "Information in visible matter of the universe",
+          "used_for": "UNIVERSE",
+          "reliability": "primary"
+        }
+      ],
+      "metadata": {
+        "searches": 4,
+        "webfetch": "none",
+        "dropped_claims": [
+          "'A teaspoon of neutron star weighs a mountain' (figures vary by orders of magnitude; dropped for the city-size comparison)",
+          "'The universe weighs 10^53 kg' without saying ordinary matter (would hide dark matter)"
+        ],
+        "myths": [
+          "Black holes are infinitely heavy",
+          "Stars make up most of the universe's mass"
+        ]
+      }
+    }
+  }
+}
