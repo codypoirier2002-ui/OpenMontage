@@ -77,7 +77,7 @@ LEVEL_EVEN_MAX_DB = 5.0
 LEVEL_WIN_S = 2.0
 EVEN_SMOOTH_S = 1.5
 DUCK_DB = -12.0
-CLOSING_DUCK_DB = -13.0
+CLOSING_DUCK_DB = -9.5
 CLOSING_LEAD_S = 0.55
 END_DUCK_DB = -3.0
 END_DUCK_IN_S = 0.10
@@ -134,97 +134,81 @@ def key_frames(tl: dict) -> dict:
     sc = {s["id"]: s for s in tl["scenes"]}
     rel_f = tl["way_end_frame"]
     chord_f = int(round((tl["way_end_seconds"] + CHORD_AFTER_S) * FPS))
-    page = lambda section, text: on(section, text)        # the caption page carrying a claim starts on its first word
-    lhc_page = page("s5", "the")                             # 'The Large Hadron Collider' (the LHC claim's tab, lesson 42)
-    probe_page = page("s3", "the")                           # 'The fastest thing we've ever built,' (the PROBE claim's tab)
-    cheetah_seat, falcon_seat, sound_seat = on("s1", "hundred", 1), on("s1", "hundred", 2), on("s2", "hundred", 1)
-    earth_seat, parker_seat, light_seat = on("s2", "thousand"), on("s3", "thousand"), on("s4", "billion")
-    bar_start, bar_off = on("s4", "energy"), on("s4", "end")
+    sand_seat, hair_seat, cell_seat, virus_seat = on("s1", "sand"), on("s1", "hair"), on("s2", "cell"), on("s2", "viruses")
+    atom_seat, proton_seat = on("s3", "thousand", 1), on("s3", "thousand", 2)
+    spin0, spin1 = on("s4", "twenty"), on("s4", "zeros")
+    ro0, ro1 = on("s5", "thirty-four"), on("s5", "point")
     K = {
-        # sc01 Walk: the dim rail + the marker at WALK from frame 0; the rail DRAWS bright from 'You' (X1 whoosh onset on its
-        # first moving frame); the WALK label seats on 'walk'
-        "railDraw": on("s1", "you"),
-        "walkSeat": on("s1", "walk"),
-        # sc02 Cheetah: the window opens ON the scene start (S1, placeholder until the still lands); the marker climbs from
-        # 'cheetah' (X1 onset on the first moving frame) and ARRIVES on 'hundred' (the CHEETAH label seats); the counter steps
-        # 0 -> 1 -> 2 (X3 ticks) ending ON the seat
-        "windowOpen1": sc["sc02"]["from"],
-        "climbCheetah": max(on("s1", "cheetah"), cheetah_seat - CLIMB_F),
-        "cheetahSeat": cheetah_seat,
-        "cheetahTicks": [cheetah_seat - TICK_STEP_F, cheetah_seat],
-        # sc03 Falcon: S1 -> S2 crossfade from the scene start (hard tag swap at the midpoint); climb from 'falcon', seat on
-        # 'hundred' (2nd) with the hatched 'commonly cited' chip (PROBABLY); the window closes into sc04
-        "plateSwap": sc["sc03"]["from"],
-        "climbFalcon": max(on("s1", "falcon"), falcon_seat - CLIMB_F),
-        "falconSeat": falcon_seat,
-        "windowClose1": sc["sc04"]["from"] - WINDOW_CLOSE_F - 10,   # gone >= 6 f before the SOUND page's tab glide (lessons 42/47; QA A-02)
-        # sc04 Sound: climb from 'Sound' (X1), seat ON 'hundred' (X2 soft thump; U1's pressure ring expands from there);
-        # counter 2 -> 3 on the seat (no X3 under the thump)
-        "climbSound": max(on("s2", "sound"), sound_seat - CLIMB_F),
-        "soundSeat": sound_seat,
-        # sc05 YouAreFast (HERO): the YOU tag seats at WALK on 'still' (gravity drop, no SFX); it JUMPS with the marker from
-        # 'doing' (X1 big whoosh on the first moving frame) and both ARRIVE at EARTH on 'thousand' (label seats; counter
-        # 3 -> 4 -> 5, X3 x2); U1's orbit inset draws from 'riding' and is GONE before the PROBE page (lesson 42)
-        "youSeat": on("s2", "still"),
-        "jumpStart": on("s2", "doing"),
-        "earthSeat": earth_seat,
-        "earthTicks": [earth_seat - TICK_STEP_F, earth_seat],
-        "orbitIn": on("s2", "riding"),
-        "orbitOut": probe_page - 8,
-        # sc06 Parker: the window opens ON the scene start (S3; X4 hum start-aligned, soft); U1's label 'Parker Solar Probe ·
-        # NASA' on 'Parker'
+        # sc01 Sand: the dim well + marker at SAND from frame 0; the rail DRAWS top -> bottom from 'grain' (X1 peaks 6 f
+        # before it, lesson 57); the SAND label + ZEROS 3 seat on 'sand' (X3); the window opens with S1 on the seat + 4
+        "railDraw": on("s1", "grain"),
+        "sandSeat": sand_seat,
+        "sandTicks": [sand_seat],
+        "windowOpen1": sand_seat + 4,
+        # sc02 Hair: the marker DESCENDS from 'human' and lands ON 'hair' (counter 3 -> 4, X3); a drawn hair line by the rung
+        "descendHair": max(on("s1", "human"), hair_seat - CLIMB_F),
+        "hairSeat": hair_seat,
+        "hairTicks": [hair_seat],
+        # sc03 Eye: the dashed 'YOUR EYE ~0.1 mm' line draws on 'eyes'; everything below it dims (PROBABLY page)
+        "eyeLine": on("s1", "eyes"),
+        # sc04 Cell: S1 -> S2 crossfade from the scene start; descend from 'red', seat ON 'cell' (4 -> 5)
+        "plateSwap1": sc["sc04"]["from"],
+        "descendCell": max(on("s2", "red"), cell_seat - CLIMB_F),
+        "cellSeat": cell_seat,
+        "cellTicks": [cell_seat],
+        # sc05 Virus: S2 -> S3 crossfade from the scene start; descend from 'Most', seat ON 'viruses' (5 -> 6); the dashed
+        # 'LIGHT MICROSCOPE ~200 nm' line draws on 'microscope'; the window closes >= 6 f before sc06's tab glide (L42/L52)
+        "plateSwap2": sc["sc05"]["from"],
+        "descendVirus": max(on("s2", "most"), virus_seat - CLIMB_F),
+        "virusSeat": virus_seat,
+        "virusTicks": [virus_seat],
+        "lightLine": on("s2", "microscope"),
+        "windowClose1": sc["sc06"]["from"] - WINDOW_CLOSE_F - 10,
+        # sc06 Atom: the window re-opens ON the scene start with the DRAWN atom (X4 hum); descend from 'An', seat ON
+        # 'thousand' (6 -> 7 -> 8 -> 9, X3 x3 ending on the seat)
         "windowOpen2": sc["sc06"]["from"],
-        "probeLabel": on("s3", "parker"),
-        # sc07 Falling: climb from 'reached' (X1), seat ON 'thousand' (PARKER label); U2's arrow 'falling toward the Sun' on
-        # 'falling'; the window closes into sc08
-        "climbParker": max(on("s3", "reached"), parker_seat - CLIMB_F),
-        "parkerSeat": parker_seat,
-        "fallArrow": on("s3", "falling"),
-        "windowClose2": sc["sc08"]["from"] - WINDOW_CLOSE_F - 10,   # same for the LIGHT page (QA A-03)
-        # sc08 Light: the beam races the rail over BEAM_F frames and reaches 'c' ON 'billion' (LIGHT label seats, the c line
-        # lights red; X5 shimmer start-aligned on the beam's first frame); counter 5 -> 9 (X3 x4) ending ON the seat
-        "beamStart": light_seat - BEAM_F,
-        "lightSeat": light_seat,
-        "lightTicks": [light_seat - 3 * TICK_STEP_F, light_seat - 2 * TICK_STEP_F, light_seat - TICK_STEP_F, light_seat],
-        # sc09 Wall: the marker leaves PARKER on 'nothing' and climbs toward 'c', slowing (no SFX); U2's 'anything with mass'
-        # label shares the first moving frame and is GONE before the LHC page (lesson 42)
-        "wallStart": on("s4", "nothing"),
-        "massLabel": on("s4", "nothing"),
-        "massOut": lhc_page - 8,
-        # sc10 Energy: 'ENERGY NEEDED' + the drawn curve in on the scene's first word; the bar grows from 'energy', faster and
-        # faster (X3 accelerating ticks), OFF the top ON 'end'; everything gone before the LHC page (lesson 42)
-        "energyIn": on("s4", "the", 1),
-        "barStart": bar_start,
-        "barTicks": [bar_start + int(round((bar_off - bar_start) * q)) for q in (0.0, 0.38, 0.64, 0.82, 0.93, 1.0)],
-        "barOff": bar_off,
-        "energyOut": lhc_page - 8,
-        # sc11 LHC (HERO 2): the readout card seats on 'Collider' (no SFX); '99.9999991 %' lands one glyph per DIGIT_STEP_F
-        # from 'pushes' (X3 per glyph); the marker's creep ENDS + the gap bracket 'the gap' ON 'hair' (X6 tink)
-        "readoutSeat": on("s5", "collider"),
-        "digitTicks": [on("s5", "pushes") + i * DIGIT_STEP_F for i in range(N_DIGITS)],
-        "creepEnd": on("s5", "hair"),
-        "gapBracket": on("s5", "hair"),
-        # sc12 NeverAllTheWay: NO SFX from 'But' - 50 ms; release wayEndFrame; chord chordFrame; CTA 4 f after the release
-        "closingStart": on("s5", "but"),
-        "wayFrame": on("s5", "way"),
+        "descendAtom": max(on("s3", "an"), atom_seat - CLIMB_F),
+        "atomSeat": atom_seat,
+        "atomTicks": [atom_seat - 2 * TICK_STEP_F, atom_seat - TICK_STEP_F, atom_seat],
+        # sc07 Proton: the drawn nucleus pulses on 'proton'; descend, seat ON 'thousand' (2nd) (9 -> 14, X3 x5); the window
+        # closes >= 6 f before sc08's tab glide
+        "nucleusPulse": on("s3", "proton"),
+        "descendProton": max(on("s3", "proton"), proton_seat - CLIMB_F),
+        "protonSeat": proton_seat,
+        "protonTicks": [proton_seat - (4 - i) * TICK_STEP_F for i in range(5)],
+        "windowClose2": sc["sc08"]["from"] - WINDOW_CLOSE_F - 10,
+        # sc08 Electron: the bracket under 1e-18 draws on 'Electrons'; 'no size found' seats on 'size' (X6 tink)
+        "electronIn": on("s4", "electrons"),
+        "noSize": on("s4", "size"),
+        # sc09 Planck: the rail BREAK draws on 'Below' (X1); the dashed violet PLANCK line on 'Planck' (X5 shimmer); the
+        # counter spins 14 -> 34 from 'twenty' to 'zeros' (X3 x6, accelerating)
+        "breakDraw": on("s4", "below"),
+        "planckIn": on("s4", "planck"),
+        "spinStart": spin0,
+        "spinEnd": spin1,
+        "spinTicks": [spin0 + int(round((spin1 - spin0) * q)) for q in (0.0, 0.38, 0.64, 0.82, 0.93, 1.0)],
+        # sc10 Zeros: the centre readout types '0.' + 34 zeros + '16 m' from 'Thirty-four' to 'point' (X3 every 4th glyph)
+        "readoutStart": ro0,
+        "readoutEnd": ro1,
+        "readoutTicks": [ro0 + int(round((ro1 - ro0) * i / 8)) for i in range(9)],
+        # sc11 Floor: the Planck line brightens + 'a floor? unproven' on 'floor'
+        "floorGlow": on("s5", "floor"),
+        # sc12: NO SFX from 'Or' - 50 ms; release wayEndFrame; chord chordFrame; CTA on the release (lesson 25)
+        "closingStart": on("s5", "or"),
+        "wayFrame": on("s5", "one"),
         "wayEndFrame": rel_f,
         "chordFrame": chord_f,
-        "ctaFrame": rel_f,   # the CTA swaps ON the release so the settle is still from the release (lesson 25; QA A-04)
+        "ctaFrame": rel_f,
     }
-    # ordering / spacing asserts (the visuals are built on these)
-    assert 0 < K["railDraw"] < K["walkSeat"] < K["windowOpen1"] < K["climbCheetah"] < K["cheetahSeat"] < K["plateSwap"], K
-    assert K["cheetahTicks"][0] > K["climbCheetah"] and K["cheetahTicks"][-1] == K["cheetahSeat"]
-    assert K["plateSwap"] + XFADE_F < K["climbFalcon"] < K["falconSeat"] < K["windowClose1"], K
-    assert K["windowClose1"] + WINDOW_CLOSE_F <= K["climbSound"] < K["soundSeat"] < K["youSeat"] < K["jumpStart"] < K["earthSeat"] < K["orbitIn"], K
-    assert K["orbitIn"] + 20 < K["orbitOut"] - FADE_F and K["orbitOut"] <= K["windowOpen2"] - 6, K
-    assert K["windowOpen2"] < K["probeLabel"] < K["climbParker"] < K["parkerSeat"] < K["fallArrow"] < K["windowClose2"], K
-    assert K["windowClose2"] + WINDOW_CLOSE_F <= sc["sc08"]["from"] <= K["beamStart"] < K["lightSeat"] < K["wallStart"], K
-    assert K["lightTicks"][0] >= K["beamStart"] - 6 and K["lightTicks"][-1] == K["lightSeat"]
-    assert K["wallStart"] < K["energyIn"] < K["barStart"] < K["barOff"] < K["energyOut"] and K["massOut"] == K["energyOut"], K
-    assert K["barTicks"][0] == K["barStart"] and K["barTicks"][-1] == K["barOff"] and all(b > a for a, b in zip(K["barTicks"], K["barTicks"][1:]))
-    assert K["energyOut"] < K["readoutSeat"] < K["digitTicks"][0] and K["digitTicks"][-1] < K["creepEnd"] == K["gapBracket"] < K["closingStart"], K
-    assert K["gapBracket"] + 45 <= K["closingStart"], "the X6 tink (1 s) must end before the closing sentence"
-    assert K["closingStart"] < K["wayFrame"] < rel_f <= K["ctaFrame"] < chord_f < tl["total_frames"] - 30, K   # the CTA may swap ON the release (lesson 25)
+    seats = ["railDraw", "sandSeat", "windowOpen1", "descendHair", "hairSeat", "eyeLine", "plateSwap1", "descendCell", "cellSeat",
+             "plateSwap2", "descendVirus", "virusSeat", "lightLine", "windowClose1", "windowOpen2", "descendAtom", "atomSeat",
+             "nucleusPulse", "protonSeat", "windowClose2", "electronIn", "noSize", "breakDraw", "planckIn", "spinStart", "spinEnd",
+             "readoutStart", "readoutEnd", "floorGlow", "closingStart", "wayFrame"]
+    assert all(K[a] <= K[b] for a, b in zip(seats, seats[1:])), [(a, K[a], b, K[b]) for a, b in zip(seats, seats[1:]) if K[a] > K[b]]
+    assert K["plateSwap1"] + XFADE_F < K["plateSwap2"] and K["plateSwap2"] + XFADE_F < K["windowClose1"], K
+    assert K["windowClose1"] + WINDOW_CLOSE_F <= K["windowOpen2"] and K["windowClose2"] + WINDOW_CLOSE_F <= K["electronIn"], K
+    assert K["noSize"] + 30 <= K["breakDraw"] and K["readoutTicks"][-1] + 30 <= K["closingStart"], K
+    assert K["closingStart"] < K["wayFrame"] < rel_f <= K["ctaFrame"] < chord_f < tl["total_frames"] - 30, K
     return K
 
 
@@ -503,8 +487,8 @@ def main() -> None:
     narration = (narration * (1 + (10 ** (S5_GAIN_DB / 20) - 1) * s5env)).astype(np.float32)
     i_but = max(i for i, x in enumerate(s5w[:-1]) if x["text"].rstrip().endswith((".", "?", "!", ":"))) + 1
     sent = s5w[i_but:]
-    assert sent[0]["text"] == "But" and sent[-1]["text"] == "way.", sent
-    ww = word("s5", "way")
+    assert sent[0]["text"] == "Or" and sent[-1]["text"] == "one.", sent
+    ww = word("s5", "one")
     lifted_base = narration.copy()
     way_gain = WAY_GAIN_START_DB
     while True:
@@ -546,6 +530,12 @@ def main() -> None:
     # The lead-in: the bed is ducked from frame 0 until the first word (not raised and then dipped), so the opening whoosh
     # (X1 rail_draw, 6 f before 'You') sits over a ducked bed (lesson 5) without its peak on the first word (QA A-06).
     held[: int(np.argmax(voiced))] = True
+    # look-ahead (video 17): the bed dips 300 ms BEFORE each voiced run, so a cue on a section's first frame (the descents,
+    # the rail break) lands over a ducked bed instead of the full bed in the gap (lesson 5)
+    look = held.copy()
+    for i in np.nonzero(voiced[1:] & ~voiced[:-1])[0] + 1:
+        look[max(0, i - 30):i] = True
+    held = look
 
     def duck_curve(depth: float) -> np.ndarray:
         target = np.where(held, depth, 0.0)
@@ -561,7 +551,7 @@ def main() -> None:
     r0, r1 = rel_s, chord_film_actual - 0.02
     relr = np.clip((t - r0) / (r1 - r0), 0, 1)
     duck_db = np.where(t >= r0, np.minimum(0.0, duck_db[int(r0 * SR)] * (1 - relr)), duck_db)
-    but_on = word("s5", "but")["start"]
+    but_on = word("s5", "or")["start"]
     cl_env = np.clip((t - (but_on - CLOSING_LEAD_S)) / (CLOSING_LEAD_S - 0.15), 0, 1)
     cl_env = np.where(t >= r0, 1 - relr, 0.5 - 0.5 * np.cos(np.pi * cl_env))
     duck_db = duck_db + CLOSING_DUCK_DB * cl_env
@@ -606,26 +596,20 @@ def main() -> None:
     assert onset_of(tink) < 0.005 * SR, "X6's attack is its first samples (start-aligned)"
 
     PLACE = [
-        ("X1", "rail_draw", whoosh, -0.2, K["railDraw"] - 6, "the rail starts drawing bright (sc01): the whoosh peaks 6 f BEFORE the move and before 'You', so its 30 ms peak is not on the first word (QA A-06, lesson 57)", "peak", w_on),
-        ("X1", "climb_cheetah", whoosh, -6.0, K["climbCheetah"], "the marker's first moving frame toward CHEETAH (sc02)", "peak", w_on),
-        ("X3", "tick_cheetah_1", tick, -13.5, K["cheetahTicks"][0], "counter 0 -> 1", "peak", tick_peak),
-        ("X3", "tick_cheetah_2", tick, -13.5, K["cheetahTicks"][1], "counter 1 -> 2 ON the CHEETAH seat", "peak", tick_peak),
-        ("X1", "climb_falcon", whoosh, -6.0, K["climbFalcon"], "the marker's first moving frame toward FALCON (sc03)", "peak", w_on),
-        ("X1", "climb_sound", whoosh, -3.0, K["climbSound"], "the marker's first moving frame toward SOUND (sc04)", "peak", w_on),
-        ("X2", "sound_thump", boom, -12.0, K["soundSeat"], "the SOUND rung SEATED: the pressure ring starts (sc04, 'hundred')", "peak", pk_(boom)),
-        ("X1", "jump_you", whoosh, -5.0, K["jumpStart"], "the YOU tag + the marker's first moving frame of the jump (sc05, 'doing'; the big whoosh)", "peak", w_on),
-        ("X3", "tick_earth_1", tick, -13.5, K["earthTicks"][0], "counter 3 -> 4", "peak", tick_peak),
-        ("X3", "tick_earth_2", tick, -13.5, K["earthTicks"][1], "counter 4 -> 5 ON the EARTH seat", "peak", tick_peak),
-        ("X4", "hum_probe", hum, -22.0, K["windowOpen2"], "the window's first visible frame (S3, sc06); a soft swell under the plate", "start", 0.0),
-        ("X1", "climb_parker", whoosh, -3.0, K["climbParker"], "the marker's first moving frame toward PARKER (sc07)", "peak", w_on),
-        ("X5", "beam_shimmer", shimmer, -14.0, K["beamStart"], "the light beam's first frame (sc08); it reaches 'c' on lightSeat", "start", 0.0),
-        ("X3", "tick_light_1", tick, -13.5, K["lightTicks"][0], "counter 5 -> 6", "peak", tick_peak),
-        ("X3", "tick_light_2", tick, -13.5, K["lightTicks"][1], "counter 6 -> 7", "peak", tick_peak),
-        ("X3", "tick_light_3", tick, -13.5, K["lightTicks"][2], "counter 7 -> 8", "peak", tick_peak),
-        ("X3", "tick_light_4", tick, -13.5, K["lightTicks"][3], "counter 8 -> 9 ON the LIGHT seat", "peak", tick_peak),
-    ] + [("X3", f"tick_bar_{i + 1}", tick, -16.0, f, f"the ENERGY NEEDED bar's accelerating tick {i + 1}/6 (sc10)", "peak", tick_peak) for i, f in enumerate(K["barTicks"])] \
-      + [("X3", f"tick_digit_{i + 1}", tick, -14.5, f, f"LHC readout glyph {i + 1}/{N_DIGITS} lands (sc11)", "peak", tick_peak) for i, f in enumerate(K["digitTicks"])] \
-      + [("X6", "gap_tink", tink, -16.0, K["gapBracket"], "the marker's final stop + the gap bracket (sc11, 'hair'); before the closing sentence", "start", 0.0)]
+        ("X1", "rail_draw", whoosh, -0.2, K["railDraw"] - 6, "the rail starts drawing (sc01): the whoosh peaks 6 f BEFORE the move, off the first word (lesson 57)", "peak", w_on),
+        ("X1", "descend_hair", whoosh, -3.5, K["descendHair"], "the marker's first moving frame toward HAIR (sc02)", "peak", w_on),
+        ("X1", "descend_cell", whoosh, -2.0, K["descendCell"], "the marker's first moving frame toward CELL (sc04)", "peak", w_on),
+        ("X1", "descend_virus", whoosh, -1.0, K["descendVirus"], "the marker's first moving frame toward VIRUS (sc05)", "peak", w_on),
+        ("X4", "hum_atom", hum, -22.0, K["windowOpen2"], "the window re-opens on the drawn atom (sc06)", "start", 0.0),
+        ("X1", "descend_atom", whoosh, -1.0, K["descendAtom"], "the marker's first moving frame toward ATOM (sc06)", "peak", w_on),
+        ("X1", "descend_proton", whoosh, -3.0, K["descendProton"], "the marker's first moving frame toward PROTON (sc07)", "peak", w_on),
+        ("X6", "no_size_tink", tink, -16.0, K["noSize"], "'no size found' seats under the electron bracket (sc08)", "start", 0.0),
+        ("X1", "rail_break", whoosh, -1.0, K["breakDraw"], "the rail BREAK draws (sc09, 'Below')", "peak", w_on),
+        ("X5", "planck_shimmer", shimmer, -14.0, K["planckIn"], "the dashed PLANCK line fades in (sc09)", "start", 0.0),
+    ] + [("X3", f"tick_{name}_{i + 1}", tick, -13.5, f, f"ZEROS counter step on the {name.upper()} rung", "peak", tick_peak)
+         for name in ("sand", "hair", "cell", "virus", "atom", "proton") for i, f in enumerate(K[f"{name}Ticks"])] \
+      + [("X3", f"tick_spin_{i + 1}", tick, -15.0, f, f"counter spin 14 -> 34, accelerating tick {i + 1}/6 (sc09)", "peak", tick_peak) for i, f in enumerate(K["spinTicks"])] \
+      + [("X3", f"tick_readout_{i + 1}", tick, -11.0 if i == 0 else -16.0, f, f"readout typing tick {i + 1}/9 (sc10)", "peak", tick_peak) for i, f in enumerate(K["readoutTicks"])]
     PLACE.sort(key=lambda p: p[4])
     sfx = np.zeros((n, 2), dtype=np.float32)
     cues = []
