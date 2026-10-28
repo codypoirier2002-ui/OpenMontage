@@ -1,19 +1,19 @@
 // Shapes of artifacts/props.json (written by build_props.py). All frames are ABSOLUTE @ 30 fps.
-// Pattern of projects/how-a-cat-lands/types.ts (video 15, QA passed) + projects/how-hot-can-it-get/types.ts (the ladder),
-// re-dressed for the Speed Ladder (no black-body, no camera: the rail never moves).
+// Video 17 "How Small Can Anything Get?" / the SCALE WELL: video 16's ladder engine flipped DOWNWARD in metres
+// (L = -log10(metres); the rail never moves, no camera).
 
 export type SectionId = "s1" | "s2" | "s3" | "s4" | "s5";
 export type SceneId =
   | "sc01" | "sc02" | "sc03" | "sc04" | "sc05" | "sc06"
   | "sc07" | "sc08" | "sc09" | "sc10" | "sc11" | "sc12";
-export type RungId = "walk" | "cheetah" | "falcon" | "sound" | "earth" | "parker" | "light";
-export type MediaId = "S1" | "S2" | "S3";
+export type RungId = "sand" | "hair" | "cell" | "virus" | "atom" | "proton";
+export type MediaId = "S1" | "S2" | "S3" | "ATOM";
 
 export type Word = { section: string; text: string; f0: number; f1: number };
 export type Window_ = { id: string; from: number; durationInFrames: number };
 export type SceneWindow = Window_ & { section: string };
 
-/** this film has no caption tones (the plan: 'plain only'); the kit's TONE / GLOW maps carry the one entry */
+/** no caption tones in this film (plain only) */
 export type CaptionTone = "plain";
 export type CaptionWord = { text: string; f0: number; f1: number; line: number; tone: CaptionTone };
 export type CaptionPage = { section: string; startFrame: number; exitFrame: number; words: CaptionWord[] };
@@ -25,66 +25,60 @@ export type MeterKey = { frame: number; glideStart: number; state: MeterState; s
 export type Rect = { x0: number; x1: number; y0: number; y1: number };
 
 /**
- * A RUNG (shared/Ladder.tsx draws it; build_props.py): its tick drops onto y = railY(L) and its label chip (name / number,
- * `lines`) SEATS on `seat` (gravity drop, T.seat), i.e. only when the marker arrives (lessons 33 / 46). `probably` rungs
- * carry the hatched chip 'commonly cited' under the label (the FALCON dive). `kmh` is the brief's number.
+ * A RUNG (shared/Ladder.tsx draws it): its tick drops onto y = railY(L) and its label chip (`lines`: 'NAME · number' or the
+ * name over the number) SEATS on `seat` (gravity drop, T.seat) WITH the marker's arrival (lessons 33 / 46). `metres` is the
+ * brief's value; L = -log10(metres) (the brief's placement).
  */
-export type Rung = { id: RungId; name: string; num: string; lines: string[]; kmh: number; L: number; seat: number; probably: boolean; chip: string | null };
+export type Rung = { id: RungId; name: string; num: string; lines: string[]; metres: number; L: number; seat: number };
 
 /**
- * THE LADDER (per-frame root curves; arrays have total_frames entries). shared/Ladder.tsx draws them on every frame.
- *   markerL   the marker's position, log10(km/h) (rung by rung: eased climbs; the asymptotic creep toward 'c' from sc09)
- *   markerVis 0..1 the marker's opacity (1 from frame 0)
- *   streak    0..1 the marker's motion intensity (streaks behind it while it climbs; length = log10(speed) px-scaled)
- *   cLit      0.3..1 the red 'c' line's intensity (dim until the light beam reaches it in sc08)
- *   gap       0..1 the gap bracket + 'the gap' (sc11 -> the end)
- *   railDraw  0..1 the rail drawing bright from its foot to 'c' (sc01, X1 whoosh); the dim rail is there from frame 0
- *   The marker NEVER touches 'c': build_props.py asserts railY(markerL) >= cY + MARKER_GAP_PX on every frame.
+ * THE LADDER (per-frame root curves; arrays have total_frames entries).
+ *   markerL   the marker's L (descending rung by rung on eased moves: first moving frame = descend*, landing ON *Seat)
+ *   markerVis 0..1;  railDraw 0..1 the rail drawing bright top -> bottom (X1 on railDraw)
+ *   veil      0..0.2 the faint veil dimming the rail below YOUR EYE (from eyeLine, for the rest of the film)
  */
-export type LadderInfo = {
-  markerL: number[]; markerVis: number[]; streak: number[]; cLit: number[]; gap: number[]; railDraw: number[];
-  rungs: Rung[]; cL: number; markerR: number; gapPx: number; notes: string;
+export type LadderInfo = { markerL: number[]; markerVis: number[]; railDraw: number[]; veil: number[]; rungs: Rung[]; markerR: number; notes: string };
+
+/** a dashed REFERENCE line across the rail (not a rung): draw 0..1 lands ON its key frame; label lines left of the rail */
+export type RefLine = { id: "eye" | "micro"; L: number; lines: string[]; draw: number[]; at: number };
+
+/** the ROOT devices below the proton (sc08 ->) and the readout (sc10 ->) */
+export type Devices = {
+  refs: RefLine[];
+  /** sc08: the bracket under the rail bottom + the open downward arrow + 'ELECTRON' (alpha), the sub-label SEATS on `subSeat` */
+  electron: { alpha: number[]; name: string; sub: string; subSeat: number };
+  /** sc09: the rail BREAK (zigzag) draw 0..1 from breakDraw */
+  brk: number[];
+  /** sc09 ->: the dashed violet PLANCK line (alpha, in ON planckIn), brightened ON floorGlow (glow 0..1) + 'a floor? unproven' */
+  planck: { y: number; alpha: number[]; glow: number[]; label: string; floor: string; floorSeat: number };
+  /** sc10 ->: the readout; count = glyphs shown of `text` (1 on readoutStart ... all ON readoutEnd); `lines` = its wrap */
+  readout: { count: number[]; alpha: number[]; text: string; lines: string[] };
+  /** sc07: the note in the window under the drawn atom (seats ON nucleusPulse); `pulse` = the nucleus pulse's peak frame */
+  atomNote: { lines: string[]; seat: number; alpha: number[]; pulse: number };
 };
 
-/** THE ZEROS COUNTER (root, shared/Counter.tsx): value per frame (0 -> 9 = the order of magnitude of the marker's rung,
- *  i.e. the digits after the first), `ticks` = the frames it steps on (X3 there, except under X2 / X5). */
+/** THE ZEROS COUNTER (root): zeros after the decimal point of the active rung's metres; steps ON `ticks` */
 export type CounterInfo = { value: number[]; alpha: number[]; ticks: number[]; label: string };
 
-/** a plate in the root WINDOW (an AI impression, or its PLACEHOLDER while the still is pending) */
+/** a state of the root WINDOW: an AI plate (`base` = public/ path) or the DRAWN atom (`base` = null) */
 export type WindowPlate = {
   id: MediaId;
   scene: string;
   alpha: number[];
-  /** slow push (scale about the window centre) from pushFrom to pushTo */
   push: [number, number];
   pushFrom: number;
   pushTo: number;
   tag: string;
-  /** public/ path of the staged plate (stills/<id>.png) */
-  base: string;
-  /** true while prepare_media.py staged a labelled dark card instead of the real still */
+  base: string | null;
   placeholder: boolean;
 };
 export type WindowInfo = { box: Rect; radius: number; frame: number; open: number[]; plates: WindowPlate[] };
-
-/** THE YOU TAG (units mount <YouTagLive/>): L = the rung it sits on (WALK -> EARTH on the jump), alpha 0..1 */
-export type YouInfo = { L: number[]; alpha: number[]; text: string };
-/** THE LIGHT BEAM (units mount <LightBeamLive/>): progress 0..1 up the rail (0 = the foot, 1 = 'c'), alpha 0..1 */
-export type BeamInfo = { progress: number[]; alpha: number[] };
-/** THE ENERGY NEEDED bar + curve (units mount <EnergyLive/>): vc = v/c, gamma = 1/sqrt(1-vc^2), barH px (runs off the top
- *  on 'end'), alpha 0..1 (gone before the LHC page, lesson 42) */
-export type EnergyInfo = { vc: number[]; gamma: number[]; barH: number[]; alpha: number[]; pxPerGamma: number; label: string; axisX: string; axisY: string; tag: string };
-/** THE LHC READOUT (units mount <NinesReadoutLive/>): count = glyphs of `value` shown (0..10, one per X3 tick), alpha */
-export type NinesInfo = { count: number[]; alpha: number[]; label: string; value: string; ticks: number[]; seat: number };
-/** 'anything with mass' (U2, sc09-sc10) and the orbit inset (U1, sc05): root-owned visibilities so the lesson-42 exits are asserted */
-export type Fade = { alpha: number[] };
 
 export type Placard = {
   enter: number;
   exit: number;
   line: string;
   lines: string[];
-  /** Saira Condensed 600 px, the largest that fits the rail (measured in build_props.py) */
   size: number;
   w: number;
   fine: string | null;
@@ -97,44 +91,43 @@ export type Placard = {
 export type AudioFrames = {
   soundtrack: string;
   railDraw: number;
-  walkSeat: number;
+  sandSeat: number;
+  sandTicks: number[];
   windowOpen1: number;
-  climbCheetah: number;
-  cheetahSeat: number;
-  cheetahTicks: number[];
-  plateSwap: number;
-  climbFalcon: number;
-  falconSeat: number;
+  descendHair: number;
+  hairSeat: number;
+  hairTicks: number[];
+  eyeLine: number;
+  plateSwap1: number;
+  descendCell: number;
+  cellSeat: number;
+  cellTicks: number[];
+  plateSwap2: number;
+  descendVirus: number;
+  virusSeat: number;
+  virusTicks: number[];
+  lightLine: number;
   windowClose1: number;
-  climbSound: number;
-  soundSeat: number;
-  youSeat: number;
-  jumpStart: number;
-  earthSeat: number;
-  earthTicks: number[];
-  orbitIn: number;
-  orbitOut: number;
   windowOpen2: number;
-  probeLabel: number;
-  climbParker: number;
-  parkerSeat: number;
-  fallArrow: number;
+  descendAtom: number;
+  atomSeat: number;
+  atomTicks: number[];
+  nucleusPulse: number;
+  descendProton: number;
+  protonSeat: number;
+  protonTicks: number[];
   windowClose2: number;
-  beamStart: number;
-  lightSeat: number;
-  lightTicks: number[];
-  wallStart: number;
-  massLabel: number;
-  massOut: number;
-  energyIn: number;
-  barStart: number;
-  barTicks: number[];
-  barOff: number;
-  energyOut: number;
-  readoutSeat: number;
-  digitTicks: number[];
-  creepEnd: number;
-  gapBracket: number;
+  electronIn: number;
+  noSize: number;
+  breakDraw: number;
+  planckIn: number;
+  spinStart: number;
+  spinEnd: number;
+  spinTicks: number[];
+  readoutStart: number;
+  readoutEnd: number;
+  readoutTicks: number[];
+  floorGlow: number;
   closingStart: number;
   wayFrame: number;
   wayEndFrame: number;
@@ -142,16 +135,12 @@ export type AudioFrames = {
   ctaFrame: number;
 };
 
-/** motion constants (build_soundtrack.py; build_props.py asserts) */
 export type Motion = { SEAT_F: number; WINDOW_OPEN_F: number; WINDOW_CLOSE_F: number; XFADE_F: number; CLIMB_F: number; BEAM_F: number; TICK_STEP_F: number; FADE_F: number };
 
-/** verified root strings (scene_plan.metadata.verified_on_screen_strings) the builders may reuse */
-export type Labels = {
-  axis: string; zeros: string; ai: string; drawn: string; c: string; you: string; gap: string; mass: string;
-  energy: string; speed: string; energyAxis: string; lhc: string; nines: string; probe: string; falling: string; cited: string;
-};
+/** verified root strings (scene_plan.metadata.verified_on_screen_strings) */
+export type Labels = { axis: string; zeros: string; ai: string; drawn: string };
 
-export type SpeedProps = {
+export type ScaleProps = {
   timeline: {
     fps: number;
     width: number;
@@ -165,35 +154,23 @@ export type SpeedProps = {
   captionPages: CaptionPage[];
   meter: MeterKey[];
   ladder: LadderInfo;
+  devices: Devices;
   counter: CounterInfo;
   window: WindowInfo;
-  you: YouInfo;
-  beam: BeamInfo;
-  energy: EnergyInfo;
-  nines: NinesInfo;
-  mass: Fade;
-  orbit: Fade;
   placards: Placard[];
   labels: Labels;
   cta: { text: string; lines: string[]; frame: number };
-  /** the finished-line ending: from `from` (= the release of 'way.') every channel is constant; every ambient clock is
-   * periodic to `freezeFrom` and reads frame 0's values from it (T.loopFrame) */
+  /** the finished-line ending: from `from` (= the release of 'one.') every channel is constant */
   settle: { from: number; freezeFrom: number; chordFrame: number };
   freezes: { from: number; to: number }[];
   audio: AudioFrames;
   motion: Motion;
-  /** "picture" renders the picture layer only (no overlay plane) */
   layers: "all" | "picture";
   exportVariant: "main" | "loop";
 };
 
 /** Props every scene component receives from the root. Frames are absolute. */
-export type SceneProps = {
-  /** first frame of this scene's window (its boundary with the previous scene) */
-  from: number;
-  /** first frame AFTER this scene's window (the next scene's boundary) */
-  to: number;
-};
+export type SceneProps = { from: number; to: number };
 
 /** How long a scene stays mounted around its window, and its stacking order (higher draws on top). */
 export type Mount = { pre: number; post: number; z: number };

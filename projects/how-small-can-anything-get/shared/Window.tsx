@@ -1,20 +1,19 @@
-// THE WINDOW (ROOT ONLY for the AI plates: Composition.tsx mounts <WindowView/> once; props.window, build_props.py; the AI
-// tag is root too: <WindowTags/> on the overlay plane, keyed to each plate's ACTUAL visibility). Pattern of
-// projects/how-a-cat-lands/shared/Window.tsx (video 15) with video 13's frame look.
+// THE WINDOW (ROOT ONLY: Composition.tsx mounts <WindowView/> once; props.window, build_props.py; its ONE tag is root too:
+// <WindowTags/> on the overlay plane, keyed to the state that is actually showing). Video 16's window, re-used:
 //   ONE portrait box x 580-920, y 440-893 (theme.ts L.win), rounded 22 px, a 6 px steel frame + a 1 px lit rim + an inner shadow
-//   S1  sc02        the cheetah (placeholder card until the still lands); push 1.00 -> 1.03
-//   S2  sc03        the falcon dive, crossfading in over XFADE_F at the scene start (the tag swaps by a HARD cut at the midpoint,
-//                   lesson 38: one tag on every frame a plate is visible)
-//   S3  sc06-sc07   the Parker Solar Probe near the Sun; push 1.00 -> 1.04
-// The window opens over 6 f (ease-out, first visible frame ON its key frame) and closes over 8 f (ease-in-out): scale 0.96 -> 1
-// + fade. <WindowFrame/> is exported for builders who need the window's frame look around their OWN drawings (not for AI
-// media: every AI plate goes through props.window so the root tags it). Hooks at the top (lesson 1). No blend modes (lesson 24).
+//   S1  sc01-sc03   sand grains (AI impression), open ON windowOpen1
+//   S2  sc04        red blood cells, crossfading in over XFADE_F from plateSwap1 (hard tag swap at the midpoint, lesson 38)
+//   S3  sc05        a virus, crossfading in from plateSwap2; the window closes from windowClose1
+//   ATOM sc06-sc07  the DRAWN atom (shared/Devices.tsx <AtomDrawing/>, 'drawn · not to scale'), open ON windowOpen2, closes from windowClose2
+// Opens over 6 f (ease-out, first visible frame ON its key frame), closes over 8 f (first moving frame ON its key frame).
+// Hooks at the top (lesson 1). No blend modes (lesson 24).
 
 import React from "react";
 import { Img, staticFile, useCurrentFrame } from "remotion";
 import { C, FONT, L, rgba } from "../theme";
 import { prog, useT } from "../time";
 import type { WindowPlate } from "../types";
+import { AtomDrawing } from "./Devices";
 
 export const WindowFrame: React.FC<{ open: number; children?: React.ReactNode }> = ({ open, children }) => {
   const b = L.win;
@@ -36,6 +35,13 @@ export const WindowFrame: React.FC<{ open: number; children?: React.ReactNode }>
 const Plate: React.FC<{ m: WindowPlate; frame: number }> = ({ m, frame }) => {
   const b = L.win;
   const push = m.push[0] + (m.push[1] - m.push[0]) * prog(frame, m.pushFrom, m.pushTo);
+  if (m.base === null) {
+    return (
+      <div style={{ position: "absolute", inset: 0, transform: `scale(${push})`, transformOrigin: "50% 50%" }}>
+        <AtomDrawing w={b.x1 - b.x0} h={b.y1 - b.y0} />
+      </div>
+    );
+  }
   return (
     <Img src={staticFile(m.base)} style={{ position: "absolute", left: 0, top: 0, width: b.x1 - b.x0, height: b.y1 - b.y0, transform: `scale(${push})`, transformOrigin: "50% 50%" }} />
   );
@@ -59,7 +65,7 @@ export const WindowView: React.FC = () => {
   );
 };
 
-/** ROOT (overlay plane): the window's ONE tag ('AI impression'), tied to the plate that is actually showing (hard swap at a
+/** ROOT (overlay plane): the window's ONE tag ('AI impression' / 'drawn · not to scale'), tied to the plate that is actually showing (hard swap at a
  *  crossfade's midpoint, lesson 38); fades with the window */
 export const WindowTags: React.FC = () => {
   const frame = useCurrentFrame();

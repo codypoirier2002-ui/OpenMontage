@@ -6,14 +6,13 @@
 // boundary and the next scene's, and is mounted from `from - pre` to `to + post` (each scene file exports its own `mount`;
 // hand-off contracts in BUILD.md §7). Higher z draws on top.
 //
-// Layers (THE ROOT OWNS THE SPEED LADDER): <Sky> (night ink + star dust) -> <Ladder> (the rail, decade ticks, the red 'c'
-// line, the rung ticks + label chips, the marker + streaks, the gap bracket) -> <YouTagLive> (the YOU tag, root: it must
-// persist sc05 -> sc12 across both units) -> scenes (picture: the units' per-scene action
-// and the DEVICES from shared/Devices.tsx, above the rail) -> <WindowView> (S1 / S2 / S3, ONE box right of the rung labels)
-// -> <Counter> (ZEROS) -> <Grain> (2 %, seed T.driftFrame(T.loopFrame(f))) -> the OVERLAY PLANE, bottom to top: the window's
-// AI tag -> scene Overlays (labels, tags) -> placard rail -> honesty tab -> captions -> the settle CTA.
+// Layers (THE ROOT OWNS THE SCALE WELL): <Sky> (ink darkening downward) -> <Ladder> (the rail, decade powers, the reference
+// lines + veil, the rung ticks + label chips, the marker) -> <RootDevices> (the electron bracket, the break, the Planck line,
+// the readout) -> scenes (picture: per-scene emphasis) -> <WindowView> (S1 / S2 / S3 / the drawn atom) -> <Counter> (ZEROS)
+// -> <Grain> -> the OVERLAY PLANE, bottom to top: the window's tag + the atom note -> scene Overlays -> placard rail ->
+// honesty tab -> captions -> the settle CTA.
 // props.layers === "picture" renders the picture layer only. The soundtrack (narration + the ducked bed landing on its last
-// tonic + SFX, -14 LUFS; voice + SFX only until the bed lands) is one premixed file (build_soundtrack.py).
+// tonic + SFX) is one premixed file (build_soundtrack.py).
 
 import React from "react";
 import { AbsoluteFill, Audio, CalculateMetadataFunction, staticFile, useCurrentFrame } from "remotion";
@@ -22,16 +21,16 @@ import { HonestyTab } from "./overlay/HonestyTab";
 import { PlacardRail, SettleCta } from "./overlay/PlacardRail";
 import { SCENES } from "./scenes";
 import { Counter } from "./shared/Counter";
-import { YouTagLive } from "./shared/Devices";
+import { AtomNote, RootDevices } from "./shared/Devices";
 import { Grain } from "./shared/Grain";
 import { Ladder } from "./shared/Ladder";
 import { Sky } from "./shared/Sky";
 import { WindowTags, WindowView } from "./shared/Window";
 import { C } from "./theme";
 import { TimingProvider } from "./time";
-import type { SceneId, SpeedProps } from "./types";
+import type { SceneId, ScaleProps } from "./types";
 
-export const ScaleWell: React.FC<SpeedProps> = (props) => {
+export const ScaleWell: React.FC<ScaleProps> = (props) => {
   const frame = useCurrentFrame();
   const scenes = props.timeline.scenes;
   const total = props.timeline.total_frames;
@@ -50,7 +49,7 @@ export const ScaleWell: React.FC<SpeedProps> = (props) => {
       <AbsoluteFill style={{ backgroundColor: C.skyTop }}>
         <Sky />
         <Ladder />
-        <YouTagLive />
+        <RootDevices />
         {live.map((s) => {
           const Scene = SCENES[s.id].Component;
           return (
@@ -65,6 +64,7 @@ export const ScaleWell: React.FC<SpeedProps> = (props) => {
         {overlay ? (
           <AbsoluteFill style={{ pointerEvents: "none" }}>
             <WindowTags />
+            <AtomNote />
             {live.map((s) => {
               const Ov = SCENES[s.id].Overlay;
               return Ov ? <Ov key={`ov-${s.id}`} from={s.from} to={s.to} /> : null;
@@ -81,7 +81,7 @@ export const ScaleWell: React.FC<SpeedProps> = (props) => {
   );
 };
 
-export const calculateMetadata: CalculateMetadataFunction<SpeedProps> = async ({ props }) => ({
+export const calculateMetadata: CalculateMetadataFunction<ScaleProps> = async ({ props }) => ({
   durationInFrames: props.timeline.total_frames,
   fps: props.timeline.fps,
   width: props.timeline.width,

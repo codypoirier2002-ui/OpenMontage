@@ -7,7 +7,7 @@
  "narration_source": "assets/audio/narration/clean/sN.wav (THE CLEAN WAVs, process_narration.py)",
  "bed_present": true,
  "frames": {
-  "railDraw": 20,
+  "railDraw": 10,
   "sandSeat": 29,
   "sandTicks": [
    29
@@ -356,22 +356,22 @@
   {
    "id": "X1",
    "name": "rail_draw",
-   "frame": 14,
-   "seconds": 0.467,
-   "peak_dbfs": -0.2,
+   "frame": 4,
+   "seconds": 0.133,
+   "peak_dbfs": -3.2,
    "landing": "peak",
    "landing_offset_in_sample_s": 0.1667,
-   "placed_at_s": 0.3,
+   "placed_at_s": -0.0334,
    "rule": "the rail starts drawing (sc01): the whoosh peaks 6 f BEFORE the move, off the first word (lesson 57)",
    "final_phone_band_dbfs": {
-    "sfx": -21.9,
-    "bed": -34.1,
-    "voice": -59.4,
-    "sfx_over_bed_db": 12.2,
-    "hit_30ms_sfx_dbfs": -23.7,
-    "hit_30ms_sfx_over_bed_db": 10.9
+    "sfx": -24.9,
+    "bed": -33.4,
+    "voice": -159.6,
+    "sfx_over_bed_db": 8.5,
+    "hit_30ms_sfx_dbfs": -26.7,
+    "hit_30ms_sfx_over_bed_db": 6.8
    },
-   "sample_peak_dbfs": 4.1
+   "sample_peak_dbfs": 1.1
   },
   {
    "id": "X3",
@@ -384,12 +384,12 @@
    "placed_at_s": 0.9486,
    "rule": "ZEROS counter step on the SAND rung",
    "final_phone_band_dbfs": {
-    "sfx": -28.4,
+    "sfx": -31.7,
     "bed": -34.5,
     "voice": -23.0,
-    "sfx_over_bed_db": 6.1,
-    "hit_30ms_sfx_dbfs": -23.8,
-    "hit_30ms_sfx_over_bed_db": 14.3
+    "sfx_over_bed_db": 2.8,
+    "hit_30ms_sfx_dbfs": -24.7,
+    "hit_30ms_sfx_over_bed_db": 13.4
    },
    "sample_peak_dbfs": -9.2
   },
@@ -1112,7 +1112,7 @@
   "mono_at_frame": 1373.7,
   "windows_below_minus42": 0,
   "mono_windows_below_minus42": 0,
-  "lead_in_min_100ms_rms_dbfs": -31.2,
+  "lead_in_min_100ms_rms_dbfs": -28.4,
   "final_fade": {
    "seconds": 0.6,
    "floor_gain_db": -36.0,

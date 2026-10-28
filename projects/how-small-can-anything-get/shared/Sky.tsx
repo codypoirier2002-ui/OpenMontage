@@ -1,4 +1,4 @@
-// THE SKY (ROOT ONLY): the night-ink vertical gradient (#070A12 -> #0D1424) + faint deterministic star dust (noise.ts rnd,
+// THE BACKGROUND (ROOT ONLY): ink darkening downward (#0A0D14 -> #04050A, the well) + faint deterministic dust (noise.ts rnd,
 // never Math.random); the dust twinkles on a loop clock (T.loopFrame) so the settle is still. Hooks at the top (lesson 1).
 
 import React from "react";

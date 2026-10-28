@@ -17,7 +17,7 @@ import { useCurrentFrame } from "remotion";
 import { C, FONT, L, glass } from "../theme";
 import { prog, useT } from "../time";
 import type { CaptionPage, Placard } from "../types";
-import { Rich } from "../shared/Type";
+import { Sci } from "../shared/Type";
 import { PageLines, slabBox } from "./Captions";
 
 export const PlacardRail: React.FC<{ placards: Placard[] }> = ({ placards }) => {
@@ -38,12 +38,12 @@ export const PlacardRail: React.FC<{ placards: Placard[] }> = ({ placards }) => 
     >
       {pl.lines.map((l, i) => (
         <div key={i} style={{ ...line, fontSize: pl.size }}>
-          <Rich text={l} size={pl.size} color={C.bone} />
+          <Sci text={l} size={pl.size} color={C.bone} />
         </div>
       ))}
       {pl.fine ? (
         <div style={{ ...line, fontSize: pl.fineSize ?? 24, color: C.steel, marginTop: 2 }}>
-          <Rich text={pl.fine} size={pl.fineSize ?? 24} color={C.steel} />
+          <Sci text={pl.fine} size={pl.fineSize ?? 24} color={C.steel} />
         </div>
       ) : null}
     </div>

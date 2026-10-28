@@ -97,3 +97,30 @@ export const Label: React.FC<{
     </div>
   );
 };
+
+// ---- video 17: powers of ten -------------------------------------------------------------------------------------------
+// No face carries the superscripts ⁻ ⁴-⁹ ⁰ (fetch_fonts.py / build_props.py): <Sci> sets every run of superscript characters
+// as RAISED text in the parent's face at max(24, 0.72 * size) px (never under 24 px, lesson 31); everything else through <Rich>.
+const SUP: Record<string, string> = { "⁻": "−", "⁰": "0", "¹": "1", "²": "2", "³": "3", "⁴": "4", "⁵": "5", "⁶": "6", "⁷": "7", "⁸": "8", "⁹": "9" };
+export const supSize = (size: number) => Math.max(24, Math.round(size * 0.72));
+
+export const Sci: React.FC<{ text: string; size: number; color?: string }> = ({ text, size, color = "currentColor" }) => {
+  const runs: { sup: boolean; s: string }[] = [];
+  for (const ch of text) {
+    const sup = ch in SUP;
+    const last = runs[runs.length - 1];
+    if (last && last.sup === sup) last.s += sup ? SUP[ch] : ch;
+    else runs.push({ sup, s: sup ? SUP[ch] : ch });
+  }
+  return (
+    <>
+      {runs.map((r, i) =>
+        r.sup ? (
+          <span key={i} style={{ fontSize: supSize(size), position: "relative", top: -size * 0.4, marginLeft: 1, letterSpacing: -0.5 }}>{r.s}</span>
+        ) : (
+          <Rich key={i} text={r.s} size={size} color={color} />
+        ),
+      )}
+    </>
+  );
+};

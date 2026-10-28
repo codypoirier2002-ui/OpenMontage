@@ -6,14 +6,14 @@
    "id": "sc01",
    "type": "animation",
    "start_seconds": 0.0,
-   "end_seconds": 4.27,
+   "end_seconds": 3.333,
    "script_section_id": "s1",
-   "description": "Render: atelier component sc01. 'Scale Well': the speed ladder turned into a well. Ink sky darkening downward (#0A0D14 top -> #04050A bottom, faint grain); a vertical steel log rail at x ~250, 1 mm at the TOP (y 380) to 10^-18 m at y 1000, decade ticks every 10x with mono numbers in metres ('1 mm', '100 um' ... written as powers: 10^-3 ... 10^-18, 24 px); label 'metres \u00b7 log scale'. A warm white-amber marker (#FFE7B8 core) DESCENDS rung by rung. Below 10^-18 the rail BREAKS (drawn zigzag, y 1012-1040, 'x 10^-17 more' omitted) and a dashed violet line (#9C8CFF) at y ~1080 marks PLANCK. ZEROS counter top right (zeros after the decimal point). Window x 580-920 y 440-893 for AI plates. the well appears; the marker at SAND.",
+   "description": "Render: atelier component sc01. 'Scale Well': the speed ladder turned into a well. Ink sky darkening downward (#0A0D14 top -> #04050A bottom, faint grain); a vertical steel log rail at x ~250, 1 mm at the TOP (y 380) to 10^-18 m at y 1000, decade ticks every 10x with mono numbers in metres ('1 mm', '100 um' ... written as powers: 10^-3 ... 10^-18, 24 px); label 'metres · log scale'. A warm white-amber marker (#FFE7B8 core) DESCENDS rung by rung. Below 10^-18 the rail BREAKS (drawn zigzag, y 1012-1040, 'x 10^-17 more' omitted) and a dashed violet line (#9C8CFF) at y ~1080 marks PLANCK. ZEROS counter top right (zeros after the decimal point). Window x 580-920 y 440-893 for AI plates. the well appears; the marker at SAND.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'A grain of sand is about half a millimetre.'. TAB MEASURED. OVERLAYS: rail draws top->bottom on 'grain' (X1); rung 'SAND \u00b7 ~0.5 mm'; counter 'ZEROS 3' (0.0005 m); window opens with plate S1 (sand grains, AI impression).",
+   "overlay_notes": "CAPTION 'A grain of sand is about half a millimetre.'. TAB MEASURED. OVERLAYS: rail draws top->bottom on 'grain' (X1); rung 'SAND · ~0.5 mm'; counter 'ZEROS 3' (0.0005 m); window opens with plate S1 (sand grains, AI impression).",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -48,15 +48,15 @@
   {
    "id": "sc02",
    "type": "animation",
-   "start_seconds": 4.27,
-   "end_seconds": 8.14,
+   "start_seconds": 3.333,
+   "end_seconds": 5.733,
    "script_section_id": "s1",
    "description": "Render: atelier component sc02. Continuous Scale Well frame. one step down: HAIR.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'A human hair is a tenth of that.'. TAB MEASURED. OVERLAYS: marker descends to 'HAIR \u00b7 ~70 \u00b5m' (X1); counter 3->4 (X3); a drawn hair cross-section line beside the rung (drawn).",
+   "overlay_notes": "CAPTION 'A human hair is a tenth of that.'. TAB MEASURED. OVERLAYS: marker descends to 'HAIR · ~70 µm' (X1); counter 3->4 (X3); a drawn hair cross-section line beside the rung (drawn).",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -86,15 +86,15 @@
   {
    "id": "sc03",
    "type": "animation",
-   "start_seconds": 8.14,
-   "end_seconds": 12.0,
+   "start_seconds": 5.733,
+   "end_seconds": 8.767,
    "script_section_id": "s1",
    "description": "Render: atelier component sc03. Continuous Scale Well frame. the eye limit.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'And that's about where your eyes give up.'. TAB PROBABLY. OVERLAYS: a dashed line at 10^-4 m 'YOUR EYE \u00b7 ~0.1 mm' with a small eye icon; everything below it dims 20% for the rest of the film.",
+   "overlay_notes": "CAPTION 'And that's about where your eyes give up.'. TAB PROBABLY. OVERLAYS: a dashed line at 10^-4 m 'YOUR EYE · ~0.1 mm' with a small eye icon; everything below it dims 20% for the rest of the film.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -124,15 +124,15 @@
   {
    "id": "sc04",
    "type": "animation",
-   "start_seconds": 12.0,
-   "end_seconds": 16.28,
+   "start_seconds": 8.767,
+   "end_seconds": 12.2,
    "script_section_id": "s2",
    "description": "Render: atelier component sc04. Continuous Scale Well frame. CELL.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'A red blood cell is ten times smaller again.'. TAB MEASURED. OVERLAYS: marker to 'RED BLOOD CELL \u00b7 ~8 \u00b5m' (X1), counter 4->5; window crossfades to plate S2 (red blood cells, AI impression).",
+   "overlay_notes": "CAPTION 'A red blood cell is ten times smaller again.'. TAB MEASURED. OVERLAYS: marker to 'RED BLOOD CELL · ~8 µm' (X1), counter 4->5; window crossfades to plate S2 (red blood cells, AI impression).",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -167,15 +167,15 @@
   {
    "id": "sc05",
    "type": "animation",
-   "start_seconds": 16.28,
-   "end_seconds": 22.18,
+   "start_seconds": 12.2,
+   "end_seconds": 18.767,
    "script_section_id": "s2",
    "description": "Render: atelier component sc05. Continuous Scale Well frame. VIRUS below the light limit.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'Most viruses are smaller still, too small for any ordinary microscope to see.'. TAB MEASURED. OVERLAYS: marker to 'VIRUS \u00b7 ~100 nm' (X1), counter 5->6; a dashed line 'LIGHT MICROSCOPE \u00b7 ~200 nm' just above it; window crossfades to plate S3 (virus, AI impression), then closes before the next tab glide.",
+   "overlay_notes": "CAPTION 'Most viruses are smaller still, too small for any ordinary microscope to see.'. TAB MEASURED. OVERLAYS: marker to 'VIRUS · ~100 nm' (X1), counter 5->6; a dashed line 'LIGHT MICROSCOPE · ~200 nm' just above it; window crossfades to plate S3 (virus, AI impression), then closes before the next tab glide.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -210,15 +210,15 @@
   {
    "id": "sc06",
    "type": "animation",
-   "start_seconds": 22.18,
-   "end_seconds": 26.87,
+   "start_seconds": 18.767,
+   "end_seconds": 22.4,
    "script_section_id": "s3",
    "description": "Render: atelier component sc06. Continuous Scale Well frame. ATOM.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'An atom is a thousand times smaller than a virus.'. TAB MEASURED. OVERLAYS: marker to 'ATOM \u00b7 ~0.1 nm' (X1), counter 6->9 (three ticks); window shows a DRAWN atom (code: electron cloud haze, a nucleus dot) tagged 'drawn \u00b7 not to scale'.",
+   "overlay_notes": "CAPTION 'An atom is a thousand times smaller than a virus.'. TAB MEASURED. OVERLAYS: marker to 'ATOM · ~0.1 nm' (X1), counter 6->9 (three ticks); window shows a DRAWN atom (code: electron cloud haze, a nucleus dot) tagged 'drawn · not to scale'.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -248,15 +248,15 @@
   {
    "id": "sc07",
    "type": "animation",
-   "start_seconds": 26.87,
-   "end_seconds": 33.18,
+   "start_seconds": 22.4,
+   "end_seconds": 28.567,
    "script_section_id": "s3",
    "description": "Render: atelier component sc07. Continuous Scale Well frame. PROTON.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'And the proton at its centre is sixty thousand times smaller than the atom.'. TAB MEASURED. OVERLAYS: the drawn nucleus pulses; marker to 'PROTON \u00b7 0.84 fm radius' (X1), counter 9->14 (five ticks); note in window 'to scale, this dot would be 0.005 px' (drawn).",
+   "overlay_notes": "CAPTION 'And the proton at its centre is sixty thousand times smaller than the atom.'. TAB MEASURED. OVERLAYS: the drawn nucleus pulses; marker to 'PROTON · 0.84 fm radius' (X1), counter 9->14 (five ticks); note in window 'to scale, this dot would be 0.005 px' (drawn).",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -286,15 +286,15 @@
   {
    "id": "sc08",
    "type": "animation",
-   "start_seconds": 33.18,
-   "end_seconds": 39.09,
+   "start_seconds": 28.567,
+   "end_seconds": 33.633,
    "script_section_id": "s4",
    "description": "Render: atelier component sc08. Continuous Scale Well frame. ELECTRON: no size found.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'Electrons are so small that no experiment has found any size at all.'. TAB MEASURED. OVERLAYS: window closes; a bracket below 10^-18 'ELECTRON \u00b7 no size found (< 10^-18 m)' with an open-ended arrow; marker does NOT move (nothing to stand on).",
+   "overlay_notes": "CAPTION 'Electrons are so small that no experiment has found any size at all.'. TAB MEASURED. OVERLAYS: window closes; a bracket below 10^-18 'ELECTRON · no size found (< 10^-18 m)' with an open-ended arrow; marker does NOT move (nothing to stand on).",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -324,15 +324,15 @@
   {
    "id": "sc09",
    "type": "animation",
-   "start_seconds": 39.09,
-   "end_seconds": 44.58,
+   "start_seconds": 33.633,
+   "end_seconds": 40.167,
    "script_section_id": "s4",
    "description": "Render: atelier component sc09. Continuous Scale Well frame. the break and the Planck line.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'Below that, physicists point to the Planck length, twenty more zeros down.'. TAB MAYBE. OVERLAYS: the rail BREAK draws (zigzag); the dashed violet PLANCK line '1.6 \u00d7 10^-35 m' fades in; the counter spins 14 -> 34 on 'twenty more zeros' (X3 ticks, accelerating).",
+   "overlay_notes": "CAPTION 'Below that, physicists point to the Planck length, twenty more zeros down.'. TAB MAYBE. OVERLAYS: the rail BREAK draws (zigzag); the dashed violet PLANCK line '1.6 × 10^-35 m' fades in; the counter spins 14 -> 34 on 'twenty more zeros' (X3 ticks, accelerating).",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -362,8 +362,8 @@
   {
    "id": "sc10",
    "type": "animation",
-   "start_seconds": 44.58,
-   "end_seconds": 47.63,
+   "start_seconds": 40.167,
+   "end_seconds": 43.367,
    "script_section_id": "s5",
    "description": "Render: atelier component sc10. Continuous Scale Well frame. the number written out.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
@@ -400,8 +400,8 @@
   {
    "id": "sc11",
    "type": "animation",
-   "start_seconds": 47.63,
-   "end_seconds": 50.03,
+   "start_seconds": 43.367,
+   "end_seconds": 45.2,
    "script_section_id": "s5",
    "description": "Render: atelier component sc11. Continuous Scale Well frame. the floor?.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
@@ -438,8 +438,8 @@
   {
    "id": "sc12",
    "type": "animation",
-   "start_seconds": 50.03,
-   "end_seconds": 54.17,
+   "start_seconds": 45.2,
+   "end_seconds": 48.533,
    "script_section_id": "s5",
    "description": "Render: atelier component sc12. Continuous Scale Well frame. finished line.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
@@ -487,10 +487,10 @@
   "fps": 30,
   "resolution": "1080x1920",
   "aspect_ratio": "9:16",
-  "total_duration_seconds": 54.17,
-  "total_frames": 1625,
+  "total_duration_seconds": 48.533,
+  "total_frames": 1456,
   "platform": "tiktok",
-  "timing_basis": "PLANNED from word counts at 2.45 wps; sync_scene_plan.py rewrites every boundary from measured onsets after alignment (anchor onset - 2 f).",
+  "timing_basis": "MEASURED (foundation): every scene boundary after sc01 = its anchor word's measured onset - 2 frames (align_narration.py, the clean WAVs); the film = 0.5 s lead + 46.64 s narration to the release of 'one.' (47.03 s) + 1.5 s settle. Planned values kept in planned_total_*.",
   "build_mode": "LEAN: copy video 16's per-video files and pipeline scripts; flip the ladder (L = -log10 metres, top = 1 mm); new devices: eye/light-limit dashed lines, drawn atom + nucleus, electron bracket, rail break + Planck line, typed 34-zero readout. Reuse video 16's SFX X1-X6 (no new SFX spend). build_spec.py for builders and QA; qa_auto.py; 1 targeted QA agent.",
   "taste_profile": {
    "design_read": "Youth science short: a calm climb up one speed ladder, from walking to light, ending at a wall that never moves.",
@@ -526,27 +526,36 @@
    "data": "video 13's mono face (numbers, counter, readout; slashed zeros)",
    "captions": "Bricolage Grotesque 800 (channel standard)",
    "tab": "Spline Sans Mono 600 (channel standard)",
-   "glyphs": "check ',', '\u00b7', '~', '%', '(', ')', digits; arrows SVG"
+   "glyphs": "check ',', '·', '~', '%', '(', ')', digits; arrows SVG"
   },
   "safe_areas": {
-   "top_ui_y": [
-    0,
-    192
-   ],
-   "stage_y": [
-    320,
-    1100
-   ],
+   "top_ui_y": 192,
+   "bottom_ui_y": 1574,
+   "right_rail": 929,
    "rail": {
     "x": [
-     180,
-     320
+     100,
+     330
     ],
     "y": [
      380,
-     1080
+     1110
     ],
-    "note": "spine x 250; decade numbers right-aligned at x 224 (the longest reaches x ~86); rung chips from x 280"
+    "note": "spine x 250, L = -log10(m): y = 380 + (L - 3) * 620 / 15; decade powers right-aligned at x 224; the break y 1012-1040; the Planck line y 1080"
+   },
+   "rung_labels": {
+    "x": [
+     280,
+     572
+    ],
+    "note": "chips de-overlapped top-down with leaders; never under the open window (build_props asserts)"
+   },
+   "reference_labels": {
+    "x": [
+     40,
+     224
+    ],
+    "note": "'YOUR EYE' / 'LIGHT MICROSCOPE' left of the rail (the decade powers under them are hidden)"
    },
    "window": {
     "x": [
@@ -557,7 +566,7 @@
      440,
      893
     ],
-    "note": "ONE portrait box (340 x 453) for S1, S2 and S3, right of the rung label chips (never over one: build_props asserts)"
+    "note": "S1 sand, S2 blood cells, S3 virus, then the DRAWN atom"
    },
    "counter": {
     "x": [
@@ -569,6 +578,28 @@
      340
     ],
     "note": "the ZEROS chip, right-aligned at x 920"
+   },
+   "electron": {
+    "x": [
+     270,
+     700
+    ],
+    "y": [
+     960,
+     1040
+    ],
+    "scenes": "sc08-sc12"
+   },
+   "readout": {
+    "x": [
+     580,
+     920
+    ],
+    "y": [
+     470,
+     600
+    ],
+    "scenes": "sc10-sc12"
    },
    "placard_rail": {
     "x": [
@@ -599,75 +630,6 @@
      1296,
      1488
     ]
-   },
-   "bottom_ui_y": [
-    1574,
-    1920
-   ],
-   "right_rail": "x >= 929: sky only, no text",
-   "rung_labels": {
-    "x": [
-     280,
-     572
-    ],
-    "note": "label chips (one line, or two lines for EARTH / PARKER) end before the window at x 580"
-   },
-   "orbit_inset": {
-    "x": [
-     600,
-     920
-    ],
-    "y": [
-     460,
-     800
-    ],
-    "scenes": "sc05 (window closed)"
-   },
-   "energy": {
-    "bar_x": [
-     600,
-     650
-    ],
-    "curve": {
-     "x": [
-      690,
-      920
-     ],
-     "y": [
-      440,
-      640
-     ]
-    },
-    "scenes": "sc10"
-   },
-   "readout": {
-    "x": [
-     600,
-     920
-    ],
-    "y": [
-     460,
-     600
-    ],
-    "scenes": "sc11-sc12"
-   },
-   "you_tag": {
-    "x": [
-     120,
-     224
-    ],
-    "note": "LEFT of the rail at its rung (WALK, then EARTH); the decade number within 26 px of it is hidden"
-   },
-   "mass_label": {
-    "x": [
-     280,
-     545
-    ],
-    "y": [
-     483,
-     517
-    ],
-    "scenes": "sc09-sc10 (fixed chip + a dotted leader to the marker)"
    }
   },
   "signature_device": "One log-scale speed rail in km/h (1 to 10^9) with a single glowing marker that climbs rung by rung while a ZEROS counter ticks 0 -> 9; the top is a red 'c' line the marker approaches but never touches; streak length = log10(speed).",
@@ -675,7 +637,7 @@
    "sc05 'YOU' jumps from WALK to Earth's orbit (~107,000)",
    "sc11 the LHC nines fill while the gap under 'c' stays"
   ],
-  "honesty_grammar": "MEASURED solid tab; PROBABLY outline + hatch (the falcon dive). AI: 'AI impression' on S1-S3. Drawings: 'drawn \u00b7 not to scale' (orbit inset, energy curve). The rail is labelled 'km/h \u00b7 log scale'. Numbers on rungs are the brief's values; '~' where the brief gives a range.",
+  "honesty_grammar": "MEASURED solid tab (sand, hair, cell, virus, atom, proton, electron's upper bound); PROBABLY outline + hatch (the naked-eye limit); MAYBE dashed ghost (the Planck length as a floor, from 'Below that,' to the end of s5); IDLE at the CTA. AI plates S1-S3 tagged 'AI impression'; the atom is 'drawn · not to scale'. The rail is labelled 'metres · log scale'.",
   "captions": {
    "role": "Word-highlight captions from script.json words verbatim",
    "slab": "channel standard: #0A0B10 62%, blur 10, r 24, x 140-940, y 1296-1488",
@@ -684,138 +646,137 @@
    "pages": [
     {
      "section": "s1",
-     "page": "You walk at about five kilometres"
+     "page": "A grain of sand"
     },
     {
      "section": "s1",
-     "page": "an hour. A cheetah sprints at"
+     "page": "is about half a millimetre."
     },
     {
      "section": "s1",
-     "page": "about a hundred."
+     "page": "A human hair"
     },
     {
      "section": "s1",
-     "page": "A diving falcon hits nearly four"
+     "page": "is a tenth of that."
     },
     {
      "section": "s1",
-     "page": "hundred."
+     "page": "And that's about where"
+    },
+    {
+     "section": "s1",
+     "page": "your eyes give up."
     },
     {
      "section": "s2",
-     "page": "Sound outruns them all at over"
+     "page": "A red blood cell"
     },
     {
      "section": "s2",
-     "page": "twelve hundred. But sitting still,"
+     "page": "is ten times smaller again."
     },
     {
      "section": "s2",
-     "page": "you're doing over a hundred thousand,"
+     "page": "Most viruses are smaller still,"
     },
     {
      "section": "s2",
-     "page": "riding Earth around the Sun."
+     "page": "too small for any ordinary"
+    },
+    {
+     "section": "s2",
+     "page": "microscope to see."
     },
     {
      "section": "s3",
-     "page": "The fastest thing we've ever built,"
+     "page": "An atom is a thousand"
     },
     {
      "section": "s3",
-     "page": "the Parker Solar Probe,"
+     "page": "times smaller than a virus."
     },
     {
      "section": "s3",
-     "page": "reached nearly seven hundred thousand,"
+     "page": "And the proton at its centre"
     },
     {
      "section": "s3",
-     "page": "falling toward the Sun."
+     "page": "is sixty thousand times smaller"
+    },
+    {
+     "section": "s3",
+     "page": "than the atom."
     },
     {
      "section": "s4",
-     "page": "Light does over a billion."
+     "page": "Electrons are so small"
     },
     {
      "section": "s4",
-     "page": "And nothing with mass can catch"
+     "page": "that no experiment has found"
     },
     {
      "section": "s4",
-     "page": "it: the closer you get,"
+     "page": "any size at all."
     },
     {
      "section": "s4",
-     "page": "the more energy each step costs,"
+     "page": "Below that, physicists point"
     },
     {
      "section": "s4",
-     "page": "without end."
+     "page": "to the Planck length,"
+    },
+    {
+     "section": "s4",
+     "page": "twenty more zeros down."
     },
     {
      "section": "s5",
-     "page": "The Large Hadron Collider pushes protons"
+     "page": "Thirty-four zeros after the decimal point."
     },
     {
      "section": "s5",
-     "page": "to within a hair of light"
+     "page": "Maybe that's the floor."
     },
     {
      "section": "s5",
-     "page": "speed. Close. But never all the"
-    },
-    {
-     "section": "s5",
-     "page": "way."
+     "page": "Or maybe there isn't one."
     }
-   ]
+   ],
+   "note": "re-flowed by the foundation (lesson 3): every claim starts its own page; <= 2 lines / <= 6 words; no 2-word orphan"
   },
   "placards": [
    {
     "scenes": "sc01-sc03",
-    "text": "cheetah: collar study, Wilson et al., Nature 2013",
-    "fine_print": "falcon dive ~390 km/h is commonly cited, weakly sourced"
+    "text": "sand ~0.06-2 mm (Wentworth) · hair 17-180 µm",
+    "fine_print": "naked-eye limit ~0.04-0.1 mm, varies"
    },
    {
     "scenes": "sc04-sc05",
-    "text": "sound: 343 m/s in 20 \u00b0C air \u00b7 Earth: 29.78 km/s (NASA)",
-    "fine_print": "km/h on a log scale: each tick is 10x"
+    "text": "red blood cell ~8 µm · influenza ~100 nm (NCBI)",
+    "fine_print": "light-microscope limit ~200 nm (Abbe)"
    },
    {
     "scenes": "sc06-sc07",
-    "text": "Parker Solar Probe: ~692,000 km/h (Dec 2024)",
-    "fine_print": "NASA's figure as reported by Space.com \u00b7 speed from falling toward the Sun",
-    "lesson_32": "reworded by the foundation: the brief holds NASA's figure only through Space.com / SlashGear / Live Science reports"
+    "text": "proton radius 0.8414 fm (CODATA 2018)",
+    "fine_print": "atom ~0.1-0.3 nm across"
    },
    {
-    "scenes": "sc08-sc10",
-    "text": "c = 299,792,458 m/s exactly (NIST)",
-    "fine_print": "energy needed grows without limit as speed nears c"
-   },
-   {
-    "scenes": "sc11-sc12",
-    "text": "CERN LHC: protons at 6.8 TeV (2022)",
-    "fine_print": "0.999999991 of light speed"
+    "scenes": "sc08-sc12",
+    "text": "electron: no size found, < 10⁻¹⁸ m",
+    "fine_print": "Planck length 1.6 × 10⁻³⁵ m: not proven to be a minimum"
    }
   ],
   "stills": [
    {
     "still_id": "S1",
-    "name": "plate_cheetah",
-    "clip": null,
-    "aspect": "9:16",
-    "resolution": "2K",
-    "output_path": "projects/how-fast-can-anything-go/assets/images/plate_cheetah.png",
+    "name": "plate_sand",
+    "output_path": "assets/images/plate_sand.png",
     "used_in": [
-     "sc02"
+     "sc01"
     ],
-    "prompt": "Intended use: a vertical 9:16 window in a clean dark science graphic; keep the middle 60% of the frame the most interesting.\n\nWildlife photograph of a cheetah at full sprint across dry savanna grass, side view, body stretched, legs extended, dust kicked up, late golden light, sharp focus on the cheetah with a slightly blurred background suggesting speed. Natural, realistic. No people, no vehicles, no text, no watermark.",
-    "qa": "9:16 2K; 4 legs, 1 tail, 2 ears; realistic; no text.",
-    "honesty": "'AI impression' tag while visible.",
-    "risk": "extra legs; merged limbs",
-    "fallback": "crop (lesson 39) or drawn icon only",
     "placeholder": false,
     "window": {
      "x0": 580,
@@ -823,88 +784,6 @@
      "y0": 440,
      "y1": 893
     },
-    "status": "NOT GENERATED: a labelled placeholder card is staged in public/stills/; re-run prepare_media.py --force + build_props.py when it lands",
-    "crop_px": [
-     0,
-     300,
-     1152,
-     1835
-    ],
-    "crop_pct": {
-     "x": [
-      0.0,
-      100.0
-     ],
-     "y": [
-      14.6,
-      89.6
-     ]
-    }
-   },
-   {
-    "still_id": "S2",
-    "name": "plate_falcon_dive",
-    "clip": null,
-    "aspect": "9:16",
-    "resolution": "2K",
-    "output_path": "projects/how-fast-can-anything-go/assets/images/plate_falcon_dive.png",
-    "used_in": [
-     "sc03"
-    ],
-    "prompt": "Intended use: a vertical 9:16 window in a clean dark science graphic; keep the middle 60% of the frame the most interesting.\n\nWildlife photograph of a peregrine falcon in a steep high-speed dive (stoop), wings tucked tight against its body, head forward, against a clear blue sky, sharp focus, realistic plumage (slate-grey back, barred pale chest, dark moustache stripe). No other birds, no text, no watermark.",
-    "qa": "9:16 2K; 1 head, 2 wings tucked, 1 tail; realistic peregrine markings; no text.",
-    "honesty": "'AI impression' tag while visible.",
-    "risk": "extra wings; wrong species look",
-    "fallback": "crop or drawn icon only",
-    "placeholder": false,
-    "window": {
-     "x0": 580,
-     "x1": 920,
-     "y0": 440,
-     "y1": 893
-    },
-    "status": "NOT GENERATED: a labelled placeholder card is staged in public/stills/; re-run prepare_media.py --force + build_props.py when it lands",
-    "crop_px": [
-     0,
-     130,
-     1152,
-     1665
-    ],
-    "crop_pct": {
-     "x": [
-      0.0,
-      100.0
-     ],
-     "y": [
-      6.3,
-      81.3
-     ]
-    }
-   },
-   {
-    "still_id": "S3",
-    "name": "plate_parker_probe",
-    "clip": null,
-    "aspect": "9:16",
-    "resolution": "2K",
-    "output_path": "projects/how-fast-can-anything-go/assets/images/plate_parker_probe.png",
-    "used_in": [
-     "sc06",
-     "sc07"
-    ],
-    "prompt": "Intended use: a vertical 9:16 window in a clean dark science graphic; keep the middle 60% of the frame the most interesting.\n\nSpace illustration of a small spacecraft with a large flat white circular heat shield facing the Sun, its instruments in the shield's shadow, two small solar panels angled back, flying close to the enormous glowing Sun whose surface and corona fill the top of the frame, black space below. Realistic, NASA-style artist impression. No text, no logos, no watermark.",
-    "qa": "9:16 2K; one spacecraft with a heat shield facing the Sun; no text/logos.",
-    "honesty": "'AI impression' tag while visible.",
-    "risk": "looks like a different spacecraft; text/logos",
-    "fallback": "drawn probe icon + label",
-    "placeholder": false,
-    "window": {
-     "x0": 580,
-     "x1": 920,
-     "y0": 440,
-     "y1": 893
-    },
-    "status": "NOT GENERATED: a labelled placeholder card is staged in public/stills/; re-run prepare_media.py --force + build_props.py when it lands",
     "crop_px": [
      0,
      100,
@@ -920,7 +799,72 @@
       4.9,
       79.8
      ]
-    }
+    },
+    "honesty": "'AI impression' tag while visible."
+   },
+   {
+    "still_id": "S2",
+    "name": "plate_blood_cells",
+    "output_path": "assets/images/plate_blood_cells.png",
+    "used_in": [
+     "sc04"
+    ],
+    "placeholder": false,
+    "window": {
+     "x0": 580,
+     "x1": 920,
+     "y0": 440,
+     "y1": 893
+    },
+    "crop_px": [
+     0,
+     250,
+     1152,
+     1785
+    ],
+    "crop_pct": {
+     "x": [
+      0.0,
+      100.0
+     ],
+     "y": [
+      12.2,
+      87.2
+     ]
+    },
+    "honesty": "'AI impression' tag while visible."
+   },
+   {
+    "still_id": "S3",
+    "name": "plate_virus",
+    "output_path": "assets/images/plate_virus.png",
+    "used_in": [
+     "sc05"
+    ],
+    "placeholder": false,
+    "window": {
+     "x0": 580,
+     "x1": 920,
+     "y0": 440,
+     "y1": 893
+    },
+    "crop_px": [
+     0,
+     173,
+     1152,
+     1708
+    ],
+    "crop_pct": {
+     "x": [
+      0.0,
+      100.0
+     ],
+     "y": [
+      8.4,
+      83.4
+     ]
+    },
+    "honesty": "'AI impression' tag while visible."
    }
   ],
   "ai_clips": [],
@@ -1041,48 +985,83 @@
    "sc12": "Or maybe there isn't one."
   },
   "verified_on_screen_strings": [
-   "km/h \u00b7 log scale",
-   "1",
-   "10",
-   "100",
-   "1,000",
-   "10,000",
-   "100,000",
-   "1,000,000",
-   "10,000,000",
-   "100,000,000",
-   "1,000,000,000",
-   "c",
-   "WALK \u00b7 ~5",
-   "CHEETAH \u00b7 ~100",
-   "FALCON (dive) \u00b7 ~390",
-   "commonly cited",
-   "SOUND \u00b7 1,235",
-   "YOU",
-   "EARTH (orbit) \u00b7 ~107,000",
-   "Parker Solar Probe \u00b7 NASA",
-   "PARKER (fastest built) \u00b7 ~692,000",
-   "falling toward the Sun",
-   "LIGHT \u00b7 1,079,252,849",
-   "anything with mass",
-   "ENERGY NEEDED",
-   "speed",
-   "energy",
-   "LHC protons",
-   "99.9999991 %",
-   "the gap",
+   "metres · log scale",
+   "10⁻³ m",
+   "10⁻⁴ m",
+   "10⁻⁵ m",
+   "10⁻⁶ m",
+   "10⁻⁷ m",
+   "10⁻⁸ m",
+   "10⁻⁹ m",
+   "10⁻¹⁰ m",
+   "10⁻¹¹ m",
+   "10⁻¹² m",
+   "10⁻¹³ m",
+   "10⁻¹⁴ m",
+   "10⁻¹⁵ m",
+   "10⁻¹⁶ m",
+   "10⁻¹⁷ m",
+   "10⁻¹⁸ m",
    "ZEROS",
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11",
+   "12",
+   "13",
+   "14",
+   "15",
+   "16",
+   "17",
+   "18",
+   "19",
+   "20",
+   "21",
+   "22",
+   "23",
+   "24",
+   "25",
+   "26",
+   "27",
+   "28",
+   "29",
+   "30",
+   "31",
+   "32",
+   "33",
+   "34",
+   "SAND · ~0.5 mm",
+   "HAIR · ~70 µm",
+   "RED BLOOD CELL · ~8 µm",
+   "VIRUS · ~100 nm",
+   "ATOM · ~0.1 nm",
+   "PROTON · ~1.7 fm across",
+   "YOUR EYE · ~0.1 mm",
+   "LIGHT MICROSCOPE · ~200 nm",
+   "ELECTRON",
+   "no size found · < 10⁻¹⁸ m",
+   "PLANCK LENGTH · 1.6 × 10⁻³⁵ m",
+   "a floor? unproven",
+   "0.000000000000000000000000000000000016 m",
+   "to scale, this dot would be ~0.006 px",
    "AI impression",
-   "drawn \u00b7 not to scale",
-   "What's the fastest thing you've ridden?"
+   "drawn · not to scale",
+   "What's the smallest thing you've ever seen?"
   ],
   "forbidden_on_screen": [
-   "faster than light",
-   "warp",
-   "fastest animal",
-   "snail",
-   "the falcon is the fastest",
-   "light speed is possible"
+   "smallest possible (the Planck length is not proven to be a minimum)",
+   "proven floor",
+   "electrons are points",
+   "the smallest thing in the universe",
+   "actual size"
   ],
   "lessons_applied": {
    "L01": "no hooks after early returns (kit)",
@@ -1135,18 +1114,12 @@
   "planned_total_duration_seconds": 49.2,
   "planned_total_frames": 1476,
   "foundation_changes": [
-   "Film 1478 f (49.267 s), not 1476: the read is 42.56 s raw; section gaps widened to 1.2/1.2/1.2/1.45 s (lead 0.5 s, settle 1.5 s); all 12 windows re-timed (anchor - 2 f).",
-   "ONE window box x 580-920, y 440-893 (portrait 3:4) for S1, S2, S3, right of the rung label chips (the plan's x 470-920 box covered 'EARTH (orbit) \u00b7 ~107,000' and 'PARKER (fastest built) \u00b7 ~692,000').",
-   "Rung labels are CHIPS (name in Saira Condensed 700 + number in IBM Plex Mono 500, slashed zeros); EARTH and PARKER are two-line chips (name over number) so they fit beside the open window; the strings are the verified ones.",
-   "Stills S1-S3 are PLACEHOLDER cards (labelled 'PENDING STILL') until they are generated; the window, its tag and the chain run unchanged.",
-   "Music bed M1 pending: the premix is voice + SFX; build_soundtrack.py picks up assets/music/bed_raw.mp3 automatically (last tonic from the audio, lesson 26).",
-   "Placard 3 reworded (lesson 32): 'Parker Solar Probe: ~692,000 km/h (Dec 2024)' + 'NASA's figure as reported by Space.com \u00b7 speed from falling toward the Sun'.",
-   "Caption pages re-flowed (s1, s2, s4, s5) so each claim starts its own page (lesson 3) and no page is a 2-word orphan; the CTA is set on two lines (994 px at 52 px on one).",
-   "The YOU tag is ROOT-owned (it persists sc05 -> sc12 across both units); the orbit inset, the light beam, the mass label, the energy bar and the LHC readout are unit-mounted engines driven by root curves.",
-   "ZEROS counter = floor(log10) of the rung's number (the digits after the first: 1,235 -> 3, as the plan's 'counter 3'); it steps on X3 ticks ending ON each seat.",
-   "The gap under 'c' is DRAWN (14 px, marker centre to line; asserted >= 14 on every frame): 0.999999991 c would be invisible on any log scale; 'the gap' bracket + the log-scale label say so.",
-   "The 'anything with mass' label sits at a fixed chip (x 280, y 500) with a dotted leader to the moving marker (riding the marker would collide with the PARKER / LIGHT chips).",
-   "The s4 breath after 'Light' (0.28 s) is kept (the [awed] beat); no narration was cut."
+   "Copied from video 16 (Speed Ladder); the visual layer is the Scale Well: the log ladder flipped DOWNWARD in metres (top 1 mm, bottom 10⁻¹⁸ m).",
+   "Caption pages re-flowed from the narration (lesson 3): each claim starts its own page; 'And that's about where' / 'your eyes give up.' is two pages (8 words > 6), the PROBABLY key sits on the first.",
+   "The reference lines' labels (YOUR EYE, LIGHT MICROSCOPE) sit LEFT of the rail (they are 6 / 12 px from the HAIR / VIRUS rungs; on the right they would shove seated chips).",
+   "Superscripts (⁻ ⁴-⁹ ⁰) are in none of the faces: the powers are DRAWN as raised text >= 24 px (shared/Type.tsx <Sci>).",
+   "PROTON is a two-line chip (name over '~1.7 fm across') so it fits beside the open window.",
+   "script.json claim_tags are still video 16's: build_props.py keys the meter from its own CLAIMS (the brief's grades) instead of asserting against them."
   ]
  }
 }

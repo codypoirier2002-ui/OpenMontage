@@ -141,7 +141,7 @@ def key_frames(tl: dict) -> dict:
     K = {
         # sc01 Sand: the dim well + marker at SAND from frame 0; the rail DRAWS top -> bottom from 'grain' (X1 peaks 6 f
         # before it, lesson 57); the SAND label + ZEROS 3 seat on 'sand' (X3); the window opens with S1 on the seat + 4
-        "railDraw": on("s1", "grain"),
+        "railDraw": max(4, on("s1", "a") - 6),   # the rail draws BEFORE the first word so its whoosh (peak 6 f earlier) is clear of "A grain" (lesson 57; measured +7.2 dB when on "grain")
         "sandSeat": sand_seat,
         "sandTicks": [sand_seat],
         "windowOpen1": sand_seat + 4,
@@ -596,7 +596,7 @@ def main() -> None:
     assert onset_of(tink) < 0.005 * SR, "X6's attack is its first samples (start-aligned)"
 
     PLACE = [
-        ("X1", "rail_draw", whoosh, -0.2, K["railDraw"] - 6, "the rail starts drawing (sc01): the whoosh peaks 6 f BEFORE the move, off the first word (lesson 57)", "peak", w_on),
+        ("X1", "rail_draw", whoosh, -3.2, K["railDraw"] - 6, "the rail starts drawing (sc01): the whoosh peaks 6 f BEFORE the move, off the first word (lesson 57)", "peak", w_on),
         ("X1", "descend_hair", whoosh, -3.5, K["descendHair"], "the marker's first moving frame toward HAIR (sc02)", "peak", w_on),
         ("X1", "descend_cell", whoosh, -2.0, K["descendCell"], "the marker's first moving frame toward CELL (sc04)", "peak", w_on),
         ("X1", "descend_virus", whoosh, -1.0, K["descendVirus"], "the marker's first moving frame toward VIRUS (sc05)", "peak", w_on),

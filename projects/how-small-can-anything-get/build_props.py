@@ -4,44 +4,30 @@
     python3 projects/how-small-can-anything-get/build_props.py          # write
     python3 projects/how-small-can-anything-get/build_props.py --check  # print pages + schedules only
 
-Copied from projects/how-a-cat-lands/build_props.py (video 15, QA passed; itself videos 12-14) and re-dressed for the Speed
-Ladder (the root curves of projects/how-hot-can-it-get/build_props.py, without the black-body glow and the camera).
-Inputs: artifacts/timeline.json (aligned words, sections, scene windows), artifacts/script.json (caption text, claim tags),
-artifacts/scene_plan.json (caption pages, placards, verified / forbidden strings), artifacts/soundtrack_report.json (key /
-SFX frames + the motion constants: build_soundtrack.py owns K), artifacts/media_report.json (the window plates, placeholders
-or crops). Everything out is in ABSOLUTE frames @ 30 fps.
+Video 17 "How Small Can Anything Get?" / the SCALE WELL. Copied from projects/how-fast-can-anything-go/build_props.py (video
+16, QA passed) and flipped: the log ladder runs DOWNWARD in metres (L = -log10(m)). Inputs: artifacts/timeline.json (aligned
+words, sections, scene windows), artifacts/scene_plan.json (caption pages, placards, verified / forbidden strings: written by
+sync_scene_plan.py), artifacts/soundtrack_report.json (key frames + motion constants: build_soundtrack.py owns K, asserted
+== build_soundtrack.key_frames(timeline)), artifacts/media_report.json (the window plates). Everything out is ABSOLUTE frames.
 
-Caption pages: scene_plan.metadata.captions.pages, RE-FLOWED (lesson 3: every claim starts its own page; no 2-word orphan):
-s1 'You walk at about five kilometres' / 'an hour. A cheetah sprints at' / 'about a hundred.' -> 'You walk at about five' /
-'kilometres an hour.' / 'A cheetah sprints' / 'at about a hundred.' (CHEETAH starts its own page); 'A diving falcon hits nearly
-four' / 'hundred.' -> 'A diving falcon hits' / 'nearly four hundred.'; s2 'Sound outruns them all at over' / 'twelve hundred.
-But sitting still,' -> 'Sound outruns them all' / 'at over twelve hundred.' / 'But sitting still,' (ORBIT starts its own page);
-s4 'And nothing with mass can catch' / 'it: the closer you get,' / 'the more energy each step costs,' / 'without end.' -> 'And
-nothing with mass' / 'can catch it:' / 'the closer you get,' / 'the more energy' / 'each step costs, without end.'; s5 'The Large
-Hadron Collider pushes protons' / 'to within a hair of light' / 'speed. Close. But never all the' / 'way.' -> 'The Large Hadron
-Collider' / 'pushes protons to within' / 'a hair of light speed.' / 'Close.' / 'But never all the way.' (the tokens are the
-plan's, asserted). <= 2 lines / <= 6 words; the line break is chosen with Bricolage Grotesque 800 @ 58 px advance widths
-against a 700 px budget. Exit = 4 f after the page's last word ends (held >= 36 f when the next page allows), clipped to the
-next page's start, or BUTTED to it (lesson 6). The CTA "What's the fastest thing you've ridden?" (two lines) takes the slab
-4 f after 'way.'. Tones: none (the plan: plain only).
+Caption pages: scene_plan.metadata.captions.pages (<= 2 lines / <= 6 words, every claim starts its own page, no 2-word
+orphan; asserted to cover the narration word for word); the line break is chosen with Bricolage Grotesque 800 @ 58 px
+advance widths against a 700 px budget. Exit = 4 f after the page's last word ends (held >= 36 f when the next page allows),
+clipped / butted to the next page (lesson 6). The CTA takes the slab ON ctaFrame.
 
-Honesty meter (lesson 3: keyed to the START OF THE CAPTION PAGE that carries the claim; consecutive pages of one claim merge;
-a NEW claim of the same state pulses): s1 WALK MEASURED, CHEETAH MEASURED, FALCON PROBABLY; s2 SOUND MEASURED, ORBIT
-MEASURED; s3 PROBE MEASURED; s4 LIGHT MEASURED, WALL MEASURED; s5 LHC MEASURED (through 'Close.' / 'But never all the way.',
-the claim's own conclusion); IDLE at the CTA (the settle).
+Honesty meter (lesson 3: keyed to the START of the caption page carrying the claim; consecutive pages of one claim merge; a
+new claim of the same grade pulses): SAND, HAIR MEASURED; EYE PROBABLY; CELL, VIRUS, ATOM, PROTON, ELECTRON (upper bound)
+MEASURED; PLANCK MAYBE from 'Below that,' through all of s5; IDLE at the CTA. (script.json's claim_tags are still video 16's:
+the grades here are the brief's.)
 
-THE LADDER is ONE set of per-frame root curves (types.ts): props.ladder (the marker's log10(km/h) climbing rung by rung on
-eased moves that END ON each rung's seat frame; the asymptotic creep from PARKER toward 'c' from 'nothing' to 'hair'; the
-streak intensity; the red c line's intensity; the gap bracket; the rail draw), props.counter (ZEROS 0 -> 9 = floor(log10)
-of the rung's number, stepping on the X3 ticks), props.window (ONE box; S1 -> S2 crossfade with a hard tag swap; S3),
-props.you (the YOU tag: WALK -> EARTH on the jump, then constant), props.beam (sc08), props.energy (sc10: v/c, gamma =
-1/sqrt(1-(v/c)^2), the bar's height running off the top ON 'end'), props.nines (sc11: one glyph per X3 tick), props.mass /
-props.orbit (visibilities with their lesson-42 exits). Asserted: THE MARKER NEVER TOUCHES 'c' (railY(markerL) >= cY +
-MARKER_GAP_PX on EVERY frame, i.e. >= 6 px clear of the line even with the marker's radius); the climbs end exactly on
-their seats; every rung label chip fits beside the window (never under it while the window is open); the counter equals
-floor(log10) of the active rung; the orbit inset, the mass label and the energy bar are gone >= 8 f before the next
-claim's tab page (lessons 31 / 42 / 47); every channel is constant through the settle (lesson 25); a literal scan of
-scenes/u*/ against verified_on_screen_strings / forbidden_on_screen (lesson 20).
+THE LADDER: props.ladder.markerL descends rung by rung on eased moves whose FIRST MOVING FRAME is descend* and which END ON
+*Seat (asserted); rung chips seat on their seats with their numbers (Ladder.tsx, T.seat); props.counter (ZEROS = zeros after
+the decimal point of the active rung's metres, asserted on every seat; 7/8/9 on atomTicks, 10..14 on protonTicks, then an
+accelerating spin 15..34 landing 34 ON spinEnd); props.window (S1 sand -> S2 cells -> S3 virus, the drawn ATOM); props.devices
+(the reference lines, the electron bracket, the break, the Planck line, the readout, the atom note). Asserted: chips never sit
+under the open window and never overlap each other or the electron labels; claim graphics (window states, the atom note) are
+gone >= 6 f before the next tab glide; placards exit >= 6 f before the next glide; every channel is constant from the release
+(lesson 25); a literal scan of scenes/u*/ against verified_on_screen_strings / forbidden_on_screen (lesson 20).
 """
 from __future__ import annotations
 
@@ -65,88 +51,68 @@ MIN_PAGE = 36
 WITHIN_SENTENCE_BUTT_F = 21
 BUTT_GAP = 13
 GLIDE_LEAD = 6
+CLAIM_EXIT_F = 6              # claim graphics / placards gone >= 6 f before the next tab glide (lessons 42 / 52)
 PLACARD_MIN_F = 36
 PLACARD_PAGE_GUARD_F = 4
 PLACARD_TEXT_W = 772 - 2 * 28
-PLACARD_SIZES = [26, 25, 24, 23, 22]
+PLACARD_SIZES = [26, 25, 24]
 FINE_SIZES = [25, 24]
-CTA_TEXT = "What's the fastest thing you've ridden?"
-CTA_LINES = ["What's the fastest thing", "you've ridden?"]
+CTA_TEXT = "What's the smallest thing you've ever seen?"
+CTA_LINES = ["What's the smallest thing", "you've ever seen?"]
 CTA_PX = 52
-PAGES = [
-    ("s1", "You walk at about five"), ("s1", "kilometres an hour."), ("s1", "A cheetah sprints"), ("s1", "at about a hundred."),
-    ("s1", "A diving falcon hits"), ("s1", "nearly four hundred."),
-    ("s2", "Sound outruns them all"), ("s2", "at over twelve hundred."), ("s2", "But sitting still,"),
-    ("s2", "you're doing over a hundred thousand,"), ("s2", "riding Earth around the Sun."),
-    ("s3", "The fastest thing we've ever built,"), ("s3", "the Parker Solar Probe,"), ("s3", "reached nearly seven hundred thousand,"),
-    ("s3", "falling toward the Sun."),
-    ("s4", "Light does over a billion."), ("s4", "And nothing with mass"), ("s4", "can catch it:"), ("s4", "the closer you get,"),
-    ("s4", "the more energy"), ("s4", "each step costs, without end."),
-    ("s5", "The Large Hadron Collider"), ("s5", "pushes protons to within"), ("s5", "a hair of light speed."), ("s5", "Close."),
-    ("s5", "But never all the way."),
-]
-CLAIMS = {   # page -> (claim id, section, claim_tags key fragment, state)
-    "You walk at about five": ("WALK", "s1", "(WALK)", "MEASURED"), "kilometres an hour.": ("WALK", "s1", "(WALK)", "MEASURED"),
-    "A cheetah sprints": ("CHEETAH", "s1", "(CHEETAH)", "MEASURED"), "at about a hundred.": ("CHEETAH", "s1", "(CHEETAH)", "MEASURED"),
-    "A diving falcon hits": ("FALCON", "s1", "(FALCON)", "PROBABLY"), "nearly four hundred.": ("FALCON", "s1", "(FALCON)", "PROBABLY"),
-    "Sound outruns them all": ("SOUND", "s2", "(SOUND)", "MEASURED"), "at over twelve hundred.": ("SOUND", "s2", "(SOUND)", "MEASURED"),
-    "But sitting still,": ("ORBIT", "s2", "(ORBIT)", "MEASURED"), "you're doing over a hundred thousand,": ("ORBIT", "s2", "(ORBIT)", "MEASURED"),
-    "riding Earth around the Sun.": ("ORBIT", "s2", "(ORBIT)", "MEASURED"),
-    "The fastest thing we've ever built,": ("PROBE", "s3", "(PROBE)", "MEASURED"), "the Parker Solar Probe,": ("PROBE", "s3", "(PROBE)", "MEASURED"),
-    "reached nearly seven hundred thousand,": ("PROBE", "s3", "(PROBE)", "MEASURED"), "falling toward the Sun.": ("PROBE", "s3", "(PROBE)", "MEASURED"),
-    "Light does over a billion.": ("LIGHT", "s4", "(LIGHT)", "MEASURED"),
-    "And nothing with mass": ("WALL", "s4", "(WALL)", "MEASURED"), "can catch it:": ("WALL", "s4", "(WALL)", "MEASURED"),
-    "the closer you get,": ("WALL", "s4", "(WALL)", "MEASURED"), "the more energy": ("WALL", "s4", "(WALL)", "MEASURED"),
-    "each step costs, without end.": ("WALL", "s4", "(WALL)", "MEASURED"),
-    "The Large Hadron Collider": ("LHC", "s5", "(LHC)", "MEASURED"), "pushes protons to within": ("LHC", "s5", "(LHC)", "MEASURED"),
-    "a hair of light speed.": ("LHC", "s5", "(LHC)", "MEASURED"), "Close.": ("LHC", "s5", "(LHC)", "MEASURED"), "But never all the way.": ("LHC", "s5", "(LHC)", "MEASURED"),
+CLAIMS = {   # first words of a page -> (claim id, state); a page belongs to the claim of the last key at or before it
+    ("s1", "A grain of sand"): ("SAND", "MEASURED"),
+    ("s1", "A human hair"): ("HAIR", "MEASURED"),
+    ("s1", "And that's about where"): ("EYE", "PROBABLY"),
+    ("s2", "A red blood cell"): ("CELL", "MEASURED"),
+    ("s2", "Most viruses are smaller still,"): ("VIRUS", "MEASURED"),
+    ("s3", "An atom is a thousand"): ("ATOM", "MEASURED"),
+    ("s3", "And the proton at its centre"): ("PROTON", "MEASURED"),
+    ("s4", "Electrons are so small"): ("ELECTRON", "MEASURED"),
+    ("s4", "Below that, physicists point"): ("PLANCK", "MAYBE"),
 }
-WEAK_END = {"a", "an", "the", "to", "of", "and", "is", "in", "it", "at", "as", "its", "by", "for", "if", "so", "her", "with", "on", "no", "over", "nearly"}
-BOUND = {("five", "kilometres"), ("a", "hundred"), ("four", "hundred"), ("twelve", "hundred"), ("hundred", "thousand"), ("parker", "solar"),
-         ("solar", "probe"), ("seven", "hundred"), ("a", "billion"), ("with", "mass"), ("hadron", "collider"),
-         ("light", "speed"), ("the", "sun"), ("a", "hair"), ("sitting", "still")}
-PLACARD_SCENES = {"sc01-sc03": ("sc01", "sc03"), "sc04-sc05": ("sc04", "sc05"), "sc06-sc07": ("sc06", "sc07"), "sc08-sc10": ("sc08", "sc10"),
-                  "sc11-sc12": ("sc11", "sc12")}
-# the placards AS BUILT: placard 3 reworded (lesson 32: the brief holds NASA's figure only through Space.com / SlashGear / Live
-# Science reports, so the placard credits the report and names NASA as the figure's owner, not as a source read)
-PLACARDS = [
-    ("sc01-sc03", "cheetah: collar study, Wilson et al., Nature 2013", "falcon dive ~390 km/h is commonly cited, weakly sourced"),
-    ("sc04-sc05", "sound: 343 m/s in 20 °C air · Earth: 29.78 km/s (NASA)", "km/h on a log scale: each tick is 10x"),
-    ("sc06-sc07", "Parker Solar Probe: ~692,000 km/h (Dec 2024)", "NASA's figure as reported by Space.com · speed from falling toward the Sun"),
-    ("sc08-sc10", "c = 299,792,458 m/s exactly (NIST)", "energy needed grows without limit as speed nears c"),
-    ("sc11-sc12", "CERN LHC: protons at 6.8 TeV (2022)", "0.999999991 of light speed"),
-]
+WEAK_END = {"a", "an", "the", "to", "of", "and", "is", "in", "it", "at", "as", "its", "by", "for", "if", "so", "with", "on", "no", "any", "that"}
+BOUND = {("grain", "of"), ("of", "sand"), ("half", "a"), ("a", "millimetre"), ("human", "hair"), ("a", "tenth"), ("red", "blood"), ("blood", "cell"),
+         ("ten", "times"), ("any", "ordinary"), ("ordinary", "microscope"), ("a", "thousand"), ("a", "virus"), ("sixty", "thousand"), ("its", "centre"),
+         ("no", "experiment"), ("the", "planck"), ("planck", "length"), ("more", "zeros"), ("the", "decimal"), ("decimal", "point"), ("the", "floor"),
+         ("isnt", "one"), ("thirtyfour", "zeros")}
+PLACARD_SCENES = {"sc01-sc03": ("sc01", "sc03"), "sc04-sc05": ("sc04", "sc05"), "sc06-sc07": ("sc06", "sc07"), "sc08-sc12": ("sc08", "sc12")}
 # THE LADDER (mirrored in theme.ts L; asserted against it)
-RAIL = {"x": 250, "axisY0": 1080, "cY": 380}
+RAIL = {"x": 250, "y0": 380, "y1": 1000, "L0": 3, "L1": 18}
+PPD = (RAIL["y1"] - RAIL["y0"]) / (RAIL["L1"] - RAIL["L0"])
 WIN = {"x0": 580, "x1": 920, "y0": 440, "y1": 893}
 COUNTER = {"x0": 640, "x1": 920, "y0": 220, "y1": 340}
-READOUT = {"x0": 600, "x1": 920, "y0": 460, "y1": 600}
+READOUT = {"x0": 580, "x1": 920, "y0": 470, "y1": 600}
+READOUT_PX = 26
+ELECTRON = {"x": 300, "nameY": 972, "subY": 1010}
+PLANCK_Y = 1080
 LABEL_X = 280
-C_KMH = 1079252849
-L_C = math.log10(C_KMH)
-PPD = (RAIL["axisY0"] - RAIL["cY"]) / L_C
+CHIP_MAX_RIGHT = WIN["x0"] - 8
 MARKER_R = 6
-MARKER_GAP_PX = 24            # the marker's CENTRE stays >= 24 px under the c line (>= 18 px clear of its 6 px radius; QA B-01: 14 read as touching at phone scale)
-# (id, name, number string, km/h, probably?, chip)
-RUNGS = [
-    ("walk", "WALK", "~5", 5, False, None),
-    ("cheetah", "CHEETAH", "~100", 100, False, None),
-    ("falcon", "FALCON (dive)", "~390", 390, True, "commonly cited"),
-    ("sound", "SOUND", "1,235", 1235, False, None),
-    ("earth", "EARTH (orbit)", "~107,000", 107000, False, None),
-    ("parker", "PARKER (fastest built)", "~692,000", 692000, False, None),
-    ("light", "LIGHT", "1,079,252,849", C_KMH, False, None),
-]
-RUNG_SEAT = {"walk": "walkSeat", "cheetah": "cheetahSeat", "falcon": "falconSeat", "sound": "soundSeat", "earth": "earthSeat", "parker": "parkerSeat", "light": "lightSeat"}
-RUNG_CLIMB = {"cheetah": "climbCheetah", "falcon": "climbFalcon", "sound": "climbSound", "earth": "jumpStart", "parker": "climbParker"}
 LABEL_PX = 28
-NAME_LINES = {"earth": ["EARTH (orbit)", "~107,000"], "parker": ["PARKER (fastest built)", "~692,000"]}   # the two labels too wide for the field beside the window (two-line chips)
-LABELS = {"axis": "km/h · log scale", "zeros": "ZEROS", "ai": "AI impression", "drawn": "drawn · not to scale", "c": "c", "you": "YOU",
-          "gap": "the gap", "mass": "anything with mass", "energy": "ENERGY NEEDED", "speed": "speed", "energyAxis": "energy",
-          "lhc": "LHC protons", "nines": "99.9999991 %", "probe": "Parker Solar Probe · NASA", "falling": "falling toward the Sun",
-          "cited": "commonly cited"}
-GAMMA_K = 4.8                 # the energy bar: gamma(x) = 1 + 0.5 (e^(k x) - 1) over the bar's growth, 20 px per unit of (gamma - 1)
-BAR_OFF_PX = 1130.0           # the bar top is this far above the rail foot ON barOff (off the frame top, 1080 + 50)
+ROW_H, CHIP_PAD, CHIP_GAP = 36, 12, 6
+# (id, name, number string, metres, L as placed by the brief, seat key, descend key)
+RUNGS = [
+    ("sand", "SAND", "~0.5 mm", 5e-4, 3.30, "sandSeat", None),
+    ("hair", "HAIR", "~70 µm", 7e-5, 4.15, "hairSeat", "descendHair"),
+    ("cell", "RED BLOOD CELL", "~8 µm", 8e-6, 5.10, "cellSeat", "descendCell"),
+    ("virus", "VIRUS", "~100 nm", 1e-7, 7.00, "virusSeat", "descendVirus"),
+    ("atom", "ATOM", "~0.1 nm", 1e-10, 10.0, "atomSeat", "descendAtom"),
+    ("proton", "PROTON", "~1.7 fm across", 1.7e-15, 14.77, "protonSeat", "descendProton"),
+]
+PLANCK_M = 1.6e-35
+SUP = str.maketrans("-0123456789", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹")
+DECADES = [f"10{('-' + str(n)).translate(SUP)} m" for n in range(RAIL["L0"], RAIL["L1"] + 1)]
+REFS = [("eye", 4.0, ["YOUR EYE", "~0.1 mm"], "YOUR EYE · ~0.1 mm", "eyeLine"),
+        ("micro", 6.70, ["LIGHT MICROSCOPE", "~200 nm"], "LIGHT MICROSCOPE · ~200 nm", "lightLine")]
+LABELS = {"axis": "metres · log scale", "zeros": "ZEROS", "ai": "AI impression", "drawn": "drawn · not to scale"}
+ELECTRON_NAME, ELECTRON_SUB = "ELECTRON", "no size found · < 10⁻¹⁸ m"
+PLANCK_LABEL, FLOOR_LABEL = "PLANCK LENGTH · 1.6 × 10⁻³⁵ m", "a floor? unproven"
+READOUT_TEXT = "0." + "0" * 34 + "16 m"
+READOUT_LINES = ["0." + "0" * 18, "0" * 16 + "16 m"]
+ATOM_NOTE = "to scale, this dot would be ~0.006 px"
+ATOM_NOTE_LINES = ["to scale, this dot", "would be ~0.006 px"]
+SPIN_OFFSETS = [0, 2, 4, 6, 8, 10, 12, 14] + list(range(15, 27))   # the spin's 20 steps (15..34) after spinStart: every 2 f, then every frame (accelerating)
 
 norm = lambda t: re.sub(r"[^a-z0-9]", "", t.lower())
 
@@ -166,7 +132,7 @@ def advance(font: str, px: float):
 
 
 class Track:
-    """A per-frame channel built from keyframes: hold the value, then ease to the next over [a, b)."""
+    """A per-frame channel built from keyframes: hold the value, then ease to the next over [a, b) (value v ON b)."""
 
     def __init__(self, total: int, v0: float):
         self.total, self.keys = total, [(0, 0, v0, "hold")]
@@ -178,8 +144,7 @@ class Track:
 
     def build(self) -> np.ndarray:
         ease = {"sine": lambda x: 0.5 - 0.5 * math.cos(math.pi * x), "linear": lambda x: x, "in": lambda x: x * x,
-                "out": lambda x: 1 - (1 - x) ** 3, "outquad": lambda x: 1 - (1 - x) ** 2, "step": lambda x: 1.0,
-                "inexpo": lambda x: 0 if x == 0 else 2 ** (10 * (x - 1))}
+                "out": lambda x: 1 - (1 - x) ** 3, "outquad": lambda x: 1 - (1 - x) ** 2, "step": lambda x: 1.0}
         out = np.empty(self.total)
         for f in range(self.total):
             cur = self.keys[0][2]
@@ -196,39 +161,42 @@ class Track:
 
 
 def rail_y(Lv: float) -> float:
-    return RAIL["axisY0"] - Lv * PPD
+    return RAIL["y0"] + (Lv - RAIL["L0"]) * PPD
+
+
+def zeros_after_point(metres: float) -> int:
+    return math.ceil(-math.log10(metres) - 1e-9) - 1
 
 
 def main() -> None:
     check = "--check" in sys.argv
     snd = load_module("build_soundtrack")
     tl = json.loads((P / "artifacts/timeline.json").read_text())
-    script = json.loads((P / "artifacts/script.json").read_text())
     plan = json.loads((P / "artifacts/scene_plan.json").read_text())
     sound = json.loads((P / "artifacts/soundtrack_report.json").read_text())
     media = json.loads((P / "artifacts/media_report.json").read_text())
     width = advance("BricolageGrotesque-normal-800-latin.woff2", CAPTION_PX)
     total = tl["total_frames"]
-    assert sound["total_frames"] == total, "soundtrack is stale: run build_soundtrack.py after align_narration.py"
+    assert sound["total_frames"] == total, "soundtrack is stale"
     sc = {s["id"]: s for s in tl["scenes"]}
     order = [s["id"] for s in tl["scenes"]]
     fr = sound["frames"]
-    assert fr == snd.key_frames(tl), "soundtrack_report frames != build_soundtrack.key_frames(timeline): rerun build_soundtrack.py"
+    assert fr == snd.key_frames(tl), "soundtrack_report frames != build_soundtrack.key_frames(timeline)"
     mo = sound["motion"]
-    assert mo["SEAT_F"] == snd.SEAT_F and mo["WINDOW_OPEN_F"] == snd.WINDOW_OPEN_F and mo["CLIMB_F"] == snd.CLIMB_F and mo["BEAM_F"] == snd.BEAM_F and mo["FADE_F"] == snd.FADE_F
+    for k in ("SEAT_F", "WINDOW_OPEN_F", "WINDOW_CLOSE_F", "XFADE_F", "CLIMB_F", "TICK_STEP_F"):
+        assert mo[k] == getattr(snd, k), ("motion constant differs from build_soundtrack.py", k)
     T = total
     rel = fr["wayEndFrame"]
+    SEAT_F, WO, WC, XF = mo["SEAT_F"], mo["WINDOW_OPEN_F"], mo["WINDOW_CLOSE_F"], mo["XFADE_F"]
 
     words = [{**w, "f0": round(w["start"] * FPS), "f1": max(round(w["end"] * FPS), round(w["start"] * FPS) + 2)} for w in tl["words"]]
-    for sec in script["sections"]:
-        assert [w["text"] for w in words if w["section"] == sec["id"]] == sec["text"].split(), sec["id"]
     for w in words:
         w["tone"] = "plain"
 
-    # --- caption pages ------------------------------------------------------------------------------------------
-    planp = plan["metadata"]["captions"]["pages"]
+    # --- caption pages ------------------------------------------------------------------------------------------------
+    PAGES = [(p["section"], p["page"]) for p in plan["metadata"]["captions"]["pages"]]
     for sid in ("s1", "s2", "s3", "s4", "s5"):
-        assert " ".join(p["page"] for p in planp if p["section"] == sid) == " ".join(t for s_, t in PAGES if s_ == sid), sid
+        assert " ".join(t for s_, t in PAGES if s_ == sid) == " ".join(w["text"] for w in words if w["section"] == sid), ("pages != narration", sid)
     text_w = lambda ws: width(" ".join(w["text"] for w in ws))
 
     def penalty(ws, k) -> int:
@@ -256,17 +224,15 @@ def main() -> None:
         return best[1]
 
     pages = []
-    cursor = {s["id"]: 0 for s in script["sections"]}
+    cursor = {s: 0 for s in ("s1", "s2", "s3", "s4", "s5")}
     for sid, text in PAGES:
         toks = [w for w in words if w["section"] == sid]
         n = len(text.split())
         run = toks[cursor[sid]: cursor[sid] + n]
         assert " ".join(w["text"] for w in run) == text, (text, [w["text"] for w in run])
         cursor[sid] += n
-        assert n <= 6, text
+        assert 3 <= n <= 6, ("page must hold 3-6 words (no 2-word orphan)", text)
         pages.append({"section": sid, "lines": best_lines(run), "text": text})
-    for s in script["sections"]:
-        assert cursor[s["id"]] == len(s["text"].split()), ("pages do not cover the section", s["id"])
     clipped = {}
     for pg in pages:
         flat = [w for l in pg["lines"] for w in l]
@@ -284,7 +250,7 @@ def main() -> None:
         if re.search(r"[,:;]$", flat[-1]["text"]) and nxt - exit_ <= WITHIN_SENTENCE_BUTT_F:
             exit_ = nxt
         out_pages.append({
-            "section": pg["section"], "startFrame": start, "exitFrame": exit_,
+            "section": pg["section"], "startFrame": start, "exitFrame": exit_, "text": pg["text"],
             "words": [{"text": w["text"], "f0": w["f0"], "f1": clipped.get((w["text"], w["f0"]), w["f1"]), "line": li, "tone": w["tone"]}
                       for li, l in enumerate(pg["lines"]) for w in l],
         })
@@ -297,184 +263,201 @@ def main() -> None:
     cta_adv = advance("BricolageGrotesque-normal-800-latin.woff2", CTA_PX)
     assert " ".join(CTA_LINES) == CTA_TEXT and all(cta_adv(l) <= LINE_BUDGET_PX for l in CTA_LINES), [cta_adv(l) for l in CTA_LINES]
 
-    # --- honesty meter ---------------------------------------------------------------------------------------------
-    tags_ = script["metadata"]["claim_tags"]
-    for text, (cid, sec, frag, st) in CLAIMS.items():
-        hits = [v for k, v in tags_[sec].items() if frag in k]
-        assert len(hits) == 1 and hits[0] == st, ("claim state != script.json claim_tags", text, cid, frag, st, hits)
-    assert set(CLAIMS) == {t for _, t in PAGES}
+    # --- honesty meter (lesson 3) ----------------------------------------------------------------------------------------
+    assert all(any(s_ == k[0] and t == k[1] for s_, t in PAGES) for k in CLAIMS), "a CLAIMS key is not a caption page"
     meter = [{"frame": 0, "glideStart": 0, "state": "IDLE", "sublabel": "", "section": "", "anchor": "frame 0", "claim": "none (cold open)", "repeat": False}]
-    prev_claim = None
     for (sid, text), pg in zip(PAGES, out_pages):
-        cid, _, _, state = CLAIMS[text]
-        if cid == prev_claim:
+        if (sid, text) not in CLAIMS:
             continue
+        cid, state = CLAIMS[(sid, text)]
         prev = meter[-1]
         f = pg["startFrame"]
         meter.append({"frame": f, "glideStart": max(0, f - GLIDE_LEAD), "state": state, "sublabel": "", "section": sid,
                       "anchor": f"page '{text}'", "claim": cid, "repeat": state == prev["state"] and state != "IDLE"})
-        prev_claim = cid
     meter.append({"frame": fr["ctaFrame"], "glideStart": fr["ctaFrame"] - GLIDE_LEAD, "state": "IDLE", "sublabel": "", "section": "",
                   "anchor": "the CTA (settle)", "claim": "none (settle)", "repeat": False})
     for a, b in zip(meter, meter[1:]):
         assert b["glideStart"] >= a["frame"] - GLIDE_LEAD and b["frame"] > a["frame"], (a, b)
     keyed = [k["frame"] for k in meter[1:]]
     assert len(keyed) == len(set(keyed)), ("two claims keyed on one caption page (lesson 3)", keyed)
-    page_of = lambda first, section: next(pg["startFrame"] for pg in out_pages if pg["words"][0]["text"] == first and pg["section"] == section)
-    probe_page, lhc_page = page_of("The", "s3"), page_of("The", "s5")
-    assert meter[-2]["claim"] == "LHC" and meter[-2]["frame"] == lhc_page
+    mkey = {k["claim"]: k for k in meter}
+    assert mkey["EYE"]["state"] == "PROBABLY" and mkey["PLANCK"]["state"] == "MAYBE" and meter[-2]["claim"] == "PLANCK"
+    glides = [k["glideStart"] for k in meter[1:]]
+    next_glide = lambda f: min(g for g in glides if g > f)
 
-    # --- THE LADDER: the marker --------------------------------------------------------------------------------------
-    rungs = []
-    for rid, name, num, kmh, prob, chip in RUNGS:
-        lines = NAME_LINES.get(rid, [f"{name} · {num}"])
-        rungs.append({"id": rid, "name": name, "num": num, "lines": lines, "kmh": kmh, "L": round(math.log10(kmh), 5), "seat": fr[RUNG_SEAT[rid]],
-                      "probably": prob, "chip": chip})
-    Lof = {r["id"]: r["L"] for r in rungs}
-    assert abs(Lof["light"] - L_C) < 1e-5
-    Lof["light"] = L_C
-    L_final = L_C - MARKER_GAP_PX / PPD
-    mk = Track(T, Lof["walk"])
-    for rid in ("cheetah", "falcon", "sound", "earth", "parker"):
-        mk.to(fr[RUNG_CLIMB[rid]], fr[RUNG_SEAT[rid]], Lof[rid], "sine")
-    mk.to(fr["wallStart"], fr["creepEnd"], L_final, "out")
-    markerL = mk.build()
-    for rid in ("cheetah", "falcon", "sound", "earth", "parker"):
-        s_, c_ = fr[RUNG_SEAT[rid]], fr[RUNG_CLIMB[rid]]
-        assert abs(markerL[s_] - Lof[rid]) < 1e-9 and markerL[c_] < Lof[rid] and abs(markerL[c_ - 1] - markerL[c_]) < 1e-9, ("climb must end ON the seat and start ON its key frame", rid)
-        assert markerL[s_ - 1] < Lof[rid], rid
-    for f in range(T):
-        assert rail_y(markerL[f]) >= RAIL["cY"] + MARKER_GAP_PX - 1e-6, ("THE MARKER TOUCHES c", f, rail_y(markerL[f]))
-    assert abs(rail_y(markerL[fr["creepEnd"]]) - (RAIL["cY"] + MARKER_GAP_PX)) < 1e-6 and np.all(np.diff(markerL) >= -1e-12), "the marker only climbs"
-    # the creep is visible in sc10 and still creeping (sub-pixel allowed) in sc11
-    assert rail_y(markerL[sc["sc10"]["from"]]) - rail_y(markerL[sc["sc11"]["from"]]) > 60, "the marker must inch up visibly through sc10"
-    assert rail_y(markerL[sc["sc11"]["from"]]) - rail_y(markerL[fr["creepEnd"]]) > 2, "the marker must still creep in sc11"
-    vis = np.ones(T)
-    streak = np.zeros(T)
-    for f in range(1, T):
-        streak[f] = min(1.0, abs(markerL[f] - markerL[f - 1]) * PPD / 6.0)   # 6 px/f = full streaks
-    kern = np.ones(5) / 5
-    streak = np.convolve(np.pad(streak, 2, mode="edge"), kern, mode="valid")
-    cLit = Track(T, 0.3).to(fr["lightSeat"] - 2, fr["lightSeat"], 1.0, "linear").build()
-    gap = Track(T, 0.0).to(fr["gapBracket"] - 6, fr["gapBracket"], 1.0, "linear").build()
-    rail_draw = Track(T, 0.0).to(fr["railDraw"], fr["railDraw"] + 16, 1.0, "outquad").build()
-    assert gap[fr["gapBracket"]] == 1 and gap[fr["gapBracket"] - 7] == 0 and cLit[fr["lightSeat"]] == 1 and cLit[fr["lightSeat"] - 3] == 0.3
-
-    # rung labels: each chip's lines must fit beside the window while the window is open (never under a photo)
+    # --- THE LADDER: rungs + the marker -----------------------------------------------------------------------------------
     saira = advance("SairaCondensed-normal-700-latin.woff2", LABEL_PX)
     mono = advance("IBMPlexMono-normal-500-latin.woff2", LABEL_PX)
+    one_w = lambda name, num: saira(name) + saira(" · ") + mono(num) + 2 * CHIP_PAD
+    rungs = []
+    for rid, name, num, metres, Lv, seatk, desck in RUNGS:
+        assert abs(Lv + math.log10(metres)) < 0.06, ("the rung's L is not -log10(metres)", rid)
+        lines = [f"{name} · {num}"] if LABEL_X + one_w(name, num) <= CHIP_MAX_RIGHT else [name, num]
+        rungs.append({"id": rid, "name": name, "num": num, "lines": lines, "metres": metres, "L": Lv, "seat": fr[seatk], "_desc": desck})
+    Lof = {r["id"]: r["L"] for r in rungs}
+    mk = Track(T, Lof["sand"])
+    for r in rungs[1:]:
+        mk.to(fr[r["_desc"]] - 1, r["seat"], r["L"], "sine")
+    markerL = mk.build()
+    for r in rungs[1:]:
+        d, s_ = fr[r["_desc"]], r["seat"]
+        assert markerL[d - 1] == markerL[d - 2] and markerL[d] > markerL[d - 1], ("the descent's first moving frame must be its key frame", r["id"])
+        assert markerL[s_] == r["L"] and markerL[s_ - 1] < r["L"], ("the descent must land ON the seat", r["id"])
+    assert np.all(np.diff(markerL) >= 0), "the marker only descends"
+    assert markerL[fr["electronIn"]:].max() == markerL[fr["electronIn"]:].min() == Lof["proton"], "the marker does not move from sc08 (nothing to stand on)"
+    vis = np.ones(T)
+    rail_draw = Track(T, 0.0).to(fr["railDraw"] - 1, fr["railDraw"] + 15, 1.0, "outquad").build()
+    assert rail_draw[fr["railDraw"] - 1] == 0 and rail_draw[fr["railDraw"]] > 0
+    veil = Track(T, 0.0).to(fr["eyeLine"] - 1, fr["eyeLine"] + 11, 0.2, "linear").build()
 
-    def chip_w(line: str) -> float:
-        if " · " in line:
-            name, num = line.split(" · ")
-            return saira(name) + saira(" · ") + mono(num) + 2 * 12
-        return (mono(line) if re.match(r"^[~\d,]+$", line) else saira(line)) + 2 * 12
-    wopen_frames = []  # filled below; window state needed -> compute the window first
-    # --- THE WINDOW ------------------------------------------------------------------------------------------------------
-    WO, WC, XF = mo["WINDOW_OPEN_F"], mo["WINDOW_CLOSE_F"], mo["XFADE_F"]
-    o1, c1, o2, c2 = fr["windowOpen1"], fr["windowClose1"], fr["windowOpen2"], fr["windowClose2"]
-    wopen = Track(T, 0.0).to(o1 - 1, o1 - 1 + WO, 1.0, "outquad").to(c1, c1 + WC, 0.0).to(o2 - 1, o2 - 1 + WO, 1.0, "outquad").to(c2, c2 + WC, 0.0).build()
-    assert wopen[o1 - 1] == 0 and wopen[o1] > 0.25 and wopen[c1 + WC] == 0 and wopen[o2 - 1] == 0 and wopen[o2] > 0.25 and wopen[c2 + WC] == 0
-    ps = fr["plateSwap"]
-    aS1 = Track(T, 1.0).to(ps, ps + XF, 0.0, "linear").build()
-    aS2 = Track(T, 0.0).to(ps, ps + XF, 1.0, "linear").to(c1 + WC, c1 + WC, 0.0, "step").build()
-    aS3 = Track(T, 0.0).to(c1 + WC + 1, c1 + WC + 1, 1.0, "step").build()
-    tags_seen = []
-    for f in range(T):
-        if wopen[f] > 0:
-            al = {"S1": aS1[f], "S2": aS2[f], "S3": aS3[f]}
-            best = max(al, key=lambda k: (al[k], -["S1", "S2", "S3"].index(k)))
-            assert al[best] > 0, f
-            tags_seen.append((f, best))
-    swap_f = next(f for f, b in tags_seen if b == "S2")
-    assert abs(swap_f - (ps + XF / 2)) <= 1, ("the tag must swap at the crossfade midpoint", swap_f)
-    assert all(b == "S3" for f, b in tags_seen if f >= o2 - 1), "S3's tag only in sc06-sc07"
-    mp = media["plates"]
-    box = media["window"]
-    assert box == WIN
-    plates = [
-        {"id": "S1", "scene": "sc02", "alpha": [round(float(v), 4) for v in aS1], "push": mp["S1"]["push"], "pushFrom": o1, "pushTo": c1 + WC,
-         "tag": LABELS["ai"], "base": mp["S1"]["file"], "placeholder": mp["S1"]["placeholder"]},
-        {"id": "S2", "scene": "sc03", "alpha": [round(float(v), 4) for v in aS2], "push": mp["S2"]["push"], "pushFrom": ps, "pushTo": c1 + WC,
-         "tag": LABELS["ai"], "base": mp["S2"]["file"], "placeholder": mp["S2"]["placeholder"]},
-        {"id": "S3", "scene": "sc06", "alpha": [round(float(v), 4) for v in aS3], "push": mp["S3"]["push"], "pushFrom": o2, "pushTo": c2 + WC,
-         "tag": LABELS["ai"], "base": mp["S3"]["file"], "placeholder": mp["S3"]["placeholder"]},
-    ]
-    window = {"box": box, "radius": 22, "frame": 6, "open": [round(float(v), 4) for v in wopen], "plates": plates}
+    # chip boxes as Ladder.tsx lays them (top-down de-overlap); widths from the faces' advances
+    def chip_w(r) -> float:
+        if len(r["lines"]) == 1:
+            return one_w(r["name"], r["num"])
+        return max(saira(r["name"]), mono(r["num"])) + 2 * CHIP_PAD
+    boxes, prev_bottom = {}, -1e9
+    for r in sorted(rungs, key=lambda r: rail_y(r["L"])):
+        h = len(r["lines"]) * ROW_H + 8
+        cy = max(rail_y(r["L"]), prev_bottom + CHIP_GAP + h / 2)
+        boxes[r["id"]] = (LABEL_X, LABEL_X + chip_w(r), cy - h / 2, cy + h / 2)
+        prev_bottom = cy + h / 2
     for r in rungs:
-        for line in r["lines"]:
-            w = chip_w(line)
-            assert LABEL_X + w <= 912, ("rung label reaches x >= 912", line, w)
-            for f in range(r["seat"] - snd.SEAT_F, T):
-                if wopen[f] > 0:
-                    assert LABEL_X + w <= WIN["x0"] - 8, ("a rung label would sit under the open window", r["id"], line, round(w), f)
-                    break
-    # rung chips never overlap vertically (de-overlap in the engine, bottom-up, with leaders): warn-only count
-    rows = sorted((rail_y(r["L"]), r["id"]) for r in rungs)
-    print("rung y:", [(rid, round(y)) for y, rid in rows])
+        x0, x1, y0, y1 = boxes[r["id"]]
+        assert x1 <= CHIP_MAX_RIGHT, ("a rung chip would reach under the window", r["id"], round(x1))
+        assert y0 >= 342, ("a chip reaches the counter band", r["id"])
+    ebox = (ELECTRON["x"], ELECTRON["x"] + 420, ELECTRON["nameY"] - 18, ELECTRON["subY"] + 18)
+    assert boxes["proton"][3] + 6 <= ebox[2], ("the PROTON chip overlaps the electron labels", boxes["proton"], ebox)
+    ladder_notes = "y(L) = 380 + (L - 3) * 620 / 15, L = -log10(m) (no camera); chips de-overlapped top-down (Ladder.tsx, mirrored here)"
 
-    # --- THE COUNTER (ZEROS = floor(log10) of the active rung) ---------------------------------------------------------
+    # --- THE COUNTER (ZEROS after the decimal point) ---------------------------------------------------------------------
     value = np.zeros(T, dtype=int)
-    steps = [(fr["cheetahTicks"][0], 1), (fr["cheetahTicks"][1], 2), (fr["soundSeat"], 3), (fr["earthTicks"][0], 4), (fr["earthTicks"][1], 5),
-             (fr["lightTicks"][0], 6), (fr["lightTicks"][1], 7), (fr["lightTicks"][2], 8), (fr["lightTicks"][3], 9)]
+    steps = [(fr["sandSeat"], 3), (fr["hairSeat"], 4), (fr["cellSeat"], 5), (fr["virusSeat"], 6)]
+    steps += [(f_, 7 + i) for i, f_ in enumerate(fr["atomTicks"])] + [(f_, 10 + i) for i, f_ in enumerate(fr["protonTicks"])]
     for f_, v_ in steps:
         value[f_:] = v_
-    for rid in ("walk", "cheetah", "falcon", "sound", "earth", "parker", "light"):
-        r = next(x for x in rungs if x["id"] == rid)
-        assert value[r["seat"]] == math.floor(math.log10(r["kmh"])), ("counter != floor(log10) on the seat", rid, value[r["seat"]])
-    assert value[-1] == 9 and value[0] == 0
-    counter = {"value": [int(v) for v in value], "alpha": [1.0] * T, "ticks": [f_ for f_, _ in steps], "label": LABELS["zeros"]}
+    st = fr["spinTicks"]
+    assert st[0] == fr["spinStart"] and st[-1] == fr["spinEnd"] and SPIN_OFFSETS[-1] == fr["spinEnd"] - fr["spinStart"] and len(SPIN_OFFSETS) == 20
+    for i, off in enumerate(SPIN_OFFSETS):
+        value[fr["spinStart"] + off:] = 15 + i
+    spin = [int(v) for v in value[st[0] - 1: st[-1] + 1]]
+    assert spin[0] == 14 and spin[1] == 15 and spin[-1] == 34 and spin[-2] == 33 and sorted(set(spin)) == list(range(14, 35)), ("spin 14 -> 34, 20 steps", spin)
+    gaps = np.diff(SPIN_OFFSETS)
+    assert np.all(np.diff(gaps) <= 0) and gaps[0] > gaps[-1], ("the spin must accelerate", gaps)
+    for f_ in st + fr["atomTicks"] + fr["protonTicks"]:
+        assert value[f_] > value[f_ - 1], ("the counter must step ON every tick", f_)
+    for r in rungs:
+        assert value[r["seat"]] == zeros_after_point(r["metres"]) and value[r["seat"] - 1] < value[r["seat"]], ("counter != zeros of the rung ON its seat", r["id"])
+    assert value[-1] == zeros_after_point(PLANCK_M) == 34
+    calpha = Track(T, 0.0).to(fr["sandSeat"], fr["sandSeat"], 1.0, "step").build()
+    assert calpha[fr["sandSeat"] - 1] == 0 and calpha[fr["sandSeat"]] == 1
+    ticks = [f_ for f_ in range(1, T) if value[f_] != value[f_ - 1]]
+    counter = {"value": [int(v) for v in value], "alpha": [float(a) for a in calpha], "ticks": ticks, "label": LABELS["zeros"]}
 
-    # --- THE YOU TAG, THE BEAM, THE ENERGY BAR, THE NINES, THE EXITS ------------------------------------------------------
-    youL = Track(T, Lof["walk"]).to(fr["jumpStart"], fr["earthSeat"], Lof["earth"], "sine").build()
-    youA = Track(T, 0.0).to(fr["youSeat"] - snd.SEAT_F, fr["youSeat"], 1.0, "linear").build()
-    assert np.all(np.abs(youL[fr["jumpStart"]:fr["earthSeat"] + 1] - markerL[fr["jumpStart"]:fr["earthSeat"] + 1]) < 1e-9) or True
-    assert abs(youL[fr["earthSeat"]] - Lof["earth"]) < 1e-9 and youA[fr["youSeat"]] == 1 and youA[fr["youSeat"] - snd.SEAT_F] == 0
-    beamP = Track(T, 0.0).to(fr["beamStart"], fr["lightSeat"], 1.0, "in").build()
-    beamA = Track(T, 0.0).to(fr["beamStart"], fr["beamStart"], 1.0, "step").to(fr["lightSeat"] + 4, fr["lightSeat"] + 30, 0.0).build()
-    assert beamP[fr["lightSeat"]] == 1 and beamP[fr["lightSeat"] - 1] < 1 and beamA[fr["beamStart"]] == 1 and beamA[fr["beamStart"] - 1] == 0
-    x_ = Track(T, 0.0).to(fr["barStart"], fr["barOff"], 1.0, "linear").build()
-    gamma = 1 + 0.5 * (np.exp(GAMMA_K * x_) - 1)
-    vc = np.sqrt(np.maximum(0.0, 1 - 1 / gamma ** 2))
-    barH = BAR_OFF_PX / (gamma[fr["barOff"]] - 1) * (gamma - 1)
-    assert barH[fr["barOff"]] >= RAIL["axisY0"] + 40 and barH[fr["barOff"] - 1] < RAIL["axisY0"] + 40, ("the bar leaves the frame ON 'end'", barH[fr["barOff"]])
-    assert all(np.diff(barH)[fr["barStart"]:fr["barOff"]] > 0) and np.all(np.diff(np.diff(barH)[fr["barStart"]:fr["barOff"]]) > 0), "faster and faster"
-    energyA = Track(T, 0.0).to(fr["energyIn"], fr["energyIn"] + 8, 1.0, "linear").to(fr["energyOut"] - mo["FADE_F"], fr["energyOut"], 0.0, "linear").build()
-    massA = Track(T, 0.0).to(fr["massLabel"] - 6, fr["massLabel"], 1.0, "linear").to(fr["massOut"] - mo["FADE_F"], fr["massOut"], 0.0, "linear").build()
-    orbitA = Track(T, 0.0).to(fr["orbitIn"], fr["orbitIn"] + 10, 1.0, "linear").to(fr["orbitOut"] - mo["FADE_F"], fr["orbitOut"], 0.0, "linear").build()
+    # --- THE WINDOW ------------------------------------------------------------------------------------------------------
+    o1, c1, o2, c2 = fr["windowOpen1"], fr["windowClose1"], fr["windowOpen2"], fr["windowClose2"]
+    wopen = Track(T, 0.0).to(o1 - 1, o1 - 1 + WO, 1.0, "outquad").to(c1 - 1, c1 - 1 + WC, 0.0).to(o2 - 1, o2 - 1 + WO, 1.0, "outquad").to(c2 - 1, c2 - 1 + WC, 0.0).build()
+    for o in (o1, o2):
+        assert wopen[o - 1] == 0 and wopen[o] > 0.25, ("the window's first visible frame must be its key frame", o)
+    for c in (c1, c2):
+        assert wopen[c - 1] == 1 and wopen[c] < 1 and wopen[c - 1 + WC] == 0, ("the window closes from its key frame", c)
+    p1, p2 = fr["plateSwap1"], fr["plateSwap2"]
+    shut1 = c1 - 1 + WC
+    aS1 = Track(T, 1.0).to(p1 - 1, p1 - 1 + XF, 0.0, "linear").build()
+    aS2 = Track(T, 0.0).to(p1 - 1, p1 - 1 + XF, 1.0, "linear").to(p2 - 1, p2 - 1 + XF, 0.0, "linear").build()
+    aS3 = Track(T, 0.0).to(p2 - 1, p2 - 1 + XF, 1.0, "linear").to(shut1, shut1, 0.0, "step").build()
+    aA = Track(T, 0.0).to(o2 - 1, o2 - 1, 1.0, "step").build()
+    for p_, a_, b_ in ((p1, aS1, aS2), (p2, aS2, aS3)):
+        assert a_[p_ - 1] == 1 and a_[p_] < 1 and b_[p_] > 0, ("the crossfade starts ON its key frame", p_)
+        sw = next(f for f in range(p_, p_ + XF + 1) if b_[f] > a_[f])
+        assert abs(sw - (p_ - 1 + XF / 2)) <= 1, ("the tag swaps at the crossfade midpoint", sw)
+    mp = media["plates"]
+    assert media["window"] == WIN
+    plates = [
+        {"id": "S1", "scene": "sc01", "alpha": [round(float(v), 4) for v in aS1], "push": mp["S1"]["push"], "pushFrom": o1, "pushTo": p1 + XF,
+         "tag": LABELS["ai"], "base": mp["S1"]["file"], "placeholder": mp["S1"]["placeholder"]},
+        {"id": "S2", "scene": "sc04", "alpha": [round(float(v), 4) for v in aS2], "push": mp["S2"]["push"], "pushFrom": p1, "pushTo": p2 + XF,
+         "tag": LABELS["ai"], "base": mp["S2"]["file"], "placeholder": mp["S2"]["placeholder"]},
+        {"id": "S3", "scene": "sc05", "alpha": [round(float(v), 4) for v in aS3], "push": mp["S3"]["push"], "pushFrom": p2, "pushTo": shut1,
+         "tag": LABELS["ai"], "base": mp["S3"]["file"], "placeholder": mp["S3"]["placeholder"]},
+        {"id": "ATOM", "scene": "sc06", "alpha": [round(float(v), 4) for v in aA], "push": [1.0, 1.04], "pushFrom": o2, "pushTo": c2 - 1 + WC,
+         "tag": LABELS["drawn"], "base": None, "placeholder": False},
+    ]
+    window = {"box": WIN, "radius": 22, "frame": 6, "open": [round(float(v), 4) for v in wopen], "plates": plates}
+    # claim graphics in the window are gone >= 6 f before the next claim's glide (lessons 42 / 52)
+    assert wopen[next_glide(c1) - CLAIM_EXIT_F] == 0, ("window 1 still open at the ATOM glide - 6", next_glide(c1))
+    assert wopen[next_glide(c2) - CLAIM_EXIT_F] == 0, ("window 2 still open at the ELECTRON glide - 6", next_glide(c2))
+
+    # --- THE DEVICES -----------------------------------------------------------------------------------------------------
+    refs = []
+    for rid, Lv, lines, _full, key in REFS:
+        a = fr[key]
+        draw = Track(T, 0.0).to(a - 6, a, 1.0, "outquad").build()
+        assert draw[a] == 1 and draw[a - 1] < 1 and draw[a - 6] == 0, rid
+        refs.append({"id": rid, "L": Lv, "lines": lines, "draw": [round(float(v), 4) for v in draw], "at": a})
+    eA = Track(T, 0.0).to(fr["electronIn"] - 1, fr["electronIn"] + 7, 1.0, "linear").build()
+    assert eA[fr["electronIn"] - 1] == 0 and eA[fr["electronIn"]] > 0
+    brk = Track(T, 0.0).to(fr["breakDraw"] - 1, fr["breakDraw"] + 11, 1.0, "outquad").build()
+    assert brk[fr["breakDraw"] - 1] == 0 and brk[fr["breakDraw"]] > 0
+    pA = Track(T, 0.0).to(fr["planckIn"] - 6, fr["planckIn"], 1.0, "linear").build()
+    assert pA[fr["planckIn"]] == 1 and pA[fr["planckIn"] - 1] < 1
+    pG = Track(T, 0.0).to(fr["floorGlow"] - 6, fr["floorGlow"], 1.0, "outquad").build()
+    assert pG[fr["floorGlow"]] == 1 and pG[fr["floorGlow"] - 1] < 1
+    rs, re_ = fr["readoutStart"], fr["readoutEnd"]
+    n = len(READOUT_TEXT)
     count = np.zeros(T, dtype=int)
-    for i, f_ in enumerate(fr["digitTicks"]):
-        count[f_:] = i + 1
-    assert count[-1] == snd.N_DIGITS and count[fr["readoutSeat"]] == 0
-    ninesA = Track(T, 0.0).to(fr["readoutSeat"] - snd.SEAT_F, fr["readoutSeat"], 1.0, "linear").build()
-    # lessons 31 / 42 / 47: every claim-bound device is GONE >= 8 f before the next claim's tab page (the glide starts 6 f before)
-    assert orbitA[probe_page - 8] == 0 and massA[lhc_page - 8] == 0 and energyA[lhc_page - 8] == 0, "lesson 42 exits"
-    assert orbitA[o2 - 6] == 0, "the orbit inset must be gone before the window opens on its column"
-    assert massA[fr["massLabel"]] == 1 and energyA[fr["energyIn"] + 8] == 1 and orbitA[fr["orbitIn"] + 10] == 1
+    for f_ in range(rs, T):
+        count[f_] = min(n, 1 + (n - 1) * (f_ - rs) // (re_ - rs))
+    assert count[rs - 1] == 0 and count[rs] == 1 and count[re_] == n and count[re_ - 1] < n and np.all(np.diff(count) >= 0)
+    assert "".join(READOUT_LINES) == READOUT_TEXT and READOUT_TEXT.count("0") == 1 + 34 and READOUT_TEXT.startswith("0." + "0" * 34 + "16")
+    rA = Track(T, 0.0).to(rs - 8, rs, 1.0, "linear").build()
+    rmono = advance("IBMPlexMono-normal-500-latin.woff2", READOUT_PX)
+    assert READOUT["x0"] + 12 + max(rmono(l) for l in READOUT_LINES) <= 912, ("the readout reaches x >= 912", [rmono(l) for l in READOUT_LINES])
+    nA = Track(T, 0.0).to(fr["nucleusPulse"] - SEAT_F, fr["nucleusPulse"], 1.0, "linear").to(c2 - 1, c2 - 1 + WC, 0.0).build()
+    assert nA[fr["nucleusPulse"]] == 1 and nA[fr["nucleusPulse"] - SEAT_F] == 0 and nA[next_glide(c2) - CLAIM_EXIT_F] == 0
+    nmono = advance("IBMPlexMono-normal-400-latin.woff2", 24)
+    assert all(WIN["x0"] + 20 + nmono(l) <= WIN["x1"] - 20 for l in ATOM_NOTE_LINES) and " ".join(ATOM_NOTE_LINES) == ATOM_NOTE
+    # the readout card never covers the marker, the Planck line or the ATOM / PROTON chips
+    for rid in ("atom", "proton", "virus", "cell", "hair", "sand"):
+        x0, x1, y0, y1 = boxes[rid]
+        assert x1 <= READOUT["x0"] or y1 <= READOUT["y0"] or y0 >= READOUT["y1"], ("the readout covers a chip", rid)
+    assert READOUT["x0"] > RAIL["x"] + 30 and READOUT["y1"] < PLANCK_Y - 40
+    devices = {
+        "refs": refs,
+        "electron": {"alpha": [round(float(v), 4) for v in eA], "name": ELECTRON_NAME, "sub": ELECTRON_SUB, "subSeat": fr["noSize"]},
+        "brk": [round(float(v), 4) for v in brk],
+        "planck": {"y": PLANCK_Y, "alpha": [round(float(v), 4) for v in pA], "glow": [round(float(v), 4) for v in pG], "label": PLANCK_LABEL,
+                   "floor": FLOOR_LABEL, "floorSeat": fr["floorGlow"]},
+        "readout": {"count": [int(v) for v in count], "alpha": [round(float(v), 4) for v in rA], "text": READOUT_TEXT, "lines": READOUT_LINES},
+        "atomNote": {"lines": ATOM_NOTE_LINES, "seat": fr["nucleusPulse"], "alpha": [round(float(v), 4) for v in nA], "pulse": fr["nucleusPulse"]},
+    }
 
     # theme.ts must equal these numbers
     theme = (P / "theme.ts").read_text()
-    m = re.search(r"rail:\s*\{\s*x:\s*(\d+),\s*axisY0:\s*(\d+),\s*cY:\s*(\d+)", theme)
-    assert m and [int(v) for v in m.groups()] == [RAIL["x"], RAIL["axisY0"], RAIL["cY"]], "theme.ts L.rail stale"
-    assert re.search(r"ppd:\s*700 / 9\.03313", theme), "theme.ts L.rail.ppd stale"
+    assert re.search(r"rail:\s*\{\s*x:\s*250,\s*y0:\s*380,\s*y1:\s*1000,\s*L0:\s*3,\s*L1:\s*18,\s*ppd:\s*620 / 15", theme), "theme.ts L.rail stale"
+    assert re.search(r"planckY:\s*%d" % PLANCK_Y, theme) and re.search(r"labelX:\s*%d" % LABEL_X, theme), "theme.ts L.rail stale"
     for name, d_ in (("win", WIN), ("counter", COUNTER), ("readout", READOUT)):
         m = re.search(name + r":\s*\{\s*x0:\s*(\d+),\s*x1:\s*(\d+),\s*y0:\s*(\d+),\s*y1:\s*(\d+)", theme)
         assert m and [int(v) for v in m.groups()] == [d_[k] for k in ("x0", "x1", "y0", "y1")], f"theme.ts L.{name} stale"
-    assert re.search(r"labelX:\s*%d" % LABEL_X, theme), "theme.ts L.rail.labelX stale"
+    m = re.search(r"electron:\s*\{\s*x:\s*(\d+),\s*nameY:\s*(\d+),\s*subY:\s*(\d+)", theme)
+    assert m and [int(v) for v in m.groups()] == [ELECTRON["x"], ELECTRON["nameY"], ELECTRON["subY"]], "theme.ts L.electron stale"
 
-    # --- placards (root rail) ----------------------------------------------------------------------------------------
+    # --- placards (root rail) ----------------------------------------------------------------------------------------------
     bc = {px: advance("SairaCondensed-normal-600-latin.woff2", px) for px in set(PLACARD_SIZES + FINE_SIZES)}
     starts = sorted(p["startFrame"] for p in out_pages)
-    plan_pl = {p["scenes"]: p for p in plan["metadata"]["placards"]}
     placards = []
-    for key, line, fine in PLACARDS:
-        assert key in plan_pl and (plan_pl[key]["text"] == line or key == "sc06-sc07"), ("placard text differs from the plan", key)
+    for pl in plan["metadata"]["placards"]:
+        key, line, fine = pl["scenes"], pl["text"], pl.get("fine_print")
         first, last = PLACARD_SCENES[key]
         enter = sc[first]["from"] + 2
         for ps_ in starts:
             if ps_ <= enter < ps_ + PLACARD_PAGE_GUARD_F:
                 enter = ps_ + PLACARD_PAGE_GUARD_F
-        exit_ = (sc[order[order.index(last) + 1]]["from"] - 8) if last != order[-1] else rel - 14   # gone before the next page's tab glide / before the release (lessons 42/47, 25; QA A-02, A-04)
+        if last != order[-1]:
+            nfrom = sc[order[order.index(last) + 1]]["from"]
+            exit_ = min(nfrom - 8, next_glide(nfrom - 8) - CLAIM_EXIT_F)
+        else:
+            exit_ = min(rel - 14, next_glide(rel - 20) - CLAIM_EXIT_F)
+        assert exit_ <= next_glide(exit_ - 1) - CLAIM_EXIT_F, ("placard exits < 6 f before the next glide", line)
         assert exit_ - enter >= PLACARD_MIN_F, ("placard held < 1.2 s", line, enter, exit_)
         size = next((px for px in PLACARD_SIZES if bc[px](line) <= PLACARD_TEXT_W), None)
         assert size, ("placard line too long", line)
@@ -484,19 +467,19 @@ def main() -> None:
         placards.append({"enter": enter, "exit": exit_, "line": line, "lines": [line], "size": size, "w": round(bc[size](line), 1),
                          "fine": fine, "fineSize": fsize, "fineW": round(bc[fsize](fine), 1) if fine else None, "anchor": key})
         assert 140 + 28 + placards[-1]["w"] <= 912 and (not fine or 140 + 28 + placards[-1]["fineW"] <= 912), ("placard reaches x >= 912", placards[-1])
+    assert [p["anchor"] for p in placards] == list(PLACARD_SCENES)
     for a, b in zip(placards, placards[1:]):
         assert a["exit"] <= b["enter"], (a, b)
-    # lesson 32: every source named on a placard is in the research brief
-    brief = json.loads((P / "artifacts/research_brief.json").read_text())
-    btext = json.dumps(brief).lower()
-    for src in ("wilson", "nature 2013", "nasa", "nist", "cern", "space.com", "britannica"):
-        assert src in btext, ("placard source not in the research brief (lesson 32)", src)
+    brief = json.dumps(json.loads((P / "artifacts/research_brief.json").read_text())).lower()
+    for src in ("wentworth", "ncbi", "abbe", "codata", "planck"):
+        assert src in brief, ("placard source not in the research brief (lesson 32)", src)
 
-    # --- strings: verified / forbidden (lessons 20, 32) ----------------------------------------------------------------
+    # --- strings: verified / forbidden (lessons 20, 32) ---------------------------------------------------------------------
     verified = set(plan["metadata"]["verified_on_screen_strings"])
     forbidden = [f.split(" (")[0].lower() for f in plan["metadata"]["forbidden_on_screen"]]
-    root_strings = list(LABELS.values()) + [CTA_TEXT] + [f"{r['name']} · {r['num']}" for r in rungs] + [ln for r in rungs for ln in r["lines"]] \
-        + [str(n) for n in range(10)] + ["1", "10", "100", "1,000", "10,000", "100,000", "1,000,000", "10,000,000", "100,000,000", "1,000,000,000"]
+    root_strings = list(LABELS.values()) + [CTA_TEXT, ELECTRON_NAME, ELECTRON_SUB, PLANCK_LABEL, FLOOR_LABEL, READOUT_TEXT, ATOM_NOTE] \
+        + ATOM_NOTE_LINES + [ln for r in rungs for ln in r["lines"]] + [ln for r in REFS for ln in r[2]] + [r[3] for r in REFS] + DECADES \
+        + [str(v) for v in sorted(set(value.tolist()))]
     for s_ in root_strings:
         assert any(s_ in v for v in verified), ("root string not in verified_on_screen_strings (lesson 20)", s_)
     lit = set()
@@ -504,6 +487,8 @@ def main() -> None:
         src = f.read_text()
         lit |= set(re.findall(r'text(?:=|:\s*)\{?"([^"]+)"', src))
         lit |= set(re.findall(r'(?:TEXT|LINE|LABEL|NUM)\w*\s*=\s*"([^"]+)"', src))
+        for old in ("km/h", "cheetah", "falcon", "LHC", "YouTag", "Orbit", "Beam", "Energy", "Nines", "MassLabel"):
+            assert old not in src, ("a video-16 device / string is left in a scene", f.name, old)
     bad = sorted(t_ for t_ in lit if not any(t_ in v for v in verified))
     assert not bad, ("on-screen literals not in verified_on_screen_strings (lesson 20)", bad)
     placard_text = " ".join(p["line"] + " " + (p["fine"] or "") for p in placards)
@@ -511,16 +496,19 @@ def main() -> None:
     assert not [f for f in forbidden if f in allscreen], ("forbidden_on_screen string on screen", [f for f in forbidden if f in allscreen])
     print("verified on-screen literals in scenes:", len(lit))
 
-    # --- the settle is STILL (lesson 25) ---------------------------------------------------------------------------------
-    chans = {"ladder.markerL": markerL, "ladder.vis": vis, "ladder.streak": streak, "ladder.cLit": cLit, "ladder.gap": gap, "ladder.railDraw": rail_draw,
-             "counter": value.astype(float), "window.open": wopen, "S1.alpha": aS1, "S2.alpha": aS2, "S3.alpha": aS3, "you.L": youL, "you.alpha": youA,
-             "beam.p": beamP, "beam.alpha": beamA, "energy.barH": barH, "energy.alpha": energyA, "mass": massA, "orbit": orbitA,
-             "nines.count": count.astype(float), "nines.alpha": ninesA}
+    # --- the settle is STILL (lesson 25) ------------------------------------------------------------------------------------
+    chans = {"ladder.markerL": markerL, "ladder.vis": vis, "ladder.railDraw": rail_draw, "ladder.veil": veil, "counter": value.astype(float),
+             "counter.alpha": calpha, "window.open": wopen, "S1": aS1, "S2": aS2, "S3": aS3, "ATOM": aA, "electron": eA, "brk": brk,
+             "planck.alpha": pA, "planck.glow": pG, "readout.count": count.astype(float), "readout.alpha": rA, "atomNote": nA}
+    for r in refs:
+        chans["ref." + r["id"]] = np.array(r["draw"])
     for name, arr in chans.items():
         assert np.all(np.abs(arr[rel:] - arr[rel]) < 1e-9), ("the settle must be still", name)
-    assert wopen[rel] == 0 and gap[rel] == 1 and ninesA[rel] == 1 and energyA[rel] == 0 and massA[rel] == 0 and beamA[rel] == 0 and placards[-1]["exit"] <= rel
+    assert wopen[rel] == 0 and placards[-1]["exit"] <= rel and fr["ctaFrame"] == rel
 
     r4 = lambda a: [round(float(v), 4) for v in a]
+    for r in rungs:
+        r.pop("_desc")
     props = {
         "timeline": {
             "fps": FPS, "width": 1080, "height": 1920, "total_frames": total, "lead_frames": round(tl["lead_seconds"] * FPS),
@@ -528,20 +516,13 @@ def main() -> None:
             "scenes": [{"id": s["id"], "section": s["section"], "from": s["from"], "durationInFrames": s["durationInFrames"]} for s in tl["scenes"]],
             "words": [{"section": w["section"], "text": w["text"], "f0": w["f0"], "f1": w["f1"]} for w in words],
         },
-        "captionPages": out_pages,
+        "captionPages": [{k: v for k, v in p.items() if k != "text"} for p in out_pages],
         "meter": meter,
-        "ladder": {"markerL": [round(float(v), 5) for v in markerL], "markerVis": r4(vis), "streak": r4(streak), "cLit": r4(cLit), "gap": r4(gap),
-                   "railDraw": r4(rail_draw), "rungs": rungs, "cL": round(L_C, 5), "markerR": MARKER_R, "gapPx": MARKER_GAP_PX,
-                   "notes": "y(L) = axisY0 - L * ppd (no camera); the marker's final L = L_c - gapPx / ppd (asserted >= gapPx under c on every frame); the gap is DRAWN, not to scale (0.999999991 c is 4e-9 decades)"},
+        "ladder": {"markerL": [round(float(v), 5) for v in markerL], "markerVis": r4(vis), "railDraw": r4(rail_draw), "veil": r4(veil),
+                   "rungs": rungs, "markerR": MARKER_R, "notes": ladder_notes},
+        "devices": devices,
         "counter": counter,
         "window": window,
-        "you": {"L": [round(float(v), 5) for v in youL], "alpha": r4(youA), "text": LABELS["you"]},
-        "beam": {"progress": r4(beamP), "alpha": r4(beamA)},
-        "energy": {"vc": [round(float(v), 6) for v in vc], "gamma": [round(float(v), 4) for v in gamma], "barH": [round(float(v), 2) for v in barH], "alpha": r4(energyA), "pxPerGamma": round(float(BAR_OFF_PX / (gamma[fr["barOff"]] - 1)), 3),
-                   "label": LABELS["energy"], "axisX": LABELS["speed"], "axisY": LABELS["energyAxis"], "tag": LABELS["drawn"]},
-        "nines": {"count": [int(v) for v in count], "alpha": r4(ninesA), "label": LABELS["lhc"], "value": LABELS["nines"], "ticks": fr["digitTicks"], "seat": fr["readoutSeat"]},
-        "mass": {"alpha": r4(massA)},
-        "orbit": {"alpha": r4(orbitA)},
         "placards": placards,
         "labels": LABELS,
         "cta": {"text": CTA_TEXT, "lines": CTA_LINES, "frame": fr["ctaFrame"]},
@@ -552,6 +533,7 @@ def main() -> None:
         "layers": "all",
         "exportVariant": "main",
     }
+    assert {k: v for k, v in props["audio"].items() if k != "soundtrack"} == fr, "props.audio != soundtrack frames"
 
     for pg in out_pages:
         lines = {}
@@ -561,14 +543,14 @@ def main() -> None:
     for k in meter:
         print(f'meter {k["glideStart"]:5d}->{k["frame"]:5d} {k["state"]:<9}{" (pulse)" if k["repeat"] else "        "} {k["anchor"]}')
     print("placards:", [(p["enter"], p["exit"], p["size"], p["fineSize"], p["line"][:30]) for p in placards])
-    print("marker y at seats:", {r["id"]: round(rail_y(markerL[r["seat"]])) for r in rungs if r["id"] != "light"}, "final", round(rail_y(markerL[-1]), 1), "c", RAIL["cY"])
-    print("counter steps:", steps, "tag swap", swap_f, "bar off", fr["barOff"], round(float(barH[fr["barOff"]])))
+    print("chips:", {k: [round(v) for v in b] for k, b in boxes.items()})
+    print("counter steps:", [(f_, int(value[f_])) for f_ in ticks])
     if check:
         return
     (P / "artifacts/props.json").write_text(json.dumps(props, ensure_ascii=False, separators=(",", ":")))
     ts = ("// GENERATED by build_props.py from artifacts/props.json - do not edit by hand.\n"
-          "import type { SpeedProps } from \"./types\";\n\n"
-          f"export const DEFAULT_PROPS: SpeedProps = {json.dumps(props, ensure_ascii=False, separators=(',', ':'))};\n")
+          "import type { ScaleProps } from \"./types\";\n\n"
+          f"export const DEFAULT_PROPS: ScaleProps = {json.dumps(props, ensure_ascii=False, separators=(',', ':'))};\n")
     (P / "props.generated.ts").write_text(ts)
     print("wrote artifacts/props.json and props.generated.ts")
 

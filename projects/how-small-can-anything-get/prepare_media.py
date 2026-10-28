@@ -8,18 +8,10 @@ Pattern of projects/how-a-cat-lands/prepare_media.py (video 15, QA passed). No A
 photo; the plan's x 470-920 box would have covered 'EARTH (orbit) · ~107,000' and 'PARKER (fastest built)'), so each crop has
 the window's aspect (0.7506).
 
-THE STILLS ARE NOT GENERATED YET (assets_report: S1-S3 'NOT GENERATED', the full ElevenLabs connector was denied). Until
-they land this script writes a clearly labelled PLACEHOLDER plate per still (a dark card with the plate's name and 'PENDING
-STILL' in the window's size) into public/stills/<id>.png and records "placeholder": true in artifacts/media_report.json, so the
-whole chain (build_props.py, the composition, the stubs, the contact sheet) runs unchanged.
-
-WHEN THE REAL STILLS LAND (assets/images/plate_cheetah.png, plate_falcon_dive.png, plate_parker_probe.png; 9:16 2K):
-  1. count legs / wings / tails on each at 4x (lesson 39) and write the measured feature points into PLATES[*]['contains']
-     (every point is asserted inside the crop with a 20 px margin) and the crop box (lesson 9: measure from pixels, keep the
-     window's aspect; the plan asks for the middle 60 % to be the most interesting);
-  2. python3 projects/how-small-can-anything-get/prepare_media.py --force   (re-stages the crops, drops the placeholders)
-  3. python3 projects/how-small-can-anything-get/build_props.py             (the plates' 'placeholder' flags go false)
-  then re-render the affected stills (sc02, sc03, sc06, sc07). Nothing else changes.
+The three AI stills exist (assets/images/plate_sand.png, plate_blood_cells.png, plate_virus.png; 1152 x 2048). Crop boxes
+are MEASURED on them (lesson 9: from pixels, the window's aspect) with the subject inside (lesson 39: feature points asserted
+inside the crop with a 20 px margin). The window's fourth state (sc06-sc07, the atom) is DRAWN in code (shared/Window.tsx), not
+a plate. A missing source still falls back to a labelled placeholder card ("placeholder": true).
 -> artifacts/media_report.json + renders/review/crops.jpg (the crops on their plates, or the placeholders).
 """
 from __future__ import annotations
@@ -36,16 +28,19 @@ FORCE = "--force" in sys.argv
 WIN = {"x0": 580, "x1": 920, "y0": 440, "y1": 893}
 WW, WH = WIN["x1"] - WIN["x0"], WIN["y1"] - WIN["y0"]
 
-# crop boxes MEASURED on the 1152 x 2048 plates (2026-10-27; legs/wings/tails counted at 2x: S1 4 legs 1 tail 2 ears, S2 1 head 2 wings 1 tail feet tucked, S3 one craft, shield to the Sun, no text)
-# (previously: DEFAULTS for a 1152 x 2048 (9:16 2K) plate: the middle 60 % band, the window's aspect; replace with
-# measured boxes + feature points when the stills land (lesson 9 / 39)
+# crop boxes MEASURED on the 1152 x 2048 plates (video 17, 2026-10-28, read at 1/4 scale then checked in renders/review/crops.jpg):
+# S1 the clear quartz grain sits centre-left (~560, 860); S2 the frontal biconcave cell (~536, 1000); S3 the whole virion
+# (centre ~572, 940, radius ~520 px, spikes included). Full plate width, the window's aspect (1152 x 1535).
 PLATES = {
-    "S1": {"src": "plate_cheetah.png", "crop": (0, 300, 1152, 1835), "scene": "sc02", "push": [1.0, 1.03], "contains": {"head": (1000, 760), "ear": (960, 730), "tail_tip": (45, 850), "hind_paw": (150, 1100), "front_paw": (1110, 1150)}, "label": "S1 plate_cheetah",
-           "qa": "4 legs, 1 tail, 2 ears at 4x (lesson 39) before any crop"},
-    "S2": {"src": "plate_falcon_dive.png", "crop": (0, 130, 1152, 1665), "scene": "sc03", "push": [1.0, 1.03], "contains": {"tail_top": (200, 175), "beak": (917, 1536), "eye": (850, 1430), "foot": (277, 810), "wing_edge": (700, 1050)}, "label": "S2 plate_falcon_dive",
-           "qa": "1 head, 2 wings tucked, 1 tail; peregrine markings"},
-    "S3": {"src": "plate_parker_probe.png", "crop": (0, 100, 1152, 1635), "scene": "sc06", "push": [1.0, 1.04], "contains": {"shield": (600, 1000), "left_panel": (240, 1200), "right_panel": (700, 1350), "bus": (480, 1150), "sun_limb": (600, 700)}, "label": "S3 plate_parker_probe",
-           "qa": "one spacecraft, heat shield toward the Sun, no text / logos"},
+    "S1": {"src": "plate_sand.png", "crop": (0, 100, 1152, 1635), "scene": "sc01", "push": [1.0, 1.03],
+           "contains": {"quartz_grain": (560, 860), "amber_grain_top": (190, 300), "grain_bottom": (500, 1460)}, "label": "S1 plate_sand",
+           "qa": "loose grains, no scale bar / text"},
+    "S2": {"src": "plate_blood_cells.png", "crop": (0, 250, 1152, 1785), "scene": "sc04", "push": [1.0, 1.03],
+           "contains": {"front_cell": (536, 1000), "cell_top": (440, 300), "cell_low": (480, 1420)}, "label": "S2 plate_blood_cells",
+           "qa": "biconcave discs, no text"},
+    "S3": {"src": "plate_virus.png", "crop": (0, 173, 1152, 1708), "scene": "sc05", "push": [1.0, 1.03],
+           "contains": {"virion_centre": (572, 940), "spike_top": (572, 440), "spike_bottom": (572, 1440), "spike_left": (60, 940), "spike_right": (1090, 940)},
+           "label": "S3 plate_virus", "qa": "one whole virion in the crop, spikes included, no text"},
 }
 
 
