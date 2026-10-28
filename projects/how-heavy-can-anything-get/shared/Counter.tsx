@@ -1,8 +1,8 @@
 // THE ZEROS COUNTER (ROOT ONLY: Composition.tsx mounts <Counter/> once; props.counter, build_props.py). A chip top right
 // (theme.ts L.counter, right-aligned at x 920): 'ZEROS' in mono 24 px steel beside the big slashed-zero number (mono 500,
-// 72 px, bone) = the zeros after the decimal point of the active rung's metres (SAND 0.0005 m -> 3 ... PROTON -> 14), then the
-// spin to 34 (the Planck length). Hidden before sandSeat. The number STEPS on its tick frames (props.counter.ticks): the new
-// value is the one shown ON the tick, with a short gravity settle (lessons 4 / 22). Constant from spinEnd. Hooks at the top.
+// 72 px, bone) = the power of ten of the active rung's kilograms (YOU ~70 kg -> 1 ... SGR A* -> 36), then the spin to 53 (the
+// ordinary matter of the observable universe). Hidden before youSeat. The number STEPS on its tick frames (props.counter.ticks):
+// the new value is the one shown ON the tick, with a short settle (lessons 4 / 22). Constant from spinEnd. Hooks at the top.
 
 import React from "react";
 import { useCurrentFrame } from "remotion";

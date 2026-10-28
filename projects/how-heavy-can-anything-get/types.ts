@@ -1,13 +1,13 @@
 // Shapes of artifacts/props.json (written by build_props.py). All frames are ABSOLUTE @ 30 fps.
-// Video 17 "How Small Can Anything Get?" / the SCALE WELL: video 16's ladder engine flipped DOWNWARD in metres
-// (L = -log10(metres); the rail never moves, no camera).
+// Video 18 "How Heavy Can Anything Get?" / the WEIGHT COLUMN: video 17's ladder engine pointing UP in kilograms
+// (L = log10(kg); the rail never moves, no camera).
 
 export type SectionId = "s1" | "s2" | "s3" | "s4" | "s5";
 export type SceneId =
   | "sc01" | "sc02" | "sc03" | "sc04" | "sc05" | "sc06"
   | "sc07" | "sc08" | "sc09" | "sc10" | "sc11" | "sc12";
-export type RungId = "sand" | "hair" | "cell" | "virus" | "atom" | "proton";
-export type MediaId = "S1" | "S2" | "S3" | "ATOM";
+export type RungId = "you" | "whale" | "eiffel" | "humans" | "earth" | "sun" | "neutron" | "sgra";
+export type MediaId = "S1" | "S2" | "S3" | "BH";
 
 export type Word = { section: string; text: string; f0: number; f1: number };
 export type Window_ = { id: string; from: number; durationInFrames: number };
@@ -25,42 +25,38 @@ export type MeterKey = { frame: number; glideStart: number; state: MeterState; s
 export type Rect = { x0: number; x1: number; y0: number; y1: number };
 
 /**
- * A RUNG (shared/Ladder.tsx draws it): its tick drops onto y = railY(L) and its label chip (`lines`: 'NAME · number' or the
- * name over the number) SEATS on `seat` (gravity drop, T.seat) WITH the marker's arrival (lessons 33 / 46). `metres` is the
- * brief's value; L = -log10(metres) (the brief's placement).
+ * A RUNG (shared/Ladder.tsx draws it): its tick drops onto y = railY(L) and its label chip (`lines`: 'NAME · number', or the
+ * name over the number, or the name over the number split in two) SEATS on `seat` (gravity drop, T.seat) WITH the marker's
+ * arrival (lessons 33 / 46). `kg` is the brief's value; L = log10(kg) (the brief's placement).
  */
-export type Rung = { id: RungId; name: string; num: string; lines: string[]; metres: number; L: number; seat: number };
+export type Rung = { id: RungId; name: string; num: string; lines: string[]; kg: number; L: number; seat: number };
 
 /**
  * THE LADDER (per-frame root curves; arrays have total_frames entries).
- *   markerL   the marker's L (descending rung by rung on eased moves: first moving frame = descend*, landing ON *Seat)
- *   markerVis 0..1;  railDraw 0..1 the rail drawing bright top -> bottom (X1 on railDraw)
- *   veil      0..0.2 the faint veil dimming the rail below YOUR EYE (from eyeLine, for the rest of the film)
+ *   markerL   the marker's L (climbing rung by rung on eased moves: first moving frame = climb*, landing ON *Seat)
+ *   markerVis 0..1 (a ghost ~0.3 from universeIn: the story has left the rungs, lesson 60)
+ *   railDraw  0..1 the rail drawing bright bottom -> top from railDraw
  */
-export type LadderInfo = { markerL: number[]; markerVis: number[]; railDraw: number[]; veil: number[]; rungs: Rung[]; markerR: number; notes: string };
+export type LadderInfo = { markerL: number[]; markerVis: number[]; railDraw: number[]; rungs: Rung[]; markerR: number; notes: string };
 
-/** a dashed REFERENCE line across the rail (not a rung): draw 0..1 lands ON its key frame; label lines left of the rail */
-export type RefLine = { id: "eye" | "micro"; L: number; lines: string[]; draw: number[]; at: number };
-
-/** the ROOT devices below the proton (sc08 ->) and the readout (sc10 ->) */
+/** the ROOT devices (sc08 ->) */
 export type Devices = {
-  refs: RefLine[];
-  /** sc08: the bracket under the rail bottom + the open downward arrow + 'ELECTRON' (alpha), the sub-label SEATS on `subSeat` */
-  electron: { alpha: number[]; name: string; sub: string; subSeat: number };
-  /** sc09: the rail BREAK (zigzag) draw 0..1 from breakDraw */
+  /** sc09: the dashed 'Mercury's orbit' circle around the drawn black hole (draw 0..1 from orbitDraw; the label seats ON labelSeat).
+   *  horizon = the black disc's radius as a fraction of the orbit's radius (~24 / 116 million km) */
+  orbit: { draw: number[]; label: string; labelSeat: number; horizon: number };
+  /** sc10: the rail BREAK (zigzag above the rail's top) draw 0..1 from breakDraw */
   brk: number[];
-  /** sc09 ->: the dashed violet PLANCK line (alpha, in ON planckIn), brightened ON floorGlow (glow 0..1) + 'a floor? unproven' */
-  planck: { y: number; alpha: number[]; glow: number[]; label: string; floor: string; floorSeat: number };
-  /** sc10 ->: the readout; count = glyphs shown of `text` (1 on readoutStart ... all ON readoutEnd); `lines` = its wrap */
-  readout: { count: number[]; alpha: number[]; text: string; lines: string[] };
-  /** sc07: the note in the window under the drawn atom (seats ON nucleusPulse); `pulse` = the nucleus pulse's peak frame */
-  atomNote: { lines: string[]; seat: number; alpha: number[]; pulse: number };
+  /** sc10 ->: the dashed OBSERVABLE UNIVERSE line (alpha, first visible ON universeIn) and its two label lines */
+  universe: { alpha: number[]; lines: string[] };
+  /** sc10 ->: the LINEAR comparison: the amber ordinary bar (ordAlpha, in ON universeIn), the violet dark bar (rise 0..1, lands
+   *  ON darkSeat at `ratio` x the ordinary bar's height) and its labels ('~5 : 1 · inferred' seats ON darkSeat) */
+  bars: { ordAlpha: number[]; rise: number[]; ratio: number; ordLabel: string; darkLabel: string; ratioLabel: string; tag: string; seat: number };
 };
 
-/** THE ZEROS COUNTER (root): zeros after the decimal point of the active rung's metres; steps ON `ticks` */
+/** THE ZEROS COUNTER (root): the power of ten of the active rung's kilograms; steps ON `ticks` */
 export type CounterInfo = { value: number[]; alpha: number[]; ticks: number[]; label: string };
 
-/** a state of the root WINDOW: an AI plate (`base` = public/ path) or the DRAWN atom (`base` = null) */
+/** a state of the root WINDOW: an AI plate (`base` = public/ path) or the DRAWN black hole (`base` = null) */
 export type WindowPlate = {
   id: MediaId;
   scene: string;
@@ -91,43 +87,42 @@ export type Placard = {
 export type AudioFrames = {
   soundtrack: string;
   railDraw: number;
-  sandSeat: number;
-  sandTicks: number[];
+  youSeat: number;
+  youTicks: number[];
   windowOpen1: number;
-  descendHair: number;
-  hairSeat: number;
-  hairTicks: number[];
-  eyeLine: number;
-  plateSwap1: number;
-  descendCell: number;
-  cellSeat: number;
-  cellTicks: number[];
-  plateSwap2: number;
-  descendVirus: number;
-  virusSeat: number;
-  virusTicks: number[];
-  lightLine: number;
+  climbWhale: number;
+  whaleSeat: number;
+  whaleTicks: number[];
+  plateSwap: number;
+  climbEiffel: number;
+  eiffelSeat: number;
+  eiffelTicks: number[];
   windowClose1: number;
+  climbHumans: number;
+  humansSeat: number;
+  humansTicks: number[];
+  climbEarth: number;
+  earthSeat: number;
+  earthTicks: number[];
+  climbSun: number;
+  sunSeat: number;
+  sunTicks: number[];
   windowOpen2: number;
-  descendAtom: number;
-  atomSeat: number;
-  atomTicks: number[];
-  nucleusPulse: number;
-  descendProton: number;
-  protonSeat: number;
-  protonTicks: number[];
+  neutronSeat: number;
   windowClose2: number;
-  electronIn: number;
-  noSize: number;
+  windowOpen3: number;
+  climbSgra: number;
+  sgraSeat: number;
+  sgraTicks: number[];
+  orbitDraw: number;
+  windowClose3: number;
   breakDraw: number;
-  planckIn: number;
+  universeIn: number;
   spinStart: number;
   spinEnd: number;
   spinTicks: number[];
-  readoutStart: number;
-  readoutEnd: number;
-  readoutTicks: number[];
-  floorGlow: number;
+  darkRise: number;
+  darkSeat: number;
   closingStart: number;
   wayFrame: number;
   wayEndFrame: number;

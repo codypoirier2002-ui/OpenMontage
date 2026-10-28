@@ -1,10 +1,12 @@
 // THE WINDOW (ROOT ONLY: Composition.tsx mounts <WindowView/> once; props.window, build_props.py; its ONE tag is root too:
-// <WindowTags/> on the overlay plane, keyed to the state that is actually showing). Video 16's window, re-used:
+// <WindowTags/> on the overlay plane, keyed to the state that is actually showing). Video 17's window, re-used:
 //   ONE portrait box x 580-920, y 440-893 (theme.ts L.win), rounded 22 px, a 6 px steel frame + a 1 px lit rim + an inner shadow
-//   S1  sc01-sc03   sand grains (AI impression), open ON windowOpen1
-//   S2  sc04        red blood cells, crossfading in over XFADE_F from plateSwap1 (hard tag swap at the midpoint, lesson 38)
-//   S3  sc05        a virus, crossfading in from plateSwap2; the window closes from windowClose1
-//   ATOM sc06-sc07  the DRAWN atom (shared/Devices.tsx <AtomDrawing/>, 'drawn · not to scale'), open ON windowOpen2, closes from windowClose2
+//   S1  sc02        a blue whale (AI impression), open ON windowOpen1
+//   S2  sc03        the Eiffel Tower, crossfading in over XFADE_F from plateSwap (hard tag swap at the midpoint, lesson 38);
+//                   the window closes from windowClose1
+//   S3  sc07        a neutron star (AI impression), open ON windowOpen2, closes from windowClose2
+//   BH  sc08-sc09   the DRAWN black hole (shared/Devices.tsx <BlackHoleDrawing/>, 'drawn · not to scale') + Mercury's orbit,
+//                   open ON windowOpen3, closes from windowClose3
 // Opens over 6 f (ease-out, first visible frame ON its key frame), closes over 8 f (first moving frame ON its key frame).
 // Hooks at the top (lesson 1). No blend modes (lesson 24).
 
@@ -13,7 +15,7 @@ import { Img, staticFile, useCurrentFrame } from "remotion";
 import { C, FONT, L, rgba } from "../theme";
 import { prog, useT } from "../time";
 import type { WindowPlate } from "../types";
-import { AtomDrawing } from "./Devices";
+import { BlackHoleDrawing } from "./Devices";
 
 export const WindowFrame: React.FC<{ open: number; children?: React.ReactNode }> = ({ open, children }) => {
   const b = L.win;
@@ -38,7 +40,7 @@ const Plate: React.FC<{ m: WindowPlate; frame: number }> = ({ m, frame }) => {
   if (m.base === null) {
     return (
       <div style={{ position: "absolute", inset: 0, transform: `scale(${push})`, transformOrigin: "50% 50%" }}>
-        <AtomDrawing w={b.x1 - b.x0} h={b.y1 - b.y0} />
+        <BlackHoleDrawing w={b.x1 - b.x0} h={b.y1 - b.y0} />
       </div>
     );
   }

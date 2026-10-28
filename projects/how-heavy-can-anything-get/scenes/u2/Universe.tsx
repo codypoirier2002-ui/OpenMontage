@@ -1,4 +1,4 @@
-// sc01 · Sand. root: the rail draws top -> bottom from railDraw (X1), SAND seats with its number on sandSeat, ZEROS 3, the window opens on windowOpen1 (S1). Here: a glint riding the draw head + a ring on the SAND seat.
+// sc10 · Universe. root: the rail BREAK draws from breakDraw, the UNIVERSE line + the ordinary bar appear on universeIn, ZEROS spins 36 -> 53 (53 ON spinEnd), the marker dims to a ghost. Here: a ring where the break leaves the rail.
 // The ladder, chips, counter, window and the root devices are ROOT-owned (Composition.tsx); a scene adds emphasis only, keyed
 // through useT(). Hooks at the top, before any early return (lesson 1).
 import React from "react";
@@ -7,18 +7,16 @@ import type { Mount, SceneProps } from "../../types";
 import { Ping } from "../../shared/Devices";
 import { useT } from "../../time";
 import { L } from "../../theme";
-import { RailGlint } from "./_fx";
 
 export const mount: Mount = { pre: 0, post: 0, z: 1 };
 
-export const Sand: React.FC<SceneProps> = ({ from, to }) => {
+export const Universe: React.FC<SceneProps> = ({ from, to }) => {
   const frame = useCurrentFrame();
   const T = useT();
   if (frame < from || frame >= to) return null;
   return (
     <>
-      <RailGlint />
-      <Ping at={T.sfx.sandSeat} x={L.rail.x} y={T.railY(T.rung("sand").L)} />
+      <Ping at={T.sfx.breakDraw} x={L.rail.x} y={L.rail.breakY0} r0={6} r1={34} frames={16} strength={0.5} />
     </>
   );
 };

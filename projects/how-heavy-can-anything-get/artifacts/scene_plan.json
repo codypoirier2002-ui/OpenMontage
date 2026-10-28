@@ -6,14 +6,14 @@
    "id": "sc01",
    "type": "animation",
    "start_seconds": 0.0,
-   "end_seconds": 2.54,
+   "end_seconds": 3.033,
    "script_section_id": "s1",
-   "description": "Render: atelier component sc01. 'Weight Column': the ladder engine pointing UP in kilograms. Ink background lightening slightly toward the top (#05060A bottom -> #0B0E16 top, faint grain); a vertical steel log rail at x ~250 from 1 kg (bottom, y ~1000) to 10^37 kg (y ~380), ticks every 3 powers with numbers as powers of ten (24 px), label 'kilograms \u00b7 log scale'. A heavy bronze-white marker (#FFD9A8 core) CLIMBS rung by rung. Above 10^37 the rail BREAKS (zigzag) and a dashed line at the top marks the observable universe's ordinary matter (10^53). ZEROS counter top right (power of ten of each rung). Window x 580-920 y 440-893 for AI plates and drawn insets. YOU on the column.",
+   "description": "Render: atelier component sc01. 'Weight Column': the ladder engine pointing UP in kilograms. Ink background lightening slightly toward the top (#05060A bottom -> #0B0E16 top, faint grain); a vertical steel log rail at x ~250 from 1 kg (bottom, y ~1000) to 10^37 kg (y ~380), ticks every 3 powers with numbers as powers of ten (24 px), label 'kilograms · log scale'. A heavy bronze-white marker (#FFD9A8 core) CLIMBS rung by rung. Above 10^37 the rail BREAKS (zigzag) and a dashed line at the top marks the observable universe's ordinary matter (10^53). ZEROS counter top right (power of ten of each rung). Window x 580-920 y 440-893 for AI plates and drawn insets. YOU on the column.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'You weigh about seventy kilograms.'. TAB MEASURED. OVERLAYS: rail draws bottom->top before the first word; rung 'YOU \u00b7 ~70 kg'; counter 'ZEROS 1'.",
+   "overlay_notes": "CAPTION 'You weigh about seventy kilograms.'. TAB MEASURED. OVERLAYS: rail draws bottom->top before the first word; rung 'YOU · ~70 kg'; counter 'ZEROS 1'.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -43,15 +43,15 @@
   {
    "id": "sc02",
    "type": "animation",
-   "start_seconds": 2.54,
-   "end_seconds": 7.12,
+   "start_seconds": 3.033,
+   "end_seconds": 6.533,
    "script_section_id": "s1",
    "description": "Render: atelier component sc02. Continuous Weight Column frame. WHALE.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'A blue whale can reach a hundred and fifty thousand.'. TAB PROBABLY. OVERLAYS: marker climbs to 'BLUE WHALE \u00b7 up to ~150,000 kg'; counter 1->5; window opens with plate S1 (blue whale, AI impression).",
+   "overlay_notes": "CAPTION 'A blue whale can reach a hundred and fifty thousand.'. TAB PROBABLY. OVERLAYS: marker climbs to 'BLUE WHALE · up to ~150,000 kg'; counter 1->5; window opens with plate S1 (blue whale, AI impression).",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -86,15 +86,15 @@
   {
    "id": "sc03",
    "type": "animation",
-   "start_seconds": 7.12,
-   "end_seconds": 10.07,
+   "start_seconds": 6.533,
+   "end_seconds": 10.3,
    "script_section_id": "s1",
    "description": "Render: atelier component sc03. Continuous Weight Column frame. EIFFEL.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'The Eiffel Tower, about ten million.'. TAB MEASURED. OVERLAYS: marker to 'EIFFEL TOWER \u00b7 ~10 million kg'; counter 5->7; window crossfades to S2 (Eiffel Tower, AI impression), closes before the next tab glide.",
+   "overlay_notes": "CAPTION 'The Eiffel Tower, about ten million.'. TAB MEASURED. OVERLAYS: marker to 'EIFFEL TOWER · ~10 million kg'; counter 5->7; window crossfades to S2 (Eiffel Tower, AI impression), closes before the next tab glide.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -129,15 +129,15 @@
   {
    "id": "sc04",
    "type": "animation",
-   "start_seconds": 10.07,
-   "end_seconds": 14.24,
+   "start_seconds": 10.3,
+   "end_seconds": 15.633,
    "script_section_id": "s2",
    "description": "Render: atelier component sc04. Continuous Weight Column frame. ALL HUMANS.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'Every human alive, put together: around four hundred billion.'. TAB PROBABLY. OVERLAYS: marker to 'ALL HUMANS \u00b7 ~400 billion kg'; counter 7->11.",
+   "overlay_notes": "CAPTION 'Every human alive, put together: around four hundred billion.'. TAB PROBABLY. OVERLAYS: marker to 'ALL HUMANS · ~400 billion kg'; counter 7->11.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -167,15 +167,15 @@
   {
    "id": "sc05",
    "type": "animation",
-   "start_seconds": 14.24,
-   "end_seconds": 17.19,
+   "start_seconds": 15.633,
+   "end_seconds": 20.367,
    "script_section_id": "s2",
    "description": "Render: atelier component sc05. Continuous Weight Column frame. EARTH.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'The whole Earth: six trillion trillion.'. TAB MEASURED. OVERLAYS: marker to 'EARTH \u00b7 6 \u00d7 10^24 kg'; counter 11->24 (accelerating ticks).",
+   "overlay_notes": "CAPTION 'The whole Earth: six trillion trillion.'. TAB MEASURED. OVERLAYS: marker to 'EARTH · 6 × 10^24 kg'; counter 11->24 (accelerating ticks).",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -205,15 +205,15 @@
   {
    "id": "sc06",
    "type": "animation",
-   "start_seconds": 17.19,
-   "end_seconds": 21.37,
+   "start_seconds": 20.367,
+   "end_seconds": 24.433,
    "script_section_id": "s3",
    "description": "Render: atelier component sc06. Continuous Weight Column frame. SUN.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'The Sun outweighs three hundred and thirty thousand Earths.'. TAB MEASURED. OVERLAYS: marker to 'SUN \u00b7 2 \u00d7 10^30 kg'; counter 24->30.",
+   "overlay_notes": "CAPTION 'The Sun outweighs three hundred and thirty thousand Earths.'. TAB MEASURED. OVERLAYS: marker to 'SUN · 2 × 10^30 kg'; counter 24->30.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -243,15 +243,15 @@
   {
    "id": "sc07",
    "type": "animation",
-   "start_seconds": 21.37,
-   "end_seconds": 27.99,
+   "start_seconds": 24.433,
+   "end_seconds": 30.533,
    "script_section_id": "s3",
    "description": "Render: atelier component sc07. Continuous Weight Column frame. NEUTRON STAR.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'And a neutron star squeezes even more into a ball the size of a city.'. TAB MEASURED. OVERLAYS: rung 'NEUTRON STAR \u00b7 ~1.4 Suns, ~20 km wide' seats beside SUN; window opens with plate S3 (neutron star, AI impression), closes before the next tab glide.",
+   "overlay_notes": "CAPTION 'And a neutron star squeezes even more into a ball the size of a city.'. TAB MEASURED. OVERLAYS: rung 'NEUTRON STAR · ~1.4 Suns, ~20 km wide' seats beside SUN; window opens with plate S3 (neutron star, AI impression), closes before the next tab glide.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -286,15 +286,15 @@
   {
    "id": "sc08",
    "type": "animation",
-   "start_seconds": 27.99,
-   "end_seconds": 33.8,
+   "start_seconds": 30.533,
+   "end_seconds": 35.367,
    "script_section_id": "s4",
    "description": "Render: atelier component sc08. Continuous Weight Column frame. SGR A*.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'The black hole at the centre of our galaxy weighs four million Suns,'. TAB MEASURED. OVERLAYS: marker to 'SGR A* \u00b7 4 million Suns'; counter 30->36; window opens with a DRAWN black hole (dark disc, thin bright ring) tagged 'drawn \u00b7 not to scale'.",
+   "overlay_notes": "CAPTION 'The black hole at the centre of our galaxy weighs four million Suns,'. TAB MEASURED. OVERLAYS: marker to 'SGR A* · 4 million Suns'; counter 30->36; window opens with a DRAWN black hole (dark disc, thin bright ring) tagged 'drawn · not to scale'.",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -324,8 +324,8 @@
   {
    "id": "sc09",
    "type": "animation",
-   "start_seconds": 33.8,
-   "end_seconds": 36.34,
+   "start_seconds": 35.367,
+   "end_seconds": 39.167,
    "script_section_id": "s4",
    "description": "Render: atelier component sc09. Continuous Weight Column frame. fits inside Mercury's orbit.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
@@ -362,8 +362,8 @@
   {
    "id": "sc10",
    "type": "animation",
-   "start_seconds": 36.34,
-   "end_seconds": 42.55,
+   "start_seconds": 39.167,
+   "end_seconds": 44.767,
    "script_section_id": "s5",
    "description": "Render: atelier component sc10. Continuous Weight Column frame. the observable universe.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
@@ -400,15 +400,15 @@
   {
    "id": "sc11",
    "type": "animation",
-   "start_seconds": 42.55,
-   "end_seconds": 45.09,
+   "start_seconds": 44.767,
+   "end_seconds": 46.133,
    "script_section_id": "s5",
    "description": "Render: atelier component sc11. Continuous Weight Column frame. dark matter.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
    "movement": " marker breathes; streaks length = log10(speed).",
    "transition_in": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
    "transition_out": "Continuous speed-ladder frame (crossfades; AI-tag swaps by hard cut at midpoints).",
-   "overlay_notes": "CAPTION 'And dark matter outweighs it'. TAB PROBABLY. OVERLAYS: a translucent violet DARK MATTER bar rises behind the column, about five times the ordinary-matter mark ('drawn \u00b7 inferred, ~5 : 1').",
+   "overlay_notes": "CAPTION 'And dark matter outweighs it'. TAB PROBABLY. OVERLAYS: a translucent violet DARK MATTER bar rises behind the column, about five times the ordinary-matter mark ('drawn · inferred, ~5 : 1').",
    "shot_language": {
     "shot_size": "medium",
     "camera_movement": "static",
@@ -438,8 +438,8 @@
   {
    "id": "sc12",
    "type": "animation",
-   "start_seconds": 45.09,
-   "end_seconds": 48.39,
+   "start_seconds": 46.133,
+   "end_seconds": 48.8,
    "script_section_id": "s5",
    "description": "Render: atelier component sc12. Continuous Weight Column frame. finished line.",
    "framing": "Night-ink sky fills 1080x1920; stage y 320-1100 (log rail x ~250 y 380-1080, window x 580-920 y 440-893 (right of the rung label chips), counter top right); placard rail y 1124-1204; tab y 1236-1290; caption slab x 140-940, y 1296-1488. Camera: N/A - Remotion native scene, no virtual camera",
@@ -487,10 +487,10 @@
   "fps": 30,
   "resolution": "1080x1920",
   "aspect_ratio": "9:16",
-  "total_duration_seconds": 48.39,
-  "total_frames": 1452,
+  "total_duration_seconds": 48.8,
+  "total_frames": 1464,
   "platform": "tiktok",
-  "timing_basis": "PLANNED from word counts; sync_scene_plan.py rewrites every boundary from measured onsets after alignment (anchor onset - 2 f).",
+  "timing_basis": "MEASURED (foundation): every scene boundary after sc01 = its anchor word's measured onset - 2 frames (align_narration.py, the clean WAVs); the film = 0.5 s lead + 46.94 s narration to the release of 'one.' (47.29 s) + 1.5 s settle. Planned values kept in planned_total_*.",
   "build_mode": "LEAN: copy video 17's per-video files and pipeline; ladder upward (L = log10 kg); new devices: rail break + universe line, drawn black hole + Mercury orbit, dark-matter bar. Reuse video 16 SFX. 1 builder agent; qa_auto; 1 targeted QA agent; build_spec.py.",
   "taste_profile": {
    "design_read": "Youth science short: a calm climb up one speed ladder, from walking to light, ending at a wall that never moves.",
@@ -526,7 +526,7 @@
    "data": "video 13's mono face (numbers, counter, readout; slashed zeros)",
    "captions": "Bricolage Grotesque 800 (channel standard)",
    "tab": "Spline Sans Mono 600 (channel standard)",
-   "glyphs": "check ',', '\u00b7', '~', '%', '(', ')', digits; arrows SVG"
+   "glyphs": "check ',', '·', '~', '%', '(', ')', digits; arrows SVG"
   },
   "safe_areas": {
    "top_ui_y": 192,
@@ -538,24 +538,39 @@
      330
     ],
     "y": [
-     380,
-     1110
+     345,
+     1000
     ],
-    "note": "spine x 250, L = -log10(m): y = 380 + (L - 3) * 620 / 15; decade powers right-aligned at x 224; the break y 1012-1040; the Planck line y 1080"
+    "note": "spine x 250, L = log10(kg): y = 1000 - L * 620 / 37; powers every 3 right-aligned at x 224; the break y 345-370"
    },
    "rung_labels": {
     "x": [
      280,
      572
     ],
-    "note": "chips de-overlapped top-down with leaders; never under the open window (build_props asserts)"
+    "note": "chips de-overlapped bottom-up with leaders; never under the open window (build_props asserts)"
    },
-   "reference_labels": {
+   "axis_label": {
     "x": [
-     40,
-     224
+     100,
+     400
     ],
-    "note": "'YOUR EYE' / 'LIGHT MICROSCOPE' left of the rail (the decade powers under them are hidden)"
+    "y": [
+     1026,
+     1054
+    ]
+   },
+   "universe": {
+    "x": [
+     100,
+     620
+    ],
+    "y": [
+     214,
+     284
+    ],
+    "scenes": "sc10-sc12",
+    "note": "the dashed line at y 280 + its label above, left of the counter"
    },
    "window": {
     "x": [
@@ -566,7 +581,7 @@
      440,
      893
     ],
-    "note": "S1 sand, S2 blood cells, S3 virus, then the DRAWN atom"
+    "note": "S1 whale, S2 Eiffel Tower, S3 neutron star, then the DRAWN black hole + Mercury's orbit"
    },
    "counter": {
     "x": [
@@ -579,27 +594,17 @@
     ],
     "note": "the ZEROS chip, right-aligned at x 920"
    },
-   "electron": {
+   "bars": {
     "x": [
-     270,
-     700
+     584,
+     912
     ],
     "y": [
-     960,
-     1040
+     400,
+     1100
     ],
-    "scenes": "sc08-sc12"
-   },
-   "readout": {
-    "x": [
-     580,
-     920
-    ],
-    "y": [
-     470,
-     600
-    ],
-    "scenes": "sc10-sc12"
+    "scenes": "sc10-sc12",
+    "note": "linear ordinary (amber) / dark (violet) matter bars, base y 1060"
    },
    "placard_rail": {
     "x": [
@@ -637,36 +642,41 @@
    "sc05 'YOU' jumps from WALK to Earth's orbit (~107,000)",
    "sc11 the LHC nines fill while the gap under 'c' stays"
   ],
-  "honesty_grammar": "MEASURED solid tab (sand, hair, cell, virus, atom, proton, electron's upper bound); PROBABLY outline + hatch (the naked-eye limit); MAYBE dashed ghost (the Planck length as a floor, from 'Below that,' to the end of s5); IDLE at the CTA. AI plates S1-S3 tagged 'AI impression'; the atom is 'drawn \u00b7 not to scale'. The rail is labelled 'metres \u00b7 log scale'.",
+  "honesty_grammar": "MEASURED solid tab (you, the Eiffel Tower, Earth, the Sun, the neutron star, Sgr A*); PROBABLY outline + hatch (the blue whale's top weight, all humans' total, the observable universe's ordinary matter and dark matter's ~5 : 1, from 'All the ordinary matter' to the end of s5); IDLE at the CTA. AI plates S1-S3 tagged 'AI impression'; the black hole is 'drawn · not to scale'; the matter bars are 'drawn' (linear). The rail is labelled 'kilograms · log scale'.",
   "placards": [
    {
     "scenes": "sc01-sc03",
-    "text": "sand ~0.06-2 mm (Wentworth) \u00b7 hair 17-180 \u00b5m",
-    "fine_print": "naked-eye limit ~0.04-0.1 mm, varies"
+    "text": "Eiffel Tower 10,100 t (toureiffel.paris) · blue whale up to ~150-190 t (NOAA)",
+    "fine_print": "adult ~70 kg, typical"
    },
    {
     "scenes": "sc04-sc05",
-    "text": "red blood cell ~8 \u00b5m \u00b7 influenza ~100 nm (NCBI)",
-    "fine_print": "light-microscope limit ~200 nm (Abbe)"
+    "text": "all humans ~287-390 million t (2012, 2018 studies)",
+    "fine_print": "Earth 5.97 × 10²⁴ kg (NASA)"
    },
    {
     "scenes": "sc06-sc07",
-    "text": "proton radius 0.8414 fm (CODATA 2018)",
-    "fine_print": "atom ~0.1-0.3 nm across"
+    "text": "Sun = 333,000 Earths (NASA)",
+    "fine_print": "neutron star ~1.4 Suns in ~20 km"
    },
    {
-    "scenes": "sc08-sc12",
-    "text": "electron: no size found, < 10\u207b\u00b9\u2078 m",
-    "fine_print": "Planck length 1.6 \u00d7 10\u207b\u00b3\u2075 m: not proven to be a minimum"
+    "scenes": "sc08-sc09",
+    "text": "Sgr A* ~4 million Suns (EHT, NASA)",
+    "fine_print": "horizon ~24 million km; Mercury's orbit ~116 million km"
+   },
+   {
+    "scenes": "sc10-sc12",
+    "text": "ordinary matter ~1.5 × 10⁵³ kg (critical-density estimate)",
+    "fine_print": "dark matter ~5.4 : 1 (Planck 2018, inferred)"
    }
   ],
   "stills": [
    {
     "still_id": "S1",
-    "name": "plate_sand",
-    "output_path": "assets/images/plate_sand.png",
+    "name": "plate_whale",
+    "output_path": "assets/images/plate_whale.png",
     "used_in": [
-     "sc01"
+     "sc02"
     ],
     "placeholder": false,
     "window": {
@@ -677,9 +687,9 @@
     },
     "crop_px": [
      0,
-     100,
+     180,
      1152,
-     1635
+     1715
     ],
     "crop_pct": {
      "x": [
@@ -687,18 +697,18 @@
       100.0
      ],
      "y": [
-      4.9,
-      79.8
+      8.8,
+      83.7
      ]
     },
     "honesty": "'AI impression' tag while visible."
    },
    {
     "still_id": "S2",
-    "name": "plate_blood_cells",
-    "output_path": "assets/images/plate_blood_cells.png",
+    "name": "plate_eiffel",
+    "output_path": "assets/images/plate_eiffel.png",
     "used_in": [
-     "sc04"
+     "sc03"
     ],
     "placeholder": false,
     "window": {
@@ -709,9 +719,9 @@
     },
     "crop_px": [
      0,
-     250,
+     20,
      1152,
-     1785
+     1555
     ],
     "crop_pct": {
      "x": [
@@ -719,18 +729,18 @@
       100.0
      ],
      "y": [
-      12.2,
-      87.2
+      1.0,
+      75.9
      ]
     },
     "honesty": "'AI impression' tag while visible."
    },
    {
     "still_id": "S3",
-    "name": "plate_virus",
-    "output_path": "assets/images/plate_virus.png",
+    "name": "plate_neutron",
+    "output_path": "assets/images/plate_neutron.png",
     "used_in": [
-     "sc05"
+     "sc07"
     ],
     "placeholder": false,
     "window": {
@@ -876,23 +886,20 @@
    "sc12": "five to one."
   },
   "verified_on_screen_strings": [
-   "metres \u00b7 log scale",
-   "10\u207b\u00b3 m",
-   "10\u207b\u2074 m",
-   "10\u207b\u2075 m",
-   "10\u207b\u2076 m",
-   "10\u207b\u2077 m",
-   "10\u207b\u2078 m",
-   "10\u207b\u2079 m",
-   "10\u207b\u00b9\u2070 m",
-   "10\u207b\u00b9\u00b9 m",
-   "10\u207b\u00b9\u00b2 m",
-   "10\u207b\u00b9\u00b3 m",
-   "10\u207b\u00b9\u2074 m",
-   "10\u207b\u00b9\u2075 m",
-   "10\u207b\u00b9\u2076 m",
-   "10\u207b\u00b9\u2077 m",
-   "10\u207b\u00b9\u2078 m",
+   "kilograms · log scale",
+   "10⁰ kg",
+   "10³ kg",
+   "10⁶ kg",
+   "10⁹ kg",
+   "10¹² kg",
+   "10¹⁵ kg",
+   "10¹⁸ kg",
+   "10²¹ kg",
+   "10²⁴ kg",
+   "10²⁷ kg",
+   "10³⁰ kg",
+   "10³³ kg",
+   "10³⁶ kg",
    "ZEROS",
    "0",
    "1",
@@ -929,29 +936,48 @@
    "32",
    "33",
    "34",
-   "SAND \u00b7 ~0.5 mm",
-   "HAIR \u00b7 ~70 \u00b5m",
-   "RED BLOOD CELL \u00b7 ~8 \u00b5m",
-   "VIRUS \u00b7 ~100 nm",
-   "ATOM \u00b7 ~0.1 nm",
-   "PROTON \u00b7 ~1.7 fm across",
-   "YOUR EYE \u00b7 ~0.1 mm",
-   "LIGHT MICROSCOPE \u00b7 ~200 nm",
-   "ELECTRON",
-   "no size found \u00b7 < 10\u207b\u00b9\u2078 m",
-   "PLANCK LENGTH \u00b7 1.6 \u00d7 10\u207b\u00b3\u2075 m",
-   "a floor? unproven",
-   "0.000000000000000000000000000000000016 m",
-   "to scale, this dot would be ~0.006 px",
+   "35",
+   "36",
+   "37",
+   "38",
+   "39",
+   "40",
+   "41",
+   "42",
+   "43",
+   "44",
+   "45",
+   "46",
+   "47",
+   "48",
+   "49",
+   "50",
+   "51",
+   "52",
+   "53",
+   "YOU · ~70 kg",
+   "BLUE WHALE · up to ~150,000 kg",
+   "EIFFEL TOWER · ~10 million kg",
+   "ALL HUMANS · ~400 billion kg",
+   "EARTH · 6 × 10²⁴ kg",
+   "SUN · 2 × 10³⁰ kg",
+   "NEUTRON STAR · ~1.4 Suns, ~20 km wide",
+   "SGR A* · 4 million Suns",
+   "OBSERVABLE UNIVERSE · ~10⁵³ kg (ordinary matter)",
+   "ordinary matter",
+   "DARK MATTER",
+   "~5 : 1 · inferred",
+   "drawn",
+   "Mercury's orbit",
    "AI impression",
-   "drawn \u00b7 not to scale",
-   "What's the smallest thing you've ever seen?"
+   "drawn · not to scale",
+   "What's the heaviest thing you've ever lifted?"
   ],
   "forbidden_on_screen": [
-   "smallest possible (the Planck length is not proven to be a minimum)",
-   "proven floor",
-   "electrons are points",
-   "the smallest thing in the universe",
+   "heaviest possible (nothing says the ladder stops)",
+   "weighs exactly",
+   "dark matter has been seen (it is inferred from gravity)",
+   "the universe weighs (only the observable universe's ordinary matter is estimated)",
    "actual size"
   ],
   "lessons_applied": {
@@ -1005,12 +1031,101 @@
   "planned_total_duration_seconds": 49.2,
   "planned_total_frames": 1476,
   "foundation_changes": [
-   "Copied from video 16 (Speed Ladder); the visual layer is the Scale Well: the log ladder flipped DOWNWARD in metres (top 1 mm, bottom 10\u207b\u00b9\u2078 m).",
-   "Caption pages re-flowed from the narration (lesson 3): each claim starts its own page; 'And that's about where' / 'your eyes give up.' is two pages (8 words > 6), the PROBABLY key sits on the first.",
-   "The reference lines' labels (YOUR EYE, LIGHT MICROSCOPE) sit LEFT of the rail (they are 6 / 12 px from the HAIR / VIRUS rungs; on the right they would shove seated chips).",
-   "Superscripts (\u207b \u2074-\u2079 \u2070) are in none of the faces: the powers are DRAWN as raised text >= 24 px (shared/Type.tsx <Sci>).",
-   "PROTON is a two-line chip (name over '~1.7 fm across') so it fits beside the open window.",
-   "script.json claim_tags are still video 16's: build_props.py keys the meter from its own CLAIMS (the brief's grades) instead of asserting against them."
-  ]
+   "Copied from video 17 (Scale Well); the visual layer is the Weight Column: the log ladder pointing UP in kilograms (bottom 1 kg, top 10³⁷ kg).",
+   "Caption pages re-flowed from the narration (lesson 3): each claim starts its own page; <= 6 words per page.",
+   "Rung numbers are set in mono 26 px (names 28 px) so BLUE WHALE fits beside the open window as two lines; NEUTRON STAR's number is split in two rows.",
+   "Chips de-overlap bottom-up: NEUTRON STAR stacks above SUN, SGR A* above it; the OBSERVABLE UNIVERSE line sits at y 280 (not ~320) so it stays clear of the SGR A* chip.",
+   "Superscripts are in none of the faces: the powers are DRAWN as raised text >= 24 px (shared/Type.tsx <Sci>).",
+   "script.json claim_tags are not used: build_props.py keys the meter from its own CLAIMS (the brief's grades)."
+  ],
+  "captions": {
+   "pages": [
+    {
+     "section": "s1",
+     "page": "You weigh about seventy kilograms."
+    },
+    {
+     "section": "s1",
+     "page": "A blue whale can reach"
+    },
+    {
+     "section": "s1",
+     "page": "a hundred and fifty thousand."
+    },
+    {
+     "section": "s1",
+     "page": "The Eiffel Tower, about ten million."
+    },
+    {
+     "section": "s2",
+     "page": "Every human alive, put together:"
+    },
+    {
+     "section": "s2",
+     "page": "around four hundred billion."
+    },
+    {
+     "section": "s2",
+     "page": "The whole Earth: six trillion trillion."
+    },
+    {
+     "section": "s3",
+     "page": "The Sun outweighs"
+    },
+    {
+     "section": "s3",
+     "page": "three hundred and thirty thousand Earths."
+    },
+    {
+     "section": "s3",
+     "page": "And a neutron star squeezes"
+    },
+    {
+     "section": "s3",
+     "page": "even more into a ball"
+    },
+    {
+     "section": "s3",
+     "page": "the size of a city."
+    },
+    {
+     "section": "s4",
+     "page": "The black hole at the centre"
+    },
+    {
+     "section": "s4",
+     "page": "of our galaxy weighs"
+    },
+    {
+     "section": "s4",
+     "page": "four million Suns,"
+    },
+    {
+     "section": "s4",
+     "page": "packed smaller than Mercury's orbit."
+    },
+    {
+     "section": "s5",
+     "page": "All the ordinary matter"
+    },
+    {
+     "section": "s5",
+     "page": "we can see comes to"
+    },
+    {
+     "section": "s5",
+     "page": "about fifty-three zeros of kilograms."
+    },
+    {
+     "section": "s5",
+     "page": "And dark matter outweighs it"
+    },
+    {
+     "section": "s5",
+     "page": "five to one."
+    }
+   ],
+   "note": "re-flowed by the foundation (lesson 3): every claim starts its own page; <= 2 lines / <= 6 words; no 2-word orphan"
+  }
  }
 }

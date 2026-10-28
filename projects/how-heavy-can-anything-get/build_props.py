@@ -4,11 +4,11 @@
     python3 projects/how-heavy-can-anything-get/build_props.py          # write
     python3 projects/how-heavy-can-anything-get/build_props.py --check  # print pages + schedules only
 
-Video 17 "How Small Can Anything Get?" / the SCALE WELL. Copied from projects/how-fast-can-anything-go/build_props.py (video
-16, QA passed) and flipped: the log ladder runs DOWNWARD in metres (L = -log10(m)). Inputs: artifacts/timeline.json (aligned
-words, sections, scene windows), artifacts/scene_plan.json (caption pages, placards, verified / forbidden strings: written by
-sync_scene_plan.py), artifacts/soundtrack_report.json (key frames + motion constants: build_soundtrack.py owns K, asserted
-== build_soundtrack.key_frames(timeline)), artifacts/media_report.json (the window plates). Everything out is ABSOLUTE frames.
+Video 18 "How Heavy Can Anything Get?" / the WEIGHT COLUMN. Copied from projects/how-small-can-anything-get/build_props.py
+(video 17, QA passed) and flipped back up: the log ladder climbs in kilograms (L = log10(kg)). Inputs: artifacts/timeline.json
+(aligned words, sections, scene windows), artifacts/scene_plan.json (caption pages, placards, verified / forbidden strings:
+written by sync_scene_plan.py), artifacts/soundtrack_report.json (key frames + motion constants: build_soundtrack.py owns K,
+asserted == build_soundtrack.key_frames(timeline)), artifacts/media_report.json (the window plates). Everything out is ABSOLUTE.
 
 Caption pages: scene_plan.metadata.captions.pages (<= 2 lines / <= 6 words, every claim starts its own page, no 2-word
 orphan; asserted to cover the narration word for word); the line break is chosen with Bricolage Grotesque 800 @ 58 px
@@ -16,18 +16,18 @@ advance widths against a 700 px budget. Exit = 4 f after the page's last word en
 clipped / butted to the next page (lesson 6). The CTA takes the slab ON ctaFrame.
 
 Honesty meter (lesson 3: keyed to the START of the caption page carrying the claim; consecutive pages of one claim merge; a
-new claim of the same grade pulses): SAND, HAIR MEASURED; EYE PROBABLY; CELL, VIRUS, ATOM, PROTON, ELECTRON (upper bound)
-MEASURED; PLANCK MAYBE from 'Below that,' through all of s5; IDLE at the CTA. (script.json's claim_tags are still video 16's:
-the grades here are the brief's.)
+new claim of the same grade pulses): YOU MEASURED; WHALE PROBABLY; EIFFEL MEASURED; ALL HUMANS PROBABLY; EARTH, SUN, NEUTRON
+STAR, SGR A* MEASURED; UNIVERSE and DARK MATTER PROBABLY from 'All the ordinary matter' to the end; IDLE at the CTA.
 
-THE LADDER: props.ladder.markerL descends rung by rung on eased moves whose FIRST MOVING FRAME is descend* and which END ON
-*Seat (asserted); rung chips seat on their seats with their numbers (Ladder.tsx, T.seat); props.counter (ZEROS = zeros after
-the decimal point of the active rung's metres, asserted on every seat; 7/8/9 on atomTicks, 10..14 on protonTicks, then an
-accelerating spin 15..34 landing 34 ON spinEnd); props.window (S1 sand -> S2 cells -> S3 virus, the drawn ATOM); props.devices
-(the reference lines, the electron bracket, the break, the Planck line, the readout, the atom note). Asserted: chips never sit
-under the open window and never overlap each other or the electron labels; claim graphics (window states, the atom note) are
-gone >= 6 f before the next tab glide; placards exit >= 6 f before the next glide; every channel is constant from the release
-(lesson 25); a literal scan of scenes/u*/ against verified_on_screen_strings / forbidden_on_screen (lesson 20).
+THE LADDER: props.ladder.markerL climbs rung by rung on eased moves whose FIRST MOVING FRAME is climb* and which END ON *Seat
+(asserted); the marker stays put for NEUTRON STAR and dims to a ghost from universeIn (lesson 60); rung chips seat on their
+seats with their numbers (Ladder.tsx, T.seat); props.counter (ZEROS = the power of ten of the active rung's kilograms, asserted
+on every seat; steps ON every *Ticks frame; 11 -> 24 accelerating across earthTicks, 36 -> 53 across spinTicks); props.window
+(S1 whale -> S2 Eiffel Tower, S3 neutron star, the drawn black hole + Mercury's orbit); props.devices (the orbit, the break, the
+universe line, the linear ordinary / dark matter bars). Asserted: chips never sit under the open window and never overlap each
+other; claim graphics (window states, the orbit note) are gone >= 6 f before the next tab glide; placards exit >= 6 f before
+the next glide; every channel is constant from the release (lesson 25); a literal scan of scenes/u*/ against
+verified_on_screen_strings / forbidden_on_screen (lesson 20).
 """
 from __future__ import annotations
 
@@ -57,62 +57,66 @@ PLACARD_PAGE_GUARD_F = 4
 PLACARD_TEXT_W = 772 - 2 * 28
 PLACARD_SIZES = [26, 25, 24]
 FINE_SIZES = [25, 24]
-CTA_TEXT = "What's the smallest thing you've ever seen?"
-CTA_LINES = ["What's the smallest thing", "you've ever seen?"]
+CTA_TEXT = "What's the heaviest thing you've ever lifted?"
+CTA_LINES = ["What's the heaviest thing", "you've ever lifted?"]
 CTA_PX = 52
 CLAIMS = {   # first words of a page -> (claim id, state); a page belongs to the claim of the last key at or before it
-    ("s1", "A grain of sand"): ("SAND", "MEASURED"),
-    ("s1", "A human hair"): ("HAIR", "MEASURED"),
-    ("s1", "And that's about where"): ("EYE", "PROBABLY"),
-    ("s2", "A red blood cell"): ("CELL", "MEASURED"),
-    ("s2", "Most viruses are smaller still,"): ("VIRUS", "MEASURED"),
-    ("s3", "An atom is a thousand"): ("ATOM", "MEASURED"),
-    ("s3", "And the proton at its centre"): ("PROTON", "MEASURED"),
-    ("s4", "Electrons are so small"): ("ELECTRON", "MEASURED"),
-    ("s4", "Below that, physicists point"): ("PLANCK", "MAYBE"),
+    ("s1", "You weigh about seventy kilograms."): ("YOU", "MEASURED"),
+    ("s1", "A blue whale can reach"): ("WHALE", "PROBABLY"),
+    ("s1", "The Eiffel Tower, about ten million."): ("EIFFEL", "MEASURED"),
+    ("s2", "Every human alive, put together:"): ("ALL HUMANS", "PROBABLY"),
+    ("s2", "The whole Earth: six trillion trillion."): ("EARTH", "MEASURED"),
+    ("s3", "The Sun outweighs"): ("SUN", "MEASURED"),
+    ("s3", "And a neutron star squeezes"): ("NEUTRON STAR", "MEASURED"),
+    ("s4", "The black hole at the centre"): ("SGR A*", "MEASURED"),
+    ("s5", "All the ordinary matter"): ("UNIVERSE", "PROBABLY"),
+    ("s5", "And dark matter outweighs it"): ("DARK MATTER", "PROBABLY"),
 }
-WEAK_END = {"a", "an", "the", "to", "of", "and", "is", "in", "it", "at", "as", "its", "by", "for", "if", "so", "with", "on", "no", "any", "that"}
-BOUND = {("grain", "of"), ("of", "sand"), ("half", "a"), ("a", "millimetre"), ("human", "hair"), ("a", "tenth"), ("red", "blood"), ("blood", "cell"),
-         ("ten", "times"), ("any", "ordinary"), ("ordinary", "microscope"), ("a", "thousand"), ("a", "virus"), ("sixty", "thousand"), ("its", "centre"),
-         ("no", "experiment"), ("the", "planck"), ("planck", "length"), ("more", "zeros"), ("the", "decimal"), ("decimal", "point"), ("the", "floor"),
-         ("isnt", "one"), ("thirtyfour", "zeros")}
-PLACARD_SCENES = {"sc01-sc03": ("sc01", "sc03"), "sc04-sc05": ("sc04", "sc05"), "sc06-sc07": ("sc06", "sc07"), "sc08-sc12": ("sc08", "sc12")}
+WEAK_END = {"a", "an", "the", "to", "of", "and", "is", "in", "it", "at", "as", "its", "by", "for", "if", "so", "with", "on", "no", "any", "that", "can", "we"}
+BOUND = {("blue", "whale"), ("a", "hundred"), ("hundred", "and"), ("and", "fifty"), ("fifty", "thousand"), ("eiffel", "tower"), ("ten", "million"),
+         ("human", "alive"), ("put", "together"), ("four", "hundred"), ("hundred", "billion"), ("whole", "earth"), ("six", "trillion"),
+         ("trillion", "trillion"), ("the", "sun"), ("three", "hundred"), ("and", "thirty"), ("thirty", "thousand"), ("thousand", "earths"),
+         ("neutron", "star"), ("a", "ball"), ("a", "city"), ("black", "hole"), ("the", "centre"), ("our", "galaxy"), ("four", "million"),
+         ("million", "suns"), ("mercurys", "orbit"), ("ordinary", "matter"), ("fiftythree", "zeros"), ("dark", "matter"), ("of", "kilograms")}
+PLACARD_SCENES = {"sc01-sc03": ("sc01", "sc03"), "sc04-sc05": ("sc04", "sc05"), "sc06-sc07": ("sc06", "sc07"), "sc08-sc09": ("sc08", "sc09"),
+                  "sc10-sc12": ("sc10", "sc12")}
 # THE LADDER (mirrored in theme.ts L; asserted against it)
-RAIL = {"x": 250, "y0": 380, "y1": 1000, "L0": 3, "L1": 18}
+RAIL = {"x": 250, "y0": 380, "y1": 1000, "L0": 0, "L1": 37}
 PPD = (RAIL["y1"] - RAIL["y0"]) / (RAIL["L1"] - RAIL["L0"])
 WIN = {"x0": 580, "x1": 920, "y0": 440, "y1": 893}
 COUNTER = {"x0": 640, "x1": 920, "y0": 220, "y1": 340}
-READOUT = {"x0": 580, "x1": 920, "y0": 470, "y1": 600}
-READOUT_PX = 26
-ELECTRON = {"x": 300, "nameY": 972, "subY": 1010}
-PLANCK_Y = 1080
+UNIVERSE = {"x0": 120, "x1": 620, "y": 280, "labelX": 100, "labelY": 214}
+BARS = {"x0": 584, "x1": 912, "base": 1060, "ordX0": 604, "ordX1": 704, "darkX0": 800, "darkX1": 900, "ordH": 110}
+BREAK = (345, 370)
 LABEL_X = 280
 CHIP_MAX_RIGHT = WIN["x0"] - 8
-MARKER_R = 6
-LABEL_PX = 28
-ROW_H, CHIP_PAD, CHIP_GAP = 36, 12, 6
-# (id, name, number string, metres, L as placed by the brief, seat key, descend key)
+MARKER_R = 7
+NAME_PX, NUM_PX = 28, 26
+ROW_H, CHIP_PAD, CHIP_GAP = 30, 12, 6
+# (id, name, number string, kg, L as placed by the brief, seat key, climb key)
 RUNGS = [
-    ("sand", "SAND", "~0.5 mm", 5e-4, 3.30, "sandSeat", None),
-    ("hair", "HAIR", "~70 µm", 7e-5, 4.15, "hairSeat", "descendHair"),
-    ("cell", "RED BLOOD CELL", "~8 µm", 8e-6, 5.10, "cellSeat", "descendCell"),
-    ("virus", "VIRUS", "~100 nm", 1e-7, 7.00, "virusSeat", "descendVirus"),
-    ("atom", "ATOM", "~0.1 nm", 1e-10, 10.0, "atomSeat", "descendAtom"),
-    ("proton", "PROTON", "~1.7 fm across", 1.7e-15, 14.77, "protonSeat", "descendProton"),
+    ("you", "YOU", "~70 kg", 70, 1.85, "youSeat", None),
+    ("whale", "BLUE WHALE", "up to ~150,000 kg", 1.5e5, 5.18, "whaleSeat", "climbWhale"),
+    ("eiffel", "EIFFEL TOWER", "~10 million kg", 1.0e7, 7.00, "eiffelSeat", "climbEiffel"),
+    ("humans", "ALL HUMANS", "~400 billion kg", 4e11, 11.6, "humansSeat", "climbHumans"),
+    ("earth", "EARTH", "6 × 10²⁴ kg", 6e24, 24.78, "earthSeat", "climbEarth"),
+    ("sun", "SUN", "2 × 10³⁰ kg", 2e30, 30.30, "sunSeat", "climbSun"),
+    ("neutron", "NEUTRON STAR", "~1.4 Suns, ~20 km wide", 2.8e30, 30.44, "neutronSeat", None),
+    ("sgra", "SGR A*", "4 million Suns", 8e36, 36.9, "sgraSeat", "climbSgra"),
 ]
-PLANCK_M = 1.6e-35
+UNIVERSE_KG = 1.5e53
 SUP = str.maketrans("-0123456789", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹")
-DECADES = [f"10{('-' + str(n)).translate(SUP)} m" for n in range(RAIL["L0"], RAIL["L1"] + 1)]
-REFS = [("eye", 4.0, ["YOUR EYE", "~0.1 mm"], "YOUR EYE · ~0.1 mm", "eyeLine"),
-        ("micro", 6.70, ["LIGHT MICROSCOPE", "~200 nm"], "LIGHT MICROSCOPE · ~200 nm", "lightLine")]
-LABELS = {"axis": "metres · log scale", "zeros": "ZEROS", "ai": "AI impression", "drawn": "drawn · not to scale"}
-ELECTRON_NAME, ELECTRON_SUB = "ELECTRON", "no size found · < 10⁻¹⁸ m"
-PLANCK_LABEL, FLOOR_LABEL = "PLANCK LENGTH · 1.6 × 10⁻³⁵ m", "a floor? unproven"
-READOUT_TEXT = "0." + "0" * 34 + "16 m"
-READOUT_LINES = ["0." + "0" * 18, "0" * 16 + "16 m"]
-ATOM_NOTE = "to scale, this dot would be ~0.006 px"
-ATOM_NOTE_LINES = ["to scale, this dot", "would be ~0.006 px"]
-SPIN_OFFSETS = [0, 2, 4, 6, 8, 10, 12, 14] + list(range(15, 27))   # the spin's 20 steps (15..34) after spinStart: every 2 f, then every frame (accelerating)
+DECADES = [f"10{str(n).translate(SUP)} kg" for n in range(RAIL["L0"], RAIL["L1"] + 1, 3)]
+LABELS = {"axis": "kilograms · log scale", "zeros": "ZEROS", "ai": "AI impression", "drawn": "drawn · not to scale"}
+UNIVERSE_LINES = ["OBSERVABLE UNIVERSE · ~10⁵³ kg", "(ordinary matter)"]
+UNIVERSE_FULL = "OBSERVABLE UNIVERSE · ~10⁵³ kg (ordinary matter)"
+ORBIT_LABEL = "Mercury's orbit"
+HORIZON_KM, ORBIT_KM = 24e6, 116e6          # Sgr A*'s horizon diameter vs Mercury's orbit diameter (the brief)
+BAR_LABELS = {"ord": "ordinary matter", "dark": "DARK MATTER", "ratio": "~5 : 1 · inferred", "tag": "drawn"}
+DARK_RATIO = 5.4
+# the counter's step offsets (frames after the first tick) for the two accelerating runs; every *Ticks frame is a step
+EARTH_OFFSETS = [0, 7, 14, 19, 23, 26, 28, 30, 32, 33, 34, 35, 36]            # 12 .. 24 (gaps 7,7,5,4,3,2,2,2,1,1,1,1)
+SPIN_OFFSETS = [0, 4, 7, 10, 12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]  # 37 .. 53 (gaps 4,3,3,2,2,1 ...)
 
 norm = lambda t: re.sub(r"[^a-z0-9]", "", t.lower())
 
@@ -161,11 +165,11 @@ class Track:
 
 
 def rail_y(Lv: float) -> float:
-    return RAIL["y0"] + (Lv - RAIL["L0"]) * PPD
+    return RAIL["y1"] - (Lv - RAIL["L0"]) * PPD
 
 
-def zeros_after_point(metres: float) -> int:
-    return math.ceil(-math.log10(metres) - 1e-9) - 1
+def power_of_ten(kg: float) -> int:
+    return math.floor(math.log10(kg) + 1e-9)
 
 
 def main() -> None:
@@ -281,168 +285,200 @@ def main() -> None:
     keyed = [k["frame"] for k in meter[1:]]
     assert len(keyed) == len(set(keyed)), ("two claims keyed on one caption page (lesson 3)", keyed)
     mkey = {k["claim"]: k for k in meter}
-    assert mkey["EYE"]["state"] == "PROBABLY" and mkey["PLANCK"]["state"] == "MAYBE" and meter[-2]["claim"] == "PLANCK"
+    assert mkey["WHALE"]["state"] == "PROBABLY" and mkey["ALL HUMANS"]["state"] == "PROBABLY" and mkey["UNIVERSE"]["state"] == "PROBABLY"
+    assert mkey["DARK MATTER"]["state"] == "PROBABLY" and meter[-2]["claim"] == "DARK MATTER" and mkey["DARK MATTER"]["repeat"]
     glides = [k["glideStart"] for k in meter[1:]]
     next_glide = lambda f: min(g for g in glides if g > f)
 
     # --- THE LADDER: rungs + the marker -----------------------------------------------------------------------------------
-    saira = advance("SairaCondensed-normal-700-latin.woff2", LABEL_PX)
-    mono = advance("IBMPlexMono-normal-500-latin.woff2", LABEL_PX)
-    one_w = lambda name, num: saira(name) + saira(" · ") + mono(num) + 2 * CHIP_PAD
+    saira = advance("SairaCondensed-normal-700-latin.woff2", NAME_PX)
+    mono = advance("IBMPlexMono-normal-500-latin.woff2", NUM_PX)
+    fits = lambda w: LABEL_X + w + 2 * CHIP_PAD <= CHIP_MAX_RIGHT
     rungs = []
-    for rid, name, num, metres, Lv, seatk, desck in RUNGS:
-        assert abs(Lv + math.log10(metres)) < 0.06, ("the rung's L is not -log10(metres)", rid)
-        lines = [f"{name} · {num}"] if LABEL_X + one_w(name, num) <= CHIP_MAX_RIGHT else [name, num]
-        rungs.append({"id": rid, "name": name, "num": num, "lines": lines, "metres": metres, "L": Lv, "seat": fr[seatk], "_desc": desck})
+    for rid, name, num, kg, Lv, seatk, climbk in RUNGS:
+        assert abs(Lv - math.log10(kg)) < 0.06, ("the rung's L is not log10(kg)", rid)
+        if fits(saira(name) + saira(" · ") + mono(num)):
+            lines = [f"{name} · {num}"]
+        elif fits(mono(num)):
+            lines = [name, num]
+        else:
+            k = num.index(", ") + 1
+            lines = [name, num[:k], num[k + 1:]]
+            assert all(fits(mono(l)) for l in lines[1:]), ("a rung number does not fit beside the window even split", rid)
+        rungs.append({"id": rid, "name": name, "num": num, "lines": lines, "kg": kg, "L": Lv, "seat": fr[seatk], "_climb": climbk})
     Lof = {r["id"]: r["L"] for r in rungs}
-    mk = Track(T, Lof["sand"])
+    mk = Track(T, Lof["you"])
     for r in rungs[1:]:
-        mk.to(fr[r["_desc"]] - 1, r["seat"], r["L"], "sine")
+        if r["_climb"]:
+            mk.to(fr[r["_climb"]] - 1, r["seat"], r["L"], "sine")
     markerL = mk.build()
     for r in rungs[1:]:
-        d, s_ = fr[r["_desc"]], r["seat"]
-        assert markerL[d - 1] == markerL[d - 2] and markerL[d] > markerL[d - 1], ("the descent's first moving frame must be its key frame", r["id"])
-        assert markerL[s_] == r["L"] and markerL[s_ - 1] < r["L"], ("the descent must land ON the seat", r["id"])
-    assert np.all(np.diff(markerL) >= 0), "the marker only descends"
-    assert markerL[fr["electronIn"]:].max() == markerL[fr["electronIn"]:].min() == Lof["proton"], "the marker does not move from sc08 (nothing to stand on)"
-    # QA A1 (lesson 33): from 'Electrons' the narration leaves the proton; the marker stays (there is no size to land on)
-    # but dims to a ghost so the eye follows the electron bracket and the Planck line
-    vis = Track(T, 1.0).to(fr["electronIn"], fr["electronIn"] + 12, 0.3, "sine").build()
-    assert vis[fr["electronIn"]] == 1.0 and abs(vis[-1] - 0.3) < 1e-6
+        s_ = r["seat"]
+        if r["_climb"]:
+            c = fr[r["_climb"]]
+            assert markerL[c - 1] == markerL[c - 2] and markerL[c] > markerL[c - 1], ("the climb's first moving frame must be its key frame", r["id"])
+            assert markerL[s_] == r["L"] and markerL[s_ - 1] < r["L"], ("the climb must land ON the seat", r["id"])
+            assert fr[r["_climb"]] + mo["CLIMB_F"] == s_, ("climb length != CLIMB_F", r["id"])
+    assert np.all(np.diff(markerL) >= 0), "the marker only climbs"
+    assert np.all(markerL[fr["sunSeat"]:fr["climbSgra"]] == Lof["sun"]), "the marker does not move for the neutron star"
+    assert markerL[fr["sgraSeat"]:].max() == markerL[fr["sgraSeat"]:].min() == Lof["sgra"], "the marker does not move from SGR A* (the universe is off the rail)"
+    # lesson 60: from universeIn the story leaves the rungs; the marker stays but dims to a ghost
+    U = fr["universeIn"]
+    vis = Track(T, 1.0).to(U, U + 12, 0.3, "sine").build()
+    assert vis[U] == 1.0 and vis[U + 1] < 1 and abs(vis[-1] - 0.3) < 1e-6
     rail_draw = Track(T, 0.0).to(fr["railDraw"] - 1, fr["railDraw"] + 15, 1.0, "outquad").build()
     assert rail_draw[fr["railDraw"] - 1] == 0 and rail_draw[fr["railDraw"]] > 0
-    veil = Track(T, 0.0).to(fr["eyeLine"] - 1, fr["eyeLine"] + 11, 0.2, "linear").build()
 
-    # chip boxes as Ladder.tsx lays them (top-down de-overlap); widths from the faces' advances
+    # chip boxes as Ladder.tsx lays them (bottom-up de-overlap); widths from the faces' advances
     def chip_w(r) -> float:
-        if len(r["lines"]) == 1:
-            return one_w(r["name"], r["num"])
-        return max(saira(r["name"]), mono(r["num"])) + 2 * CHIP_PAD
-    boxes, prev_bottom = {}, -1e9
-    for r in sorted(rungs, key=lambda r: rail_y(r["L"])):
+        ws = []
+        for l in r["lines"]:
+            if l.startswith(r["name"] + " · "):
+                ws.append(saira(r["name"]) + saira(" · ") + mono(l[len(r["name"]) + 3:]))
+            else:
+                ws.append(saira(l) if l == r["name"] else mono(l))
+        return max(ws) + 2 * CHIP_PAD
+    boxes, prev_top = {}, 1e9
+    for r in sorted(rungs, key=lambda r: -rail_y(r["L"])):
         h = len(r["lines"]) * ROW_H + 8
-        cy = max(rail_y(r["L"]), prev_bottom + CHIP_GAP + h / 2)
+        cy = min(rail_y(r["L"]), prev_top - CHIP_GAP - h / 2)
         boxes[r["id"]] = (LABEL_X, LABEL_X + chip_w(r), cy - h / 2, cy + h / 2)
-        prev_bottom = cy + h / 2
+        prev_top = cy - h / 2
     for r in rungs:
         x0, x1, y0, y1 = boxes[r["id"]]
         assert x1 <= CHIP_MAX_RIGHT, ("a rung chip would reach under the window", r["id"], round(x1))
-        assert y0 >= 342, ("a chip reaches the counter band", r["id"])
-    ebox = (ELECTRON["x"], ELECTRON["x"] + 420, ELECTRON["nameY"] - 18, ELECTRON["subY"] + 18)
-    assert boxes["proton"][3] + 6 <= ebox[2], ("the PROTON chip overlaps the electron labels", boxes["proton"], ebox)
-    ladder_notes = "y(L) = 380 + (L - 3) * 620 / 15, L = -log10(m) (no camera); chips de-overlapped top-down (Ladder.tsx, mirrored here)"
+        assert y0 >= UNIVERSE["y"] + 8, ("a chip reaches the universe line", r["id"], round(y0))
+        assert y1 <= 1000 + 30, ("a chip falls below the rail", r["id"])
+    ids = [r["id"] for r in rungs]
+    for i, a_ in enumerate(ids):
+        for b_ in ids[i + 1:]:
+            A, B = boxes[a_], boxes[b_]
+            assert A[3] + CHIP_GAP - 0.01 <= B[2] or B[3] + CHIP_GAP - 0.01 <= A[2], ("chips overlap", a_, b_)
+    # chips seat in climbing order, so a new chip never shoves a seated one (bottom-up de-overlap keeps the lower chips put)
+    assert [r["seat"] for r in sorted(rungs, key=lambda r: -rail_y(r["L"]))] == sorted(r["seat"] for r in rungs)
+    # the marker (r 7, glow 3x) never covers a label: chips start at x 280, powers end at x 224
+    assert RAIL["x"] + 3 * MARKER_R < LABEL_X and RAIL["x"] - 3 * MARKER_R > 224
+    ladder_notes = "y(L) = 1000 - L * 620 / 37, L = log10(kg) (no camera); chips de-overlapped bottom-up (Ladder.tsx, mirrored here)"
 
-    # --- THE COUNTER (ZEROS after the decimal point) ---------------------------------------------------------------------
+    # --- THE COUNTER (ZEROS = the power of ten) ---------------------------------------------------------------------------
     value = np.zeros(T, dtype=int)
-    steps = [(fr["sandSeat"], 3), (fr["hairSeat"], 4), (fr["cellSeat"], 5), (fr["virusSeat"], 6)]
-    steps += [(f_, 7 + i) for i, f_ in enumerate(fr["atomTicks"])] + [(f_, 10 + i) for i, f_ in enumerate(fr["protonTicks"])]
+    steps = [(fr["youSeat"], 1)]
+    steps += [(f_, 2 + i) for i, f_ in enumerate(fr["whaleTicks"])] + [(f_, 6 + i) for i, f_ in enumerate(fr["eiffelTicks"])]
+    steps += [(f_, 8 + i) for i, f_ in enumerate(fr["humansTicks"])]
+    et = fr["earthTicks"]
+    assert set(et) <= {et[0] + o for o in EARTH_OFFSETS} and et[-1] == et[0] + EARTH_OFFSETS[-1] and len(EARTH_OFFSETS) == 24 - 11
+    steps += [(et[0] + o, 12 + i) for i, o in enumerate(EARTH_OFFSETS)]
+    steps += [(f_, 25 + i) for i, f_ in enumerate(fr["sunTicks"])] + [(f_, 31 + i) for i, f_ in enumerate(fr["sgraTicks"])]
+    st = fr["spinTicks"]
+    assert st[0] == fr["spinStart"] and st[-1] == fr["spinEnd"] and set(st) <= {st[0] + o for o in SPIN_OFFSETS}
+    assert SPIN_OFFSETS[-1] == fr["spinEnd"] - fr["spinStart"] and len(SPIN_OFFSETS) == 53 - 36
+    steps += [(st[0] + o, 37 + i) for i, o in enumerate(SPIN_OFFSETS)]
     for f_, v_ in steps:
         value[f_:] = v_
-    st = fr["spinTicks"]
-    assert st[0] == fr["spinStart"] and st[-1] == fr["spinEnd"] and SPIN_OFFSETS[-1] == fr["spinEnd"] - fr["spinStart"] and len(SPIN_OFFSETS) == 20
-    for i, off in enumerate(SPIN_OFFSETS):
-        value[fr["spinStart"] + off:] = 15 + i
-    spin = [int(v) for v in value[st[0] - 1: st[-1] + 1]]
-    assert spin[0] == 14 and spin[1] == 15 and spin[-1] == 34 and spin[-2] == 33 and sorted(set(spin)) == list(range(14, 35)), ("spin 14 -> 34, 20 steps", spin)
-    gaps = np.diff(SPIN_OFFSETS)
-    assert np.all(np.diff(gaps) <= 0) and gaps[0] > gaps[-1], ("the spin must accelerate", gaps)
-    for f_ in st + fr["atomTicks"] + fr["protonTicks"]:
+    for offs in (EARTH_OFFSETS, SPIN_OFFSETS):
+        gaps = np.diff(offs)
+        assert np.all(np.diff(gaps) <= 0) and gaps[0] > gaps[-1], ("the run must accelerate", gaps)
+    for f_ in fr["youTicks"] + fr["whaleTicks"] + fr["eiffelTicks"] + fr["humansTicks"] + et + fr["sunTicks"] + fr["sgraTicks"] + st:
         assert value[f_] > value[f_ - 1], ("the counter must step ON every tick", f_)
     for r in rungs:
-        assert value[r["seat"]] == zeros_after_point(r["metres"]) and value[r["seat"] - 1] < value[r["seat"]], ("counter != zeros of the rung ON its seat", r["id"])
-    assert value[-1] == zeros_after_point(PLANCK_M) == 34
-    calpha = Track(T, 0.0).to(fr["sandSeat"], fr["sandSeat"], 1.0, "step").build()
-    assert calpha[fr["sandSeat"] - 1] == 0 and calpha[fr["sandSeat"]] == 1
+        assert value[r["seat"]] == power_of_ten(r["kg"]), ("counter != the rung's power of ten ON its seat", r["id"])
+        if r["id"] != "neutron":
+            assert value[r["seat"] - 1] < value[r["seat"]], ("counter must step ON the seat", r["id"])
+    assert value[fr["neutronSeat"]] == value[fr["sunSeat"]] == 30
+    assert value[fr["spinEnd"]] == value[-1] == power_of_ten(UNIVERSE_KG) == 53 and value[fr["spinEnd"] - 1] == 52
+    assert value[et[-1]] == 24 and value[et[0] - 1] == 11 and value[st[0] - 1] == 36
+    calpha = Track(T, 0.0).to(fr["youSeat"], fr["youSeat"], 1.0, "step").build()
+    assert calpha[fr["youSeat"] - 1] == 0 and calpha[fr["youSeat"]] == 1
     ticks = [f_ for f_ in range(1, T) if value[f_] != value[f_ - 1]]
     counter = {"value": [int(v) for v in value], "alpha": [float(a) for a in calpha], "ticks": ticks, "label": LABELS["zeros"]}
 
     # --- THE WINDOW ------------------------------------------------------------------------------------------------------
-    o1, c1, o2, c2 = fr["windowOpen1"], fr["windowClose1"], fr["windowOpen2"], fr["windowClose2"]
-    wopen = Track(T, 0.0).to(o1 - 1, o1 - 1 + WO, 1.0, "outquad").to(c1 - 1, c1 - 1 + WC, 0.0).to(o2 - 1, o2 - 1 + WO, 1.0, "outquad").to(c2 - 1, c2 - 1 + WC, 0.0).build()
-    for o in (o1, o2):
+    o1, c1, o2, c2, o3, c3 = fr["windowOpen1"], fr["windowClose1"], fr["windowOpen2"], fr["windowClose2"], fr["windowOpen3"], fr["windowClose3"]
+    wt = Track(T, 0.0)
+    for o, c in ((o1, c1), (o2, c2), (o3, c3)):
+        wt.to(o - 1, o - 1 + WO, 1.0, "outquad").to(c - 1, c - 1 + WC, 0.0)
+    wopen = wt.build()
+    for o in (o1, o2, o3):
         assert wopen[o - 1] == 0 and wopen[o] > 0.25, ("the window's first visible frame must be its key frame", o)
-    for c in (c1, c2):
+    for c in (c1, c2, c3):
         assert wopen[c - 1] == 1 and wopen[c] < 1 and wopen[c - 1 + WC] == 0, ("the window closes from its key frame", c)
-    p1, p2 = fr["plateSwap1"], fr["plateSwap2"]
-    shut1 = c1 - 1 + WC
+    p1 = fr["plateSwap"]
+    shut1, shut2 = c1 - 1 + WC, c2 - 1 + WC
     aS1 = Track(T, 1.0).to(p1 - 1, p1 - 1 + XF, 0.0, "linear").build()
-    aS2 = Track(T, 0.0).to(p1 - 1, p1 - 1 + XF, 1.0, "linear").to(p2 - 1, p2 - 1 + XF, 0.0, "linear").build()
-    aS3 = Track(T, 0.0).to(p2 - 1, p2 - 1 + XF, 1.0, "linear").to(shut1, shut1, 0.0, "step").build()
-    aA = Track(T, 0.0).to(o2 - 1, o2 - 1, 1.0, "step").build()
-    for p_, a_, b_ in ((p1, aS1, aS2), (p2, aS2, aS3)):
-        assert a_[p_ - 1] == 1 and a_[p_] < 1 and b_[p_] > 0, ("the crossfade starts ON its key frame", p_)
-        sw = next(f for f in range(p_, p_ + XF + 1) if b_[f] > a_[f])
-        assert abs(sw - (p_ - 1 + XF / 2)) <= 1, ("the tag swaps at the crossfade midpoint", sw)
+    aS2 = Track(T, 0.0).to(p1 - 1, p1 - 1 + XF, 1.0, "linear").to(shut1, shut1, 0.0, "step").build()
+    aS3 = Track(T, 0.0).to(o2 - 1, o2 - 1, 1.0, "step").to(shut2, shut2, 0.0, "step").build()
+    aB = Track(T, 0.0).to(o3 - 1, o3 - 1, 1.0, "step").build()
+    assert aS1[p1 - 1] == 1 and aS1[p1] < 1 and aS2[p1] > 0, ("the crossfade starts ON its key frame", p1)
+    sw = next(f for f in range(p1, p1 + XF + 1) if aS2[f] > aS1[f])
+    assert abs(sw - (p1 - 1 + XF / 2)) <= 1, ("the tag swaps at the crossfade midpoint", sw)
     mp = media["plates"]
     assert media["window"] == WIN
     plates = [
-        {"id": "S1", "scene": "sc01", "alpha": [round(float(v), 4) for v in aS1], "push": mp["S1"]["push"], "pushFrom": o1, "pushTo": p1 + XF,
+        {"id": "S1", "scene": "sc02", "alpha": [round(float(v), 4) for v in aS1], "push": mp["S1"]["push"], "pushFrom": o1, "pushTo": p1 + XF,
          "tag": LABELS["ai"], "base": mp["S1"]["file"], "placeholder": mp["S1"]["placeholder"]},
-        {"id": "S2", "scene": "sc04", "alpha": [round(float(v), 4) for v in aS2], "push": mp["S2"]["push"], "pushFrom": p1, "pushTo": p2 + XF,
+        {"id": "S2", "scene": "sc03", "alpha": [round(float(v), 4) for v in aS2], "push": mp["S2"]["push"], "pushFrom": p1, "pushTo": shut1,
          "tag": LABELS["ai"], "base": mp["S2"]["file"], "placeholder": mp["S2"]["placeholder"]},
-        {"id": "S3", "scene": "sc05", "alpha": [round(float(v), 4) for v in aS3], "push": mp["S3"]["push"], "pushFrom": p2, "pushTo": shut1,
+        {"id": "S3", "scene": "sc07", "alpha": [round(float(v), 4) for v in aS3], "push": mp["S3"]["push"], "pushFrom": o2, "pushTo": shut2,
          "tag": LABELS["ai"], "base": mp["S3"]["file"], "placeholder": mp["S3"]["placeholder"]},
-        {"id": "ATOM", "scene": "sc06", "alpha": [round(float(v), 4) for v in aA], "push": [1.0, 1.04], "pushFrom": o2, "pushTo": c2 - 1 + WC,
+        {"id": "BH", "scene": "sc08", "alpha": [round(float(v), 4) for v in aB], "push": [1.0, 1.03], "pushFrom": o3, "pushTo": c3 - 1 + WC,
          "tag": LABELS["drawn"], "base": None, "placeholder": False},
     ]
     window = {"box": WIN, "radius": 22, "frame": 6, "open": [round(float(v), 4) for v in wopen], "plates": plates}
     # claim graphics in the window are gone >= 6 f before the next claim's glide (lessons 42 / 52)
-    assert wopen[next_glide(c1) - CLAIM_EXIT_F] == 0, ("window 1 still open at the ATOM glide - 6", next_glide(c1))
-    assert wopen[next_glide(c2) - CLAIM_EXIT_F] == 0, ("window 2 still open at the ELECTRON glide - 6", next_glide(c2))
+    for c in (c1, c2, c3):
+        assert wopen[next_glide(c) - CLAIM_EXIT_F] == 0, ("the window still open at the next glide - 6", c, next_glide(c))
 
     # --- THE DEVICES -----------------------------------------------------------------------------------------------------
-    refs = []
-    for rid, Lv, lines, _full, key in REFS:
-        a = fr[key]
-        draw = Track(T, 0.0).to(a - 6, a, 1.0, "outquad").build()
-        assert draw[a] == 1 and draw[a - 1] < 1 and draw[a - 6] == 0, rid
-        refs.append({"id": rid, "L": Lv, "lines": lines, "draw": [round(float(v), 4) for v in draw], "at": a})
-    eA = Track(T, 0.0).to(fr["electronIn"] - 1, fr["electronIn"] + 7, 1.0, "linear").build()
-    assert eA[fr["electronIn"] - 1] == 0 and eA[fr["electronIn"]] > 0
+    od = fr["orbitDraw"]
+    oD = Track(T, 0.0).to(od - 1, od + 11, 1.0, "outquad").build()
+    assert oD[od - 1] == 0 and oD[od] > 0 and oD[od + 11] == 1
+    orbit_seat = od + 12
+    horizon = HORIZON_KM / ORBIT_KM
+    assert 0.18 <= horizon <= 0.22, "the horizon is about 1/5 of Mercury's orbit across"
+    assert orbit_seat < c3 and wopen[next_glide(c3) - CLAIM_EXIT_F] == 0
     brk = Track(T, 0.0).to(fr["breakDraw"] - 1, fr["breakDraw"] + 11, 1.0, "outquad").build()
     assert brk[fr["breakDraw"] - 1] == 0 and brk[fr["breakDraw"]] > 0
-    pA = Track(T, 0.0).to(fr["planckIn"] - 6, fr["planckIn"], 1.0, "linear").build()
-    assert pA[fr["planckIn"]] == 1 and pA[fr["planckIn"] - 1] < 1
-    pG = Track(T, 0.0).to(fr["floorGlow"] - 6, fr["floorGlow"], 1.0, "outquad").build()
-    assert pG[fr["floorGlow"]] == 1 and pG[fr["floorGlow"] - 1] < 1
-    rs, re_ = fr["readoutStart"], fr["readoutEnd"]
-    n = len(READOUT_TEXT)
-    count = np.zeros(T, dtype=int)
-    for f_ in range(rs, T):
-        count[f_] = min(n, 1 + (n - 1) * (f_ - rs) // (re_ - rs))
-    assert count[rs - 1] == 0 and count[rs] == 1 and count[re_] == n and count[re_ - 1] < n and np.all(np.diff(count) >= 0)
-    assert "".join(READOUT_LINES) == READOUT_TEXT and READOUT_TEXT.count("0") == 1 + 34 and READOUT_TEXT.startswith("0." + "0" * 34 + "16")
-    rA = Track(T, 0.0).to(rs - 2, rs, 1.0, "linear").build()   # QA A4: the card appears with its first glyph, not 8 f empty
-    rmono = advance("IBMPlexMono-normal-500-latin.woff2", READOUT_PX)
-    assert READOUT["x0"] + 12 + max(rmono(l) for l in READOUT_LINES) <= 912, ("the readout reaches x >= 912", [rmono(l) for l in READOUT_LINES])
-    nA = Track(T, 0.0).to(fr["nucleusPulse"] - SEAT_F, fr["nucleusPulse"], 1.0, "linear").to(c2 - 1, c2 - 1 + WC, 0.0).build()
-    assert nA[fr["nucleusPulse"]] == 1 and nA[fr["nucleusPulse"] - SEAT_F] == 0 and nA[next_glide(c2) - CLAIM_EXIT_F] == 0
-    nmono = advance("IBMPlexMono-normal-400-latin.woff2", 24)
-    assert all(WIN["x0"] + 20 + nmono(l) <= WIN["x1"] - 20 for l in ATOM_NOTE_LINES) and " ".join(ATOM_NOTE_LINES) == ATOM_NOTE
-    # the readout card never covers the marker, the Planck line or the ATOM / PROTON chips
-    for rid in ("atom", "proton", "virus", "cell", "hair", "sand"):
-        x0, x1, y0, y1 = boxes[rid]
-        assert x1 <= READOUT["x0"] or y1 <= READOUT["y0"] or y0 >= READOUT["y1"], ("the readout covers a chip", rid)
-    assert READOUT["x0"] > RAIL["x"] + 30 and READOUT["y1"] < PLANCK_Y - 40
+    uA = Track(T, 0.0).to(U - 1, U + 5, 1.0, "linear").build()
+    assert uA[U - 1] == 0 and uA[U] > 0
+    ordA = Track(T, 0.0).to(U - 1, U + 5, 1.0, "linear").build()
+    dr, ds = fr["darkRise"], fr["darkSeat"]
+    rise = Track(T, 0.0).to(dr - 1, ds, 1.0, "out").build()
+    assert rise[dr - 1] == 0 and rise[dr] > 0 and rise[ds] == 1 and rise[ds - 1] < 1, "the dark bar lands ON darkSeat"
+    assert abs(DARK_RATIO - 5.4) < 1e-9
+    dark_top = BARS["base"] - BARS["ordH"] * DARK_RATIO
+    assert dark_top - 40 >= COUNTER["y1"] + 20 and BARS["x1"] <= 912 and BARS["darkX1"] <= 912, ("the dark bar + its label leave the column", dark_top)
+    assert wopen[U - 1] == 0, "the bars live in the closed window's column"
+    lab24 = advance("IBMPlexMono-normal-500-latin.woff2", 24)
+    lab30 = advance("IBMPlexMono-normal-500-latin.woff2", 30)
+    dsp30 = advance("SairaCondensed-normal-700-latin.woff2", 30)
+    assert BARS["ordX0"] - 16 + lab24(BAR_LABELS["ord"]) <= 912
+    assert BARS["ordX0"] - 16 + max(lab30(BAR_LABELS["ratio"].split(" · ")[0]), lab24(BAR_LABELS["ratio"].split(" · ")[1])) <= BARS["darkX0"] - 10, "the ratio label sits clear of the dark bar"
+    assert BARS["x1"] - dsp30(BAR_LABELS["dark"]) >= BARS["ordX1"], "'DARK MATTER' sits clear of the ordinary bar column"
+    ud = advance("SairaCondensed-normal-700-latin.woff2", 28)
+    um = advance("IBMPlexMono-normal-500-latin.woff2", 26)
+    nm, val = UNIVERSE_LINES[0].split(" · ")
+    assert UNIVERSE["labelX"] + ud(nm + " · ") + um(val) <= COUNTER["x0"] - 16, "the universe label runs into the counter"
+    assert UNIVERSE["labelY"] >= 192 and UNIVERSE["labelY"] + 60 <= UNIVERSE["y"] - 4
+    assert BREAK[1] < RAIL["y0"] and BREAK[0] > UNIVERSE["y"]
     devices = {
-        "refs": refs,
-        "electron": {"alpha": [round(float(v), 4) for v in eA], "name": ELECTRON_NAME, "sub": ELECTRON_SUB, "subSeat": fr["noSize"]},
+        "orbit": {"draw": [round(float(v), 4) for v in oD], "label": ORBIT_LABEL, "labelSeat": orbit_seat, "horizon": round(horizon, 4)},
         "brk": [round(float(v), 4) for v in brk],
-        "planck": {"y": PLANCK_Y, "alpha": [round(float(v), 4) for v in pA], "glow": [round(float(v), 4) for v in pG], "label": PLANCK_LABEL,
-                   "floor": FLOOR_LABEL, "floorSeat": fr["floorGlow"]},
-        "readout": {"count": [int(v) for v in count], "alpha": [round(float(v), 4) for v in rA], "text": READOUT_TEXT, "lines": READOUT_LINES},
-        "atomNote": {"lines": ATOM_NOTE_LINES, "seat": fr["nucleusPulse"], "alpha": [round(float(v), 4) for v in nA], "pulse": fr["nucleusPulse"]},
+        "universe": {"alpha": [round(float(v), 4) for v in uA], "lines": UNIVERSE_LINES},
+        "bars": {"ordAlpha": [round(float(v), 4) for v in ordA], "rise": [round(float(v), 5) for v in rise], "ratio": DARK_RATIO, "ordLabel": BAR_LABELS["ord"],
+                 "darkLabel": BAR_LABELS["dark"], "ratioLabel": BAR_LABELS["ratio"], "tag": BAR_LABELS["tag"], "seat": ds},
     }
 
     # theme.ts must equal these numbers
     theme = (P / "theme.ts").read_text()
-    assert re.search(r"rail:\s*\{\s*x:\s*250,\s*y0:\s*380,\s*y1:\s*1000,\s*L0:\s*3,\s*L1:\s*18,\s*ppd:\s*620 / 15", theme), "theme.ts L.rail stale"
-    assert re.search(r"planckY:\s*%d" % PLANCK_Y, theme) and re.search(r"labelX:\s*%d" % LABEL_X, theme), "theme.ts L.rail stale"
-    for name, d_ in (("win", WIN), ("counter", COUNTER), ("readout", READOUT)):
+    assert re.search(r"rail:\s*\{\s*x:\s*250,\s*y0:\s*380,\s*y1:\s*1000,\s*L0:\s*0,\s*L1:\s*37,\s*ppd:\s*620 / 37", theme), "theme.ts L.rail stale"
+    assert re.search(r"labelX:\s*%d" % LABEL_X, theme) and re.search(r"breakY0:\s*%d,\s*breakY1:\s*%d" % BREAK, theme), "theme.ts L.rail stale"
+    for name, d_ in (("win", WIN), ("counter", COUNTER)):
         m = re.search(name + r":\s*\{\s*x0:\s*(\d+),\s*x1:\s*(\d+),\s*y0:\s*(\d+),\s*y1:\s*(\d+)", theme)
         assert m and [int(v) for v in m.groups()] == [d_[k] for k in ("x0", "x1", "y0", "y1")], f"theme.ts L.{name} stale"
-    m = re.search(r"electron:\s*\{\s*x:\s*(\d+),\s*nameY:\s*(\d+),\s*subY:\s*(\d+)", theme)
-    assert m and [int(v) for v in m.groups()] == [ELECTRON["x"], ELECTRON["nameY"], ELECTRON["subY"]], "theme.ts L.electron stale"
+    m = re.search(r"universe:\s*\{\s*x0:\s*(\d+),\s*x1:\s*(\d+),\s*y:\s*(\d+),\s*labelX:\s*(\d+),\s*labelY:\s*(\d+)", theme)
+    assert m and [int(v) for v in m.groups()] == list(UNIVERSE.values()), "theme.ts L.universe stale"
+    m = re.search(r"bars:\s*\{([^}]*)\}", theme)
+    assert m and dict((k.strip(), int(v)) for k, v in (kv.split(":") for kv in m.group(1).split(",") if kv.strip())) == BARS, "theme.ts L.bars stale"
 
     # --- placards (root rail) ----------------------------------------------------------------------------------------------
     bc = {px: advance("SairaCondensed-normal-600-latin.woff2", px) for px in set(PLACARD_SIZES + FINE_SIZES)}
@@ -474,24 +510,26 @@ def main() -> None:
     for a, b in zip(placards, placards[1:]):
         assert a["exit"] <= b["enter"], (a, b)
     brief = json.dumps(json.loads((P / "artifacts/research_brief.json").read_text())).lower()
-    for src in ("wentworth", "ncbi", "abbe", "codata", "planck"):
+    for src in ("toureiffel", "noaa", "nasa", "eht", "planck"):
         assert src in brief, ("placard source not in the research brief (lesson 32)", src)
 
     # --- strings: verified / forbidden (lessons 20, 32) ---------------------------------------------------------------------
     verified = set(plan["metadata"]["verified_on_screen_strings"])
     forbidden = [f.split(" (")[0].lower() for f in plan["metadata"]["forbidden_on_screen"]]
-    root_strings = list(LABELS.values()) + [CTA_TEXT, ELECTRON_NAME, ELECTRON_SUB, PLANCK_LABEL, FLOOR_LABEL, READOUT_TEXT, ATOM_NOTE] \
-        + ATOM_NOTE_LINES + [ln for r in rungs for ln in r["lines"]] + [ln for r in REFS for ln in r[2]] + [r[3] for r in REFS] + DECADES \
-        + [str(v) for v in sorted(set(value.tolist()))]
+    root_strings = list(LABELS.values()) + [CTA_TEXT, UNIVERSE_FULL, ORBIT_LABEL] + list(BAR_LABELS.values()) \
+        + [r["name"] + " · " + r["num"] for r in rungs] + DECADES + [str(v) for v in sorted(set(value.tolist()))]
     for s_ in root_strings:
         assert any(s_ in v for v in verified), ("root string not in verified_on_screen_strings (lesson 20)", s_)
+    for r in rungs:
+        assert all(l in r["name"] + " · " + r["num"] or l in r["num"] for l in r["lines"]), r["lines"]
+    assert " ".join(UNIVERSE_LINES) == UNIVERSE_FULL
     lit = set()
     for f in sorted((P / "scenes").glob("u*/*.ts*")):
         src = f.read_text()
         lit |= set(re.findall(r'text(?:=|:\s*)\{?"([^"]+)"', src))
         lit |= set(re.findall(r'(?:TEXT|LINE|LABEL|NUM)\w*\s*=\s*"([^"]+)"', src))
-        for old in ("km/h", "cheetah", "falcon", "LHC", "YouTag", "Orbit", "Beam", "Energy", "Nines", "MassLabel"):
-            assert old not in src, ("a video-16 device / string is left in a scene", f.name, old)
+        for old in ("metres", "Planck", "Atom", "atom", "Electron", "Readout", "readout", "micro", "Sand", "sand", "veil", "Proton", "nucleus"):
+            assert old not in src, ("a video-17 device / string is left in a scene", f.name, old)
     bad = sorted(t_ for t_ in lit if not any(t_ in v for v in verified))
     assert not bad, ("on-screen literals not in verified_on_screen_strings (lesson 20)", bad)
     placard_text = " ".join(p["line"] + " " + (p["fine"] or "") for p in placards)
@@ -500,18 +538,16 @@ def main() -> None:
     print("verified on-screen literals in scenes:", len(lit))
 
     # --- the settle is STILL (lesson 25) ------------------------------------------------------------------------------------
-    chans = {"ladder.markerL": markerL, "ladder.vis": vis, "ladder.railDraw": rail_draw, "ladder.veil": veil, "counter": value.astype(float),
-             "counter.alpha": calpha, "window.open": wopen, "S1": aS1, "S2": aS2, "S3": aS3, "ATOM": aA, "electron": eA, "brk": brk,
-             "planck.alpha": pA, "planck.glow": pG, "readout.count": count.astype(float), "readout.alpha": rA, "atomNote": nA}
-    for r in refs:
-        chans["ref." + r["id"]] = np.array(r["draw"])
+    chans = {"ladder.markerL": markerL, "ladder.vis": vis, "ladder.railDraw": rail_draw, "counter": value.astype(float),
+             "counter.alpha": calpha, "window.open": wopen, "S1": aS1, "S2": aS2, "S3": aS3, "BH": aB, "orbit": oD, "brk": brk,
+             "universe": uA, "bars.ord": ordA, "bars.rise": rise}
     for name, arr in chans.items():
         assert np.all(np.abs(arr[rel:] - arr[rel]) < 1e-9), ("the settle must be still", name)
     assert wopen[rel] == 0 and placards[-1]["exit"] <= rel and fr["ctaFrame"] == rel
 
     r4 = lambda a: [round(float(v), 4) for v in a]
     for r in rungs:
-        r.pop("_desc")
+        r.pop("_climb")
     props = {
         "timeline": {
             "fps": FPS, "width": 1080, "height": 1920, "total_frames": total, "lead_frames": round(tl["lead_seconds"] * FPS),
@@ -521,7 +557,7 @@ def main() -> None:
         },
         "captionPages": [{k: v for k, v in p.items() if k != "text"} for p in out_pages],
         "meter": meter,
-        "ladder": {"markerL": [round(float(v), 5) for v in markerL], "markerVis": r4(vis), "railDraw": r4(rail_draw), "veil": r4(veil),
+        "ladder": {"markerL": [round(float(v), 5) for v in markerL], "markerVis": r4(vis), "railDraw": r4(rail_draw),
                    "rungs": rungs, "markerR": MARKER_R, "notes": ladder_notes},
         "devices": devices,
         "counter": counter,

@@ -3,14 +3,13 @@
 
     python3 projects/how-heavy-can-anything-get/prepare_media.py [--force]
 
-Pattern of projects/how-a-cat-lands/prepare_media.py (video 15, QA passed). No AI clips. ONE window box for every plate
-(theme.ts L.win: x 580-920, y 440-893, 340 x 453, portrait 3:4, RIGHT of the rung labels so a seated label never sits under a
-photo; the plan's x 470-920 box would have covered 'EARTH (orbit) · ~107,000' and 'PARKER (fastest built)'), so each crop has
-the window's aspect (0.7506).
+Pattern of projects/how-small-can-anything-get/prepare_media.py (video 17, QA passed). No AI clips. ONE window box for every
+plate (theme.ts L.win: x 580-920, y 440-893, 340 x 453, portrait 3:4, RIGHT of the rung chips so a seated chip never sits under
+a photo), so each crop has the window's aspect (0.7506).
 
-The three AI stills exist (assets/images/plate_sand.png, plate_blood_cells.png, plate_virus.png; 1152 x 2048). Crop boxes
-are MEASURED on them (lesson 9: from pixels, the window's aspect) with the subject inside (lesson 39: feature points asserted
-inside the crop with a 20 px margin). The window's fourth state (sc06-sc07, the atom) is DRAWN in code (shared/Window.tsx), not
+Video 18: the three AI stills (assets/images/plate_whale.png, plate_eiffel.png, plate_neutron.png; 1152 x 2048). Crop boxes are
+MEASURED on them (lesson 9: from pixels, the window's aspect) with the subject inside (lesson 39: feature points asserted inside
+the crop with a 20 px margin). The window's fourth state (sc08-sc09, the black hole) is DRAWN in code (shared/Devices.tsx), not
 a plate. A missing source still falls back to a labelled placeholder card ("placeholder": true).
 -> artifacts/media_report.json + renders/review/crops.jpg (the crops on their plates, or the placeholders).
 """
@@ -28,19 +27,20 @@ FORCE = "--force" in sys.argv
 WIN = {"x0": 580, "x1": 920, "y0": 440, "y1": 893}
 WW, WH = WIN["x1"] - WIN["x0"], WIN["y1"] - WIN["y0"]
 
-# crop boxes MEASURED on the 1152 x 2048 plates (video 17, 2026-10-28, read at 1/4 scale then checked in renders/review/crops.jpg):
-# S1 the clear quartz grain sits centre-left (~560, 860); S2 the frontal biconcave cell (~536, 1000); S3 the whole virion
-# (centre ~572, 940, radius ~520 px, spikes included). Full plate width, the window's aspect (1152 x 1535).
+# crop boxes MEASURED on the 1152 x 2048 plates (video 18, 2026-10-28, read at 1/4 scale then checked in renders/review/crops.jpg):
+# S1 the whole whale (tail ~ (200, 400), eye ~ (650, 960), snout ~ (1080, 1190)); S2 the tower from its tip (~575, 50) to the
+# first platform (~575, 1390) - the full tower (tip y 40 .. feet y 1960) is taller than any full-width window crop, so the
+# legs are cut, the tip kept; S3 the star (~580, 940) with its jets above and below. Full plate width (1152 x 1535).
 PLATES = {
-    "S1": {"src": "plate_sand.png", "crop": (0, 100, 1152, 1635), "scene": "sc01", "push": [1.0, 1.03],
-           "contains": {"quartz_grain": (560, 860), "amber_grain_top": (190, 300), "grain_bottom": (500, 1460)}, "label": "S1 plate_sand",
-           "qa": "loose grains, no scale bar / text"},
-    "S2": {"src": "plate_blood_cells.png", "crop": (0, 250, 1152, 1785), "scene": "sc04", "push": [1.0, 1.03],
-           "contains": {"front_cell": (536, 1000), "cell_top": (440, 300), "cell_low": (480, 1420)}, "label": "S2 plate_blood_cells",
-           "qa": "biconcave discs, no text"},
-    "S3": {"src": "plate_virus.png", "crop": (0, 173, 1152, 1708), "scene": "sc05", "push": [1.0, 1.03],
-           "contains": {"virion_centre": (572, 940), "spike_top": (572, 440), "spike_bottom": (572, 1440), "spike_left": (60, 940), "spike_right": (1090, 940)},
-           "label": "S3 plate_virus", "qa": "one whole virion in the crop, spikes included, no text"},
+    "S1": {"src": "plate_whale.png", "crop": (0, 180, 1152, 1715), "scene": "sc02", "push": [1.0, 1.03],
+           "contains": {"tail": (200, 400), "eye": (650, 960), "snout": (1080, 1190), "flipper": (200, 1100)}, "label": "S1 plate_whale",
+           "qa": "one whole blue whale, no text"},
+    "S2": {"src": "plate_eiffel.png", "crop": (0, 20, 1152, 1555), "scene": "sc03", "push": [1.0, 1.03],
+           "contains": {"tip": (575, 50), "second_floor": (575, 950), "first_floor": (575, 1390)}, "label": "S2 plate_eiffel",
+           "qa": "the Eiffel Tower, tip in, no text"},
+    "S3": {"src": "plate_neutron.png", "crop": (0, 173, 1152, 1708), "scene": "sc07", "push": [1.0, 1.03],
+           "contains": {"star": (580, 940), "jet_top": (580, 300), "jet_bottom": (580, 1600)}, "label": "S3 plate_neutron",
+           "qa": "one neutron star with field lines + jets, no text"},
 }
 
 

@@ -4,13 +4,13 @@ align_narration.py and prepare_media.py):
 
     python3 projects/how-heavy-can-anything-get/sync_scene_plan.py
 
-Video 17 ("How Small Can Anything Get?", the Scale Well). The plan was copied from video 16; this script makes its metadata
-video 17's and keeps it in step with the build:
+Video 18 ("How Heavy Can Anything Get?", the Weight Column). The plan was copied from video 17; this script makes its
+metadata video 18's and keeps it in step with the build:
   * every scene's start / end from the measured timeline (anchor onset - 2 f; artifacts/timeline.json); metadata.total_*
     = the film; the planned values stay in metadata.planned_total_*;
   * metadata.captions.pages = the caption pages AS BUILT (re-flowed from the narration: <= 2 lines, <= 6 words, every claim
     starts its own page, no 2-word orphans); build_props.py reads them and asserts they cover the narration;
-  * metadata.placards (4, the source rail), verified_on_screen_strings, forbidden_on_screen, honesty_grammar, stills
+  * metadata.placards (5, the source rail), verified_on_screen_strings, forbidden_on_screen, honesty_grammar, stills
     (S1-S3 as staged by prepare_media.py, crop boxes from media_report.json), safe_areas as built (theme.ts L);
   * metadata.foundation_changes lists the divergences; validated against schemas/artifacts/scene_plan.schema.json.
 """
@@ -24,30 +24,31 @@ import jsonschema
 P = Path("projects/how-heavy-can-anything-get")
 
 PAGES = [
-    ("s1", "A grain of sand"), ("s1", "is about half a millimetre."), ("s1", "A human hair"), ("s1", "is a tenth of that."),
-    ("s1", "And that's about where"), ("s1", "your eyes give up."),
-    ("s2", "A red blood cell"), ("s2", "is ten times smaller again."), ("s2", "Most viruses are smaller still,"),
-    ("s2", "too small for any ordinary"), ("s2", "microscope to see."),
-    ("s3", "An atom is a thousand"), ("s3", "times smaller than a virus."), ("s3", "And the proton at its centre"),
-    ("s3", "is sixty thousand times smaller"), ("s3", "than the atom."),
-    ("s4", "Electrons are so small"), ("s4", "that no experiment has found"), ("s4", "any size at all."),
-    ("s4", "Below that, physicists point"), ("s4", "to the Planck length,"), ("s4", "twenty more zeros down."),
-    ("s5", "Thirty-four zeros after the decimal point."), ("s5", "Maybe that's the floor."), ("s5", "Or maybe there isn't one."),
+    ("s1", "You weigh about seventy kilograms."), ("s1", "A blue whale can reach"), ("s1", "a hundred and fifty thousand."),
+    ("s1", "The Eiffel Tower, about ten million."),
+    ("s2", "Every human alive, put together:"), ("s2", "around four hundred billion."), ("s2", "The whole Earth: six trillion trillion."),
+    ("s3", "The Sun outweighs"), ("s3", "three hundred and thirty thousand Earths."), ("s3", "And a neutron star squeezes"),
+    ("s3", "even more into a ball"), ("s3", "the size of a city."),
+    ("s4", "The black hole at the centre"), ("s4", "of our galaxy weighs"), ("s4", "four million Suns,"), ("s4", "packed smaller than Mercury's orbit."),
+    ("s5", "All the ordinary matter"), ("s5", "we can see comes to"), ("s5", "about fifty-three zeros of kilograms."),
+    ("s5", "And dark matter outweighs it"), ("s5", "five to one."),
 ]
 PLACARDS = [
-    {"scenes": "sc01-sc03", "text": "sand ~0.06-2 mm (Wentworth) · hair 17-180 µm", "fine_print": "naked-eye limit ~0.04-0.1 mm, varies"},
-    {"scenes": "sc04-sc05", "text": "red blood cell ~8 µm · influenza ~100 nm (NCBI)", "fine_print": "light-microscope limit ~200 nm (Abbe)"},
-    {"scenes": "sc06-sc07", "text": "proton radius 0.8414 fm (CODATA 2018)", "fine_print": "atom ~0.1-0.3 nm across"},
-    {"scenes": "sc08-sc12", "text": "electron: no size found, < 10⁻¹⁸ m", "fine_print": "Planck length 1.6 × 10⁻³⁵ m: not proven to be a minimum"},
+    {"scenes": "sc01-sc03", "text": "Eiffel Tower 10,100 t (toureiffel.paris) · blue whale up to ~150-190 t (NOAA)", "fine_print": "adult ~70 kg, typical"},
+    {"scenes": "sc04-sc05", "text": "all humans ~287-390 million t (2012, 2018 studies)", "fine_print": "Earth 5.97 × 10²⁴ kg (NASA)"},
+    {"scenes": "sc06-sc07", "text": "Sun = 333,000 Earths (NASA)", "fine_print": "neutron star ~1.4 Suns in ~20 km"},
+    {"scenes": "sc08-sc09", "text": "Sgr A* ~4 million Suns (EHT, NASA)", "fine_print": "horizon ~24 million km; Mercury's orbit ~116 million km"},
+    {"scenes": "sc10-sc12", "text": "ordinary matter ~1.5 × 10⁵³ kg (critical-density estimate)", "fine_print": "dark matter ~5.4 : 1 (Planck 2018, inferred)"},
 ]
-DECADES = [f"10⁻{''.join('⁰¹²³⁴⁵⁶⁷⁸⁹'[int(c)] for c in str(n))} m" for n in range(3, 19)]
-VERIFIED = ["metres · log scale", *DECADES, "ZEROS", *[str(n) for n in range(0, 35)],
-            "SAND · ~0.5 mm", "HAIR · ~70 µm", "RED BLOOD CELL · ~8 µm", "VIRUS · ~100 nm", "ATOM · ~0.1 nm", "PROTON · ~1.7 fm across",
-            "YOUR EYE · ~0.1 mm", "LIGHT MICROSCOPE · ~200 nm", "ELECTRON", "no size found · < 10⁻¹⁸ m", "PLANCK LENGTH · 1.6 × 10⁻³⁵ m",
-            "a floor? unproven", "0." + "0" * 34 + "16 m", "to scale, this dot would be ~0.006 px", "AI impression", "drawn · not to scale",
-            "What's the smallest thing you've ever seen?"]
-FORBIDDEN = ["smallest possible (the Planck length is not proven to be a minimum)", "proven floor", "electrons are points",
-             "the smallest thing in the universe", "actual size"]
+SUPD = "⁰¹²³⁴⁵⁶⁷⁸⁹"
+DECADES = [f"10{''.join(SUPD[int(c)] for c in str(n))} kg" for n in range(0, 37, 3)]
+RUNG_LINES = ["YOU · ~70 kg", "BLUE WHALE · up to ~150,000 kg", "EIFFEL TOWER · ~10 million kg", "ALL HUMANS · ~400 billion kg",
+              "EARTH · 6 × 10²⁴ kg", "SUN · 2 × 10³⁰ kg", "NEUTRON STAR · ~1.4 Suns, ~20 km wide", "SGR A* · 4 million Suns"]
+VERIFIED = ["kilograms · log scale", *DECADES, "ZEROS", *[str(n) for n in range(0, 54)], *RUNG_LINES,
+            "OBSERVABLE UNIVERSE · ~10⁵³ kg (ordinary matter)", "ordinary matter", "DARK MATTER", "~5 : 1 · inferred", "drawn",
+            "Mercury's orbit", "AI impression", "drawn · not to scale", "What's the heaviest thing you've ever lifted?"]
+FORBIDDEN = ["heaviest possible (nothing says the ladder stops)", "weighs exactly", "dark matter has been seen (it is inferred from gravity)",
+             "the universe weighs (only the observable universe's ordinary matter is estimated)", "actual size"]
 
 
 def main() -> None:
@@ -72,36 +73,38 @@ def main() -> None:
         words.setdefault(w["section"], []).append(w["text"])
     for sid, toks in words.items():
         assert " ".join(t for s_, t in PAGES if s_ == sid) == " ".join(toks), ("caption pages do not cover the narration", sid)
+    md.setdefault("captions", {})
     md["captions"]["pages"] = [{"section": s_, "page": t} for s_, t in PAGES]
     md["captions"]["note"] = "re-flowed by the foundation (lesson 3): every claim starts its own page; <= 2 lines / <= 6 words; no 2-word orphan"
     md["placards"] = PLACARDS
     md["verified_on_screen_strings"] = VERIFIED
     md["forbidden_on_screen"] = FORBIDDEN
-    md["honesty_grammar"] = ("MEASURED solid tab (sand, hair, cell, virus, atom, proton, electron's upper bound); PROBABLY outline + hatch (the "
-                             "naked-eye limit); MAYBE dashed ghost (the Planck length as a floor, from 'Below that,' to the end of s5); IDLE at the CTA. "
-                             "AI plates S1-S3 tagged 'AI impression'; the atom is 'drawn · not to scale'. The rail is labelled 'metres · log scale'.")
+    md["honesty_grammar"] = ("MEASURED solid tab (you, the Eiffel Tower, Earth, the Sun, the neutron star, Sgr A*); PROBABLY outline + hatch (the "
+                             "blue whale's top weight, all humans' total, the observable universe's ordinary matter and dark matter's ~5 : 1, from "
+                             "'All the ordinary matter' to the end of s5); IDLE at the CTA. AI plates S1-S3 tagged 'AI impression'; the black hole "
+                             "is 'drawn · not to scale'; the matter bars are 'drawn' (linear). The rail is labelled 'kilograms · log scale'.")
     md["stills"] = [{"still_id": k, "name": Path(v.get("source", v["file"])).stem, "output_path": v.get("source"), "used_in": [v["scene"]],
                      "placeholder": v["placeholder"], "window": v["window"], "crop_px": v.get("crop_px"), "crop_pct": v.get("crop_pct"),
                      "honesty": "'AI impression' tag while visible."} for k, v in media["plates"].items()]
     md["safe_areas"] = {
         "top_ui_y": 192, "bottom_ui_y": 1574, "right_rail": 929,
-        "rail": {"x": [100, 330], "y": [380, 1110], "note": "spine x 250, L = -log10(m): y = 380 + (L - 3) * 620 / 15; decade powers right-aligned at x 224; the break y 1012-1040; the Planck line y 1080"},
-        "rung_labels": {"x": [280, 572], "note": "chips de-overlapped top-down with leaders; never under the open window (build_props asserts)"},
-        "reference_labels": {"x": [40, 224], "note": "'YOUR EYE' / 'LIGHT MICROSCOPE' left of the rail (the decade powers under them are hidden)"},
-        "window": {"x": [580, 920], "y": [440, 893], "note": "S1 sand, S2 blood cells, S3 virus, then the DRAWN atom"},
+        "rail": {"x": [100, 330], "y": [345, 1000], "note": "spine x 250, L = log10(kg): y = 1000 - L * 620 / 37; powers every 3 right-aligned at x 224; the break y 345-370"},
+        "rung_labels": {"x": [280, 572], "note": "chips de-overlapped bottom-up with leaders; never under the open window (build_props asserts)"},
+        "axis_label": {"x": [100, 400], "y": [1026, 1054]},
+        "universe": {"x": [100, 620], "y": [214, 284], "scenes": "sc10-sc12", "note": "the dashed line at y 280 + its label above, left of the counter"},
+        "window": {"x": [580, 920], "y": [440, 893], "note": "S1 whale, S2 Eiffel Tower, S3 neutron star, then the DRAWN black hole + Mercury's orbit"},
         "counter": {"x": [640, 920], "y": [220, 340], "note": "the ZEROS chip, right-aligned at x 920"},
-        "electron": {"x": [270, 700], "y": [960, 1040], "scenes": "sc08-sc12"},
-        "readout": {"x": [580, 920], "y": [470, 600], "scenes": "sc10-sc12"},
+        "bars": {"x": [584, 912], "y": [400, 1100], "scenes": "sc10-sc12", "note": "linear ordinary (amber) / dark (violet) matter bars, base y 1060"},
         "placard_rail": {"x": [140, 912], "y": [1124, 1204]}, "honesty_tab": {"x": [140, 628], "y": [1236, 1290]},
         "caption_slab": {"x": [140, 940], "y": [1296, 1488]},
     }
     md["foundation_changes"] = [
-        "Copied from video 16 (Speed Ladder); the visual layer is the Scale Well: the log ladder flipped DOWNWARD in metres (top 1 mm, bottom 10⁻¹⁸ m).",
-        "Caption pages re-flowed from the narration (lesson 3): each claim starts its own page; 'And that's about where' / 'your eyes give up.' is two pages (8 words > 6), the PROBABLY key sits on the first.",
-        "The reference lines' labels (YOUR EYE, LIGHT MICROSCOPE) sit LEFT of the rail (they are 6 / 12 px from the HAIR / VIRUS rungs; on the right they would shove seated chips).",
-        "Superscripts (⁻ ⁴-⁹ ⁰) are in none of the faces: the powers are DRAWN as raised text >= 24 px (shared/Type.tsx <Sci>).",
-        "PROTON is a two-line chip (name over '~1.7 fm across') so it fits beside the open window.",
-        "script.json claim_tags are still video 16's: build_props.py keys the meter from its own CLAIMS (the brief's grades) instead of asserting against them.",
+        "Copied from video 17 (Scale Well); the visual layer is the Weight Column: the log ladder pointing UP in kilograms (bottom 1 kg, top 10³⁷ kg).",
+        "Caption pages re-flowed from the narration (lesson 3): each claim starts its own page; <= 6 words per page.",
+        "Rung numbers are set in mono 26 px (names 28 px) so BLUE WHALE fits beside the open window as two lines; NEUTRON STAR's number is split in two rows.",
+        "Chips de-overlap bottom-up: NEUTRON STAR stacks above SUN, SGR A* above it; the OBSERVABLE UNIVERSE line sits at y 280 (not ~320) so it stays clear of the SGR A* chip.",
+        "Superscripts are in none of the faces: the powers are DRAWN as raised text >= 24 px (shared/Type.tsx <Sci>).",
+        "script.json claim_tags are not used: build_props.py keys the meter from its own CLAIMS (the brief's grades).",
     ]
     schema = json.loads(Path("schemas/artifacts/scene_plan.schema.json").read_text())
     jsonschema.validate(plan, schema)

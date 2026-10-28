@@ -4,13 +4,13 @@
 // Scenes are mounted by ABSOLUTE frame windows (no <Sequence>): inside a scene, useCurrentFrame() is the absolute frame,
 // so every trigger is keyed to a word / key frame / the root curves via useT(). A scene receives { from, to } = its
 // boundary and the next scene's, and is mounted from `from - pre` to `to + post` (each scene file exports its own `mount`;
-// hand-off contracts in BUILD.md §7). Higher z draws on top.
+// BUILD.md §2). Higher z draws on top.
 //
-// Layers (THE ROOT OWNS THE SCALE WELL): <Sky> (ink darkening downward) -> <Ladder> (the rail, decade powers, the reference
-// lines + veil, the rung ticks + label chips, the marker) -> <RootDevices> (the electron bracket, the break, the Planck line,
-// the readout) -> scenes (picture: per-scene emphasis) -> <WindowView> (S1 / S2 / S3 / the drawn atom) -> <Counter> (ZEROS)
-// -> <Grain> -> the OVERLAY PLANE, bottom to top: the window's tag + the atom note -> scene Overlays -> placard rail ->
-// honesty tab -> captions -> the settle CTA.
+// Layers (THE ROOT OWNS THE WEIGHT COLUMN): <Sky> (ink, slightly lighter at the top) -> <Ladder> (the rail, powers of ten,
+// the rung ticks + label chips, the marker) -> <RootDevices> (the break, the universe line, the ordinary / dark matter bars)
+// -> scenes (picture: per-scene emphasis) -> <WindowView> (S1 / S2 / S3 / the drawn black hole) -> <Counter> (ZEROS) ->
+// <Grain> -> the OVERLAY PLANE, bottom to top: the window's tag + 'Mercury's orbit' + the bars' 'drawn' tag -> scene
+// Overlays -> placard rail -> honesty tab -> captions -> the settle CTA.
 // props.layers === "picture" renders the picture layer only. The soundtrack (narration + the ducked bed landing on its last
 // tonic + SFX) is one premixed file (build_soundtrack.py).
 
@@ -21,7 +21,7 @@ import { HonestyTab } from "./overlay/HonestyTab";
 import { PlacardRail, SettleCta } from "./overlay/PlacardRail";
 import { SCENES } from "./scenes";
 import { Counter } from "./shared/Counter";
-import { AtomNote, RootDevices } from "./shared/Devices";
+import { BarsTag, OrbitNote, RootDevices } from "./shared/Devices";
 import { Grain } from "./shared/Grain";
 import { Ladder } from "./shared/Ladder";
 import { Sky } from "./shared/Sky";
@@ -64,7 +64,8 @@ export const WeightColumn: React.FC<ScaleProps> = (props) => {
         {overlay ? (
           <AbsoluteFill style={{ pointerEvents: "none" }}>
             <WindowTags />
-            <AtomNote />
+            <OrbitNote />
+            <BarsTag />
             {live.map((s) => {
               const Ov = SCENES[s.id].Overlay;
               return Ov ? <Ov key={`ov-${s.id}`} from={s.from} to={s.to} /> : null;

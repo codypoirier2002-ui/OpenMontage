@@ -1,17 +1,17 @@
 // Timing helpers. EVERY trigger goes through a word, a scene window, a key frame or one of the root curves from the measured
 // timeline (artifacts/timeline.json -> props). Never hard-code seconds or frame numbers in a scene. Pattern of
-// projects/how-fast-can-anything-go/time.ts (video 16, QA passed), re-dressed for the Scale Well (video 17).
+// projects/how-small-can-anything-get/time.ts (video 17, QA passed), re-dressed for the Weight Column (video 18).
 //
 //   const T = useT();
-//   T.at("s2", "cell") / T.end("s5", "one")  -> a word's onset / end frame (case/punctuation-insensitive; nth for repeats)
+//   T.at("s2", "earth") / T.end("s5", "one")  -> a word's onset / end frame (case/punctuation-insensitive; nth for repeats)
 //   T.scene("sc05") / T.section("s4")        -> { from, to, dur }
-//   T.sfx.hairSeat ...                       -> key frames from build_soundtrack.py (every SFX is already ON its frame)
-//   T.ladder(frame)                          -> { L, y, vis, railDraw, veil }: the marker's L = -log10(m) + screen y
+//   T.sfx.whaleSeat ...                       -> key frames from build_soundtrack.py (every SFX is already ON its frame)
+//   T.ladder(frame)                          -> { L, y, vis, railDraw }: the marker's L = log10(kg) + screen y
 //   T.railY(L)                               -> screen y of L (the rail never moves)
 //   T.rungs / T.rung(id)                     -> the rungs (name, num, lines, L, seat)
 //   T.counter(frame)                         -> { value, alpha }: the ZEROS counter
 //   T.win(frame) / T.plate(id, frame) / T.tagAt(frame)   -> the window's open, a state's alpha, the ONE tag on screen
-//   T.dev                                    -> props.devices (refs, electron, brk, planck, readout, atomNote); T.ch(arr, f) samples one
+//   T.dev                                    -> props.devices (orbit, brk, universe, bars); T.ch(arr, f) samples one
 //   T.seat(frame, seatFrame, n, drop)        -> an element that FALLS and is FULLY SEATED on its seat frame (lessons 4, 22)
 //   T.loopFrame(frame)                       -> every ambient clock reads frame 0 from the release (the settle is still)
 
@@ -22,7 +22,7 @@ import type { MediaId, Rung, RungId, SceneId, SectionId, ScaleProps, WindowPlate
 const norm = (t: string) => t.toLowerCase().replace(/[^a-z0-9]/g, "");
 
 export type Span = { from: number; to: number; dur: number };
-export type LadderState = { L: number; y: number; vis: number; railDraw: number; veil: number };
+export type LadderState = { L: number; y: number; vis: number; railDraw: number };
 
 export type Timing = {
   total: number;
@@ -100,7 +100,7 @@ export const makeTiming = (p: ScaleProps): Timing => {
   const LD = p.ladder;
   const ladder = (frame: number): LadderState => {
     const Lv = sample(LD.markerL, frame);
-    return { L: Lv, y: railYOf(Lv), vis: sample(LD.markerVis, frame), railDraw: sample(LD.railDraw, frame), veil: sample(LD.veil, frame) };
+    return { L: Lv, y: railYOf(Lv), vis: sample(LD.markerVis, frame), railDraw: sample(LD.railDraw, frame) };
   };
   // a GRAVITY drop (ease-in) so the element is still visibly moving on seat - 1 and lands ON the seat frame (lessons 4, 22)
   const seat = (frame: number, seatFrame: number, frames = 8, dropPx = 18) => {
