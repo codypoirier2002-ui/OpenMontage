@@ -1,0 +1,172 @@
+{
+ "window": {
+  "x0": 580,
+  "x1": 920,
+  "y0": 440,
+  "y1": 893
+ },
+ "plates": {
+  "S1": {
+   "file": "stills/S1.png",
+   "placeholder": false,
+   "source": "assets/images/plate_whale.png",
+   "source_px": [
+    1152,
+    2048
+   ],
+   "crop_px": [
+    0,
+    180,
+    1152,
+    1715
+   ],
+   "crop_pct": {
+    "x": [
+     0.0,
+     100.0
+    ],
+    "y": [
+     8.8,
+     83.7
+    ]
+   },
+   "scale": 0.2951,
+   "window": {
+    "x0": 580,
+    "x1": 920,
+    "y0": 440,
+    "y1": 893
+   },
+   "scene": "sc02",
+   "push": [
+    1.0,
+    1.03
+   ],
+   "contains_asserted": {
+    "tail": [
+     200,
+     400
+    ],
+    "eye": [
+     650,
+     960
+    ],
+    "snout": [
+     1080,
+     1190
+    ],
+    "flipper": [
+     200,
+     1100
+    ]
+   },
+   "crop_basis": "measured (PLATES crop)"
+  },
+  "S2": {
+   "file": "stills/S2.png",
+   "placeholder": false,
+   "source": "assets/images/plate_eiffel.png",
+   "source_px": [
+    1152,
+    2048
+   ],
+   "crop_px": [
+    0,
+    20,
+    1152,
+    1555
+   ],
+   "crop_pct": {
+    "x": [
+     0.0,
+     100.0
+    ],
+    "y": [
+     1.0,
+     75.9
+    ]
+   },
+   "scale": 0.2951,
+   "window": {
+    "x0": 580,
+    "x1": 920,
+    "y0": 440,
+    "y1": 893
+   },
+   "scene": "sc03",
+   "push": [
+    1.0,
+    1.03
+   ],
+   "contains_asserted": {
+    "tip": [
+     575,
+     50
+    ],
+    "second_floor": [
+     575,
+     950
+    ],
+    "first_floor": [
+     575,
+     1390
+    ]
+   },
+   "crop_basis": "measured (PLATES crop)"
+  },
+  "S3": {
+   "file": "stills/S3.png",
+   "placeholder": false,
+   "source": "assets/images/plate_neutron.png",
+   "source_px": [
+    1152,
+    2048
+   ],
+   "crop_px": [
+    0,
+    173,
+    1152,
+    1708
+   ],
+   "crop_pct": {
+    "x": [
+     0.0,
+     100.0
+    ],
+    "y": [
+     8.4,
+     83.4
+    ]
+   },
+   "scale": 0.2951,
+   "window": {
+    "x0": 580,
+    "x1": 920,
+    "y0": 440,
+    "y1": 893
+   },
+   "scene": "sc07",
+   "push": [
+    1.0,
+    1.03
+   ],
+   "contains_asserted": {
+    "star": [
+     580,
+     940
+    ],
+    "jet_top": [
+     580,
+     300
+    ],
+    "jet_bottom": [
+     580,
+     1600
+    ]
+   },
+   "crop_basis": "measured (PLATES crop)"
+  }
+ },
+ "placeholders": [],
+ "process": "    python3 projects/how-heavy-can-anything-get/prepare_media.py [--force]\n\nPattern of projects/how-small-can-anything-get/prepare_media.py (video 17, QA passed). No AI clips. ONE window box for every\nplate (theme.ts L.win: x 580-920, y 440-893, 340 x 453, portrait 3:4, RIGHT of the rung chips so a seated chip never sits under\na photo), so each crop has the window's aspect (0.7506).\n\nVideo 18: the three AI stills (assets/images/plate_whale.png, plate_eiffel.png, plate_neutron.png; 1152 x 2048). Crop boxes are\nMEASURED on them (lesson 9: from pixels, the window's aspect) with the subject inside (lesson 39: feature points asserted inside\nthe crop with a 20 px margin). The window's fourth state (sc08-sc09, the black hole) is DRAWN in code (shared/Devices.tsx), not\na plate. A missing source still falls back to a labelled placeholder card (\"placeholder\": true).\n-> artifacts/media_report.json + renders/review/crops.jpg (the crops on their plates, or the placeholders).\n"
+}

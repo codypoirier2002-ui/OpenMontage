@@ -1,0 +1,45 @@
+{
+ "composition": "WeightColumn",
+ "master": "renders/how-heavy-can-anything-get.mp4",
+ "raw": "renders/raw.mp4",
+ "scene_map": {
+  "N-s1": "sc01",
+  "N-s2": "sc04",
+  "N-s3": "sc06",
+  "N-s4": "sc08",
+  "N-s5": "sc11",
+  "S1": "sc02",
+  "S2": "sc03",
+  "S3": "sc06",
+  "M1": "sc01",
+  "X1": "sc01",
+  "X2": "sc04",
+  "X3": "sc02",
+  "X4": "sc06",
+  "X5": "sc08",
+  "X6": "sc11"
+ },
+ "approval_basis": "topic, $4 cap and run-through chosen by the user (d-001..d-003); proposal + script approved together ('Approve', d-004/d-005); scene plan under the run-through (d-006); music fallback to video 16's verified bed (d-007, no spend); contact sheets 1-3 sent",
+ "transition_in": "Continuous frame (the well persists; scene devices fade).",
+ "verification_notes": [
+  "Lean build: video 17's files and pipeline copied and turned upward; 1 builder agent; qa_auto 0 fail / 1 accepted warn (placard 5 sources both final claims, so it stays through the dark-matter tab pulse); 1 targeted QA agent (0 blockers, 2 majors, 5 minors), one fix round, re-render.",
+  "QA A1 fixed: 'star' and 'squeezes' captions were 7-8 f late from the automatic onset sweep; measured overrides. QA A2 fixed: the NEUTRON STAR chip states '\u2248 3 \u00d7 10\u00b3\u2070 kg' so its stacked position cannot read as 10^33-36. QA A7 fixed: placard range widened to ~290-520 million t to cover the on-screen ~400 billion kg."
+ ],
+ "visual_issues": [
+  "The bars' 'drawn' tag floats above the ordinary bar f1272-1345 (QA A3).",
+  "Chip text and '(ordinary matter)' marginal at 360x640 (QA A4).",
+  "A small ring at the dark bar's top at f1386 (QA A5).",
+  "Right half empty through s2 (QA A6)."
+ ],
+ "audio_issues": [
+  "Generated bed (C minor, no cadence) unused; video 16's G major bed reused (d-007).",
+  "Closing sentence lifted +4.5 dB on the voice lane only (soft delivery); closing duck -11 dB."
+ ],
+ "promise_issues": [
+  "Music bed is video 16's, not a new one (generated bed failed the cadence check; re-rolls not allowed)."
+ ],
+ "subtitle_issues": [],
+ "duck_level_db": -12,
+ "music_path": "assets/music/bed_raw.wav",
+ "budget_usd": 4.0
+}

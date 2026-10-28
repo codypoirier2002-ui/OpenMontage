@@ -1,0 +1,8 @@
+{
+ "last_tonic_attack_s": 55.79,
+ "measured_how": "chroma per 0.5 s + 10 ms RMS attacks on bed_raw.wav: IV (C/E/G) 54.5-55.0, V (D) 55.0-55.5, I (G major: G, D, then F#) from 55.5; the last strong attacks are 55.49 / 55.65 / 55.79 s (+9.4 dB in 10 ms at -17.7 dBFS); the attacks after it (56.18, 56.69, 56.99, 57.22) are plucks inside the ring-out at -21 to -36 dBFS, not a chord; the tail decays to -49 dBFS by 57.5-58 s",
+ "key_requested": "D major",
+ "key_heard": "G major (the generated bed ignored the requested key, lesson 26; the cadence is found from the audio)",
+ "level_profile_2s_dbfs": "about -20 for 0-18 s then about -14 from 18 s (a +6 dB step at 18 s), evened by build_soundtrack's 2 s level evening",
+ "analysed": "2026-10-27"
+}

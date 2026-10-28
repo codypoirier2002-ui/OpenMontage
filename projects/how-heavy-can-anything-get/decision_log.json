@@ -1,0 +1,187 @@
+{
+ "version": "1.0",
+ "project_id": "how-heavy-can-anything-get",
+ "decisions": [
+  {
+   "decision_id": "d-001",
+   "stage": "proposal",
+   "category": "concept_selection",
+   "subject": "Video topic",
+   "options_considered": [
+    {
+     "option_id": "heavy",
+     "label": "How Heavy Can Anything Get?",
+     "score": 0.9,
+     "reason": "User picked it (recommended)"
+    },
+    {
+     "option_id": "sun",
+     "label": "What If the Sun Went Out?",
+     "score": 0.5,
+     "reason": "offered"
+    },
+    {
+     "option_id": "deep",
+     "label": "How Deep Is the Ocean, Really?",
+     "score": 0.5,
+     "reason": "offered"
+    },
+    {
+     "option_id": "old",
+     "label": "How Old Is the Oldest Thing?",
+     "score": 0.5,
+     "reason": "offered"
+    }
+   ],
+   "selected": "heavy",
+   "reason": "User chose it 2026-10-28.",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.95
+  },
+  {
+   "decision_id": "d-002",
+   "stage": "proposal",
+   "category": "budget",
+   "subject": "Spend cap",
+   "options_considered": [
+    {
+     "option_id": "4",
+     "label": "$4, minimal takes",
+     "score": 0.9,
+     "reason": "standing default"
+    },
+    {
+     "option_id": "2",
+     "label": "$2",
+     "score": 0.4,
+     "reason": "offered"
+    },
+    {
+     "option_id": "8",
+     "label": "$8",
+     "score": 0.3,
+     "reason": "offered"
+    }
+   ],
+   "selected": "4",
+   "reason": "User chose it 2026-10-28.",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.95
+  },
+  {
+   "decision_id": "d-003",
+   "stage": "proposal",
+   "category": "run_policy",
+   "subject": "Gates",
+   "options_considered": [
+    {
+     "option_id": "together",
+     "label": "Approve proposal + script together, then run end to end",
+     "score": 0.9,
+     "reason": "user"
+    },
+    {
+     "option_id": "each",
+     "label": "Stop at every gate",
+     "score": 0.3,
+     "reason": "offered"
+    }
+   ],
+   "selected": "together",
+   "reason": "User chose it 2026-10-28; the scene plan follows the joint approval without a separate stop.",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.95
+  },
+  {
+   "decision_id": "d-004",
+   "stage": "proposal",
+   "category": "approval",
+   "subject": "Proposal",
+   "options_considered": [
+    {
+     "option_id": "approve",
+     "label": "Approve",
+     "score": 1,
+     "reason": "user"
+    }
+   ],
+   "selected": "approve",
+   "reason": "User: 'Approve' 2026-10-28.",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 1.0
+  },
+  {
+   "decision_id": "d-005",
+   "stage": "script",
+   "category": "approval",
+   "subject": "Script",
+   "options_considered": [
+    {
+     "option_id": "approve",
+     "label": "Approve",
+     "score": 1,
+     "reason": "user"
+    }
+   ],
+   "selected": "approve",
+   "reason": "Approved with the proposal (d-003).",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 1.0
+  },
+  {
+   "decision_id": "d-006",
+   "stage": "scene_plan",
+   "category": "approval",
+   "subject": "Scene plan",
+   "options_considered": [
+    {
+     "option_id": "approve",
+     "label": "Approve",
+     "score": 1,
+     "reason": "user"
+    }
+   ],
+   "selected": "approve",
+   "reason": "Covered by the run-through approval (d-003); sent with contact sheet 2.",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 1.0
+  },
+  {
+   "decision_id": "d-007",
+   "stage": "assets",
+   "category": "asset_fallback",
+   "subject": "Music bed",
+   "options_considered": [
+    {
+     "option_id": "reuse16",
+     "label": "Reuse video 16's verified bed (free)",
+     "score": 0.8,
+     "reason": "G major cadence, pinned; fits the uplifting tone"
+    },
+    {
+     "option_id": "keep",
+     "label": "Keep the new C minor bed with its fade",
+     "score": 0.2,
+     "reason": "breaks the finished-line rule"
+    },
+    {
+     "option_id": "reroll",
+     "label": "Re-roll the music",
+     "score": 0.0,
+     "reason": "forbidden by the standing rule"
+    }
+   ],
+   "selected": "reuse16",
+   "reason": "The generated bed has no cadence or ring-out (finished-line rule); re-rolls are not allowed; reuse is free.",
+   "user_visible": true,
+   "user_approved": false,
+   "confidence": 0.85
+  }
+ ]
+}

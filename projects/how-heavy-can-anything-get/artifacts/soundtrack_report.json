@@ -1,0 +1,1362 @@
+{
+ "total_seconds": 48.8,
+ "total_frames": 1464,
+ "samples": 2342400,
+ "sample_rate": 48000,
+ "channels": 2,
+ "narration_source": "assets/audio/narration/clean/sN.wav (THE CLEAN WAVs, process_narration.py)",
+ "bed_present": true,
+ "frames": {
+  "railDraw": 10,
+  "youSeat": 42,
+  "youTicks": [
+   42
+  ],
+  "windowOpen1": 91,
+  "climbWhale": 121,
+  "whaleSeat": 157,
+  "whaleTicks": [
+   139,
+   145,
+   151,
+   157
+  ],
+  "plateSwap": 196,
+  "climbEiffel": 211,
+  "eiffelSeat": 247,
+  "eiffelTicks": [
+   241,
+   247
+  ],
+  "windowClose1": 291,
+  "climbHumans": 405,
+  "humansSeat": 441,
+  "humansTicks": [
+   423,
+   429,
+   435,
+   441
+  ],
+  "climbEarth": 507,
+  "earthSeat": 543,
+  "earthTicks": [
+   507,
+   521,
+   530,
+   537,
+   540,
+   543
+  ],
+  "climbSun": 656,
+  "sunSeat": 692,
+  "sunTicks": [
+   662,
+   668,
+   674,
+   680,
+   686,
+   692
+  ],
+  "windowOpen2": 733,
+  "neutronSeat": 745,
+  "windowClose2": 898,
+  "windowOpen3": 916,
+  "climbSgra": 978,
+  "sgraSeat": 1014,
+  "sgraTicks": [
+   984,
+   990,
+   996,
+   1002,
+   1008,
+   1014
+  ],
+  "orbitDraw": 1096,
+  "windowClose3": 1157,
+  "breakDraw": 1177,
+  "universeIn": 1262,
+  "spinStart": 1262,
+  "spinEnd": 1287,
+  "spinTicks": [
+   1262,
+   1272,
+   1278,
+   1282,
+   1285,
+   1287
+  ],
+  "darkRise": 1351,
+  "darkSeat": 1386,
+  "closingStart": 1345,
+  "wayFrame": 1410,
+  "wayEndFrame": 1419,
+  "chordFrame": 1423,
+  "ctaFrame": 1419
+ },
+ "motion": {
+  "SEAT_F": 8,
+  "WINDOW_OPEN_F": 6,
+  "WINDOW_CLOSE_F": 8,
+  "XFADE_F": 12,
+  "CLIMB_F": 36,
+  "BEAM_F": 12,
+  "TICK_STEP_F": 6,
+  "FADE_F": 12
+ },
+ "music": {
+  "source": "assets/music/bed_raw.wav",
+  "status": "bed present",
+  "cadence": "the LAST TONIC attack found from the audio (last_tonic_attack; music_qa.json override if present), lesson 26",
+  "chord_src_s": 55.779,
+  "wanted_trim_s": 8.339,
+  "trim_src_s": 8.42,
+  "trim_how": "snapped to the bed's attack at src 8.420 s (3 attacks within +-0.4 s)",
+  "resample": {
+   "decode_rate": 48082,
+   "speed": 0.998295,
+   "cents": -2.96
+  },
+  "level_evening": {
+   "window_s": 2.0,
+   "max_db": 5.0,
+   "smooth_s": 1.5,
+   "ref_db": -14.0,
+   "gain_range_db": [
+    -1.55,
+    4.63
+   ],
+   "bed_film_2s_dbfs_before_evening": [
+    -18.4,
+    -18.7,
+    -18.6,
+    -18.1,
+    -17.9,
+    -14.4,
+    -12.7,
+    -13.4,
+    -13.6,
+    -13.8,
+    -14.1,
+    -14.2,
+    -13.9,
+    -14.3,
+    -14.8,
+    -12.6,
+    -12.7,
+    -13.4,
+    -13.5,
+    -13.9,
+    -13.9,
+    -13.9,
+    -14.3
+   ]
+  },
+  "bed_film_2s_rms_dbfs_pre_mix_gain": [
+   -20.4,
+   -20.5,
+   -20.6,
+   -20.3,
+   -20.5,
+   -20.6,
+   -20.3,
+   -20.5,
+   -20.5,
+   -20.3,
+   -20.5,
+   -20.5,
+   -20.2,
+   -20.5,
+   -20.8,
+   -20.0,
+   -20.4,
+   -20.6,
+   -20.4,
+   -20.4,
+   -20.4,
+   -20.3,
+   -20.4,
+   -21.1
+  ],
+  "bed_gain_db": -6.4,
+  "bed_lufs_target": -19.0,
+  "ducking": {
+   "under_speech_db": -12.0,
+   "attack_ms": 120,
+   "release_ms": 400,
+   "hold_ms": 250
+  },
+  "ducking_measured": {
+   "target_db": -12.0,
+   "median_bed_attenuation_while_voiced_db": -12.0,
+   "p10_p90_db": [
+    -16.0,
+    -12.0
+   ],
+   "applies": true
+  }
+ },
+ "ending": {
+  "release_s": 47.29,
+  "release_frame": 1419,
+  "release_definition": "timeline.json way_end_seconds: the last voiced 10 ms (-40 dB re. the narration max) of s5 (the end of 'way')",
+  "chord": "the bed's LAST TONIC attack found from the audio (lesson 26)",
+  "chord_film_s": 47.4419,
+  "chord_measured_on_premix_bed_s": 47.4009,
+  "chord_after_release_s": 0.152,
+  "chord_frame": 1423,
+  "duck_release_s": [
+   47.29,
+   47.422
+  ],
+  "closing_duck": {
+   "db": -11.0,
+   "ramp_from_s": 44.271,
+   "full_from_s": 44.671,
+   "from_word": "But (lesson 44)"
+  },
+  "end_duck": {
+   "db": -3.0,
+   "from_s": 46.895
+  },
+  "end_lift": {
+   "db": 3.0,
+   "band_hz": [
+    300,
+    4000
+   ],
+   "film_s": [
+    46.985,
+    47.3
+   ]
+  },
+  "ring_lift": {
+   "db": 5.0,
+   "from_s": 47.592
+  },
+  "way_lift": {
+   "metric": "qa_auto lesson 30: loudest 100 ms of 'way.' vs the median of its sentence's words (voice lane)",
+   "gain_db": 5.0,
+   "span_film_s": [
+    46.955,
+    47.29
+   ],
+   "words": [
+    "And",
+    "dark",
+    "matter",
+    "outweighs",
+    "it",
+    "five",
+    "to",
+    "one."
+   ],
+   "peak100_before_dbfs": [
+    -25.2,
+    -26.4,
+    -22.8,
+    -24.1,
+    -27.6,
+    -29.5,
+    -30.3,
+    -34.1
+   ],
+   "peak100_after_dbfs": [
+    -19.4,
+    -20.6,
+    -17.0,
+    -18.3,
+    -21.8,
+    -23.7,
+    -24.5,
+    -23.3
+   ],
+   "way_under_median_before_db": 7.1,
+   "way_under_median_after_db": 2.1
+  },
+  "s5_section_gain_db": 1.3,
+  "closing_words_300_4000": {
+   "And": {
+    "window_s5_s": [
+     5.616,
+     5.844
+    ],
+    "voice": -29.4,
+    "bed": -44.8,
+    "voice_over_bed_db": 15.4
+   },
+   "dark": {
+    "window_s5_s": [
+     5.844,
+     6.06
+    ],
+    "voice": -23.5,
+    "bed": -41.4,
+    "voice_over_bed_db": 17.9
+   },
+   "matter": {
+    "window_s5_s": [
+     6.06,
+     6.467
+    ],
+    "voice": -23.6,
+    "bed": -43.6,
+    "voice_over_bed_db": 20.0
+   },
+   "outweighs": {
+    "window_s5_s": [
+     6.467,
+     6.73
+    ],
+    "voice": -24.9,
+    "bed": -42.6,
+    "voice_over_bed_db": 17.7
+   },
+   "it": {
+    "window_s5_s": [
+     6.73,
+     7.011
+    ],
+    "voice": -30.6,
+    "bed": -43.0,
+    "voice_over_bed_db": 12.4
+   },
+   "five": {
+    "window_s5_s": [
+     7.011,
+     7.48
+    ],
+    "voice": -29.8,
+    "bed": -42.7,
+    "voice_over_bed_db": 12.9
+   },
+   "to": {
+    "window_s5_s": [
+     7.48,
+     7.79
+    ],
+    "voice": -27.8,
+    "bed": -43.8,
+    "voice_over_bed_db": 16.0
+   },
+   "one.": {
+    "window_s5_s": [
+     7.79,
+     8.085
+    ],
+    "voice": -27.8,
+    "bed": -47.2,
+    "voice_over_bed_db": 19.4
+   },
+   "way: w + ay (onset + vowel)": {
+    "window_s5_s": [
+     7.79,
+     7.97
+    ],
+    "voice": -25.8,
+    "bed": -49.5,
+    "voice_over_bed_db": 23.7
+   },
+   "way: tail": {
+    "window_s5_s": [
+     7.965,
+     8.085
+    ],
+    "voice": -40.4,
+    "bed": -44.8,
+    "voice_over_bed_db": 4.4
+   }
+  },
+  "closing_min_margin_db": 12.4,
+  "closing_min_margin_note": null,
+  "limiter_max_reduction_on_way_db": -0.0,
+  "mix_rms_by_100ms_after_chord_dbfs": [
+   -17.0,
+   -19.3,
+   -19.9,
+   -16.4,
+   -18.6,
+   -20.1,
+   -16.6,
+   -19.6,
+   -23.7,
+   -24.9,
+   -30.8,
+   -37.1,
+   -46.4
+  ],
+  "settle_after_chord_s": 1.358,
+  "nothing_under_closing_line": "asserted: the SFX lane is silent from 'But' - 0.05 s to the end"
+ },
+ "sfx_processing": {
+  "X1": "as is (98 % in band); its 10 %-of-peak onset (0.167 s) on the first moving frame",
+  "X2": "+ 1-3 kHz body + with_harmonics: LF saturation 25-250 Hz -> 300-2500 Hz; peak 0.221 s on the seat",
+  "X3": "ONE tick cut (0.258, 0.306) s + 1-3 kHz body + with_harmonics: HF rectification 3.5-12 kHz -> 300-3500 Hz; peak 0.018 s in the cut",
+  "X4": "shaped 1.6 s (0.4 s in / 0.6 s out) + with_harmonics: LF saturation 25-250 Hz -> 300-2500 Hz; start-aligned",
+  "X5": "0-1.0 s + with_harmonics: HF rectification 3.5-12 kHz -> 300-3500 Hz; start-aligned",
+  "X6": "0-1.0 s normalised, its attack is sample 0; start-aligned"
+ },
+ "sfx": [
+  {
+   "id": "X1",
+   "name": "rail_draw",
+   "frame": 4,
+   "seconds": 0.133,
+   "peak_dbfs": -3.2,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.1667,
+   "placed_at_s": -0.0334,
+   "rule": "the rail starts drawing (sc01): the whoosh peaks 6 f BEFORE the move, clear of the first word (lesson 57)",
+   "final_phone_band_dbfs": {
+    "sfx": -25.1,
+    "bed": -34.8,
+    "voice": -158.2,
+    "sfx_over_bed_db": 9.7,
+    "hit_30ms_sfx_dbfs": -26.9,
+    "hit_30ms_sfx_over_bed_db": 8.4
+   },
+   "sample_peak_dbfs": 0.9
+  },
+  {
+   "id": "X3",
+   "name": "tick_you_1",
+   "frame": 42,
+   "seconds": 1.4,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 1.382,
+   "rule": "ZEROS counter step on the YOU rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.9,
+    "bed": -35.2,
+    "voice": -31.2,
+    "sfx_over_bed_db": 3.3,
+    "hit_30ms_sfx_dbfs": -24.9,
+    "hit_30ms_sfx_over_bed_db": 10.7
+   },
+   "sample_peak_dbfs": -9.4
+  },
+  {
+   "id": "X1",
+   "name": "climb_whale",
+   "frame": 121,
+   "seconds": 4.033,
+   "peak_dbfs": -2.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.1667,
+   "placed_at_s": 3.8666,
+   "rule": "the marker's first moving frame toward WHALE (sc02)",
+   "final_phone_band_dbfs": {
+    "sfx": -23.9,
+    "bed": -34.3,
+    "voice": -17.5,
+    "sfx_over_bed_db": 10.4,
+    "hit_30ms_sfx_dbfs": -25.7,
+    "hit_30ms_sfx_over_bed_db": 10.4
+   },
+   "sample_peak_dbfs": 2.1
+  },
+  {
+   "id": "X3",
+   "name": "tick_whale_1",
+   "frame": 139,
+   "seconds": 4.633,
+   "peak_dbfs": -12.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 4.6153,
+   "rule": "ZEROS counter step on the WHALE rung",
+   "final_phone_band_dbfs": {
+    "sfx": -30.0,
+    "bed": -34.2,
+    "voice": -18.4,
+    "sfx_over_bed_db": 4.2,
+    "hit_30ms_sfx_dbfs": -23.3,
+    "hit_30ms_sfx_over_bed_db": 12.3
+   },
+   "sample_peak_dbfs": -7.7
+  },
+  {
+   "id": "X3",
+   "name": "tick_whale_2",
+   "frame": 145,
+   "seconds": 4.833,
+   "peak_dbfs": -12.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 4.8153,
+   "rule": "ZEROS counter step on the WHALE rung",
+   "final_phone_band_dbfs": {
+    "sfx": -30.4,
+    "bed": -29.6,
+    "voice": -19.8,
+    "sfx_over_bed_db": -0.8,
+    "hit_30ms_sfx_dbfs": -23.4,
+    "hit_30ms_sfx_over_bed_db": 4.9
+   },
+   "sample_peak_dbfs": -7.9
+  },
+  {
+   "id": "X3",
+   "name": "tick_whale_3",
+   "frame": 151,
+   "seconds": 5.033,
+   "peak_dbfs": -12.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 5.0153,
+   "rule": "ZEROS counter step on the WHALE rung",
+   "final_phone_band_dbfs": {
+    "sfx": -30.4,
+    "bed": -34.3,
+    "voice": -24.5,
+    "sfx_over_bed_db": 3.9,
+    "hit_30ms_sfx_dbfs": -23.4,
+    "hit_30ms_sfx_over_bed_db": 13.6
+   },
+   "sample_peak_dbfs": -7.9
+  },
+  {
+   "id": "X3",
+   "name": "tick_whale_4",
+   "frame": 157,
+   "seconds": 5.233,
+   "peak_dbfs": -12.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 5.2153,
+   "rule": "ZEROS counter step on the WHALE rung",
+   "final_phone_band_dbfs": {
+    "sfx": -30.4,
+    "bed": -34.7,
+    "voice": -29.4,
+    "sfx_over_bed_db": 4.3,
+    "hit_30ms_sfx_dbfs": -23.4,
+    "hit_30ms_sfx_over_bed_db": 13.3
+   },
+   "sample_peak_dbfs": -7.9
+  },
+  {
+   "id": "X1",
+   "name": "climb_eiffel",
+   "frame": 211,
+   "seconds": 7.033,
+   "peak_dbfs": -2.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.1667,
+   "placed_at_s": 6.8666,
+   "rule": "the marker's first moving frame toward EIFFEL (sc03)",
+   "final_phone_band_dbfs": {
+    "sfx": -23.9,
+    "bed": -33.8,
+    "voice": -20.1,
+    "sfx_over_bed_db": 9.9,
+    "hit_30ms_sfx_dbfs": -25.7,
+    "hit_30ms_sfx_over_bed_db": 9.8
+   },
+   "sample_peak_dbfs": 2.1
+  },
+  {
+   "id": "X3",
+   "name": "tick_eiffel_1",
+   "frame": 241,
+   "seconds": 8.033,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 8.0153,
+   "rule": "ZEROS counter step on the EIFFEL rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.9,
+    "bed": -33.6,
+    "voice": -38.7,
+    "sfx_over_bed_db": 1.7,
+    "hit_30ms_sfx_dbfs": -24.9,
+    "hit_30ms_sfx_over_bed_db": 11.5
+   },
+   "sample_peak_dbfs": -9.4
+  },
+  {
+   "id": "X3",
+   "name": "tick_eiffel_2",
+   "frame": 247,
+   "seconds": 8.233,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 8.2153,
+   "rule": "ZEROS counter step on the EIFFEL rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.9,
+    "bed": -33.9,
+    "voice": -19.6,
+    "sfx_over_bed_db": 2.0,
+    "hit_30ms_sfx_dbfs": -24.9,
+    "hit_30ms_sfx_over_bed_db": 12.0
+   },
+   "sample_peak_dbfs": -9.4
+  },
+  {
+   "id": "X1",
+   "name": "climb_humans",
+   "frame": 405,
+   "seconds": 13.5,
+   "peak_dbfs": -2.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.1667,
+   "placed_at_s": 13.3333,
+   "rule": "the marker's first moving frame toward ALL HUMANS (sc04)",
+   "final_phone_band_dbfs": {
+    "sfx": -23.9,
+    "bed": -36.2,
+    "voice": -14.6,
+    "sfx_over_bed_db": 12.3,
+    "hit_30ms_sfx_dbfs": -25.7,
+    "hit_30ms_sfx_over_bed_db": 12.2
+   },
+   "sample_peak_dbfs": 2.1
+  },
+  {
+   "id": "X3",
+   "name": "tick_humans_1",
+   "frame": 423,
+   "seconds": 14.1,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 14.082,
+   "rule": "ZEROS counter step on the HUMANS rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.4,
+    "bed": -36.7,
+    "voice": -26.0,
+    "sfx_over_bed_db": 5.3,
+    "hit_30ms_sfx_dbfs": -24.7,
+    "hit_30ms_sfx_over_bed_db": 13.5
+   },
+   "sample_peak_dbfs": -9.2
+  },
+  {
+   "id": "X3",
+   "name": "tick_humans_2",
+   "frame": 429,
+   "seconds": 14.3,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 14.282,
+   "rule": "ZEROS counter step on the HUMANS rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.9,
+    "bed": -39.6,
+    "voice": -19.4,
+    "sfx_over_bed_db": 7.7,
+    "hit_30ms_sfx_dbfs": -24.9,
+    "hit_30ms_sfx_over_bed_db": 13.9
+   },
+   "sample_peak_dbfs": -9.4
+  },
+  {
+   "id": "X3",
+   "name": "tick_humans_3",
+   "frame": 435,
+   "seconds": 14.5,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 14.482,
+   "rule": "ZEROS counter step on the HUMANS rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.9,
+    "bed": -35.7,
+    "voice": -26.3,
+    "sfx_over_bed_db": 3.8,
+    "hit_30ms_sfx_dbfs": -24.9,
+    "hit_30ms_sfx_over_bed_db": 12.4
+   },
+   "sample_peak_dbfs": -9.4
+  },
+  {
+   "id": "X3",
+   "name": "tick_humans_4",
+   "frame": 441,
+   "seconds": 14.7,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 14.682,
+   "rule": "ZEROS counter step on the HUMANS rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.9,
+    "bed": -36.8,
+    "voice": -22.4,
+    "sfx_over_bed_db": 4.9,
+    "hit_30ms_sfx_dbfs": -24.9,
+    "hit_30ms_sfx_over_bed_db": 14.4
+   },
+   "sample_peak_dbfs": -9.4
+  },
+  {
+   "id": "X1",
+   "name": "climb_earth",
+   "frame": 507,
+   "seconds": 16.9,
+   "peak_dbfs": -1.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.1667,
+   "placed_at_s": 16.7333,
+   "rule": "the marker's first moving frame toward EARTH (sc05)",
+   "final_phone_band_dbfs": {
+    "sfx": -22.6,
+    "bed": -35.1,
+    "voice": -80.8,
+    "sfx_over_bed_db": 12.5,
+    "hit_30ms_sfx_dbfs": -23.0,
+    "hit_30ms_sfx_over_bed_db": 13.8
+   },
+   "sample_peak_dbfs": 3.1
+  },
+  {
+   "id": "X3",
+   "name": "tick_earth_1",
+   "frame": 507,
+   "seconds": 16.9,
+   "peak_dbfs": -15.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 16.882,
+   "rule": "counter 11 -> 24, accelerating tick 1/6 (sc05)",
+   "final_phone_band_dbfs": {
+    "sfx": -22.6,
+    "bed": -35.1,
+    "voice": -80.8,
+    "sfx_over_bed_db": 12.5,
+    "hit_30ms_sfx_dbfs": -23.0,
+    "hit_30ms_sfx_over_bed_db": 13.8
+   },
+   "sample_peak_dbfs": -9.5
+  },
+  {
+   "id": "X3",
+   "name": "tick_earth_2",
+   "frame": 521,
+   "seconds": 17.367,
+   "peak_dbfs": -15.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 17.3486,
+   "rule": "counter 11 -> 24, accelerating tick 2/6 (sc05)",
+   "final_phone_band_dbfs": {
+    "sfx": -28.5,
+    "bed": -35.6,
+    "voice": -34.6,
+    "sfx_over_bed_db": 7.1,
+    "hit_30ms_sfx_dbfs": -25.4,
+    "hit_30ms_sfx_over_bed_db": 14.7
+   },
+   "sample_peak_dbfs": -11.1
+  },
+  {
+   "id": "X3",
+   "name": "tick_earth_3",
+   "frame": 530,
+   "seconds": 17.667,
+   "peak_dbfs": -15.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 17.6486,
+   "rule": "counter 11 -> 24, accelerating tick 3/6 (sc05)",
+   "final_phone_band_dbfs": {
+    "sfx": -33.3,
+    "bed": -36.1,
+    "voice": -32.2,
+    "sfx_over_bed_db": 2.8,
+    "hit_30ms_sfx_dbfs": -26.4,
+    "hit_30ms_sfx_over_bed_db": 14.3
+   },
+   "sample_peak_dbfs": -10.9
+  },
+  {
+   "id": "X3",
+   "name": "tick_earth_4",
+   "frame": 537,
+   "seconds": 17.9,
+   "peak_dbfs": -15.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 17.882,
+   "rule": "counter 11 -> 24, accelerating tick 4/6 (sc05)",
+   "final_phone_band_dbfs": {
+    "sfx": -33.4,
+    "bed": -39.4,
+    "voice": -15.1,
+    "sfx_over_bed_db": 6.0,
+    "hit_30ms_sfx_dbfs": -26.4,
+    "hit_30ms_sfx_over_bed_db": 12.2
+   },
+   "sample_peak_dbfs": -10.9
+  },
+  {
+   "id": "X3",
+   "name": "tick_earth_5",
+   "frame": 540,
+   "seconds": 18.0,
+   "peak_dbfs": -15.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 17.982,
+   "rule": "counter 11 -> 24, accelerating tick 5/6 (sc05)",
+   "final_phone_band_dbfs": {
+    "sfx": -33.4,
+    "bed": -36.6,
+    "voice": -19.6,
+    "sfx_over_bed_db": 3.2,
+    "hit_30ms_sfx_dbfs": -26.4,
+    "hit_30ms_sfx_over_bed_db": 15.8
+   },
+   "sample_peak_dbfs": -11.0
+  },
+  {
+   "id": "X2",
+   "name": "earth_thump",
+   "frame": 543,
+   "seconds": 18.1,
+   "peak_dbfs": -12.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.2186,
+   "placed_at_s": 17.8814,
+   "rule": "the EARTH rung SEATED (sc05)",
+   "final_phone_band_dbfs": {
+    "sfx": -24.0,
+    "bed": -36.2,
+    "voice": -18.7,
+    "sfx_over_bed_db": 12.2,
+    "hit_30ms_sfx_dbfs": -19.1,
+    "hit_30ms_sfx_over_bed_db": 17.9
+   },
+   "sample_peak_dbfs": -7.9
+  },
+  {
+   "id": "X1",
+   "name": "climb_sun",
+   "frame": 656,
+   "seconds": 21.867,
+   "peak_dbfs": -2.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.1667,
+   "placed_at_s": 21.7,
+   "rule": "the marker's first moving frame toward SUN (sc06)",
+   "final_phone_band_dbfs": {
+    "sfx": -23.9,
+    "bed": -37.8,
+    "voice": -21.8,
+    "sfx_over_bed_db": 13.9,
+    "hit_30ms_sfx_dbfs": -25.7,
+    "hit_30ms_sfx_over_bed_db": 14.5
+   },
+   "sample_peak_dbfs": 2.1
+  },
+  {
+   "id": "X3",
+   "name": "tick_sun_1",
+   "frame": 662,
+   "seconds": 22.067,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 22.0486,
+   "rule": "ZEROS counter step on the SUN rung",
+   "final_phone_band_dbfs": {
+    "sfx": -8.9,
+    "bed": -35.7,
+    "voice": -20.3,
+    "sfx_over_bed_db": 26.8,
+    "hit_30ms_sfx_dbfs": -7.2,
+    "hit_30ms_sfx_over_bed_db": 28.3
+   },
+   "sample_peak_dbfs": 1.0
+  },
+  {
+   "id": "X3",
+   "name": "tick_sun_2",
+   "frame": 668,
+   "seconds": 22.267,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 22.2486,
+   "rule": "ZEROS counter step on the SUN rung",
+   "final_phone_band_dbfs": {
+    "sfx": -24.5,
+    "bed": -34.5,
+    "voice": -20.1,
+    "sfx_over_bed_db": 10.0,
+    "hit_30ms_sfx_dbfs": -23.7,
+    "hit_30ms_sfx_over_bed_db": 9.3
+   },
+   "sample_peak_dbfs": -8.1
+  },
+  {
+   "id": "X3",
+   "name": "tick_sun_3",
+   "frame": 674,
+   "seconds": 22.467,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 22.4486,
+   "rule": "ZEROS counter step on the SUN rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.4,
+    "bed": -35.9,
+    "voice": -28.9,
+    "sfx_over_bed_db": 4.5,
+    "hit_30ms_sfx_dbfs": -24.7,
+    "hit_30ms_sfx_over_bed_db": 16.0
+   },
+   "sample_peak_dbfs": -9.2
+  },
+  {
+   "id": "X3",
+   "name": "tick_sun_4",
+   "frame": 680,
+   "seconds": 22.667,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 22.6486,
+   "rule": "ZEROS counter step on the SUN rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.9,
+    "bed": -37.7,
+    "voice": -24.0,
+    "sfx_over_bed_db": 5.8,
+    "hit_30ms_sfx_dbfs": -24.9,
+    "hit_30ms_sfx_over_bed_db": 14.1
+   },
+   "sample_peak_dbfs": -9.4
+  },
+  {
+   "id": "X3",
+   "name": "tick_sun_5",
+   "frame": 686,
+   "seconds": 22.867,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 22.8486,
+   "rule": "ZEROS counter step on the SUN rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.9,
+    "bed": -35.0,
+    "voice": -25.8,
+    "sfx_over_bed_db": 3.1,
+    "hit_30ms_sfx_dbfs": -24.9,
+    "hit_30ms_sfx_over_bed_db": 8.5
+   },
+   "sample_peak_dbfs": -9.4
+  },
+  {
+   "id": "X3",
+   "name": "tick_sun_6",
+   "frame": 692,
+   "seconds": 23.067,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 23.0486,
+   "rule": "ZEROS counter step on the SUN rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.9,
+    "bed": -36.0,
+    "voice": -27.8,
+    "sfx_over_bed_db": 4.1,
+    "hit_30ms_sfx_dbfs": -24.9,
+    "hit_30ms_sfx_over_bed_db": 16.5
+   },
+   "sample_peak_dbfs": -9.4
+  },
+  {
+   "id": "X4",
+   "name": "hum_blackhole",
+   "frame": 916,
+   "seconds": 30.533,
+   "peak_dbfs": -22.0,
+   "landing": "start",
+   "landing_offset_in_sample_s": 0.0,
+   "placed_at_s": 30.5333,
+   "rule": "the window opens on the drawn black hole (sc08)",
+   "final_phone_band_dbfs": {
+    "sfx": -44.1,
+    "bed": -32.1,
+    "voice": -24.4,
+    "sfx_over_bed_db": -12.0
+   },
+   "sample_peak_dbfs": -17.9
+  },
+  {
+   "id": "X1",
+   "name": "climb_sgra",
+   "frame": 978,
+   "seconds": 32.6,
+   "peak_dbfs": -1.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.1667,
+   "placed_at_s": 32.4333,
+   "rule": "the marker's first moving frame toward SGR A* (sc08)",
+   "final_phone_band_dbfs": {
+    "sfx": -22.9,
+    "bed": -40.8,
+    "voice": -22.4,
+    "sfx_over_bed_db": 17.9,
+    "hit_30ms_sfx_dbfs": -24.7,
+    "hit_30ms_sfx_over_bed_db": 14.9
+   },
+   "sample_peak_dbfs": 3.1
+  },
+  {
+   "id": "X3",
+   "name": "tick_sgra_1",
+   "frame": 984,
+   "seconds": 32.8,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 32.782,
+   "rule": "ZEROS counter step on the SGRA rung",
+   "final_phone_band_dbfs": {
+    "sfx": -7.9,
+    "bed": -35.1,
+    "voice": -23.0,
+    "sfx_over_bed_db": 27.2,
+    "hit_30ms_sfx_dbfs": -6.3,
+    "hit_30ms_sfx_over_bed_db": 29.3
+   },
+   "sample_peak_dbfs": 1.9
+  },
+  {
+   "id": "X3",
+   "name": "tick_sgra_2",
+   "frame": 990,
+   "seconds": 33.0,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 32.982,
+   "rule": "ZEROS counter step on the SGRA rung",
+   "final_phone_band_dbfs": {
+    "sfx": -23.7,
+    "bed": -36.1,
+    "voice": -21.3,
+    "sfx_over_bed_db": 12.4,
+    "hit_30ms_sfx_dbfs": -23.4,
+    "hit_30ms_sfx_over_bed_db": 18.5
+   },
+   "sample_peak_dbfs": -7.8
+  },
+  {
+   "id": "X3",
+   "name": "tick_sgra_3",
+   "frame": 996,
+   "seconds": 33.2,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 33.182,
+   "rule": "ZEROS counter step on the SGRA rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.3,
+    "bed": -37.9,
+    "voice": -15.9,
+    "sfx_over_bed_db": 6.6,
+    "hit_30ms_sfx_dbfs": -24.7,
+    "hit_30ms_sfx_over_bed_db": 11.5
+   },
+   "sample_peak_dbfs": -9.1
+  },
+  {
+   "id": "X3",
+   "name": "tick_sgra_4",
+   "frame": 1002,
+   "seconds": 33.4,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 33.382,
+   "rule": "ZEROS counter step on the SGRA rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.9,
+    "bed": -36.9,
+    "voice": -34.1,
+    "sfx_over_bed_db": 5.0,
+    "hit_30ms_sfx_dbfs": -24.9,
+    "hit_30ms_sfx_over_bed_db": 12.3
+   },
+   "sample_peak_dbfs": -9.4
+  },
+  {
+   "id": "X3",
+   "name": "tick_sgra_5",
+   "frame": 1008,
+   "seconds": 33.6,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 33.582,
+   "rule": "ZEROS counter step on the SGRA rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.9,
+    "bed": -35.8,
+    "voice": -20.2,
+    "sfx_over_bed_db": 3.9,
+    "hit_30ms_sfx_dbfs": -24.9,
+    "hit_30ms_sfx_over_bed_db": 16.0
+   },
+   "sample_peak_dbfs": -9.4
+  },
+  {
+   "id": "X3",
+   "name": "tick_sgra_6",
+   "frame": 1014,
+   "seconds": 33.8,
+   "peak_dbfs": -13.5,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 33.782,
+   "rule": "ZEROS counter step on the SGRA rung",
+   "final_phone_band_dbfs": {
+    "sfx": -31.9,
+    "bed": -38.6,
+    "voice": -15.1,
+    "sfx_over_bed_db": 6.7,
+    "hit_30ms_sfx_dbfs": -24.9,
+    "hit_30ms_sfx_over_bed_db": 13.5
+   },
+   "sample_peak_dbfs": -9.4
+  },
+  {
+   "id": "X6",
+   "name": "orbit_tink",
+   "frame": 1096,
+   "seconds": 36.533,
+   "peak_dbfs": -16.0,
+   "landing": "start",
+   "landing_offset_in_sample_s": 0.0,
+   "placed_at_s": 36.5333,
+   "rule": "Mercury's orbit draws around the horizon (sc09)",
+   "final_phone_band_dbfs": {
+    "sfx": -22.1,
+    "bed": -33.1,
+    "voice": -19.4,
+    "sfx_over_bed_db": 11.0
+   },
+   "sample_peak_dbfs": -11.9
+  },
+  {
+   "id": "X1",
+   "name": "rail_break",
+   "frame": 1177,
+   "seconds": 39.233,
+   "peak_dbfs": -1.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.1667,
+   "placed_at_s": 39.0666,
+   "rule": "the rail BREAK draws (sc10, 'All')",
+   "final_phone_band_dbfs": {
+    "sfx": -22.9,
+    "bed": -37.8,
+    "voice": -9.0,
+    "sfx_over_bed_db": 14.9,
+    "hit_30ms_sfx_dbfs": -24.7,
+    "hit_30ms_sfx_over_bed_db": 12.6
+   },
+   "sample_peak_dbfs": 3.1
+  },
+  {
+   "id": "X5",
+   "name": "universe_shimmer",
+   "frame": 1262,
+   "seconds": 42.067,
+   "peak_dbfs": -14.0,
+   "landing": "start",
+   "landing_offset_in_sample_s": 0.0,
+   "placed_at_s": 42.0667,
+   "rule": "the dashed UNIVERSE line fades in (sc10)",
+   "final_phone_band_dbfs": {
+    "sfx": -25.9,
+    "bed": -34.1,
+    "voice": -40.5,
+    "sfx_over_bed_db": 8.2
+   },
+   "sample_peak_dbfs": -8.4
+  },
+  {
+   "id": "X3",
+   "name": "tick_spin_1",
+   "frame": 1262,
+   "seconds": 42.067,
+   "peak_dbfs": -15.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 42.0486,
+   "rule": "counter spin 36 -> 53, accelerating tick 1/6 (sc10)",
+   "final_phone_band_dbfs": {
+    "sfx": -28.5,
+    "bed": -35.2,
+    "voice": -23.5,
+    "sfx_over_bed_db": 6.7,
+    "hit_30ms_sfx_dbfs": -25.0,
+    "hit_30ms_sfx_over_bed_db": 7.7
+   },
+   "sample_peak_dbfs": -8.4
+  },
+  {
+   "id": "X3",
+   "name": "tick_spin_2",
+   "frame": 1272,
+   "seconds": 42.4,
+   "peak_dbfs": -15.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 42.382,
+   "rule": "counter spin 36 -> 53, accelerating tick 2/6 (sc10)",
+   "final_phone_band_dbfs": {
+    "sfx": -30.9,
+    "bed": -33.7,
+    "voice": -32.0,
+    "sfx_over_bed_db": 2.8,
+    "hit_30ms_sfx_dbfs": -25.9,
+    "hit_30ms_sfx_over_bed_db": 6.4
+   },
+   "sample_peak_dbfs": -10.3
+  },
+  {
+   "id": "X3",
+   "name": "tick_spin_3",
+   "frame": 1278,
+   "seconds": 42.6,
+   "peak_dbfs": -15.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 42.582,
+   "rule": "counter spin 36 -> 53, accelerating tick 3/6 (sc10)",
+   "final_phone_band_dbfs": {
+    "sfx": -33.2,
+    "bed": -36.2,
+    "voice": -22.0,
+    "sfx_over_bed_db": 3.0,
+    "hit_30ms_sfx_dbfs": -26.3,
+    "hit_30ms_sfx_over_bed_db": 12.6
+   },
+   "sample_peak_dbfs": -10.8
+  },
+  {
+   "id": "X3",
+   "name": "tick_spin_4",
+   "frame": 1282,
+   "seconds": 42.733,
+   "peak_dbfs": -15.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 42.7153,
+   "rule": "counter spin 36 -> 53, accelerating tick 4/6 (sc10)",
+   "final_phone_band_dbfs": {
+    "sfx": -33.3,
+    "bed": -34.1,
+    "voice": -19.7,
+    "sfx_over_bed_db": 0.8,
+    "hit_30ms_sfx_dbfs": -26.4,
+    "hit_30ms_sfx_over_bed_db": 9.8
+   },
+   "sample_peak_dbfs": -10.9
+  },
+  {
+   "id": "X3",
+   "name": "tick_spin_5",
+   "frame": 1285,
+   "seconds": 42.833,
+   "peak_dbfs": -15.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 42.8153,
+   "rule": "counter spin 36 -> 53, accelerating tick 5/6 (sc10)",
+   "final_phone_band_dbfs": {
+    "sfx": -30.4,
+    "bed": -36.7,
+    "voice": -15.7,
+    "sfx_over_bed_db": 6.3,
+    "hit_30ms_sfx_dbfs": -26.4,
+    "hit_30ms_sfx_over_bed_db": 8.7
+   },
+   "sample_peak_dbfs": -10.9
+  },
+  {
+   "id": "X3",
+   "name": "tick_spin_6",
+   "frame": 1287,
+   "seconds": 42.9,
+   "peak_dbfs": -15.0,
+   "landing": "peak",
+   "landing_offset_in_sample_s": 0.018,
+   "placed_at_s": 42.882,
+   "rule": "counter spin 36 -> 53, accelerating tick 6/6 (sc10)",
+   "final_phone_band_dbfs": {
+    "sfx": -30.4,
+    "bed": -35.7,
+    "voice": -17.2,
+    "sfx_over_bed_db": 5.3,
+    "hit_30ms_sfx_dbfs": -26.4,
+    "hit_30ms_sfx_over_bed_db": 11.2
+   },
+   "sample_peak_dbfs": -10.9
+  }
+ ],
+ "master_gain_db": 4.1,
+ "limiter": {
+  "threshold_dbfs": -1.25,
+  "lookahead_ms": 5,
+  "release_ms": 80,
+  "oversampling": 4
+ },
+ "floor_lift_max_db": 11.0,
+ "soundtrack_lufs": -14.1,
+ "soundtrack_true_peak_dbfs": -1.2,
+ "voice_rms_by_section_dbfs": {
+  "s1": -20.8,
+  "s2": -20.1,
+  "s3": -20.8,
+  "s4": -21.1,
+  "s5": -19.1
+ },
+ "min_window": {
+  "min_100ms_rms_dbfs": -39.8,
+  "at_frame": 1415.4,
+  "mono_fold_min_100ms_rms_dbfs": -40.0,
+  "mono_at_frame": 1415.4,
+  "windows_below_minus42": 0,
+  "mono_windows_below_minus42": 0,
+  "lead_in_min_100ms_rms_dbfs": -28.8,
+  "final_fade": {
+   "seconds": 0.6,
+   "floor_gain_db": -36.0,
+   "last_50ms_dbfs": -60.4,
+   "last_20ms_dbfs": -67.5,
+   "last_0p6s_by_50ms_dbfs": [
+    -22.6,
+    -24.3,
+    -25.5,
+    -24.7,
+    -26.9,
+    -31.5,
+    -33.1,
+    -36.5,
+    -42.2,
+    -45.0,
+    -51.1,
+    -60.4
+   ]
+  },
+  "note": "10 ms hop from the end of the 0.5 s lead-in to the start of the final fade (qa_auto's window); the fade is checked by its last 50 / 20 ms"
+ },
+ "note": "Premix at the delivery loudness (-14 LUFS integrated, TP <= -1 dBFS). All anchors from artifacts/timeline.json."
+}

@@ -1,0 +1,76 @@
+{
+ "s1": {
+  "wer": 0.0,
+  "hyp": "You weigh about seventy kilograms. A blue whale can reach a hundred and fifty thousand. The Eiffel Tower, about ten million.",
+  "gaps_over_350ms": [
+   [
+    1.98,
+    0.72,
+    "kilograms."
+   ],
+   [
+    5.44,
+    0.64,
+    "thousand."
+   ]
+  ],
+  "peak_dbfs": -3.1,
+  "dur": 8.56,
+  "status": "PASS"
+ },
+ "s2": {
+  "wer": 0.0,
+  "hyp": "Every human alive, put together around four hundred billion. The whole Earth six trillion trillion.",
+  "gaps_over_350ms": [
+   [
+    1.22,
+    0.48,
+    "alive,"
+   ],
+   [
+    4.64,
+    0.66,
+    "billion."
+   ]
+  ],
+  "peak_dbfs": -1.6,
+  "dur": 8.72,
+  "status": "PASS"
+ },
+ "s3": {
+  "wer": 0.0,
+  "hyp": "The Sun outweighs three hundred and thirty thousand Earths. And a neutron star squeezes even more into a ball the size of a city.",
+  "gaps_over_350ms": [],
+  "peak_dbfs": -5.4,
+  "dur": 8.8,
+  "status": "PASS"
+ },
+ "s4": {
+  "wer": 0.0,
+  "hyp": "The black hole at the centre of our galaxy weighs four million Suns, packed smaller than Mercury's orbit.",
+  "gaps_over_350ms": [
+   [
+    4.38,
+    0.56,
+    "Suns,"
+   ]
+  ],
+  "peak_dbfs": -6.7,
+  "dur": 7.12,
+  "status": "PASS"
+ },
+ "s5": {
+  "wer": 0.0,
+  "hyp": "All the ordinary matter we can see comes to about fifty -three zeros of kilograms. And dark matter outweighs it five to one.",
+  "gaps_over_350ms": [
+   [
+    4.84,
+    0.8,
+    "kilograms."
+   ]
+  ],
+  "peak_dbfs": -4.5,
+  "dur": 8.24,
+  "status": "PASS"
+ }
+}
