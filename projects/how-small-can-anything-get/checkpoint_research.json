@@ -1,0 +1,249 @@
+{
+  "version": "1.0",
+  "project_id": "how-small-can-anything-get",
+  "pipeline_type": "unknown",
+  "stage": "research",
+  "status": "completed",
+  "timestamp": "2026-10-28T11:46:37.743822+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": false,
+  "human_approved": false,
+  "artifacts": {
+    "research_brief": {
+      "version": "1.0",
+      "topic": "How Small Can Anything Get?",
+      "research_date": "2026-10-28",
+      "research_summary": "A log ladder downward in metres: sand grain, hair (edge of naked-eye vision), red blood cell, virus (below the light-microscope limit), atom, proton; then electrons with no measured size and the Planck length as a hypothesis, not a proven floor.",
+      "landscape": {
+        "existing_content": [
+          {
+            "title": "Powers of Ten",
+            "source": "Eames Office (1977)",
+            "angle": "continuous zoom",
+            "what_it_covers": "scale from galaxy to proton by powers of ten"
+          },
+          {
+            "title": "Scale-of-the-universe zooms",
+            "source": "YouTube explainers",
+            "angle": "interactive zoom",
+            "what_it_covers": "sizes from Planck length to observable universe, little honesty about the floor"
+          },
+          {
+            "title": "How small is an atom",
+            "source": "short explainers",
+            "angle": "analogy",
+            "what_it_covers": "atoms vs everyday objects"
+          }
+        ],
+        "saturated_angles": [
+          "Continuous zoom-in with no numbers on screen"
+        ],
+        "underserved_gaps": [
+          "Counting the zeros as the meter: a counter that jumps 14 -> 34 at the Planck length",
+          "Honesty about the floor: the Planck length is not proven to be the smallest length"
+        ]
+      },
+      "data_points": [
+        {
+          "claim": "Sand grain: about 0.06-2 mm by geologists' definition; 'about half a millimetre' is a typical medium grain. MEASURED (typical) [SAND]",
+          "source_url": "https://www.usgs.gov/",
+          "source_name": "USGS / Wentworth scale",
+          "credibility": "primary_source",
+          "surprise_factor": "expected",
+          "usable_as": "hook"
+        },
+        {
+          "claim": "Human hair diameter ranges widely (~17-180 um); ~70 um typical. 'A tenth of a sand grain'. MEASURED (typical) [HAIR]",
+          "source_url": "https://www.sciencefocus.com/the-human-body/how-small-can-the-naked-eye-see",
+          "source_name": "BBC Science Focus",
+          "credibility": "secondary_source",
+          "surprise_factor": "expected",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Naked-eye limit: ~0.04 mm (fine hair) just distinguishable by good eyes; commonly rounded to ~0.1 mm. PROBABLY (varies by eye and light) [EYE]",
+          "source_url": "https://www.sciencefocus.com/the-human-body/how-small-can-the-naked-eye-see",
+          "source_name": "BBC Science Focus",
+          "credibility": "secondary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Red blood cell diameter ~7-8 um, about ten times narrower than a hair. MEASURED [CELL]",
+          "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK2263/",
+          "source_name": "NCBI Bookshelf",
+          "credibility": "primary_source",
+          "surprise_factor": "expected",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Most viruses ~20-300 nm; influenza ~100 nm, about 75x smaller than a red cell. MEASURED [VIRUS]",
+          "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK8174/",
+          "source_name": "NCBI Bookshelf (Medical Microbiology)",
+          "credibility": "primary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Light-microscope resolution limit ~200 nm (Abbe diffraction limit); most viruses are below it. MEASURED [LIMIT]",
+          "source_url": "https://www.microscopyu.com/techniques/super-resolution/the-diffraction-barrier-in-optical-microscopy",
+          "source_name": "Nikon MicroscopyU",
+          "credibility": "secondary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Atom diameter ~0.1-0.3 nm (hydrogen ~0.1 nm), about a thousand times smaller than a virus. MEASURED [ATOM]",
+          "source_url": "https://www.britannica.com/science/atom",
+          "source_name": "Britannica",
+          "credibility": "secondary_source",
+          "surprise_factor": "expected",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Proton charge radius 0.8414 fm (CODATA 2018); diameter ~1.7 fm, ~60,000x smaller than a hydrogen atom. MEASURED [PROTON]",
+          "source_url": "https://pdglive.lbl.gov/view/S016CR",
+          "source_name": "Particle Data Group",
+          "credibility": "primary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Electron: no measured size; experiments bound it below ~1e-18 m; consistent with a point particle. MEASURED (upper bound) [ELECTRON]",
+          "source_url": "https://en.wikipedia.org/wiki/Point_particle",
+          "source_name": "Wikipedia / U. Oregon",
+          "credibility": "secondary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "Planck length ~1.6e-35 m, built from c, G and hbar; the scale where gravity is expected to need quantum treatment. It is NOT proven to be the smallest possible length. MAYBE [PLANCK]",
+          "source_url": "https://arxiv.org/pdf/gr-qc/9610066",
+          "source_name": "arXiv gr-qc/9610066",
+          "credibility": "primary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        },
+        {
+          "claim": "1.6e-35 m written out has 34 zeros after the decimal point; proton (~1e-15 m) to Planck is ~20 more powers of ten. MEASURED (arithmetic) [ZEROS]",
+          "source_url": "https://pdglive.lbl.gov/view/S016CR",
+          "source_name": "derived",
+          "credibility": "primary_source",
+          "surprise_factor": "surprising",
+          "usable_as": "script_anchor"
+        }
+      ],
+      "audience_insights": {
+        "common_questions": [
+          "What is the smallest thing that exists?",
+          "Can we see atoms?",
+          "Is there a smallest length?"
+        ],
+        "misconceptions": [
+          {
+            "myth": "The Planck length is the proven pixel size of the universe",
+            "reality": "It is the scale where gravity is expected to need a quantum theory; no experiment shows space is pixelated there.",
+            "source": "arXiv gr-qc/9610066"
+          },
+          {
+            "myth": "Electrons are tiny balls with a known radius",
+            "reality": "No size has been measured; experiments only bound it below ~1e-18 m.",
+            "source": "Wikipedia: Point particle"
+          }
+        ],
+        "knowledge_level": "general curious viewer"
+      },
+      "expert_voices": [
+        {
+          "name": "Particle Data Group",
+          "position": "proton radius 0.8414 fm"
+        },
+        {
+          "name": "CODATA 2018",
+          "position": "recommended constants"
+        }
+      ],
+      "angles_discovered": [
+        {
+          "name": "Count the zeros",
+          "hook": "Every step down adds zeros after the decimal point; the last step adds twenty.",
+          "type": "data_driven",
+          "why_now": "partner to video 16's ZEROS counter",
+          "grounded_in": [
+            "ZEROS"
+          ]
+        },
+        {
+          "name": "Where seeing stops",
+          "hook": "Your eye gives up at a hair; light itself gives up at a virus.",
+          "type": "evergreen",
+          "why_now": "two honest instrument limits on the way down",
+          "grounded_in": [
+            "EYE",
+            "LIMIT"
+          ]
+        },
+        {
+          "name": "No floor yet",
+          "hook": "Electrons have no size we can find, and the Planck length is a guess at a floor.",
+          "type": "contrarian",
+          "why_now": "corrects the Planck-pixel myth",
+          "grounded_in": [
+            "ELECTRON",
+            "PLANCK"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://pdglive.lbl.gov/view/S016CR",
+          "title": "PDG proton charge radius",
+          "used_for": "PROTON",
+          "reliability": "primary"
+        },
+        {
+          "url": "https://www.aps.org/apsnews/2018/06/how-big-is-the-proton-really",
+          "title": "APS News: how big is the proton",
+          "used_for": "PROTON context",
+          "reliability": "primary"
+        },
+        {
+          "url": "https://www.sciencefocus.com/the-human-body/how-small-can-the-naked-eye-see",
+          "title": "Science Focus: how small can the eye see",
+          "used_for": "EYE, HAIR",
+          "reliability": "secondary"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Point_particle",
+          "title": "Point particle",
+          "used_for": "ELECTRON",
+          "reliability": "secondary"
+        },
+        {
+          "url": "https://pages.uoregon.edu/soper/Sun/step8a.html",
+          "title": "U. Oregon: an electron",
+          "used_for": "ELECTRON",
+          "reliability": "secondary"
+        },
+        {
+          "url": "https://arxiv.org/pdf/gr-qc/9610066",
+          "title": "Does matter differ from vacuum?",
+          "used_for": "PLANCK",
+          "reliability": "primary"
+        }
+      ],
+      "metadata": {
+        "searches": 4,
+        "webfetch": "none",
+        "dropped_claims": [
+          "'The Planck length is the smallest possible length' (unproven; kept only as MAYBE)",
+          "'Quarks are smaller than electrons' (both have no measured size)"
+        ],
+        "myths": [
+          "Planck length = pixel of the universe",
+          "You can see a single atom in a light microscope"
+        ]
+      }
+    }
+  }
+}
