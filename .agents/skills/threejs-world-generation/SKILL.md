@@ -27,7 +27,7 @@ For a hero video or any reference showing populated textured environments, use `
 
 - Read [references/worldclaw-principles.md](references/worldclaw-principles.md) when planning or explaining the coarse-to-fine method.
 - Read [references/world-spec.md](references/world-spec.md) before authoring a `world_spec` or calling `threejs_world`.
-- Read `hyperframes-core`, `hyperframes-animation`, and `hyperframes-animation/adapters/three.md` before editing the emitted workspace.
+- Read `hyperframes` (the Contract section plus `references/format.md`), `hyperframes/references/runtimes.md` (Three.js seek protocol), and `hyperframes/references/types/3d.md` before editing the emitted workspace.
 - Read `threejs-loaders`, `threejs-materials`, `threejs-textures`, `threejs-lighting`, and `threejs-postprocessing` for production-tier work.
 
 ## Route the request
