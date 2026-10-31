@@ -73,7 +73,7 @@ class HyperFramesCompose(BaseTool):
         "hyperframes",
         "hyperframes-cli",
         "hyperframes-registry",
-        "website-to-video",
+        "media-use",
         "gsap-core",
         "gsap-timeline",
     ]

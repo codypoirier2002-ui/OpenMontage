@@ -9,17 +9,16 @@ For raw HyperFrames knowledge (authoring contract, `data-*` attributes, GSAP
 timeline rules, CLI flags, registry blocks, website-to-video), read the Layer 3
 skills:
 
-- `.agents/skills/hyperframes/` — router into the focused skills below (HF 0.7+ split the monolithic skill)
-- `.agents/skills/hyperframes-core/` — composition contract: `data-*` timing, tracks, sub-compositions, deterministic-render rules
-- `.agents/skills/hyperframes-creative/` — non-animation creative direction: palette, type, narration, beat planning
-- `.agents/skills/hyperframes-media/` — TTS/BGM/SFX/transcription/captions/background-removal
-- `.agents/skills/hyperframes-animation/` — all motion knowledge (rules, blueprints, transitions, runtime adapters)
-- `.agents/skills/hyperframes-cli/` — init, add, lint, validate, inspect, snapshot, preview, render, benchmark, lambda, doctor (0.7+)
-- `.agents/skills/hyperframes-registry/` — `hyperframes add` + block wiring
-- `.agents/skills/website-to-video/` — capture-to-video workflow (renamed from website-to-video in 0.7)
-- `.agents/skills/music-to-video/` — beat-synced music-driven video using `hyperframes beats`
-- `.agents/skills/motion-graphics/` — short design-led motion graphic patterns
-- `.agents/skills/media-use/` — `resolve` verb for BGM/SFX/image/icon (any pipeline, any runtime)
+- `.agents/skills/hyperframes/` — read first. `SKILL.md` holds the render contract and work loop; its "What to read" table routes to `references/`:
+  - `references/format.md` — scenes, `data-*` attributes, media, bundled fonts (was `hyperframes-core` in 0.7)
+  - `references/look.md`, `story.md`, `spec.md` — look, palette, type, storylines, numeric spec (was `hyperframes-creative`)
+  - `references/motion.md`, `runtimes.md` — motion craft and GSAP/Lottie/Three.js/canvas adapters (was `hyperframes-animation`)
+  - `references/types/*.md` — launch, explainer, music (beat-synced, was `music-to-video`), data, vertical, 3D, character
+  - `references/film.md` — real places/maps, websites (`npx hyperframes capture`, was `website-to-video`), kinetic type (was `motion-graphics`)
+  - `references/sound.md`, `captions.md`, `overlays.md`, `review.md`
+- `.agents/skills/hyperframes-cli/` — init, lint, check, snapshot, timeline, history, preview, render, cloud render, publish, doctor
+- `.agents/skills/hyperframes-registry/` — `hyperframes add` + block wiring (~450 blocks)
+- `.agents/skills/media-use/` — `npx hyperframes media-use resolve` for BGM/SFX/image/icon/logo/voice (any pipeline, any runtime); TTS, transcription, cutouts, grades (was `hyperframes-media`)
 - `.agents/skills/remotion-to-hyperframes/` — migration ONLY when user explicitly asks to port a Remotion source
 
 This file teaches the bridge between the two.
@@ -48,7 +47,7 @@ logged in `decision_log`. Silent runtime swaps are a contract violation.
 | Avatar / lip-sync presenter | **Remotion** | `TalkingHead` composition lives in Remotion. No HyperFrames equivalent yet. |
 | Kinetic typography, heavy text motion, GSAP-native animation | **HyperFrames** | HTML/GSAP is the natural medium. Expressing this as Remotion `interpolate()` calls is slow and fragile. |
 | Product promo / launch reel / marketing title card | **HyperFrames** | CSS/GSAP composition grammar matches how designers already think about these. Templates (`kinetic-type`, `product-promo`, `swiss-grid`) give a strong starting point. |
-| Website-to-video / UI-driven composition | **HyperFrames** | The `website-to-video` workflow exists for exactly this. |
+| Website-to-video / UI-driven composition | **HyperFrames** | `npx hyperframes capture <url>` + `.agents/skills/hyperframes/references/film.md` exist for exactly this. |
 | Registry block needed (data chart, grain overlay, shimmer sweep, shader transition) | **HyperFrames** | The registry is HyperFrames-only. Remotion does not have `hyperframes add`. |
 | Synthetic UI / fake terminal / fake browser demo | Either — depends on existing coverage | OpenMontage already ships Remotion `TerminalScene` (see `synthetic-screen-recording` Layer 3). For UI chrome beyond terminal, HyperFrames HTML is easier. |
 | Pure concat / trim of source clips, no composition | **FFmpeg** | Neither Remotion nor HyperFrames add value here. |
@@ -137,8 +136,8 @@ gitignored with the rest of the production workspace.
   relative to the project root. A shared workspace breaks this.
 - `npx hyperframes lint | validate | render` all operate on a project
   directory. They don't take an abstract composition ID the way Remotion does.
-- Assets live next to the HTML that references them, matching the
-  `website-to-video` reference workflow.
+- Assets live next to the HTML that references them (`assets/...`, no
+  leading `/`), matching the upstream HyperFrames contract.
 
 ---
 
@@ -165,8 +164,9 @@ with the path to the generated MP4. See `tools/video/hyperframes_compose.py`.
 
 ### Workspace-local authoring artifacts
 
-Upstream's `website-to-video` skill uses `DESIGN.md`, `SCRIPT.md`, and
-`STORYBOARD.md` as step-by-step workspace files. OpenMontage does **not**
+Upstream's HyperFrames workflow uses workspace files such as `DESIGN.md`,
+`SCRIPT.md`, `STORYBOARD.md`, and (from 0.8) `SPEC.md` and `REVIEW.md` as
+step-by-step working documents. OpenMontage does **not**
 replace its canonical artifact contracts with these — `brief`, `script`,
 `scene_plan`, `edit_decisions`, etc. remain the source of truth under
 `projects/<p>/artifacts/`. Treat the upstream files as **convenience copies**
@@ -245,7 +245,8 @@ declaring a render complete:
 1. **`npx hyperframes lint`** — static contract checks (duplicate ids,
    overlapping tracks, missing `data-composition-id`, unregistered timelines).
    MUST pass before render.
-2. **`npx hyperframes validate`** — browser-based runtime checks: seeks into
+2. **`npx hyperframes validate`** (a deprecated alias of `npx hyperframes check`
+   since HF 0.8; same checks plus layout audits) — browser-based runtime checks: seeks into
    the paused composition, screenshots, samples pixels, computes WCAG
    contrast ratios, verifies `window.__timelines` registration and
    `class="clip"` on timed elements. MUST pass before render (contrast can
